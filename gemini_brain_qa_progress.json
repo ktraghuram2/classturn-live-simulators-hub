@@ -1,73 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 23:18:29",
-  "completed_count": 270,
-  "fixed_count": 270,
-  "latest_sim_id": "u00334",
+  "updated_at": "2026-10-18 23:21:46",
+  "completed_count": 275,
+  "fixed_count": 275,
+  "latest_sim_id": "u00351",
   "recent_events": [
-    {
-      "sim_id": "u00281",
-      "status": "FIXED",
-      "time": "22:55:29",
-      "issues": [
-        "Corrupted volumetric discharge units in readouts, observation table headers, and principles list displaying '/m³s' instead of 'm³/s'",
-        "Malformed data-unit attribute containing embedded raw HTML span tag in theoretical and actual discharge readout items",
-        "Telemetry DOM element ID mismatch in updateTelemetryDOM targeting non-existent element IDs instead of 'val_reading_*' and overwriting unit MathML markup",
-        "Observation table column mismatch and misalignment in recordObservation: 9 columns rendered for 10 table headers, with valve opening and rise misplaced into limb height columns h1 and h2",
-        "Unwired control actions (btn_toggle_pump, btn_toggle_drain_valve, btn_purge_manometer) and stepper increment/decrement buttons (.stepper-btn)",
-        "Pump operational state not integrated into simulation render loop (fluid particle circulation and water jet continued when pump was stopped)"
-      ]
-    },
-    {
-      "sim_id": "u00287",
-      "status": "FIXED",
-      "time": "22:55:36",
-      "issues": [
-        "Observation table column misalignment: tr.innerHTML generated 10 columns including Sl.No and fitting name, whereas observation_thead_html defines strictly 7 columns (Q, V, Re, R, h_f, f, L_eq) in a different column order.",
-        "Unwired stepper and action buttons: Stepper up/down buttons (.stepper-btn) and action buttons (btn_purge_air, btn_isolate_fitting) lacked event listeners in canvas_js.",
-        "Apparatus badges 6 & 7 mismatch: Legend pill 6 is CCl4 manometer and 7 is Hg manometer, but canvas_js only rendered a single manometer with badge 7 pointing to the reading scale. Upgraded to a dual-manometer panel housing both CCl4 and Hg manometers with badges 6 and 7 correctly mapped 1-to-1.",
-        "Dynamic air purge simulation: Purging air bubbles and equalizing manometer now dynamically reduces and equalizes the differential deflection R to zero with animated bubbles at the bleed manifold.",
-        "Low-contrast outlines on dark canvas: Enhanced 3D wall outlines and high-contrast boundaries for the 45° bend, 90° bend, and 180° return bend fittings against the #090d16 canvas background."
-      ]
-    },
-    {
-      "sim_id": "u00294",
-      "status": "FIXED",
-      "time": "22:56:10",
-      "issues": [
-        "Fixed MathML rendering error in principles_summary_html where 'I/O ports' was formatted as fraction I/O.",
-        "Added missing Accumulator Count symbol C to observation_thead_html for cross-section consistency (Q31).",
-        "Added Single Step Clock Cycle action button to actions_html matching Procedure Step 7.",
-        "Disabled direct canvas mouse listeners on #simCanvas to enforce Q22 and global canvas interaction lock.",
-        "Wired Start/Pause Counter (#btn_run_counter), Single Step (#btn_step_counter, #btnStep), Reset (#btnReset), and Pause/Run (#btnToggle) buttons.",
-        "Wired Record Observation (#btnRecord) in canvas_js to record synchronized observation rows matching the table headers."
-      ]
-    },
-    {
-      "sim_id": "u00293",
-      "status": "FIXED",
-      "time": "22:56:44",
-      "issues": [
-        "Misaligned observation table columns: btnRecord injected 7 columns instead of all 11 columns declared in observation_thead_html (Decimal Value, Binary Input Word, B3-B0, Gray Output Word, G3-G0).",
-        "Unwired action button btn_invert_all_inputs: Added click event listener to toggle all binary input bits.",
-        "Unwired stepper buttons: Added click event listeners for .stepper-btn controls to increment and decrement input bits.",
-        "Unresponsive live readouts: setTelemetry did not match readout IDs with 'val_reading_' prefix, preventing UI telemetry updates; updated to match val_reading_<id> and preserve inner MathML unit spans.",
-        "Formatted Gray output word readout as a 4-bit word without spaces to match the slot default format."
-      ]
-    },
-    {
-      "sim_id": "u00244",
-      "status": "FIXED",
-      "time": "22:57:30",
-      "issues": [
-        "Fixed fatal syntax error: canvas_js in database was truncated mid-expression in btnRecord handler",
-        "Implemented complete authentic canvas rendering for all 5 apparatus elements (Moran Population Arena Ring, Iterated Match Engine Console, Stochastic Noise Modulator, Fitness & Payoff Telemetry Gauge, Fixation & Selection Rotary Tracker)",
-        "Wired custom action buttons (#btn_step_moran for birth-death generation, #btn_run_fixation for continuous fixation simulation)",
-        "Wired top controls (#btnToggle pause/run, #btnStep, #btnReset, #experimentSelect)",
-        "Corrected observation table row recording to output exactly 8 columns matching the thead specification",
-        "Added Style 2 curvy leader lines (cubic Bezier S-curves with anchor touch beads) and numbered badges 1 through 5"
-      ]
-    },
     {
       "sim_id": "u00297",
       "status": "FIXED",
@@ -518,6 +455,65 @@
         "Fixed low-contrast ground wire on dark #090d16 canvas by replacing #020617 stroke with high-contrast #64748b.",
         "Synchronized HC-05 LED blink rate and smartphone display text with Bluetooth pairing state."
       ]
+    },
+    {
+      "sim_id": "u00340",
+      "status": "FIXED",
+      "time": "23:19:34",
+      "issues": [
+        "Observation table columns were misaligned: an extraneous index column was prepended in the record handler, shifting all data by one column and omitting Capillary State.",
+        "Stepper buttons (.stepper-btn-up and .stepper-btn-down) were unwired in canvas_js, preventing users from stepping activity level, thermal condition, or view mode.",
+        "Action button btn_stimulate_hypothalamus ('Trigger Hypothalamic Feedback Cycle') lacked an event listener in canvas_js.",
+        "Experiment selection dropdown (experimentSelect) was unwired to simulation preset conditions.",
+        "Physiological View Selector (view_mode) had no visual feedback or focus highlights in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u00339",
+      "status": "FIXED",
+      "time": "23:20:15",
+      "issues": [
+        "Unrendered raw LaTeX `|H|_{dB}` in readouts_html replaced with valid MathML.",
+        "Unrendered raw LaTeX `|p|_{max}` in validation_html assumptions and boundary limits replaced with valid MathML.",
+        "Unwired action buttons: 'btn_stabilize_poles' and 'btn_sweep_spectrum' wired with functional logic in canvas_js.",
+        "Unwired stepper increment/decrement buttons (.stepper-btn) and missing input synchronization wired in canvas_js.",
+        "Observation table columns logged by btnRecord were misaligned and had mismatched column count and headers compared to observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u00344",
+      "status": "FIXED",
+      "time": "23:20:36",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted 8 columns (including row count and species name) into a 6-column observation table defined by observation_thead_html, causing data displacement.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons lacked click handlers to modify control inputs.",
+        "Unwired action button: #btn_thermal_equilibrate ('Auto-Equilibrate Cottrell Circulation Loop') was not wired with an event listener.",
+        "Telemetry readout ID mismatch: updateTelemetryDisplays targeted unreferenced IDs instead of the val_reading_* IDs and child data-source-paths spans from readouts_html."
+      ]
+    },
+    {
+      "sim_id": "u00345",
+      "status": "FIXED",
+      "time": "23:21:22",
+      "issues": [
+        "Raw LaTeX symbols 'BMC_{total}' and 'BMC_{reb}' in readouts_html replaced with standard MathML markup.",
+        "Live readout elements in canvas_js referenced missing container IDs instead of val_reading_* IDs, preventing live reading updates.",
+        "Stepper increment/decrement buttons (.stepper-btn) and the action button #btn_optimize_hydraulics were unwired in canvas_js.",
+        "Observation table row generation in canvas_js pushed 8 cells instead of matching the 6 defined observation table header columns."
+      ]
+    },
+    {
+      "sim_id": "u00351",
+      "status": "FIXED",
+      "time": "23:21:45",
+      "issues": [
+        "Fixed principles_summary_html where the English indefinite article 'A' at the start of the overview was improperly formatted as a mathematical variable <math><mrow><mi>A</mi></mrow></math>.",
+        "Corrected observation table row recording in canvas_js: recordBtn was injecting 12 misaligned columns (including record index, address channel, and LED status) into observationTbody instead of exactly 9 columns matching observation_thead_html (Strobe G, S1, S0, I0, I1, I2, I3, Y, Vout).",
+        "Fixed live readouts updateTelemetry in canvas_js: elements were queried using 'reading_*' instead of the rendered slot IDs 'val_reading_*', and inner MathML unit spans were overwritten rather than preserved.",
+        "Wired up/down stepper buttons (.stepper-btn-up, .stepper-btn-down) and input event listeners in canvas_js to allow interactive control changes.",
+        "Wired top panel controls (#btnToggle pause/run, #btnStep procedure stage navigation, #btnReset restoring defaults and clearing observation table, and #experimentSelect for primary/extended experiment modes).",
+        "Disabled direct canvas mouse click listeners on #simCanvas to enforce Q22 and ClassTurn global canvas interaction lock while preserving switch layout coordinates for rendering."
+      ]
     }
   ],
   "completed_ids": [
@@ -790,6 +786,11 @@
     "u00333",
     "u00334",
     "u00335",
-    "u00338"
+    "u00338",
+    "u00339",
+    "u00340",
+    "u00344",
+    "u00345",
+    "u00351"
   ]
 }
