@@ -1,66 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 23:49:34",
-  "completed_count": 325,
-  "fixed_count": 325,
-  "latest_sim_id": "u00415",
+  "updated_at": "2026-10-18 23:53:43",
+  "completed_count": 330,
+  "fixed_count": 330,
+  "latest_sim_id": "u00419",
   "recent_events": [
-    {
-      "sim_id": "u00358",
-      "status": "FIXED",
-      "time": "23:26:10",
-      "issues": [
-        "Telemetry readouts queried nonexistent element IDs ('reading_v0', etc.) instead of the value container IDs ('val_reading_v0', etc.), leaving telemetry readouts un-updated during runtime.",
-        "Observation table generated 9 <td> cells per row by erroneously including Gain M, causing a column mismatch with the 8-column table header.",
-        "Stepper buttons (.stepper-btn-up and .stepper-btn-down) were unhandled in JavaScript, preventing stepper input adjustments on click.",
-        "Action button 'btn_toggle_conduction_mode' (Analyze Conduction Boundary) was unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u00366",
-      "status": "FIXED",
-      "time": "23:26:44",
-      "issues": [
-        "Aligned observation table recorded row columns to match all 8 header columns in #observationThead (corrected column ordering and added dynamic pressure q(y))",
-        "Wired custom action buttons #btn_zero_probe and #btn_traverse_scan for micrometer zero calibration and automated boundary layer traverse scanning",
-        "Added stepper up/down button listeners and input crash-proofing with bounds clamping in computePhysics",
-        "Replaced broken MathML entities and raw LaTeX notation (Re_x, dp/dx, dy <= 0.5) in procedure and validation sections with native inline MathML"
-      ]
-    },
-    {
-      "sim_id": "u00370",
-      "status": "FIXED",
-      "time": "23:26:45",
-      "issues": [
-        "Corrected theoretical indentation depth and diameter formula in calculatePhysics (removed extraneous factor of 2 in h_calc numerator)",
-        "Ensured HBW evaluates to zero when the specimen is not engaged with the indenter",
-        "Fixed pressure gauge dial needle alignment by drawing it along the positive polar axis matching calibration tick angles",
-        "Aligned observation table recorded row columns with the 8 columns defined in observation_thead_html",
-        "Wired up the three action buttons: btn_engage_hydraulic_load, btn_release_hydraulic_pressure, and btn_focus_reading_microscope",
-        "Wired up interactive stepper buttons (.stepper-btn-up and .stepper-btn-down) to properly increment/decrement target input values"
-      ]
-    },
-    {
-      "sim_id": "u00337",
-      "status": "FIXED",
-      "time": "23:26:50",
-      "issues": [
-        "Observation table columns were misaligned: tbody row injected 10 td cells including unheadered serial number and real intercept, conflicting with the 8 thead columns.",
-        "Unwired action button: '#btn_trace_nyquist' (Auto-Trace Complete Nyquist Path) lacked a click event listener.",
-        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' controls were not connected to increment/decrement parameter inputs.",
-        "Unwired experiment selector: '#experimentSelect' was not connected to configure parameters for Primary Experiment vs Extended Activity."
-      ]
-    },
-    {
-      "sim_id": "u00372",
-      "status": "FIXED",
-      "time": "23:27:23",
-      "issues": [
-        "Telemetry readout elements in readouts_html have IDs with prefix 'val_reading_*' (e.g. 'val_reading_hardness'), but updateTelemetryDOM was attempting to find 'reading_hardness' and 'val_hardness', preventing live telemetry updates.",
-        "Observation table rows generated in JS had 8 columns in mismatched order (including extraneous clay content and spring force columns) instead of matching the 7 columns defined in observation_thead_html.",
-        "Action buttons ('btn_press_tester' - Engage Indenter Probe and 'btn_ram_mould' - Execute Ramming Stroke) and stepper increment/decrement buttons (.stepper-btn) were unwired without event listeners in canvas_js."
-      ]
-    },
     {
       "sim_id": "u00379",
       "status": "FIXED",
@@ -491,6 +435,70 @@
         "Unwired stepper buttons: '.stepper-btn' (increment/decrement buttons) lacked event listeners, preventing user stepping controls from functioning.",
         "Misaligned observation table: record button inserted 6 columns (including un-headed trial counter and luminance ratio, and swapped tube length and concentration) into a 4-column observation table defined by observation_thead_html."
       ]
+    },
+    {
+      "sim_id": "u00411",
+      "status": "FIXED",
+      "time": "23:50:24",
+      "issues": [
+        "Observation table columns misalignment: tr.innerHTML inserted 9 columns into a 6-column table, adding unmatched recordCount, lift, and baseRadius cells.",
+        "Unwired Section 5 action buttons: btn_cycle_rotation and btn_align_top_dwell lacked event listeners in canvas_js.",
+        "Unwired Section 5 stepper buttons: .stepper-btn-up and .stepper-btn-down were not bound to stepper input increments/decrements.",
+        "Leader line badge numbering mismatch: Badges 1, 2, and 3 were inverted relative to legend pills (Pill 1 is Frame, Pill 2 is Cam, Pill 3 is Follower; canvas_js originally drew Badge 1 on Cam, Badge 2 on Follower, Badge 3 on Frame)."
+      ]
+    },
+    {
+      "sim_id": "u00414",
+      "status": "FIXED",
+      "time": "23:50:36",
+      "issues": [
+        "Observation table column mismatch: canvas_js generated 8 <td> cells inserting unlisted light angle and polygon count columns, misaligning data against the 6 columns defined in #observationThead.",
+        "Unwired action buttons: #btn_mark_seams ('Mark Optimal Mesh Seams') and #btn_pack_islands ('Pack UV Islands into Domain') lacked event listeners in canvas_js.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked click listeners to increment/decrement input values.",
+        "Unwired top-panel controls: #btnToggle and #btnStep were not integrated into the animation loop to pause, resume, and single-step 3D rotation and phase progress.",
+        "Degenerate straight leader lines on Badges 2 and 3: Badges 2 and 3 had zero horizontal or vertical displacement (dx=0 and dy=0), violating Style 2 cubic Bezier S-curve curvature requirements.",
+        "Unwired experiment selector: #experimentSelect lacked a change listener to configure presets for Primary Experiment vs Extended Activity.",
+        "Telemetry readout DOM queries prioritized nonexistent 'reading_*' element IDs over 'val_reading_*' value containers."
+      ]
+    },
+    {
+      "sim_id": "u00402",
+      "status": "FIXED",
+      "time": "23:50:48",
+      "issues": [
+        "Unwired stepper up/down buttons: clicking ▲ and ▼ did not increment or decrement input values",
+        "Unwired action button: btn_stabilize_flow was not connected to an event listener",
+        "Live telemetry readouts failed to update due to ID mismatch (setVal sought reading_* instead of val_reading_*)",
+        "Physics calculation ignored Kutter's formulation when Activity 2 was selected in the experiment dropdown",
+        "Observation table columns in btnRecord were misaligned with observation_thead_html, inserted an unmapped serial number column, and omitted wetted perimeter"
+      ]
+    },
+    {
+      "sim_id": "u00416",
+      "status": "FIXED",
+      "time": "23:52:14",
+      "issues": [
+        "Removed accidental MathML markup (<math><mrow><mi>A</mi></mrow></math>) from the plain English indefinite article 'A' in principles_summary_html",
+        "Corrected malformed inertance frequency response function fraction in principles_summary_html",
+        "Cleaned embedded MathML markup from data-unit attributes in readouts_html",
+        "Preserved live reading unit markup: updated setTelemetry in canvas_js to target numeric value spans directly without erasing native MathML units",
+        "Wired custom action button #btn_impact_strike ('Strike Cantilever with Modal Hammer') to trigger modal hammer impact",
+        "Wired stepper buttons (.stepper-btn-up, .stepper-btn-down) to increment and decrement beam geometry and impact node inputs",
+        "Wired observation table record button (#btnRecord) with 8 aligned columns matching observation_thead_html",
+        "Wired top panel and playback controls (#btnToggle for pause/run, #btnStep, #btnReset for defaults restoration and table clearing, and #experimentSelect for test presets)",
+        "Upgraded sub-9px canvas label fonts to 9px for high-contrast legibility per Q25"
+      ]
+    },
+    {
+      "sim_id": "u00419",
+      "status": "FIXED",
+      "time": "23:53:43",
+      "issues": [
+        "Observation table columns were misaligned: row generator inserted 8 columns with an unheaded serial number and mismatched column ordering (fn before V_freq, extra V_rms column), whereas observation_thead_html defines exactly 6 columns: Beam Length, Excitation Frequency, Excitation Voltage, PZT Voltage Output, Resonant Frequency, and Damping Ratio.",
+        "Unwired action buttons: 'btn_auto_sweep' (Execute Harmonic Frequency Sweep) and 'btn_tune_resonance' (Auto-Tune to Resonant Peak) had no event listeners in canvas_js.",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' stepper buttons lacked click handlers to increment/decrement beam length, excitation frequency, and excitation voltage.",
+        "Errant MathML conversion in procedure_section_html: English article 'A' in 'A PZT ceramic patch' was mistakenly marked up as math variable '<math><mrow><mi>A</mi></mrow></math>'."
+      ]
     }
   ],
   "completed_ids": [
@@ -811,6 +819,7 @@
     "u00397",
     "u00400",
     "u00401",
+    "u00402",
     "u00403",
     "u00405",
     "u00406",
@@ -818,6 +827,10 @@
     "u00408",
     "u00409",
     "u00410",
-    "u00415"
+    "u00411",
+    "u00414",
+    "u00415",
+    "u00416",
+    "u00419"
   ]
 }
