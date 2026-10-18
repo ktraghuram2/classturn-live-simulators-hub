@@ -1,71 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 00:51:08",
-  "completed_count": 430,
-  "fixed_count": 430,
-  "latest_sim_id": "u00532",
+  "updated_at": "2026-10-19 00:53:41",
+  "completed_count": 435,
+  "fixed_count": 435,
+  "latest_sim_id": "u00536",
   "recent_events": [
-    {
-      "sim_id": "u00490",
-      "status": "FIXED",
-      "time": "00:35:57",
-      "issues": [
-        "Swapped leader badges: Badge 1 pointed to Variable DC Voltage Source instead of PN Junction Diode, and Badge 2 pointed to PN Junction Diode instead of Variable DC Voltage Source (mismatched with Legend Pills 1 and 2).",
-        "Unwired action buttons: 'btn_zero_bias_equilibrium' and 'btn_toggle_carrier_flux' had no click event listeners.",
-        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' on voltage and doping controls had no event listeners.",
-        "Misaligned observation table columns: JS recorded 6 table cells (S.No, Voltage, Doping, Current, Width, V0) into an observation table header with only 4 columns (Voltage, Current, Width, V0).",
-        "Low-contrast black cable outline: Outer stroke '#0f172a' was virtually invisible against dark '#090d16' canvas background, enhanced with high-contrast sheath '#334155', body '#1e293b', and highlight core '#64748b'.",
-        "Malformed unit MathML in principles equation symbols: Hole mobility unit had '/m² V·s' and diffusion coefficient unit had '/m² s', corrected to 'm²/(V·s)' and 'm²/s'."
-      ]
-    },
-    {
-      "sim_id": "u00494",
-      "status": "FIXED",
-      "time": "00:35:57",
-      "issues": [
-        "Unwired action button (btn_toggle_optical_power), experiment select dropdown, and stepper buttons (▲/▼) in canvas_js; wired them to toggle optical power presets (-18 dBm / -15 dBm) and increment/decrement bias voltage.",
-        "Observation table column misalignment caused by an extraneous serial number <td> in the record button handler that shifted all data columns relative to the 6 observation thead headers.",
-        "Apparatus badge numbering and leader line mismatch where badge 1 was drawn on APD Module instead of Power Source; updated badge IDs and coordinates to match legend pills 1-5 and converted straight vertical lines into authentic Style 2 cubic Bezier S-curves."
-      ]
-    },
-    {
-      "sim_id": "u00470",
-      "status": "FIXED",
-      "time": "00:35:57",
-      "issues": [
-        "Corrected observation table column misalignment: replaced 8 mismatched cells (which included fineFocus and extraneous telemetry while omitting spore/vegetative counts) with 7 aligned columns matching observation_thead_html (Steaming Duration, Culture Age, Counterstain Time, Spore Dye Permeation, Sporulation Yield, Spore Count, Vegetative Count)",
-        "Wired stepper increment and decrement buttons (.stepper-btn, .stepper-btn-up, .stepper-btn-down) to update parameter values within [min, max] and trigger simulation synchronization",
-        "Wired action buttons (btn_heat_fix, btn_apply_steam_stain, btn_rinse_and_counterstain, btn_align_microscope) and playback reset button (btnReset) for complete interactive procedure workflow",
-        "Guarded input synchronization against non-finite and empty values with bounded clamping to prevent NaN propagation in telemetry calculations per Q29",
-        "Aligned apparatus callout badges: corrected Badge 1 (Inoculation loop) and Badge 2 (Clean glass slide) in drawAllBadges to match #apparatusLegendBanner legend pills 1-to-1",
-        "Removed erroneous MathML markup wrapping the English indefinite article 'A' in validation_html assumptions",
-        "Fixed broken denominator fraction MathML in principles_list_html units for activation energy Ea (J/mol) and gas constant R (J/(mol·K))",
-        "Sanitized embedded HTML <span> and quote markup inside data-unit attributes in readouts_html"
-      ]
-    },
-    {
-      "sim_id": "u00487",
-      "status": "FIXED",
-      "time": "00:35:57",
-      "issues": [
-        "Raw LaTeX artifact in principles_summary_html where the English article 'A' was formatted as math variable <math><mrow><mi>A</mi></mrow></math>",
-        "Inverted volumetric discharge unit formatted as '/m³s' instead of 'm³/s' in principles_list_html, readouts_html, and observation_thead_html",
-        "Misaligned observation table columns where recorded row appended 8 columns with mismatched headers (trial index, crest length, inverted Qt/Qa order) instead of the 7 observation columns defined in observation_thead_html",
-        "Unwired stepper increment/decrement buttons (.stepper-btn with data-target) preventing interactive adjustment of head, crest length, and collection time",
-        "Unwired control action buttons (btn_start_collection and btn_drain_tank) without event listeners"
-      ]
-    },
-    {
-      "sim_id": "u00491",
-      "status": "FIXED",
-      "time": "00:35:57",
-      "issues": [
-        "Unwired action button (#btn_toggle_bias) and preset select (#experimentSelect) for toggling between forward and reverse bias modes.",
-        "Unwired stepper buttons (.stepper-btn) preventing DC voltage, series resistance, and junction temperature adjustments via UI buttons.",
-        "Observation table column misalignment: btnRecord injected 8 td elements into an observation table structured with only 5 thead column headers.",
-        "Missing reverse bias physics and meter dual-scale adaptation: solveDiodeCircuit did not model negative voltage, barrier expansion, or dual meter scale switching (0-30 V / 0-100 µA)."
-      ]
-    },
     {
       "sim_id": "u00486",
       "status": "FIXED",
@@ -490,6 +429,74 @@
         "Telemetry element ID mismatch: updateTelemetry() was looking for reading_* and val_* IDs instead of val_reading_* IDs defined in readouts_html, preventing live readout updates.",
         "Misaligned observation table columns: btnRecord inserted 10 mismatched columns into observationTbody, while observation_thead_html defines exactly 7 columns (Outer Radius, Thickness, R_cond, R_conv, R_total, Q_ins, Ts)."
       ]
+    },
+    {
+      "sim_id": "u00482",
+      "status": "FIXED",
+      "time": "00:51:30",
+      "issues": [
+        "Corrupted MathML units in live readings and observation table header: rectified malformed fraction k(g/c)m² to kg/cm² and inverted discharge rate /m³s to m³/s.",
+        "Spurious MathML in principles overview: removed unnecessary variable markup enclosing the English indefinite article 'A'.",
+        "Raw HTML tags inside data-unit attributes: sanitized data-unit attributes across all live readouts to clean plain text strings.",
+        "Raw HTML entity in validation assumptions: replaced raw 'a << A' with native inline MathML a ≪ A.",
+        "Unwired custom action buttons in Section 05: implemented interactive handlers for #btn_toggle_pump (toggle reciprocating drive) and #btn_measure_discharge (close collecting tank drain for 10 cm rise timing).",
+        "Unwired stepper controls: added click handlers for .stepper-btn-up and .stepper-btn-down to increment/decrement delivery valve setting and crank pin speed respecting min, max, and step attributes.",
+        "Unwired top-panel controls: added event listeners for Pause/Run (#btnToggle), Step (#btnStep), Reset (#btnReset), and experiment mode selector (#experimentSelect).",
+        "Observation table column misalignment: removed redundant row count cell and aligned actual discharge and theoretical discharge to match the 9 defined headers in observation_thead_html.",
+        "Telemetry unit preservation: patched setVal in canvas_js to target the value span directly, preventing destruction of nested MathML unit elements during frame updates.",
+        "Canvas text legibility (Q25): increased gauge labels, units, and tank graduated scale font sizes from 7px and 8px to >= 9px.",
+        "Dynamic leader-line tracking (Q24): updated touch beads for Badge 6 (Piston and piston rod) and Badge 7 (Crank and connecting rod) to dynamically follow reciprocating motion."
+      ]
+    },
+    {
+      "sim_id": "u00530",
+      "status": "FIXED",
+      "time": "00:51:58",
+      "issues": [
+        "Wired impulse hammer strike action button (#btn_strike_hammer) to trigger physical excitation",
+        "Wired boundary condition toggle button (#btn_toggle_boundary) with dynamic Fixed/Free eigenvalue calculations and visual collar unclamping",
+        "Wired modal case switch button (#btn_toggle_case) supporting single and double node transverse wave shapes",
+        "Wired observation record button (#btnRecord) with exact 7-column schema alignment matching table headers",
+        "Added on-canvas real-time telemetry HUD overlay displaying active boundary restraint, nodal mode, and natural frequency"
+      ]
+    },
+    {
+      "sim_id": "u00527",
+      "status": "FIXED",
+      "time": "00:52:01",
+      "issues": [
+        "Raw LaTeX notation in procedure_section_html: converted unrendered 'h^*' in Step 6 to native inline MathML <msup><mi>h</mi><mo>*</mo></msup>.",
+        "Cleaned embedded raw HTML markup inside data-unit attributes in readouts_html to maintain valid HTML attribute strings.",
+        "Corrected observation table column mismatch in canvas_js: swapped columns 5 and 6 so Moment of Inertia I_G and Total Force F align 1-to-1 with observation_thead_html headers.",
+        "Unwired action buttons: implemented dedicated click listeners for #btn_align_water_datum (calm datum alignment indication) and #btn_compute_pressure_prism (toggle hydrostatic pressure prism vector display).",
+        "Unwired stepper controls: wired .stepper-btn-up and .stepper-btn-down to increment and decrement input values respecting min, max, and step attributes with boundary clamping.",
+        "Unwired top-panel controls: added event listeners for Pause/Run (#btnToggle), Step (#btnStep), Reset (#btnReset), and activity preset switching (#experimentSelect).",
+        "Telemetry unit preservation: updated setElementText to target the numerical value span directly, preventing destruction of nested MathML unit elements.",
+        "Canvas typography legibility (Q25): upgraded sub-9px text (8px on centroid G, center of pressure P, and vernier flags) to >= 9px for crisp contrast on dark #090d16 canvas."
+      ]
+    },
+    {
+      "sim_id": "u00528",
+      "status": "FIXED",
+      "time": "00:52:19",
+      "issues": [
+        "Raw LaTeX text '^*' was exposed outside MathML tags in principles_summary_html and procedure_section_html.",
+        "Middle dot character '·' was incorrectly used instead of '*' for the center of pressure depth symbol h* in readouts_html and observation_thead_html.",
+        "Observation table rows generated in canvas_js were misaligned with the 9 observation header columns, prepending an unheaded trial count, omitting projected area and centroid depth, and scrambling force columns.",
+        "Telemetry readouts in canvas_js targeted non-existent IDs ('reading_fx' instead of 'val_reading_fx'), preventing live telemetry updates when controls changed.",
+        "Stepper increment/decrement buttons (▲ / ▼) and the 'Balance Gate Hydrostatic Moment' action button were completely unwired in canvas_js.",
+        "Canvas lacked visual annotations and force labels on the dark #090d16 canvas to clarify the gate profile, free water surface, center of curvature, and resultant vector components."
+      ]
+    },
+    {
+      "sim_id": "u00536",
+      "status": "FIXED",
+      "time": "00:53:40",
+      "issues": [
+        "Observation table column mismatch: btnRecord created 9 table cells (including trial count, diameter ratio, and delta T) when observation_thead_html only defines 6 columns (d1, d2, T1, T2, Km, Q/L).",
+        "Unwired stepper buttons: .stepper-btn buttons (▲ / ▼) were not attached to event listeners to increment or decrement stepper input values.",
+        "Unwired action buttons: 'btn_thermal_equilibrium' and 'btn_toggle_flux_vectors' had no event listeners attached in canvas_js."
+      ]
     }
   ],
   "completed_ids": [
@@ -882,6 +889,7 @@
     "u00479",
     "u00480",
     "u00481",
+    "u00482",
     "u00483",
     "u00484",
     "u00486",
@@ -920,8 +928,12 @@
     "u00522",
     "u00525",
     "u00526",
+    "u00527",
+    "u00528",
     "u00529",
+    "u00530",
     "u00531",
-    "u00532"
+    "u00532",
+    "u00536"
   ]
 }
