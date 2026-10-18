@@ -1,8 +1,8 @@
 {
-  "runner_state": "ACTIVE (12 GEMINI BRAIN AGENTS RUNNING)",
-  "updated_at": "2026-10-18 18:55:10",
-  "completed_count": 2,
-  "fixed_count": 2,
+  "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
+  "updated_at": "2026-10-18 19:11:30",
+  "completed_count": 5,
+  "fixed_count": 5,
   "latest_sim_id": "u00002",
   "recent_events": [
     {
@@ -43,10 +43,53 @@
       "issues": [
         "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--mode', 'plan', '--disable-slash-commands', '--print', 'Rea"
       ]
+    },
+    {
+      "sim_id": "u00003",
+      "status": "FIXED",
+      "time": "19:02:41",
+      "issues": [
+        "Corrected title and header to 'Determination of Total Hardness of Water' to match EDTA complexometric titration content (Q02)",
+        "Fixed MathML formatting glitch for drops/s unit in Burette Titration Rate stepper (Q15)",
+        "Disabled canvas mouse click listener in accordance with locked canvas interaction rules (Q22)",
+        "Wired Start Dropwise Titration and Auto-Titrate custom action buttons to simulation state (Q14, Q27)",
+        "Corrected Observation Table recording to include trial count and accurately align all 5 table columns with thead (Q18)",
+        "Wired Reset to Defaults button to restore simulation parameters and clear drops/splashes (Q18)",
+        "Wired Pause/Run (btnToggle) and Step (btnStep) controls (Q06, Q07)",
+        "Wired experimentSelect to support Primary and Extended activity modes (Q08)",
+        "Added input clamping to prevent out-of-range, NaN, and division-by-zero errors (Q29)"
+      ]
+    },
+    {
+      "sim_id": "u00014",
+      "status": "FIXED",
+      "time": "19:03:05",
+      "issues": [
+        "Unwired Action Buttons: 'Latch Fault Injection' (btn_toggle_fault) and 'Auto-Cycle Test Vectors' (btn_auto_step_vectors) had no event listeners or implementation in canvas_js.",
+        "Contradictory Reference Signal Tap: The reference normal parity line was incorrectly tapped from Gate 1's intermediate output rather than the input bank, causing a single pin to simultaneously carry conflicting logic states.",
+        "Telemetry Readout Discrepancy: Intermediate wire telemetry display (telW) and observation table logging showed normW instead of effW, failing to reflect clamped fault states on line w.",
+        "Tactile Canvas Responsiveness: Test points on lines x, y, w, z were not clickable to switch target_wire, and canvas control toggles did not dispatch input/change events for DOM synchronization."
+      ]
+    },
+    {
+      "sim_id": "u00008",
+      "status": "FIXED",
+      "time": "19:08:01",
+      "issues": [
+        "Observation table column mismatch: canvas_js injected 10 misaligned table cells (including an unrequested trial index and extra power/nature cells) into a 7-column thead, corrupting recorded observation rows.",
+        "Unresponsive Action buttons: btn_toggle_lens_type ('Swap Active Lens') and btn_autofocus_screen ('Auto-Position Screen to In-Focus Image Plane') had no event listeners attached in canvas_js.",
+        "Unresponsive stepper buttons: Stepper up and down buttons (.stepper-btn) had no click handlers attached.",
+        "Screen Carrier Translation & Realistic Defocus: screenSmoothX previously auto-snapped to imgX every frame, preventing the user from manually translating the screen along the bench rail or observing image defocus as instructed in Procedure Step 3; added manual screen dragging and realistic out-of-focus circle-of-confusion blur.",
+        "Leader line ray collision and badge target tracking: Badge 4 leader line crossed directly through the optical rays, and badges 3 and 4 did not dynamically swap targets between the active lens mount and auxiliary dock when switching lens types.",
+        "Experiment mode selector synchronization: The experiment selector (#experimentSelect) was not connected to the active lens state."
+      ]
     }
   ],
   "completed_ids": [
+    "u00003",
     "u00004",
-    "u00005"
+    "u00005",
+    "u00008",
+    "u00014"
   ]
 }
