@@ -923,14 +923,27 @@
   // ============================================================================
   (function disableAllCanvasMouseInteractions() {
     function injectNoPointerStyle() {
-      if (!document.getElementById("classturn-no-canvas-mouse")) {
+      var existingNoMouse = document.getElementById("classturn-no-canvas-mouse");
+      var cssText =
+        "#simCanvas, .canvas-wrapper > canvas {" +
+        " pointer-events: none !important; cursor: default !important; user-select: none !important; -webkit-user-select: none !important;" +
+        "} " +
+        "#apparatusLegendBanner {" +
+        " pointer-events: auto !important; overflow-x: auto !important; overflow-y: hidden !important;" +
+        " scrollbar-width: thin !important; scrollbar-color: #8eaea1 #e2efe9 !important; -webkit-overflow-scrolling: touch !important;" +
+        "} " +
+        "#apparatusLegendBanner * { pointer-events: auto !important; } " +
+        "#apparatusLegendBanner::-webkit-scrollbar { height: 7px !important; display: block !important; } " +
+        "#apparatusLegendBanner::-webkit-scrollbar-track { background: #e2efe9 !important; border-radius: 4px !important; } " +
+        "#apparatusLegendBanner::-webkit-scrollbar-thumb { background: #8eaea1 !important; border-radius: 4px !important; } " +
+        "#apparatusLegendBanner::-webkit-scrollbar-thumb:hover { background: #10564b !important; }";
+      if (!existingNoMouse) {
         var st = document.createElement("style");
         st.id = "classturn-no-canvas-mouse";
-        st.textContent =
-          "#simCanvas, .canvas-wrapper > canvas, #apparatusLegendBanner, #apparatusLegendBanner * {" +
-          " pointer-events: none !important; cursor: default !important; user-select: none !important; -webkit-user-select: none !important;" +
-          "}";
+        st.textContent = cssText;
         (document.head || document.documentElement).appendChild(st);
+      } else {
+        existingNoMouse.textContent = cssText;
       }
       if (!document.getElementById("classturn-canvas-fit-style")) {
         var fitSt = document.createElement("style");
@@ -1236,13 +1249,47 @@
     var oldHint = document.getElementById("classturnTargetHint");
     if (oldHint) oldHint.remove();
 
-    // Forward mouse wheel over left stage (outside observation table) to #controlsPanel so scrolling works anywhere on the page
+    // Wire #apparatusLegendBanner for horizontal scrollbar, mouse-wheel horizontal scroll, and drag-to-scroll
+    var legendBanner = document.getElementById("apparatusLegendBanner") || document.querySelector(".apparatus-legend-banner");
+    if (legendBanner && !legendBanner.dataset.ctScrollWired) {
+      legendBanner.dataset.ctScrollWired = "1";
+      legendBanner.style.pointerEvents = "auto";
+      legendBanner.style.overflowX = "auto";
+      legendBanner.style.overflowY = "hidden";
+      legendBanner.addEventListener("wheel", function (e) {
+        if (legendBanner.scrollWidth > legendBanner.clientWidth) {
+          var delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+          legendBanner.scrollLeft += delta;
+          e.stopPropagation();
+          e.preventDefault();
+        }
+      }, { passive: false });
+      var isDraggingLegend = false;
+      var startXLegend = 0;
+      var scrollLeftLegend = 0;
+      legendBanner.addEventListener("mousedown", function (e) {
+        isDraggingLegend = true;
+        startXLegend = e.pageX - legendBanner.offsetLeft;
+        scrollLeftLegend = legendBanner.scrollLeft;
+      });
+      window.addEventListener("mouseup", function () {
+        isDraggingLegend = false;
+      }, { passive: true });
+      legendBanner.addEventListener("mousemove", function (e) {
+        if (!isDraggingLegend) return;
+        e.preventDefault();
+        var x = e.pageX - legendBanner.offsetLeft;
+        legendBanner.scrollLeft = scrollLeftLegend - (x - startXLegend);
+      });
+    }
+
+    // Forward mouse wheel over left stage (outside observation table and legend banner) to #controlsPanel
     var stageContainer = document.getElementById("stageContainer") || document.querySelector(".stage-fixed");
     var controlsPanelEl = document.getElementById("controlsPanel") || document.querySelector(".panel-right");
     if (stageContainer && controlsPanelEl && !stageContainer.dataset.ctWheelWired) {
       stageContainer.dataset.ctWheelWired = "1";
       stageContainer.addEventListener("wheel", function (e) {
-        if (e.target && e.target.closest && e.target.closest("#stageBottom")) return;
+        if (e.target && e.target.closest && (e.target.closest("#stageBottom") || e.target.closest("#apparatusLegendBanner"))) return;
         controlsPanelEl.scrollTop += e.deltaY;
       }, { passive: true });
     }
