@@ -155,17 +155,20 @@ def call_gemini_brain(prompt_text: str, model_name: str = "gemini-2.5-flash") ->
         return parse_json_safely(resp_json["candidates"][0]["content"]["parts"][0]["text"])
 
     # Try agy CLI if available (uses Google AI Ultra subscription directly)
-    if shutil.which("agy"):
+    agy_bin = shutil.which("agy")
+    if not agy_bin and os.path.exists(r"C:\Users\ktrag\AppData\Local\agy\bin\agy.exe"):
+        agy_bin = r"C:\Users\ktrag\AppData\Local\agy\bin\agy.exe"
+    if agy_bin:
         with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False, encoding="utf-8") as tf:
             tf.write(prompt_text)
             tf_path = tf.name
         try:
             cmd = [
-                "agy", "--dangerously-skip-permissions", "--mode", "plan",
+                agy_bin, "--dangerously-skip-permissions", "--mode", "plan",
                 "--disable-slash-commands", "--print",
                 f"Read {tf_path} and return ONLY the requested valid JSON object. Do not run any Python scripts."
             ]
-            r = subprocess.run(cmd, capture_output=True, text=True, timeout=240)
+            r = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=240)
             if r.returncode == 0 and r.stdout.strip():
                 return parse_json_safely(r.stdout)
         finally:
@@ -341,16 +344,33 @@ def main():
                     err_msg = str(res.get("error", "Unknown error"))[:160]
                     recent_events.append({"sim_id": sid, "status": "ERROR", "time": now_str, "issues": [err_msg]})
                     print(f"  [ERR]   {sid}: {err_msg}")
-                    continue
 
-                done_ids.add(sid)
+                if status in ("PASS", "FIXED"):
+                    done_ids.add(sid)
+
+                PROGRESS_PATH.write_text(
+                    json.dumps(
+                        {
+                            "runner_state": "ACTIVE (GEMINI BRAIN AGENTS RUNNING)",
+                            "updated_at": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                            "completed_count": len(done_ids),
+                            "fixed_count": fixed_count,
+                            "latest_sim_id": latest_sid,
+                            "recent_events": recent_events[-40:],
+                            "completed_ids": sorted(done_ids),
+                        },
+                        indent=2,
+                        ensure_ascii=False,
+                    ),
+                    encoding="utf-8",
+                )
 
         conn.commit()
         batches_since_db_push += 1
-        push_db_now = batches_since_db_push >= 4  # Repack & push full DB chunks every 20 sims, push status JSON every 5 sims
+        push_db_now = batches_since_db_push >= 4
         if push_db_now:
             batches_since_db_push = 0
-        save_and_push_progress(done_ids, fixed_count, latest_sid, recent_events, runner_state="RUNNING IN CLOUD SHELL", push_db=push_db_now)
+        save_and_push_progress(done_ids, fixed_count, latest_sid, recent_events, runner_state="ACTIVE (GEMINI BRAIN AGENTS RUNNING)", push_db=push_db_now)
         print(f"[LIVE STATUS PUSHED] Checked: {len(done_ids)}/2123 | Fixed in DB: {fixed_count}")
 
     save_and_push_progress(done_ids, fixed_count, "ALL DONE", recent_events, runner_state="COMPLETED", push_db=True)
