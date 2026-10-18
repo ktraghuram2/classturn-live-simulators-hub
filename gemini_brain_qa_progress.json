@@ -1,70 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 22:54:49",
-  "completed_count": 230,
-  "fixed_count": 230,
-  "latest_sim_id": "u00285",
+  "updated_at": "2026-10-18 22:57:30",
+  "completed_count": 235,
+  "fixed_count": 235,
+  "latest_sim_id": "u00244",
   "recent_events": [
-    {
-      "sim_id": "u00246",
-      "status": "FIXED",
-      "time": "22:31:15",
-      "issues": [
-        "Unwired action buttons: 'Mix Inoculum & Pour Overlay' (btn_mix_and_pour) and 'Incubate & Develop Plaques' (btn_incubate_develop) had no event handlers or stage transitions wired in canvas_js.",
-        "Unwired stepper buttons: Up and down buttons (.stepper-btn) for dilution exponent and phage volume were not wired to update input values or trigger telemetry recalculation.",
-        "Mismatched apparatus badges: Badge 1 and Badge 3 were reversed in canvas_js (Badge 1 pointed to Heating Block and Badge 3 to Rotary Shaker, contradicting legend pills 1 and 3).",
-        "Misaligned observation table columns: btnRecord inserted 6 <td> elements including an unlisted 47.0 °C temperature value, misaligning with the 5 observation table header columns.",
-        "Scientific notation typo: In calculateTelemetry(), .replace('^', '') stripped the exponent caret without converting to superscript, outputting '3.50 × 109 pfu/mL' instead of '3.50 × 10⁹ pfu/mL'.",
-        "Plaque color inaccuracy: Chromogenic blue/white screening with IPTG and X-Gal specifies vivid blue plaques (5,5'-dibromo-4,4'-dichloro-indigo precipitate), but canvas_js was rendering brownish-tan clearings."
-      ]
-    },
-    {
-      "sim_id": "u00205",
-      "status": "FIXED",
-      "time": "22:31:15",
-      "issues": [
-        "Realigned legend_pills_html to 4 items matching 02/Apparatus and the 4 canvas badges 1:1 (previously had 6 mismatched pills)",
-        "Corrected live reading telemetry DOM element selectors to target val_reading_* so Section 06 readouts update dynamically with controls",
-        "Wired custom action button #btn_zero_tare (Tare Load Transducers & Indicators), #experimentSelect mode switching, and #btnReset parameter restoring in canvas_js",
-        "Enhanced on-canvas digital meter font sizes and LCD panel dimensions to >= 9px bold monospace for crisp legibility and high contrast",
-        "Cleaned prose in aim_html, principles_summary_html, and procedure_section_html by removing erroneous MathML tags around the English indefinite article 'a'"
-      ]
-    },
-    {
-      "sim_id": "u00245",
-      "status": "FIXED",
-      "time": "22:31:15",
-      "issues": [
-        "Corrected malformed MathML unit 'cells/ml' in readouts_html and observation_thead_html that incorrectly rendered as fraction 'cell s/m l'",
-        "Fixed broken MathML generation time 'e.g.' corrupted to 'e.<math><mi>g</mi></math>' and unified doubling time symbol 'g' in procedure_section_html Steps 8 and 9",
-        "Wired custom action buttons (#btn_zero_colorimeter and #btn_aliquot_sample) with visual feedback on the colorimeter LED display and cuvette sampling state",
-        "Wired up/down stepper buttons (.stepper-btn-up, .stepper-btn-down) for incubation_time and stock_od",
-        "Wired Reset to Defaults button (#btnReset) to restore input values, state flags, and clear observation rows",
-        "Aligned observation table cell density column formatting to dynamic scientific notation matching telemetry"
-      ]
-    },
-    {
-      "sim_id": "u00249",
-      "status": "FIXED",
-      "time": "22:32:37",
-      "issues": [
-        "Observation table column misalignment: btnRecord appended 11 columns with trial numbers and Reynolds numbers, whereas observation_thead_html defines exactly 9 columns in the order Vw, ms, Pb, Tf, Tout, Qsteam, Qactual, Uo, and eta_th.",
-        "Unwired action buttons: 'btn_purge_air' and 'btn_trim_target_60' in actions_html were not wired to click handlers in canvas_js.",
-        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' buttons were not connected to increment/decrement input values.",
-        "Legend pills numbering mismatch: legend_pills_html assigned Pill 2 to Steam Valve, Pill 3 to Heat Exchanger, and Pill 4 to Rotameter, conflicting with canvas_js leader line badges (Badge 2 = Concentric Tube Heat Exchanger, Badge 3 = Feed Water Rotameter, Badge 4 = Steam Pressure Gauge and Regulating Valve) and apparatus_html."
-      ]
-    },
-    {
-      "sim_id": "u00248",
-      "status": "FIXED",
-      "time": "22:33:07",
-      "issues": [
-        "Unwired action buttons: Connected btn_run_extraction (Execute Lysis & 3000g Phase Separation) and btn_measure_uv_gel (Measure OD260 & Run 0.7% Agarose Gel) to handle execution, needle animations, and telemetry updates",
-        "Unwired stepper controls: Added click event listeners for .stepper-btn-up and .stepper-btn-down to increment and decrement input values respecting min, max, and step",
-        "Misaligned observation table columns: Corrected recordObservation to push exactly 6 values matching observation_thead_html (Phage Titer, Proteinase K, Centrifuge RCF, Absorbance at 260 nm, DNA Concentration, Purity Ratio) instead of 8 misaligned values",
-        "Reset button did not clear observation table: Added table reset and trialCount reset to resetSimulation"
-      ]
-    },
     {
       "sim_id": "u00250",
       "status": "FIXED",
@@ -501,6 +441,69 @@
         "Wired unhandled action buttons (btn_toggle_parallel, btn_prime_network, and experimentSelect) and stepper buttons (.stepper-btn) in canvas_js.",
         "Synchronized parallel pipe branch fluid flow animation and valve V2 visual state to toggle dynamically when parallel branch is activated or isolated."
       ]
+    },
+    {
+      "sim_id": "u00281",
+      "status": "FIXED",
+      "time": "22:55:29",
+      "issues": [
+        "Corrupted volumetric discharge units in readouts, observation table headers, and principles list displaying '/m³s' instead of 'm³/s'",
+        "Malformed data-unit attribute containing embedded raw HTML span tag in theoretical and actual discharge readout items",
+        "Telemetry DOM element ID mismatch in updateTelemetryDOM targeting non-existent element IDs instead of 'val_reading_*' and overwriting unit MathML markup",
+        "Observation table column mismatch and misalignment in recordObservation: 9 columns rendered for 10 table headers, with valve opening and rise misplaced into limb height columns h1 and h2",
+        "Unwired control actions (btn_toggle_pump, btn_toggle_drain_valve, btn_purge_manometer) and stepper increment/decrement buttons (.stepper-btn)",
+        "Pump operational state not integrated into simulation render loop (fluid particle circulation and water jet continued when pump was stopped)"
+      ]
+    },
+    {
+      "sim_id": "u00287",
+      "status": "FIXED",
+      "time": "22:55:36",
+      "issues": [
+        "Observation table column misalignment: tr.innerHTML generated 10 columns including Sl.No and fitting name, whereas observation_thead_html defines strictly 7 columns (Q, V, Re, R, h_f, f, L_eq) in a different column order.",
+        "Unwired stepper and action buttons: Stepper up/down buttons (.stepper-btn) and action buttons (btn_purge_air, btn_isolate_fitting) lacked event listeners in canvas_js.",
+        "Apparatus badges 6 & 7 mismatch: Legend pill 6 is CCl4 manometer and 7 is Hg manometer, but canvas_js only rendered a single manometer with badge 7 pointing to the reading scale. Upgraded to a dual-manometer panel housing both CCl4 and Hg manometers with badges 6 and 7 correctly mapped 1-to-1.",
+        "Dynamic air purge simulation: Purging air bubbles and equalizing manometer now dynamically reduces and equalizes the differential deflection R to zero with animated bubbles at the bleed manifold.",
+        "Low-contrast outlines on dark canvas: Enhanced 3D wall outlines and high-contrast boundaries for the 45° bend, 90° bend, and 180° return bend fittings against the #090d16 canvas background."
+      ]
+    },
+    {
+      "sim_id": "u00294",
+      "status": "FIXED",
+      "time": "22:56:10",
+      "issues": [
+        "Fixed MathML rendering error in principles_summary_html where 'I/O ports' was formatted as fraction I/O.",
+        "Added missing Accumulator Count symbol C to observation_thead_html for cross-section consistency (Q31).",
+        "Added Single Step Clock Cycle action button to actions_html matching Procedure Step 7.",
+        "Disabled direct canvas mouse listeners on #simCanvas to enforce Q22 and global canvas interaction lock.",
+        "Wired Start/Pause Counter (#btn_run_counter), Single Step (#btn_step_counter, #btnStep), Reset (#btnReset), and Pause/Run (#btnToggle) buttons.",
+        "Wired Record Observation (#btnRecord) in canvas_js to record synchronized observation rows matching the table headers."
+      ]
+    },
+    {
+      "sim_id": "u00293",
+      "status": "FIXED",
+      "time": "22:56:44",
+      "issues": [
+        "Misaligned observation table columns: btnRecord injected 7 columns instead of all 11 columns declared in observation_thead_html (Decimal Value, Binary Input Word, B3-B0, Gray Output Word, G3-G0).",
+        "Unwired action button btn_invert_all_inputs: Added click event listener to toggle all binary input bits.",
+        "Unwired stepper buttons: Added click event listeners for .stepper-btn controls to increment and decrement input bits.",
+        "Unresponsive live readouts: setTelemetry did not match readout IDs with 'val_reading_' prefix, preventing UI telemetry updates; updated to match val_reading_<id> and preserve inner MathML unit spans.",
+        "Formatted Gray output word readout as a 4-bit word without spaces to match the slot default format."
+      ]
+    },
+    {
+      "sim_id": "u00244",
+      "status": "FIXED",
+      "time": "22:57:30",
+      "issues": [
+        "Fixed fatal syntax error: canvas_js in database was truncated mid-expression in btnRecord handler",
+        "Implemented complete authentic canvas rendering for all 5 apparatus elements (Moran Population Arena Ring, Iterated Match Engine Console, Stochastic Noise Modulator, Fitness & Payoff Telemetry Gauge, Fixation & Selection Rotary Tracker)",
+        "Wired custom action buttons (#btn_step_moran for birth-death generation, #btn_run_fixation for continuous fixation simulation)",
+        "Wired top controls (#btnToggle pause/run, #btnStep, #btnReset, #experimentSelect)",
+        "Corrected observation table row recording to output exactly 8 columns matching the thead specification",
+        "Added Style 2 curvy leader lines (cubic Bezier S-curves with anchor touch beads) and numbered badges 1 through 5"
+      ]
     }
   ],
   "completed_ids": [
@@ -697,6 +700,7 @@
     "u00240",
     "u00242",
     "u00243",
+    "u00244",
     "u00245",
     "u00246",
     "u00247",
@@ -729,10 +733,14 @@
     "u00277",
     "u00278",
     "u00279",
+    "u00281",
     "u00282",
     "u00283",
     "u00284",
     "u00285",
-    "u00288"
+    "u00287",
+    "u00288",
+    "u00293",
+    "u00294"
   ]
 }
