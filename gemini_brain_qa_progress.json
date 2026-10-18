@@ -1,66 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 22:33:07",
-  "completed_count": 195,
-  "fixed_count": 195,
-  "latest_sim_id": "u00248",
+  "updated_at": "2026-10-18 22:36:55",
+  "completed_count": 200,
+  "fixed_count": 200,
+  "latest_sim_id": "u00236",
   "recent_events": [
-    {
-      "sim_id": "u00203",
-      "status": "FIXED",
-      "time": "22:05:02",
-      "issues": [
-        "Live telemetry readout element IDs in canvas_js (val_wn, val_r, etc.) did not match HTML slot IDs (val_reading_wn, val_reading_r, etc.), preventing live readout updates.",
-        "Action button 'btn_tune_resonance' (Tune to Natural Frequency Resonance) was unhandled in canvas_js.",
-        "Stepper up/down adjustment buttons (.stepper-btn) had no click event listeners wired in canvas_js.",
-        "Observation table recorder inserted 10 columns into a 5-column table, causing column misalignment with observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u00200",
-      "status": "FIXED",
-      "time": "22:05:22",
-      "issues": [
-        "Unwired action button: 'Apply Initial Deflection & Release' (#btn_excite_release) had no event listener to impart initial displacement.",
-        "Unwired stepper buttons: Increment/decrement buttons (.stepper-btn) had no click listeners attached to update stepper inputs.",
-        "Mismatched live readout IDs: Telemetry update routine targeted 'val_equiv_mass', 'val_stiffness', etc. instead of the compiled DOM IDs 'val_reading_equiv_mass', 'val_reading_stiffness', 'val_reading_damping_coeff', 'val_reading_natural_freq', and 'val_reading_damped_freq'.",
-        "Misaligned observation table columns: The observation table listener generated 9 <td> cells including an unheadered trial index (#), misaligning data across the 8 defined columns in observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u00208",
-      "status": "FIXED",
-      "time": "22:10:15",
-      "issues": [
-        "Misaligned observation table: btnRecord dynamically emitted 9 columns (including recordCounter, list length N, tau delay, and raw throughput) against the 6 columns defined in observation_thead_html (Task Mode, Active Slot, Assigned Snippet, Stack Depth, Transformed Elements, Validation Score).",
-        "Unwired action button: btn_validate_execution (Execute and Validate Code) was not connected to an event listener in canvas_js.",
-        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn) were not hooked up to mutate input values and trigger dispatch events.",
-        "Corrupted unit MathML in readouts_html: reading_throughput_rate displayed unit as element s/s (<mi>element</mi><mfrac><mi>s</mi><mi>s</mi></mfrac>) instead of elements/s.",
-        "Inaccurate default code configuration: correctConfig and userSlots were hardcoded to [1, 2, 1, 3], which selected non-HOF token res.append(x * 2) and syntax-invalid out = map(sq); rectified to canonical higher-order program [1, 1, 1, 1]."
-      ]
-    },
-    {
-      "sim_id": "u00202",
-      "status": "FIXED",
-      "time": "22:10:18",
-      "issues": [
-        "Unwired action buttons: Connected btn_displace_and_release and btn_stop_oscillation to displace/release vibration and hold at static equilibrium",
-        "Unwired stepper buttons: Added click event listeners for .stepper-btn-up and .stepper-btn-down to increment/decrement input values",
-        "Misaligned observation table columns: Corrected observation row data cells in btnRecord to match the exact 8 defined table headers (Mass, Spring Stiffness, Damping Coefficient, Initial Displacement, Critical Damping, Damping Ratio, Natural Frequency, Damped Frequency)"
-      ]
-    },
-    {
-      "sim_id": "u00209",
-      "status": "FIXED",
-      "time": "22:11:45",
-      "issues": [
-        "Misaligned observation table columns: btnRecord prepended row index in column 1, shifting operand values and omitting the operation symbol compared to observation_thead_html.",
-        "Unwired action button: Execute Full Script (#btn_run_script) had no event listener to automatically step through program counter lines 0 to 3.",
-        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down lacked event listeners to increment and decrement numeric input values.",
-        "Apparatus and legend pills count mismatch: apparatus_html and legend_pills_html only listed 2 items, whereas canvas_js rendered 4 numbered badges; expanded apparatus and legend pills to 4 to establish 1-to-1 parity.",
-        "Unwired experiment selector and division mode: #experimentSelect was not wired; switching to Extended Activity now updates code line 3 to division (/), handles float types, and guards against division by zero (ZeroDivisionError)."
-      ]
-    },
     {
       "sim_id": "u00207",
       "status": "FIXED",
@@ -480,6 +424,68 @@
         "Misaligned observation table columns: Corrected recordObservation to push exactly 6 values matching observation_thead_html (Phage Titer, Proteinase K, Centrifuge RCF, Absorbance at 260 nm, DNA Concentration, Purity Ratio) instead of 8 misaligned values",
         "Reset button did not clear observation table: Added table reset and trialCount reset to resetSimulation"
       ]
+    },
+    {
+      "sim_id": "u00250",
+      "status": "FIXED",
+      "time": "22:34:13",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted 7 mismatched cells (including unheadered trial index and steam pressure) instead of the 6 columns defined in observation_thead_html (Set Point SP, Proportional Gain Kp, Outlet Temperature PV, Control Error e, Controller Output m, and Feed Water Flow Rate Vw).",
+        "Unwired Section 05 action buttons: 'Switch Auto / Manual Mode' (#btn_toggle_mode) and 'Inject Flow Disturbance (+20%)' (#btn_step_disturbance) lacked click event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked event handlers in canvas_js to increment or decrement parameter values.",
+        "Destructive live telemetry updates: setTelemetryText directly overwrote textContent, destroying the nested MathML and unit elements inside .readout-val spans.",
+        "Unwired top panel and playback controls: Pause/Run toggle (#btnToggle), procedure step advance (#btnStep), activity selection (#experimentSelect), and Reset (#btnReset) had no event listeners in canvas_js.",
+        "Prose MathML artifact in procedure_section_html: Step 7 rendered 'a +20%' as an inline math formula (<math><mrow><mi>a</mi><mo>+</mo><mn>20</mn></mrow></math>%) instead of plain prose.",
+        "Unclosed tags in principles_list_html: Equation 0 list item was missing closing </ul>, </div>, and </li> tags."
+      ]
+    },
+    {
+      "sim_id": "u00247",
+      "status": "FIXED",
+      "time": "22:35:04",
+      "issues": [
+        "Misaligned observation table columns in btnRecord: header specifies 9 columns (Petri Dish Diameter, Incubation Time, Elution Duration, Centrifugal Field, Harvest Volume, Plaque Confluence, Elution Recovery, Stock Titer, Total Phage Yield), but recorded rows inserted an unheadered trial index (#), omitted Harvest Volume, swapped column order, and appended an extra clarification column.",
+        "Unwired Section 05 action buttons: 'Pour Molten Top Agarose Overlay' (#btn_pour_overlay), 'Initiate 37°C Lytic Incubation' (#btn_start_incubation), 'Elute Phage with SM Buffer at 4°C' (#btn_elute_harvest), and 'Clarify Stock via 4000×g Centrifugation' (#btn_clarify_centrifuge) lacked click event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) and input change listeners were not wired to update parameter state in canvas_js.",
+        "Unwired Section 08 #btnReset and top panel controls (#btnToggle, #btnStep, #experimentSelect) lacked event listeners to pause/step simulation, select scale presets, or reset controls and observation table.",
+        "Corrupted unit MathML: The unit pfu/mL was rendered as a vertical fraction pf u/m L (<mrow><mi mathvariant=\"normal\">p</mi><mi mathvariant=\"normal\">f</mi><mfrac><mrow><mi mathvariant=\"normal\">u</mi></mrow><mrow><mi mathvariant=\"normal\">m</mi></mrow></mfrac><mi mathvariant=\"normal\">L</mi></mrow></math>) in principles_list_html, readouts_html, and observation_thead_html; rectified to clean <math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mtext>pfu/mL</mtext></mrow></math>."
+      ]
+    },
+    {
+      "sim_id": "u00251",
+      "status": "FIXED",
+      "time": "22:36:11",
+      "issues": [
+        "Observation table recorder populated only 8 cells, misaligning values with the 11-column header and omitting elapsed time, LMTD, and heat duty.",
+        "Action buttons (btn_start_cycle and btn_toggle_solenoid) lacked event listeners in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js.",
+        "Solenoid valve status LED was statically styled without reacting to valve toggle state."
+      ]
+    },
+    {
+      "sim_id": "u00253",
+      "status": "FIXED",
+      "time": "22:36:48",
+      "issues": [
+        "Unwired action button btn_stroke_magnet for automated translation of the bar magnet along the specimen rail",
+        "Unwired action button btn_toggle_rod for toggling ferromagnetic specimen core insertion vs air core control",
+        "Unwired stepper increment/decrement buttons (.stepper-btn) for coil turns and magnet position",
+        "Misaligned observation table columns in btnRecord (6 td cells generated with unrequested row index vs 5 thead columns, and swapped B-field/EMF order)",
+        "Missing visual and physical response when ferromagnetic core is toggled out (domain unpinning avalanche suppression in air core mode)"
+      ]
+    },
+    {
+      "sim_id": "u00236",
+      "status": "FIXED",
+      "time": "22:36:55",
+      "issues": [
+        "Unwired action buttons (btn_switch_setup, btn_auto_level, btn_sight_crosshair) and stepper increment/decrement buttons (.stepper-btn)",
+        "Misaligned observation table recorder creating only 6 cells in a 10-column table structure, shifting readings into wrong columns and omitting Rise, Fall, RL, and Remarks",
+        "Leveling staff graphic height truncated at 185px (2.98m at 62 px/m), causing collimation lines at 3.005m (BM Alpha and TBM Omega) to overshoot the top of the rod",
+        "Inverted optical graduation orientation in 24x telescope reticle eyepiece view contrary to erect image optics in auto levels",
+        "Low contrast station labels and profile ground boundary on dark #090d16 canvas",
+        "Bullseye bubble coordinates bubbleX and bubbleY defined but decoupled from auto level centering and setup switching physics"
+      ]
     }
   ],
   "completed_ids": [
@@ -671,12 +677,17 @@
     "u00232",
     "u00233",
     "u00234",
+    "u00236",
     "u00239",
     "u00242",
     "u00243",
     "u00245",
     "u00246",
+    "u00247",
     "u00248",
-    "u00249"
+    "u00249",
+    "u00250",
+    "u00251",
+    "u00253"
   ]
 }
