@@ -1,68 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 22:29:06",
-  "completed_count": 190,
-  "fixed_count": 190,
-  "latest_sim_id": "u00242",
+  "updated_at": "2026-10-18 22:33:07",
+  "completed_count": 195,
+  "fixed_count": 195,
+  "latest_sim_id": "u00248",
   "recent_events": [
-    {
-      "sim_id": "u00193",
-      "status": "FIXED",
-      "time": "22:04:09",
-      "issues": [
-        "Misaligned observation table columns in btnRecord: header specifies 8 columns (Polar Angle, Azimuthal Phase, Observable, Expectation Value, Pauli-X, Pauli-Y, Pauli-Z, Purity Invariant), but row insertion was prepending recordCount and writing probabilities into expectation value columns.",
-        "Unwired action buttons: Select Pauli-X, Pauli-Y, Pauli-Z, Prepare Ground State, and Prepare Superposition State buttons lacked click listeners.",
-        "Unwired stepper controls: Stepper increment/decrement buttons (▲/▼) lacked click handlers to update the polar angle, azimuthal phase, and observable selection inputs.",
-        "Telemetry element ID selector mismatch: document.getElementById queried 'reading_*' instead of 'val_reading_*', preventing real-time DOM readouts from updating."
-      ]
-    },
-    {
-      "sim_id": "u00198",
-      "status": "FIXED",
-      "time": "22:04:36",
-      "issues": [
-        "Fixed corrupted MathML in principles_summary_html (corrected broken exponents d²y/dt² and d²z/dt², removed mangled combined terms, and converted raw symbols into valid inline MathML).",
-        "Aligned observation notebook recording in canvas_js with observation_thead_html (corrected mismatch from 9 unordered columns to the exact 5 header columns: ω, η, Y, Y0, and ϕ).",
-        "Wired Section 05 action button btn_snap_resonance to set excitation frequency ω to natural frequency ωn.",
-        "Wired Section 05 action button btn_toggle_relative_view to toggle between absolute (inertial) and base-relative coordinate frames with on-canvas HUD indication.",
-        "Wired Section 08 btnReset to restore control defaults, reset coordinate frame, clear observation table, and refresh readouts.",
-        "Added input and change event listeners to all stepper inputs for instantaneous parameter synchronization."
-      ]
-    },
-    {
-      "sim_id": "u00196",
-      "status": "FIXED",
-      "time": "22:04:43",
-      "issues": [
-        "Observation table columns were misaligned in canvas_js (latent heat was omitted, shifting E0 and soil temperatures into wrong column indices)",
-        "Action button btn_equilibrate_energy was unwired in canvas_js",
-        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js",
-        "Playback reset button (#btnReset) and pause/run/step controls were unwired in canvas_js",
-        "Stray slash in solar flux unit 'M/J/m²day' in steppers, principles, and observation headers corrected to 'MJ/m²·day'",
-        "Typo 'Penman EO' in validation limitations corrected to 'Penman E₀'"
-      ]
-    },
-    {
-      "sim_id": "u00199",
-      "status": "FIXED",
-      "time": "22:04:45",
-      "issues": [
-        "Unwired 'Deflect & Release Beam' action button (#btn_pluck_beam)",
-        "Unwired stepper up/down buttons (.stepper-btn) on all three parameter controls",
-        "Observation table column misalignment: recorded rows inserted an unindexed serial number and had Cantilever Length and Lumped Mass columns swapped relative to the 8 headers"
-      ]
-    },
-    {
-      "sim_id": "u00194",
-      "status": "FIXED",
-      "time": "22:04:55",
-      "issues": [
-        "Misaligned observation table row: generated 9 columns with an unindexed column prefix shifting values, whereas table header defines 8 columns (Quantum State, Measurement Basis, Total Shots, Count n0, Count n1, Measured P(0), Measured P(1), Standard Uncertainty).",
-        "Unwired action button: #btn_execute_shots was defined in controls HTML but had no click listener to execute quantum measurement shots, sample statistics, or flash detectors.",
-        "Unwired stepper controls: up/down stepper buttons (.stepper-btn) were not wired to increment or decrement control inputs.",
-        "Duplicate symbol in observation_thead_html: registered counts columns rendered duplicate mathml symbols (<math>n0</math> <math>n0</math> and <math>n1</math> <math>n1</math>)."
-      ]
-    },
     {
       "sim_id": "u00203",
       "status": "FIXED",
@@ -478,6 +420,66 @@
         "Telemetry readout IDs: Added updates targeting the actual HTML element IDs (val_reading_flow_time, val_reading_solvent_time, val_reading_relative_viscosity, val_reading_specific_viscosity, val_reading_reduced_viscosity, val_reading_inherent_viscosity) so live readings update reactively on control changes.",
         "Misaligned observation table columns: Corrected btnRecord innerHTML from 10 columns with rowCount/T/t0 to exactly match the 7 observation_thead_html columns (Solvent Medium, Polymer Concentration, Efflux Flow Time, Relative Viscosity, Specific Viscosity, Reduced Viscosity, Inherent Viscosity)."
       ]
+    },
+    {
+      "sim_id": "u00246",
+      "status": "FIXED",
+      "time": "22:31:15",
+      "issues": [
+        "Unwired action buttons: 'Mix Inoculum & Pour Overlay' (btn_mix_and_pour) and 'Incubate & Develop Plaques' (btn_incubate_develop) had no event handlers or stage transitions wired in canvas_js.",
+        "Unwired stepper buttons: Up and down buttons (.stepper-btn) for dilution exponent and phage volume were not wired to update input values or trigger telemetry recalculation.",
+        "Mismatched apparatus badges: Badge 1 and Badge 3 were reversed in canvas_js (Badge 1 pointed to Heating Block and Badge 3 to Rotary Shaker, contradicting legend pills 1 and 3).",
+        "Misaligned observation table columns: btnRecord inserted 6 <td> elements including an unlisted 47.0 °C temperature value, misaligning with the 5 observation table header columns.",
+        "Scientific notation typo: In calculateTelemetry(), .replace('^', '') stripped the exponent caret without converting to superscript, outputting '3.50 × 109 pfu/mL' instead of '3.50 × 10⁹ pfu/mL'.",
+        "Plaque color inaccuracy: Chromogenic blue/white screening with IPTG and X-Gal specifies vivid blue plaques (5,5'-dibromo-4,4'-dichloro-indigo precipitate), but canvas_js was rendering brownish-tan clearings."
+      ]
+    },
+    {
+      "sim_id": "u00205",
+      "status": "FIXED",
+      "time": "22:31:15",
+      "issues": [
+        "Realigned legend_pills_html to 4 items matching 02/Apparatus and the 4 canvas badges 1:1 (previously had 6 mismatched pills)",
+        "Corrected live reading telemetry DOM element selectors to target val_reading_* so Section 06 readouts update dynamically with controls",
+        "Wired custom action button #btn_zero_tare (Tare Load Transducers & Indicators), #experimentSelect mode switching, and #btnReset parameter restoring in canvas_js",
+        "Enhanced on-canvas digital meter font sizes and LCD panel dimensions to >= 9px bold monospace for crisp legibility and high contrast",
+        "Cleaned prose in aim_html, principles_summary_html, and procedure_section_html by removing erroneous MathML tags around the English indefinite article 'a'"
+      ]
+    },
+    {
+      "sim_id": "u00245",
+      "status": "FIXED",
+      "time": "22:31:15",
+      "issues": [
+        "Corrected malformed MathML unit 'cells/ml' in readouts_html and observation_thead_html that incorrectly rendered as fraction 'cell s/m l'",
+        "Fixed broken MathML generation time 'e.g.' corrupted to 'e.<math><mi>g</mi></math>' and unified doubling time symbol 'g' in procedure_section_html Steps 8 and 9",
+        "Wired custom action buttons (#btn_zero_colorimeter and #btn_aliquot_sample) with visual feedback on the colorimeter LED display and cuvette sampling state",
+        "Wired up/down stepper buttons (.stepper-btn-up, .stepper-btn-down) for incubation_time and stock_od",
+        "Wired Reset to Defaults button (#btnReset) to restore input values, state flags, and clear observation rows",
+        "Aligned observation table cell density column formatting to dynamic scientific notation matching telemetry"
+      ]
+    },
+    {
+      "sim_id": "u00249",
+      "status": "FIXED",
+      "time": "22:32:37",
+      "issues": [
+        "Observation table column misalignment: btnRecord appended 11 columns with trial numbers and Reynolds numbers, whereas observation_thead_html defines exactly 9 columns in the order Vw, ms, Pb, Tf, Tout, Qsteam, Qactual, Uo, and eta_th.",
+        "Unwired action buttons: 'btn_purge_air' and 'btn_trim_target_60' in actions_html were not wired to click handlers in canvas_js.",
+        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' buttons were not connected to increment/decrement input values.",
+        "Legend pills numbering mismatch: legend_pills_html assigned Pill 2 to Steam Valve, Pill 3 to Heat Exchanger, and Pill 4 to Rotameter, conflicting with canvas_js leader line badges (Badge 2 = Concentric Tube Heat Exchanger, Badge 3 = Feed Water Rotameter, Badge 4 = Steam Pressure Gauge and Regulating Valve) and apparatus_html."
+      ]
+    },
+    {
+      "sim_id": "u00248",
+      "status": "FIXED",
+      "time": "22:33:07",
+      "issues": [
+        "Unwired action buttons: Connected btn_run_extraction (Execute Lysis & 3000g Phase Separation) and btn_measure_uv_gel (Measure OD260 & Run 0.7% Agarose Gel) to handle execution, needle animations, and telemetry updates",
+        "Unwired stepper controls: Added click event listeners for .stepper-btn-up and .stepper-btn-down to increment and decrement input values respecting min, max, and step",
+        "Misaligned observation table columns: Corrected recordObservation to push exactly 6 values matching observation_thead_html (Phage Titer, Proteinase K, Centrifuge RCF, Absorbance at 260 nm, DNA Concentration, Purity Ratio) instead of 8 misaligned values",
+        "Reset button did not clear observation table: Added table reset and trialCount reset to resetSimulation"
+      ]
     }
   ],
   "completed_ids": [
@@ -642,6 +644,7 @@
     "u00202",
     "u00203",
     "u00204",
+    "u00205",
     "u00206",
     "u00207",
     "u00208",
@@ -670,6 +673,10 @@
     "u00234",
     "u00239",
     "u00242",
-    "u00243"
+    "u00243",
+    "u00245",
+    "u00246",
+    "u00248",
+    "u00249"
   ]
 }
