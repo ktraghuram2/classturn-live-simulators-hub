@@ -1,9 +1,9 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 20:16:50",
-  "completed_count": 35,
-  "fixed_count": 35,
-  "latest_sim_id": "u00055",
+  "updated_at": "2026-10-18 20:19:00",
+  "completed_count": 40,
+  "fixed_count": 40,
+  "latest_sim_id": "u00061",
   "recent_events": [
     {
       "sim_id": "u00003",
@@ -407,6 +407,67 @@
         "Stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) were unwired",
         "Action button #btn_align_extreme ('Align to Extreme Stroke Position') was unwired"
       ]
+    },
+    {
+      "sim_id": "u00045",
+      "status": "FIXED",
+      "time": "20:16:58",
+      "issues": [
+        "Corrected title and header to 'Schelling\\'s Segregation Model' to match spatial segregation and neighborhood satisfaction dynamics rather than boids flocking (Q02)",
+        "Wired custom action button 'Run to Segregation Equilibrium' (#btn_auto_converge) to accelerate migration cycles to steady-state segregation (Q14, Q27)",
+        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) to adjust control inputs (Q15)",
+        "Corrected Observation Table recording to align all 6 table columns (Threshold, Radius, Grid Dimension, Satisfied Agents, Happiness Ratio, Mean Similarity) with observation_thead_html (Q18)",
+        "Wired 'Reset to Defaults' button (#btnReset) to restore parameters, reinitialize grid lattice, and clear observation history (Q18)",
+        "Wired Pause/Run (#btnToggle) and Step (#btnStep) simulation playback controls (Q06, Q07)",
+        "Wired experiment mode selector (#experimentSelect) to switch between Satisfaction Threshold and Grid Scale dynamics (Q08)",
+        "Added input clamping to prevent out-of-bounds parameters (Q29)",
+        "Locked canvas direct mouse interaction via pointerEvents = 'none' (Q22)"
+      ]
+    },
+    {
+      "sim_id": "u00054",
+      "status": "FIXED",
+      "time": "20:17:01",
+      "issues": [
+        "Wired #btnToggle, #btnStep, #btnReset, #btn_tangent_align, and #btn_toggle_continuous action buttons in canvas_js",
+        "Added event listeners for all stepper increment/decrement arrow buttons (.stepper-btn)",
+        "Corrected observation table row columns to align exactly with observationThead (Crank Angle, Driving Speed, Lever Angle, Sliding Block Velocity, Ram Velocity, Ram Displacement, Time Ratio)",
+        "Corrected theoretical return stroke governing equation in principles_summary_html from sin(alpha/2) to cos(alpha/2) = r/d"
+      ]
+    },
+    {
+      "sim_id": "u00049",
+      "status": "FIXED",
+      "time": "20:17:36",
+      "issues": [
+        "Corrected telemetry readout element IDs in canvas_js from reading_*/val_* to val_reading_* so live displacement, discriminant, rocker angle, and coupler coordinates update continuously.",
+        "Wired Action buttons #btn_toggle_mode and #btn_auto_rotate_crank with click listeners to toggle assembly mode (σ = ±1) and continuous rotation.",
+        "Wired stepper up/down buttons (.stepper-btn) and input change listeners so angle, crank length, and ground pivot spacing controls function interactively.",
+        "Implemented assembly mode toggle branch logic in solveKinematics and coupler curve trajectory calculation."
+      ]
+    },
+    {
+      "sim_id": "u00058",
+      "status": "FIXED",
+      "time": "20:17:43",
+      "issues": [
+        "Misaligned observation table columns: btnRecord injected 12 columns (including S.No, R, C, Rf, R1, fh, Af) into a 6-column header table. Aligned output to the exact 6 columns in observation_thead_html (f, Vi, Vo, Av, AdB, phase).",
+        "Unwired action buttons: btn_sweep_bode ('Auto-Sweep Frequency Spectrum') and btn_tune_cutoff ('Snap to Theoretical Cut-Off (fh)') had no event listeners.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down controls were not wired to update input values.",
+        "Unwired table reset button: btnReset lacked an event handler to clear observations and restore default values."
+      ]
+    },
+    {
+      "sim_id": "u00061",
+      "status": "FIXED",
+      "time": "20:19:00",
+      "issues": [
+        "Unwired interactive action buttons ('btn_auto_scale_oscilloscope', 'btn_toggle_butterworth_preset') and unwired stepper up/down controls.",
+        "Observation table column mismatch: table header specifies 5 columns (Frequency, Vin, Vo, Gain Ratio, Gain dB), while recorder script inserted 8 misaligned columns.",
+        "Leader line badge numbers mismatched with legend pills: badge 2 pointed to Power Supply (pill 4), badge 3 pointed to Filter Board (pill 2), and badge 4 pointed to Oscilloscope (pill 3).",
+        "Filter frequency response formula in simulation state used simplified Butterworth assumption ignoring quality factor Q during Ri variation; rectified to full second-order Sallen-Key transfer function.",
+        "Oscilloscope timebase was hardcoded to 2.0 ms in waveform rendering instead of adapting to state.scopeTimebase."
+      ]
     }
   ],
   "completed_ids": [
@@ -438,12 +499,17 @@
     "u00042",
     "u00043",
     "u00044",
+    "u00045",
     "u00046",
     "u00047",
     "u00048",
+    "u00049",
     "u00050",
     "u00051",
+    "u00054",
     "u00055",
-    "u00056"
+    "u00056",
+    "u00058",
+    "u00061"
   ]
 }
