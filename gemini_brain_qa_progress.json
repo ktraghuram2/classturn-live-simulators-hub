@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 23:27:23",
-  "completed_count": 290,
-  "fixed_count": 290,
-  "latest_sim_id": "u00372",
+  "updated_at": "2026-10-18 23:29:38",
+  "completed_count": 295,
+  "fixed_count": 295,
+  "latest_sim_id": "u00380",
   "recent_events": [
-    {
-      "sim_id": "u00315",
-      "status": "FIXED",
-      "time": "23:08:56",
-      "issues": [
-        "Observation table data row inserted 12 mismatched columns including an unreferenced run count, intermediate frequencies, and load parameters, whereas observation_thead_html defines exactly 9 columns: DC Bus Voltage, Reference Amplitude, Carrier Amplitude, Modulation Index, V_AB RMS, V_BC RMS, V_CA RMS, Fundamental Line RMS, and Phase Load Current.",
-        "Apparatus badges in canvas_js drew 11 badges that contradicted the canonical 7 apparatus items defined in legend_pills_html; re-aligned Style 2 leader lines to the exact 7 legend items.",
-        "Unwired action and stepper controls: implemented click handlers for 'Set Nominal MI (0.80)' (#btn_set_nominal_mi), 'Toggle Inverter Gate Pulses' (#btn_toggle_inverter_gate), stepper buttons (.stepper-btn), and reset button (#btnReset).",
-        "DC negative return bus cable was drawn with low-contrast #1e293b on dark #090d16 canvas; upgraded to high-contrast slate #64748b with 2.6px stroke.",
-        "Malformed HTML attributes in readouts_html: cleaned up data-unit attributes that contained nested span tags and escaped quotes."
-      ]
-    },
-    {
-      "sim_id": "u00320",
-      "status": "FIXED",
-      "time": "23:11:12",
-      "issues": [
-        "Misaligned observation table columns: 5th column recorded thermal voltage VT (mV) instead of Log10 collector current log10(IC)",
-        "Unwired action buttons: 'Execute SMU Gummel Sweep' (#btn_run_sweep) and 'Extract Ideality Factor & Beta' (#btn_extract_parameters) had no click event listeners",
-        "Unwired stepper buttons: Stepper up and down buttons (.stepper-btn-up, .stepper-btn-down) were missing click event listeners in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u00321",
-      "status": "FIXED",
-      "time": "23:11:23",
-      "issues": [
-        "Fixed telemetry readout element selectors to target val_reading_ic, val_reading_vce, val_reading_vge, and val_reading_gfs so live values update properly",
-        "Corrected observation table row structure from 7 misaligned columns to the 5 columns specified in the header (V_GE, V_in, I_C, V_CE, g_fs)",
-        "Wired up stepper up/down buttons (▲/▼) for all numerical control inputs",
-        "Wired up Auto-Trace Characteristic Curve action button (btn_trace_curve) to perform automated parameter sweeps",
-        "Enhanced visibility of dark voltmeter return lead on #090d16 canvas by adding high-contrast outline"
-      ]
-    },
-    {
-      "sim_id": "u00324",
-      "status": "FIXED",
-      "time": "23:11:42",
-      "issues": [
-        "Inaccurate physics equation in principles_list_html: the fraction terms for diode forward bias voltage drop and feedback factor were inverted as (1 + beta) / (1 - VD/Vsat) instead of (1 + VD/Vsat) / (1 - beta).",
-        "Misaligned observation table columns: btnRecord appended 8 mismatched cells including serial numbers and individual feedback resistors, missing Observed Pulse Width and Percentage Error columns required by the 6-column thead.",
-        "Unwired control and action buttons: Apply Trigger Pulse (#btn_trigger_pulse), Toggle Continuous Triggering (#btn_continuous_trigger), and stepper up/down buttons (.stepper-btn) had no click event listeners.",
-        "Misaligned Style 2 leader line badge numbers: canvas badges 1 through 7 were assigned to wrong targets compared to the legend pills (e.g. Breadboard was assigned badge 7 instead of 1, IC 741 was assigned badge 1 instead of 2).",
-        "Low contrast ground wire: power supply ground wire was drawn in #1e293b, blending invisibly into the dark #090d16 canvas floor."
-      ]
-    },
-    {
-      "sim_id": "u00323",
-      "status": "FIXED",
-      "time": "23:12:02",
-      "issues": [
-        "Live telemetry readouts failed to update: updateTelemetry looked for element IDs 'reading_vbe', 'reading_vcb', 'reading_ie', 'reading_ic' instead of the rendered DOM IDs 'val_reading_vbe', 'val_reading_vcb', 'val_reading_ie', 'val_reading_ic'.",
-        "Observation table column misalignment: btnRecord inserted 7 columns with an unheadered serial number, inverted VCB and IE positions, and omitted the Current Gain Alpha column; re-aligned recorded rows to match the 7 observation_thead_html headers (Rh1, Rh2, VBE, VCB, IE, IC, Alpha) exactly.",
-        "Unwired custom action buttons: wired #btn_lock_vcb ('Lock VCB for Input Characteristic Sweep') and #btn_lock_ie ('Lock IE for Output Characteristic Sweep') to establish constant bias conditions and trigger circuit synchronization.",
-        "Unwired stepper arrow buttons: attached click event listeners to .stepper-btn-up and .stepper-btn-down to increment and decrement resistance inputs within [1.0, 100.0] bounds.",
-        "Unwired top panel and playback controls: wired #btnReset to restore default resistances (Rh1 = 20.0 Ω, Rh2 = 50.0 Ω) and clear the observation table, and #experimentSelect to synchronize characteristic mode sweep biases.",
-        "Canvas text legibility: updated sub-9px meter graduations (8px), meter titles (8px), and TO-18 transistor markings (6px-7px) to >= 9px typography per Q25."
-      ]
-    },
     {
       "sim_id": "u00322",
       "status": "FIXED",
@@ -494,6 +435,65 @@
         "Observation table rows generated in JS had 8 columns in mismatched order (including extraneous clay content and spring force columns) instead of matching the 7 columns defined in observation_thead_html.",
         "Action buttons ('btn_press_tester' - Engage Indenter Probe and 'btn_ram_mould' - Execute Ramming Stroke) and stepper increment/decrement buttons (.stepper-btn) were unwired without event listeners in canvas_js."
       ]
+    },
+    {
+      "sim_id": "u00379",
+      "status": "FIXED",
+      "time": "23:28:33",
+      "issues": [
+        "Misaligned observation table columns: canvas_js inserted 7 <td> cells into observation table rows while observation_thead_html only defines 6 columns, displacing Buffer Occupancy with Guard Mode text.",
+        "Unwired action buttons: 'btn_exploit_payload' (Inject Hijack Payload) and 'btn_apply_strncpy_fix' (Apply strncpy Bounds Check) had no event listeners in canvas_js.",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' controls were unhandled in canvas_js.",
+        "Readout and table unit consistency: updated live readouts and observation rows from shorthand 'B' to 'bytes' to match the principles and slots schema."
+      ]
+    },
+    {
+      "sim_id": "u00375",
+      "status": "FIXED",
+      "time": "23:28:34",
+      "issues": [
+        "Misaligned observation table columns: canvas_js inserted 7 <td> cells with unlisted runCount and mass columns, misaligning data with the 5 columns specified in observation_thead_html.",
+        "Unwired action buttons: '#btn_toggle_motor' ('Toggle Spindle Motor') and '#btn_auto_zero' ('Auto-Zero Spring Sensor') lacked event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper buttons ('.stepper-btn-up', '.stepper-btn-down') were not bound to increment/decrement their respective target input values.",
+        "Motor state uncoupled from physical simulation: Spindle rotation, fluid swirl, and torque deflection continued unconditionally regardless of motor power state."
+      ]
+    },
+    {
+      "sim_id": "u00369",
+      "status": "FIXED",
+      "time": "23:28:34",
+      "issues": [
+        "Unwired action button btn_run_full_trace in canvas_js",
+        "Unwired top-panel controls (btnToggle pause/run and btnStep) in animation loop",
+        "Misaligned observation table: btnRecord appended 8 mismatched columns into a 5-column table",
+        "Missing action button for Procedure Step 4 (Step Next Branch Instruction)",
+        "Input boundary clamping missing in resetEngine to guard against NaN/out-of-range inputs",
+        "Sub-9px canvas text fonts upgraded to >= 9px for high-contrast legibility"
+      ]
+    },
+    {
+      "sim_id": "u00373",
+      "status": "FIXED",
+      "time": "23:28:34",
+      "issues": [
+        "Broken nested MathML fraction in apparatus specification for major load capacities",
+        "Raw unrendered LaTeX notation 'HR_avg' in live readouts heading",
+        "Unwired action buttons 'btn_apply_minor_load' and 'btn_release_major_load' in canvas_js",
+        "Unwired stepper up/down buttons '.stepper-btn' in canvas_js",
+        "Misaligned observation table row data columns relative to table headers"
+      ]
+    },
+    {
+      "sim_id": "u00380",
+      "status": "FIXED",
+      "time": "23:29:38",
+      "issues": [
+        "Corrupted MathML in principles_summary_html where standard 'I/O' was rendered as a fraction (I over O)",
+        "Unwired action buttons: #btn_inject_format_string and #btn_auto_match_specifiers had no event listeners in canvas_js",
+        "Unwired stepper controls: .stepper-btn elements lacked click handlers to increment/decrement input values",
+        "Misaligned observation table row insertion: generated 7 mismatched columns instead of the 5 defined in observation_thead_html",
+        "Badges 2 and 3 had zero horizontal curvature (vertical straight lines) and leader distances shorter than the minLeader requirement"
+      ]
     }
   ],
   "completed_ids": [
@@ -785,7 +785,12 @@
     "u00366",
     "u00367",
     "u00368",
+    "u00369",
     "u00370",
-    "u00372"
+    "u00372",
+    "u00373",
+    "u00375",
+    "u00379",
+    "u00380"
   ]
 }
