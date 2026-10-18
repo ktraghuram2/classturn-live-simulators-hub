@@ -1,73 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 03:15:25",
-  "completed_count": 785,
-  "fixed_count": 785,
-  "latest_sim_id": "u00954",
+  "updated_at": "2026-10-19 03:17:20",
+  "completed_count": 790,
+  "fixed_count": 790,
+  "latest_sim_id": "u00942",
   "recent_events": [
-    {
-      "sim_id": "u00897",
-      "status": "FIXED",
-      "time": "03:00:34",
-      "issues": [
-        "Observation table column misalignment: observation_thead_html defined 5 columns (Survey Position x, Soil Permittivity ε_r, Wave Velocity v, Two-Way Travel Time t, Computed Utility Depth d_calc), but btnRecord generated 7 misaligned columns containing pipeDepth and frequency and omitted computed utility depth d_calc.",
-        "Unwired Section 05 action button: '#btn_traverse_scan' (Auto-Traverse Survey Transect) was present in controls but had no click event handler in canvas_js.",
-        "Unwired stepper controls: Precision up/down buttons ('.stepper-btn-up', '.stepper-btn-down') lacked event handlers in canvas_js to increment and decrement Survey Cart Position, Soil Permittivity, Buried Utility Depth, and Antenna Center Frequency.",
-        "Unwired top-level and playback controls: '#btnToggle' (Pause/Run), '#btnStep' (Discrete Step), '#experimentSelect' (Experiment Mode Switch), and '#btnReset' lacked event handlers in canvas_js to control playback, advance survey steps, switch presets, or reset apparatus and radargram traces.",
-        "Missing canvas pointer lock: Canvas element lacked pointerEvents = 'none' to enforce the ClassTurn locked layout immutability standard.",
-        "Destructive telemetry updates: canvas_js targeted readout container elements with textContent = ... wiping out headings and nested MathML units; replaced with setTelemetryField targeting inner value span and preserving unit markup.",
-        "Inaccurate physics equation for two-way travel time: hypotDist omitted factor of 4 on horizontal offset dx² (2-way travel path 2·√(dx²+d²)), causing unrealistic travel times when cart is offset from target apex.",
-        "Nested span tags in data-unit attributes: Readout items in readouts_html contained raw '<span data-source-paths=...>' markup inside data-unit attributes rather than clean plain strings ('m/ns', 'ns', '', 'm').",
-        "Unclosed HTML tags in principles_list_html: The principles list equation symbols section was missing closing </ul>, </div>, and </li> tags."
-      ]
-    },
-    {
-      "sim_id": "u00904",
-      "status": "FIXED",
-      "time": "03:01:10",
-      "issues": [
-        "Action buttons ('btn_insert_key', 'btn_search_key', 'btn_delete_key') and stepper buttons ('.stepper-btn') were not wired to event listeners.",
-        "Observation table recording was misaligned with the 6 headers in observation_thead_html (it rendered 5 columns starting with trial count instead of key, index, previous slot, current slot, collision flag, and load factor).",
-        "Missing previous slot occupant tracking for observation table entries."
-      ]
-    },
-    {
-      "sim_id": "u00903",
-      "status": "FIXED",
-      "time": "03:01:25",
-      "issues": [
-        "Unwired action buttons: 'btn_toggle_trace' and 'btn_align_midstroke' were not wired in canvas_js",
-        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' controls lacked click handlers",
-        "Misaligned observation table: record row generated 9 columns with mismatched parameters instead of the 6 columns defined in observation_thead_html"
-      ]
-    },
-    {
-      "sim_id": "u00901",
-      "status": "FIXED",
-      "time": "03:01:30",
-      "issues": [
-        "Wired unhandled 'Continuous Kinematic Sweep' action button (#btn_sweep_cycle) to toggle automated bidirectional angular sweeping across [-90 deg, +90 deg]",
-        "Wired unhandled stepper increment/decrement buttons (.stepper-btn) to adjust control inputs within allowed range and step limits",
-        "Corrected observation table column misalignment in #btnRecord where 7 columns with misplaced values were inserted instead of matching the 5 thead headers (Crank Angle, Crank Length, Intermediate Span, Vertical Displacement, Straightness Deviation)",
-        "Fixed broken kinematic triangle closure calculation in canvas_js where distOQ was checked against |rO - rQ| rather than intermediate span le, causing vertex A to freeze at fallback coordinates",
-        "Aligned antiparallelogram vertices using exact reflectional symmetry across the half-angle axis and directly coupled stylus carriage to link BC"
-      ]
-    },
-    {
-      "sim_id": "u00899",
-      "status": "FIXED",
-      "time": "03:01:39",
-      "issues": [
-        "Observation table column misalignment: observation_thead_html specified 6 columns (Pulse Energy, Processing Phase S, Material Name, Affected Volume, Affected Radius, Volumetric Energy Density), but btnRecord generated columns in reverse order starting with Material Name, Pulse Energy, and Stage, displacing the observation headers.",
-        "Unwired Section 05 action button: '#btn_fire_pulse' ('Trigger Single Laser Pulse') had no event listener or functional implementation in canvas_js.",
-        "Unwired stepper controls: Precision up/down stepper buttons ('.stepper-btn-up', '.stepper-btn-down') lacked click event handlers in canvas_js to increment and decrement Laser Pulse Energy, Processing Phase State, and Workpiece Material.",
-        "Unwired top-level and playback controls: Playback buttons ('#btnToggle', '#btnStep', '#btnReset') and experiment mode dropdown ('#experimentSelect') lacked event listeners in canvas_js to control simulation loop execution, step forward, toggle presets, or clear observation records.",
-        "Missing canvas pointer lock: Canvas element lacked pointerEvents = 'none' to enforce the ClassTurn locked layout immutability standard.",
-        "Destructive telemetry updates: canvas_js directly overwrote element innerText, wiping out nested MathML unit elements; replaced with setTelemetryField to safely update the numeric value while preserving unit markup.",
-        "Nested HTML markup in data-unit attributes: Readout items in readouts_html contained raw '<span data-source-paths=...>' markup inside data-unit attributes instead of clean plain-text strings ('mm³', 'mm', 'J/mm³').",
-        "Unclosed HTML tags in principles_list_html: The principles list equation symbols container was missing closing </ul>, </div>, and </li> tags."
-      ]
-    },
     {
       "sim_id": "u00902",
       "status": "FIXED",
@@ -520,6 +457,67 @@
         "Observation table row generation omitted the Trial Number column, resulting in 8 columns instead of 9 and causing all observation values to be misaligned with headers.",
         "Action button 'btn_compute_integral' was not wired to execute integration or record observations.",
         "Stepper up and down buttons (.stepper-btn-up, .stepper-btn-down) for interval multipliers n and m were not wired to update input values and trigger calculations."
+      ]
+    },
+    {
+      "sim_id": "u00955",
+      "status": "FIXED",
+      "time": "03:16:07",
+      "issues": [
+        "Misaligned observation table columns: Logged row prepended an unheaded rowIdx and omitted the Total Grid Nodes (N_pts) count, shifting all numerical values out of alignment with the 8-column table header.",
+        "Unwired action button: 'Execute Quadrature Traversal Sweep' (#btn_execute_quadrature) was defined in HTML but had no click event listener wired in canvas_js.",
+        "Unwired stepper buttons: Stepper up and down buttons (.stepper-btn-up, .stepper-btn-down) were present in steppers_html but lacked click event listeners in canvas_js.",
+        "Unwired experiment preset selector: #experimentSelect dropdown was not wired to update division multipliers (n, m) between base and refined mesh experiments.",
+        "Typo in title_plain: 'Simpson's 38 Rule' missing fraction slash, corrected to 'Simpson's 3/8 Rule'."
+      ]
+    },
+    {
+      "sim_id": "u00953",
+      "status": "FIXED",
+      "time": "03:16:16",
+      "issues": [
+        "Fixed raw LaTeX \\psi symbol corruption in apparatus_html slot, restoring standard engineering pressure unit '3-15 psi'",
+        "Replaced mathematical fraction representation \\frac{I}{O} with standard 'I/O' notation in apparatus_html",
+        "Fixed telemetry readout DOM element ID targeting in canvas_js (updated from 'reading_*' to 'val_reading_*' so live current, voltage, stem position, and compliance scores update dynamically)",
+        "Corrected observation table column alignment in canvas_js to match all 7 columns in the table header (added missing I/O Classification and formatted Validation Status)",
+        "Wired unhandled action buttons ('btn_validate_tag', 'btn_auto_calibrate_loop') and stepper controls ('stepper-btn') for interactive tag validation and one-click loop calibration"
+      ]
+    },
+    {
+      "sim_id": "u00937",
+      "status": "FIXED",
+      "time": "03:16:33",
+      "issues": [
+        "Observation table columns in record button handler were misaligned with observation_thead_html and included an extraneous trial counter column.",
+        "Action buttons #btn_recompute_frame and #btn_center_roi had no event listeners wired in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u00958",
+      "status": "FIXED",
+      "time": "03:16:41",
+      "issues": [
+        "Observation table column misalignment: recorded rows previously inserted 10 cells (including rowCount and curvature k) for 9 table headers while omitting I_exact, shifting all data columns out of alignment.",
+        "Unwired action buttons: 'btn_sample_gauss_nodes' and 'btn_overlay_analytical_area' lacked event listeners and interactive behaviors.",
+        "Unwired stepper controls: Stepper buttons had no click handlers to increment or decrement control inputs.",
+        "Experiment mode decoupling: The experiment selector was ignored, preventing higher-degree polynomial error analysis in mode 1.",
+        "Missing CRT screen clipping: Curve strokes and trapezoid fills overflowed the CRT monitor boundary at higher limits."
+      ]
+    },
+    {
+      "sim_id": "u00942",
+      "status": "FIXED",
+      "time": "03:17:19",
+      "issues": [
+        "Observation table column misalignment: observation_thead_html defined 7 columns (Empty Cylinder Weight W1, Cylinder + Aggregate Weight W2, Initial Aggregate Mass W2 - W1, Applied Peak Load, Crushed Fines Mass W3, Aggregate Crushing Value ACV, Pavement Suitability Verdict), but canvas_js logged only 6 misaligned columns with an unheaded leading Trial # count while omitting Initial Aggregate Mass and Pavement Suitability Verdict.",
+        "Unwired Section 05 action buttons: '#btn_apply_crushing_load' (Run Hydraulic Load Cycle) and '#btn_sieve_fines' (Sieve Crushed Fines through 2.36 mm) were defined in actions_html but completely unhandled in canvas_js.",
+        "Unwired stepper controls: Custom stepper buttons ('.stepper-btn-up', '.stepper-btn-down') lacked click listeners in canvas_js to increment and decrement peak compressive load, coarse aggregate weight, and tamping strokes per layer.",
+        "Unwired top-level and playback controls: '#btnToggle' (Pause/Run), '#btnStep' (Single Step), '#experimentSelect' (Experiment Mode Switch), and '#btnReset' lacked event listeners in canvas_js to control animation playback, advance procedure steps, or reset parameters and observation history.",
+        "Missing canvas pointer lock: simCanvas lacked pointerEvents = 'none' to enforce the ClassTurn locked layout immutability rule disabling direct canvas mouse interactions.",
+        "Malformed data-unit attributes in readouts_html: Live readout elements contained raw nested <span> tags with data-source-paths inside their data-unit HTML attributes instead of clean unit strings ('g', 'tonnes', '%').",
+        "Unclosed HTML container in principles_list_html: Equation 0 symbols list was truncated without closing </ul>, </div>, and </li> tags.",
+        "Telemetry readout formatting: updateTelemetry set textContent directly on telemetry elements wiping out nested MathML unit elements; replaced with setTelemetryField updating the inner value span while preserving unit markup."
       ]
     }
   ],
@@ -1297,10 +1295,12 @@
     "u00931",
     "u00933",
     "u00936",
+    "u00937",
     "u00938",
     "u00939",
     "u00940",
     "u00941",
+    "u00942",
     "u00945",
     "u00946",
     "u00947",
@@ -1308,6 +1308,9 @@
     "u00949",
     "u00950",
     "u00952",
-    "u00954"
+    "u00953",
+    "u00954",
+    "u00955",
+    "u00958"
   ]
 }
