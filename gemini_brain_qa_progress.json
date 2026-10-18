@@ -1,9 +1,9 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 19:58:11",
-  "completed_count": 15,
-  "fixed_count": 15,
-  "latest_sim_id": "u00006",
+  "updated_at": "2026-10-18 20:03:44",
+  "completed_count": 20,
+  "fixed_count": 20,
+  "latest_sim_id": "u00032",
   "recent_events": [
     {
       "sim_id": "u00003",
@@ -158,6 +158,65 @@
         "Misaligned Observation Table: Observation recorder (btnRecord) injected 8 <td> elements (including extraneous ${state.W_weight}) into a 7-column table, misaligning rows with observation_thead_html headers.",
         "Unwired Experiment Mode: Added change listener for experimentSelect / expSelect to synchronize P with generated parity Y when operating in mode 0 (Generator verification)."
       ]
+    },
+    {
+      "sim_id": "u00010",
+      "status": "FIXED",
+      "time": "20:00:07",
+      "issues": [
+        "Unwired stepper increment/decrement buttons (.stepper-btn ▲/▼) across all 8 control inputs.",
+        "Unwired action buttons: 'btn_cycle_axis' (Cycle Rotation Axis) and 'btn_apply_identity' (Set Identity Transformation Matrix).",
+        "Misaligned observation table: btnRecord inserted 7 table cells with record count in the Rotation Axis column into a 6-column header table.",
+        "Inaccurate physics/math: Rotation matrix and transformed mesh vertices were hardcoded strictly for Z-axis rotation, ignoring axis switching.",
+        "Inaccurate physics/math: Matrix trace tr(M) was hardcoded to sx + sy + sz + 1.0 instead of true matrix trace m00 + m11 + m22 + 1.0 which varies with rotation angle."
+      ]
+    },
+    {
+      "sim_id": "u00034",
+      "status": "FIXED",
+      "time": "20:01:40",
+      "issues": [
+        "Misaligned observation table columns: row innerHTML appended 10 columns (including extraneous trial number, current, and validity) instead of the 8 columns defined in observation_thead_html, and omitted illuminated LED index Ln",
+        "Unwired action button: Inject Invalid BCD Nibble (id='btn_inject_invalid') was missing an event listener in canvas_js",
+        "Unwired stepper buttons: input stepper up/down buttons (.stepper-btn) had no click handlers to adjust binary switch values",
+        "Address bus jumper wire pin mapping: wires mapped to IC leads 16-13 instead of inputs A0-A3 at pins 15-12"
+      ]
+    },
+    {
+      "sim_id": "u00037",
+      "status": "FIXED",
+      "time": "20:01:47",
+      "issues": [
+        "Swapped canvas callout Badges 3 and 4 to correctly align Badge 3 with Path Cost Accumulator and Badge 4 with Visited Closed-Set Exploration Tracker matching Section 02 Apparatus and Legend Pills",
+        "Wired custom action button #btn_run_complete, stepper arrow buttons (.stepper-btn), reset button (#btnReset), top controls (#btnToggle, #btnStep), and #experimentSelect dropdown",
+        "Formatted observation table recording column 3 to display frontier queue state elements rather than duplicate node count",
+        "Rectified raw ASCII/LaTeX complexity formula and inequalities in Section 07 Validation and limits to standard semantic MathML",
+        "Corrected default readout value of optimal path cost to 6.0 units for the primary 4 to 0 traversal"
+      ]
+    },
+    {
+      "sim_id": "u00036",
+      "status": "FIXED",
+      "time": "20:02:33",
+      "issues": [
+        "Unwired top panel controls: Pause/Run (#btnToggle) and Step (#btnStep) had no event listeners attached in canvas_js, and animation loop ran continuously without pause support (Q06, Q07)",
+        "Unwired custom action buttons: 'Expand Next SMA* Node' (#btn_step_sma) and 'Auto-Run to Goal' (#btn_auto_solve) had no event listeners in canvas_js (Q14, Q27)",
+        "Unwired stepper increment/decrement buttons: Stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) were not wired to update target input values (Q15)",
+        "Unwired experiment mode selector: #experimentSelect was not connected to switch between Activity 1 (constrained memory) and Activity 2 (unbounded optimality verification) (Q08)",
+        "Unwired observation playback notebook: #btnRecord and #btnReset had no handlers; implemented 7-column observation recording aligned with observation_thead_html and reset function (Q18)",
+        "Destroyed MathML units in telemetry readouts: updateTelemetryDOM used el2.innerText = val which wiped the inline MathML unit inside .readout-val elements; updated to target value span preserving MathML (Q16, Q31)",
+        "Unclosed tags and missing equation in principles_list_html: Section 03 was missing closing tags for list and inner elements and lacked Equation 2 (Ancestor Backup Equation) required by Q11",
+        "Raw inequalities in validation_html: Replaced raw text comparison operators (<=, >=) with valid inline MathML in Section 07 (Q17)"
+      ]
+    },
+    {
+      "sim_id": "u00032",
+      "status": "FIXED",
+      "time": "20:03:44",
+      "issues": [
+        "Unwired stepper buttons: The stepper increment and decrement buttons (.stepper-btn, .stepper-btn-up, .stepper-btn-down) for the BCD word and bit inputs A, B, C, D were unhandled in JavaScript, preventing stepper click adjustments.",
+        "Misaligned observation table columns: The record button handler generated only 5 table cells with combined bit strings and an unmapped row index, misaligning against the 13 columns defined in observation_thead_html (Decimal Value N10, Inputs A-D, Segments a-g, and Active Segments S7)."
+      ]
     }
   ],
   "completed_ids": [
@@ -167,6 +226,7 @@
     "u00005",
     "u00008",
     "u00009",
+    "u00010",
     "u00014",
     "u00015",
     "u00017",
@@ -174,7 +234,11 @@
     "u00022",
     "u00023",
     "u00028",
+    "u00032",
     "u00033",
+    "u00034",
+    "u00036",
+    "u00037",
     "u00038"
   ]
 }
