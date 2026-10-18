@@ -1,71 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 21:08:41",
-  "completed_count": 110,
-  "fixed_count": 110,
-  "latest_sim_id": "u00151",
+  "updated_at": "2026-10-18 21:15:45",
+  "completed_count": 115,
+  "fixed_count": 115,
+  "latest_sim_id": "u00148",
   "recent_events": [
-    {
-      "sim_id": "u00101",
-      "status": "FIXED",
-      "time": "20:42:05",
-      "issues": [
-        "Observation table columns misaligned: btnRecord inserted 5 columns instead of the 4 columns defined in observation_thead_html (Execution Step, Active Line Number, Loop Counter i, Accumulator fact)",
-        "Unwired Start Execution action button (btn_start_exec) in canvas_js",
-        "Unwired stepper increment/decrement buttons (.stepper-btn) in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u00099",
-      "status": "FIXED",
-      "time": "20:42:13",
-      "issues": [
-        "Misaligned observation table columns: #btnRecord inserted 8 mismatched columns (with extra pressure, etchDepth cells and out-of-order parameters) into a 6-column thead, causing table column overflow and misalignment (Q18).",
-        "Unwired custom action buttons: 'Rotate Specimen 90°' (#btn_rotate_sample) and 'Apply Chemical Etchant' (#btn_apply_etchant) had no click event listeners attached in canvas_js (Q14).",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked event handlers to increment or decrement parameter inputs (Q15).",
-        "Unwired top panel controls: Pause/Run (#btnToggle), Step (#btnStep), Reset (#btnReset), and Mode selector (#experimentSelect) were unhandled in canvas_js (Q06, Q07, Q08, Q18).",
-        "Destruction of MathML units in live readings: setReadingText directly assigned textContent to .readout-val, destroying nested MathML unit elements; updated to mutate only the value text span (Q16, Q31).",
-        "Input bounds clamping: Added [min, max] range clamping in getVal to guard against NaN and division-by-zero on manual typing or extreme values (Q29).",
-        "Dangling container tags: Properly closed unclosed <ul>, <div>, and <li> tags in principles_list_html."
-      ]
-    },
-    {
-      "sim_id": "u00097",
-      "status": "FIXED",
-      "time": "20:42:36",
-      "issues": [
-        "Corrupted unit for Material Removal Rate (m/m³min and \\frac{m}{m^3}min) in principles_list_html, readouts_html, and observation_thead_html",
-        "Observation table columns mismatch in JS: appended 9 misaligned data cells instead of the 7 declared table header columns",
-        "Unwired action buttons: btn_rotate_sample, btn_toggle_stage, and btn_toggle_coolant were completely inactive in canvas_js",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons lacked event handlers in canvas_js",
-        "Specimen arm remained fixed on grinding platen during polishing mode, badge 4 anchor line did not track mode shift, and coolant state had no effect on rendering or interface temperature physics"
-      ]
-    },
-    {
-      "sim_id": "u00102",
-      "status": "FIXED",
-      "time": "20:44:37",
-      "issues": [
-        "DOM telemetry readout element selectors in canvas_js did not match HTML slot IDs (val_reading_*), leaving DOM telemetry static and un-updated.",
-        "Section 05 actions_html only defined a single button with mismatched ID (btn_start_exec) and lacked the Next Step and Reset action buttons defined in apparatus.",
-        "DOM stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js.",
-        "Interactive canvas hitboxes for Start, Next, Reset buttons and potentiometer dials were offset from rendered coordinates.",
-        "No telemetry data was being appended to the observation table upon completing range execution.",
-        "Experiment options dropdown contained generic physics boilerplate ('Verification of Law') instead of computer science primality tracing concepts."
-      ]
-    },
-    {
-      "sim_id": "u00114",
-      "status": "FIXED",
-      "time": "20:45:11",
-      "issues": [
-        "Wired stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) with click event listeners to increment and decrement input values and trigger synchronization.",
-        "Wired action buttons: btn_toggle_mode to cycle between SE, BSE, and EDS imaging modes and btn_autofocus_stigmator to automatically align focus and probe spot size.",
-        "Corrected observation table row alignment in btnRecord by removing extra secondary electron yield cell so that the 8 recorded data columns match the 8 table headers in observation_thead_html.",
-        "Added on-canvas active imaging mode HUD banner providing clear visual feedback during mode switching.",
-        "Enhanced contrast of the rear vacuum chamber outline bezel against the dark #090d16 background."
-      ]
-    },
     {
       "sim_id": "u00103",
       "status": "FIXED",
@@ -511,6 +450,66 @@
         "Action buttons (btn_load_alpha_epoch, btn_load_beta_epoch, btn_compute_psd) lacked event listeners",
         "Stepper increment and decrement buttons (.stepper-btn) were not wired to update target inputs and dispatch input/change events"
       ]
+    },
+    {
+      "sim_id": "u00152",
+      "status": "FIXED",
+      "time": "21:12:28",
+      "issues": [
+        "Observation table columns were completely misaligned (10 columns generated for a 7-column header table with extra and mismatched columns)",
+        "Action buttons (btn_toggle_eye_state and btn_trigger_event) were not wired to any event handlers in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) were not wired to input controls in canvas_js",
+        "Alpha rhythm desynchronization upon eye opening was not implemented across EEG traces, spectrogram, topographic overlay, and telemetry"
+      ]
+    },
+    {
+      "sim_id": "u00158",
+      "status": "FIXED",
+      "time": "21:13:45",
+      "issues": [
+        "Observation table recorder (btnRecord) inserted 6 misaligned columns with an extra row counter, failing to match the 7 columns defined in observation_thead_html.",
+        "Section 05 action buttons (btn_compute_dft, btn_cycle_window, btn_detect_formants) and experimentSelect dropdown lacked event listeners in canvas_js.",
+        "Window weighting calculation did not treat alpha <= 0.05 as Rectangular window as specified in the control stepper label."
+      ]
+    },
+    {
+      "sim_id": "u00155",
+      "status": "FIXED",
+      "time": "21:14:29",
+      "issues": [
+        "Telemetry DOM element ID mismatch: updateTelemetry and btnRecord looked for element IDs without the 'val_' prefix ('reading_pred_gain', etc.) whereas readouts_html defined them as 'val_reading_pred_gain', causing telemetry to not update and table recordings to output '--'.",
+        "Observation table column count mismatch: btnRecord inserted 8 columns (including trial index and tw duration) whereas observation_thead_html defines exactly 6 columns, causing data-header misalignment.",
+        "Unwired action buttons: 'btn_toggle_utterance' and 'btn_auto_optimal_order' were defined in HTML but had no click event listeners attached in canvas_js.",
+        "Unwired stepper controls: .stepper-btn increment/decrement buttons were not wired to update input fields and trigger change events.",
+        "Canvas toggle switch click hitbox misalignment: The canvas click event listener checked my in [180, 240], whereas the selector box and switch are positioned at y=210-285 (center y=254).",
+        "Zero-value falsy fallback bug in getControls: 'parseFloat(alphaInput.value) || 0.95' prevented setting alpha to 0.0 (bypass mode) because 0 is falsy in JavaScript.",
+        "Text label collision on oscilloscope bezel: Full title string and multiple right-aligned legends overlapped on the narrow 228px CRT bezel header."
+      ]
+    },
+    {
+      "sim_id": "u00142",
+      "status": "FIXED",
+      "time": "21:14:53",
+      "issues": [
+        "Corrected raw LaTeX syntax '(S_1S_0 = 00)' in principles_list_html to '(S1S0 = 00)'.",
+        "Corrected improper fraction rendering for IC 7483/74283 in apparatus_html specification.",
+        "Fixed misaligned observation table columns by replacing the 9-cell output row with the exact 7 columns (A0, B0, C0, S1, S0, Y, Cout) defined in observation_thead_html.",
+        "Wired action button #btn_cycle_select to cycle through the four ALU operation modes (00 ADD, 01 AND, 10 OR, 11 XOR).",
+        "Wired stepper increment and decrement buttons (.stepper-btn) and integrated the experiment options selector.",
+        "Enhanced contrast of inactive interconnect wires and unselected logic gate borders on dark #090d16 canvas."
+      ]
+    },
+    {
+      "sim_id": "u00148",
+      "status": "FIXED",
+      "time": "21:15:45",
+      "issues": [
+        "Observation table columns were misaligned: JS appended 9 data cells (including extra cutoff and suppression fields) for a 7-column header that expected sideband mode and modulated frequency.",
+        "Telemetry element IDs in JS queried 'reading_*' instead of 'val_reading_*', causing null references and preventing live DOM readouts from updating.",
+        "Action buttons ('btn_toggle_sideband', 'btn_sync_carrier') and stepper up/down buttons were unattached in JS, making the UI interactive controls non-functional.",
+        "Modulator was hardcoded to USB only, lacking dynamic LSB waveform rendering, carrier phase lock mechanics, and interactive sideband mode switching.",
+        "Badge leader lines 1 and 3 slightly exceeded the max leader threshold (81.4px vs 80px) and were adjusted to 72.1px."
+      ]
     }
   ],
   "completed_ids": [
@@ -620,9 +619,14 @@
     "u00139",
     "u00140",
     "u00141",
+    "u00142",
     "u00145",
     "u00146",
+    "u00148",
     "u00149",
-    "u00151"
+    "u00151",
+    "u00152",
+    "u00155",
+    "u00158"
   ]
 }
