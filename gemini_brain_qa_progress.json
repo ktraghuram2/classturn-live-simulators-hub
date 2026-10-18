@@ -1,71 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 00:41:39",
-  "completed_count": 410,
-  "fixed_count": 410,
-  "latest_sim_id": "u00507",
+  "updated_at": "2026-10-19 00:42:37",
+  "completed_count": 415,
+  "fixed_count": 415,
+  "latest_sim_id": "u00512",
   "recent_events": [
-    {
-      "sim_id": "u00469",
-      "status": "FIXED",
-      "time": "00:23:13",
-      "issues": [
-        "Unwired action buttons: btn_switch_sample, btn_heat_fix, btn_apply_stain, and btn_oil_immersion had no event listeners attached.",
-        "Unwired stepper buttons: .stepper-btn buttons for coarse/fine focus, objective selector, and stain exposure were not wired to increment or decrement their corresponding input controls.",
-        "Misaligned observation table columns: btnRecord inserted 6 columns with index and misaligned metrics instead of the 7 columns defined in observation_thead_html (Specimen Sample, Objective Lens, Total Magnification, Staining Duration, Focal Blur Radius, Cell Morphology, Cell Arrangement).",
-        "Sample switching unsupported: Slide specimen label was hardcoded to 'S.AUR' and bacteria rendering lacked dynamic morphology for Bacillus subtilis rods vs Staphylococcus aureus coccal clusters.",
-        "Microscope oil immersion optics: 100x lens numerical aperture (NA) was hardcoded to 1.25 without checking whether immersion oil had been applied."
-      ]
-    },
-    {
-      "sim_id": "u00471",
-      "status": "FIXED",
-      "time": "00:24:12",
-      "issues": [
-        "Unwired stepper increment/decrement buttons (▲/▼) across all control inputs.",
-        "Unwired action buttons ('Roll Flask to Release Entrapped Air' and 'Immerse in Constant Temperature Bath').",
-        "DOM element selector mismatch in updateTelemetryDOM (looked for 'reading_*' instead of 'val_reading_*'), preventing live readout updates.",
-        "Misaligned observation table columns and missing fields (6 data cells inserted with leading trial counter against 7 table headers: W_cem, W2, V1, V2, V_disp, M_k, G)."
-      ]
-    },
-    {
-      "sim_id": "u00455",
-      "status": "FIXED",
-      "time": "00:24:21",
-      "issues": [
-        "Misaligned observation table row logging: btnRecord generated 9 disordered columns with an un-headed diffusion coefficient Dn, conflicting with the 8-column header structure in observation_thead_html.",
-        "Unwired custom action buttons in canvas_js: 'Inject Photo-Carrier Pulse' (#btn_pulse_laser) and 'Reverse Field Polarity' (#btn_reverse_field_polarity) lacked event listeners.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to dynamically increment and decrement parameter inputs within bounded ranges.",
-        "Unwired top-panel controls: #btnToggle (Pause/Run), #btnStep (Single Step), #btnReset (Reset to Defaults), and #experimentSelect lacked interactive event handlers in canvas_js.",
-        "Telemetry unit destruction: updateTelemetry previously targeted val_reading_* with el.textContent directly, destroying nested MathML unit elements; updated to preserve unit spans.",
-        "Cleaned raw embedded HTML span markup from data-unit attributes in readouts_html and corrected distorted MathML units (fraction V/c*m to V/cm, c/m²*s to cm²/s, and A/c*m² to A/cm²).",
-        "Corrected distorted machine-parsed MathML units and missing symbols across observation_thead_html and steppers_html.",
-        "Low contrast ground lead: Elevated dark #1e293b power supply negative wire stroke to #64748b against the #090d16 canvas floor for high visibility.",
-        "Canvas typography legibility (Q25): Upgraded sub-9px text (7px and 8px) on electrometer buttons, knob indicators, and probe labels to 9px."
-      ]
-    },
-    {
-      "sim_id": "u00472",
-      "status": "FIXED",
-      "time": "00:24:42",
-      "issues": [
-        "Observation table record button (btnRecord) omitted the Dry Sample Mass (Ws) column, causing all subsequent mass readings (W1, W2, W3, W4, WL, G) to misalign across the 8 table headers.",
-        "Action buttons btn_evacuate_air ('Apply Vacuum & Agitate to Evacuate Entrapped Air') and btn_tare_balance ('Zero / Tare Digital Balance') were defined in HTML but unwired in canvas_js.",
-        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js.",
-        "Experiment mode selector (Water for soil solids vs. Kerosene for cement) was unwired to update displacing fluid and mineral gravity parameters."
-      ]
-    },
-    {
-      "sim_id": "u00438",
-      "status": "FIXED",
-      "time": "00:24:47",
-      "issues": [
-        "Observation table column count mismatch: btnRecord inserted 11 cells (including R, L, E, and eta) into tbody, whereas observation_thead_html has only 7 columns (Firing Angle, Peak Voltage, V0, I0, Vrms, Pdc, RF), causing severe table misalignment.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) and input listeners were not bound to click or change handlers, making steppers non-functional.",
-        "Unwired action buttons: btn_toggle_pulses (Trigger Gate Firing Pulses) and btn_inversion_preset (Set Inversion Mode α = 120°) were defined in HTML but had no click event handlers wired in canvas_js.",
-        "Readout DOM text replacement: updateTelemetry directly overwrote valEl.textContent, stripping the nested MathML unit elements from live readout spans."
-      ]
-    },
     {
       "sim_id": "u00475",
       "status": "FIXED",
@@ -494,6 +433,67 @@
         "Observation table column mismatch: recorded row only generated 7 shifted cells instead of aligning with the 12 columns defined in the table header",
         "Missing 3D quad surface shading and low-contrast grid outlines on dark #090d16 canvas"
       ]
+    },
+    {
+      "sim_id": "u00506",
+      "status": "FIXED",
+      "time": "00:41:46",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted 6 columns while observation_thead_html expects 10 columns (b, d, x1, y1, D1, Type1, x2, y2, D2, Type2)",
+        "Unwired action buttons: btn_locate_extrema ('Auto-Locate Critical Points') and btn_project_hessian_contours ('Project Osculating Paraboloid') had no event listeners",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) for control_b and control_d had no click listeners attached",
+        "Tangent plane calculation bug: Slope offsets used subtraction instead of addition (z = z0 + J1*dx + J2*dy), resulting in inverted tangent plane tilt relative to surface gradient",
+        "Procedure step 4 formula typesetting error: Corrupted quadratic exponent in characteristic equation"
+      ]
+    },
+    {
+      "sim_id": "u00498",
+      "status": "FIXED",
+      "time": "00:41:46",
+      "issues": [
+        "Unwired interactive action buttons ('btn_snap_knee', 'btn_toggle_diode') and stepper up/down buttons in canvas_js",
+        "Mismatched badge numbers in canvas_js compared to apparatus legend pills (badge indices were scrambled across apparatus elements)",
+        "Misaligned observation table columns caused by missing '#' header in observation_thead_html relative to the 7 table row cells",
+        "Inaccurate physics formula in procedure step 10 for dynamic reverse resistance (malformed MathML fraction: r_z = Delta (V_Z / Delta) I_Z instead of r_z = Delta V_Z / Delta I_Z)",
+        "Low-contrast black/negative lead wires drawn in #1e293b blending into the dark #090d16 canvas background; upgraded to high-contrast #475569"
+      ]
+    },
+    {
+      "sim_id": "u00508",
+      "status": "FIXED",
+      "time": "00:42:17",
+      "issues": [
+        "Unwired action buttons: neither 'btn_release_hammer' nor 'btn_toggle_material' were bound to event handlers in canvas_js",
+        "Missing specimen material state and toggle logic: simulator aims to evaluate Mild Steel vs Cast Iron, but lacked material toggling and brittle fracture energy physics for Cast Iron",
+        "Unwired stepper buttons: clicking up/down stepper buttons did not change input values because .stepper-btn click listeners were absent",
+        "Observation table column misalignment: recordObservation() injected 7 mismatched columns under 8 table headers, leaving ak missing and data misaligned",
+        "Leader line badge mismatch: canvas badges 2, 3, 4, 5 did not match legend pills (Pill 2 is Hammer, Pill 3 is Anvil, Pill 4 is Specimen, Pill 5 is Dial)",
+        "Corrupted MathML units: (J/c)m² in readouts_html and observation_thead_html corrected to J/cm², and malformed striking velocity range in validation_html corrected"
+      ]
+    },
+    {
+      "sim_id": "u00509",
+      "status": "FIXED",
+      "time": "00:42:18",
+      "issues": [
+        "Unwired action buttons: 'btn_release_hammer' and 'btn_free_swing' in actions_html were not wired in canvas_js to release the pendulum or run tare calibration.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn) and input change/input events on 'speed' and 'notch_depth' were not wired to update values and live telemetry readouts.",
+        "Misaligned observation table columns: recordObservation() injected notch depth into the Friction Loss column, shifting subsequent energy readings and omitting the specimen cross-sectional area column.",
+        "Inverted dial drag pointer physics: dragPointerAngle mapped directly to pendulum displacement angle instead of absorbed energy transit loss, causing inverted and pegged energy readings on the graduated energy dial.",
+        "Missing Free Swing Calibration logic: Free swing mode was not handled, failed to omit the specimen, and did not measure tare friction loss (2.0 J).",
+        "Spurious MathML tags around prose text: Erroneous MathML variable tags around the English indefinite article 'A' in principles_summary_html replaced with plain text."
+      ]
+    },
+    {
+      "sim_id": "u00512",
+      "status": "FIXED",
+      "time": "00:42:37",
+      "issues": [
+        "Wired action buttons ('Dispense Titrant Drops', 'Swirl Conical Flask', and 'Titrate to Equivalence Point') and reset button in canvas_js",
+        "Wired stepper up/down buttons to properly increment and decrement input values",
+        "Aligned observation table recorded row data with all 7 headers in observation_thead_html (Trial, Sample Volume, Sample Normality, Initial Reading, Final Reading, Volume Added, Chloride Concentration)",
+        "Added 50.0 ml burette capacity boundary check to prevent dispensing beyond capacity"
+      ]
     }
   ],
   "completed_ids": [
@@ -899,6 +899,7 @@
     "u00495",
     "u00496",
     "u00497",
+    "u00498",
     "u00499",
     "u00500",
     "u00501",
@@ -906,6 +907,10 @@
     "u00503",
     "u00504",
     "u00505",
-    "u00507"
+    "u00506",
+    "u00507",
+    "u00508",
+    "u00509",
+    "u00512"
   ]
 }
