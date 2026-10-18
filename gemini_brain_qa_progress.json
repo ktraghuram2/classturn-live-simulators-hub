@@ -1,70 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 22:50:40",
-  "completed_count": 225,
-  "fixed_count": 225,
-  "latest_sim_id": "u00283",
+  "updated_at": "2026-10-18 22:54:49",
+  "completed_count": 230,
+  "fixed_count": 230,
+  "latest_sim_id": "u00285",
   "recent_events": [
-    {
-      "sim_id": "u00231",
-      "status": "FIXED",
-      "time": "22:26:01",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 7 mismatched cells (including an unheadered trial index and unheadered Vout) instead of the 6 defined observation columns (Inductance L, Capacitance C, Equivalent Capacitance Ceq, Waveform Time Period T, Measured Frequency f_meas, and Theoretical Frequency f_theo).",
-        "Unwired Section 05 action button: 'Auto-Trigger CRO Timebase' (#btn_autotune_cro) was present in DOM but had no click event listener wired in canvas_js.",
-        "Unwired stepper controls: .stepper-btn increment and decrement buttons (▲/▼) lacked click handlers in canvas_js to adjust inductance and capacitance with step and range clamping.",
-        "Unwired top-panel and playback controls: Pause/Run toggle (#btnToggle), single-frame Step (#btnStep), experiment activity selector (#experimentSelect), and 'Reset to Defaults' (#btnReset) had no event listeners in canvas_js.",
-        "Telemetry update wiping unit markup: setTelemetryValue assigned textContent directly to .readout-val elements, destroying internal MathML unit spans.",
-        "Input boundary clamping: Guarded against invalid, negative, or NaN input values for L and C to prevent division-by-zero and NaN propagation.",
-        "Apparatus legend pills order mismatch: Reordered legend_pills_html to establish 1-to-1 correspondence with apparatus_html and canvas numbered badges 1 to 6."
-      ]
-    },
-    {
-      "sim_id": "u00189",
-      "status": "FIXED",
-      "time": "22:27:30",
-      "issues": [
-        "Wired precision stepper buttons (.stepper-btn-up, .stepper-btn-down) to increment/decrement input values with clamping",
-        "Wired custom action buttons (btn_precipitate_centrifuge, btn_dialyze_elute) to trigger physical centrifuge/elution states and step highlights",
-        "Fixed observation table misalignment by removing rowCount prepend to match 8-column header 1-to-1",
-        "Updated Reset to Defaults (btnReset) to clear observation table records",
-        "Wired top panel controls (#btnToggle Pause/Run, #btnStep frame/stage advance, and #experimentSelect activity presets)"
-      ]
-    },
-    {
-      "sim_id": "u00239",
-      "status": "FIXED",
-      "time": "22:28:10",
-      "issues": [
-        "Unwired action buttons: 'Auto-Titrate to Redox Endpoint' (#btn_auto_titrate) and 'Execute Reagent Blank Titration' (#btn_run_blank) had no click event listeners attached.",
-        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn) were missing event listeners to update numeric inputs.",
-        "Misaligned observation table: btnRecord generated 9 columns into an observation table whose thead defines exactly 6 columns, causing misaligned column headers and horizontal overflow.",
-        "Corrupted MathML redox couple in principles_summary_html: Fe3+/Fe2+ was incorrectly rendered as a fraction."
-      ]
-    },
-    {
-      "sim_id": "u00243",
-      "status": "FIXED",
-      "time": "22:28:58",
-      "issues": [
-        "Unwired Action Buttons: action_trigger_collection and action_tare_scale had no listeners attached; canvas_js looked for non-existent btnRecord and recordBtn IDs.",
-        "Unwired Stepper Buttons: .stepper-btn (up/down) buttons lacked event handlers to increment or decrement control inputs.",
-        "Misaligned Observation Table Columns: canvas_js generated 10 <td> elements with extra density and tube diameter values, causing a misalignment against the 8 <th> columns in observation_thead_html.",
-        "Readout Unit Destruction: setDom set full textContent on readout values, erasing their inline MathML unit spans.",
-        "Electronic Balance Tare Display: The digital balance display on the canvas was static and did not update upon tare action."
-      ]
-    },
-    {
-      "sim_id": "u00242",
-      "status": "FIXED",
-      "time": "22:29:06",
-      "issues": [
-        "Unwired action buttons: Replaced non-existent btnStart/btnRun with direct click event listeners for btn_draw_liquid (trigger aspiration) and btn_release_and_time (release meniscus & measure flow time).",
-        "Unwired stepper buttons: Added click event listeners for .stepper-btn (.stepper-btn-up and .stepper-btn-down) to dynamically increment/decrement stepper values according to step size and dispatch input events.",
-        "Telemetry readout IDs: Added updates targeting the actual HTML element IDs (val_reading_flow_time, val_reading_solvent_time, val_reading_relative_viscosity, val_reading_specific_viscosity, val_reading_reduced_viscosity, val_reading_inherent_viscosity) so live readings update reactively on control changes.",
-        "Misaligned observation table columns: Corrected btnRecord innerHTML from 10 columns with rowCount/T/t0 to exactly match the 7 observation_thead_html columns (Solvent Medium, Polymer Concentration, Efflux Flow Time, Relative Viscosity, Specific Viscosity, Reduced Viscosity, Inherent Viscosity)."
-      ]
-    },
     {
       "sim_id": "u00246",
       "status": "FIXED",
@@ -501,6 +441,66 @@
         "updateTelemetry directly assigned textContent to the readout elements, destroying the MathML unit markup.",
         "principles_summary_html had the introductory English article 'A' incorrectly wrapped in inline MathML (<math><mrow><mi>A</mi></mrow></math>), displaying it as an italicized mathematical symbol."
       ]
+    },
+    {
+      "sim_id": "u00282",
+      "status": "FIXED",
+      "time": "22:51:45",
+      "issues": [
+        "Corrected inverted/malformed volumetric flow rate units (/m³s -> m³/s) in principles_list_html, readouts_html, and observation_thead_html.",
+        "Fixed invalid HTML caused by raw <span> tag inside data-unit attribute in readouts_html.",
+        "Realigned observation table rows in canvas_js to match the 7 canonical columns of observation_thead_html in proper order.",
+        "Corrected canvas numbered badge assignments (1 to 7) to align with legend pills (1: Centrifugal Pump, 2: Bypass Valve, 3: Main Control Valve, 4: Rotameter, 5: Venturimeter, 6: CCl4 Manometer, 7: Hg Manometer).",
+        "Wired action buttons ('Purge Manometer Air Lines' and 'Auto-Align to Standard Operating Flow') and stepper up/down buttons (▲/▼) in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u00279",
+      "status": "FIXED",
+      "time": "22:51:57",
+      "issues": [
+        "Corrupted MathML formula in Step 4 of procedure_section_html (rendered as sin(θ1)/sin(θ2) instead of the proper refractive index ratio quotient)",
+        "Observation table columns on Record click were severely misaligned with the 8-column header (inserted n1 and n2 into refraction angle and sin θ1 slots, shifted subsequent values, and omitted column 8)",
+        "Unwired action buttons: btn_toggle_laser ('Toggle Laser Beam Output') and btn_invert_media ('Invert Media Refractive Indices') had no click listeners in canvas_js",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down controls for incidence angle, medium 1 & 2 refractive indices, and wavelength lacked click handlers"
+      ]
+    },
+    {
+      "sim_id": "u00288",
+      "status": "FIXED",
+      "time": "22:54:05",
+      "issues": [
+        "Unwired custom stepper up/down buttons (.stepper-btn) in Canvas JS preventing user interaction with control steppers.",
+        "Unwired action buttons ('btn_purge_air' and 'btn_timed_collection') lacking click event listener handlers.",
+        "Telemetry readout ID mismatch: compiled HTML uses 'val_reading_*' while Canvas JS updateTelemetry targeted 'val_*' and 'reading_*', preventing UI telemetry updates.",
+        "Observation table column mismatch: JS recorder inserted 9 columns out of order including unlisted parameters, whereas observation_thead_html defines exactly 7 columns.",
+        "Missing legend pill for component 6 ('Digital Stopwatch & Sump Pump Unit') in legend_pills_html despite being rendered on canvas with badge 6."
+      ]
+    },
+    {
+      "sim_id": "u00284",
+      "status": "FIXED",
+      "time": "22:54:32",
+      "issues": [
+        "Corrected arithmetic conversion factor in headA and headB calculations from * 100.0 to * 10.0 (10,000 N/m² per N/cm² divided by rho*g 9810 N/m³ yields 10/9.81, not 100/9.81).",
+        "Aligned observation table recorded row cells with the 7 columns in observation_thead_html by removing the unheadered index and flow rate cells.",
+        "Wired action button 'btn_purge_air' to provide tactile purge feedback and calibrate manometer taps.",
+        "Wired stepper up/down buttons (.stepper-btn) to increment and decrement input values and trigger physics updates.",
+        "Fixed broken MathML in steppers_html and observation_thead_html where N/cm² was malformed as N/c m².",
+        "Corrected volumetric discharge unit formatting in readouts_html from '/m³s' to 'm³/s'."
+      ]
+    },
+    {
+      "sim_id": "u00285",
+      "status": "FIXED",
+      "time": "22:54:49",
+      "issues": [
+        "Corrected malformed MathML and unit formatting in readouts_html: fixed '/m³s' to 'm³/s' and replaced broken 'li(t/s)' fraction MathML with 'lit/s'.",
+        "Corrected observation_thead_html: added missing symbol L to Total Pipe Length header, fixed '/m³s' to 'm³/s', and replaced 'li(t/s)' fraction MathML with 'lit/s'.",
+        "Fixed severe observation table column misalignment in canvas_js: removed rogue obsCount and v2 columns, added Q_ms, and aligned the 8 data cells directly with observation_thead_html columns.",
+        "Wired unhandled action buttons (btn_toggle_parallel, btn_prime_network, and experimentSelect) and stepper buttons (.stepper-btn) in canvas_js.",
+        "Synchronized parallel pipe branch fluid flow animation and valve V2 visual state to toggle dynamically when parallel branch is activated or isolated."
+      ]
     }
   ],
   "completed_ids": [
@@ -728,6 +728,11 @@
     "u00275",
     "u00277",
     "u00278",
-    "u00283"
+    "u00279",
+    "u00282",
+    "u00283",
+    "u00284",
+    "u00285",
+    "u00288"
   ]
 }
