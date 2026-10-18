@@ -1,74 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 22:48:50",
-  "completed_count": 220,
-  "fixed_count": 220,
-  "latest_sim_id": "u00271",
+  "updated_at": "2026-10-18 22:50:40",
+  "completed_count": 225,
+  "fixed_count": 225,
+  "latest_sim_id": "u00283",
   "recent_events": [
-    {
-      "sim_id": "u00234",
-      "status": "FIXED",
-      "time": "22:24:02",
-      "issues": [
-        "Observation table recording was missing the Plastic Limit (PL) column, writing only 6 cells for 7 headers and shifting Plasticity Index into the Plastic Limit slot.",
-        "Unwired action buttons: 'btn_mix_soil', 'btn_cut_groove', and 'btn_rotate_cup' lacked event listeners in canvas_js.",
-        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' lacked event listeners in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u00232",
-      "status": "FIXED",
-      "time": "22:24:52",
-      "issues": [
-        "Unwired stepper up and down buttons for tank capacitance, effective inductance, and supply voltage",
-        "Unwired action buttons: Toggle DC Power Switch (btn_toggle_power) and Auto-Set CRO Timebase & Scale (btn_auto_scale_cro)",
-        "Misaligned observation table: 8 row cells generated for 6 headers, causing values to appear under mismatched column headers",
-        "DC power toggle state was not integrated into physics calculations, CRO trace, tank pulses, or telemetry",
-        "Unclosed tags in principles_list_html"
-      ]
-    },
-    {
-      "sim_id": "u00228",
-      "status": "FIXED",
-      "time": "22:24:57",
-      "issues": [
-        "Mismatched title: Corrected title from '555 Timer Monostable Multivibrator' to '555 Timer Astable Multivibrator' to accurately represent the dual-resistor free-running astable multivibrator circuit.",
-        "Unwired action buttons: Attached click listeners to #power_on_off (Power On/Off) and #btn_apply_trigger (Trigger/Sync pulse) in canvas_js.",
-        "Unwired stepper controls: Wired .stepper-btn-up and .stepper-btn-down controls in canvas_js to increment and decrement resistance RA within the valid [1.0, 9.0] kΩ range.",
-        "Unwired Reset button: Attached click listener to #btnReset to restore RA to 1.0 kΩ, re-enable power, reset oscilloscope sweep, and clear observation table rows.",
-        "Misaligned observation table columns: Added missing leading '#' column header in observation_thead_html so all 6 columns match the 6 table cells recorded by btnRecord.",
-        "Inaccurate readout and observation labels: Corrected 'Time constant' to 'Oscillation period (T)' and abbreviated 'Freq' to 'Frequency (f)' across readouts and table headers.",
-        "Fraction formatting errors in procedure steps: Fixed Pins 6/2 and 2/6 which had been formatted as arithmetic fractions (6/2 and 2/6) instead of discrete IC pin connections.",
-        "Unclosed tags and missing equations in principles list: Expanded principles_list_html to include complete equations for Pulse Width, Duty Cycle, and Frequency with valid MathML and properly closed HTML tags."
-      ]
-    },
-    {
-      "sim_id": "u00233",
-      "status": "FIXED",
-      "time": "22:25:07",
-      "issues": [
-        "Unwired action buttons: btn_cut_groove, btn_crank_cam, and btn_mix_paste had no event listeners attached.",
-        "Unwired stepper controls: .stepper-btn up and down buttons were missing click handlers.",
-        "Telemetry element ID mismatch: updateTelemetry queried reading_* IDs instead of val_reading_*, leaving readout displays frozen.",
-        "Apparatus badges mismatch: canvas only drew 4 badges that mismatched the 7 apparatus legend pills.",
-        "Missing apparatus component: Digital Impact Counter (Pill 6) was absent from the Casagrande chassis.",
-        "Broken unit formatting in steppers_html: crank speed unit contained malformed MathML re\\frac{v}{s} instead of rev/s.",
-        "Missing observation logging: completed groove closures were not recorded to the observation table."
-      ]
-    },
-    {
-      "sim_id": "u00204",
-      "status": "FIXED",
-      "time": "22:25:27",
-      "issues": [
-        "Unwired action buttons: Connected #btn_release_vibration to displace and release the beam, and #btn_zero_displacement to settle the system to static equilibrium.",
-        "Disabled direct canvas dragging and touch listeners to enforce the ClassTurn canvas mouse interaction lock specification.",
-        "Unwired stepper controls: Wired .stepper-btn-up and .stepper-btn-down click handlers to increment and decrement stepper inputs.",
-        "Unwired experiment selector: Wired #experimentSelect to apply parameter presets for the 3 vibration experiment modes.",
-        "Observation table column alignment: Wired #btnRecord to log the exact 8 defined columns in observation_thead_html without an unmapped trial index offset.",
-        "Wired #btnReset to restore default input parameters, settle vibration to equilibrium, and clear the observation table."
-      ]
-    },
     {
       "sim_id": "u00231",
       "status": "FIXED",
@@ -504,6 +440,67 @@
         "Completed truncated principles_list_html equations and closed dangling tags",
         "Added bounds and NaN guards to stepper input parsing"
       ]
+    },
+    {
+      "sim_id": "u00277",
+      "status": "FIXED",
+      "time": "22:48:59",
+      "issues": [
+        "Unclosed HTML tags in principles_list_html: The equation symbols container and outer equation item lacked closing </ul>, </div>, and </li> tags.",
+        "Unwired custom action buttons in canvas_js: Action buttons '#btn_run_pass' ('Execute Full Iteration Pass') and '#btn_detect_cycle' ('Check Negative Cycle') lacked click event listeners.",
+        "Unwired stepper controls in canvas_js: Up and down arrow buttons ('.stepper-btn-up', '.stepper-btn-down') lacked click handlers to increment and decrement input values.",
+        "Unwired top-panel controls in canvas_js: Pause/Run toggle ('#btnToggle'), step button ('#btnStep'), and experiment selector ('#experimentSelect') had no event handlers attached.",
+        "Observation table column misalignment in canvas_js: Record Observation appended 6 mismatched <td> cells into a 5-column header (inserting vertex count into node ID, source node into distance, and overflowing a 6th column).",
+        "Canvas direct mouse interaction lock violation: Mouse and touch drag event listeners were attached to the canvas, violating the ClassTurn Rule 7 interaction lock.",
+        "Reset button state restoration: '#btnReset' failed to reset input boxes to default values, did not reset toggle state, and did not clear the observation table."
+      ]
+    },
+    {
+      "sim_id": "u00273",
+      "status": "FIXED",
+      "time": "22:49:07",
+      "issues": [
+        "Fixed C/C++ fraction rendering artifact where 'C/C' was parsed as a fraction in apparatus, procedure, and validation slots",
+        "Removed duplicated fraction MathML in observation table fourth column header",
+        "Corrected Perfection Index Ratio symbol from sigma_1 N/N to sigma_1(N)/N in live readings",
+        "Removed extraneous MathML markup wrapping the English indefinite article 'a' in apparatus and principles text",
+        "Wired 'Compile & Verify Code Blanks' action button with interactive execution status telemetry",
+        "Wired 'Record Observation' button in canvas JS to capture synchronized observation table rows matching all 6 header columns"
+      ]
+    },
+    {
+      "sim_id": "u00275",
+      "status": "FIXED",
+      "time": "22:50:01",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted only 7 cells without the leading Trial # (n) column, causing all measurements to shift left and leaving Bedrock Status blank; aligned table row generation to exactly 8 columns with trial indexing.",
+        "Unwired stepper controls: up and down stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners in canvas_js to adjust spacing, current, depth, and resistivity inputs.",
+        "Unwired action button: 'Drive Electrodes & Inject Current' (#btn_hammer_electrodes) lacked an event listener; wired it to trigger current streamline excitation, transient particle acceleration, and record observation.",
+        "Unwired top-panel controls: Pause/Run (#btnToggle), Step (#btnStep), Reset (#btnReset), and Activity selection (#experimentSelect) were not wired in canvas_js.",
+        "Telemetry unit destruction: updateTelemetryField previously overwrote el.textContent directly, wiping out nested MathML unit elements; updated to target numeric value spans preserving native MathML.",
+        "Prose MathML artifacts: corrected apparatus_html fraction rendering '12 V/24 V' and cleaned English indefinite article 'a' improperly tagged with <math> tags in aim_html and apparatus_html."
+      ]
+    },
+    {
+      "sim_id": "u00278",
+      "status": "FIXED",
+      "time": "22:50:32",
+      "issues": [
+        "Unwired action button: #btn_solve_full ('Auto-Complete Shortest Paths') had no click event listener wired in canvas_js to solve the graph.",
+        "Misaligned observation table columns: missing dedicated #btnRecord click listener in canvas_js caused generic fallback to inject mismatched telemetry instead of the 7 defined columns in #observationThead."
+      ]
+    },
+    {
+      "sim_id": "u00283",
+      "status": "FIXED",
+      "time": "22:50:40",
+      "issues": [
+        "Observation table columns in canvas_js were completely misaligned with observation_thead_html (inserted an unneeded serial number column, shifted physical readings into wrong columns, and omitted Discharge Volume and Collection Time while writing dynamic pressure).",
+        "Action buttons btn_collect_tank ('Start Timed Tank Collection') and btn_traverse_center ('Center Probe at Mid-Stream') in actions_html were not wired up in canvas_js.",
+        "Custom stepper up/down buttons (.stepper-btn) for probe vertical position and flow rate were not wired up to handle clicks.",
+        "updateTelemetry directly assigned textContent to the readout elements, destroying the MathML unit markup.",
+        "principles_summary_html had the introductory English article 'A' incorrectly wrapped in inline MathML (<math><mrow><mi>A</mi></mrow></math>), displaying it as an italicized mathematical symbol."
+      ]
     }
   ],
   "completed_ids": [
@@ -726,6 +723,11 @@
     "u00269",
     "u00271",
     "u00272",
-    "u00274"
+    "u00273",
+    "u00274",
+    "u00275",
+    "u00277",
+    "u00278",
+    "u00283"
   ]
 }
