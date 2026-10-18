@@ -1,77 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 20:48:07",
-  "completed_count": 80,
-  "fixed_count": 80,
-  "latest_sim_id": "u00121",
+  "updated_at": "2026-10-18 20:50:09",
+  "completed_count": 85,
+  "fixed_count": 85,
+  "latest_sim_id": "u00123",
   "recent_events": [
-    {
-      "sim_id": "u00059",
-      "status": "FIXED",
-      "time": "20:20:10",
-      "issues": [
-        "Telemetry readout IDs in canvas_js (val_vo, val_fc, val_af, val_mag_db, val_phase) did not match the compiled HTML readout IDs (val_reading_vo, val_reading_fc, val_reading_af, val_reading_mag_db, val_reading_phase), causing live telemetry displays to remain frozen.",
-        "Observation table recording script inserted 11 columns of data into tbody, whereas observation_thead_html defines only 6 columns (Frequency, Vin, Vo, Gain Ratio, AdB, Phase Shift), causing column misalignment.",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners in canvas_js to update input values.",
-        "Auto-Tune cutoff frequency action button (#btn_tune_cutoff) had no click event listener wired to calculate and set the -3 dB cutoff frequency."
-      ]
-    },
-    {
-      "sim_id": "u00071",
-      "status": "FIXED",
-      "time": "20:22:33",
-      "issues": [
-        "Fixed misaligned observation table columns in btnRecord: removed extra row index, dynamic power, and supply voltage cells to strictly match the 7 defined table headers (A, B, Cin, Sum, Cout, Σ, tpd).",
-        "Wired up unwired action buttons: btn_toggle_architecture (switches between Half Adder and Full Adder), btn_synthesize_netlist (triggers RTL synthesis status state), and btn_cycle_vectors (steps through all binary truth table vectors).",
-        "Wired up all stepper increment and decrement buttons (.stepper-btn) to smoothly adjust numeric inputs and trigger reactive change events.",
-        "Corrected Verilog HDL terminal display and circuit simulation logic to support both Half Adder (default per Step 1) and Full Adder architectures.",
-        "Added direct canvas click interactivity on the SPDT switch bank to allow toggling input bit stimuli with the mouse.",
-        "Fixed malformed MathML fraction in apparatus_html for the switch bank voltage specification from '(0 V/3.3 V)' to '(0 – 3.3 V)'."
-      ]
-    },
-    {
-      "sim_id": "u00060",
-      "status": "FIXED",
-      "time": "20:23:01",
-      "issues": [
-        "Corrected title, header, and aim from 'Active Band Pass Filter' to 'Active Low Pass Filter' to match first-order RC low-pass op-amp circuit, equations, and telemetry (Q02, Q09)",
-        "Fixed observation table logging in btnRecord: aligned the 6 recorded <td> columns with observation_thead_html, included passband gain Af, and eliminated extraneous trial number and cut-off frequency cells (Q18)",
-        "Wired custom action buttons: Auto-Tune Frequency to -3 dB Cut-Off (#btn_tune_cutoff) and Trigger Logarithmic Decade Sweep (#btn_decade_sweep) (Q14, Q27)",
-        "Wired stepper up and down buttons (.stepper-btn-up, .stepper-btn-down) and added input clamping [min, max, step] to prevent NaN/out-of-bounds inputs (Q15, Q29)",
-        "Fixed live readouts update by targeting 'val_' element IDs and preserving unit formatting across all 5 telemetry items (Q16, Q28)",
-        "Wired Reset to Defaults (#btnReset) to restore input controls, readouts, sweep state, and clear observation table (Q18)",
-        "Wired Pause/Run (#btnToggle) and Step (#btnStep) controls for simulation animation control (Q06, Q07)",
-        "Wired experiment selector (#experimentSelect) to synchronize presets for Primary, Passband Gain Tuning, and RC Scaling activities (Q08)",
-        "Corrected breadboard DC power rail bezier curves to terminate cleanly on IC 741 supply pins rather than flying 175px outside the board (Q19, Q20)"
-      ]
-    },
-    {
-      "sim_id": "u00073",
-      "status": "FIXED",
-      "time": "20:24:16",
-      "issues": [
-        "Misaligned observation table columns in btnRecord: 7 misordered columns recorded instead of the 8 columns defined in observation_thead_html (Gain K, Re(s1), Im(s1), Re(s2), Im(s2), zeta, omega_n, sigma_A)",
-        "Unwired action buttons in canvas_js: btn_auto_sweep_gain ('Auto-Sweep Gain Trajectory') and btn_find_breakaway ('Snap to Breakaway / Critical Point')",
-        "Unwired stepper up/down buttons (.stepper-btn) and experiment mode selector in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u00067",
-      "status": "FIXED",
-      "time": "20:24:16",
-      "issues": [
-        "Corrected title and header from 'Full Adder' to 'Half Adder' to accurately match the 2-input XOR-AND logic circuit without carry-in stage (Q02)",
-        "Completed truncated principles_list_html by closing unclosed HTML tags and restoring Equation 2 (Carry Boolean Function) and Equation 3 (Positional Weighted Relation) in semantic MathML (Q11)",
-        "Disabled direct canvas mouse click listener on #simCanvas to comply with locked canvas interaction rules (Q22)",
-        "Wired custom action button 'Cycle Truth Table Permutations' (#btn_cycle_inputs) to cycle through all 4 binary states (Q14, Q27)",
-        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) across all binary input controls (Q15)",
-        "Wired top panel Pause/Run (#btnToggle) and Step (#btnStep) controls with procedure step highlighting (Q06, Q07)",
-        "Wired Reset to Defaults button (#btnReset) to restore input controls and clear observation rows (Q18)",
-        "Wired experiment mode selector dropdown (#experimentSelect) to synchronize activity switching (Q08)",
-        "Preserved native MathML unit markup in live telemetry readouts by updating only the value child node instead of overwriting textContent (Q16, Q31)",
-        "Added boundary clamping on inputs to prevent out-of-range or non-binary values (Q29)"
-      ]
-    },
     {
       "sim_id": "u00039",
       "status": "FIXED",
@@ -508,6 +441,72 @@
         "Misaligned observation table columns: Table row insertion placed nugget diameter (dw) under the Peak Power Density column and power density (Ip) under the Weld Nugget Diameter column",
         "Malformed MathML power density unit: Power density unit rendered as (W/m)m² instead of W/mm² across principles, live readouts, and observation table headers"
       ]
+    },
+    {
+      "sim_id": "u00093",
+      "status": "FIXED",
+      "time": "20:48:30",
+      "issues": [
+        "Mismatched title: updated title_plain and header_title_html from 'Polarography' to canonical 'Electrogravimetric Estimation of Metals' to accurately describe the electrodeposition experiment and match the subject eyebrow (Q02).",
+        "Cleaned chemical reaction notation in principles_summary_html: replaced raw ASCII/LaTeX reaction strings (e^- -> M(s) and 2 H2O -> O2 + 4 H^+ + 4 e^-) with valid inline MathML (Q11).",
+        "Corrected corrupted MathML fractions in principles_list_html units: replaced malformed fractions (\\frac{g}{e}q, \\frac{g}{m}ol, \\frac{C}{m}ol) with clean 'g/eq', 'g/mol', 'C/mol', and simplified 'dimensionless' (Q11, Q31).",
+        "Misaligned observation table columns: #btnRecord previously appended only 8 cells for a 9-column thead by omitting Initial Cathode Mass (W0 = 10.00 g), shifting subsequent columns; added the missing W0 cell to achieve exact 1-to-1 alignment with observation_thead_html (Q18).",
+        "Unwired custom action buttons: added event listeners in canvas_js for 'Start Electrolysis Run' (#btn_start_electrolysis) and 'Rinse, Dry, and Weigh Cathode' (#btn_dry_weigh_cathode) (Q14, Q27).",
+        "Unwired stepper ▲ / ▼ buttons: added click event listeners for all .stepper-btn-up and .stepper-btn-down buttons to step inputs within their defined [min, max, step] ranges (Q15).",
+        "Unwired simulation controls: wired #btnToggle (Pause/Run), #btnStep (single frame advance), #experimentSelect (activity preset selection), and #btnReset (restore defaults and clear observations) (Q06, Q07, Q08, Q18).",
+        "Input crash-proofing: added boundary clamping in getVal() to enforce [min, max] and added division-by-zero protection for circuit resistance (Q29).",
+        "Disabled direct canvas mouse interaction via pointerEvents = 'none' to enforce complete control isolation (Q22)."
+      ]
+    },
+    {
+      "sim_id": "u00120",
+      "status": "FIXED",
+      "time": "20:49:28",
+      "issues": [
+        "Misaligned observation table columns: row generator inserted only 7 cells, omitting Linear Heat Input E and Aspect Ratio AR, shifting subsequent values into incorrect column headers.",
+        "Unwired action buttons: 'action_trigger_weld' and 'action_toggle_cross_section' were present in HTML but lacked event listeners in canvas_js.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons lacked click handlers to increment or decrement control inputs.",
+        "Inaccurate Linear Heat Input physics: hardcoded E = (0.35 * P) / v ignored elevated absorption efficiency eta when transitioning into keyhole mode.",
+        "Unwired experiment mode selection: expSelect dropdown lacked change listener to populate conduction vs. keyhole parameter presets."
+      ]
+    },
+    {
+      "sim_id": "u00100",
+      "status": "FIXED",
+      "time": "20:50:05",
+      "issues": [
+        "Corrected mangled MathML fraction unit `grain s/i n^2` in `principles_list_html` to `grains/in²`.",
+        "Fixed observation table misalignment: removed extraneous trial counter and realigned 8 data cells to match the exact 8 columns defined in the observation table header.",
+        "Wired action buttons: added event listeners for `btn_switch_material`, `btn_apply_etchant`, and `btn_auto_focus` to allow cycling non-ferrous alloys, revealing etched microstructures, and auto-focusing the microscope objective.",
+        "Wired stepper buttons: added event listener loop for `.stepper-btn` up/down controls so users can step numerical values with min/max clamping.",
+        "Enhanced apparatus visual contrast: replaced `#090d16` background-matching mount cylinder and specimens with 3D shaded resin styling and dynamic alloy material coloration."
+      ]
+    },
+    {
+      "sim_id": "u00126",
+      "status": "FIXED",
+      "time": "20:50:06",
+      "issues": [
+        "Numbered badges 2, 3, and 4 in canvas_js were mismatched with legend pills (Badge 2 pointed to specimen cube instead of upper platen, Badge 3 pointed to lower ram instead of specimen cube, Badge 4 pointed to upper platen instead of lower ram)",
+        "Observation table columns in canvas_js were misaligned with observation_thead_html (swapped slump and strength, and created 7 columns when the table header only has 6)",
+        "Atlas action buttons (btn_run_compression_test, btn_perform_slump_test) and stepper up/down buttons were unwired in canvas_js",
+        "setDisplay function in canvas_js wiped nested MathML unit elements inside readout values upon telemetry updates",
+        "Procedure Step 3 referenced the slump test station on the left bench when it is positioned at x=725 on the right bench",
+        "Capillary porosity calculation lacked a non-negative floor guard for low water-cement ratios"
+      ]
+    },
+    {
+      "sim_id": "u00123",
+      "status": "FIXED",
+      "time": "20:50:09",
+      "issues": [
+        "Fixed corrupted fraction formatting in principles list where '25 °C / 298 K' and '1500 °C / 1773 K' were converted into fractions C/298 and C/1773.",
+        "Corrected malformed MathML units across apparatus, principles, steppers, readouts, and observation table: specific heat capacity (J/(g·K)), density (g/mm³), net heat input (J/mm), and welding velocity (mm/s).",
+        "Cleaned up broken '°<math><mi>C</mi></math>' fragments into standard '°C' in apparatus, procedure, and live readout data attributes.",
+        "Wired up the primary action button '#btn_ignite_arc' ('Ignite Arc & Start Weld Pass') to reset torch position and trigger a new weld pass.",
+        "Wired up the stepper increment/decrement buttons ('.stepper-btn-up', '.stepper-btn-down') to adjust the welding speed input.",
+        "Added event listener for experiment options select to synchronize welding speed presets (2.0 mm/s and 4.0 mm/s)."
+      ]
     }
   ],
   "completed_ids": [
@@ -578,11 +577,13 @@
     "u00090",
     "u00091",
     "u00092",
+    "u00093",
     "u00095",
     "u00096",
     "u00097",
     "u00098",
     "u00099",
+    "u00100",
     "u00101",
     "u00102",
     "u00103",
@@ -590,6 +591,9 @@
     "u00116",
     "u00117",
     "u00118",
-    "u00121"
+    "u00120",
+    "u00121",
+    "u00123",
+    "u00126"
   ]
 }
