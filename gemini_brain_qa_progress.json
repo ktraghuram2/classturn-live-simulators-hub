@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 23:37:06",
-  "completed_count": 310,
-  "fixed_count": 310,
-  "latest_sim_id": "u00392",
+  "updated_at": "2026-10-18 23:41:08",
+  "completed_count": 315,
+  "fixed_count": 315,
+  "latest_sim_id": "u00400",
   "recent_events": [
-    {
-      "sim_id": "u00340",
-      "status": "FIXED",
-      "time": "23:19:34",
-      "issues": [
-        "Observation table columns were misaligned: an extraneous index column was prepended in the record handler, shifting all data by one column and omitting Capillary State.",
-        "Stepper buttons (.stepper-btn-up and .stepper-btn-down) were unwired in canvas_js, preventing users from stepping activity level, thermal condition, or view mode.",
-        "Action button btn_stimulate_hypothalamus ('Trigger Hypothalamic Feedback Cycle') lacked an event listener in canvas_js.",
-        "Experiment selection dropdown (experimentSelect) was unwired to simulation preset conditions.",
-        "Physiological View Selector (view_mode) had no visual feedback or focus highlights in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u00339",
-      "status": "FIXED",
-      "time": "23:20:15",
-      "issues": [
-        "Unrendered raw LaTeX `|H|_{dB}` in readouts_html replaced with valid MathML.",
-        "Unrendered raw LaTeX `|p|_{max}` in validation_html assumptions and boundary limits replaced with valid MathML.",
-        "Unwired action buttons: 'btn_stabilize_poles' and 'btn_sweep_spectrum' wired with functional logic in canvas_js.",
-        "Unwired stepper increment/decrement buttons (.stepper-btn) and missing input synchronization wired in canvas_js.",
-        "Observation table columns logged by btnRecord were misaligned and had mismatched column count and headers compared to observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u00344",
-      "status": "FIXED",
-      "time": "23:20:36",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 8 columns (including row count and species name) into a 6-column observation table defined by observation_thead_html, causing data displacement.",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons lacked click handlers to modify control inputs.",
-        "Unwired action button: #btn_thermal_equilibrate ('Auto-Equilibrate Cottrell Circulation Loop') was not wired with an event listener.",
-        "Telemetry readout ID mismatch: updateTelemetryDisplays targeted unreferenced IDs instead of the val_reading_* IDs and child data-source-paths spans from readouts_html."
-      ]
-    },
-    {
-      "sim_id": "u00345",
-      "status": "FIXED",
-      "time": "23:21:22",
-      "issues": [
-        "Raw LaTeX symbols 'BMC_{total}' and 'BMC_{reb}' in readouts_html replaced with standard MathML markup.",
-        "Live readout elements in canvas_js referenced missing container IDs instead of val_reading_* IDs, preventing live reading updates.",
-        "Stepper increment/decrement buttons (.stepper-btn) and the action button #btn_optimize_hydraulics were unwired in canvas_js.",
-        "Observation table row generation in canvas_js pushed 8 cells instead of matching the 6 defined observation table header columns."
-      ]
-    },
-    {
-      "sim_id": "u00351",
-      "status": "FIXED",
-      "time": "23:21:45",
-      "issues": [
-        "Fixed principles_summary_html where the English indefinite article 'A' at the start of the overview was improperly formatted as a mathematical variable <math><mrow><mi>A</mi></mrow></math>.",
-        "Corrected observation table row recording in canvas_js: recordBtn was injecting 12 misaligned columns (including record index, address channel, and LED status) into observationTbody instead of exactly 9 columns matching observation_thead_html (Strobe G, S1, S0, I0, I1, I2, I3, Y, Vout).",
-        "Fixed live readouts updateTelemetry in canvas_js: elements were queried using 'reading_*' instead of the rendered slot IDs 'val_reading_*', and inner MathML unit spans were overwritten rather than preserved.",
-        "Wired up/down stepper buttons (.stepper-btn-up, .stepper-btn-down) and input event listeners in canvas_js to allow interactive control changes.",
-        "Wired top panel controls (#btnToggle pause/run, #btnStep procedure stage navigation, #btnReset restoring defaults and clearing observation table, and #experimentSelect for primary/extended experiment modes).",
-        "Disabled direct canvas mouse click listeners on #simCanvas to enforce Q22 and ClassTurn global canvas interaction lock while preserving switch layout coordinates for rendering."
-      ]
-    },
     {
       "sim_id": "u00336",
       "status": "FIXED",
@@ -489,6 +430,70 @@
         "Scrambled and missing leader badges: Badge 1 was drawn pointing to the trainer kit instead of the mounting clamp stand (Pill 1), and Badge 5 was missing.",
         "Initial readout inconsistency: Bridge output voltage static HTML readout showed 2.150 V at zero initial load instead of 0.000 V."
       ]
+    },
+    {
+      "sim_id": "u00391",
+      "status": "FIXED",
+      "time": "23:37:46",
+      "issues": [
+        "Unwired action buttons: '#btn_generate_calendar' (Execute Dynamic Calendar Build) and '#btn_toggle_leap_test' (Test February Leap Year Rollover) lacked event listeners in canvas_js",
+        "Observation table column misalignment: Recorded rows contained 8 columns instead of matching the 7 thead headers, with 'First Day Offset' and 'Days in Month' column positions swapped and an extraneous 'totalCells' column appended",
+        "Incomplete calendar grid rendering: The row rendering loop was hardcoded to 5 rows ('r < 5'), truncating 6-row months (e.g. August 2026) and omitting days 30-31 from the table preview",
+        "Missing dynamic day stepper upper bound: '#stepper_day' max attribute was static instead of clamping to the active month's computed days total (N_days)"
+      ]
+    },
+    {
+      "sim_id": "u00393",
+      "status": "FIXED",
+      "time": "23:39:28",
+      "issues": [
+        "Fixed principles_summary_html where the English indefinite article 'A' at the start of the overview was improperly formatted as a mathematical variable <math><mrow><mi>A</mi></mrow></math>.",
+        "Wired custom action buttons (#btn_zero_bridge for auto-balancing bridge to null and #btn_apply_tare for preload tare calibration) in canvas_js.",
+        "Wired stepper buttons (.stepper-btn-up and .stepper-btn-down) in canvas_js to allow interactive increment/decrement of compressive load and excitation voltage.",
+        "Wired top panel controls (#btnToggle for pause/run, #btnReset for restoring defaults and clearing table, #btnStep for procedure step highlight navigation, and #experimentSelect for activity modes).",
+        "Preserved child MathML unit elements in live telemetry readouts by updating value text nodes rather than wiping out innerHTML.",
+        "Improved contrast of the ground return wire against the dark #090d16 canvas by replacing #1e293b with high-contrast #64748b.",
+        "Synchronized observation table recording to respect active tare offset and use exact stepped parameter values."
+      ]
+    },
+    {
+      "sim_id": "u00381",
+      "status": "FIXED",
+      "time": "23:39:39",
+      "issues": [
+        "Unwired primary action button #btn_run_chunker for executing sequence labeling and Viterbi decoding",
+        "Unwired stepper up/down buttons (.stepper-btn) leaving manual value adjustments non-functional",
+        "Misaligned observation table columns where 8 td cells were appended under 6 defined th column headers",
+        "Telemetry element selector mismatch using reading_* instead of val_reading_* preventing live readouts from updating",
+        "Low-contrast trellis state labels on dark CRT canvas improved from #64748b to #94a3b8"
+      ]
+    },
+    {
+      "sim_id": "u00394",
+      "status": "FIXED",
+      "time": "23:40:08",
+      "issues": [
+        "Fixed principles_summary_html where the English indefinite article 'A' at the start of the overview was improperly formatted as a mathematical variable <math><mrow><mi>A</mi></mrow></math>.",
+        "Cleaned embedded HTML <span> markup from data-unit attributes in readouts_html to maintain valid attribute values.",
+        "Corrected observation table column misalignment in canvas_js: btnRecord was injecting 6 columns (including an extraneous trial count #${observationCount}) into a 5-column table defined by observation_thead_html.",
+        "Fixed live readout updates in updateTelemetryReadouts to target numeric value spans directly, preserving child MathML unit tags from destructive overwrite.",
+        "Wired up/down stepper buttons (.stepper-btn-up, .stepper-btn-down) to increment and decrement control inputs with range bounds and event dispatching.",
+        "Wired custom action button #btn_autozero_bridge ('Auto-Zero Bridge to Null Point') to tare/balance the Wheatstone bridge reading.",
+        "Wired top panel controls (#btnToggle for pause/run, #btnStep for load incrementation, #btnReset for restoring default parameters and clearing observations, and #experimentSelect for test modes)."
+      ]
+    },
+    {
+      "sim_id": "u00400",
+      "status": "FIXED",
+      "time": "23:41:08",
+      "issues": [
+        "Corrected inverted volumetric discharge unit (/m³s -> m³/s) in principles_list_html and readouts_html",
+        "Removed bloated raw HTML MathML strings embedded inside data-unit attributes in readouts_html",
+        "Removed math italic MathML formatting wrapping the English indefinite article 'A' at the beginning of principles_summary_html",
+        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) to dynamically modify control inputs and dispatch simulation recalculations",
+        "Wired 'Auto-Index Point Gauge to Crest Datum' action button (btn_index_point_gauge) to reset head reading to datum crest level",
+        "Realigned observation table recording in canvas_js to match the 7 observation_thead_html columns (Notch Angle, Head over Crest, Piezometer Rise, Collection Duration, Q_th, Q_act, Cd)"
+      ]
     }
   ],
   "completed_ids": [
@@ -791,6 +796,7 @@
     "u00378",
     "u00379",
     "u00380",
+    "u00381",
     "u00382",
     "u00383",
     "u00384",
@@ -800,7 +806,11 @@
     "u00388",
     "u00389",
     "u00390",
+    "u00391",
     "u00392",
-    "u00397"
+    "u00393",
+    "u00394",
+    "u00397",
+    "u00400"
   ]
 }
