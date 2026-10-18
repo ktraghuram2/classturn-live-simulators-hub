@@ -1,66 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 00:42:37",
-  "completed_count": 415,
-  "fixed_count": 415,
-  "latest_sim_id": "u00512",
+  "updated_at": "2026-10-19 00:45:02",
+  "completed_count": 420,
+  "fixed_count": 420,
+  "latest_sim_id": "u00513",
   "recent_events": [
-    {
-      "sim_id": "u00475",
-      "status": "FIXED",
-      "time": "00:26:36",
-      "issues": [
-        "Unwired stepper buttons (.stepper-btn-up and .stepper-btn-down) for numeric input controls",
-        "Unwired action buttons (#btn_run_compression_test to apply hydraulic load and #btn_tare_balance to zero digital balance)",
-        "Observation table column mismatch in recordBtn handler (inserted 8 <td> elements into 6-column table, misaligning headers with data)"
-      ]
-    },
-    {
-      "sim_id": "u00477",
-      "status": "FIXED",
-      "time": "00:26:51",
-      "issues": [
-        "Unwired action buttons: Connected 'Execute Monotonic Loading to Failure' (btn_run_loading_to_failure) and 'Separate Split Halves for Inspection' (btn_separate_split_halves) with automated ramp loading and cleavage separation logic.",
-        "Unwired stepper controls: Added event listeners to .stepper-btn up/down controls with boundary clamping and reactive change event dispatching.",
-        "Broken telemetry readout selectors: Updated reading queries to reference canonical val_reading_* IDs so applied load, peak load, split tensile strength, and strain update reactively.",
-        "Misaligned observation table columns: Corrected record row structure to match the 6 table headers (Specimen ID, Curing Age, Diameter, Length, Failure Load, Split Tensile Strength) instead of 5 misaligned cells.",
-        "Incomplete and misaligned leader line badges: Configured all 7 badges matching the 7 legend pills with Style 2 cubic Bezier S-curves and anchor touch beads, fixing targets for packing strips, lower platen, chassis ram, and console gauge."
-      ]
-    },
-    {
-      "sim_id": "u00473",
-      "status": "FIXED",
-      "time": "00:26:54",
-      "issues": [
-        "Unwired action buttons (btn_tare_balance, btn_equilibrate_bath) and stepper up/down buttons (.stepper-btn-up, .stepper-btn-down)",
-        "Misaligned observation table columns in btnRecord handler where Stage and bath temperature were written into mass columns W1 and W2, and columns for bitumen mass (W3-W1) and displaced water mass were omitted",
-        "Missing volumetric 3D glass shading on pycnometer bottle and low-contrast outlines on dark #090d16 canvas"
-      ]
-    },
-    {
-      "sim_id": "u00468",
-      "status": "FIXED",
-      "time": "00:27:51",
-      "issues": [
-        "Raw LaTeX '200 mV_pp' in Section 07 Validation & Limits converted to clean inline MathML",
-        "Missing '#' / Trial number column in Section 08 Observation Table header causing a 1-column misalignment with recorded rows",
-        "Unwired '#btn_auto_sweep' action button in Section 05 wired to perform automated frequency sweep across decades",
-        "Unwired '#btnReset' button wired to restore all controls and readouts to defaults and clear the observation table",
-        "Wired stepper buttons (▲/▼) and '#experimentSelect' dropdown for direct reactive updates"
-      ]
-    },
-    {
-      "sim_id": "u00476",
-      "status": "FIXED",
-      "time": "00:28:08",
-      "issues": [
-        "Misaligned observation table columns: btnRecord injected fck and L0 while omitting mean deformation, creating 8 cells under 7 thead headers; corrected row to match the 7 observation headers [P, stress, def1, def2, meanDef, strain, Ec]",
-        "Unwired custom action buttons: wired btn_recenter to eliminate dial gauge eccentricity and center the specimen, and wired btn_precondition_cycle to execute IS 516 cyclic preconditioning between sigma_b and sigma_a with live console feedback",
-        "Missing stepper input crash-proofing: guarded applied_load, char_strength, and gauge_length against NaN and out-of-range bounds",
-        "Legend pills order mismatch: swapped pill 2 (Compressometer) and pill 3 (Concrete Specimen) in legend_pills_html to achieve 1-to-1 order parity with Section 02 Apparatus and canvas callout badges 2 and 3",
-        "Unwired experiment mode select: wired experimentSelect change event to cleanly update parameters between standard secant modulus test and grade sensitivity analysis"
-      ]
-    },
     {
       "sim_id": "u00459",
       "status": "FIXED",
@@ -494,6 +438,68 @@
         "Aligned observation table recorded row data with all 7 headers in observation_thead_html (Trial, Sample Volume, Sample Normality, Initial Reading, Final Reading, Volume Added, Chloride Concentration)",
         "Added 50.0 ml burette capacity boundary check to prevent dispensing beyond capacity"
       ]
+    },
+    {
+      "sim_id": "u00520",
+      "status": "FIXED",
+      "time": "00:44:45",
+      "issues": [
+        "Unwired action button btn_set_nyquist: Clicking Tune to Exact Nyquist Threshold did not set R to 0.50.",
+        "Unwired stepper buttons: Stepper buttons (.stepper-btn-up, .stepper-btn-down) were not listening to click events.",
+        "Unwired experiment mode dropdown: experimentSelect was not changing parameters between oversampling and aliasing presets.",
+        "Observation table column misalignment: btnRecord appended 6 columns instead of 5, placing sample index into the R column and omitting the Observed Motion Regimen column.",
+        "Apparent trajectory arc direction inversion: counterClockwise boolean in drawSnapshotDisplay was inverted, causing forward arcs to draw clockwise around the full circle."
+      ]
+    },
+    {
+      "sim_id": "u00516",
+      "status": "FIXED",
+      "time": "00:44:45",
+      "issues": [
+        "Unwired stepper buttons (.stepper-btn-up, .stepper-btn-down) preventing value changes on ▲/▼ click",
+        "Unwired action buttons (#btn_add_reagents, #btn_titrate_endpoint, #btn_incubate_sample)",
+        "Observation table rows misaligned with the 7 headers in observation_thead_html (trialCount incorrectly prepended, Dilution Factor P and Day 5 Titrant Volume Vt2 omitted, temp inserted, and Computed BOD5 shifted)"
+      ]
+    },
+    {
+      "sim_id": "u00511",
+      "status": "FIXED",
+      "time": "00:44:45",
+      "issues": [
+        "Telemetry display elements in syncControls referenced incorrect DOM IDs (val_cod, val_delta_v, val_bod_equiv instead of val_reading_cod, val_reading_delta_v, val_reading_bod_equiv), preventing live readings from updating.",
+        "Stepper buttons (.stepper-btn-up, .stepper-btn-down) and action buttons (btn_start_digestion, btn_titrate_step) were unwired in canvas_js.",
+        "Observation table record button inserted 7 misaligned columns with extraneous temperature and swapped titrant/aliquot volumes instead of matching the 6-column table schema.",
+        "Canvas leader badges (2, 3, 4, 6) were mismatched with the numbered apparatus legend pills."
+      ]
+    },
+    {
+      "sim_id": "u00510",
+      "status": "FIXED",
+      "time": "00:44:45",
+      "issues": [
+        "Unwired action buttons: canvas_js did not listen to #btn_release_pendulum or #btn_engage_brake.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down were not bound to input adjustments and change events.",
+        "Telemetry readouts failed to update: syncTelemetry looked for element IDs 'val_absorbed_energy' etc., whereas HTML slots define 'val_reading_absorbed_energy'.",
+        "Misaligned observation table: row formatting had 9 columns instead of the 6 columns defined in observation_thead_html, and column order swapped rebound angle and absorbed energy.",
+        "Missing automated observation recording: no observations were saved to the table upon completing an impact run.",
+        "Rebound swing damping: artificial damping of 0.08 during the initial rebound swing prevented the pendulum from reaching the theoretical rebound angle theta1."
+      ]
+    },
+    {
+      "sim_id": "u00513",
+      "status": "FIXED",
+      "time": "00:45:01",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted 8 data cells with an extraneous trial count and mismatched parameters into a 6-column table defined by observation_thead_html; rectified row to match all 6 observation columns exactly [V_sample, V_reagent, m_tare, m_gross, m_AgCl, C_calc]",
+        "Broken telemetry readout selectors and unit preservation: updated syncTelemetry to target canonical val_reading_* IDs and update firstElementChild to prevent destroying child MathML unit markup",
+        "Unwired stepper arrow buttons: .stepper-btn-up and .stepper-btn-down arrow buttons lacked click event listeners in canvas_js to dynamically step numeric inputs and dispatch change events",
+        "Unwired custom action buttons: #btn_precipitate_and_digest ('Add Reagent & Digest Curd') and #btn_filter_and_dry ('Filter & Dry to Constant Mass') lacked event handlers in canvas_js",
+        "Unwired top-panel and playback controls: #btnToggle (Pause/Run), #btnStep (Single Step), #btnReset (Reset to Defaults), and #experimentSelect (Activity Switcher) lacked event listeners in canvas_js",
+        "Canvas mouse interaction lock (Q22): set pointer-events: none on #simCanvas to guarantee all simulation control is routed exclusively through Section 05 controls",
+        "Leader line length constraint compliance (Q23/Q24): repositioned Badges 1, 2, 4, and 5 so their leader line distances strictly satisfy the [48, 80] px bounds with smooth cubic Bezier curves and anchor touch beads",
+        "Canvas typography legibility (Q25): upgraded sub-9px text (6px on analytical balance buttons) to 9px sans-serif",
+        "Cleaned raw embedded HTML span markup from data-unit attributes across all readout items in readouts_html"
+      ]
     }
   ],
   "completed_ids": [
@@ -911,6 +917,11 @@
     "u00507",
     "u00508",
     "u00509",
-    "u00512"
+    "u00510",
+    "u00511",
+    "u00512",
+    "u00513",
+    "u00516",
+    "u00520"
   ]
 }
