@@ -1,9 +1,9 @@
 {
-  "runner_state": "ACTIVE (8 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 19:32:57",
-  "completed_count": 12,
-  "fixed_count": 12,
-  "latest_sim_id": "u00002",
+  "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
+  "updated_at": "2026-10-18 19:54:18",
+  "completed_count": 15,
+  "fixed_count": 15,
+  "latest_sim_id": "u00006",
   "recent_events": [
     {
       "sim_id": "u00005",
@@ -215,16 +215,49 @@
         "Low contrast and missing 3D shading on canvas: Unvisited graph edges lacked sufficient contrast on dark #090d16 canvas, nodes lacked 3D radial depth highlights, and chassis boxes lacked labeled headers.",
         "Mathematical notation error: Corrected centered dot math operator to asterisk in principles_summary_html (A*) and readouts_html (f(n*))."
       ]
+    },
+    {
+      "sim_id": "u00002",
+      "status": "FIXED",
+      "time": "19:35:42",
+      "issues": [
+        "Unwired custom action buttons: 'btn_toggle_stopcock' (Dispense NaOH Titrant Dropwise) and 'btn_swirl_flask' (Swirl Conical Flask) lacked event listeners in canvas_js.",
+        "Misaligned observation table columns: canvas_js generated 6 td cells with an extraneous trial index column and inverted positions for Solution pH and FFA % Oleic Acid relative to the 5 headers in observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u00018",
+      "status": "FIXED",
+      "time": "19:35:42",
+      "issues": [
+        "Misaligned observation table columns: removed extra 'vf' column cell from tr.innerHTML in canvas_js so the 7 observation cells align 1:1 with the 7 observation_thead_html headers.",
+        "Unwired action button: added event listener to #btn_execute_cycle to initiate profile scan & cut cycle and record observation data.",
+        "Unwired stepper buttons: added click event listeners to .stepper-btn (.stepper-btn-up and .stepper-btn-down) to adjust control inputs within defined min/max bounds and dispatch input events."
+      ]
+    },
+    {
+      "sim_id": "u00015",
+      "status": "FIXED",
+      "time": "19:36:47",
+      "issues": [
+        "Unwired Action Buttons: 'btn_sync_parity' (Transmit Word / Set P=Y) and 'btn_inject_error' (Inject Channel Bit Inversion) had no event listeners attached in canvas_js.",
+        "Unwired Stepper Buttons: Increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) for input bits A, B, C, and P had no click handlers wired to update control values.",
+        "Misaligned Observation Table: Observation recorder (btnRecord) injected 8 <td> elements (including extraneous ${state.W_weight}) into a 7-column table, misaligning rows with observation_thead_html headers.",
+        "Unwired Experiment Mode: Added change listener for experimentSelect / expSelect to synchronize P with generated parity Y when operating in mode 0 (Generator verification)."
+      ]
     }
   ],
   "completed_ids": [
+    "u00002",
     "u00003",
     "u00004",
     "u00005",
     "u00008",
     "u00009",
     "u00014",
+    "u00015",
     "u00017",
+    "u00018",
     "u00022",
     "u00023",
     "u00028",
