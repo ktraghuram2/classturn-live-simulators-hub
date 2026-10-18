@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 20:30:51",
-  "completed_count": 55,
-  "fixed_count": 55,
-  "latest_sim_id": "u00082",
+  "updated_at": "2026-10-18 20:34:41",
+  "completed_count": 60,
+  "fixed_count": 60,
+  "latest_sim_id": "u00086",
   "recent_events": [
-    {
-      "sim_id": "u00010",
-      "status": "FIXED",
-      "time": "20:00:07",
-      "issues": [
-        "Unwired stepper increment/decrement buttons (.stepper-btn ▲/▼) across all 8 control inputs.",
-        "Unwired action buttons: 'btn_cycle_axis' (Cycle Rotation Axis) and 'btn_apply_identity' (Set Identity Transformation Matrix).",
-        "Misaligned observation table: btnRecord inserted 7 table cells with record count in the Rotation Axis column into a 6-column header table.",
-        "Inaccurate physics/math: Rotation matrix and transformed mesh vertices were hardcoded strictly for Z-axis rotation, ignoring axis switching.",
-        "Inaccurate physics/math: Matrix trace tr(M) was hardcoded to sx + sy + sz + 1.0 instead of true matrix trace m00 + m11 + m22 + 1.0 which varies with rotation angle."
-      ]
-    },
-    {
-      "sim_id": "u00034",
-      "status": "FIXED",
-      "time": "20:01:40",
-      "issues": [
-        "Misaligned observation table columns: row innerHTML appended 10 columns (including extraneous trial number, current, and validity) instead of the 8 columns defined in observation_thead_html, and omitted illuminated LED index Ln",
-        "Unwired action button: Inject Invalid BCD Nibble (id='btn_inject_invalid') was missing an event listener in canvas_js",
-        "Unwired stepper buttons: input stepper up/down buttons (.stepper-btn) had no click handlers to adjust binary switch values",
-        "Address bus jumper wire pin mapping: wires mapped to IC leads 16-13 instead of inputs A0-A3 at pins 15-12"
-      ]
-    },
-    {
-      "sim_id": "u00037",
-      "status": "FIXED",
-      "time": "20:01:47",
-      "issues": [
-        "Swapped canvas callout Badges 3 and 4 to correctly align Badge 3 with Path Cost Accumulator and Badge 4 with Visited Closed-Set Exploration Tracker matching Section 02 Apparatus and Legend Pills",
-        "Wired custom action button #btn_run_complete, stepper arrow buttons (.stepper-btn), reset button (#btnReset), top controls (#btnToggle, #btnStep), and #experimentSelect dropdown",
-        "Formatted observation table recording column 3 to display frontier queue state elements rather than duplicate node count",
-        "Rectified raw ASCII/LaTeX complexity formula and inequalities in Section 07 Validation and limits to standard semantic MathML",
-        "Corrected default readout value of optimal path cost to 6.0 units for the primary 4 to 0 traversal"
-      ]
-    },
-    {
-      "sim_id": "u00036",
-      "status": "FIXED",
-      "time": "20:02:33",
-      "issues": [
-        "Unwired top panel controls: Pause/Run (#btnToggle) and Step (#btnStep) had no event listeners attached in canvas_js, and animation loop ran continuously without pause support (Q06, Q07)",
-        "Unwired custom action buttons: 'Expand Next SMA* Node' (#btn_step_sma) and 'Auto-Run to Goal' (#btn_auto_solve) had no event listeners in canvas_js (Q14, Q27)",
-        "Unwired stepper increment/decrement buttons: Stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) were not wired to update target input values (Q15)",
-        "Unwired experiment mode selector: #experimentSelect was not connected to switch between Activity 1 (constrained memory) and Activity 2 (unbounded optimality verification) (Q08)",
-        "Unwired observation playback notebook: #btnRecord and #btnReset had no handlers; implemented 7-column observation recording aligned with observation_thead_html and reset function (Q18)",
-        "Destroyed MathML units in telemetry readouts: updateTelemetryDOM used el2.innerText = val which wiped the inline MathML unit inside .readout-val elements; updated to target value span preserving MathML (Q16, Q31)",
-        "Unclosed tags and missing equation in principles_list_html: Section 03 was missing closing tags for list and inner elements and lacked Equation 2 (Ancestor Backup Equation) required by Q11",
-        "Raw inequalities in validation_html: Replaced raw text comparison operators (<=, >=) with valid inline MathML in Section 07 (Q17)"
-      ]
-    },
-    {
-      "sim_id": "u00032",
-      "status": "FIXED",
-      "time": "20:03:44",
-      "issues": [
-        "Unwired stepper buttons: The stepper increment and decrement buttons (.stepper-btn, .stepper-btn-up, .stepper-btn-down) for the BCD word and bit inputs A, B, C, D were unhandled in JavaScript, preventing stepper click adjustments.",
-        "Misaligned observation table columns: The record button handler generated only 5 table cells with combined bit strings and an unmapped row index, misaligning against the 13 columns defined in observation_thead_html (Decimal Value N10, Inputs A-D, Segments a-g, and Active Segments S7)."
-      ]
-    },
     {
       "sim_id": "u00007",
       "status": "FIXED",
@@ -511,6 +452,73 @@
         "Corrected observation table schema misalignment in canvas_js: replaced mismatched 8-column row with the exact 7-column schema matching observation_thead_html (Buffer pH, Wavelength, Absorbance, Transmittance, Absorbance Ratio, Logarithmic Ratio, Calculated pKa).",
         "Wired stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) and action buttons (btn_blank_calibrate and btn_full_scan) in canvas_js."
       ]
+    },
+    {
+      "sim_id": "u00085",
+      "status": "FIXED",
+      "time": "20:31:29",
+      "issues": [
+        "Raw/mangled MathML in prose and units: English article 'A' was wrapped in MathML <math><mrow><mi>A</mi></mrow></math> in apparatus and principles summary, 'dimensionless' was rendered letter-by-letter in MathML, and units were malformed into fractions (mmo l/L and L/m ol·cm).",
+        "Nested quote syntax errors in readouts_html data-unit attributes breaking DOM parsing.",
+        "Observation table column mismatch: observation_thead_html defined only 6 columns while canvas_js recorded 8 columns (Trial #, Wavelength, Concentration, Path Length, Absorbance, Transmittance, Molar Absorptivity, Photon Energy), resulting in offset column data.",
+        "Unwired control actions: 'Toggle Sample Solution', 'Auto-Zero / Baseline Blank Calibration', and 'Initiate Continuous Wavelength Scan' buttons were unhandled in canvas_js.",
+        "Unwired stepper up/down buttons: Stepper ▲ and ▼ buttons lacked click handlers in canvas_js.",
+        "Visual apparatus issues: Spectrophotometer chassis and computer monitor were floating in mid-air above the bench without mounting feet or PC tower base; missing pipette stand; cuvette and solution colors did not adapt when switching between potassium dichromate and caffeine."
+      ]
+    },
+    {
+      "sim_id": "u00084",
+      "status": "FIXED",
+      "time": "20:32:38",
+      "issues": [
+        "Misaligned observation table columns: canvas_js generated 6 misaligned cells with an unindexed trial counter instead of the 7 columns defined in observation_thead_html (Solvent Index, Dielectric Constant, Refractive Index, Polarity Function, Peak Wavelength, Peak Absorbance, Transition Energy).",
+        "Unwired custom action button: 'Run Spectral Acquisition' (#btn_acquire_spectrum) had no event listener attached in canvas_js.",
+        "Unwired stepper buttons: increment/decrement buttons (.stepper-btn-up and .stepper-btn-down) had no click handlers to adjust solvent selection or scan start/end wavelengths.",
+        "Unwired top controls and playback controls: Pause/Run (#btnToggle), Step (#btnStep), Reset (#btnReset), and #experimentSelect dropdown lacked event listeners in canvas_js.",
+        "Telemetry unit destruction: setElementText directly assigned textContent to .readout-val elements, erasing nested MathML unit elements.",
+        "Unclosed tags and missing equations in principles_list_html: closed unclosed tags in Section 03 and supplied complete equations for Beer-Lambert Absorbance and Transition Energy Gap with full MathML and 'Where:' symbol definitions.",
+        "MathML and notation corrections: fixed centered dot to asterisk for pi-to-pi-star transition in principles_summary_html, converted scientific notation concentrations into clean inline MathML in validation_html, and aligned solvent sequence in procedure_section_html."
+      ]
+    },
+    {
+      "sim_id": "u00081",
+      "status": "FIXED",
+      "time": "20:32:46",
+      "issues": [
+        "Fixed raw LaTeX/ASCII notation (-dI / I = K dl and -log_10) in Section 03 Principles Summary with compliant native MathML.",
+        "Corrected misaligned observation table columns in btnRecord click handler to match observation table headers.",
+        "Updated setTxt selector to support [data-id] and val_ prefix ensuring live readouts update dynamically.",
+        "Wired up stepper up/down buttons (.stepper-btn) to increment/decrement parameter values with proper step and limits.",
+        "Wired up Section 05 action buttons: Zero Blank Baseline Calibration (btn_zero_baseline) and Execute Full Wavelength Scan (btn_execute_scan)."
+      ]
+    },
+    {
+      "sim_id": "u00087",
+      "status": "FIXED",
+      "time": "20:33:37",
+      "issues": [
+        "Apparatus badges on canvas leader lines were mismatched with legend pills (Water Bath was badge 2 instead of 1, Stand was badge 4 instead of 2, Test Tubes was badge 1 instead of 3, Measuring Cylinder was badge 3 instead of 4)",
+        "Observation table record button generated 8 columns with misplaced data, misaligning with the 7 columns defined in observation table headers",
+        "Telemetry update function set non-existent element IDs instead of the active val_reading_* readout spans",
+        "Action buttons (Heat in Boiling Water Bath, Dispense Iodine Solution) and stepper up/down controls had no event listeners wired",
+        "Principles list contained a malformed MathML unit mo(L/L) which has been corrected to mol/L"
+      ]
+    },
+    {
+      "sim_id": "u00086",
+      "status": "FIXED",
+      "time": "20:34:41",
+      "issues": [
+        "Misaligned observation table columns: row innerHTML appended 9 misaligned columns (beginning with curTest under Trial Number, and placing T_opt, lambda_max, and c_adulterant into table cells) instead of the 9 canonical columns defined in observation_thead_html (Trial Number, Adulterant Test Index, Milk Sample Volume, Reagent Dispensed Volume, Thermal Chamber Temperature, Incubation Duration, Observed Color/Interface Phenomenon, Optical Absorbance, and Adulterant Assessment Outcome).",
+        "Unwired action buttons: Dispense Diagnostic Reagent (#btn_dispense_reagent) and Transfer to Thermal Chamber (#btn_heat_incubate) lacked event listeners in canvas_js.",
+        "Unwired stepper arrow buttons: stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unhandled in JavaScript, preventing parameter adjustment via UI steppers.",
+        "Unwired top panel controls: Pause/Run (#btnToggle) and Step (#btnStep) had no event listeners in canvas_js and lacked pause state management in the animation loop.",
+        "Unwired reset button: #btnReset was not wired to restore default stepper input values, clear the observation table, and reinitialize simulation state.",
+        "Unwired experiment mode selector: #experimentSelect was not wired to toggle between Primary chemical adulterant screening and Extended MBRT kinetics.",
+        "Telemetry readout ID mismatch and unit preservation: updateTelemetry targeted 'reading_absorbance' instead of 'val_reading_absorbance', preventing live readout updates, and replacing textContent wiped inline MathML unit spans; implemented setReadingVal targeting firstElementChild.",
+        "Unclosed HTML tags and missing equation in principles_list_html: Section 03 was missing closing </ul>, </div>, and </li> tags and lacked Equation 2 (Optical Transmittance and Decadic Absorbance Relation).",
+        "Raw inequalities in validation_html: replaced raw text comparison operators (>=) with valid inline MathML in Section 07."
+      ]
     }
   ],
   "completed_ids": [
@@ -568,6 +576,11 @@
     "u00076",
     "u00078",
     "u00080",
-    "u00082"
+    "u00081",
+    "u00082",
+    "u00084",
+    "u00085",
+    "u00086",
+    "u00087"
   ]
 }
