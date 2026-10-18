@@ -1,49 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 19:54:18",
+  "updated_at": "2026-10-18 19:58:11",
   "completed_count": 15,
   "fixed_count": 15,
   "latest_sim_id": "u00006",
   "recent_events": [
-    {
-      "sim_id": "u00005",
-      "status": "FIXED",
-      "time": "18:39:20",
-      "issues": [
-        "Action button IDs in HTML ('btn_insert_key', 'btn_search_key', 'btn_delete_key') did not match canvas_js event listener IDs ('btn_search', 'btn_insert'), preventing action buttons from firing.",
-        "Deletion operation (with redistribution rotation and sibling merging) was completely missing from canvas_js despite being specified in Aim, Procedure Step 5, and Controls.",
-        "Observation table record button wrote 5 cells into a 6-column header layout, causing key values to misalign under wrong table column headers.",
-        "Leader line lengths for Badge 2 and Badge 3 were 24px, violating the minLeader requirement (48px) defined in zoom_config_json.",
-        "Stepper buttons lacked event handlers to increment and decrement key register and animation speed inputs."
-      ]
-    },
-    {
-      "sim_id": "u00004",
-      "status": "FIXED",
-      "time": "18:41:23",
-      "issues": [
-        "Hooked up unbound action buttons ('btn_titrate_to_equivalence', 'btn_dispense_drop', and 'btn_toggle_stirrer') to enable rapid equivalence titration, single drop dispensing, and magnetic stirrer toggling.",
-        "Corrected observation log column ordering in 'btnRecord' to match table headers: Added Titrant Volume (vBase), Total Mixture Volume (vTotal), Measured pH, Calculated pOH, and Hydronium Concentration ([H3O+]).",
-        "Synchronized live telemetry readouts during smooth pH lerp so that pOH and [H3O+] consistently satisfy water autoionization equilibrium at every rendered frame.",
-        "Added event handling for stepper increment/decrement buttons to guarantee input responsiveness across all browsers."
-      ]
-    },
-    {
-      "sim_id": "u00002",
-      "status": "ERROR",
-      "time": "18:47:40",
-      "issues": [
-        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--mode', 'plan', '--disable-slash-commands', '--print', 'Rea"
-      ]
-    },
-    {
-      "sim_id": "u00003",
-      "status": "ERROR",
-      "time": "18:47:40",
-      "issues": [
-        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--mode', 'plan', '--disable-slash-commands', '--print', 'Rea"
-      ]
-    },
     {
       "sim_id": "u00003",
       "status": "FIXED",
@@ -116,54 +77,6 @@
         "Misaligned observation table row in btnRecord: missing Trial Number column (trialCount), mismatched column order, and missing 9th column relative to observation_thead_html.",
         "Readout update function setReadout directly overwrote elVal.textContent, destroying inline unit MathML markup inside .readout-val elements.",
         "Unwired experimentSelect dropdown selector for toggling between the stepover and feed rate optimization experiments."
-      ]
-    },
-    {
-      "sim_id": "u00015",
-      "status": "ERROR",
-      "time": "19:24:23",
-      "issues": [
-        "No Gemini credentials found. Set GEMINI_API_KEY, sign into agy, or set a GCP project."
-      ]
-    },
-    {
-      "sim_id": "u00007",
-      "status": "ERROR",
-      "time": "19:24:28",
-      "issues": [
-        "No Gemini credentials found. Set GEMINI_API_KEY, sign into agy, or set a GCP project."
-      ]
-    },
-    {
-      "sim_id": "u00032",
-      "status": "ERROR",
-      "time": "19:24:28",
-      "issues": [
-        "No Gemini credentials found. Set GEMINI_API_KEY, sign into agy, or set a GCP project."
-      ]
-    },
-    {
-      "sim_id": "u00034",
-      "status": "ERROR",
-      "time": "19:24:53",
-      "issues": [
-        "No Gemini credentials found. Set GEMINI_API_KEY, sign into agy, or set a GCP project."
-      ]
-    },
-    {
-      "sim_id": "u00035",
-      "status": "ERROR",
-      "time": "19:24:58",
-      "issues": [
-        "No Gemini credentials found. Set GEMINI_API_KEY, sign into agy, or set a GCP project."
-      ]
-    },
-    {
-      "sim_id": "u00036",
-      "status": "ERROR",
-      "time": "19:24:59",
-      "issues": [
-        "No Gemini credentials found. Set GEMINI_API_KEY, sign into agy, or set a GCP project."
       ]
     },
     {
