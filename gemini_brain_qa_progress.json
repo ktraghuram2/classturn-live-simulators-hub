@@ -1,70 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 22:16:10",
-  "completed_count": 170,
-  "fixed_count": 170,
-  "latest_sim_id": "u00218",
+  "updated_at": "2026-10-18 22:20:08",
+  "completed_count": 175,
+  "fixed_count": 175,
+  "latest_sim_id": "u00225",
   "recent_events": [
-    {
-      "sim_id": "u00177",
-      "status": "FIXED",
-      "time": "21:27:14",
-      "issues": [
-        "Unwired action buttons: 'btn_home_pose' and 'btn_reach_envelope' lacked click event listeners in canvas_js.",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons were missing click event handlers to increment/decrement joint values.",
-        "Observation table column misalignment: btnRecord generated 11 <td> cells, mismatching the 10 defined column headers in observation_thead_html (extra pitch column removed).",
-        "Low-contrast 3D box outlines and shading on dark #090d16 canvas rectified with higher-contrast facet fills and outlines."
-      ]
-    },
-    {
-      "sim_id": "u00175",
-      "status": "FIXED",
-      "time": "21:29:19",
-      "issues": [
-        "Enforced canvas direct interaction lock: set pointer-events: none on #simCanvas to ensure the simulation is operated exclusively via the control panel in canonical isometric perspective (Q22).",
-        "Misaligned observation table columns: removed extra orientation columns (nx, az) from btnRecord to align recorded data cells 1-to-1 with the 11-column header schema in observation_thead_html (Q18).",
-        "Unwired reset button: updated #btnReset to clear #observationTbody, reset trajectory trail, and restore controls to canonical defaults (Q18).",
-        "Unwired custom action buttons: wired 'Drive Manipulator to Canonical Home Pose (READY Position)' (#btn_home_pose) and 'Trace Maximum Horizontal Reach Envelope' (#btn_reach_envelope) (Q14, Q27).",
-        "Unwired stepper controls: added click event listeners for .stepper-btn (.stepper-btn-up and .stepper-btn-down) to increment and decrement angles with [min, max, step] boundary clamping (Q15).",
-        "Unwired top panel controls: wired Pause/Run (#btnToggle), procedure step advancement (#btnStep), and experiment mode switching (#experimentSelect) between Primary pose mapping and Extended singularity boundary analysis (Q06, Q07, Q08).",
-        "Telemetry unit preservation: patched setReadout and setControlLabel to mutate only the value text span without destroying nested MathML unit elements (Q16, Q31).",
-        "Input crash-proofing: added safe input parsing with boundary clamping in animate() loop to guard against out-of-range or NaN values (Q29).",
-        "Low contrast outlines on dark #090d16 canvas: elevated ground grid stroke style from low-contrast #1e293b to high-contrast slate #334155 (Q19, Q25)."
-      ]
-    },
-    {
-      "sim_id": "u00173",
-      "status": "FIXED",
-      "time": "21:29:43",
-      "issues": [
-        "Misaligned observation table columns in btnRecord: rendered 9 columns instead of 11 matching the observation table headers, missing trial number, excitation frequency, and excitation voltage.",
-        "Unwired Auto-Balance action button (#btn_auto_balance) and stepper buttons (.stepper-btn-up, .stepper-btn-down).",
-        "Detector unbalance voltage formula in calculatePhysics did not reach true null (0.000 mV) when inductance and resistance balance conditions were satisfied."
-      ]
-    },
-    {
-      "sim_id": "u00181",
-      "status": "FIXED",
-      "time": "21:29:57",
-      "issues": [
-        "Observation table columns were misaligned: recordObservation inserted pulse amplitude and concentration into Cadmium potential/current columns, and completely omitted Lead (Pb) stripping peak potential and current.",
-        "Action buttons (btn_start_sweep and btn_renew_drop) and stepper buttons (.stepper-btn) were unwired, preventing users from restarting sweeps or incrementing/decrementing parameter steppers.",
-        "The voltammogram plot and dynamic current calculations in canvas_js only simulated Cadmium stripping peak, omitting the second analyte (Lead, Pb) required by the experiment aim and observation table."
-      ]
-    },
-    {
-      "sim_id": "u00179",
-      "status": "FIXED",
-      "time": "21:30:37",
-      "issues": [
-        "Fixed broken readout element selectors in DOM telemetry (val_reading_* vs reading_*)",
-        "Aligned observation table recorded row cells with the 7 observation table thead columns",
-        "Added missing symbol A to Calculated Prism Angle header in observation_thead_html",
-        "Wired action buttons: btn_toggle_light, btn_place_prism, btn_align_ray1, and btn_align_ray2",
-        "Wired stepper increment/decrement buttons (.stepper-btn)",
-        "Added circular angle difference wrap handling for telescope hit detection in traceOptics"
-      ]
-    },
     {
       "sim_id": "u00182",
       "status": "FIXED",
@@ -464,6 +404,64 @@
         "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' buttons were not wired to modify target inputs and dispatch change events.",
         "Destructive telemetry updates: updateTelemetry wiped out the nested MathML unit markup inside span.readout-val elements."
       ]
+    },
+    {
+      "sim_id": "u00223",
+      "status": "FIXED",
+      "time": "22:18:27",
+      "issues": [
+        "Observation table column misalignment: Record button inserted 8 cells (including unheaded trial index and extra micelle density column) instead of matching the 6 observation table headers, and Cleansing Efficiency was swapped with Surface Tension.",
+        "Unwired action buttons: Dispense Soap (#btn_dispense_soap), Agitate with Stirrer (#btn_stir_solution), and Immerse & Wash Fabric (#btn_immerse_cloth) had no click listeners attached.",
+        "Unwired stepper buttons: Up and down stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click handlers to modify control inputs.",
+        "CMC and micelle density parameter discrepancy: Script used CMC = 1.5 g/L instead of 0.8 g/L specified in validation assumptions, causing the micelle density reading to diverge from the baseline 4.82 × 10¹⁸ m⁻³."
+      ]
+    },
+    {
+      "sim_id": "u00217",
+      "status": "FIXED",
+      "time": "22:18:27",
+      "issues": [
+        "Observation table columns were misaligned: btnRecord appended 7 columns instead of the 6 columns defined in observationThead (Cutoff Frequency, Filter Order, Filter Algorithm, Noise Amplitude, Output SNR, Filtered R-Wave Peak).",
+        "Action buttons #btn_apply_filter ('Execute Digital Filtering Pipeline') and #btn_toggle_noise_all ('Inject Combined Clinical Artifacts') were unwired in canvas_js.",
+        "Reset button #btnReset lacked a native handler to reset time, history buffers, and filter memory in canvas_js.",
+        "Normalized Digital Cutoff readout unit had mangled fraction MathML (ra d/s ample) instead of rad/sample.",
+        "Noise Injector specification in apparatus list contained an erroneous fraction MathML for 50/60 Hz powerline interference."
+      ]
+    },
+    {
+      "sim_id": "u00221",
+      "status": "FIXED",
+      "time": "22:18:27",
+      "issues": [
+        "Misaligned observation table columns: record button appended 11 cells with extra trial count, Kv, thermal loss, and loop rate under a 7-column header with swapped current and thrust positions",
+        "Unwired stepper controls: stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to increment/decrement input values",
+        "Unwired action buttons: 'btn_arm_fc' and 'btn_run_continuity' had no event listeners or interactive visual feedback handlers",
+        "Low contrast battery wiring: black ground cable rendered in dark #1e293b without 3D depth border or highlights against dark #090d16 canvas"
+      ]
+    },
+    {
+      "sim_id": "u00226",
+      "status": "FIXED",
+      "time": "22:19:39",
+      "issues": [
+        "Unwired action buttons: 'Execute Cache Read Cycle' (btn_read_access), 'Write Allocate / Fill Cache Line' (btn_fill_line), and 'Invalidate All Cache Lines' (btn_flush_cache) were unhandled in canvas_js.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down were missing click handlers for incrementing/decrementing controls.",
+        "Observation table column misalignment: btnRecord injected 9 cells into an 8-column table with swapped Index/Tag order, extraneous columns, and omitted Output Data; realigned strictly to the 8 columns defined in observation_thead_html.",
+        "Spurious cycle count on initialization and address change: evaluateCacheAccess(true) on load and input change spuriously incremented totalAccesses and totalHits before any read cycle was executed; changed to evaluateCacheAccess(false) so access counters increment only on clock step."
+      ]
+    },
+    {
+      "sim_id": "u00225",
+      "status": "FIXED",
+      "time": "22:20:08",
+      "issues": [
+        "Unwired stepper up/down buttons: .stepper-btn click events were missing event listeners to increment/decrement input values.",
+        "Unwired action buttons: 'Clock Address Query' (btn_pulse_comparator) and 'Allocate Line via Decoder' (btn_allocate_line) were unhandled in canvas_js.",
+        "Unwired experiment selector: experimentSelect was unhandled, preventing switching between Parallel Hit Detection and Miss Handling/Allocation modes.",
+        "Misaligned observation table columns: Table body recorded 8 <td> elements while observation_thead_html only defined 7 <th> headers.",
+        "Hardcoded valid bit text: Cache directory line cells rendered static 'V:1' text rather than reflecting dynamic line.valid bit state.",
+        "Decoder visual state: 2-to-4 decoder lacked 3D shading and active allocation signal illumination during line replacement."
+      ]
     }
   ],
   "completed_ids": [
@@ -636,6 +634,11 @@
     "u00213",
     "u00214",
     "u00215",
-    "u00218"
+    "u00217",
+    "u00218",
+    "u00221",
+    "u00223",
+    "u00225",
+    "u00226"
   ]
 }
