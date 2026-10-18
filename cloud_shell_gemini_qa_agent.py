@@ -196,6 +196,7 @@ def call_gemini_brain(prompt_text: str, model_name: str = "gemini-2.5-flash") ->
 
 def build_agent_prompt(sim_row: dict, qa_questions: dict) -> str:
     slots = json.loads(sim_row["compiled_slots_json"] or "{}")
+    eyebrow = slots.get("eyebrow_html", "VIRTUAL LABORATORY")
     return f"""You are a dedicated Gemini Scientific & Visual QA Agent for the ClassTurn Virtual Laboratory.
 Your job is to inspect Simulator `{sim_row['id']}` ("{sim_row['title']}") IN YOUR OWN BRAIN against the attached Master QA Questions.
 Do NOT write Python test scripts. Read the simulator's HTML slots and `canvas_js` directly below, evaluate every QA question in your mind, and if ANY problem exists (e.g., raw LaTeX in prose/units, missing 3D shading or low-contrast outlines on dark #090d16 canvas, broken control responsiveness, or inaccurate physics/equations), rectify it directly.
@@ -205,7 +206,7 @@ Do NOT write Python test scripts. Read the simulator's HTML slots and `canvas_js
 
 ### SIMULATOR RECORD TO INSPECT (`{sim_row['id']}`):
 - Title: {sim_row['title']}
-- Subject: {sim_row['subject_category']} / {sim_row['sub_topic']}
+- Subject Eyebrow: {eyebrow}
 - Compiled Slots JSON:
 {json.dumps(slots, ensure_ascii=False)}
 
@@ -298,7 +299,7 @@ def main():
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     cur.execute(
-        "SELECT id, title, subject_category, sub_topic, compiled_slots_json, canvas_js "
+        "SELECT id, title, compiled_slots_json, canvas_js "
         "FROM simulators WHERE id >= ? ORDER BY id ASC LIMIT ?",
         (args.start_id, args.limit),
     )
@@ -306,7 +307,7 @@ def main():
     print(f"[QA] Starting {args.agents} parallel Gemini Brain Agents on {len(rows)} simulators...")
 
     # Send immediate startup heartbeat so live_qa_monitor.html shows RUNNING IN CLOUD SHELL
-    save_and_push_progress(done_ids, fixed_count, rows[0]["id"] if rows else "DONE", recent_events, runner_state="RUNNING IN CLOUD SHELL", push_db=False)
+    save_and_push_progress(done_ids, fixed_count, rows[0]["id"] if rows else "DONE", recent_events, runner_state="ACTIVE (GEMINI BRAIN AGENTS RUNNING)", push_db=False)
 
     batches_since_db_push = 0
     for i in range(0, len(rows), args.batch_size):
