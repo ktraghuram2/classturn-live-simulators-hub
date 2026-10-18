@@ -1,70 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 21:02:12",
-  "completed_count": 100,
-  "fixed_count": 100,
-  "latest_sim_id": "u00130",
+  "updated_at": "2026-10-18 21:05:54",
+  "completed_count": 105,
+  "fixed_count": 105,
+  "latest_sim_id": "u00145",
   "recent_events": [
-    {
-      "sim_id": "u00092",
-      "status": "FIXED",
-      "time": "20:34:49",
-      "issues": [
-        "Unwired stepper ▲ / ▼ buttons: .stepper-btn buttons lacked click listeners to step the numeric inputs.",
-        "Unwired action buttons: btn_prepare_solution and btn_toggle_electrolysis lacked event listeners in canvas_js.",
-        "Mismatched live readout IDs: canvas_js searched for 'reading_*' instead of 'val_reading_*' IDs specified in readouts_html, preventing telemetry updates.",
-        "Misaligned observation table columns: row innerHTML had 9 columns including an extra trial index and temperature column while omitting column height, causing severe misalignment with the 8 columns in observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u00077",
-      "status": "FIXED",
-      "time": "20:35:55",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 11 cells with an unheaded row count and unlisted coefficient p, misaligning values against the 9 columns in observation_thead_html.",
-        "Unwired action button: btn_freeze_oscilloscope ('Hold / Freeze Oscilloscope Trace') had no event listener attached in JavaScript, preventing users from pausing or freezing the oscilloscope sweep.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to increment/decrement parameter inputs.",
-        "Telemetry readout ID mismatch: updateTelemetry looked up 'omega_n', 'val_omega_n', and 'reading_omega_n' instead of the rendered slot element IDs ('val_reading_*'), causing Section 06 live readings to remain static."
-      ]
-    },
-    {
-      "sim_id": "u00089",
-      "status": "FIXED",
-      "time": "20:36:38",
-      "issues": [
-        "Aligned observation table columns in btnRecord with #observationThead headers (reduced from 8 misaligned columns to the exact 6 canonical columns: Sample Acidity, Titratable Acidity, Water Bath Temperature, Heating Duration, Coagulation Index, and COB Outcome)",
-        "Wired #btn_immerse_boil action button to initiate the 100.0 °C immersion boiling cycle",
-        "Wired #btn_tilt_inspect action button to ensure full heating duration for 45° thin-film clot inspection",
-        "Wired #btnReset handler to clear recorded observation table rows"
-      ]
-    },
-    {
-      "sim_id": "u00090",
-      "status": "FIXED",
-      "time": "20:36:58",
-      "issues": [
-        "Apparatus leader line badges mismatch: on-canvas numbered badges (1 to 8) did not match the legend banner order (Badge 1 must be Regulated DC Power Source, 2 is Voltmeter, 3 is Ammeter, 4 is Rheostat, 5 is Beaker Cell, 6 is Gauze Cathode, 7 is Spiral Anode, 8 is Magnetic Stirrer Unit) (Q23, Q10).",
-        "Misaligned observation table columns: btnRecord inserted 9 cells (including unindexed stirrer rpm and charge Q, with time before current) into a 7-column table; realigned to exactly match observation_thead_html (Analyte, Voltage, Resistance, Current, Time, Mass, Total Weight) (Q18).",
-        "Unwired custom action button: #btn_start_electrolysis ('Initiate Electrolytic Deposition Cycle') had no click listener in canvas_js (Q14, Q27).",
-        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) in canvas_js (Q15).",
-        "Unwired simulation controls: #btnReset, #btnToggle (Pause/Run), #btnStep, and #experimentSelect were unhandled in canvas_js (Q06, Q07, Q08, Q18).",
-        "Readout MathML destruction: updateTelemetry assigned textContent with unit strings directly to .readout-val elements, destroying child MathML unit markup; fixed by updating only firstElementChild value span (Q16, Q31).",
-        "Enforced canvas direct mouse interaction lock by disabling pointer events on #simCanvas (Q22)."
-      ]
-    },
-    {
-      "sim_id": "u00095",
-      "status": "FIXED",
-      "time": "20:37:45",
-      "issues": [
-        "Corrupted C/C++ fraction MathML (<mfrac><mrow><mi>C</mi></mrow><mrow><mi>C</mi></mrow></mfrac>++) in aim_html, apparatus_html, and procedure_section_html replaced with clean 'C++'",
-        "Misaligned observation table columns in btnRecord click handler where column 0 recorded traversal index i instead of array size n, shifting all subsequent table cells",
-        "Unwired stepper up/down buttons and unwired 'Validate Code Completion Blanks' action button in canvas_js",
-        "Missing 'Step Next Comparison Cycle' action button specified in procedure step 5 added and wired to traversal stepper",
-        "Legend pills omitted apparatus unit 2 ('Hint Selector & Logic Guide') causing numbering mismatch with canvas badges 2, 3, and 4; updated legend_pills_html to 4 items",
-        "Live telemetry readout updates in canvas_js replaced inner unit labels with plain text; patched setHtml to preserve unit typography"
-      ]
-    },
     {
       "sim_id": "u00091",
       "status": "FIXED",
@@ -506,6 +446,69 @@
         "Low contrast apparatus outlines: Drone chassis booms, RTK mast, and whip antenna were drawn with '#1e293b' which blends invisibly into the dark #090d16 canvas background.",
         "Missing TIN mesh feature: The 'Compute TIN Surface Mesh' action button did not toggle or render the Triangulated Irregular Network wireframe over the terrain."
       ]
+    },
+    {
+      "sim_id": "u00139",
+      "status": "FIXED",
+      "time": "21:02:28",
+      "issues": [
+        "Observation table recorder (#btnRecord) only wrote 8 columns and misaligned values against the 10-column table header; corrected to record all 10 columns in exact matching order including FT3 and active alarm count.",
+        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired; attached click listeners with min, max, step bounds and event dispatching.",
+        "Action buttons (#btn_ack_alarms and #btn_emergency_trip) were unwired; implemented alarm acknowledgment (stopping annunciator flash) and emergency safety trip interlock logic.",
+        "Canvas leader badge numbering was out of order relative to legend_pills_html; reordered badges 1 to 6 to match Steam Drum (1), Shell-and-Tube Exchanger (2), Feed Pump & FCV (3), Transmitters (4), Mimic Panel (5), and Trend Plotter (6)."
+      ]
+    },
+    {
+      "sim_id": "u00131",
+      "status": "FIXED",
+      "time": "21:03:15",
+      "issues": [
+        "Fixed corrupted MathML voltage fractions and zero-division artifacts in aim_html and apparatus_html",
+        "Aligned canvas leader badge numbers (1 to 7) to match legend pills and apparatus flow exactly",
+        "Wired Toggle DPST Mains Switch action button and stepper up/down adjustment buttons",
+        "Corrected observation table recording data row to match the 8 observation header columns"
+      ]
+    },
+    {
+      "sim_id": "u00127",
+      "status": "FIXED",
+      "time": "21:03:19",
+      "issues": [
+        "Replaced raw text symbol notation f'_ck in procedure Step 2 with proper horizontal MathML",
+        "Aligned observation table recorded cells with observationThead 8-column schema (removed spurious serial number and fixed column mapping)",
+        "Wired custom action button #btn_mix_concrete to trigger concrete mixing and slump subsidence workability simulation",
+        "Wired .stepper-btn-up and .stepper-btn-down arrow controls for tactile stepping",
+        "Wired #experimentSelect dropdown to switch between standard proportioning and high-efficiency water reduction presets",
+        "Wired #btnReset to restore all stepper inputs, readouts, and canvas physical states to default values",
+        "Added defensive numeric clamping on stepper inputs to guard against division-by-zero and invalid ranges"
+      ]
+    },
+    {
+      "sim_id": "u00140",
+      "status": "FIXED",
+      "time": "21:04:11",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted timeStr as column 1, shifting all data columns relative to the 7 headers in observation_thead_html, and swapped rejected cycles and active clusters.",
+        "Unwired action button: 'Run Full Spanning Tree' (#btn_run_full) lacked a click event listener in canvas_js.",
+        "Unwired stepper controls: up/down buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners in canvas_js to adjust Grid Rows, Grid Columns, and Step Clock Delay.",
+        "Unwired top-panel controls: Pause/Run (#btnToggle), single step (#btnStep), reset (#btnReset), and experiment selector (#experimentSelect) lacked event listeners in canvas_js.",
+        "Telemetry unit erasure: syncTelemetry() directly overwritten textContent on readout containers, destroying inner MathML unit spans inside .readout-val elements.",
+        "Canvas mouse interaction lock: pointer events were not disabled on canvas (#simCanvas), permitting direct click interference on the simulation canvas.",
+        "Missing mathematical symbol notation in observation table headers: Added missing MathML symbols m, V, and C to Columns, Total Vertices, and Final Clusters headers in observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u00145",
+      "status": "FIXED",
+      "time": "21:05:53",
+      "issues": [
+        "Unwired action buttons (#btn_toggle_common_mode and #btn_toggle_diff_mode) prevented users from toggling between common-mode and differential-mode configurations.",
+        "Unwired stepper up/down buttons (.stepper-btn-up and .stepper-btn-down) caused clicking stepper arrows to do nothing.",
+        "Common-mode configuration physics was incomplete in canvas_js, producing zero output voltage and invariant CMRR when common-mode excitation was active.",
+        "LM741 breadboard IC pin connections in drawCircuitWiring were mapped to incorrect physical pins (Pin 1 instead of Pin 2, Pin 2 instead of Pin 3, Pin 7 instead of Pin 6).",
+        "Missing feedback loop wiring from inverting input Pin 2 through resistors R2_1/R2_2 and selector switch S3 to output Pin 6.",
+        "Observation table data cells lacked center alignment and explicit high-contrast text color on dark rows."
+      ]
     }
   ],
   "completed_ids": [
@@ -600,14 +603,19 @@
     "u00124",
     "u00125",
     "u00126",
+    "u00127",
     "u00128",
     "u00129",
     "u00130",
+    "u00131",
     "u00132",
     "u00134",
     "u00135",
     "u00136",
     "u00137",
-    "u00138"
+    "u00138",
+    "u00139",
+    "u00140",
+    "u00145"
   ]
 }
