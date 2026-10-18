@@ -1,68 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 22:01:15",
-  "completed_count": 145,
-  "fixed_count": 145,
-  "latest_sim_id": "u00184",
+  "updated_at": "2026-10-18 22:03:19",
+  "completed_count": 150,
+  "fixed_count": 150,
+  "latest_sim_id": "u00195",
   "recent_events": [
-    {
-      "sim_id": "u00146",
-      "status": "FIXED",
-      "time": "21:06:50",
-      "issues": [
-        "Observation table row generation in recordObservation was misaligned: lacked the trial number column, shifted subsequent values into wrong column headers, and appended an unlisted decision threshold column.",
-        "Action buttons (btn_generate_sequence and btn_toggle_demod_view), experiment dropdown, and stepper buttons (.stepper-btn-up, .stepper-btn-down) had no event listeners attached.",
-        "PRBS_SEQUENCE was defined as a const, preventing dynamic bit sequence regeneration upon clicking btn_generate_sequence.",
-        "In renderPatchCable, the shadow stroke was missing ctx.moveTo(x1, y1 + 4) before bezierCurveTo.",
-        "Oscilloscope CH3 and CH4 patch cables connected 36px above their BNC connector jacks due to an omitted control panel Y-offset.",
-        "Apparatus chassis lacked 3D shadow elevation and high-contrast outlines against the dark #090d16 canvas.",
-        "FFT maximum frequency was limited to 60 Hz, clipping carrier frequencies up to 50 Hz and higher-rate sidebands (fc + Rb up to 70 Hz), causing bandwidth annotations to vanish at upper frequency limits."
-      ]
-    },
-    {
-      "sim_id": "u00149",
-      "status": "FIXED",
-      "time": "21:07:46",
-      "issues": [
-        "Unwired action buttons: btn_toggle_demod (toggling demodulated message trace and receiver patch cable) and btn_auto_scale (dynamically scaling oscilloscope timebase) were missing event listeners in canvas_js.",
-        "Unwired stepper buttons: .stepper-btn click handlers were missing in canvas_js, preventing up/down buttons from adjusting fm, fc, and kf stepper values.",
-        "Malformed MathML in principles_summary_html: modulation index formula had Delta placed outside the fraction rather than inside the numerator (Δf/fm).",
-        "Missing parameter symbol in observation_thead_html: column 7 header was missing the Carson Bandwidth symbol B present in other observation columns."
-      ]
-    },
-    {
-      "sim_id": "u00133",
-      "status": "FIXED",
-      "time": "21:08:06",
-      "issues": [
-        "Misaligned observation table row columns: replaced 11 td cells with 7 cells matching the exact columns of observationThead (V1, N1, N2, V2, k, I2, Pc)",
-        "Unwired action button: wired btn_toggle_excitation ('Energize Transformer Primary') to toggle excitation state and dynamically update meters and core flux",
-        "Unwired stepper arrow buttons: added direct event listeners for .stepper-btn-up and .stepper-btn-down in canvas_js",
-        "Division-by-zero vulnerability: guarded I0 against f <= 0 and N1 <= 0 in both observation recording and physics loop",
-        "Rheostat slider bounds: clamped sliderNorm to [0, 1] to guard against out-of-range load resistance inputs"
-      ]
-    },
-    {
-      "sim_id": "u00151",
-      "status": "FIXED",
-      "time": "21:08:41",
-      "issues": [
-        "Observation table logging in canvas_js appended 9 columns into a 7-column header (inserting fs and fAlpha), causing severe column misalignment and table overflow",
-        "Action buttons (btn_load_alpha_epoch, btn_load_beta_epoch, btn_compute_psd) lacked event listeners",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update target inputs and dispatch input/change events"
-      ]
-    },
-    {
-      "sim_id": "u00152",
-      "status": "FIXED",
-      "time": "21:12:28",
-      "issues": [
-        "Observation table columns were completely misaligned (10 columns generated for a 7-column header table with extra and mismatched columns)",
-        "Action buttons (btn_toggle_eye_state and btn_trigger_event) were not wired to any event handlers in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) were not wired to input controls in canvas_js",
-        "Alpha rhythm desynchronization upon eye opening was not implemented across EEG traces, spectrogram, topographic overlay, and telemetry"
-      ]
-    },
     {
       "sim_id": "u00158",
       "status": "FIXED",
@@ -463,6 +405,63 @@
         "Lack of Norma Verticalis (superior cranial vault aspect) visualization to illustrate bi-euryon breadth measurement alongside norma lateralis length measurement.",
         "Observation table record button had restricted ID selector lacking fallback for #btn_record."
       ]
+    },
+    {
+      "sim_id": "u00192",
+      "status": "FIXED",
+      "time": "22:01:27",
+      "issues": [
+        "Observation table columns misaligned: tr.innerHTML contained extra serial number and shot count columns absent in observation_thead_html, shifting all probability and fidelity readouts into incorrect columns.",
+        "Unwired action buttons: btn_execute_circuit and btn_apply_hadamard had no click event listeners attached in canvas_js.",
+        "Unwired stepper buttons: .stepper-btn increment/decrement buttons were unhandled in canvas_js.",
+        "Unidirectional wavepacket pulse rendering: isQ0 was hardcoded to true, preventing pulses from propagating along the q1 waveguide rail."
+      ]
+    },
+    {
+      "sim_id": "u00174",
+      "status": "FIXED",
+      "time": "22:02:22",
+      "issues": [
+        "Mismatched title and eyebrow: Corrected title from 'Movemaster RM-501 Forward Kinematics' to 'Anderson\\'s Bridge: Self-Inductance & Resistance of Coil' and eyebrow to 'Electrical & Electronic Measurements • ClassTurn Virtual Laboratory' to match the actual Anderson AC bridge experiment and apparatus.",
+        "Misaligned observation table headers: Added missing 'Trial #' leading header and trailing 'Dissipation Factor D' header to observation_thead_html, ensuring all 13 columns match the 13 table cells logged by the record button.",
+        "Unwired action button: Wired #btn_auto_balance ('Auto-Balance Bridge to Null Point') in canvas_js to compute analytical null balance values for r1 and r and dispatch input updates.",
+        "Unwired stepper arrow buttons: Attached click event listeners in canvas_js for .stepper-btn-up and .stepper-btn-down to reliably increment/decrement stepper inputs with min/max bounds clamping.",
+        "Protected MathML unit tags in telemetry: Updated setReading helper in canvas_js to target the numeric child element, preventing destructive wiping of MathML unit markup."
+      ]
+    },
+    {
+      "sim_id": "u00197",
+      "status": "FIXED",
+      "time": "22:02:31",
+      "issues": [
+        "Observation table column mismatch: btnRecord inserted 11 cells including an un-headed run number and out-of-order values against a 9-column table header",
+        "Unwired action button: #btn_level_ground in actions_html was not wired in canvas_js",
+        "Unwired stepper buttons: .stepper-btn controls lacked click event listeners in canvas_js",
+        "Missing primary trigger button: actions_html omitted the 'Drop Car Over Step' button referenced in procedure Step 3",
+        "Prose MathML artifact: The initial English word 'A' in principles overview was erroneously wrapped as a mathematical variable <mi>A</mi>"
+      ]
+    },
+    {
+      "sim_id": "u00190",
+      "status": "FIXED",
+      "time": "22:03:12",
+      "issues": [
+        "Observation table dataCells array contained 11 items including reading_dialysis which was not in the 10-column thead, causing column misalignment on recording",
+        "Atlas action button #btn_quench_elute ('Quench with Iodoacetamide & Run DEAE Elution') was unwired in canvas_js",
+        "Activity selection dropdown #experimentSelect was unwired for switching between cleavage kinetics and salt gradient activities",
+        "Step button #btnStep lacked procedure list active step highlighting"
+      ]
+    },
+    {
+      "sim_id": "u00195",
+      "status": "FIXED",
+      "time": "22:03:18",
+      "issues": [
+        "Unwired action buttons: 'btn_saturate_column' and 'btn_equilibrate_boundary' had no event listeners wired in canvas_js.",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' increment/decrement buttons were not bound to modify control values or trigger inputs.",
+        "Telemetry readout ID mismatch: syncControlsAndTelemetry() referenced IDs 'reading_penman_eo', 'val_penman_eo', etc., instead of DOM IDs ('val_reading_penman_eo', 'val_reading_latent_heat', etc.), causing live readouts to remain static.",
+        "Misaligned observation table: record button row prepended a trial index and omitted the Latent Heat column, causing all 7 data columns to be misaligned with observation_thead_html."
+      ]
     }
   ],
   "completed_ids": [
@@ -600,6 +599,7 @@
     "u00171",
     "u00172",
     "u00173",
+    "u00174",
     "u00175",
     "u00177",
     "u00179",
@@ -610,6 +610,10 @@
     "u00185",
     "u00186",
     "u00187",
-    "u00188"
+    "u00188",
+    "u00190",
+    "u00192",
+    "u00195",
+    "u00197"
   ]
 }
