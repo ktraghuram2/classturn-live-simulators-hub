@@ -1,61 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 22:20:08",
-  "completed_count": 175,
-  "fixed_count": 175,
-  "latest_sim_id": "u00225",
+  "updated_at": "2026-10-18 22:23:54",
+  "completed_count": 180,
+  "fixed_count": 180,
+  "latest_sim_id": "u00230",
   "recent_events": [
-    {
-      "sim_id": "u00182",
-      "status": "FIXED",
-      "time": "21:32:08",
-      "issues": [
-        "Unwired action buttons: #btn_purge_electrolyte (N2 gas purge) and #btn_start_sweep (potential sweep initiate) lacked click handlers in canvas_js.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) were unhandled and did not increment/decrement input values.",
-        "Misaligned observation table columns: recordBtn appended 7 columns with an unmapped trial index and omitted Step Potential (dEs), causing misaligned columns with the 6 thead columns.",
-        "Inconsistent calibration physics: k_calib constant produced 2.42 μA at default parameters instead of the expected 4.850 μA default differential peak current and 34.2 dB SNR."
-      ]
-    },
-    {
-      "sim_id": "u00172",
-      "status": "FIXED",
-      "time": "21:36:06",
-      "issues": [
-        "Unwired Auto-Balance action button (#btn_auto_balance) in canvas_js",
-        "Unwired stepper increment and decrement buttons (.stepper-btn) in canvas_js",
-        "Misaligned observation table columns due to an unindexed row number cell in btnRecord row generation",
-        "Bridge null detector calculation in computePhysics did not achieve null balance (V_null = 0.000 V, STATUS: BALANCED) at nominal balance arm values (R1 = 2.0 kΩ, R3 = 1000.0 Ω)"
-      ]
-    },
-    {
-      "sim_id": "u00153",
-      "status": "ERROR",
-      "time": "21:50:33",
-      "issues": [
-        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--model', 'gemini-3.8-flash-high', '--disable-slash-commands"
-      ]
-    },
-    {
-      "sim_id": "u00188",
-      "status": "FIXED",
-      "time": "21:58:54",
-      "issues": [
-        "Unwired stepper buttons: missing .stepper-btn-down / .stepper-btn-up selectors and ▲/▼ text detection in bindControls prevented stepping",
-        "Unwired action buttons: #btn_oxidize_dialyze and #btn_elute_peak had no event listeners attached in bindControls",
-        "Misaligned observation table columns: 8-column header (Elution Volume, Initial HRP, Initial IgG, A403, A280, RZ, Eluted IgG, Molar Ratio) was populated with mismatched slice indices starting with trial count and salt molarity instead of volume and readings"
-      ]
-    },
-    {
-      "sim_id": "u00187",
-      "status": "FIXED",
-      "time": "21:59:46",
-      "issues": [
-        "Observation table column misalignment in btnRecord: 9 data items (including unrepresented hematocrit and theta) were appended into a 7-column observation table.",
-        "Unwired stepper up/down buttons (▲/▼) in the control panel preventing interactive parameter adjustment.",
-        "Unwired action buttons: 'Dispense Sample & Stir Eldon Wells', 'Execute 4-Axis Orbital Card Tilt', and 'Toggle Holotable IgM/IgG Lattice View'.",
-        "Unwired activity / experiment mode dropdown selection ('experimentSelect' / 'activitySelect')."
-      ]
-    },
     {
       "sim_id": "u00185",
       "status": "FIXED",
@@ -462,6 +411,66 @@
         "Hardcoded valid bit text: Cache directory line cells rendered static 'V:1' text rather than reflecting dynamic line.valid bit state.",
         "Decoder visual state: 2-to-4 decoder lacked 3D shading and active allocation signal illumination during line replacement."
       ]
+    },
+    {
+      "sim_id": "u00216",
+      "status": "FIXED",
+      "time": "22:22:19",
+      "issues": [
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked click event listeners to increment or decrement control inputs.",
+        "Unwired action buttons: 'btn_run_ica' and 'btn_purge_artifacts' defined in controls had no event listeners attached in canvas_js.",
+        "Broken live readouts DOM updater: updateTelemetryDOM queried element IDs without the 'val_' prefix defined in readouts_html, preventing telemetry displays from updating.",
+        "Observation table column misalignment: btnRecord inserted 10 <td> elements for a 7-column observation table header."
+      ]
+    },
+    {
+      "sim_id": "u00224",
+      "status": "FIXED",
+      "time": "22:22:19",
+      "issues": [
+        "Unwired action buttons in canvas_js: btn_dose_detergent, btn_stir_solution, btn_immerse_cloth, and btn_toggle_molecular_view lacked click event listeners.",
+        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down buttons lacked click handlers to increment and decrement parameters with range clamping.",
+        "Unwired top-panel and playback controls: btnRecord, btnReset, btnToggle (Pause/Run), btnStep, and experimentSelect lacked event listeners in canvas_js.",
+        "Observation table column alignment: wired btnRecord to generate exactly 6 <td> cells matching the 6 defined observation columns (C, γ, α_mic, ω, t_stir, η).",
+        "Telemetry unit preservation: modified updateTelemetry to target inner numeric child spans instead of overwriting el.textContent directly, preserving native MathML units.",
+        "Corrupted HTML attribute values in readouts_html: data-unit attributes contained nested span tags and unescaped quotes injected during slot compilation.",
+        "Enforced canvas direct interaction lock (pointer-events: none) and input boundary guards against NaN/out-of-range values.",
+        "Added toggleable on-canvas molecular micelle inset overlay HUD demonstrating unimer vs micellar aggregation states."
+      ]
+    },
+    {
+      "sim_id": "u00227",
+      "status": "FIXED",
+      "time": "22:22:21",
+      "issues": [
+        "Unwired action button (btn_toggle_power) and stepper buttons (.stepper-btn) in canvas_js",
+        "Observation table columns in btnRecord event listener were misaligned and missing RB and C data columns (7 columns emitted instead of the 8 columns defined in thead)",
+        "Oscilloscope waveform phase jumped erratically every animation frame due to unanchored frame time modulo; locked trigger phase offset for stable display",
+        "Output LED sampled high-frequency square wave across 60 FPS frames producing strobe aliasing; set to steady illuminated state when circuit is powered",
+        "Corrected readout label from 'Time constant' to 'Time period' in readouts_html to accurately represent total oscillation period T"
+      ]
+    },
+    {
+      "sim_id": "u00229",
+      "status": "FIXED",
+      "time": "22:22:40",
+      "issues": [
+        "Unwired action buttons: Pulse Set ('btn_trigger_set') and Alternate Trigger Pulse ('btn_toggle_switch') lacked event listeners in canvas_js",
+        "Unwired stepper buttons: Custom up/down stepper buttons ('.stepper-btn') for VCC and R3 lacked click event listeners",
+        "Misaligned observation table columns: JS recorded 7 columns (including R3 and misplaced readings) against the 6-column header (VCC, Vtrig, Vrst, Vout, Iled, Q)"
+      ]
+    },
+    {
+      "sim_id": "u00230",
+      "status": "FIXED",
+      "time": "22:23:54",
+      "issues": [
+        "Observation table column misalignment: 12 table cells (including an unheaded S.No column and unheaded Vpp column) were recorded into a 10-column table header.",
+        "Unwired stepper arrow buttons (.stepper-btn-up, .stepper-btn-down) prevented users from incrementing/decrementing parameter inputs via the UI.",
+        "Unwired action buttons: btn_toggle_cro_channel (toggle collector/base waveforms) and btn_synchronize_symmetry (auto-symmetrize circuit) had no event listeners.",
+        "Unwired experiment activity dropdown (Primary Experiment vs Extended Activity) failed to switch between symmetric and asymmetric configurations.",
+        "Telemetry readouts failed to update dynamically because setElemText and updateTelemetryDisplay queried 'reading_*' instead of the rendered element ID 'val_reading_*'."
+      ]
     }
   ],
   "completed_ids": [
@@ -634,11 +643,16 @@
     "u00213",
     "u00214",
     "u00215",
+    "u00216",
     "u00217",
     "u00218",
     "u00221",
     "u00223",
+    "u00224",
     "u00225",
-    "u00226"
+    "u00226",
+    "u00227",
+    "u00229",
+    "u00230"
   ]
 }
