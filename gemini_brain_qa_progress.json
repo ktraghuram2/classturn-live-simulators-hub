@@ -1,74 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 00:24:47",
-  "completed_count": 375,
-  "fixed_count": 375,
-  "latest_sim_id": "u00438",
+  "updated_at": "2026-10-19 00:28:08",
+  "completed_count": 380,
+  "fixed_count": 380,
+  "latest_sim_id": "u00476",
   "recent_events": [
-    {
-      "sim_id": "u00429",
-      "status": "FIXED",
-      "time": "23:57:37",
-      "issues": [
-        "Observation table columns mismatch: Record button generated 9 <td> columns (including un-headed system capacity N) for an 8-column <th> header table, throwing data alignment off.",
-        "Unwired action buttons: 'Inject Customer Arrival Surge' (btn_inject_burst) and 'Toggle Arrival Distribution' (btn_cycle_distribution) had no event listeners in canvas_js.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked event handlers to modify input values.",
-        "Distribution state missing: canvas_js defaulted to uniform distribution when #arrival_dist dropdown was absent, preventing cycling between Exponential, Deterministic, and Uniform distributions.",
-        "Malformed MathML in title, aim, and actions: Kendall's notation was rendered as nested fraction fractions instead of standard GI/M/c/N notation, and distribution toggle button contained nested fraction MathML.",
-        "Distorted units in observation table header: 'customer s/s' was rendered as a fraction customer*(s/s) instead of customers/s."
-      ]
-    },
-    {
-      "sim_id": "u00427",
-      "status": "FIXED",
-      "time": "23:58:13",
-      "issues": [
-        "Corrected distorted nested-fraction MathML representation of Kendall notation M/M/c/N across header title, aim, principles summary, and procedure slots.",
-        "Aligned observation table recording columns to match the 10-column thead structure (lambda, mu, c, N, rho, Lq, Ls, Tq, Ts, Pn) and removed mismatched trial column.",
-        "Wired Poisson burst arrival action button (btn_burst_arrival) to spawn customer entity arrivals.",
-        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) across all numerical parameters.",
-        "Wired experiment mode selection dropdown to apply under-saturated and capacity-saturated parameter presets.",
-        "Updated telemetry setter and live readout values to preserve MathML unit spans without duplicating units or overwriting symbols."
-      ]
-    },
-    {
-      "sim_id": "u00399",
-      "status": "FIXED",
-      "time": "23:58:15",
-      "issues": [
-        "Removed italic math formatting from the English indefinite article 'A' in principles_summary_html",
-        "Corrected inverted volumetric discharge unit (/m³s -> m³/s) in principles_list_html and readouts_html",
-        "Cleaned raw embedded HTML markup inside data-unit attributes in readouts_html",
-        "Fixed live readouts in canvas_js by targeting val_reading_* value containers without destroying child MathML unit spans",
-        "Realigned observation table recording in canvas_js to match the 6 columns defined in observation_thead_html (Head, Angle, Cd, Q_th, Q_act, Collection Time)",
-        "Wired custom action button #btn_align_hook_gauge ('Lower Hook Gauge to Water Meniscus') with visual water meniscus contact animation",
-        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) for interactive head, angle, and Cd adjustment",
-        "Wired top panel controls (#btnToggle for pause/run, #btnStep for time advance, #btnReset for restoring defaults and clearing table, and #experimentSelect for test modes)",
-        "Increased canvas text font sizes from 7.5px/8px to 9px to satisfy Q25 legibility guidelines"
-      ]
-    },
-    {
-      "sim_id": "u00426",
-      "status": "FIXED",
-      "time": "00:00:26",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 8 <td> elements into a 7-column table with Traffic Intensity and Avg Waiting Time swapped; realigned row cells to match observation_thead_html headers (Arrival Rate, Service Rate, Server Count, Capacity Limit, Traffic Intensity, Avg Waiting Time, Queue Length).",
-        "Unwired custom action button: #btn_inject_burst ('Inject Arrival Burst') lacked a click event listener in canvas_js; wired it to inject a burst of arriving individuals into the queue.",
-        "Unwired stepper arrow buttons: .stepper-btn-up and .stepper-btn-down lacked click event handlers in canvas_js to increment and decrement inputs with boundary clamping.",
-        "Unwired top panel and playback controls: wired #btnToggle to pause/resume simulation, #btnStep to advance single frames, #experimentSelect to configure experiment presets, and #btnReset to restore default parameters and clear recorded observations.",
-        "Telemetry unit preservation: updated updateTelemetry to update the numerical value span without overwriting MathML unit markup."
-      ]
-    },
-    {
-      "sim_id": "u00430",
-      "status": "FIXED",
-      "time": "00:00:37",
-      "issues": [
-        "Wired unhandled stepper buttons (.stepper-btn-up and .stepper-btn-down) to dynamically increment and decrement parameter inputs with step-bounded values and trigger synchronization.",
-        "Wired unhandled action buttons (#btn_flush_queue and #btn_inject_surge) to purge queued buffer tokens and inject arrival surges respectively.",
-        "Rectified observation table logging misalignment in btnRecord where only 6 columns were logged instead of 9, omitting Lq, Ws, and Wq and misaligning PN."
-      ]
-    },
     {
       "sim_id": "u00431",
       "status": "FIXED",
@@ -505,6 +441,62 @@
         "Unwired action buttons: btn_toggle_pulses (Trigger Gate Firing Pulses) and btn_inversion_preset (Set Inversion Mode α = 120°) were defined in HTML but had no click event handlers wired in canvas_js.",
         "Readout DOM text replacement: updateTelemetry directly overwrote valEl.textContent, stripping the nested MathML unit elements from live readout spans."
       ]
+    },
+    {
+      "sim_id": "u00475",
+      "status": "FIXED",
+      "time": "00:26:36",
+      "issues": [
+        "Unwired stepper buttons (.stepper-btn-up and .stepper-btn-down) for numeric input controls",
+        "Unwired action buttons (#btn_run_compression_test to apply hydraulic load and #btn_tare_balance to zero digital balance)",
+        "Observation table column mismatch in recordBtn handler (inserted 8 <td> elements into 6-column table, misaligning headers with data)"
+      ]
+    },
+    {
+      "sim_id": "u00477",
+      "status": "FIXED",
+      "time": "00:26:51",
+      "issues": [
+        "Unwired action buttons: Connected 'Execute Monotonic Loading to Failure' (btn_run_loading_to_failure) and 'Separate Split Halves for Inspection' (btn_separate_split_halves) with automated ramp loading and cleavage separation logic.",
+        "Unwired stepper controls: Added event listeners to .stepper-btn up/down controls with boundary clamping and reactive change event dispatching.",
+        "Broken telemetry readout selectors: Updated reading queries to reference canonical val_reading_* IDs so applied load, peak load, split tensile strength, and strain update reactively.",
+        "Misaligned observation table columns: Corrected record row structure to match the 6 table headers (Specimen ID, Curing Age, Diameter, Length, Failure Load, Split Tensile Strength) instead of 5 misaligned cells.",
+        "Incomplete and misaligned leader line badges: Configured all 7 badges matching the 7 legend pills with Style 2 cubic Bezier S-curves and anchor touch beads, fixing targets for packing strips, lower platen, chassis ram, and console gauge."
+      ]
+    },
+    {
+      "sim_id": "u00473",
+      "status": "FIXED",
+      "time": "00:26:54",
+      "issues": [
+        "Unwired action buttons (btn_tare_balance, btn_equilibrate_bath) and stepper up/down buttons (.stepper-btn-up, .stepper-btn-down)",
+        "Misaligned observation table columns in btnRecord handler where Stage and bath temperature were written into mass columns W1 and W2, and columns for bitumen mass (W3-W1) and displaced water mass were omitted",
+        "Missing volumetric 3D glass shading on pycnometer bottle and low-contrast outlines on dark #090d16 canvas"
+      ]
+    },
+    {
+      "sim_id": "u00468",
+      "status": "FIXED",
+      "time": "00:27:51",
+      "issues": [
+        "Raw LaTeX '200 mV_pp' in Section 07 Validation & Limits converted to clean inline MathML",
+        "Missing '#' / Trial number column in Section 08 Observation Table header causing a 1-column misalignment with recorded rows",
+        "Unwired '#btn_auto_sweep' action button in Section 05 wired to perform automated frequency sweep across decades",
+        "Unwired '#btnReset' button wired to restore all controls and readouts to defaults and clear the observation table",
+        "Wired stepper buttons (▲/▼) and '#experimentSelect' dropdown for direct reactive updates"
+      ]
+    },
+    {
+      "sim_id": "u00476",
+      "status": "FIXED",
+      "time": "00:28:08",
+      "issues": [
+        "Misaligned observation table columns: btnRecord injected fck and L0 while omitting mean deformation, creating 8 cells under 7 thead headers; corrected row to match the 7 observation headers [P, stress, def1, def2, meanDef, strain, Ec]",
+        "Unwired custom action buttons: wired btn_recenter to eliminate dial gauge eccentricity and center the specimen, and wired btn_precondition_cycle to execute IS 516 cyclic preconditioning between sigma_b and sigma_a with live console feedback",
+        "Missing stepper input crash-proofing: guarded applied_load, char_strength, and gauge_length against NaN and out-of-range bounds",
+        "Legend pills order mismatch: swapped pill 2 (Compressometer) and pill 3 (Concrete Specimen) in legend_pills_html to achieve 1-to-1 order parity with Section 02 Apparatus and canvas callout badges 2 and 3",
+        "Unwired experiment mode select: wired experimentSelect change event to cleanly update parameters between standard secant modulus test and grade sensitivity analysis"
+      ]
     }
   ],
   "completed_ids": [
@@ -880,8 +872,13 @@
     "u00462",
     "u00463",
     "u00464",
+    "u00468",
     "u00469",
     "u00471",
-    "u00472"
+    "u00472",
+    "u00473",
+    "u00475",
+    "u00476",
+    "u00477"
   ]
 }
