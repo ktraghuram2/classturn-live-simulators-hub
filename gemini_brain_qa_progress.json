@@ -1,9 +1,9 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 20:13:11",
-  "completed_count": 30,
-  "fixed_count": 30,
-  "latest_sim_id": "u00051",
+  "updated_at": "2026-10-18 20:16:50",
+  "completed_count": 35,
+  "fixed_count": 35,
+  "latest_sim_id": "u00055",
   "recent_events": [
     {
       "sim_id": "u00003",
@@ -350,6 +350,63 @@
         "Missing acceleration symbol (a) in the 6th column header of observation_thead_html",
         "Malformed HTML tag inside data-unit attribute for linear acceleration readout in readouts_html"
       ]
+    },
+    {
+      "sim_id": "u00050",
+      "status": "FIXED",
+      "time": "20:14:35",
+      "issues": [
+        "Misaligned observation table columns: row innerHTML included an extra trial index column resulting in 8 table cells instead of matching the 7 columns in observation_thead_html (Crank Angle, Crank Velocity, Fin2, Fin3, Fin4, h3, h4).",
+        "Unwired stepper up/down buttons: .stepper-btn elements had no click listeners attached to increment/decrement their target stepper inputs.",
+        "Unwired action buttons: 'btn_cycle_simulation' (Run Full 360° Kinematic Sweep) and 'btn_peak_inertia_align' (Seek Maximum Dynamic Force Configuration) were not wired to any handler in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u00044",
+      "status": "FIXED",
+      "time": "20:15:07",
+      "issues": [
+        "Unwired Action Button: Custom action button 'Toggle Continuous Equilibrium Run' (#btn_continuous_run) had no click event listener attached in canvas_js (Q14).",
+        "Unwired Top Panel Controls: Pause/Run (#btnToggle), Step (#btnStep), and Reset (#btnReset) controls were unhandled in canvas_js (Q06, Q07, Q18).",
+        "Unwired Stepper Buttons: Stepper buttons (.stepper-btn-up, .stepper-btn-down) had no click handlers to adjust numeric parameter values (Q15).",
+        "Misaligned Observation Table Columns: btnRecord inserted 7 cells with an unlisted timestamp and raw unhappy count into a 6-column thead, omitting Elapsed Cycles t and causing column misalignment (Q18).",
+        "Readout MathML Destruction: updateTelemetry directly assigned el2.textContent, destroying nested MathML unit elements inside .readout-val elements (Q16, Q31).",
+        "Unwired Experiment Mode Selector: #experimentSelect dropdown had no change listener to switch between Primary and Extended activity configurations (Q08).",
+        "Input Clamping & Stability: Added bounds clamping and NaN fallbacks to parameter reading in stepSimulation (Q29)."
+      ]
+    },
+    {
+      "sim_id": "u00042",
+      "status": "FIXED",
+      "time": "20:15:54",
+      "issues": [
+        "Unwired action buttons: btn_align_boundary and btn_achromatize lacked click event listeners in canvas_js.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked click event handlers to increment/decrement input values.",
+        "Misaligned observation table columns: btnRecord injected 7 mismatched columns instead of the 8 columns required by observation_thead_html (Liquid Sample, Temperature, Wavelength, Scale Reading, Refractive Index, Liquid Density, Molecular Mass, Molecular Polarizability).",
+        "Achromatization physics: dispersion factor calculation prevented compensator achromatization for wavelengths under 589 nm."
+      ]
+    },
+    {
+      "sim_id": "u00056",
+      "status": "FIXED",
+      "time": "20:16:21",
+      "issues": [
+        "Observation table columns in canvas_js were misaligned and missing log(x/m) column compared to observation_thead_html",
+        "Action buttons btn_agitate_shaker and btn_auto_titrate were not wired in canvas_js",
+        "Top controls (btnToggle, btnStep, btnReset) and stepper buttons were not wired in canvas_js",
+        "updateTelemetry replaced the entire unit markup in readout spans instead of updating only the value span"
+      ]
+    },
+    {
+      "sim_id": "u00055",
+      "status": "FIXED",
+      "time": "20:16:50",
+      "issues": [
+        "Leader line badge numbers 1, 4, and 6 on canvas did not match legend pills order (Rigid Base Frame is #1, Drive Arm is #4, Slider S is #6)",
+        "Observation table columns inserted by btnRecord were 10 items instead of 8 and misaligned with observation_thead_html",
+        "Stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) were unwired",
+        "Action button #btn_align_extreme ('Align to Extreme Stroke Position') was unwired"
+      ]
     }
   ],
   "completed_ids": [
@@ -378,10 +435,15 @@
     "u00036",
     "u00037",
     "u00038",
+    "u00042",
     "u00043",
+    "u00044",
     "u00046",
     "u00047",
     "u00048",
-    "u00051"
+    "u00050",
+    "u00051",
+    "u00055",
+    "u00056"
   ]
 }
