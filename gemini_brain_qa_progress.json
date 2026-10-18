@@ -1,66 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 00:37:43",
-  "completed_count": 400,
-  "fixed_count": 400,
-  "latest_sim_id": "u00496",
+  "updated_at": "2026-10-19 00:39:46",
+  "completed_count": 405,
+  "fixed_count": 405,
+  "latest_sim_id": "u00503",
   "recent_events": [
-    {
-      "sim_id": "u00432",
-      "status": "FIXED",
-      "time": "00:15:40",
-      "issues": [
-        "Corrected erroneous nested fraction MathML rendering GI/M/1/N Kendall notation across header_title_html, aim_html, principles_summary_html, and procedure_section_html.",
-        "Aligned observation table row cells with the 8-column table header by removing the extra Traffic Intensity cell that caused data column overflow.",
-        "Wired Clear Buffer Tokens action button (#btn_flush_queue) to flush queued customer tokens from buffer.",
-        "Wired stepper up/down buttons and experiment dropdown to dynamically update queue simulation parameters."
-      ]
-    },
-    {
-      "sim_id": "u00452",
-      "status": "FIXED",
-      "time": "00:16:29",
-      "issues": [
-        "Telemetry display element IDs in canvas_js queried reading_* instead of val_reading_*, preventing live readouts from updating upon state changes.",
-        "Observation table data row columns in canvas_js were misaligned with observation_thead_html (emitted an extra count and bandgap column, while omitting the mass action product n·p column).",
-        "Action buttons (Set Intrinsic, N-Type Doping, P-Type Doping) and stepper increment/decrement buttons were unhandled in canvas_js.",
-        "Carrier distribution plot did not support P-type acceptor doping dynamics or scaling.",
-        "Raw LaTeX-style underscore formatting (3k_B) and unescaped greater-than signs in validation_html were corrected to valid MathML."
-      ]
-    },
-    {
-      "sim_id": "u00450",
-      "status": "FIXED",
-      "time": "00:17:15",
-      "issues": [
-        "Readout DOM queries in canvas_js used element IDs ('reading_*') rather than the rendered readout value span IDs ('val_reading_*'), causing live telemetry updates to fail silently.",
-        "Control stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were unhandled in canvas_js, rendering manual stepping unresponsive.",
-        "Interactive action buttons ('Auto-Balance to Null Point', 'Interchange Outer Gap Resistances', 'Toggle Plug Key') had no event listeners or state management.",
-        "Observation table recorder created rows with 7 misaligned columns containing unrequested S.No and Jockey Pos while omitting Shift (l2 - l1), Linear Resistance (rho), Specimen Length, and Specimen Radius, mismatching the 9-column header.",
-        "Bridge outer gap interchange and Leclanche cell plug-key state were not modeled in circuit physics or animated on canvas."
-      ]
-    },
-    {
-      "sim_id": "u00457",
-      "status": "FIXED",
-      "time": "00:18:33",
-      "issues": [
-        "Corrupted MathML formatting in principles_summary_html for XOR operations (Carry Propagate P_i and Sum S_i were rendered as erroneous superscripts A_i^B_i and P_i^C_i instead of A_i ⊕ B_i and P_i ⊕ C_i).",
-        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js, preventing parameter stepping via the UI.",
-        "Unwired action button btn_inject_propagation_vector in canvas_js, which now injects the worst-case carry propagation vector (A=15, B=0, Cin=1).",
-        "Misaligned observation table row columns in btnRecord click handler: Sum Bits and Carry Out were swapped, and an extraneous 9th delay column was generated for an 8-column header."
-      ]
-    },
-    {
-      "sim_id": "u00456",
-      "status": "FIXED",
-      "time": "00:18:39",
-      "issues": [
-        "Misaligned observation table columns: 9 columns recorded in scrambled order instead of the 8 defined columns (Electric Field, Temperature, Drift Velocity, Transit Time, Barrier Width, Barrier Height, Bias Voltage, Transmission Probability).",
-        "Unwired action button: 'btn_inject_wavepacket' had no event listener to inject carrier wavepacket pulses.",
-        "Unwired stepper controls: '.stepper-btn' up and down increment/decrement buttons were unhandled."
-      ]
-    },
     {
       "sim_id": "u00454",
       "status": "FIXED",
@@ -494,6 +438,64 @@
         "Observation table misalignment: Recorded rows had 8 columns with Photocurrent and Photovoltage transposed, whereas the observation table header defines 6 columns (Trial, Distance, Load Resistance, Photovoltage, Photocurrent, Output Power).",
         "Inaccurate efficiency physics equation: calculatePhysics() formula clamped efficiency to 8.0% due to incorrect dimensional conversion and redundant fill factor multiplication, dropping it below the nominal 14.8% efficiency."
       ]
+    },
+    {
+      "sim_id": "u00480",
+      "status": "FIXED",
+      "time": "00:37:55",
+      "issues": [
+        "Unwired action button btn_toggle_sweep in canvas_js: sequence sweep action was not implemented.",
+        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js: ▲/▼ clicks did not increment/decrement values.",
+        "Observation table column misalignment: btnRecord inserted only 6 cells in mismatched order instead of all 8 columns matching observation_thead_html.",
+        "Raw mathematical formula text (^-(k-1)) outside MathML tags in principles_summary_html and procedure_section_html."
+      ]
+    },
+    {
+      "sim_id": "u00495",
+      "status": "FIXED",
+      "time": "00:38:30",
+      "issues": [
+        "Unwired stepper up/down buttons: clicking ▲ and ▼ buttons on voltage, intensity, temperature, and distance controls did not change the input values.",
+        "Unwired action buttons: 'Toggle Optical Dark Shutter' (btn_toggle_shutter) and 'Auto-Sweep Reverse Voltage' (btn_auto_sweep) had no event listeners.",
+        "Misaligned observation table: recording an observation generated 9 columns under a 6-column header, misaligning column headers and adding extraneous fields.",
+        "Optical dark shutter simulation: closing the shutter now sets incident optical power and photocurrent to zero, reflects pure dark current, blocks the optical beam, and renders the mechanical shutter blade on the sensor."
+      ]
+    },
+    {
+      "sim_id": "u00501",
+      "status": "FIXED",
+      "time": "00:39:33",
+      "issues": [
+        "Observation table record button inserted 9 data columns instead of matching the 6 defined header columns (f, Vp, Vin(p-p), Vout(p-p), Ipk, Av).",
+        "Action buttons ('btn_autoscale_oscilloscope' and 'btn_toggle_fiber_connection') were defined in HTML but unwired in JavaScript.",
+        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) lacked click event listeners.",
+        "teleMap mapped IDs to 'reading_*' (the <li> container elements) instead of 'val_reading_*' (the value spans), overwriting the heading text and MathML symbols.",
+        "Oscilloscope CH2 trace and optical receiver did not reflect fiber disconnection when toggled."
+      ]
+    },
+    {
+      "sim_id": "u00502",
+      "status": "FIXED",
+      "time": "00:39:43",
+      "issues": [
+        "legend_pills_html had pills 4 and 5 reversed (pill 4 was digital voltmeter and pill 5 was digital milliammeter, conflicting with Badge 4 pointing to the milliammeter and Badge 5 pointing to the voltmeter in apparatus_html and canvas_js)",
+        "Unwired action buttons in canvas_js: toggle_plug_key and auto_seek_knee lacked click event listeners",
+        "Unwired stepper buttons in canvas_js: .stepper-btn controls (up/down) were not connected to the stepper inputs",
+        "Misaligned observation table columns in canvas_js: tr.innerHTML inserted trialCount as column 1 and omitted rheostat resistance R_rh, causing all columns to be shifted relative to observation_thead_html",
+        "procedure_section_html had malformed MathML wrapping the letter 'e' in 'e.g.' as a mathematical variable"
+      ]
+    },
+    {
+      "sim_id": "u00503",
+      "status": "FIXED",
+      "time": "00:39:46",
+      "issues": [
+        "Wired custom action button 'btn_cycle_led' to cycle through LED specimens (Red, Yellow, Green, Blue) and update threshold bias",
+        "Corrected observation table row formatting to match the exact 5 column headers in observationThead (Vin, rtr, Vf, If, Pd)",
+        "Added reset handler for 'btnReset' to restore control defaults and clear observations",
+        "Reordered legend_pills_html to match 1-to-1 in order, count, and naming with apparatus list and canvas leader badges 1 to 5",
+        "Cleaned erroneous MathML tag around 'e.g.' in procedure step 2"
+      ]
     }
   ],
   "completed_ids": [
@@ -884,6 +886,7 @@
     "u00477",
     "u00478",
     "u00479",
+    "u00480",
     "u00481",
     "u00483",
     "u00484",
@@ -895,7 +898,11 @@
     "u00492",
     "u00493",
     "u00494",
+    "u00495",
     "u00496",
-    "u00497"
+    "u00497",
+    "u00501",
+    "u00502",
+    "u00503"
   ]
 }
