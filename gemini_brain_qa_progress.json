@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 23:53:43",
-  "completed_count": 330,
-  "fixed_count": 330,
-  "latest_sim_id": "u00419",
+  "updated_at": "2026-10-18 23:57:10",
+  "completed_count": 335,
+  "fixed_count": 335,
+  "latest_sim_id": "u00398",
   "recent_events": [
-    {
-      "sim_id": "u00379",
-      "status": "FIXED",
-      "time": "23:28:33",
-      "issues": [
-        "Misaligned observation table columns: canvas_js inserted 7 <td> cells into observation table rows while observation_thead_html only defines 6 columns, displacing Buffer Occupancy with Guard Mode text.",
-        "Unwired action buttons: 'btn_exploit_payload' (Inject Hijack Payload) and 'btn_apply_strncpy_fix' (Apply strncpy Bounds Check) had no event listeners in canvas_js.",
-        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' controls were unhandled in canvas_js.",
-        "Readout and table unit consistency: updated live readouts and observation rows from shorthand 'B' to 'bytes' to match the principles and slots schema."
-      ]
-    },
-    {
-      "sim_id": "u00375",
-      "status": "FIXED",
-      "time": "23:28:34",
-      "issues": [
-        "Misaligned observation table columns: canvas_js inserted 7 <td> cells with unlisted runCount and mass columns, misaligning data with the 5 columns specified in observation_thead_html.",
-        "Unwired action buttons: '#btn_toggle_motor' ('Toggle Spindle Motor') and '#btn_auto_zero' ('Auto-Zero Spring Sensor') lacked event listeners in canvas_js.",
-        "Unwired stepper controls: Stepper buttons ('.stepper-btn-up', '.stepper-btn-down') were not bound to increment/decrement their respective target input values.",
-        "Motor state uncoupled from physical simulation: Spindle rotation, fluid swirl, and torque deflection continued unconditionally regardless of motor power state."
-      ]
-    },
-    {
-      "sim_id": "u00369",
-      "status": "FIXED",
-      "time": "23:28:34",
-      "issues": [
-        "Unwired action button btn_run_full_trace in canvas_js",
-        "Unwired top-panel controls (btnToggle pause/run and btnStep) in animation loop",
-        "Misaligned observation table: btnRecord appended 8 mismatched columns into a 5-column table",
-        "Missing action button for Procedure Step 4 (Step Next Branch Instruction)",
-        "Input boundary clamping missing in resetEngine to guard against NaN/out-of-range inputs",
-        "Sub-9px canvas text fonts upgraded to >= 9px for high-contrast legibility"
-      ]
-    },
-    {
-      "sim_id": "u00373",
-      "status": "FIXED",
-      "time": "23:28:34",
-      "issues": [
-        "Broken nested MathML fraction in apparatus specification for major load capacities",
-        "Raw unrendered LaTeX notation 'HR_avg' in live readouts heading",
-        "Unwired action buttons 'btn_apply_minor_load' and 'btn_release_major_load' in canvas_js",
-        "Unwired stepper up/down buttons '.stepper-btn' in canvas_js",
-        "Misaligned observation table row data columns relative to table headers"
-      ]
-    },
-    {
-      "sim_id": "u00380",
-      "status": "FIXED",
-      "time": "23:29:38",
-      "issues": [
-        "Corrupted MathML in principles_summary_html where standard 'I/O' was rendered as a fraction (I over O)",
-        "Unwired action buttons: #btn_inject_format_string and #btn_auto_match_specifiers had no event listeners in canvas_js",
-        "Unwired stepper controls: .stepper-btn elements lacked click handlers to increment/decrement input values",
-        "Misaligned observation table row insertion: generated 7 mismatched columns instead of the 5 defined in observation_thead_html",
-        "Badges 2 and 3 had zero horizontal curvature (vertical straight lines) and leader distances shorter than the minLeader requirement"
-      ]
-    },
     {
       "sim_id": "u00376",
       "status": "FIXED",
@@ -499,6 +440,65 @@
         "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' stepper buttons lacked click handlers to increment/decrement beam length, excitation frequency, and excitation voltage.",
         "Errant MathML conversion in procedure_section_html: English article 'A' in 'A PZT ceramic patch' was mistakenly marked up as math variable '<math><mrow><mi>A</mi></mrow></math>'."
       ]
+    },
+    {
+      "sim_id": "u00396",
+      "status": "FIXED",
+      "time": "23:54:00",
+      "issues": [
+        "Corrupted MathML fraction in volumetric discharge units in readouts_html (rendered as c/m³s instead of cm³/s).",
+        "Corrupted MathML fraction in volumetric discharge unit headers and missing head symbol H in observation_thead_html.",
+        "Misaligned observation table row insertion in canvas_js btnRecord (10 cells with unordered data inserted into a 9-column table).",
+        "Unwired action buttons ('btn_toggle_drain_valve' and 'btn_align_hook_gauge') and unwired stepper buttons in canvas_js.",
+        "Mismatched legend pills vs apparatus items and canvas badge numbering (spurious 90° V-Notch Weir Plate shifted pills out of sync with badges 1-6)."
+      ]
+    },
+    {
+      "sim_id": "u00420",
+      "status": "FIXED",
+      "time": "23:54:33",
+      "issues": [
+        "Unwired action button: 'Trigger Resonant Modal Excitation' (#btn_excite_beam) was not connected to an event listener.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) and input change events lacked click/input event handlers.",
+        "Misaligned observation table: Row generation in #btnRecord inserted 9 columns with shifted and merged headers (trial index in mode column, merged dimensions, offset frequencies) instead of the 8 canonical headers in observation_thead_html.",
+        "Readout DOM replacement: setVal used el.textContent directly, overwriting inner unit/value spans inside readout elements."
+      ]
+    },
+    {
+      "sim_id": "u00417",
+      "status": "FIXED",
+      "time": "23:54:44",
+      "issues": [
+        "Observation table columns logged by the Record button were completely misaligned (9 columns logged with trial index and width/thickness vs 6 columns defined in observation_thead_html, with reversed column ordering).",
+        "Action buttons #btn_sweep_resonance ('Auto-Tune to Mode 1 Resonance Peak') and #btn_toggle_shaker ('Toggle Shaker Harmonic Power') were unwired in canvas_js.",
+        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js.",
+        "HTML slot readouts_html had malformed data-unit attributes containing serialized HTML/MathML span tags instead of clean unit strings (m⁴, Hz, m/s², dimensionless)."
+      ]
+    },
+    {
+      "sim_id": "u00421",
+      "status": "FIXED",
+      "time": "23:56:20",
+      "issues": [
+        "Corrected mismatched numbered legend pills 2 and 3 in legend_pills_html so Badge 2 refers to Continuous Elastic Beam Specimen and Badge 3 refers to Modular Left Boundary Stanchion, matching apparatus specifications and canvas leader lines.",
+        "Wired action buttons (btn_strike_hammer, btn_cycle_boundary, btn_toggle_mode) in canvas_js to trigger impulse hammer strikes, cycle through boundary conditions, and toggle Mode 1 vs Mode 2 flexural vibration.",
+        "Wired up/down stepper buttons (.stepper-btn) in canvas_js to allow interactive increment/decrement of all beam geometry and material parameters.",
+        "Corrected observation table row formatting in btnRecord click handler to match the exact 8 columns defined in observation_thead_html.",
+        "Added analytical higher-order eigenvalue formulations and mode shape support for Mode 2 (first overtone) across all boundary conditions."
+      ]
+    },
+    {
+      "sim_id": "u00398",
+      "status": "FIXED",
+      "time": "23:57:10",
+      "issues": [
+        "Corrected malformed discharge rate unit from '/m³s' to 'm³/s' in readouts_html and observation_thead_html",
+        "Generalized Chezy's coefficient readout label from 'Chezy's Coefficient (Bazin)' to 'Chezy's Coefficient' to accommodate both Activity 1 and 2",
+        "Wired stepper up/down buttons to increment and decrement inputs within their defined bounds and trigger update events",
+        "Wired 'Stabilize Half-Full Depth' action button with interactive visual stabilization feedback",
+        "Implemented dual-mode Chezy coefficient computation to dynamically support Activity 1 (Bazin) and Activity 2 (Kutter)",
+        "Fixed observation table record button to correctly record 8 aligned table columns matching observation_thead_html"
+      ]
     }
   ],
   "completed_ids": [
@@ -816,7 +816,9 @@
     "u00393",
     "u00394",
     "u00395",
+    "u00396",
     "u00397",
+    "u00398",
     "u00400",
     "u00401",
     "u00402",
@@ -831,6 +833,9 @@
     "u00414",
     "u00415",
     "u00416",
-    "u00419"
+    "u00417",
+    "u00419",
+    "u00420",
+    "u00421"
   ]
 }
