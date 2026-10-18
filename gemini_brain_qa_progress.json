@@ -1,68 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 00:53:41",
-  "completed_count": 435,
-  "fixed_count": 435,
-  "latest_sim_id": "u00536",
+  "updated_at": "2026-10-19 00:55:25",
+  "completed_count": 440,
+  "fixed_count": 440,
+  "latest_sim_id": "u00535",
   "recent_events": [
-    {
-      "sim_id": "u00486",
-      "status": "FIXED",
-      "time": "00:36:02",
-      "issues": [
-        "Raw ASCII exponent notation '^(...)' and fragmented math tags in principles_summary_html replaced with unified MathML power expressions.",
-        "Inverted and malformed discharge units ('/m³s') in observation_thead_html, readouts_html, and principles_list_html corrected to standard cubic meters per second ('m³/s').",
-        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) wired up in canvas_js with bounds enforcement and change/input event triggers.",
-        "Unwired action buttons ('btn_switch_weir' and 'btn_zero_point_gauge') wired up in canvas_js with full dynamic physics calculation for both rectangular and triangular 90° V-notch weirs and gauge datum calibration feedback.",
-        "Observation table recording in canvas_js completely misaligned (originally emitted 6 misordered columns); corrected to record all 10 columns matching observation_thead_html in exact 1-to-1 order."
-      ]
-    },
-    {
-      "sim_id": "u00493",
-      "status": "FIXED",
-      "time": "00:36:22",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 9 columns into a 5-column observation table, causing severe column mismatch and overflow.",
-        "Unwired 'Set Thermal Equilibrium' action button (id='btn_thermal_equilibrium') in controls.",
-        "Unwired stepper up/down buttons (.stepper-btn) for bias voltage, dopant concentrations, and temperature inputs.",
-        "updateTelemetryField directly overwriting element textContent instead of the first span, which stripped rendered unit MathML markup."
-      ]
-    },
-    {
-      "sim_id": "u00492",
-      "status": "FIXED",
-      "time": "00:36:41",
-      "issues": [
-        "Unwired action button: #btn_sweep_iv ('Auto-Sweep I-V Characteristic Curve') had no event handler in canvas_js.",
-        "Unwired stepper controls: Stepper up/down buttons (.stepper-btn) were not wired to modify input values or trigger telemetry updates.",
-        "Observation table column misalignment: Recorded rows contained 9 columns (with an unheaded serial number and trailing thermal voltage), whereas the table header defined exactly 7 columns, causing all data cells to be misaligned and overflow.",
-        "Physical junction area mismatch: Junction cross-section AREA was set to 1.0e-4 m² instead of 1.0e-8 m² (1.0e-4 cm² planar micro-junction), causing reverse saturation current and forward diode current to calculate 10,000× too high (14.1 A instead of 1.41 mA at 0.3 V), contradicting the simulator's declared default telemetry.",
-        "Raw LaTeX and unit error in validation assumptions: validation_html contained unparsed LaTeX superscript 'A^*' as '<math><mrow><mi>A</mi></mrow></math>^*' and stated Richardson constant 120 A/(m² K²) instead of 1.20 × 10⁶ A/(m² K²).",
-        "Low-contrast wiring: Kelvin sense cable 2 was drawn in #020617 on dark #090d16 canvas, rendering it virtually invisible."
-      ]
-    },
-    {
-      "sim_id": "u00497",
-      "status": "FIXED",
-      "time": "00:37:17",
-      "issues": [
-        "Stepper increment/decrement buttons (.stepper-btn) were not wired to update voltage input and trigger physics update.",
-        "Trigger Gate Pulse action button (#btn_trigger_gate) was unwired in canvas_js.",
-        "Observation table columns were misaligned with the 4-column header: tr rows inserted observation index, V2, Vmeasured, and current instead of V2, Vmeasured, current, and series resistor voltage drop (VRs).",
-        "Numbered badge IDs in canvas_js were misaligned with legend_pills_html (Badge 1 pointed to SCR instead of DC Power Supply, Badge 2 pointed to DC Power Supply instead of Ammeter, etc.)."
-      ]
-    },
-    {
-      "sim_id": "u00496",
-      "status": "FIXED",
-      "time": "00:37:43",
-      "issues": [
-        "Unwired action button: #btn_find_mpp ('Auto-Sweep to Maximum Power Point (MPP)') had no event listener in canvas_js.",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down for Distance and Load Resistance controls were not wired in canvas_js.",
-        "Observation table misalignment: Recorded rows had 8 columns with Photocurrent and Photovoltage transposed, whereas the observation table header defines 6 columns (Trial, Distance, Load Resistance, Photovoltage, Photocurrent, Output Power).",
-        "Inaccurate efficiency physics equation: calculatePhysics() formula clamped efficiency to 8.0% due to incorrect dimensional conversion and redundant fill factor multiplication, dropping it below the nominal 14.8% efficiency."
-      ]
-    },
     {
       "sim_id": "u00480",
       "status": "FIXED",
@@ -497,6 +439,63 @@
         "Unwired stepper buttons: .stepper-btn buttons (▲ / ▼) were not attached to event listeners to increment or decrement stepper input values.",
         "Unwired action buttons: 'btn_thermal_equilibrium' and 'btn_toggle_flux_vectors' had no event listeners attached in canvas_js."
       ]
+    },
+    {
+      "sim_id": "u00537",
+      "status": "FIXED",
+      "time": "00:54:31",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted 8 columns with an unheaded serial number and transposed km, Q, and Q/L values under a 7-column table header; corrected to record exactly 7 matching columns [d1, d2, T1, T2, km, Q, Q/L] aligned 1-to-1 with observation_thead_html.",
+        "Corrupted data-unit attributes in readouts_html caused by unescaped nested HTML/MathML span tags inside the attribute strings; sanitized data-unit attributes to clean plain text.",
+        "Unwired custom action button: #btn_establish_equilibrium ('Establish Steady-State Heat Flux') lacked an event handler in canvas_js.",
+        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down arrow buttons lacked click event listeners in canvas_js to dynamically step inputs within declared bounds.",
+        "Unwired top-panel controls: #btnToggle (Pause/Run), #btnStep (Single Step), #btnReset (Reset to Defaults), and #experimentSelect (Activity Switcher) lacked event listeners in canvas_js.",
+        "Telemetry unit preservation: patched updateTelemetryText in canvas_js to target the value span directly, preventing destruction of child MathML unit elements during frame updates.",
+        "Canvas mouse interaction lock (Q22): set pointer-events: none on #simCanvas to guarantee all simulation control is routed exclusively through Section 05 controls.",
+        "Leader line length constraint compliance (Q23/Q24): repositioned Badges 1 through 6 so their leader line distances strictly satisfy the [48, 80] px bounds with smooth cubic Bezier S-curves and anchor touch beads.",
+        "Low-contrast wiring: negative return lead wire drawn in #1e293b blended into the dark #090d16 canvas background; upgraded to high-contrast #475569 with #94a3b8 highlight."
+      ]
+    },
+    {
+      "sim_id": "u00533",
+      "status": "FIXED",
+      "time": "00:54:49",
+      "issues": [
+        "Unwired action buttons: 'btn_thermal_equilibrium' and 'btn_probe_traverse' lacked click event listeners",
+        "Unwired stepper buttons: '.stepper-btn' controls lacked click event listeners to increment/decrement input values",
+        "Misaligned observation table columns: btnRecord inserted 11 columns mismatching the 6 headers in observation_thead_html"
+      ]
+    },
+    {
+      "sim_id": "u00524",
+      "status": "FIXED",
+      "time": "00:55:02",
+      "issues": [
+        "Misaligned observation table columns: row insertion created 9 <td> cells including density and area, whereas the table header defines exactly 7 columns.",
+        "Unwired control and action buttons: validate calculation button ('btn_verify_calculation'), specimen randomize button ('btn_randomize_plate'), stepper adjustment buttons ('.stepper-btn'), and experiment mode select were not wired.",
+        "Gravitational acceleration constant was set to 9.80665 instead of the standard 9.81 m/s² specified in validation assumptions and slot readings."
+      ]
+    },
+    {
+      "sim_id": "u00534",
+      "status": "FIXED",
+      "time": "00:55:12",
+      "issues": [
+        "Aligned observation table recorded columns with the 10 headers specified in observation_thead_html (Core Temperature Ti, Inside Convective Resistance R1, Steel Pipe Resistance R2, Insulation Resistance R3, Outside Convective Resistance R4, Total Resistance Rtotal, Heat Transfer Rate Q, Inner Wall Temperature T1, Interface Temperature T2, Outer Surface Temperature T3).",
+        "Wired up stepper buttons (.stepper-btn-up and .stepper-btn-down) to increment/decrement input values according to step, min, and max limits, and dispatch change/input events.",
+        "Wired up the action button #btn_thermal_equilibrium ('Establish Steady-State Equilibrium') with visual status confirmation."
+      ]
+    },
+    {
+      "sim_id": "u00535",
+      "status": "FIXED",
+      "time": "00:55:25",
+      "issues": [
+        "Misaligned observation table columns: table header expected 10 columns (Supply Voltage, Supply Current, Heat Input, T1, T2, T3, R1, R2, R3, R_total), but record button script output only 9 mismatched columns.",
+        "Unwired interactive controls: stepper up/down buttons (.stepper-btn) and action buttons (btn_power_toggle, btn_channel_select) had no click event listeners attached.",
+        "Incomplete physics across experiment modes: only cylindrical thermal resistance formulas were present; spherical convective and conductive formulas were missing for the concentric composite sphere mode.",
+        "Missing 3D spherical shading and low-contrast canvas elements: spherical layer used flat concentric radial gradient; black electrical lead and chassis feet had low contrast against #090d16 canvas."
+      ]
     }
   ],
   "completed_ids": [
@@ -926,6 +925,7 @@
     "u00520",
     "u00521",
     "u00522",
+    "u00524",
     "u00525",
     "u00526",
     "u00527",
@@ -934,6 +934,10 @@
     "u00530",
     "u00531",
     "u00532",
-    "u00536"
+    "u00533",
+    "u00534",
+    "u00535",
+    "u00536",
+    "u00537"
   ]
 }
