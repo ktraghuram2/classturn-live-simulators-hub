@@ -1,70 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 00:00:37",
-  "completed_count": 340,
-  "fixed_count": 340,
-  "latest_sim_id": "u00430",
+  "updated_at": "2026-10-19 00:05:22",
+  "completed_count": 345,
+  "fixed_count": 345,
+  "latest_sim_id": "u00436",
   "recent_events": [
-    {
-      "sim_id": "u00386",
-      "status": "FIXED",
-      "time": "23:33:33",
-      "issues": [
-        "Unwired action button: 'btn_release_block' ('Gently Release Block into Fluid') was present in the controls slot and specified in Procedure Step 3, but lacked an event listener in canvas_js.",
-        "Unwired stepper buttons: Stepper up/down buttons (.stepper-btn-up and .stepper-btn-down) with data-target had no click event handlers wired in canvas_js.",
-        "Misaligned observation table columns: The observation header defines 8 columns (Block Density, Block Height, Block Width, Block Length, Total Weight, Submerged Depth, Buoyant Upthrust, Centre of Buoyancy), but the row generator produced only 7 misaligned cells including an unrequested trial index and dimension string in cm."
-      ]
-    },
-    {
-      "sim_id": "u00389",
-      "status": "FIXED",
-      "time": "23:33:45",
-      "issues": [
-        "Removed accidental MathML markup (<math><mrow><mi>A</mi></mrow></math>) from the plain English word 'A' in principles_summary_html",
-        "Wired primary action buttons (btn_issue_request, btn_snoop_invalidation, btn_flush_dirty_blocks) to execute requests, broadcast external snooped invalidations, and flush dirty lines to memory",
-        "Wired stepper up/down buttons (.stepper-btn) to correctly increment/decrement inputs and dispatch change events",
-        "Aligned observation table columns with observation_thead_html by adding the missing Step Index column and matching the 9-column order (Step, Core, Op, Addr, Index, Tag, P0 State, P1 State, Bus Tx)",
-        "Replaced immediate execution on page load with initial telemetry synchronization so baseline Invalid (I) state is preserved per Step 1 of the procedure",
-        "Separated stepper parameter adjustment from execution dispatch so multi-step requests can be configured before issuing"
-      ]
-    },
-    {
-      "sim_id": "u00387",
-      "status": "FIXED",
-      "time": "23:33:55",
-      "issues": [
-        "Unwired action buttons: 'btn_apply_heel' (Apply Heel Perturbation 5°) and 'btn_restore_vertical' (Damp to Vertical Floatation) lacked click event listeners in canvas_js.",
-        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' for block height and diameter lacked click handlers to adjust inputs and trigger syncFromInputs().",
-        "Misaligned observation table columns: btnRecord inserted observationCount as an extra first column and omitted Waterplane Inertia (I) and Displaced Volume (Vw), shifting all table cells out of alignment with the 12 thead columns.",
-        "Low-contrast block silhouette outline on dark #090d16 canvas background: enhanced outline stroke from #334155 to #64748b."
-      ]
-    },
-    {
-      "sim_id": "u00377",
-      "status": "FIXED",
-      "time": "23:33:57",
-      "issues": [
-        "Unwired Section 05 custom action buttons: '#btn_generate_array' (Generate New Array) and '#btn_run_auto' (Toggle Continuous Sorting) had no click listeners in canvas_js",
-        "Unwired stepper controls: .stepper-btn arrows and additional input parameters were not hooked for dynamic updates",
-        "Observation table column alignment: '#btnRecord' lacked an explicit event listener, risking column mismatch against the 8-column header schema",
-        "Array bar swapping visual jump: in-memory array values were swapped prematurely at progress 0.7 instead of at progress 1.0 at the end of the LOWER phase, creating a visual jump",
-        "Sorted bar partition highlight timing: 'isSortedSlot' used 'pass > 0' and active pass indexing, prematurely highlighting bars green before passes completed"
-      ]
-    },
-    {
-      "sim_id": "u00390",
-      "status": "FIXED",
-      "time": "23:33:57",
-      "issues": [
-        "Unwired action button: btnExecute in canvas_js queried 'btnExecute' instead of HTML element 'btn_execute_cycle'.",
-        "Unwired conflict race button: btn_auto_conflict_demo lacked an event listener and demonstration handler.",
-        "Unwired stepper controls: Stepper up and down buttons (.stepper-btn) lacked click event listeners to increment/decrement inputs.",
-        "Misaligned observation table: recordObservation() injected 8 columns matching a legacy schema instead of the canonical observation_thead_html columns (Cycle, Processor, Op, Address, P0 State, P1 State, Bus Tx, P0 Hit Rate).",
-        "Missing cycle & transaction tracking: Observation table did not track cycle count or specific bus transaction names (BusRd, BusRdX, BusUpgr, Flush).",
-        "Leader badge 4 distance: Main Memory badge 4 was anchored across 242px (> maxLeader 80px limit); moved within range (65px) beside DRAM module.",
-        "Telemetry unit formatting: Live readouts in updateTelemetry() lacked unit suffix strings matching specification."
-      ]
-    },
     {
       "sim_id": "u00385",
       "status": "FIXED",
@@ -497,6 +437,68 @@
         "Wired unhandled action buttons (#btn_flush_queue and #btn_inject_surge) to purge queued buffer tokens and inject arrival surges respectively.",
         "Rectified observation table logging misalignment in btnRecord where only 6 columns were logged instead of 9, omitting Lq, Ws, and Wq and misaligning PN."
       ]
+    },
+    {
+      "sim_id": "u00431",
+      "status": "FIXED",
+      "time": "00:04:30",
+      "issues": [
+        "Replaced improper nested fraction MathML in header_title_html, aim_html, and principles_summary_html with standard inline M/G/1/N Kendall notation.",
+        "Fixed observation table column count mismatch in canvas_js (removed extraneous Wq cell that caused 8 td cells against 7 th headers).",
+        "Wired stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) and reset button (#btnReset) to allow interactive parameter adjustments and experiment resets.",
+        "Resolved server reservation race condition so incoming customers claim the server immediately upon admission, preventing concurrent arrivals from bypassing queue limits.",
+        "Added getServiceDuration supporting deterministic service times (M/D/1/N) when the extended activity is selected.",
+        "Preserved MathML unit spans during telemetry readout updates by updating numerical child spans instead of overwriting textContent."
+      ]
+    },
+    {
+      "sim_id": "u00418",
+      "status": "FIXED",
+      "time": "00:04:30",
+      "issues": [
+        "Unwired action button: HTML slot specifies id 'btn_strike_hammer', but canvas_js was only querying 'btn_strike' and 'btnStrike'.",
+        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn) had no click event listeners attached.",
+        "Observation table column mismatch: The record button callback prepended recordCount without an Sl. No. table header and inserted data fields in the wrong column order relative to the 7 defined headers.",
+        "Curvy leader badge and legend pill misalignment: Badge 4 was assigned to the digital multimeter and Badge 5 to the hammer, whereas Legend Pill 4 is the hammer and Legend Pill 5 is the digital multimeter.",
+        "Duplicate symbol in observation table header: The Bandwidth column header contained a redundant 'Δ f' before the MathML Δf symbol."
+      ]
+    },
+    {
+      "sim_id": "u00428",
+      "status": "FIXED",
+      "time": "00:04:30",
+      "issues": [
+        "Replaced nested fraction representations of M/G/c/N notation in title, aim, principles overview, and procedure with standard Kendall notation",
+        "Cleaned corrupted machine-generated MathML units ('customer s/s' fraction) across principles, steppers, and observation headers into standard units",
+        "Replaced italicized math variable 'a' in prose with regular English indefinite article 'a' in principles and validation assumptions",
+        "Wired missing action button 'Inject Customer Arrival Burst' (btn_inject_burst) to inject customer arrival batches with overflow rejection logic",
+        "Wired missing stepper up/down buttons (.stepper-btn) to increment and decrement input values with proper min, max, and step constraints",
+        "Fixed live readout selector mismatch in canvas_js (DOM elements use 'val_reading_*' while JS targeted 'reading_*'), restoring live telemetry updates",
+        "Connected target service time distribution selection (M/M/c/N Exponential, M/D/c/N Deterministic, and M/G/c/N Uniform) from activity presets to the service duration generator"
+      ]
+    },
+    {
+      "sim_id": "u00422",
+      "status": "FIXED",
+      "time": "00:04:30",
+      "issues": [
+        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down buttons lacked click handlers in canvas_js.",
+        "Unwired action buttons: btn_seek_resonance and btn_trigger_impulse had no event listeners attached.",
+        "Control input overwriting: render() was calling setTelemetry on input elements with unit strings (e.g. '8.0 Hz'), which corrupted and cleared HTML5 number inputs on every animation frame.",
+        "Observation table column misalignment: btnRecord generated 12 table columns including obsCount and raw inputs, misaligning with observation_thead_html which specifies exactly 6 columns."
+      ]
+    },
+    {
+      "sim_id": "u00436",
+      "status": "FIXED",
+      "time": "00:05:22",
+      "issues": [
+        "Unwired stepper controls: .stepper-btn elements (up/down buttons) were not bound to click listeners, preventing incrementing or decrementing peak voltage, frequency, load resistance, filter capacitance, and oscilloscope timebase.",
+        "Unwired action and mode buttons: #btn_toggle_filter, #btn_auto_scale, and the experiment mode select dropdown had no event handlers attached.",
+        "Misaligned observation table: btnRecord pushed 10 columns (including unlisted row index, vrms, and idc) into observationTbody, while observation_thead_html specifies exactly 7 columns (Vm, f, RL, C, Vdc, Vac, rf).",
+        "Physics inaccuracy: The capacitive filter ripple formula used full-wave frequency scaling (2 * freq * tau) instead of half-wave (freq * tau), violating the single-phase half-wave discharge physics and conflicting with the theoretical ripple factor r = 1 / (2*sqrt(3)*f*RL*C).",
+        "Low contrast ground wire: The AC supply ground wire to breadboard used dark '#0f172a' stroke directly on '#090d16' canvas background, rendering it invisible."
+      ]
     }
   ],
   "completed_ids": [
@@ -833,12 +835,17 @@
     "u00415",
     "u00416",
     "u00417",
+    "u00418",
     "u00419",
     "u00420",
     "u00421",
+    "u00422",
     "u00426",
     "u00427",
+    "u00428",
     "u00429",
-    "u00430"
+    "u00430",
+    "u00431",
+    "u00436"
   ]
 }
