@@ -1,79 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 21:29:57",
-  "completed_count": 135,
-  "fixed_count": 135,
-  "latest_sim_id": "u00181",
+  "updated_at": "2026-10-18 21:59:46",
+  "completed_count": 140,
+  "fixed_count": 140,
+  "latest_sim_id": "u00187",
   "recent_events": [
-    {
-      "sim_id": "u00137",
-      "status": "FIXED",
-      "time": "20:59:33",
-      "issues": [
-        "Unwired stepper buttons: clicking ▲ and ▼ on dry bulb temp, wet bulb temp, and barometer pressure steppers did not increment or decrement values.",
-        "Unwired action buttons: 'btn_wind_spring' and 'btn_moisten_muslin' had no event listeners attached in canvas_js.",
-        "Misaligned observation table columns: Record button generated 8 columns with mismatched data starting with row count, whereas observation_thead_html defines 10 specific psychrometric properties.",
-        "Apparatus badges and leader lines mismatch: Badges in canvas_js did not align with legend pills (Pill 1: Radiation Housing, Pill 2: Dry-Bulb Thermometer, Pill 3: Wet-Bulb Thermometer, Pill 4: Fortin Barometer)."
-      ]
-    },
-    {
-      "sim_id": "u00136",
-      "status": "FIXED",
-      "time": "20:59:56",
-      "issues": [
-        "Numbered badges on curvy leader lines were misaligned with legend pills (badges 1, 2, and 4 did not match apparatus elements).",
-        "Telemetry readout display elements used IDs without the val_ prefix, preventing live UI reading updates.",
-        "Action buttons (btn_heat_kata, btn_cycle_plate, btn_wind_psychrometer) and stepper increment/decrement buttons were unhandled in canvas_js.",
-        "Observation table row generation only created 7 cells for an 8-column header, omitting Absolute Wet-Bulb Temp Tw (K) and causing misaligned data columns.",
-        "Corrupted MathML and units in experiment_options_html ('ms' instead of 'm/s'), steppers_html, readouts_html, and observation_thead_html ('mcal/cm²' rendered as broken fraction)."
-      ]
-    },
-    {
-      "sim_id": "u00138",
-      "status": "FIXED",
-      "time": "21:00:05",
-      "issues": [
-        "Unwired DOM action buttons (btn_ack, btn_reset, btn_lamp_test) and missing event listeners for stepper buttons (▲/▼) and experiment selector.",
-        "Missing Reset action button in controls actions panel (actions_html).",
-        "Misaligned observation table columns: rowCount was prepended in row.innerHTML, shifting all data columns relative to observation_thead_html headers.",
-        "Unrendered raw LaTeX/code symbol SP_high in principles_list_html and steppers_html converted to standard MathML."
-      ]
-    },
-    {
-      "sim_id": "u00135",
-      "status": "FIXED",
-      "time": "21:01:00",
-      "issues": [
-        "Fixed observation notebook table row having only 6 columns instead of 8, correctly aligning Soil Type, Medium, Temperature, Immersion Depth, Cell Potential, Nernst Slope, Measured pH, and Acidity Classification",
-        "Wired custom action buttons #btn_two_point_cal (Execute Two-Point Buffer Calibration) and #btn_toggle_stirrer (Agitate & Equilibrate Suspension)",
-        "Wired #btnReset to restore all stepper controls and telemetry to default values",
-        "Coupled Electrode Immersion Depth stepper to the Wiegner suspension effect during colloidal sediment penetration in computePhysics()",
-        "Simplified vertical fraction MathML in action button label to clean horizontal notation for discrete buffer calibration values (pH 7.00 / 4.01)"
-      ]
-    },
-    {
-      "sim_id": "u00130",
-      "status": "FIXED",
-      "time": "21:02:12",
-      "issues": [
-        "Unwired live readouts: DOM element lookups used data-id 'reading_*' instead of span id 'val_reading_*', preventing live cut/fill/density/TOF telemetry updates.",
-        "Unwired action and stepper buttons: 'btn_capture_scan' and 'btn_toggle_mesh' had no event listeners, and stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were unhandled.",
-        "Misaligned observation table columns: Observation rows prepended an unheadered trial index and inserted tdCut before tdDense, causing every column to be misaligned with observation_thead_html.",
-        "Low contrast apparatus outlines: Drone chassis booms, RTK mast, and whip antenna were drawn with '#1e293b' which blends invisibly into the dark #090d16 canvas background.",
-        "Missing TIN mesh feature: The 'Compute TIN Surface Mesh' action button did not toggle or render the Triangulated Irregular Network wireframe over the terrain."
-      ]
-    },
-    {
-      "sim_id": "u00139",
-      "status": "FIXED",
-      "time": "21:02:28",
-      "issues": [
-        "Observation table recorder (#btnRecord) only wrote 8 columns and misaligned values against the 10-column table header; corrected to record all 10 columns in exact matching order including FT3 and active alarm count.",
-        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired; attached click listeners with min, max, step bounds and event dispatching.",
-        "Action buttons (#btn_ack_alarms and #btn_emergency_trip) were unwired; implemented alarm acknowledgment (stopping annunciator flash) and emergency safety trip interlock logic.",
-        "Canvas leader badge numbering was out of order relative to legend_pills_html; reordered badges 1 to 6 to match Steam Drum (1), Shell-and-Tube Exchanger (2), Feed Pump & FCV (3), Transmitters (4), Mimic Panel (5), and Trend Plotter (6)."
-      ]
-    },
     {
       "sim_id": "u00131",
       "status": "FIXED",
@@ -474,6 +405,70 @@
         "Action buttons (btn_start_sweep and btn_renew_drop) and stepper buttons (.stepper-btn) were unwired, preventing users from restarting sweeps or incrementing/decrementing parameter steppers.",
         "The voltammogram plot and dynamic current calculations in canvas_js only simulated Cadmium stripping peak, omitting the second analyte (Lead, Pb) required by the experiment aim and observation table."
       ]
+    },
+    {
+      "sim_id": "u00179",
+      "status": "FIXED",
+      "time": "21:30:37",
+      "issues": [
+        "Fixed broken readout element selectors in DOM telemetry (val_reading_* vs reading_*)",
+        "Aligned observation table recorded row cells with the 7 observation table thead columns",
+        "Added missing symbol A to Calculated Prism Angle header in observation_thead_html",
+        "Wired action buttons: btn_toggle_light, btn_place_prism, btn_align_ray1, and btn_align_ray2",
+        "Wired stepper increment/decrement buttons (.stepper-btn)",
+        "Added circular angle difference wrap handling for telescope hit detection in traceOptics"
+      ]
+    },
+    {
+      "sim_id": "u00182",
+      "status": "FIXED",
+      "time": "21:32:08",
+      "issues": [
+        "Unwired action buttons: #btn_purge_electrolyte (N2 gas purge) and #btn_start_sweep (potential sweep initiate) lacked click handlers in canvas_js.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) were unhandled and did not increment/decrement input values.",
+        "Misaligned observation table columns: recordBtn appended 7 columns with an unmapped trial index and omitted Step Potential (dEs), causing misaligned columns with the 6 thead columns.",
+        "Inconsistent calibration physics: k_calib constant produced 2.42 μA at default parameters instead of the expected 4.850 μA default differential peak current and 34.2 dB SNR."
+      ]
+    },
+    {
+      "sim_id": "u00172",
+      "status": "FIXED",
+      "time": "21:36:06",
+      "issues": [
+        "Unwired Auto-Balance action button (#btn_auto_balance) in canvas_js",
+        "Unwired stepper increment and decrement buttons (.stepper-btn) in canvas_js",
+        "Misaligned observation table columns due to an unindexed row number cell in btnRecord row generation",
+        "Bridge null detector calculation in computePhysics did not achieve null balance (V_null = 0.000 V, STATUS: BALANCED) at nominal balance arm values (R1 = 2.0 kΩ, R3 = 1000.0 Ω)"
+      ]
+    },
+    {
+      "sim_id": "u00153",
+      "status": "ERROR",
+      "time": "21:50:33",
+      "issues": [
+        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--model', 'gemini-3.8-flash-high', '--disable-slash-commands"
+      ]
+    },
+    {
+      "sim_id": "u00188",
+      "status": "FIXED",
+      "time": "21:58:54",
+      "issues": [
+        "Unwired stepper buttons: missing .stepper-btn-down / .stepper-btn-up selectors and ▲/▼ text detection in bindControls prevented stepping",
+        "Unwired action buttons: #btn_oxidize_dialyze and #btn_elute_peak had no event listeners attached in bindControls",
+        "Misaligned observation table columns: 8-column header (Elution Volume, Initial HRP, Initial IgG, A403, A280, RZ, Eluted IgG, Molar Ratio) was populated with mismatched slice indices starting with trial count and salt molarity instead of volume and readings"
+      ]
+    },
+    {
+      "sim_id": "u00187",
+      "status": "FIXED",
+      "time": "21:59:46",
+      "issues": [
+        "Observation table column misalignment in btnRecord: 9 data items (including unrepresented hematocrit and theta) were appended into a 7-column observation table.",
+        "Unwired stepper up/down buttons (▲/▼) in the control panel preventing interactive parameter adjustment.",
+        "Unwired action buttons: 'Dispense Sample & Stir Eldon Wells', 'Execute 4-Axis Orbital Card Tilt', and 'Toggle Holotable IgM/IgG Lattice View'.",
+        "Unwired activity / experiment mode dropdown selection ('experimentSelect' / 'activitySelect')."
+      ]
     }
   ],
   "completed_ids": [
@@ -608,9 +603,14 @@
     "u00168",
     "u00170",
     "u00171",
+    "u00172",
     "u00173",
     "u00175",
     "u00177",
-    "u00181"
+    "u00179",
+    "u00181",
+    "u00182",
+    "u00187",
+    "u00188"
   ]
 }
