@@ -1,76 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 01:51:55",
-  "completed_count": 595,
-  "fixed_count": 595,
-  "latest_sim_id": "u00729",
+  "updated_at": "2026-10-19 01:54:07",
+  "completed_count": 600,
+  "fixed_count": 600,
+  "latest_sim_id": "u00724",
   "recent_events": [
-    {
-      "sim_id": "u00662",
-      "status": "FIXED",
-      "time": "01:39:05",
-      "issues": [
-        "Observation table column misalignment: observation_thead_html defined 5 columns (Applied Load P, Dial Gauge Reading ΔL, Engineering Stress σ, Engineering Strain ϵ, Young's Modulus E), but btnRecord recorded 7 columns with extra unheaded columns for diameter and gauge length, while omitting Young's Modulus E.",
-        "Unwired action buttons: '#btn_advance_hydraulic_ram' (Advance Hydraulic Ram) and '#btn_zero_dial_gauge' (Zero Extensometer Gauge) were defined in actions_html but had no event listeners in canvas_js.",
-        "Unwired reset button: '#btnReset' did not restore default specimen dimensions, load, or clear internal physical telemetry in canvas_js.",
-        "Unwired experiment selector: '#experimentSelect' change events were not handled in canvas_js to switch between standard tensile test and parametric scaling.",
-        "Inaccurate ductile necking and plastic yielding physics: The experiment specifies a standard brittle specimen (gray cast iron) conforming to linear elastic Hooke's law without necking or yielding plateau prior to cleavage fracture, but canvas_js simulated ductile necking and plastic strain.",
-        "Mangled MathML units in readouts_html and observation_thead_html: Engineering strain unit was formatted as m(m/m)m instead of mm/mm.",
-        "Displaced Delta symbol in principles_summary_html: Engineering strain definition had Delta outside the numerator (Δ L / L0) instead of (ΔL / L0).",
-        "Subscript formatting in procedure_section_html: Step 2 lacked proper MathML subscripts for initial area A0 and gauge length L0."
-      ]
-    },
-    {
-      "sim_id": "u00681",
-      "status": "FIXED",
-      "time": "01:39:19",
-      "issues": [
-        "Unclosed HTML tags in principles_list_html: the equation-symbols container omitted trailing </ul>, </div>, and </li> closing tags.",
-        "Sub-minimum curvy leader line lengths: Badges 2 (Voltage source), 4 (Well combs), and 6 (Microwave) had leader lengths under the 48px minimum threshold specified in zoom_config_json.",
-        "Destructive telemetry text replacement: val_reading_* textContent assignments wiped inner MathML unit spans; updated updater to modify the numerical span while preserving MathML unit markup.",
-        "Incomplete reset functionality: resetDefaults() restored parameter stepper inputs but did not clear observation table rows in #observationTbody or synchronize action button active states.",
-        "Unwired experiment selector: #experimentSelect dropdown lacked an event listener in canvas_js to switch between Primary and Extended experiment configurations.",
-        "Canvas mouse interaction lock: #simCanvas lacked pointerEvents = 'none' to ensure all interactions occur exclusively through Section 05 controls (Q22).",
-        "Cleaned corrupted MathML formatting in prose: replaced MathML elements erroneously wrapping the English indefinite article 'a' in principles_summary_html, apparatus_html, procedure_section_html, and validation_html."
-      ]
-    },
-    {
-      "sim_id": "u00679",
-      "status": "FIXED",
-      "time": "01:39:50",
-      "issues": [
-        "Wired missing Section 05 action buttons (Complete Partition Pass and Generate Random Array)",
-        "Wired top panel Pause/Run and Step buttons to drive simulation state machine",
-        "Wired observation notebook recording with 6 columns aligned to observationThead and Reset button",
-        "Synchronized stepper arrows, change listeners, and experiment select dropdown"
-      ]
-    },
-    {
-      "sim_id": "u00689",
-      "status": "FIXED",
-      "time": "01:40:02",
-      "issues": [
-        "Observation table record button inserted 10 mismatched columns (including trial count and GC bias) into an 8-column header, causing complete column misalignment.",
-        "Action buttons ('Upload FASTQ File', 'Sequence Content Tab', 'GC Content Tab', 'N Content Tab') were completely unwired with no click handlers.",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked numeric value stepping logic.",
-        "Activity selection dropdown (#experimentSelect) was unwired to simulation state presets.",
-        "Live readout updater setElementText lacked input value updating and stripped readout unit formatting.",
-        "Oscilloscope GUI, Composition Analyzer bars, Flow Cell lanes, and Phred Quality Meter lacked high-contrast text labels, tick markings, and active mode visual indicators on the dark canvas."
-      ]
-    },
-    {
-      "sim_id": "u00685",
-      "status": "FIXED",
-      "time": "01:40:03",
-      "issues": [
-        "Unwired stepper inputs: canvas_js listened to mismatched IDs ('initial_copies_x', 'cycle_count_n', 'annealing_temp_ta', 'amplification_efficiency_e') instead of HTML IDs ('initial_template', 'cycle_count', 'annealing_temp', 'efficiency_factor').",
-        "Unwired stepper buttons: ▲ and ▼ buttons on steppers had no event listeners attached.",
-        "Unwired action buttons: 'btn_assemble_mix', 'btn_transfer_tube', and 'btn_start_thermal_cycle' had no click listeners or interaction states.",
-        "Mismatched and missing telemetry readouts: 'reading_reaction_phase' and 'reading_current_cycle' were never updated; 'reading_actual_yield' was misnamed as 'reading_effective_yield' and ignored; yield values lacked scientific Unicode formatting matching the HTML default.",
-        "Misaligned observation table: record button inserted 9 columns into a 6-column table, displacing cycle number, temperature, and yields.",
-        "Orphaned leader badges: canvas drew extra badges 4 and 5 that had no matching apparatus elements or legend pills."
-      ]
-    },
     {
       "sim_id": "u00686",
       "status": "FIXED",
@@ -512,6 +446,74 @@
         "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' buttons lacked click event listeners to modify input values.",
         "Unresponsive live readouts: 'updateTelemetry' queried element IDs 'reading_hr', 'reading_rr', etc. instead of the compiled readout IDs 'val_reading_hr', 'val_reading_rr', etc.",
         "Misaligned observation table columns: 'btnRecord' inserted gain in column 3, displacing R-R interval and peak voltage, and lacked the T-wave amplitude column required by the 7-column table header."
+      ]
+    },
+    {
+      "sim_id": "u00730",
+      "status": "FIXED",
+      "time": "01:52:24",
+      "issues": [
+        "Misaligned observation table columns in canvas_js: recorded row inserted cutoff frequency (${fcLP} Hz) into the Time Window column; aligned value to ${timeWin.toFixed(1)} s matching observation_thead_html.",
+        "Unwired Section 05 action buttons: attached click event listeners to '#btn_toggle_filter' and '#btn_detect_peaks' to toggle Butterworth filter processing and fiducial wave boundary segmentation.",
+        "Unwired stepper increment and decrement buttons: attached click event listeners to .stepper-btn (.stepper-btn-up, .stepper-btn-down) to dynamically step input values respecting min, max, and step attributes.",
+        "Unwired reset button: added click event listener to '#btnReset' to restore parameter defaults and clear '#observationTbody'.",
+        "Unwired simulation state controls: wired '#btnToggle' for smooth pause/run toggling and '#btnStep' for discrete frame advancement.",
+        "Unwired experiment selector: wired '#experimentSelect' change handler to toggle between Raw Signal Analysis and Wave Component Identification configurations.",
+        "Destructive telemetry text replacement: updateDOM wiped inner MathML unit spans inside val_reading_* elements; updated updater to modify only the inner value span.",
+        "Sub-minimum leader line length: adjusted Badge 3 leader line coordinate to ensure minimum 48px leader line length.",
+        "Canvas mouse interaction lock: set pointerEvents = 'none' on #simCanvas to ensure interaction occurs solely via Section 05 controls."
+      ]
+    },
+    {
+      "sim_id": "u00731",
+      "status": "FIXED",
+      "time": "01:52:52",
+      "issues": [
+        "Observation table column misalignment: observation_thead_html defined 5 columns (Time Window Δtwin, Current RR Interval RRcurrent, Current Heart Rate HRcurrent, Average RR Interval RRavg, Average Heart Rate HRavg), but btnRecord recorded 8 columns with unheaded timestamp, threshold factor, and integration window duration, misaligning all recorded measurements.",
+        "Unwired action buttons: '#btn_run_detection' (Run QRS Peak Search) and '#btn_cycle_display_stage' (Cycle Waveform Display Stage) were defined in actions_html but completely lacked event listeners in canvas_js.",
+        "Unwired playback controls: '#btnToggle' (Pause/Run) and '#btnStep' (Discrete Step) were unhandled in canvas_js, preventing pausing and single-frame stepping of the biomedical signal generator.",
+        "Unwired reset button: '#btnReset' did not restore default ECG filter parameters or clear observation records in canvas_js.",
+        "Unwired experiment selector: '#experimentSelect' change events were unhandled in canvas_js for toggling between Primary Experiment and Extended Noise Robustness Activity.",
+        "Physically inaccurate fraction in principles_summary_html: Clinical powerline hum frequency was formatted as a mathematical division (50/60 Hz = 0.833 Hz) instead of the dual standard 50/60 Hz.",
+        "Waveform display stage cycling: Intermediate DSP buffers (5-15 Hz bandpass filter, 5-point differentiator, and non-linear squaring) were computed every sample but were unrendered on the scope display."
+      ]
+    },
+    {
+      "sim_id": "u00740",
+      "status": "FIXED",
+      "time": "01:53:36",
+      "issues": [
+        "Live readouts failed to update because canvas_js targeted IDs like val_dihedral_angle instead of the slot IDs val_reading_dihedral_angle, val_reading_potential_energy, val_reading_energy_gradient, and val_reading_step_direction.",
+        "The primary action button #btn_auto_optimize ('Auto-Optimize to Energy Minimum') was unwired in canvas_js, which only checked for non-existent #btn_step_optimize or #btnStep.",
+        "The observation table row insertion in #btnRecord only generated 4 columns instead of 5, causing the dihedral angle to be placed under the 'Iteration Step' column and omitting the final 'Descent Step' column.",
+        "Input stepper event listeners did not invoke syncDOMOutputs() to refresh telemetry readouts during manual stepper adjustments.",
+        "Experiment selection dropdown #experimentSelect was not wired to update molecular torsional parameters across presets."
+      ]
+    },
+    {
+      "sim_id": "u00737",
+      "status": "FIXED",
+      "time": "01:54:05",
+      "issues": [
+        "Wired action button #btn_isolate_shear and implemented real-time shear deflection curve overlay visualization on canvas",
+        "Wired stepper buttons (.stepper-btn) to increment and decrement input values across all 4 parameters",
+        "Corrected telemetry readout element IDs in JavaScript to match HTML slot IDs (val_reading_*), restoring live telemetry updates",
+        "Realigned observation recording columns in tbody to match the 8 columns defined in the observation table header",
+        "Reordered canvas leader badges 1 and 2 to match legend pill 1 (Pinned Left Support) and pill 2 (Structural Steel Beam)",
+        "Removed duplicated R_A and R_B math tags in observation_thead_html",
+        "Fixed missing slash in span-to-depth ratio label (Lh to L/h) in experiment_options_html"
+      ]
+    },
+    {
+      "sim_id": "u00724",
+      "status": "FIXED",
+      "time": "01:54:07",
+      "issues": [
+        "Observation table column misalignment: observation_thead_html defined 6 columns (Entity Sets NE, Attributes Per Entity kA, Cardinality Mode CR, Weak Entity Flag Wf, Total Graph Nodes Ntotal, Relational Edge Connectors Elinks), but btnRecord logged 9 columns with an unheaded timestamp and extraneous telemetry (schema degree, primary keys).",
+        "Unwired action buttons: '#btn_compile_er_schema' (Synthesize & Render ER Diagram) and '#btn_validate_cardinality' (Validate Schema Integrity & Constraints) were defined in actions_html but lacked event listeners in canvas_js.",
+        "Unwired top panel simulation controls: '#btnToggle' (Pause/Run) and '#btnStep' (Discrete Step) were not connected to the canvas rendering loop state machine.",
+        "Unwired reset button and experiment selector: '#btnReset' did not restore default schema parameters, and '#experimentSelect' change events were not handled to switch between standard schema synthesis and weak entity modeling.",
+        "Corrupted HTML attribute quotes in readouts_html: data-unit attributes contained nested span tags with unescaped double quotes, breaking HTML attribute parsing."
       ]
     }
   ],
@@ -1107,9 +1109,14 @@
     "u00721",
     "u00722",
     "u00723",
+    "u00724",
     "u00725",
     "u00726",
     "u00728",
-    "u00729"
+    "u00729",
+    "u00730",
+    "u00731",
+    "u00737",
+    "u00740"
   ]
 }
