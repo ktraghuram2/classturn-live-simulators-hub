@@ -1,9 +1,9 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 20:07:42",
-  "completed_count": 25,
-  "fixed_count": 25,
-  "latest_sim_id": "u00043",
+  "updated_at": "2026-10-18 20:13:11",
+  "completed_count": 30,
+  "fixed_count": 30,
+  "latest_sim_id": "u00051",
   "recent_events": [
     {
       "sim_id": "u00003",
@@ -286,6 +286,70 @@
         "Wired #experimentSelect dropdown to switch between primary and extended experiment activities",
         "Added bounds clamping in readControls to guard against out-of-range user inputs"
       ]
+    },
+    {
+      "sim_id": "u00047",
+      "status": "FIXED",
+      "time": "20:08:34",
+      "issues": [
+        "Unwired stepper increment/decrement buttons (▲/▼) for all geometric and kinematic inputs",
+        "Unwired action buttons ('btn_toggle_limit' and 'btn_run_cycle')",
+        "Observation table column misalignment: btnRecord inserted 11 cells into a 7-column table, omitting omega2 and adding extra parameters",
+        "Coupler angular acceleration alpha3 formulation contained an algebraic sign error (+ instead of -) and a geometric singularity when sin(theta3) approaches zero; replaced with closed-form Cramer determinant solution",
+        "Default readout value for coupler angular acceleration in readouts_html updated to physically accurate value (0.877 rad/s²)"
+      ]
+    },
+    {
+      "sim_id": "u00019",
+      "status": "FIXED",
+      "time": "20:09:31",
+      "issues": [
+        "Corrected title and header from 'Computer Controlled Cutting' to 'Simple Harmonic Motion of a Simple Pendulum' to match pendulum dynamics content (Q02)",
+        "Wired action button #btn_release_bob ('Release Bob from Initial Angle') to trigger clean release and photogate timing from initial angle (Q14, Q27)",
+        "Wired stepper buttons (.stepper-btn-up, .stepper-btn-down) with min/max clamping and input dispatch for oscillator length, bob mass, and displacement (Q15)",
+        "Fixed observation table recording mismatch in btnRecord: aligned output exactly with the 6 columns in observation_thead_html (Length, Bob Mass, Initial Angle, Period T, Period Squared T², Ratio l/T²) and removed extraneous unindexed columns (Q18)",
+        "Wired experimentSelect dropdown to configure Primary and Extended activity modes (Q08)",
+        "Fixed MathML unit rendering for rad/s in readouts_html and updated setTelemetry to preserve inline unit MathML without overwriting (Q16)"
+      ]
+    },
+    {
+      "sim_id": "u00046",
+      "status": "FIXED",
+      "time": "20:10:20",
+      "issues": [
+        "Wired custom action buttons in 05 / Controls: btn_place_rider resets the paper rider, btn_fine_tune auto-adjusts Bridge B to target resonance length L0, and btn_toggle_ac toggles AC excitation current on and off.",
+        "Corrected #btnRecord observation table rows to output all 8 matching columns defined in #observationThead (Mass, Tension, Bridge A, Bridge B, Length, Length^2, T/L^2 ratio, Frequency) instead of 6 misaligned columns.",
+        "Updated legend_pills_html to 8 numbered pills matching 02 / Apparatus and on-canvas leader line badges 1-to-1 in count, order, and naming.",
+        "Disabled direct mouse click listener on #simCanvas to adhere strictly to Master QA Question Q22 and canvas interaction lock.",
+        "Added bounds clamping [min, max] in readControls() to prevent NaN or division-by-zero on extreme user inputs.",
+        "Wired #btnReset to restore all stepper inputs, readouts, AC toggle, and paper rider to default values and clear observation notebook rows.",
+        "Properly closed dangling list and container tags in principles_list_html."
+      ]
+    },
+    {
+      "sim_id": "u00048",
+      "status": "FIXED",
+      "time": "20:10:31",
+      "issues": [
+        "Unwired action buttons: IDC alignment ('btn_align_idc') and ODC alignment ('btn_align_odc') had no click event listeners.",
+        "Unwired stepper controls: Stepper buttons ('.stepper-btn') had no event listeners to increment or decrement parameter inputs.",
+        "Manual angle input override: No input listener on 'control_3' to pause the running engine when manually positioning the crank angle.",
+        "Misaligned observation table columns: 'btnRecord' inserted 9 columns (including an extraneous row index and coupler angular velocity) into an observation table configured with 7 columns, causing column misalignment and overflow."
+      ]
+    },
+    {
+      "sim_id": "u00051",
+      "status": "FIXED",
+      "time": "20:13:11",
+      "issues": [
+        "Unwired motor toggle button (#btn_toggle_rotation) in canvas_js preventing continuous rotation toggling",
+        "Unwired stepper buttons (.stepper-btn-up and .stepper-btn-down) in canvas_js",
+        "Misaligned observation table rows in canvas_js (7 columns logged with prepended row count, whereas observation_thead_html defines 6 columns with Crank Angle first and Crank Length second)",
+        "updateDOMElement in canvas_js overwritten inner HTML destroying MathML unit labels in readout elements",
+        "Spurious MathML tags (<mrow><mi>a</mi></mrow>) replacing the English indefinite article 'a' in principles_summary_html",
+        "Missing acceleration symbol (a) in the 6th column header of observation_thead_html",
+        "Malformed HTML tag inside data-unit attribute for linear acceleration readout in readouts_html"
+      ]
     }
   ],
   "completed_ids": [
@@ -302,6 +366,7 @@
     "u00015",
     "u00017",
     "u00018",
+    "u00019",
     "u00020",
     "u00022",
     "u00023",
@@ -313,6 +378,10 @@
     "u00036",
     "u00037",
     "u00038",
-    "u00043"
+    "u00043",
+    "u00046",
+    "u00047",
+    "u00048",
+    "u00051"
   ]
 }
