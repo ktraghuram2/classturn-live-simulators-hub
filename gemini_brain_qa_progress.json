@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 21:05:54",
-  "completed_count": 105,
-  "fixed_count": 105,
-  "latest_sim_id": "u00145",
+  "updated_at": "2026-10-18 21:08:41",
+  "completed_count": 110,
+  "fixed_count": 110,
+  "latest_sim_id": "u00151",
   "recent_events": [
-    {
-      "sim_id": "u00091",
-      "status": "FIXED",
-      "time": "20:39:36",
-      "issues": [
-        "Removed canvas interactive click listener on plug key to enforce 100% disabled canvas mouse interaction rule (Q22)",
-        "Wired action button #btn_switch_circuit to toggle the circuit switch ON/OFF (Q14)",
-        "Wired action button #btn_weigh_cathode to weigh cathode on analytical balance and update telemetry (Q14)",
-        "Corrected live readout DOM selectors to target #val_reading_* elements instead of #reading_* so live telemetry updates continuously (Q16)",
-        "Aligned observation table logging columns 1-to-1 with #observationThead headers (Current, Duration, Initial Cathode Mass, Final Cathode Mass, Deposited Mass, Calculated ECE) (Q18)",
-        "Added Pause/Run (#btnToggle), Step (#btnStep), and Reset (#btnReset) state synchronization (Q06, Q07, Q18)"
-      ]
-    },
-    {
-      "sim_id": "u00088",
-      "status": "FIXED",
-      "time": "20:39:36",
-      "issues": [
-        "Style 2 leader line badges in canvas_js were misnumbered and mismatched with legend_pills_html and apparatus_elements: Badge 1 pointed to Test Tubes instead of Test Tube Stand, Badges 2-5 were shifted, and Badge 6 (Calibrated Iodine Reagent Dropper) was omitted entirely.",
-        "Observation table logging in btnRecord generated 8 columns instead of 7 declared in observation_thead_html, swapped Bath Temperature and Iodine Added columns, and placed raw absorbance into the Adulterant Detection Outcome status column.",
-        "Declared action buttons (btn_transfer_milk, btn_boil_samples, btn_add_iodine) were unwired with no click handlers in canvas_js.",
-        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners in canvas_js to adjust inputs."
-      ]
-    },
-    {
-      "sim_id": "u00083",
-      "status": "FIXED",
-      "time": "20:40:55",
-      "issues": [
-        "Misaligned observation table columns: tr row had 8 columns with extraneous count and swapped concentration/wavelength columns, misaligning against the 7 header columns (Solution Species, Wavelength, Path Length, Solute Concentration, Absorbance, %Transmittance, Molar Absorptivity).",
-        "Unwired action buttons: btn_zero_blank (Auto-Zero / Calibrate Blank), btn_load_unknown (Load Unknown Solution Sample), and btn_scan_lambda_max (Auto-Scan Lambda Max) lacked event handlers.",
-        "Unwired stepper controls: stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to increment/decrement input values.",
-        "Mismatched live telemetry IDs: updateTelemetry targeted val_absorbance, val_transmittance, val_molar_absorptivity, and val_intensity_ratio instead of the slot IDs (val_reading_absorbance, val_reading_transmittance, val_reading_molar_absorptivity, val_reading_intensity_ratio), preventing live Section 06 readouts from updating.",
-        "Added blank and unknown sample simulation modes and cuvette rendering states so blank calibration displays water (100% T, 0.0000 A) and loading unknown displays a realistic unknown analyte concentration for calibration curve determination."
-      ]
-    },
-    {
-      "sim_id": "u00096",
-      "status": "FIXED",
-      "time": "20:41:32",
-      "issues": [
-        "Fixed broken MathML fractions (\\frac{C}{C}++ and \\frac{I}{O}) in apparatus and procedure HTML slots into clean 'C/C++' and 'I/O' prose.",
-        "Corrected severe misalignment in observation table row generation in canvas_js to match observation_thead_html columns.",
-        "Wired interactive action buttons ('btn_validate_syntax', 'btn_execute_algorithm') and stepper arrow buttons to live state handlers.",
-        "Rectified two-pointer subsequence matching simulation in canvas_js for Problem 2 so pointers advance according to subsequence search invariants.",
-        "Removed duplicate symbols in readout headings and standardized MathML for pointer j in table headers."
-      ]
-    },
-    {
-      "sim_id": "u00098",
-      "status": "FIXED",
-      "time": "20:41:55",
-      "issues": [
-        "Unwired action button: 'btn_validate_etch' ('Execute Etching & Reveal Microstructure') was not queried or bound in canvas_js, preventing execution.",
-        "Unwired stepper buttons: Up/down stepper buttons (.stepper-btn) had no click listeners attached to adjust input values.",
-        "Misaligned observation table columns: canvas_js inserted 11 misordered/extra columns instead of the 8 canonical columns defined in observation_thead_html (Ceramic Specimen, Applied Polishing Load, Platen Rotational Speed, Etching Protocol, Etching Temperature, Dwell Time, Grain Boundary Groove Width, Validation Status).",
-        "Mismatched leader line badges: Badges 4 and 5 in canvas_js were inverted relative to apparatus items and legend pills (Badge 4 pointed to the Muffle/Tube Furnace instead of the Optical Microscope, and Badge 5 pointed to the Optical Microscope instead of the Muffle/Tube Furnace)."
-      ]
-    },
     {
       "sim_id": "u00101",
       "status": "FIXED",
@@ -509,6 +450,67 @@
         "Missing feedback loop wiring from inverting input Pin 2 through resistors R2_1/R2_2 and selector switch S3 to output Pin 6.",
         "Observation table data cells lacked center alignment and explicit high-contrast text color on dark rows."
       ]
+    },
+    {
+      "sim_id": "u00141",
+      "status": "FIXED",
+      "time": "21:06:48",
+      "issues": [
+        "Mismatched title and eyebrow: Corrected title from 'Inclined plane with friction' to 'Enzyme Kinetics: Temperature, pH, and Inhibitor' and eyebrow to 'CBSE / NCERT Class XI Biology — Chemical Coordination & Enzyme Kinetics' to match the actual enzyme kinetics apparatus and simulation.",
+        "Misaligned observation table logging: Corrected #btnRecord click handler to append exactly 4 columns matching the 4 #observationThead headers (Temperature, Reaction pH, Inhibitor Strength, Enzyme Activity Rate), removing extraneous Sl. No. and denaturation columns that caused severe column offset and overflow.",
+        "Cleaned observation table headers: Standardized #observationThead header text to eliminate redundant repeated symbol labels ('pH pH' and 'Activity Activity').",
+        "Unwired action buttons: Implemented interactive click handlers in canvas_js for 'Dispense Substrate' (#btn_dispense_substrate) and 'Set Enzyme Optimum' (#btn_auto_optimum).",
+        "Unwired stepper arrow buttons: Wired .stepper-btn-up and .stepper-btn-down to increment and decrement inputs dynamically with boundary clamping.",
+        "Unwired top panel controls: Implemented event listeners for Pause/Run (#btnToggle), Step (#btnStep), Reset to Defaults (#btnReset), and Experiment Mode Selector (#experimentSelect).",
+        "Protected MathML units in telemetry: Updated readout updates in canvas_js to target the numeric value span, preventing destructive overwriting of MathML unit tags in Section 06."
+      ]
+    },
+    {
+      "sim_id": "u00146",
+      "status": "FIXED",
+      "time": "21:06:50",
+      "issues": [
+        "Observation table row generation in recordObservation was misaligned: lacked the trial number column, shifted subsequent values into wrong column headers, and appended an unlisted decision threshold column.",
+        "Action buttons (btn_generate_sequence and btn_toggle_demod_view), experiment dropdown, and stepper buttons (.stepper-btn-up, .stepper-btn-down) had no event listeners attached.",
+        "PRBS_SEQUENCE was defined as a const, preventing dynamic bit sequence regeneration upon clicking btn_generate_sequence.",
+        "In renderPatchCable, the shadow stroke was missing ctx.moveTo(x1, y1 + 4) before bezierCurveTo.",
+        "Oscilloscope CH3 and CH4 patch cables connected 36px above their BNC connector jacks due to an omitted control panel Y-offset.",
+        "Apparatus chassis lacked 3D shadow elevation and high-contrast outlines against the dark #090d16 canvas.",
+        "FFT maximum frequency was limited to 60 Hz, clipping carrier frequencies up to 50 Hz and higher-rate sidebands (fc + Rb up to 70 Hz), causing bandwidth annotations to vanish at upper frequency limits."
+      ]
+    },
+    {
+      "sim_id": "u00149",
+      "status": "FIXED",
+      "time": "21:07:46",
+      "issues": [
+        "Unwired action buttons: btn_toggle_demod (toggling demodulated message trace and receiver patch cable) and btn_auto_scale (dynamically scaling oscilloscope timebase) were missing event listeners in canvas_js.",
+        "Unwired stepper buttons: .stepper-btn click handlers were missing in canvas_js, preventing up/down buttons from adjusting fm, fc, and kf stepper values.",
+        "Malformed MathML in principles_summary_html: modulation index formula had Delta placed outside the fraction rather than inside the numerator (Δf/fm).",
+        "Missing parameter symbol in observation_thead_html: column 7 header was missing the Carson Bandwidth symbol B present in other observation columns."
+      ]
+    },
+    {
+      "sim_id": "u00133",
+      "status": "FIXED",
+      "time": "21:08:06",
+      "issues": [
+        "Misaligned observation table row columns: replaced 11 td cells with 7 cells matching the exact columns of observationThead (V1, N1, N2, V2, k, I2, Pc)",
+        "Unwired action button: wired btn_toggle_excitation ('Energize Transformer Primary') to toggle excitation state and dynamically update meters and core flux",
+        "Unwired stepper arrow buttons: added direct event listeners for .stepper-btn-up and .stepper-btn-down in canvas_js",
+        "Division-by-zero vulnerability: guarded I0 against f <= 0 and N1 <= 0 in both observation recording and physics loop",
+        "Rheostat slider bounds: clamped sliderNorm to [0, 1] to guard against out-of-range load resistance inputs"
+      ]
+    },
+    {
+      "sim_id": "u00151",
+      "status": "FIXED",
+      "time": "21:08:41",
+      "issues": [
+        "Observation table logging in canvas_js appended 9 columns into a 7-column header (inserting fs and fAlpha), causing severe column misalignment and table overflow",
+        "Action buttons (btn_load_alpha_epoch, btn_load_beta_epoch, btn_compute_psd) lacked event listeners",
+        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update target inputs and dispatch input/change events"
+      ]
     }
   ],
   "completed_ids": [
@@ -609,6 +611,7 @@
     "u00130",
     "u00131",
     "u00132",
+    "u00133",
     "u00134",
     "u00135",
     "u00136",
@@ -616,6 +619,10 @@
     "u00138",
     "u00139",
     "u00140",
-    "u00145"
+    "u00141",
+    "u00145",
+    "u00146",
+    "u00149",
+    "u00151"
   ]
 }
