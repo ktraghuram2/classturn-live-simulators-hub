@@ -1,74 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 23:31:48",
-  "completed_count": 300,
-  "fixed_count": 300,
-  "latest_sim_id": "u00382",
+  "updated_at": "2026-10-18 23:33:57",
+  "completed_count": 305,
+  "fixed_count": 305,
+  "latest_sim_id": "u00390",
   "recent_events": [
-    {
-      "sim_id": "u00325",
-      "status": "FIXED",
-      "time": "23:15:27",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 10 <td> elements (including row count, frequency, and Vcc) into an observation table that has only 7 headers (Vp, R1, R2, VUTP, VLTP, VH, Vsat).",
-        "Unwired action buttons: #btn_toggle_xy_mode and #btn_inject_noise were present in controls but had no event listeners or simulation interaction in canvas_js.",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down arrow buttons were not wired to increment/decrement input values in canvas_js.",
-        "Mismatched apparatus badge numbering on canvas: Badges 1 and 3 were swapped relative to legend_pills_html (Pill 1 is Function Generator, Pill 2 is Op-Amp, Pill 3 is Resistors R1 & R2, Pill 4 is Oscilloscope).",
-        "Negative threshold label display: Oscilloscope display labeled lower threshold as -V_LTP despite VLTP already carrying a negative sign, causing a double-negative notation."
-      ]
-    },
-    {
-      "sim_id": "u00330",
-      "status": "FIXED",
-      "time": "23:15:29",
-      "issues": [
-        "Corrupt MathML division-by-zero fraction in apparatus_html for voltmeter dual-range specification",
-        "Numbered badges and leader lines in canvas_js misaligned with legend pills (badges 3, 5, and 6 swapped relative to Milliammeter, Voltmeter, and Resistor)",
-        "Observation table columns in canvas_js misaligned with observation_thead_html (extra S.No. cell and swapped column order for Vr and rd)",
-        "Unwired stepper buttons for DC Supply Voltage and Series Resistance in canvas_js",
-        "Unwired action buttons for toggling plug key and sweeping knee region in canvas_js",
-        "Diode dynamic resistance rd returned 0.00 Ω when open/unenergized instead of infinite resistance"
-      ]
-    },
-    {
-      "sim_id": "u00331",
-      "status": "FIXED",
-      "time": "23:15:58",
-      "issues": [
-        "Raw LaTeX and informal mathematical notations (jX_1, jX_m, jX_2, R2/s, and X1 = X2 = 0.5 * Xeq) were present in principles_list_html, principles_summary_html, and validation_html instead of clean MathML.",
-        "Unwired action button: #btn_lock_rotor (Engage Mechanical Rotor Brake Clamp) had no event listener or state toggling in canvas_js.",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down were not bound in canvas_js, preventing manual adjustment via stepper arrows.",
-        "Critical input corruption: syncTelemetry was overwriting input#voltageCount (a numeric input) with string 'X.X V', which clears the HTML5 input and caused continuous reset to 0.0 V.",
-        "Misaligned observation table columns: tr.innerHTML inserted 7 cells with an unheaded observation index and speed column, misaligning against the 8-column header (V_L, I_L, W_1, W_2, P, Z_eq, R_eq, X_eq).",
-        "Low visual contrast on vibration isolator feet against the #090d16 canvas background."
-      ]
-    },
-    {
-      "sim_id": "u00333",
-      "status": "FIXED",
-      "time": "23:16:02",
-      "issues": [
-        "Fixed corrupted Greek uppercase Pi (Π) replacing 'Raspberry Pi' across title_plain, header_title_html, aim_html, apparatus_html, principles_summary_html, procedure_section_html, validation_html, and legend_pills_html.",
-        "Fixed broken mathematical fractions in apparatus_html ('5 V / 3.3 V rails' and 'Bluetooth 4.0 / 5.0 radio' erroneously converted to LaTeX fractions).",
-        "Fixed corrupted unit in readouts_html where 'Bytes/s' was rendered as a MathML fraction 'Byte s/s'.",
-        "Aligned observation table columns: removed extraneous serial index and throughput columns from canvas_js row rendering to precisely match the 6 observation thead columns.",
-        "Wired up interactive stepper up/down buttons (▲/▼) in canvas_js.",
-        "Wired up action buttons ('btn_transmit_packet' to fire packet bursts and 'btn_toggle_pairing' to toggle Bluetooth RFCOMM connection state).",
-        "Resolved canvas boundary overflow where smartphone frame extended off-canvas up to x = 845 at 10.0 m distance (restrained within 800px workbench bounds).",
-        "Synchronized legend pills numbering and ordering with canvas Style 2 leader line badges and apparatus components."
-      ]
-    },
-    {
-      "sim_id": "u00332",
-      "status": "FIXED",
-      "time": "23:16:04",
-      "issues": [
-        "Badge numbers 1 through 7 in canvas_js were mismatched with legend pills (motor was labeled 1 instead of 6, tachometer 3 instead of 7, voltmeter 4 instead of 3, ammeter 5 instead of 4, wattmeters 6 instead of 5, and TPST switch 7 instead of 1).",
-        "Action button #btn_toggle_tpst ('Toggle TPST Knife Switch') was unwired in canvas_js, and knife switch closure was coupled directly to voltage rather than the switch toggle.",
-        "Voltage stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners in canvas_js.",
-        "Observation table recording was misaligned with the 7 observation_thead_html headers by inserting a serial number into the first column and omitting the fractional slip column."
-      ]
-    },
     {
       "sim_id": "u00313",
       "status": "FIXED",
@@ -495,6 +431,66 @@
         "Wired primary action button 'btn_tag_sequence' to trigger Viterbi decoding animation pulse and log observation.",
         "Wired '.stepper-btn' up/down buttons to increment and decrement stepper input values with boundary clamping and event dispatching."
       ]
+    },
+    {
+      "sim_id": "u00386",
+      "status": "FIXED",
+      "time": "23:33:33",
+      "issues": [
+        "Unwired action button: 'btn_release_block' ('Gently Release Block into Fluid') was present in the controls slot and specified in Procedure Step 3, but lacked an event listener in canvas_js.",
+        "Unwired stepper buttons: Stepper up/down buttons (.stepper-btn-up and .stepper-btn-down) with data-target had no click event handlers wired in canvas_js.",
+        "Misaligned observation table columns: The observation header defines 8 columns (Block Density, Block Height, Block Width, Block Length, Total Weight, Submerged Depth, Buoyant Upthrust, Centre of Buoyancy), but the row generator produced only 7 misaligned cells including an unrequested trial index and dimension string in cm."
+      ]
+    },
+    {
+      "sim_id": "u00389",
+      "status": "FIXED",
+      "time": "23:33:45",
+      "issues": [
+        "Removed accidental MathML markup (<math><mrow><mi>A</mi></mrow></math>) from the plain English word 'A' in principles_summary_html",
+        "Wired primary action buttons (btn_issue_request, btn_snoop_invalidation, btn_flush_dirty_blocks) to execute requests, broadcast external snooped invalidations, and flush dirty lines to memory",
+        "Wired stepper up/down buttons (.stepper-btn) to correctly increment/decrement inputs and dispatch change events",
+        "Aligned observation table columns with observation_thead_html by adding the missing Step Index column and matching the 9-column order (Step, Core, Op, Addr, Index, Tag, P0 State, P1 State, Bus Tx)",
+        "Replaced immediate execution on page load with initial telemetry synchronization so baseline Invalid (I) state is preserved per Step 1 of the procedure",
+        "Separated stepper parameter adjustment from execution dispatch so multi-step requests can be configured before issuing"
+      ]
+    },
+    {
+      "sim_id": "u00387",
+      "status": "FIXED",
+      "time": "23:33:55",
+      "issues": [
+        "Unwired action buttons: 'btn_apply_heel' (Apply Heel Perturbation 5°) and 'btn_restore_vertical' (Damp to Vertical Floatation) lacked click event listeners in canvas_js.",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' for block height and diameter lacked click handlers to adjust inputs and trigger syncFromInputs().",
+        "Misaligned observation table columns: btnRecord inserted observationCount as an extra first column and omitted Waterplane Inertia (I) and Displaced Volume (Vw), shifting all table cells out of alignment with the 12 thead columns.",
+        "Low-contrast block silhouette outline on dark #090d16 canvas background: enhanced outline stroke from #334155 to #64748b."
+      ]
+    },
+    {
+      "sim_id": "u00377",
+      "status": "FIXED",
+      "time": "23:33:57",
+      "issues": [
+        "Unwired Section 05 custom action buttons: '#btn_generate_array' (Generate New Array) and '#btn_run_auto' (Toggle Continuous Sorting) had no click listeners in canvas_js",
+        "Unwired stepper controls: .stepper-btn arrows and additional input parameters were not hooked for dynamic updates",
+        "Observation table column alignment: '#btnRecord' lacked an explicit event listener, risking column mismatch against the 8-column header schema",
+        "Array bar swapping visual jump: in-memory array values were swapped prematurely at progress 0.7 instead of at progress 1.0 at the end of the LOWER phase, creating a visual jump",
+        "Sorted bar partition highlight timing: 'isSortedSlot' used 'pass > 0' and active pass indexing, prematurely highlighting bars green before passes completed"
+      ]
+    },
+    {
+      "sim_id": "u00390",
+      "status": "FIXED",
+      "time": "23:33:57",
+      "issues": [
+        "Unwired action button: btnExecute in canvas_js queried 'btnExecute' instead of HTML element 'btn_execute_cycle'.",
+        "Unwired conflict race button: btn_auto_conflict_demo lacked an event listener and demonstration handler.",
+        "Unwired stepper controls: Stepper up and down buttons (.stepper-btn) lacked click event listeners to increment/decrement inputs.",
+        "Misaligned observation table: recordObservation() injected 8 columns matching a legacy schema instead of the canonical observation_thead_html columns (Cycle, Processor, Op, Address, P0 State, P1 State, Bus Tx, P0 Hit Rate).",
+        "Missing cycle & transaction tracking: Observation table did not track cycle count or specific bus transaction names (BusRd, BusRdX, BusUpgr, Flush).",
+        "Leader badge 4 distance: Main Memory badge 4 was anchored across 242px (> maxLeader 80px limit); moved within range (65px) beside DRAM module.",
+        "Telemetry unit formatting: Live readouts in updateTelemetry() lacked unit suffix strings matching specification."
+      ]
     }
   ],
   "completed_ids": [
@@ -793,10 +789,15 @@
     "u00374",
     "u00375",
     "u00376",
+    "u00377",
     "u00378",
     "u00379",
     "u00380",
     "u00382",
-    "u00383"
+    "u00383",
+    "u00386",
+    "u00387",
+    "u00389",
+    "u00390"
   ]
 }
