@@ -1,70 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 22:23:54",
-  "completed_count": 180,
-  "fixed_count": 180,
-  "latest_sim_id": "u00230",
+  "updated_at": "2026-10-18 22:25:27",
+  "completed_count": 185,
+  "fixed_count": 185,
+  "latest_sim_id": "u00204",
   "recent_events": [
-    {
-      "sim_id": "u00185",
-      "status": "FIXED",
-      "time": "22:00:44",
-      "issues": [
-        "Observation table columns were misaligned: Disk Potency (C0) was omitted and subsequent parameter columns were shifted out of order with observation_thead_html",
-        "Action buttons (btn_flame_sterilize, btn_dispense_discs, btn_align_caliper) were unwired with no click handlers",
-        "Custom stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners, preventing UI parameter adjustments",
-        "Ciprofloxacin baseZone was 30.5 mm instead of 30.0 mm, creating a slight discrepancy with the default 30.0 mm live reading"
-      ]
-    },
-    {
-      "sim_id": "u00186",
-      "status": "FIXED",
-      "time": "22:00:44",
-      "issues": [
-        "Unwired Section 05 action buttons: Added interactive event listeners for 'Cast Dual-Wedge Agar Matrix' (#btn_pour_wedges), 'Inoculate & Spread Culture' (#btn_inoculate_spread), and 'Incubate & Express Colonies' (#btn_run_incubation).",
-        "Unwired stepper up/down arrow buttons: Wired .stepper-btn-up and .stepper-btn-down buttons to adjust streptomycin concentration, inoculum volume, and incubation time with step resolution and bounds clamping.",
-        "Unwired top-panel controls: Added event listeners for experiment mode dropdown (#experimentSelect) to switch between spontaneous mutant isolation and mutation frequency determination presets, and 'Reset to Defaults' (#btnReset) to restore all inputs and clear the observation table.",
-        "Protected Section 06 MathML units: Modified setTele to target inner numeric value spans, preventing destructive overwriting of native MathML exponents and unit tags.",
-        "Input boundary clamping: Guarded against invalid or zero concentrations and division-by-zero errors in inhibitory boundary position (x_MIC) and mutation frequency (f_m) calculations.",
-        "Visual apparatus contrast: Enhanced drop shadow outlines and apparatus feet strokes on the dark #090d16 canvas background.",
-        "Dynamic spreader motion: Added animated sweeping movement for the glass rod spreader across the Petri dish agar matrix when inoculating and spreading culture."
-      ]
-    },
-    {
-      "sim_id": "u00183",
-      "status": "FIXED",
-      "time": "22:00:44",
-      "issues": [
-        "Misaligned observation table columns: btnRecord logged 7 mismatched parameter columns instead of the 10 defined observation columns (Digit Number, Pattern Type, Triradii Count, Ridge Count, Total Whorls, Total Loops, Total Arches, PII, DI, and TRC).",
-        "Unwired action buttons: act_auto_detect_landmarks ('Auto-Locate Δ and Core Landmarks') and act_auto_trace_ridge ('Trace Hairline and Count Ridge Crossings') lacked event listeners in canvas_js.",
-        "Unwired stepper controls: .stepper-btn buttons (▲/▼) lacked click handlers to increment and decrement input values.",
-        "Telemetry update wiping unit markup: setElementText assigned textContent directly to .readout-val elements, destroying internal MathML unit spans.",
-        "Corrupted HTML attribute values in readouts_html: data-unit attributes contained nested span tags and unescaped quotes injected during slot annotation.",
-        "Missing theoretical equations in principles_list_html: equations for Dankmeijer's Index (DI), Furuhata's Index (FI), and Total Ridge Count (TRC) were omitted, leaving only Equation 0 (PII).",
-        "Enhanced canvas visual fidelity and interaction: added drop-shadow depth to the 10-digit record form, interactive digit selection via canvas clicks on card cells, and animated visual feedback for delta/core detection and hairline ridge counting."
-      ]
-    },
-    {
-      "sim_id": "u00169",
-      "status": "FIXED",
-      "time": "22:00:52",
-      "issues": [
-        "Numbered legend pills in legend_pills_html were misordered and did not correspond to apparatus items or canvas badges 1 through 7.",
-        "Stepper increment and decrement buttons (.stepper-btn) were present in DOM but lacked event listeners in canvas_js.",
-        "Auto-Balance action button (#btn_auto_balance) was present in DOM but lacked an event listener in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u00184",
-      "status": "FIXED",
-      "time": "22:01:15",
-      "issues": [
-        "Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked event listeners to increment/decrement input values.",
-        "Action buttons (#btn_span_length, #btn_span_breadth, and #btn_toggle_projection) had no click event listeners implemented in canvas_js.",
-        "Lack of Norma Verticalis (superior cranial vault aspect) visualization to illustrate bi-euryon breadth measurement alongside norma lateralis length measurement.",
-        "Observation table record button had restricted ID selector lacking fallback for #btn_record."
-      ]
-    },
     {
       "sim_id": "u00192",
       "status": "FIXED",
@@ -471,6 +411,70 @@
         "Unwired experiment activity dropdown (Primary Experiment vs Extended Activity) failed to switch between symmetric and asymmetric configurations.",
         "Telemetry readouts failed to update dynamically because setElemText and updateTelemetryDisplay queried 'reading_*' instead of the rendered element ID 'val_reading_*'."
       ]
+    },
+    {
+      "sim_id": "u00234",
+      "status": "FIXED",
+      "time": "22:24:02",
+      "issues": [
+        "Observation table recording was missing the Plastic Limit (PL) column, writing only 6 cells for 7 headers and shifting Plasticity Index into the Plastic Limit slot.",
+        "Unwired action buttons: 'btn_mix_soil', 'btn_cut_groove', and 'btn_rotate_cup' lacked event listeners in canvas_js.",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' lacked event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u00232",
+      "status": "FIXED",
+      "time": "22:24:52",
+      "issues": [
+        "Unwired stepper up and down buttons for tank capacitance, effective inductance, and supply voltage",
+        "Unwired action buttons: Toggle DC Power Switch (btn_toggle_power) and Auto-Set CRO Timebase & Scale (btn_auto_scale_cro)",
+        "Misaligned observation table: 8 row cells generated for 6 headers, causing values to appear under mismatched column headers",
+        "DC power toggle state was not integrated into physics calculations, CRO trace, tank pulses, or telemetry",
+        "Unclosed tags in principles_list_html"
+      ]
+    },
+    {
+      "sim_id": "u00228",
+      "status": "FIXED",
+      "time": "22:24:57",
+      "issues": [
+        "Mismatched title: Corrected title from '555 Timer Monostable Multivibrator' to '555 Timer Astable Multivibrator' to accurately represent the dual-resistor free-running astable multivibrator circuit.",
+        "Unwired action buttons: Attached click listeners to #power_on_off (Power On/Off) and #btn_apply_trigger (Trigger/Sync pulse) in canvas_js.",
+        "Unwired stepper controls: Wired .stepper-btn-up and .stepper-btn-down controls in canvas_js to increment and decrement resistance RA within the valid [1.0, 9.0] kΩ range.",
+        "Unwired Reset button: Attached click listener to #btnReset to restore RA to 1.0 kΩ, re-enable power, reset oscilloscope sweep, and clear observation table rows.",
+        "Misaligned observation table columns: Added missing leading '#' column header in observation_thead_html so all 6 columns match the 6 table cells recorded by btnRecord.",
+        "Inaccurate readout and observation labels: Corrected 'Time constant' to 'Oscillation period (T)' and abbreviated 'Freq' to 'Frequency (f)' across readouts and table headers.",
+        "Fraction formatting errors in procedure steps: Fixed Pins 6/2 and 2/6 which had been formatted as arithmetic fractions (6/2 and 2/6) instead of discrete IC pin connections.",
+        "Unclosed tags and missing equations in principles list: Expanded principles_list_html to include complete equations for Pulse Width, Duty Cycle, and Frequency with valid MathML and properly closed HTML tags."
+      ]
+    },
+    {
+      "sim_id": "u00233",
+      "status": "FIXED",
+      "time": "22:25:07",
+      "issues": [
+        "Unwired action buttons: btn_cut_groove, btn_crank_cam, and btn_mix_paste had no event listeners attached.",
+        "Unwired stepper controls: .stepper-btn up and down buttons were missing click handlers.",
+        "Telemetry element ID mismatch: updateTelemetry queried reading_* IDs instead of val_reading_*, leaving readout displays frozen.",
+        "Apparatus badges mismatch: canvas only drew 4 badges that mismatched the 7 apparatus legend pills.",
+        "Missing apparatus component: Digital Impact Counter (Pill 6) was absent from the Casagrande chassis.",
+        "Broken unit formatting in steppers_html: crank speed unit contained malformed MathML re\\frac{v}{s} instead of rev/s.",
+        "Missing observation logging: completed groove closures were not recorded to the observation table."
+      ]
+    },
+    {
+      "sim_id": "u00204",
+      "status": "FIXED",
+      "time": "22:25:27",
+      "issues": [
+        "Unwired action buttons: Connected #btn_release_vibration to displace and release the beam, and #btn_zero_displacement to settle the system to static equilibrium.",
+        "Disabled direct canvas dragging and touch listeners to enforce the ClassTurn canvas mouse interaction lock specification.",
+        "Unwired stepper controls: Wired .stepper-btn-up and .stepper-btn-down click handlers to increment and decrement stepper inputs.",
+        "Unwired experiment selector: Wired #experimentSelect to apply parameter presets for the 3 vibration experiment modes.",
+        "Observation table column alignment: Wired #btnRecord to log the exact 8 defined columns in observation_thead_html without an unmapped trial index offset.",
+        "Wired #btnReset to restore default input parameters, settle vibration to equilibrium, and clear the observation table."
+      ]
     }
   ],
   "completed_ids": [
@@ -633,6 +637,7 @@
     "u00201",
     "u00202",
     "u00203",
+    "u00204",
     "u00206",
     "u00207",
     "u00208",
@@ -652,7 +657,11 @@
     "u00225",
     "u00226",
     "u00227",
+    "u00228",
     "u00229",
-    "u00230"
+    "u00230",
+    "u00232",
+    "u00233",
+    "u00234"
   ]
 }
