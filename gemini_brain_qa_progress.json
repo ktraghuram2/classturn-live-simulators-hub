@@ -1,75 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 23:29:38",
-  "completed_count": 295,
-  "fixed_count": 295,
-  "latest_sim_id": "u00380",
+  "updated_at": "2026-10-18 23:31:48",
+  "completed_count": 300,
+  "fixed_count": 300,
+  "latest_sim_id": "u00382",
   "recent_events": [
-    {
-      "sim_id": "u00322",
-      "status": "FIXED",
-      "time": "23:12:53",
-      "issues": [
-        "Fixed MathML in principles_summary_html: corrected dynamic output resistance formula from malformed fraction to ΔV_CE / ΔI_C",
-        "Fixed MathML in procedure_section_html: corrected Step 7 formula from raw δ(Vce)/δ(Ic) to clean inline MathML ΔV_CE / ΔI_C",
-        "Aligned observation table recorded row columns to match the 5 headers in observation_thead_html (Base Current I_B, Collector-Emitter Voltage V_CE, Collector Current I_C, Dynamic Output Resistance r_o, Transistor Operating Region Mode), removing extraneous unheadered serial number and V_BE columns",
-        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) to adjust input values within min/max/step limits and trigger update events",
-        "Wired custom action buttons: #btn_trace_curve to perform automated parametric SMU collector voltage sweep, and #btn_switch_transistor to engage Kelvin shielding",
-        "Wired observation notebook Reset button (#btnReset) to restore default parameters and clear observation table rows"
-      ]
-    },
-    {
-      "sim_id": "u00326",
-      "status": "FIXED",
-      "time": "23:13:02",
-      "issues": [
-        "Unwired stepper up/down buttons (.stepper-btn) and missing input listeners preventing parameter changes.",
-        "Unwired action buttons ('btn_insert_disc' and 'btn_remove_disc') in simulation canvas logic.",
-        "Live telemetry readouts failed to update due to selecting the outer container ID instead of the value span ID ('val_reading_*').",
-        "Misaligned observation table columns where a row S.No was injected into the Time column and T1, T2, T3 values were omitted.",
-        "Raw LaTeX delimiters (\\left( ... \\right)_t=0) present in the initial heating rate readout header.",
-        "Malformed MathML equation structure in the procedure overview text for (dT/dt) at t=0.",
-        "Duplicated symbols (T1, T2, T3, Th, T4, σ) in observation table column headers.",
-        "Low visual contrast and missing 3D metallic highlights for the blackened copper disc assembly on the dark canvas."
-      ]
-    },
-    {
-      "sim_id": "u00286",
-      "status": "FIXED",
-      "time": "23:13:54",
-      "issues": [
-        "Fixed inverted unit string /m³s to m³/s in readouts_html for Volumetric Discharge Rate (reading_q).",
-        "Corrected MathML rendering for discharge rate units in observation_thead_html from /m³s to m³/s using proper mfrac formatting.",
-        "Corrected observation table row insertion in canvas_js: btnRecord previously generated 12 <td> cells including serial number, pipe lengths, and friction factor, causing severe column shift against the 7 observation thead columns (H, v1, v2, v3, Q, Q_lit, d). Now aligns precisely with 7 table header columns.",
-        "Wired stepper button up/down click listeners in canvas_js for all numeric stepper inputs.",
-        "Wired action button #btn_toggle_hgl in canvas_js with stateful toggle to show/hide the Hydraulic Grade Line and Energy Grade Line overlay.",
-        "Wired action button #btn_purge_air in canvas_js with active state feedback."
-      ]
-    },
-    {
-      "sim_id": "u00329",
-      "status": "FIXED",
-      "time": "23:14:24",
-      "issues": [
-        "Fixed observation table misalignment: row insertion previously contained 7 <td> cells with an extraneous Box/Bias column against a 6-column header, corrupting column alignment and overflowing the table layout.",
-        "Corrected live telemetry readout DOM selectors: updateTelemetryDOM targeted non-existent IDs ('reading_voltage', 'val_voltage') instead of the actual rendered span IDs ('val_reading_voltage', etc.), preventing telemetry UI updates.",
-        "Wired interactive action buttons ('btn_reverse_polarity' and 'btn_auto_sweep') and all stepper increment/decrement buttons ('.stepper-btn-up', '.stepper-btn-down'), which were previously unhandled in canvas_js.",
-        "Aligned Style 2 leader line badge numbering with apparatus legend pills: Badge 4 previously pointed to the Black Box and Badge 5 to the Voltmeter, reversing their numbered associations in legend_pills_html.",
-        "Fixed stale component identity string when DC excitation is 0 V by resolving identityStr immediately based on boxId before zero-voltage short-circuit return."
-      ]
-    },
-    {
-      "sim_id": "u00327",
-      "status": "FIXED",
-      "time": "23:14:48",
-      "issues": [
-        "Unwired action button 'Accelerate to Thermal Equilibrium' (btn_reach_steady_state) in canvas_js",
-        "Unwired stepper increment/decrement buttons (.stepper-btn) in canvas_js",
-        "Observation table column misalignment: btnRecord inserted 9 columns with an extra serial column instead of matching the 11 columns in observation_thead_html (missing absolute temperatures Tb, Tg, and Ta in Kelvin)",
-        "Low contrast power cable (#0f172a) on dark #090d16 canvas background",
-        "Legend pill 5 label mismatch: changed 'Multi-Channel Digital Temperature Indicator' to 'Thermocouple Temperature Sensors (T1–T5)' to align with apparatus item 4 and badge 5"
-      ]
-    },
     {
       "sim_id": "u00325",
       "status": "FIXED",
@@ -494,6 +429,72 @@
         "Misaligned observation table row insertion: generated 7 mismatched columns instead of the 5 defined in observation_thead_html",
         "Badges 2 and 3 had zero horizontal curvature (vertical straight lines) and leader distances shorter than the minLeader requirement"
       ]
+    },
+    {
+      "sim_id": "u00376",
+      "status": "FIXED",
+      "time": "23:30:05",
+      "issues": [
+        "Unwired action buttons: 'btn_purge_manometer' and 'btn_tare_scale' had no event listeners in canvas_js",
+        "Unwired stepper buttons: '.stepper-btn' up/down click events were missing in canvas_js",
+        "Telemetry readouts in canvas_js targeted non-existent IDs ('val_mass_flow_rate', etc.) instead of 'val_reading_*', preventing UI live readouts from updating",
+        "Observation table record button inserted 10 columns including non-existent S.No and temperature, misaligning all data with the 8-column header",
+        "Corrupted 'data-unit' attributes in readouts_html containing unescaped tags and quotes, plus reversed discharge unit '/m³s' instead of 'm³/s'",
+        "Reversed discharge unit in observation_thead_html ('/m³s' instead of 'm³/s')",
+        "Fractionally parsed angular velocity unit 'rad/s' in steppers_html"
+      ]
+    },
+    {
+      "sim_id": "u00374",
+      "status": "FIXED",
+      "time": "23:30:07",
+      "issues": [
+        "Disabled direct canvas mouse click handler to enforce 100% mouse interaction lock on #simCanvas per Q22.",
+        "Wired custom action button #btn_indent_and_measure ('Apply Load and Indent Specimen') to initiate motorized indentation cycle.",
+        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) with min/max bounds clamping and change dispatch.",
+        "Wired observation table Record button (#btnRecord) with 7 aligned columns (Material Sample, Applied Load, Dwell Time, Diagonal 1, Diagonal 2, Average Diagonal, Vickers Hardness) to prevent column shifting and data truncation.",
+        "Wired top panel and playback controls (#btnReset and #experimentSelect) to cleanly restore simulation state and switch testing presets.",
+        "Corrected malformed Vickers hardness unit MathML (kgf/mm²) in principles_list_html, readouts_html, and observation_thead_html.",
+        "Fixed grammar MathML tag error converting English indefinite article 'A' into mathematical variable <mi>A</mi> in principles_summary_html.",
+        "Upgraded sub-9px canvas reticle label typography ('8px monospace') to 9px monospace per Q25 legibility guidelines."
+      ]
+    },
+    {
+      "sim_id": "u00383",
+      "status": "FIXED",
+      "time": "23:30:14",
+      "issues": [
+        "Dynamic brake lock action button (btn_stall_clamp) was unwired with no event listener or stall state simulation",
+        "Stepper increment and decrement buttons (.stepper-btn) were unwired to target inputs",
+        "Observation table logging inserted an unheaded serial column (9 columns vs 8 headers) and transposed actual torque and braking load values",
+        "Telemetry readout elements did not update because setTxt looked for IDs without the 'val_' prefix present on readout spans",
+        "Back-EMF equation incorrectly added mechanical viscous damping bViscous to Kt instead of using Kb, causing dimensional error and double-counted damping",
+        "Rotor angle error lacked modular wrapping across the +/- pi boundary for shortest angular distance in PD tracking",
+        "Apparatus Badge 2 anchor point was floating at y=179 above the motor casing top at y=195"
+      ]
+    },
+    {
+      "sim_id": "u00378",
+      "status": "FIXED",
+      "time": "23:31:07",
+      "issues": [
+        "Observation table column misalignment: btnRecord inserted clock frequency and sort order into the permutation mode and comparisons columns; realigned observation table rows to match all 6 observation_thead_html headers (Array Size n, Initial Permutation Type Mode, Total Comparisons, Total Swaps, Theoretical Max Swaps S_max, Efficiency Ratio eta).",
+        "Unwired custom action buttons: wired #btn_auto_sort ('Auto-Run Continuous Sort') to initiate/resume continuous sorting and #btn_permute_array ('Generate New Permutation') to generate and load new randomized array permutations.",
+        "Unwired stepper arrow buttons: added click event listeners to .stepper-btn-up and .stepper-btn-down to increment and decrement Array Size, Clock Frequency, and Sort Order within their min/max/step bounds.",
+        "Unwired top panel and playback controls: wired #btnToggle to pause/resume simulation, #btnStep to execute discrete step-by-step sorting iterations, #experimentSelect to configure worst-case (reverse-ordered), average-case (pseudo-random), and best-case (pre-sorted) arrays, and #btnReset to restore default controls and clear recorded observations.",
+        "Telemetry unit preservation: updated updateTelemetry to target the value text span without overwriting the MathML unit markup."
+      ]
+    },
+    {
+      "sim_id": "u00382",
+      "status": "FIXED",
+      "time": "23:31:48",
+      "issues": [
+        "Corrected raw LaTeX command '\\arg' in MathML (<mi>\\arg</mi>) within principles_summary_html to '<mo>arg</mo>'.",
+        "Realigned observation table columns in canvas_js to match observation_thead_html (8 columns in exact header order: Language, Architecture, Context Order, Corpus Size, Accuracy, OOV Rate, Path Score, Latency; removed extraneous unmapped observation counter column).",
+        "Wired primary action button 'btn_tag_sequence' to trigger Viterbi decoding animation pulse and log observation.",
+        "Wired '.stepper-btn' up/down buttons to increment and decrement stepper input values with boundary clamping and event dispatching."
+      ]
     }
   ],
   "completed_ids": [
@@ -789,8 +790,13 @@
     "u00370",
     "u00372",
     "u00373",
+    "u00374",
     "u00375",
+    "u00376",
+    "u00378",
     "u00379",
-    "u00380"
+    "u00380",
+    "u00382",
+    "u00383"
   ]
 }
