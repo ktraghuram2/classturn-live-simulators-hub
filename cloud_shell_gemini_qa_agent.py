@@ -75,9 +75,15 @@ def get_gcloud_access_token():
     return None
 
 
+_CACHED_GCP_PROJECT = None
+
 def get_gcloud_project():
+    global _CACHED_GCP_PROJECT
+    if _CACHED_GCP_PROJECT:
+        return _CACHED_GCP_PROJECT
     proj = os.environ.get("GOOGLE_CLOUD_PROJECT") or os.environ.get("DEVSHELL_PROJECT_ID")
-    if proj:
+    if proj and proj != "(unset)":
+        _CACHED_GCP_PROJECT = proj
         return proj
     try:
         res = subprocess.run(
@@ -85,7 +91,18 @@ def get_gcloud_project():
             capture_output=True, text=True, timeout=10
         )
         if res.returncode == 0 and res.stdout.strip() and res.stdout.strip() != "(unset)":
-            return res.stdout.strip()
+            _CACHED_GCP_PROJECT = res.stdout.strip()
+            return _CACHED_GCP_PROJECT
+        # Auto-pick first project in Cloud Shell if unset
+        res2 = subprocess.run(
+            ["gcloud", "projects", "list", "--format=value(projectId)", "--limit=1"],
+            capture_output=True, text=True, timeout=15
+        )
+        if res2.returncode == 0 and res2.stdout.strip():
+            _CACHED_GCP_PROJECT = res2.stdout.strip().splitlines()[0]
+            subprocess.run(["gcloud", "config", "set", "project", _CACHED_GCP_PROJECT], capture_output=True, timeout=10)
+            subprocess.run(["gcloud", "services", "enable", "aiplatform.googleapis.com", "--project", _CACHED_GCP_PROJECT], capture_output=True, timeout=30)
+            return _CACHED_GCP_PROJECT
     except Exception:
         pass
     return None
