@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 00:22:46",
-  "completed_count": 370,
-  "fixed_count": 370,
-  "latest_sim_id": "u00464",
+  "updated_at": "2026-10-19 00:24:47",
+  "completed_count": 375,
+  "fixed_count": 375,
+  "latest_sim_id": "u00438",
   "recent_events": [
-    {
-      "sim_id": "u00396",
-      "status": "FIXED",
-      "time": "23:54:00",
-      "issues": [
-        "Corrupted MathML fraction in volumetric discharge units in readouts_html (rendered as c/m³s instead of cm³/s).",
-        "Corrupted MathML fraction in volumetric discharge unit headers and missing head symbol H in observation_thead_html.",
-        "Misaligned observation table row insertion in canvas_js btnRecord (10 cells with unordered data inserted into a 9-column table).",
-        "Unwired action buttons ('btn_toggle_drain_valve' and 'btn_align_hook_gauge') and unwired stepper buttons in canvas_js.",
-        "Mismatched legend pills vs apparatus items and canvas badge numbering (spurious 90° V-Notch Weir Plate shifted pills out of sync with badges 1-6)."
-      ]
-    },
-    {
-      "sim_id": "u00420",
-      "status": "FIXED",
-      "time": "23:54:33",
-      "issues": [
-        "Unwired action button: 'Trigger Resonant Modal Excitation' (#btn_excite_beam) was not connected to an event listener.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) and input change events lacked click/input event handlers.",
-        "Misaligned observation table: Row generation in #btnRecord inserted 9 columns with shifted and merged headers (trial index in mode column, merged dimensions, offset frequencies) instead of the 8 canonical headers in observation_thead_html.",
-        "Readout DOM replacement: setVal used el.textContent directly, overwriting inner unit/value spans inside readout elements."
-      ]
-    },
-    {
-      "sim_id": "u00417",
-      "status": "FIXED",
-      "time": "23:54:44",
-      "issues": [
-        "Observation table columns logged by the Record button were completely misaligned (9 columns logged with trial index and width/thickness vs 6 columns defined in observation_thead_html, with reversed column ordering).",
-        "Action buttons #btn_sweep_resonance ('Auto-Tune to Mode 1 Resonance Peak') and #btn_toggle_shaker ('Toggle Shaker Harmonic Power') were unwired in canvas_js.",
-        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js.",
-        "HTML slot readouts_html had malformed data-unit attributes containing serialized HTML/MathML span tags instead of clean unit strings (m⁴, Hz, m/s², dimensionless)."
-      ]
-    },
-    {
-      "sim_id": "u00421",
-      "status": "FIXED",
-      "time": "23:56:20",
-      "issues": [
-        "Corrected mismatched numbered legend pills 2 and 3 in legend_pills_html so Badge 2 refers to Continuous Elastic Beam Specimen and Badge 3 refers to Modular Left Boundary Stanchion, matching apparatus specifications and canvas leader lines.",
-        "Wired action buttons (btn_strike_hammer, btn_cycle_boundary, btn_toggle_mode) in canvas_js to trigger impulse hammer strikes, cycle through boundary conditions, and toggle Mode 1 vs Mode 2 flexural vibration.",
-        "Wired up/down stepper buttons (.stepper-btn) in canvas_js to allow interactive increment/decrement of all beam geometry and material parameters.",
-        "Corrected observation table row formatting in btnRecord click handler to match the exact 8 columns defined in observation_thead_html.",
-        "Added analytical higher-order eigenvalue formulations and mode shape support for Mode 2 (first overtone) across all boundary conditions."
-      ]
-    },
-    {
-      "sim_id": "u00398",
-      "status": "FIXED",
-      "time": "23:57:10",
-      "issues": [
-        "Corrected malformed discharge rate unit from '/m³s' to 'm³/s' in readouts_html and observation_thead_html",
-        "Generalized Chezy's coefficient readout label from 'Chezy's Coefficient (Bazin)' to 'Chezy's Coefficient' to accommodate both Activity 1 and 2",
-        "Wired stepper up/down buttons to increment and decrement inputs within their defined bounds and trigger update events",
-        "Wired 'Stabilize Half-Full Depth' action button with interactive visual stabilization feedback",
-        "Implemented dual-mode Chezy coefficient computation to dynamically support Activity 1 (Bazin) and Activity 2 (Kutter)",
-        "Fixed observation table record button to correctly record 8 aligned table columns matching observation_thead_html"
-      ]
-    },
     {
       "sim_id": "u00429",
       "status": "FIXED",
@@ -503,6 +444,67 @@
         "Added missing symbol 'l' in observation table header column 2 ('Cell Path Length l (mm)') to match standard formatting across all other columns.",
         "Formatted unrendered plain text Mean Residue Ellipticity '[θ]MRE' notation in procedure Step 6 into valid MathML '[θ]_MRE'."
       ]
+    },
+    {
+      "sim_id": "u00469",
+      "status": "FIXED",
+      "time": "00:23:13",
+      "issues": [
+        "Unwired action buttons: btn_switch_sample, btn_heat_fix, btn_apply_stain, and btn_oil_immersion had no event listeners attached.",
+        "Unwired stepper buttons: .stepper-btn buttons for coarse/fine focus, objective selector, and stain exposure were not wired to increment or decrement their corresponding input controls.",
+        "Misaligned observation table columns: btnRecord inserted 6 columns with index and misaligned metrics instead of the 7 columns defined in observation_thead_html (Specimen Sample, Objective Lens, Total Magnification, Staining Duration, Focal Blur Radius, Cell Morphology, Cell Arrangement).",
+        "Sample switching unsupported: Slide specimen label was hardcoded to 'S.AUR' and bacteria rendering lacked dynamic morphology for Bacillus subtilis rods vs Staphylococcus aureus coccal clusters.",
+        "Microscope oil immersion optics: 100x lens numerical aperture (NA) was hardcoded to 1.25 without checking whether immersion oil had been applied."
+      ]
+    },
+    {
+      "sim_id": "u00471",
+      "status": "FIXED",
+      "time": "00:24:12",
+      "issues": [
+        "Unwired stepper increment/decrement buttons (▲/▼) across all control inputs.",
+        "Unwired action buttons ('Roll Flask to Release Entrapped Air' and 'Immerse in Constant Temperature Bath').",
+        "DOM element selector mismatch in updateTelemetryDOM (looked for 'reading_*' instead of 'val_reading_*'), preventing live readout updates.",
+        "Misaligned observation table columns and missing fields (6 data cells inserted with leading trial counter against 7 table headers: W_cem, W2, V1, V2, V_disp, M_k, G)."
+      ]
+    },
+    {
+      "sim_id": "u00455",
+      "status": "FIXED",
+      "time": "00:24:21",
+      "issues": [
+        "Misaligned observation table row logging: btnRecord generated 9 disordered columns with an un-headed diffusion coefficient Dn, conflicting with the 8-column header structure in observation_thead_html.",
+        "Unwired custom action buttons in canvas_js: 'Inject Photo-Carrier Pulse' (#btn_pulse_laser) and 'Reverse Field Polarity' (#btn_reverse_field_polarity) lacked event listeners.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to dynamically increment and decrement parameter inputs within bounded ranges.",
+        "Unwired top-panel controls: #btnToggle (Pause/Run), #btnStep (Single Step), #btnReset (Reset to Defaults), and #experimentSelect lacked interactive event handlers in canvas_js.",
+        "Telemetry unit destruction: updateTelemetry previously targeted val_reading_* with el.textContent directly, destroying nested MathML unit elements; updated to preserve unit spans.",
+        "Cleaned raw embedded HTML span markup from data-unit attributes in readouts_html and corrected distorted MathML units (fraction V/c*m to V/cm, c/m²*s to cm²/s, and A/c*m² to A/cm²).",
+        "Corrected distorted machine-parsed MathML units and missing symbols across observation_thead_html and steppers_html.",
+        "Low contrast ground lead: Elevated dark #1e293b power supply negative wire stroke to #64748b against the #090d16 canvas floor for high visibility.",
+        "Canvas typography legibility (Q25): Upgraded sub-9px text (7px and 8px) on electrometer buttons, knob indicators, and probe labels to 9px."
+      ]
+    },
+    {
+      "sim_id": "u00472",
+      "status": "FIXED",
+      "time": "00:24:42",
+      "issues": [
+        "Observation table record button (btnRecord) omitted the Dry Sample Mass (Ws) column, causing all subsequent mass readings (W1, W2, W3, W4, WL, G) to misalign across the 8 table headers.",
+        "Action buttons btn_evacuate_air ('Apply Vacuum & Agitate to Evacuate Entrapped Air') and btn_tare_balance ('Zero / Tare Digital Balance') were defined in HTML but unwired in canvas_js.",
+        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js.",
+        "Experiment mode selector (Water for soil solids vs. Kerosene for cement) was unwired to update displacing fluid and mineral gravity parameters."
+      ]
+    },
+    {
+      "sim_id": "u00438",
+      "status": "FIXED",
+      "time": "00:24:47",
+      "issues": [
+        "Observation table column count mismatch: btnRecord inserted 11 cells (including R, L, E, and eta) into tbody, whereas observation_thead_html has only 7 columns (Firing Angle, Peak Voltage, V0, I0, Vrms, Pdc, RF), causing severe table misalignment.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) and input listeners were not bound to click or change handlers, making steppers non-functional.",
+        "Unwired action buttons: btn_toggle_pulses (Trigger Gate Firing Pulses) and btn_inversion_preset (Set Inversion Mode α = 120°) were defined in HTML but had no click event handlers wired in canvas_js.",
+        "Readout DOM text replacement: updateTelemetry directly overwrote valEl.textContent, stripping the nested MathML unit elements from live readout spans."
+      ]
     }
   ],
   "completed_ids": [
@@ -857,6 +859,7 @@
     "u00435",
     "u00436",
     "u00437",
+    "u00438",
     "u00439",
     "u00440",
     "u00441",
@@ -870,11 +873,15 @@
     "u00452",
     "u00453",
     "u00454",
+    "u00455",
     "u00456",
     "u00457",
     "u00460",
     "u00462",
     "u00463",
-    "u00464"
+    "u00464",
+    "u00469",
+    "u00471",
+    "u00472"
   ]
 }
