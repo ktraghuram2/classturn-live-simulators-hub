@@ -1,79 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 20:34:41",
-  "completed_count": 60,
-  "fixed_count": 60,
-  "latest_sim_id": "u00086",
+  "updated_at": "2026-10-18 20:37:45",
+  "completed_count": 65,
+  "fixed_count": 65,
+  "latest_sim_id": "u00095",
   "recent_events": [
-    {
-      "sim_id": "u00007",
-      "status": "FIXED",
-      "time": "20:04:01",
-      "issues": [
-        "Wired #btnToggle Pause/Run button with canonical 'Run' and 'Pause' states and ensured #btnStep steps animation cleanly.",
-        "Wired custom action buttons (#btn_execute_search, #btn_insert_key, #btn_rebalance_tree) to execute search, key insertion, and AVL balance reset.",
-        "Wired observation notebook recording (#btnRecord) to append rows matching all 8 columns of #observationThead, and restored controls to default in #btnReset.",
-        "Corrected setReading selector to find #val_reading-X elements with appropriate units ('levels', 'comps', 'steps', 'diff').",
-        "Fixed swapped live readings order: Reading 2 is Time Complexity T(n) in steps, and Reading 3 is Balance Factor Differential Δh in diff.",
-        "Fixed BST search traversal bug where left branch of right subtree (e.g. key 60 at node RL) terminated with null instead of traversing to RL.",
-        "Added high-contrast text labels ('< 50 Gate' and '> 50 Gate') inside apparatus comparator gate modules.",
-        "Added input clamping in readCtrl and wired #experimentSelect dropdown to switch between Primary and Extended configurations."
-      ]
-    },
-    {
-      "sim_id": "u00020",
-      "status": "FIXED",
-      "time": "20:04:07",
-      "issues": [
-        "Disabled direct canvas mouse drag and wheel zoom listeners in accordance with locked canvas interaction rules (Q22)",
-        "Corrected telemetry DOM updates to target only the value child element, preserving native MathML unit markup inside .readout-val elements (Q16, Q31)",
-        "Relocated Badge 4 to (760, 280) and Badge 5 to (760, 110) to eliminate crossing leader lines and establish clean direct connection to the kinematic gimbal (Q23, Q24)",
-        "Wired Step button (#btnStep) and Reset button (#btnReset) to highlight the active step in 04 / Procedure sequentially (Q07, Q18)",
-        "Removed extraneous potentiometer/bridge placeholder state variables from physics and state initialization (Q26)"
-      ]
-    },
-    {
-      "sim_id": "u00035",
-      "status": "FIXED",
-      "time": "20:05:37",
-      "issues": [
-        "Wired custom action buttons (#btn_auto_solve and #btn_regenerate_graph) which were previously unhandled in canvas_js",
-        "Implemented native #btnRecord click handler to populate all 7 observation table columns in exact alignment with #observationThead headers",
-        "Implemented native #btnReset handler to restore default parameters, clear the observation table, and reinitialize search state",
-        "Wired #experimentSelect dropdown to dynamically switch between Primary (w=1.0) and Extended (w=1.5) heuristic weighting modes",
-        "Wired #btnToggle (Pause/Run) and #btnStep controls for interactive single-step traversal inspection",
-        "Added a 4-tick (3.2s) hold duration upon reaching SUCCESS state so the backtracked optimal path remains clearly visible to students before cycling",
-        "Increased contrast of inactive planar graph links from #334155 to #475569 against dark #090d16 canvas stage",
-        "Converted raw mathematical expressions in aim_html and validation_html into clean inline MathML",
-        "Expanded principles_list_html to include all 3 core governing equations (A* Evaluation Function, Cost Relaxation, and Euclidean Heuristic) with complete MathML and Where symbol specifications"
-      ]
-    },
-    {
-      "sim_id": "u00006",
-      "status": "FIXED",
-      "time": "20:05:58",
-      "issues": [
-        "Unwired custom action buttons in canvas_js: looked for btn_insert, btn_delete, and btn_find, but HTML button IDs are btn_insert_node, btn_delete_node, and btn_find_node.",
-        "Unwired reset button: canvas_js bound btn_reset instead of canonical #btnReset.",
-        "Unwired observation record button and misaligned table columns: implemented recordObservation matching all 6 headers (Inserted Key, Total Nodes, Tree Height, Black-Height, Max Height Bound, Rotations Performed) and wired to #btnRecord.",
-        "Readout unit preservation: setElementText was replacing textContent directly and stripping inline MathML unit spans; now updates firstElementChild to preserve MathML units.",
-        "Missing symbols in observation table header: added MathML symbols h and R to Tree Height and Rotations Performed columns.",
-        "Canvas selector robustness: added #simCanvas selector priority."
-      ]
-    },
-    {
-      "sim_id": "u00043",
-      "status": "FIXED",
-      "time": "20:07:42",
-      "issues": [
-        "Aligned observation table columns in btnRecord with observation_thead_html (6 columns)",
-        "Wired #btn_run_convergence action button to execute simulation steps until stable equilibrium",
-        "Enhanced #btnReset to restore default control values, reinitialize grid, and clear observation table",
-        "Wired top panel controls #btnToggle and #btnStep for pause/run toggle and single-step iteration",
-        "Wired #experimentSelect dropdown to switch between primary and extended experiment activities",
-        "Added bounds clamping in readControls to guard against out-of-range user inputs"
-      ]
-    },
     {
       "sim_id": "u00047",
       "status": "FIXED",
@@ -519,6 +450,66 @@
         "Unclosed HTML tags and missing equation in principles_list_html: Section 03 was missing closing </ul>, </div>, and </li> tags and lacked Equation 2 (Optical Transmittance and Decadic Absorbance Relation).",
         "Raw inequalities in validation_html: replaced raw text comparison operators (>=) with valid inline MathML in Section 07."
       ]
+    },
+    {
+      "sim_id": "u00092",
+      "status": "FIXED",
+      "time": "20:34:49",
+      "issues": [
+        "Unwired stepper ▲ / ▼ buttons: .stepper-btn buttons lacked click listeners to step the numeric inputs.",
+        "Unwired action buttons: btn_prepare_solution and btn_toggle_electrolysis lacked event listeners in canvas_js.",
+        "Mismatched live readout IDs: canvas_js searched for 'reading_*' instead of 'val_reading_*' IDs specified in readouts_html, preventing telemetry updates.",
+        "Misaligned observation table columns: row innerHTML had 9 columns including an extra trial index and temperature column while omitting column height, causing severe misalignment with the 8 columns in observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u00077",
+      "status": "FIXED",
+      "time": "20:35:55",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted 11 cells with an unheaded row count and unlisted coefficient p, misaligning values against the 9 columns in observation_thead_html.",
+        "Unwired action button: btn_freeze_oscilloscope ('Hold / Freeze Oscilloscope Trace') had no event listener attached in JavaScript, preventing users from pausing or freezing the oscilloscope sweep.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to increment/decrement parameter inputs.",
+        "Telemetry readout ID mismatch: updateTelemetry looked up 'omega_n', 'val_omega_n', and 'reading_omega_n' instead of the rendered slot element IDs ('val_reading_*'), causing Section 06 live readings to remain static."
+      ]
+    },
+    {
+      "sim_id": "u00089",
+      "status": "FIXED",
+      "time": "20:36:38",
+      "issues": [
+        "Aligned observation table columns in btnRecord with #observationThead headers (reduced from 8 misaligned columns to the exact 6 canonical columns: Sample Acidity, Titratable Acidity, Water Bath Temperature, Heating Duration, Coagulation Index, and COB Outcome)",
+        "Wired #btn_immerse_boil action button to initiate the 100.0 °C immersion boiling cycle",
+        "Wired #btn_tilt_inspect action button to ensure full heating duration for 45° thin-film clot inspection",
+        "Wired #btnReset handler to clear recorded observation table rows"
+      ]
+    },
+    {
+      "sim_id": "u00090",
+      "status": "FIXED",
+      "time": "20:36:58",
+      "issues": [
+        "Apparatus leader line badges mismatch: on-canvas numbered badges (1 to 8) did not match the legend banner order (Badge 1 must be Regulated DC Power Source, 2 is Voltmeter, 3 is Ammeter, 4 is Rheostat, 5 is Beaker Cell, 6 is Gauze Cathode, 7 is Spiral Anode, 8 is Magnetic Stirrer Unit) (Q23, Q10).",
+        "Misaligned observation table columns: btnRecord inserted 9 cells (including unindexed stirrer rpm and charge Q, with time before current) into a 7-column table; realigned to exactly match observation_thead_html (Analyte, Voltage, Resistance, Current, Time, Mass, Total Weight) (Q18).",
+        "Unwired custom action button: #btn_start_electrolysis ('Initiate Electrolytic Deposition Cycle') had no click listener in canvas_js (Q14, Q27).",
+        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) in canvas_js (Q15).",
+        "Unwired simulation controls: #btnReset, #btnToggle (Pause/Run), #btnStep, and #experimentSelect were unhandled in canvas_js (Q06, Q07, Q08, Q18).",
+        "Readout MathML destruction: updateTelemetry assigned textContent with unit strings directly to .readout-val elements, destroying child MathML unit markup; fixed by updating only firstElementChild value span (Q16, Q31).",
+        "Enforced canvas direct mouse interaction lock by disabling pointer events on #simCanvas (Q22)."
+      ]
+    },
+    {
+      "sim_id": "u00095",
+      "status": "FIXED",
+      "time": "20:37:45",
+      "issues": [
+        "Corrupted C/C++ fraction MathML (<mfrac><mrow><mi>C</mi></mrow><mrow><mi>C</mi></mrow></mfrac>++) in aim_html, apparatus_html, and procedure_section_html replaced with clean 'C++'",
+        "Misaligned observation table columns in btnRecord click handler where column 0 recorded traversal index i instead of array size n, shifting all subsequent table cells",
+        "Unwired stepper up/down buttons and unwired 'Validate Code Completion Blanks' action button in canvas_js",
+        "Missing 'Step Next Comparison Cycle' action button specified in procedure step 5 added and wired to traversal stepper",
+        "Legend pills omitted apparatus unit 2 ('Hint Selector & Logic Guide') causing numbering mismatch with canvas badges 2, 3, and 4; updated legend_pills_html to 4 items",
+        "Live telemetry readout updates in canvas_js replaced inner unit labels with plain text; patched setHtml to preserve unit typography"
+      ]
     }
   ],
   "completed_ids": [
@@ -574,6 +565,7 @@
     "u00074",
     "u00075",
     "u00076",
+    "u00077",
     "u00078",
     "u00080",
     "u00081",
@@ -581,6 +573,10 @@
     "u00084",
     "u00085",
     "u00086",
-    "u00087"
+    "u00087",
+    "u00089",
+    "u00090",
+    "u00092",
+    "u00095"
   ]
 }
