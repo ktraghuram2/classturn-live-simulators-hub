@@ -1,9 +1,9 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 19:11:30",
-  "completed_count": 5,
-  "fixed_count": 5,
-  "latest_sim_id": "u00002",
+  "updated_at": "2026-10-18 19:29:47",
+  "completed_count": 11,
+  "fixed_count": 11,
+  "latest_sim_id": "u00022",
   "recent_events": [
     {
       "sim_id": "u00005",
@@ -83,6 +83,126 @@
         "Leader line ray collision and badge target tracking: Badge 4 leader line crossed directly through the optical rays, and badges 3 and 4 did not dynamically swap targets between the active lens mount and auxiliary dock when switching lens types.",
         "Experiment mode selector synchronization: The experiment selector (#experimentSelect) was not connected to the active lens state."
       ]
+    },
+    {
+      "sim_id": "u00009",
+      "status": "FIXED",
+      "time": "19:16:04",
+      "issues": [
+        "Unwired action buttons: 'btn_auto_focus' and 'btn_toggle_rays' had no click event listeners attached in canvas_js.",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' buttons were not wired to update target input values.",
+        "Observation table column mismatch: recorded table rows had 8 columns starting with unlisted Object Position (x0) and omitting Optical Power (P), misaligning with the 7 headers in observation_thead_html.",
+        "Curvy leader badge 6 mismatch: badge 6 was anchored to the upright slider base labeled 'Precision Upright Sliders' instead of pointing to 'Collimated Paraxial Ray Bundles' as defined in legend_pills_html."
+      ]
+    },
+    {
+      "sim_id": "u00023",
+      "status": "FIXED",
+      "time": "19:17:12",
+      "issues": [
+        "Observation table rows in canvas_js had 10 columns (included extraneous recordCounter and enableStatus cells) while observation_thead_html has only 8 headers, causing column misalignment",
+        "Action button #btn_toggle_inhibit was unwired in canvas_js",
+        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js",
+        "Canvas lacked hover pointer cursor styling on interactive toggle switches and power button"
+      ]
+    },
+    {
+      "sim_id": "u00017",
+      "status": "FIXED",
+      "time": "19:17:55",
+      "issues": [
+        "Unwired stepper up and down buttons (.stepper-btn) in canvas_js preventing adjustment via UI controls.",
+        "Unwired action buttons (#btn_cycle_start and #btn_rapid_traverse) for starting the 3D toolpath milling cycle and rapid traversing to tool datum (G00).",
+        "Misaligned observation table row in btnRecord: missing Trial Number column (trialCount), mismatched column order, and missing 9th column relative to observation_thead_html.",
+        "Readout update function setReadout directly overwrote elVal.textContent, destroying inline unit MathML markup inside .readout-val elements.",
+        "Unwired experimentSelect dropdown selector for toggling between the stepover and feed rate optimization experiments."
+      ]
+    },
+    {
+      "sim_id": "u00015",
+      "status": "ERROR",
+      "time": "19:24:23",
+      "issues": [
+        "No Gemini credentials found. Set GEMINI_API_KEY, sign into agy, or set a GCP project."
+      ]
+    },
+    {
+      "sim_id": "u00007",
+      "status": "ERROR",
+      "time": "19:24:28",
+      "issues": [
+        "No Gemini credentials found. Set GEMINI_API_KEY, sign into agy, or set a GCP project."
+      ]
+    },
+    {
+      "sim_id": "u00032",
+      "status": "ERROR",
+      "time": "19:24:28",
+      "issues": [
+        "No Gemini credentials found. Set GEMINI_API_KEY, sign into agy, or set a GCP project."
+      ]
+    },
+    {
+      "sim_id": "u00034",
+      "status": "ERROR",
+      "time": "19:24:53",
+      "issues": [
+        "No Gemini credentials found. Set GEMINI_API_KEY, sign into agy, or set a GCP project."
+      ]
+    },
+    {
+      "sim_id": "u00035",
+      "status": "ERROR",
+      "time": "19:24:58",
+      "issues": [
+        "No Gemini credentials found. Set GEMINI_API_KEY, sign into agy, or set a GCP project."
+      ]
+    },
+    {
+      "sim_id": "u00036",
+      "status": "ERROR",
+      "time": "19:24:59",
+      "issues": [
+        "No Gemini credentials found. Set GEMINI_API_KEY, sign into agy, or set a GCP project."
+      ]
+    },
+    {
+      "sim_id": "u00033",
+      "status": "FIXED",
+      "time": "19:29:07",
+      "issues": [
+        "Unwired action buttons: 'btn_pulse_lamp_test' and 'btn_toggle_cascading' were not wired in canvas_js",
+        "Unwired stepper controls: Stepper up/down buttons (.stepper-btn) had no click event handlers",
+        "Misaligned observation table: btnRecord inserted 10 columns into observationTbody while observation_thead_html defines exactly 8 columns",
+        "Mismatched and extraneous leader badges: Badges 2 and 3 were reversed with respect to legend_pills_html (resistors vs display package) and an unlisted Badge 4 was drawn",
+        "Static cascade link: Stage 2 ripple cascading lacked a toggleable state (cascadeConnected) to dynamically simulate disconnecting/connecting RBO1 to RBI2"
+      ]
+    },
+    {
+      "sim_id": "u00028",
+      "status": "FIXED",
+      "time": "19:29:44",
+      "issues": [
+        "Disabled direct canvas mouse click listener in accordance with locked canvas interaction rules (Q22)",
+        "Wired 'Inject Single Clock Pulse' action button (#pulse_clock) to execute manual clock edge transitions (Q14, Q27)",
+        "Wired top panel Pause/Run (#btnToggle) and Step (#btnStep) controls to pause clock timing and advance discrete clock pulses (Q06, Q07)",
+        "Wired experiment mode selector (#experimentSelect) to synchronize mode switching between Asynchronous Ripple and Synchronous Parallel counters (Q08)",
+        "Added click event handlers for stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) across all control inputs (Q15)",
+        "Implemented Section 08 Observation Table recording (#btnRecord) with all 8 table columns aligned to thead and wired Reset to Defaults (#btnReset) (Q18)",
+        "Corrected telemetry update function setVal to modify only the value child element, preserving MathML unit markup inside .readout-val elements (Q16, Q31)",
+        "Added value clamping for counter mode, clock frequency, and stage delay to prevent invalid or out-of-range parameters (Q29)"
+      ]
+    },
+    {
+      "sim_id": "u00022",
+      "status": "FIXED",
+      "time": "19:29:47",
+      "issues": [
+        "Unwired action button btn_invert_msb ('Toggle MSB Bank Select') and unwired stepper increment/decrement buttons (.stepper-btn)",
+        "Observation table columns in btnRecord were misaligned: ic1_enable and ic2_enable were inserted before Channel Index N and Active Output Line L_N",
+        "Badges in drawBadges were misaligned with legend pills: badges 3, 4, 5, and 6 were mapped to incorrect components (Pill 3 is Toggle Switch, 4 is IC 7404, 5 is IC 74138, 6 is LED display)",
+        "Ground wire used #1e293b with near-zero contrast against dark #090d16 canvas; updated to #64748b for clear visibility"
+      ]
     }
   ],
   "completed_ids": [
@@ -90,6 +210,12 @@
     "u00004",
     "u00005",
     "u00008",
-    "u00014"
+    "u00009",
+    "u00014",
+    "u00017",
+    "u00022",
+    "u00023",
+    "u00028",
+    "u00033"
   ]
 }
