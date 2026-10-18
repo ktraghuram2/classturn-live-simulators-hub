@@ -1,70 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 22:46:50",
-  "completed_count": 215,
-  "fixed_count": 215,
-  "latest_sim_id": "u00265",
+  "updated_at": "2026-10-18 22:48:50",
+  "completed_count": 220,
+  "fixed_count": 220,
+  "latest_sim_id": "u00271",
   "recent_events": [
-    {
-      "sim_id": "u00216",
-      "status": "FIXED",
-      "time": "22:22:19",
-      "issues": [
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked click event listeners to increment or decrement control inputs.",
-        "Unwired action buttons: 'btn_run_ica' and 'btn_purge_artifacts' defined in controls had no event listeners attached in canvas_js.",
-        "Broken live readouts DOM updater: updateTelemetryDOM queried element IDs without the 'val_' prefix defined in readouts_html, preventing telemetry displays from updating.",
-        "Observation table column misalignment: btnRecord inserted 10 <td> elements for a 7-column observation table header."
-      ]
-    },
-    {
-      "sim_id": "u00224",
-      "status": "FIXED",
-      "time": "22:22:19",
-      "issues": [
-        "Unwired action buttons in canvas_js: btn_dose_detergent, btn_stir_solution, btn_immerse_cloth, and btn_toggle_molecular_view lacked click event listeners.",
-        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down buttons lacked click handlers to increment and decrement parameters with range clamping.",
-        "Unwired top-panel and playback controls: btnRecord, btnReset, btnToggle (Pause/Run), btnStep, and experimentSelect lacked event listeners in canvas_js.",
-        "Observation table column alignment: wired btnRecord to generate exactly 6 <td> cells matching the 6 defined observation columns (C, γ, α_mic, ω, t_stir, η).",
-        "Telemetry unit preservation: modified updateTelemetry to target inner numeric child spans instead of overwriting el.textContent directly, preserving native MathML units.",
-        "Corrupted HTML attribute values in readouts_html: data-unit attributes contained nested span tags and unescaped quotes injected during slot compilation.",
-        "Enforced canvas direct interaction lock (pointer-events: none) and input boundary guards against NaN/out-of-range values.",
-        "Added toggleable on-canvas molecular micelle inset overlay HUD demonstrating unimer vs micellar aggregation states."
-      ]
-    },
-    {
-      "sim_id": "u00227",
-      "status": "FIXED",
-      "time": "22:22:21",
-      "issues": [
-        "Unwired action button (btn_toggle_power) and stepper buttons (.stepper-btn) in canvas_js",
-        "Observation table columns in btnRecord event listener were misaligned and missing RB and C data columns (7 columns emitted instead of the 8 columns defined in thead)",
-        "Oscilloscope waveform phase jumped erratically every animation frame due to unanchored frame time modulo; locked trigger phase offset for stable display",
-        "Output LED sampled high-frequency square wave across 60 FPS frames producing strobe aliasing; set to steady illuminated state when circuit is powered",
-        "Corrected readout label from 'Time constant' to 'Time period' in readouts_html to accurately represent total oscillation period T"
-      ]
-    },
-    {
-      "sim_id": "u00229",
-      "status": "FIXED",
-      "time": "22:22:40",
-      "issues": [
-        "Unwired action buttons: Pulse Set ('btn_trigger_set') and Alternate Trigger Pulse ('btn_toggle_switch') lacked event listeners in canvas_js",
-        "Unwired stepper buttons: Custom up/down stepper buttons ('.stepper-btn') for VCC and R3 lacked click event listeners",
-        "Misaligned observation table columns: JS recorded 7 columns (including R3 and misplaced readings) against the 6-column header (VCC, Vtrig, Vrst, Vout, Iled, Q)"
-      ]
-    },
-    {
-      "sim_id": "u00230",
-      "status": "FIXED",
-      "time": "22:23:54",
-      "issues": [
-        "Observation table column misalignment: 12 table cells (including an unheaded S.No column and unheaded Vpp column) were recorded into a 10-column table header.",
-        "Unwired stepper arrow buttons (.stepper-btn-up, .stepper-btn-down) prevented users from incrementing/decrementing parameter inputs via the UI.",
-        "Unwired action buttons: btn_toggle_cro_channel (toggle collector/base waveforms) and btn_synchronize_symmetry (auto-symmetrize circuit) had no event listeners.",
-        "Unwired experiment activity dropdown (Primary Experiment vs Extended Activity) failed to switch between symmetric and asymmetric configurations.",
-        "Telemetry readouts failed to update dynamically because setElemText and updateTelemetryDisplay queried 'reading_*' instead of the rendered element ID 'val_reading_*'."
-      ]
-    },
     {
       "sim_id": "u00234",
       "status": "FIXED",
@@ -497,6 +437,73 @@
         "Wired top panel #btnToggle and #btnStep buttons for smooth pause/resume and single-frame stepping",
         "Wired #experimentSelect dropdown to switch presets between Primary Experiment and Extended Activity"
       ]
+    },
+    {
+      "sim_id": "u00272",
+      "status": "FIXED",
+      "time": "22:47:46",
+      "issues": [
+        "Live telemetry readouts failed to update because setTelemetry searched for IDs without 'val_reading_' prefix matching the DOM elements.",
+        "Observation table recording generated 8 columns with an unheadered serial number, causing complete column misalignment with the 7-column observation table header.",
+        "Action button 'btn_apply_failure_load' (Engage Hydraulic Ram to Failure) was unwired.",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners in canvas_js.",
+        "Experiment / activity selector was not synchronized with specimen size and fracture distance inputs."
+      ]
+    },
+    {
+      "sim_id": "u00256",
+      "status": "FIXED",
+      "time": "22:47:46",
+      "issues": [
+        "Legend banner pills order mismatch: legend_pills_html ordered apparatus elements differently than apparatus_html and canvas_js badges; synchronized legend pills 1-to-1 in order, count, and naming.",
+        "Observation table column misalignment: btnRecord inserted 7 <td> cells into a 6-column header (Input A, Input B, Y_LHS, Y_RHS, V_OUT, Equivalence Verified EQ); aligned table row structure exactly to 6 columns.",
+        "Unwired stepper up/down buttons: .stepper-btn arrow click listeners were missing in canvas_js, preventing parameter increments/decrements from the UI.",
+        "Unwired top-panel and notebook controls: Pause/Run (btnToggle), Step (btnStep), Reset (btnReset), and Choose experiment (experimentSelect) lacked event listeners in canvas_js.",
+        "Canvas direct mouse interaction lock: removed direct mouse click and mousemove listeners on #simCanvas to enforce canvas interaction lock (pointer-events: none) per Q22 and global rules.",
+        "Telemetry unit preservation: modified updateElem to target inner numeric child spans instead of overwriting el.textContent directly, preserving native MathML units.",
+        "Dual theorem support: added logic evaluation and circuit jumper wire paths for De Morgan's Second Theorem (A·B)' = A' + B' when selected via experimentSelect.",
+        "Bench power supply ammeter synchronization: synchronized bench ammeter current with simulated LED state and quiescent IC draw across all theorem modes."
+      ]
+    },
+    {
+      "sim_id": "u00264",
+      "status": "FIXED",
+      "time": "22:47:46",
+      "issues": [
+        "Misaligned observation table columns: removed extra rowCount cell and reordered columns to match the 7 observation_thead_html headers (Fs, B, Amax, Ts, Qs, Qe,max, SQNR)",
+        "Unwired action buttons: attached click event listeners for Switch Language Phoneme (btn_cycle_language) and Toggle Error Overlay (btn_toggle_error_overlay)",
+        "Unwired stepper buttons: wired .stepper-btn-up and .stepper-btn-down to adjust parameter inputs within specified bounds",
+        "Canvas interactive click target coordinates mismatch: corrected Y-coordinates for the phoneme knob (y=185 instead of 255) and Fs rate pushbuttons (y=268-296 instead of 170-205)",
+        "Oscilloscope error residual overlay: gated drawing of error residual trace e(n) and HUD indicator on showErrorOverlay toggle state"
+      ]
+    },
+    {
+      "sim_id": "u00274",
+      "status": "FIXED",
+      "time": "22:48:28",
+      "issues": [
+        "Corrupted MathML fraction in apparatus specification: replaced malformed fraction '<mfrac><mrow><mi>C</mi></mrow><mrow><mi>C</mi></mrow></mfrac>++' with 'C/C++' in apparatus_html.",
+        "Observation table column misalignment: btnRecord inserted statusText into the Accumulator column and swapped mode and index columns; re-aligned all 5 recorded columns (n, k_p, i, r, S_acc) to match observation_thead_html.",
+        "Unwired custom action buttons: wired 'btn_execute_step' (Execute Single Clock Cycle) and 'btn_run_complete' (Auto-Run Algorithm to Completion) in canvas_js.",
+        "Unwired stepper arrow buttons: added click event listeners to '.stepper-btn-up' and '.stepper-btn-down' controls to increment/decrement parameters with min/max clamping.",
+        "Unwired top panel and playback controls: wired 'btnToggle' (Pause/Run), 'btnStep' (single cycle advance), 'experimentSelect' (switching Divisor Summation vs Numeric Palindromes), and 'btnReset' (restoring defaults and clearing observation rows).",
+        "Implemented Mode 3 Numeric Palindrome Verification: added base-10 digit reversal and palindrome identity verification matching curriculum aim, procedure step 2, and experiment options.",
+        "Telemetry unit preservation: modified updateDOMText to update inner numeric span while preserving native MathML unit elements.",
+        "Enforced canvas mouse interaction lock: set pointer-events to 'none' on #simCanvas to ensure 100% control via the UI panel."
+      ]
+    },
+    {
+      "sim_id": "u00271",
+      "status": "FIXED",
+      "time": "22:48:50",
+      "issues": [
+        "Wired up custom action buttons btn_advance_loading ('Increment Hydraulic Load') and btn_zero_dial_gauge ('Zero Dial Gauge')",
+        "Wired up btnReset to reset steppers, readings, and clear observation table",
+        "Aligned observation table columns by eliminating the extra unheadered serial cell to match the 5 <th> columns (Specimen, Load, Deflection, Moment, Stress)",
+        "Fixed broken MathML unit fraction in Maximum Bending Stress readout and observation table header from N/m m^2 to N/mm^2",
+        "Completed truncated principles_list_html equations and closed dangling tags",
+        "Added bounds and NaN guards to stepper input parsing"
+      ]
     }
   ],
   "completed_ids": [
@@ -704,16 +711,21 @@
     "u00253",
     "u00254",
     "u00255",
+    "u00256",
     "u00257",
     "u00258",
     "u00259",
     "u00260",
     "u00261",
     "u00262",
+    "u00264",
     "u00265",
     "u00266",
     "u00267",
     "u00268",
-    "u00269"
+    "u00269",
+    "u00271",
+    "u00272",
+    "u00274"
   ]
 }
