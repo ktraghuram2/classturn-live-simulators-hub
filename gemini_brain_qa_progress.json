@@ -1,63 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 22:12:53",
-  "completed_count": 165,
-  "fixed_count": 165,
-  "latest_sim_id": "u00210",
+  "updated_at": "2026-10-18 22:16:10",
+  "completed_count": 170,
+  "fixed_count": 170,
+  "latest_sim_id": "u00218",
   "recent_events": [
-    {
-      "sim_id": "u00147",
-      "status": "FIXED",
-      "time": "21:23:06",
-      "issues": [
-        "Unwired stepper up/down buttons: clicking ▲ and ▼ controls did not increment or decrement parameter values.",
-        "Unwired action buttons: 'btn_generate_sequence' (Regenerate Random Binary Sequence) and 'btn_toggle_demod' (Toggle Coherent / Envelope Demodulation) lacked event listeners.",
-        "Observation table column mismatch: table rows prepended an extra recordCount cell, outputting 8 columns against 7 thead headers and causing visual column shifting."
-      ]
-    },
-    {
-      "sim_id": "u00166",
-      "status": "FIXED",
-      "time": "21:23:25",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 13 columns (including index, Vs, f, and D) into observationTbody, causing extreme misalignment with the 9 defined headers in observation_thead_html",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down had no click handlers attached in canvas_js",
-        "Unwired action button: #btn_auto_balance ('Auto-Balance to Null Point') was completely unhandled in canvas_js",
-        "Disconnected telemetry readouts: computePhysics() targeted 'reading_*' instead of 'val_reading_*' span IDs present in readouts_html, preventing live readout DOM synchronization"
-      ]
-    },
-    {
-      "sim_id": "u00167",
-      "status": "FIXED",
-      "time": "21:24:16",
-      "issues": [
-        "Observation table record button (btnRecord) generated 9 <td> columns for an 8-column <thead>, introducing an unwanted S.No cell and misaligning Detector Voltage, Calculated Capacitance, and Series Resistance.",
-        "Action button #btn_auto_balance ('Auto-Balance Bridge to Null Point') was completely unwired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) lacked event listeners in canvas_js, preventing interactive adjustment via the ▲/▼ buttons."
-      ]
-    },
-    {
-      "sim_id": "u00171",
-      "status": "FIXED",
-      "time": "21:25:28",
-      "issues": [
-        "Wired missing click listener for Auto-Balance action button (btn_auto_balance) to calculate exact balance values for R4 and C4 and null the detector",
-        "Wired missing click listeners for stepper increment/decrement buttons (.stepper-btn-up and .stepper-btn-down) to update parameter values within bounds",
-        "Enhanced contrast of COM (-) patch wire and terminal collars on the dark canvas from nearly invisible #0f172a to clear slate #64748b and #475569",
-        "Calibrated test specimen capacitance true_cx from 0.19213 µF to 0.192454 µF so the initial unbalance deflection calculation matches the default 45.620 mV readout exactly"
-      ]
-    },
-    {
-      "sim_id": "u00170",
-      "status": "FIXED",
-      "time": "21:26:33",
-      "issues": [
-        "Unwired auto-balance action button (#btn_autobalance): added click event listener calculating analytical balance values (R2 = L1 / (R3 * C4), C2 = R3 * C4 / R1) and synchronizing inputs.",
-        "Unwired stepper increment and decrement buttons (.stepper-btn): added event listeners to update target inputs by step with min/max clamping and event dispatching.",
-        "Misaligned observation table columns: removed extra serial number cell from table row template to align exactly with the 9 observation header columns.",
-        "Low-contrast chassis outlines on dark #090d16 canvas: increased contrast and edge depth for standard capacitor C4 and variable resistor R2 chassis."
-      ]
-    },
     {
       "sim_id": "u00177",
       "status": "FIXED",
@@ -458,6 +405,65 @@
         "Unwired top-level controls: Pause/Run toggle button (#btnToggle), step button (#btnStep), reset button (#btnReset), and experiment selector (#experimentSelect) were not wired in canvas_js.",
         "Unclosed HTML tags in principles_list_html: Equation 0 list item was missing closing </ul>, </div>, and </li> tags."
       ]
+    },
+    {
+      "sim_id": "u00212",
+      "status": "FIXED",
+      "time": "22:14:00",
+      "issues": [
+        "Misaligned observation table columns: btnRecord injected irHex, r0Val, nzcvStr, and memHex into columns 4–7, displacing Destination R0, Source Operand R1, Source Operand R2, and Condition Flags NZCV defined in observation_thead_html.",
+        "Unwired Section 05 action button: #btn_run_routine ('Auto-Run Assembly Routine') lacked a click event listener in canvas_js.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked event listeners in canvas_js to increment or decrement parameter inputs.",
+        "Destructive telemetry DOM updates: setElemText replaced entire textContent, wiping out native MathML unit elements inside .readout-val spans in Section 06.",
+        "Unwired top-panel controls: Experiment mode selector (#experimentSelect) and 'Reset to Defaults' (#btnReset) had no event handlers attached in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u00214",
+      "status": "FIXED",
+      "time": "22:14:19",
+      "issues": [
+        "Misaligned observation table columns: btnRecord output 8 table cells with swapped order instead of matching the 6-column schema defined in observation_thead_html (Model Order p, Input Frequency fm, SNR, Estimated Peak Frequency f0, Peak PSD Magnitude Pmax, and Residual Error Variance sigma_e^2).",
+        "Unwired action buttons: '#btn_solve_yule_walker' (Solve Yule-Walker Equations) and '#btn_toggle_waveform' (Toggle Sine / Cosine Waveform) lacked click event listeners in canvas_js.",
+        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' ▲/▼ buttons had no click handlers attached to increment or decrement input values.",
+        "Telemetry unit destruction: updateTelemetry directly assigned el.textContent on val_reading_* elements, overwriting nested MathML unit tags; patched to mutate only the inner value span.",
+        "Unwired reset button: '#btnReset' was unhandled, preventing clearing observation records and resetting parameter inputs to default."
+      ]
+    },
+    {
+      "sim_id": "u00213",
+      "status": "FIXED",
+      "time": "22:15:09",
+      "issues": [
+        "Rectified corrupt MathML and raw LaTeX dollar delimiters in apparatus register file specification",
+        "Closed unclosed HTML tags (ul, div, li) in principles_list_html",
+        "Wired unhandled action button btn_load_loop_preset in canvas_js",
+        "Wired stepper increment and decrement buttons (.stepper-btn) in canvas_js",
+        "Preserved MathML unit elements during live readout telemetry synchronization"
+      ]
+    },
+    {
+      "sim_id": "u00215",
+      "status": "FIXED",
+      "time": "22:15:44",
+      "issues": [
+        "Unwired Action Button & Missing RLS Adaptation: btn_toggle_algorithm and experimentSelect were not hooked up, and no Recursive Least Squares (RLS) matrix update engine was implemented.",
+        "Inaccurate Regressor Indexing (Physics / Signal Processing Bug): The AR process history was shifted before reading uReg, causing uReg[0] to take the current sample d(n) rather than past regressor d(n-1), corrupting one-step linear prediction and coefficient convergence.",
+        "Unwired Stepper Up/Down Buttons: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners in canvas_js.",
+        "Misaligned Observation Table Columns: The observation record logger appended 6 misaligned columns instead of the 7 declared in observation_thead_html.",
+        "Signal Interconnect Wiring: Dual coaxial cable traces terminated prematurely without connecting to actual BNC port coordinates."
+      ]
+    },
+    {
+      "sim_id": "u00218",
+      "status": "FIXED",
+      "time": "22:16:10",
+      "issues": [
+        "Misaligned observation table columns: recorded 9 values (including trial counter and sampling rate) instead of matching the 7 defined thead columns (Filter Topology Type, Cutoff Frequency, Filter Order, Raw Vpp, Filtered Vpp, Dominant Frequency, SNR).",
+        "Unwired action buttons: 'btn_apply_filter' (Apply Digital Filter) and 'btn_toggle_artifact' (Inject Artifact Burst) lacked click event listeners and interactive state handling.",
+        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' buttons were not wired to modify target inputs and dispatch change events.",
+        "Destructive telemetry updates: updateTelemetry wiped out the nested MathML unit markup inside span.readout-val elements."
+      ]
     }
   ],
   "completed_ids": [
@@ -625,6 +631,11 @@
     "u00208",
     "u00209",
     "u00210",
-    "u00211"
+    "u00211",
+    "u00212",
+    "u00213",
+    "u00214",
+    "u00215",
+    "u00218"
   ]
 }
