@@ -1,50 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 20:19:00",
-  "completed_count": 40,
-  "fixed_count": 40,
-  "latest_sim_id": "u00061",
+  "updated_at": "2026-10-18 20:24:16",
+  "completed_count": 45,
+  "fixed_count": 45,
+  "latest_sim_id": "u00067",
   "recent_events": [
-    {
-      "sim_id": "u00003",
-      "status": "FIXED",
-      "time": "19:02:41",
-      "issues": [
-        "Corrected title and header to 'Determination of Total Hardness of Water' to match EDTA complexometric titration content (Q02)",
-        "Fixed MathML formatting glitch for drops/s unit in Burette Titration Rate stepper (Q15)",
-        "Disabled canvas mouse click listener in accordance with locked canvas interaction rules (Q22)",
-        "Wired Start Dropwise Titration and Auto-Titrate custom action buttons to simulation state (Q14, Q27)",
-        "Corrected Observation Table recording to include trial count and accurately align all 5 table columns with thead (Q18)",
-        "Wired Reset to Defaults button to restore simulation parameters and clear drops/splashes (Q18)",
-        "Wired Pause/Run (btnToggle) and Step (btnStep) controls (Q06, Q07)",
-        "Wired experimentSelect to support Primary and Extended activity modes (Q08)",
-        "Added input clamping to prevent out-of-range, NaN, and division-by-zero errors (Q29)"
-      ]
-    },
-    {
-      "sim_id": "u00014",
-      "status": "FIXED",
-      "time": "19:03:05",
-      "issues": [
-        "Unwired Action Buttons: 'Latch Fault Injection' (btn_toggle_fault) and 'Auto-Cycle Test Vectors' (btn_auto_step_vectors) had no event listeners or implementation in canvas_js.",
-        "Contradictory Reference Signal Tap: The reference normal parity line was incorrectly tapped from Gate 1's intermediate output rather than the input bank, causing a single pin to simultaneously carry conflicting logic states.",
-        "Telemetry Readout Discrepancy: Intermediate wire telemetry display (telW) and observation table logging showed normW instead of effW, failing to reflect clamped fault states on line w.",
-        "Tactile Canvas Responsiveness: Test points on lines x, y, w, z were not clickable to switch target_wire, and canvas control toggles did not dispatch input/change events for DOM synchronization."
-      ]
-    },
-    {
-      "sim_id": "u00008",
-      "status": "FIXED",
-      "time": "19:08:01",
-      "issues": [
-        "Observation table column mismatch: canvas_js injected 10 misaligned table cells (including an unrequested trial index and extra power/nature cells) into a 7-column thead, corrupting recorded observation rows.",
-        "Unresponsive Action buttons: btn_toggle_lens_type ('Swap Active Lens') and btn_autofocus_screen ('Auto-Position Screen to In-Focus Image Plane') had no event listeners attached in canvas_js.",
-        "Unresponsive stepper buttons: Stepper up and down buttons (.stepper-btn) had no click handlers attached.",
-        "Screen Carrier Translation & Realistic Defocus: screenSmoothX previously auto-snapped to imgX every frame, preventing the user from manually translating the screen along the bench rail or observing image defocus as instructed in Procedure Step 3; added manual screen dragging and realistic out-of-focus circle-of-confusion blur.",
-        "Leader line ray collision and badge target tracking: Badge 4 leader line crossed directly through the optical rays, and badges 3 and 4 did not dynamically swap targets between the active lens mount and auxiliary dock when switching lens types.",
-        "Experiment mode selector synchronization: The experiment selector (#experimentSelect) was not connected to the active lens state."
-      ]
-    },
     {
       "sim_id": "u00009",
       "status": "FIXED",
@@ -468,6 +428,73 @@
         "Filter frequency response formula in simulation state used simplified Butterworth assumption ignoring quality factor Q during Ri variation; rectified to full second-order Sallen-Key transfer function.",
         "Oscilloscope timebase was hardcoded to 2.0 ms in waveform rendering instead of adapting to state.scopeTimebase."
       ]
+    },
+    {
+      "sim_id": "u00059",
+      "status": "FIXED",
+      "time": "20:20:10",
+      "issues": [
+        "Telemetry readout IDs in canvas_js (val_vo, val_fc, val_af, val_mag_db, val_phase) did not match the compiled HTML readout IDs (val_reading_vo, val_reading_fc, val_reading_af, val_reading_mag_db, val_reading_phase), causing live telemetry displays to remain frozen.",
+        "Observation table recording script inserted 11 columns of data into tbody, whereas observation_thead_html defines only 6 columns (Frequency, Vin, Vo, Gain Ratio, AdB, Phase Shift), causing column misalignment.",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners in canvas_js to update input values.",
+        "Auto-Tune cutoff frequency action button (#btn_tune_cutoff) had no click event listener wired to calculate and set the -3 dB cutoff frequency."
+      ]
+    },
+    {
+      "sim_id": "u00071",
+      "status": "FIXED",
+      "time": "20:22:33",
+      "issues": [
+        "Fixed misaligned observation table columns in btnRecord: removed extra row index, dynamic power, and supply voltage cells to strictly match the 7 defined table headers (A, B, Cin, Sum, Cout, Σ, tpd).",
+        "Wired up unwired action buttons: btn_toggle_architecture (switches between Half Adder and Full Adder), btn_synthesize_netlist (triggers RTL synthesis status state), and btn_cycle_vectors (steps through all binary truth table vectors).",
+        "Wired up all stepper increment and decrement buttons (.stepper-btn) to smoothly adjust numeric inputs and trigger reactive change events.",
+        "Corrected Verilog HDL terminal display and circuit simulation logic to support both Half Adder (default per Step 1) and Full Adder architectures.",
+        "Added direct canvas click interactivity on the SPDT switch bank to allow toggling input bit stimuli with the mouse.",
+        "Fixed malformed MathML fraction in apparatus_html for the switch bank voltage specification from '(0 V/3.3 V)' to '(0 – 3.3 V)'."
+      ]
+    },
+    {
+      "sim_id": "u00060",
+      "status": "FIXED",
+      "time": "20:23:01",
+      "issues": [
+        "Corrected title, header, and aim from 'Active Band Pass Filter' to 'Active Low Pass Filter' to match first-order RC low-pass op-amp circuit, equations, and telemetry (Q02, Q09)",
+        "Fixed observation table logging in btnRecord: aligned the 6 recorded <td> columns with observation_thead_html, included passband gain Af, and eliminated extraneous trial number and cut-off frequency cells (Q18)",
+        "Wired custom action buttons: Auto-Tune Frequency to -3 dB Cut-Off (#btn_tune_cutoff) and Trigger Logarithmic Decade Sweep (#btn_decade_sweep) (Q14, Q27)",
+        "Wired stepper up and down buttons (.stepper-btn-up, .stepper-btn-down) and added input clamping [min, max, step] to prevent NaN/out-of-bounds inputs (Q15, Q29)",
+        "Fixed live readouts update by targeting 'val_' element IDs and preserving unit formatting across all 5 telemetry items (Q16, Q28)",
+        "Wired Reset to Defaults (#btnReset) to restore input controls, readouts, sweep state, and clear observation table (Q18)",
+        "Wired Pause/Run (#btnToggle) and Step (#btnStep) controls for simulation animation control (Q06, Q07)",
+        "Wired experiment selector (#experimentSelect) to synchronize presets for Primary, Passband Gain Tuning, and RC Scaling activities (Q08)",
+        "Corrected breadboard DC power rail bezier curves to terminate cleanly on IC 741 supply pins rather than flying 175px outside the board (Q19, Q20)"
+      ]
+    },
+    {
+      "sim_id": "u00073",
+      "status": "FIXED",
+      "time": "20:24:16",
+      "issues": [
+        "Misaligned observation table columns in btnRecord: 7 misordered columns recorded instead of the 8 columns defined in observation_thead_html (Gain K, Re(s1), Im(s1), Re(s2), Im(s2), zeta, omega_n, sigma_A)",
+        "Unwired action buttons in canvas_js: btn_auto_sweep_gain ('Auto-Sweep Gain Trajectory') and btn_find_breakaway ('Snap to Breakaway / Critical Point')",
+        "Unwired stepper up/down buttons (.stepper-btn) and experiment mode selector in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u00067",
+      "status": "FIXED",
+      "time": "20:24:16",
+      "issues": [
+        "Corrected title and header from 'Full Adder' to 'Half Adder' to accurately match the 2-input XOR-AND logic circuit without carry-in stage (Q02)",
+        "Completed truncated principles_list_html by closing unclosed HTML tags and restoring Equation 2 (Carry Boolean Function) and Equation 3 (Positional Weighted Relation) in semantic MathML (Q11)",
+        "Disabled direct canvas mouse click listener on #simCanvas to comply with locked canvas interaction rules (Q22)",
+        "Wired custom action button 'Cycle Truth Table Permutations' (#btn_cycle_inputs) to cycle through all 4 binary states (Q14, Q27)",
+        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) across all binary input controls (Q15)",
+        "Wired top panel Pause/Run (#btnToggle) and Step (#btnStep) controls with procedure step highlighting (Q06, Q07)",
+        "Wired Reset to Defaults button (#btnReset) to restore input controls and clear observation rows (Q18)",
+        "Wired experiment mode selector dropdown (#experimentSelect) to synchronize activity switching (Q08)",
+        "Preserved native MathML unit markup in live telemetry readouts by updating only the value child node instead of overwriting textContent (Q16, Q31)",
+        "Added boundary clamping on inputs to prevent out-of-range or non-binary values (Q29)"
+      ]
     }
   ],
   "completed_ids": [
@@ -510,6 +537,11 @@
     "u00055",
     "u00056",
     "u00058",
-    "u00061"
+    "u00059",
+    "u00060",
+    "u00061",
+    "u00067",
+    "u00071",
+    "u00073"
   ]
 }
