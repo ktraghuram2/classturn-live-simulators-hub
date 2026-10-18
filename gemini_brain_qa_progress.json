@@ -1,76 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 21:18:48",
-  "completed_count": 120,
-  "fixed_count": 120,
-  "latest_sim_id": "u00143",
+  "updated_at": "2026-10-18 21:22:06",
+  "completed_count": 125,
+  "fixed_count": 125,
+  "latest_sim_id": "u00165",
   "recent_events": [
-    {
-      "sim_id": "u00093",
-      "status": "FIXED",
-      "time": "20:48:30",
-      "issues": [
-        "Mismatched title: updated title_plain and header_title_html from 'Polarography' to canonical 'Electrogravimetric Estimation of Metals' to accurately describe the electrodeposition experiment and match the subject eyebrow (Q02).",
-        "Cleaned chemical reaction notation in principles_summary_html: replaced raw ASCII/LaTeX reaction strings (e^- -> M(s) and 2 H2O -> O2 + 4 H^+ + 4 e^-) with valid inline MathML (Q11).",
-        "Corrected corrupted MathML fractions in principles_list_html units: replaced malformed fractions (\\frac{g}{e}q, \\frac{g}{m}ol, \\frac{C}{m}ol) with clean 'g/eq', 'g/mol', 'C/mol', and simplified 'dimensionless' (Q11, Q31).",
-        "Misaligned observation table columns: #btnRecord previously appended only 8 cells for a 9-column thead by omitting Initial Cathode Mass (W0 = 10.00 g), shifting subsequent columns; added the missing W0 cell to achieve exact 1-to-1 alignment with observation_thead_html (Q18).",
-        "Unwired custom action buttons: added event listeners in canvas_js for 'Start Electrolysis Run' (#btn_start_electrolysis) and 'Rinse, Dry, and Weigh Cathode' (#btn_dry_weigh_cathode) (Q14, Q27).",
-        "Unwired stepper ▲ / ▼ buttons: added click event listeners for all .stepper-btn-up and .stepper-btn-down buttons to step inputs within their defined [min, max, step] ranges (Q15).",
-        "Unwired simulation controls: wired #btnToggle (Pause/Run), #btnStep (single frame advance), #experimentSelect (activity preset selection), and #btnReset (restore defaults and clear observations) (Q06, Q07, Q08, Q18).",
-        "Input crash-proofing: added boundary clamping in getVal() to enforce [min, max] and added division-by-zero protection for circuit resistance (Q29).",
-        "Disabled direct canvas mouse interaction via pointerEvents = 'none' to enforce complete control isolation (Q22)."
-      ]
-    },
-    {
-      "sim_id": "u00120",
-      "status": "FIXED",
-      "time": "20:49:28",
-      "issues": [
-        "Misaligned observation table columns: row generator inserted only 7 cells, omitting Linear Heat Input E and Aspect Ratio AR, shifting subsequent values into incorrect column headers.",
-        "Unwired action buttons: 'action_trigger_weld' and 'action_toggle_cross_section' were present in HTML but lacked event listeners in canvas_js.",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons lacked click handlers to increment or decrement control inputs.",
-        "Inaccurate Linear Heat Input physics: hardcoded E = (0.35 * P) / v ignored elevated absorption efficiency eta when transitioning into keyhole mode.",
-        "Unwired experiment mode selection: expSelect dropdown lacked change listener to populate conduction vs. keyhole parameter presets."
-      ]
-    },
-    {
-      "sim_id": "u00100",
-      "status": "FIXED",
-      "time": "20:50:05",
-      "issues": [
-        "Corrected mangled MathML fraction unit `grain s/i n^2` in `principles_list_html` to `grains/in²`.",
-        "Fixed observation table misalignment: removed extraneous trial counter and realigned 8 data cells to match the exact 8 columns defined in the observation table header.",
-        "Wired action buttons: added event listeners for `btn_switch_material`, `btn_apply_etchant`, and `btn_auto_focus` to allow cycling non-ferrous alloys, revealing etched microstructures, and auto-focusing the microscope objective.",
-        "Wired stepper buttons: added event listener loop for `.stepper-btn` up/down controls so users can step numerical values with min/max clamping.",
-        "Enhanced apparatus visual contrast: replaced `#090d16` background-matching mount cylinder and specimens with 3D shaded resin styling and dynamic alloy material coloration."
-      ]
-    },
-    {
-      "sim_id": "u00126",
-      "status": "FIXED",
-      "time": "20:50:06",
-      "issues": [
-        "Numbered badges 2, 3, and 4 in canvas_js were mismatched with legend pills (Badge 2 pointed to specimen cube instead of upper platen, Badge 3 pointed to lower ram instead of specimen cube, Badge 4 pointed to upper platen instead of lower ram)",
-        "Observation table columns in canvas_js were misaligned with observation_thead_html (swapped slump and strength, and created 7 columns when the table header only has 6)",
-        "Atlas action buttons (btn_run_compression_test, btn_perform_slump_test) and stepper up/down buttons were unwired in canvas_js",
-        "setDisplay function in canvas_js wiped nested MathML unit elements inside readout values upon telemetry updates",
-        "Procedure Step 3 referenced the slump test station on the left bench when it is positioned at x=725 on the right bench",
-        "Capillary porosity calculation lacked a non-negative floor guard for low water-cement ratios"
-      ]
-    },
-    {
-      "sim_id": "u00123",
-      "status": "FIXED",
-      "time": "20:50:09",
-      "issues": [
-        "Fixed corrupted fraction formatting in principles list where '25 °C / 298 K' and '1500 °C / 1773 K' were converted into fractions C/298 and C/1773.",
-        "Corrected malformed MathML units across apparatus, principles, steppers, readouts, and observation table: specific heat capacity (J/(g·K)), density (g/mm³), net heat input (J/mm), and welding velocity (mm/s).",
-        "Cleaned up broken '°<math><mi>C</mi></math>' fragments into standard '°C' in apparatus, procedure, and live readout data attributes.",
-        "Wired up the primary action button '#btn_ignite_arc' ('Ignite Arc & Start Weld Pass') to reset torch position and trigger a new weld pass.",
-        "Wired up the stepper increment/decrement buttons ('.stepper-btn-up', '.stepper-btn-down') to adjust the welding speed input.",
-        "Added event listener for experiment options select to synchronize welding speed presets (2.0 mm/s and 4.0 mm/s)."
-      ]
-    },
     {
       "sim_id": "u00124",
       "status": "FIXED",
@@ -506,6 +440,66 @@
         "Improved bench outline contrast on dark #090d16 canvas",
         "Guarded setReadout from setting textContent on input elements"
       ]
+    },
+    {
+      "sim_id": "u00161",
+      "status": "FIXED",
+      "time": "21:20:13",
+      "issues": [
+        "Unwired Section 05 action buttons: btn_dispense_reagent, btn_immerse_water_bath, and btn_mount_osazone_slide had no event listeners in canvas_js.",
+        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down were not directly wired to increment/decrement input values.",
+        "Misaligned observation table columns: btnRecord prepended obsCount as column 0 and dropped reading_crystal_size, causing an off-by-one misalignment against the 8-column header.",
+        "Incomplete reset: btnReset did not reset obsCount counter or clear observation table rows in the engine.",
+        "Pause state handling: Animation loop did not respect #btnToggle pause state.",
+        "Unwired experiment selector: #experimentSelect was not wired to update test protocols."
+      ]
+    },
+    {
+      "sim_id": "u00154",
+      "status": "FIXED",
+      "time": "21:20:19",
+      "issues": [
+        "Raw unrendered LaTeX '\\Delta S_{\\log}' in readouts_html fixed to valid MathML",
+        "Observation table record button (btnRecord) generated 7 columns instead of 6 and in misaligned order relative to observation_thead_html",
+        "Action buttons 'btn_toggle_lifter_mode' and 'btn_auto_detect_pitch' were unwired in canvas_js",
+        "Stepper increment/decrement buttons (.stepper-btn-up and .stepper-btn-down) lacked event listeners in canvas_js",
+        "Apparatus 4 lacked visual toggle support between low-time formant envelope and high-time excitation harmonics"
+      ]
+    },
+    {
+      "sim_id": "u00162",
+      "status": "FIXED",
+      "time": "21:21:11",
+      "issues": [
+        "Fixed malformed unit MathML in observation_thead_html and readouts_html where 'mL/min' was incorrectly formatted as m\\frac{L}{m}in.",
+        "Corrected observation table recording in btnRecord: column 7 was logging raw vapor pH instead of the expected Diagnostic Inference (σ_res) matching the table header.",
+        "Fixed live readouts DOM synchronization: updateDOM was failing because the readout elements use the 'val_' prefix in their IDs.",
+        "Wired up unwired stepper up/down buttons (.stepper-btn) to increment/decrement numeric control inputs and synchronize simulator state.",
+        "Wired up all four action buttons: Dispense Diagnostic Reagent, Ignite Micro Burner, Test Vapor with Litmus Paper, and Execute Confirmatory Test.",
+        "Corrected reaction physics and chemistry: carboxylic acid neutralization with NaHCO3 now correctly raises pH; heating reactions check for reagent presence before triggering visual effects; liquid color transitions dynamically upon reagent addition."
+      ]
+    },
+    {
+      "sim_id": "u00164",
+      "status": "FIXED",
+      "time": "21:21:37",
+      "issues": [
+        "Misaligned observation table columns: the tbody row in canvas_js injected 8 columns starting with an unheaded trial count cell, misaligning all data with the 7 headers defined in observation_thead_html and leaving the final Vrms reading without a header.",
+        "Unconnected live readout DOM IDs: setText in canvas_js targeted 'reading_*' instead of 'val_reading_*' used by readouts_html, preventing live telemetry values from updating in the DOM.",
+        "Unwired controls and steppers: action buttons 'btn_cycle_operation' and 'btn_compute_spectrum' had no event listeners; stepper up/down buttons (.stepper-btn) and experiment mode selector were not wired in canvas_js.",
+        "Misaligned coaxial cables: Cable 1 was offset from SUM OUT (205, 360) and Cable 2 terminated at (480, 345) inside the CRT screen bezel instead of connecting to Spectrum Analyzer CH A BNC at (715, 345)."
+      ]
+    },
+    {
+      "sim_id": "u00165",
+      "status": "FIXED",
+      "time": "21:22:06",
+      "issues": [
+        "Observation table columns in btnRecord were misaligned with observation_thead_html: column 3 omitted the Window Function and instead placed Peak PSD, shifting frequencies and noise floor into wrong columns and appending an extra total energy column.",
+        "HTML action buttons (btn_switch_waveform, btn_cycle_window, btn_inject_noise) were unwired without event listeners in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js to update values and dispatch input/change events.",
+        "Canvas click hit-testing for the window function buttons on the PSD analyzer panel was misaligned (using offset x=469 and y=185 instead of spectrum analyzer coordinates x=479 and y=165)."
+      ]
     }
   ],
   "completed_ids": [
@@ -624,10 +618,15 @@
     "u00150",
     "u00151",
     "u00152",
+    "u00154",
     "u00155",
     "u00158",
     "u00159",
     "u00160",
-    "u00163"
+    "u00161",
+    "u00162",
+    "u00163",
+    "u00164",
+    "u00165"
   ]
 }
