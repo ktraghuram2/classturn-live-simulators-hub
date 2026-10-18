@@ -936,7 +936,18 @@
         "#apparatusLegendBanner::-webkit-scrollbar { height: 7px !important; display: block !important; } " +
         "#apparatusLegendBanner::-webkit-scrollbar-track { background: #e2efe9 !important; border-radius: 4px !important; } " +
         "#apparatusLegendBanner::-webkit-scrollbar-thumb { background: #8eaea1 !important; border-radius: 4px !important; } " +
-        "#apparatusLegendBanner::-webkit-scrollbar-thumb:hover { background: #10564b !important; }";
+        "#apparatusLegendBanner::-webkit-scrollbar-thumb:hover { background: #10564b !important; } " +
+        ".panel-top-controls { display: contents !important; } " +
+        ".panel-top-row {" +
+        " position: sticky !important; top: -16px !important; z-index: 60 !important;" +
+        " display: flex !important; gap: 8px !important; width: calc(100% + 40px) !important;" +
+        " margin: -16px -20px -4px -20px !important; padding: 14px 20px 10px 20px !important;" +
+        " background: #ffffff !important; border-bottom: 1.5px solid #c0d2c9 !important;" +
+        " box-shadow: 0 2px 6px rgba(16, 86, 75, 0.06) !important;" +
+        "} " +
+        ".experiment-selector-box {" +
+        " padding-bottom: 14px !important; border-bottom: 2px solid #c0d2c9 !important;" +
+        "}";
       if (!existingNoMouse) {
         var st = document.createElement("style");
         st.id = "classturn-no-canvas-mouse";

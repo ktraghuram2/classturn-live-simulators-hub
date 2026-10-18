@@ -139,7 +139,7 @@ canvas {
   display: block;
 }
 
-/* APPARATUS LEGEND BANNER (LOCKED BELOW CANVAS VIEWPORT, ABOVE NOTEBOOK) */
+/* APPARATUS LEGEND BANNER (LOCKED BELOW CANVAS VIEWPORT, ABOVE NOTEBOOK, HORIZONTALLY SCROLLABLE) */
 .apparatus-legend-banner {
   flex: 0 0 auto;
   display: flex;
@@ -153,22 +153,30 @@ canvas {
   overflow-y: hidden;
   white-space: nowrap;
   user-select: none;
+  pointer-events: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: #b2ccc2 transparent;
+  scrollbar-color: #8eaea1 #e2efe9;
   margin: 6px 0 10px 0;
 }
 
 .apparatus-legend-banner::-webkit-scrollbar {
-  height: 5px;
+  height: 7px;
+  display: block;
+}
+
+.apparatus-legend-banner::-webkit-scrollbar-track {
+  background: #e2efe9;
+  border-radius: 4px;
 }
 
 .apparatus-legend-banner::-webkit-scrollbar-thumb {
-  background: #b2ccc2;
+  background: #8eaea1;
   border-radius: 4px;
 }
 
 .apparatus-legend-banner::-webkit-scrollbar-thumb:hover {
-  background: #8eaea1;
+  background: #10564b;
 }
 
 .legend-pill {
@@ -306,19 +314,23 @@ table.atlas-table td {
   border-radius: 8px;
 }
 
-/* TOP CONTROLS & DROPDOWN */
+/* TOP CONTROLS & DROPDOWN (RUN/PAUSE & STEP FROZEN AT TOP WHILE SCROLLING) */
 .panel-top-controls {
-  padding-bottom: 14px;
-  border-bottom: 2px solid #c0d2c9;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: contents;
 }
 
 .panel-top-row {
+  position: sticky;
+  top: -16px;
+  z-index: 60;
   display: flex;
   gap: 8px;
-  width: 100%;
+  width: calc(100% + 40px);
+  margin: -16px -20px -4px -20px;
+  padding: 14px 20px 10px 20px;
+  background: #ffffff;
+  border-bottom: 1.5px solid #c0d2c9;
+  box-shadow: 0 2px 6px rgba(16, 86, 75, 0.06);
 }
 
 .panel-top-row button {
@@ -330,6 +342,8 @@ table.atlas-table td {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #c0d2c9;
 }
 
 .experiment-selector-box label {
