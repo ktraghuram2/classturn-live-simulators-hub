@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClassTurn · Canonical Skeletal Legacy Layout</title>
+  <style>
+/* ==========================================================================
+   CLASSTURN CANONICAL SKELETAL LEGACY LAYOUT (UNPOPULATED TEMPLATE)
+   STRICTLY LOCKED: Zero AI data loaded. Only structural slots & tokens.
+   ========================================================================== */
+
+:root {
+  --primary: #176c5f;
+  --primary-hover: #10564b;
+  --bg-page: #edf6f2;
+  --surface: #ffffff;
+  --surface-border: #8eaea1;
+  --text: #193f3a;
+  --text-muted: #526e66;
+  --canvas-bg: #090d16;
+  --font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --header-height: 64px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: var(--font);
+  background: var(--bg-page);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 1. TOP HEADER (64px, FIXED LOCKED) */
+header {
+  height: var(--header-height);
+  background: var(--surface);
+  border-bottom: 2px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.eyebrow {
+  margin: 0 0 2px 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 750;
+  color: #173c35;
+  letter-spacing: -0.01em;
+}
+
+.badge-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge.verified {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #f59e0b;
+}
+
+.badge.benchmarked {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+/* 2. MAIN SPLIT-PANE WORKSPACE */
+.workspace-layout {
+  display: flex;
+  width: 100vw;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+  position: relative;
+}
+
+/* LEFT STAGE: CANVAS & OBSERVATION NOTEBOOK */
+.stage-fixed {
+  flex: 1 1 0;
+  min-width: 320px;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  background: var(--bg-page);
+}
+
+.canvas-wrapper {
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 260px;
+  background: var(--canvas-bg);
+  border: 2px solid var(--surface-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* APPARATUS LEGEND BANNER (LOCKED BELOW CANVAS VIEWPORT, ABOVE NOTEBOOK) */
+.apparatus-legend-banner {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #edf6f2;
+  border: 1.5px solid var(--surface-border);
+  border-radius: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  user-select: none;
+  scrollbar-width: thin;
+  scrollbar-color: #b2ccc2 transparent;
+  margin: 6px 0 10px 0;
+}
+
+.apparatus-legend-banner::-webkit-scrollbar {
+  height: 5px;
+}
+
+.apparatus-legend-banner::-webkit-scrollbar-thumb {
+  background: #b2ccc2;
+  border-radius: 4px;
+}
+
+.apparatus-legend-banner::-webkit-scrollbar-thumb:hover {
+  background: #8eaea1;
+}
+
+.legend-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: #ffffff;
+  border: 1.5px solid #b2ccc2;
+  border-radius: 6px;
+  font: 600 12px var(--font);
+  color: #193f3a;
+  cursor: default;
+  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.legend-pill .pill-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #10564b;
+  color: #ffffff;
+  font: 700 10.5px var(--font);
+  flex-shrink: 0;
+}
+
+.legend-pill .pill-name {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.atlas-notebook-heading {
+  font: 700 13px var(--font);
+  color: #173c35;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.stage-bottom {
+  width: 100%;
+  max-height: 28%;
+  min-height: 52px;
+  overflow-y: auto;
+  border: 2px solid var(--surface-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #ffffff;
+}
+
+.stage-bottom:empty::before {
+  content: "No observations recorded yet. Click 'Record Observation' in Section 08 to capture data.";
+  font-size: 12px;
+  color: #526e66;
+  font-style: italic;
+}
+
+table.atlas-table {
+  width: 100%;
+  border-collapse: collapse;
+  font: 500 12px var(--font);
+  color: var(--text);
+}
+
+table.atlas-table th {
+  text-align: left;
+  padding: 8px 10px;
+  color: #173c35;
+  background: #e5eee8;
+  font-weight: 700;
+  border-bottom: 1.5px solid var(--surface-border);
+  white-space: nowrap;
+}
+
+table.atlas-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #c9dfd7;
+  color: #304e44;
+  white-space: nowrap;
+}
+
+/* 3. RESIZER GUTTER (DRAGGABLE TO LEFT/RIGHT) */
+.resizer-gutter {
+  width: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: col-resize;
+  touch-action: none;
+  background: #f4f7f7;
+  user-select: none;
+}
+
+.resizer-handle {
+  width: 4px;
+  height: 56px;
+  border-radius: 4px;
+  background: #6b8e7d;
+  transition: background 0.15s;
+}
+
+.resizer-gutter:hover .resizer-handle,
+.resizer-gutter:active .resizer-handle {
+  background: var(--primary);
+}
+
+/* 4. SCROLLABLE CONTROL PANEL (RIGHT) */
+.panel-right {
+  width: 430px;
+  min-width: 240px;
+  max-width: 75vw;
+  flex-shrink: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-left: 2px solid var(--surface-border);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.panel-right::-webkit-scrollbar, .stage-bottom::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.panel-right::-webkit-scrollbar-thumb, .stage-bottom::-webkit-scrollbar-thumb {
+  background: #b2ccc2;
+  border-radius: 8px;
+}
+
+/* TOP CONTROLS & DROPDOWN */
+.panel-top-controls {
+  padding-bottom: 14px;
+  border-bottom: 2px solid #c0d2c9;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.panel-top-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.panel-top-row button {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.experiment-selector-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.experiment-selector-box label {
+  font: 700 12px var(--font);
+  color: var(--text);
+  letter-spacing: 0.03em;
+}
+
+.experiment-selector-box select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid var(--surface-border);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--text);
+  font: 600 12px var(--font);
+  cursor: pointer;
+  outline: none;
+}
+
+.experiment-selector-box select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(23, 108, 95, 0.15);
+}
+
+/* 5. LOCKED 8-SECTION PEDAGOGICAL STRUCTURE */
+.atlas-section {
+  padding-bottom: 14px;
+  border-bottom: 2px solid #c0d2c9;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.atlas-section > h2 {
+  font: 750 13px var(--font);
+  letter-spacing: 0.05em;
+  color: #10564b;
+  margin: 0;
+}
+
+.atlas-section p, .atlas-section li, .atlas-section label, .atlas-section span {
+  font: 500 13px/1.5 var(--font);
+  color: #304e44;
+  margin: 0;
+}
+
+.atlas-section ol, .atlas-section ul {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.principles-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.principles-list li {
+  color: #304e44;
+  font: 500 13px/1.5 var(--font);
+}
+
+.principles-list strong {
+  color: #173c35;
+  display: block;
+  font-size: 12.5px;
+  margin-bottom: 2px;
+}
+
+.atlas-equation {
+  overflow-x: auto;
+  padding: 2px 0 4px 0;
+  background: transparent;
+  border: none;
+  font-family: "Cambria Math", "STIX Two Math", math, monospace;
+  font-size: 13.5px;
+  color: #10564b;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* SECTION 05: PRESETS & STEPPERS (WHITE INPUTS, DARK TEXT) */
+.preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.preset-chip {
+  position: relative;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #edf6f2;
+  color: #193f3a;
+  border: 1.5px solid var(--surface-border);
+  cursor: pointer;
+  transition: all 0.12s;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preset-chip:hover {
+  background: #e2efe9;
+  border-color: #759a8c;
+}
+
+.preset-chip.active, .preset-chip:active {
+  background: #edf6f2;
+  color: #10564b;
+  border-color: #10564b;
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.preset-chip.active::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1.5px dotted #10564b !important;
+  border-radius: 4px !important;
+  pointer-events: none;
+}
+
+.stepper-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stepper-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stepper-field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #173c35;
+}
+
+.stepper-box {
+  display: flex;
+  align-items: stretch;
+  height: 36px;
+  border: 2px solid var(--surface-border);
+  border-radius: 8px;
+  background: #ffffff !important;
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.stepper-box:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(23, 108, 95, 0.15);
+}
+
+.stepper-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  font: 700 14px var(--font);
+  background: #ffffff !important;
+  color: #173c35 !important;
+  -moz-appearance: textfield;
+}
+
+.stepper-input::-webkit-outer-spin-button,
+.stepper-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.stepper-arrows {
+  display: flex;
+  flex-direction: column;
+  width: 24px;
+  border-left: 1px solid #c9dfd7;
+  border-right: 1px solid #c9dfd7;
+}
+
+.stepper-btn {
+  flex: 1;
+  min-height: 16px;
+  height: 16px;
+  padding: 0;
+  border: none !important;
+  border-radius: 0 !important;
+  background: #edf6f2 !important;
+  color: var(--primary) !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  line-height: 1;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.stepper-btn:hover {
+  background: #d8ece4 !important;
+  color: #10564b !important;
+}
+
+.stepper-btn::after {
+  display: none !important;
+}
+
+.stepper-unit {
+  width: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f7f7;
+  font: 700 11px var(--font);
+  color: var(--text-muted);
+  user-select: none;
+  border-left: 1px solid #c9dfd7;
+}
+
+.stepper-range-hint {
+  font-size: 11px;
+  color: #526e66;
+  font-style: italic;
+}
+
+/* SECTION 06: LIVE READINGS (UNIFORM BULLETED LIST ON PLAIN BACKGROUND) */
+.readouts-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.readout-item {
+  color: #304e44;
+  font: 500 13px/1.4 var(--font);
+}
+
+.readout-heading {
+  display: block;
+  font-weight: 700;
+  color: #173c35;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+}
+
+.readout-val {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #10564b;
+  font-family: Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  margin-top: 2px;
+}
+
+/* 8. UNIVERSAL TACTILE BUTTONS & SECTION 08 PLAYBACK */
+button {
+  position: relative !important;
+  background: #edf6f2 !important;
+  color: #193f3a !important;
+  border: 1.5px solid var(--surface-border) !important;
+  border-radius: 8px !important;
+  font: 700 12px var(--font) !important;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none !important;
+  box-shadow: 0 2px 0 var(--surface-border), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transform: translateY(0);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, border-color 0.12s ease;
+  min-height: 38px;
+  padding: 8px 14px;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+button:hover {
+  background: #d8ece4 !important;
+  border-color: #759a8c !important;
+  color: #10564b !important;
+}
+
+button:active, button.is-clicked {
+  transform: translateY(2px) scale(0.99) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.18) !important;
+}
+
+button.is-clicked::after, button:focus-visible::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 3px !important;
+  left: 3px !important;
+  right: 3px !important;
+  bottom: 3px !important;
+  border: 1.5px dotted #10564b !important;
+  border-radius: 5px !important;
+  pointer-events: none !important;
+  box-sizing: border-box !important;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn-row button {
+  flex: 1 1 0;
+}
+
+/* FEEDBACK DIALOG (WHITE INPUTS & UNIFIED BUTTONS) */
+.feedback-dialog {
+  width: min(520px, 92vw);
+  border: 2px solid var(--surface-border);
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.feedback-dialog::backdrop {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.feedback-dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feedback-dialog label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #173c35;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.feedback-dialog select,
+.feedback-dialog textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--surface-border) !important;
+  border-radius: 8px;
+  font: 500 13px var(--font);
+  color: #173c35 !important;
+  background: #ffffff !important;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.feedback-dialog select:focus,
+.feedback-dialog textarea:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(23, 108, 95, 0.15);
+}
+
+.slot-placeholder {
+  color: #8fa89e;
+  font-style: italic;
+}
+  </style>
+
+    <style id="classturn-mathml-textbook">
+      .atlas-equation {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding: 6px 0 !important;
+        white-space: nowrap !important;
+      }
+      math {
+        font-family: "Cambria Math", "STIX Two Math", math, serif;
+        font-size: 1em;
+      }
+      math[display="inline"] { display: inline math; }
+      .equation-symbols li, .equation-symbols [data-retained] { white-space: nowrap !important; }
+      .equation-symbols strong { display: inline; margin-bottom: 0; }
+      .equation-symbols math { display: inline math; }
+      .atlas-equation math {
+        display: inline-block !important;
+        white-space: nowrap !important;
+        font-family: "Cambria Math", "STIX Two Math", "Segoe UI Symbol", serif !important;
+        font-size: 15.5px !important;
+        color: #10564b !important;
+        vertical-align: middle;
+      }
+      .canvas-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #090d16 !important;
+        position: relative !important;
+        overflow: hidden !important;
+      }
+      .canvas-wrapper > canvas {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        aspect-ratio: auto !important;
+        object-fit: fill !important;
+        display: block !important;
+        margin: auto !important;
+        touch-action: none !important;
+      }
+    </style>
+    <style id="classturn-no-canvas-mouse">#simCanvas, .canvas-wrapper > canvas, #apparatusLegendBanner, #apparatusLegendBanner * { pointer-events: none !important; cursor: default !important; user-select: none !important; }</style>
+</head>
+<body>
+
+  <!-- ==================== TOP HEADER (64px LOCKED) ==================== -->
+  <header>
+    <div>
+      <p class="eyebrow" id="headerEyebrow">[ Curriculum Eyebrow · Subject & Grade ]</p>
+      <h1 id="headerTitle">[ Experiment Title & Phenomenon ]</h1>
+    </div>
+    <div class="badge-bar">
+      <button type="button" id="btnReportProblem">Report a problem</button>
+      <span class="badge verified" id="reviewBadge">Science not verified</span>
+      <span class="badge benchmarked" id="benchmarkBadge">✓ Benchmarked (±0.5%)</span>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN WORKSPACE ==================== -->
+  <main class="workspace-layout" id="workspaceLayout">
+
+    <!-- LEFT STAGE: CANVAS APPARATUS VIEWPORT & OBSERVATION NOTEBOOK -->
+    <section class="stage-fixed" id="stageContainer">
+      <div class="canvas-wrapper">
+        <canvas id="simCanvas" width="800" height="500"></canvas>
+      </div>
+
+      <!-- APPARATUS LEGEND BANNER (LOCKED BELOW CANVAS VIEWPORT, ABOVE NOTEBOOK) -->
+      <div class="apparatus-legend-banner" id="apparatusLegendBanner">
+        <div class="legend-pill"><span class="pill-num">1</span> <span class="pill-name">[ Apparatus Component 1 ]</span></div>
+        <div class="legend-pill"><span class="pill-num">2</span> <span class="pill-name">[ Apparatus Component 2 ]</span></div>
+        <div class="legend-pill"><span class="pill-num">3</span> <span class="pill-name">[ Apparatus Component 3 ]</span></div>
+        <div class="legend-pill"><span class="pill-num">4</span> <span class="pill-name">[ Apparatus Component 4 ]</span></div>
+      </div>
+
+      <h2 class="atlas-notebook-heading" id="notebookHeading">Observation notebook</h2>
+      <div id="stageBottom" class="stage-bottom">
+        <table class="atlas-table" id="observationTable">
+          <thead id="observationThead">
+            <tr>
+              <th>Trial #</th>
+              <th>[ Parameter A (unit) ]</th>
+              <th>[ Parameter B (unit) ]</th>
+              <th>[ Measured Output ]</th>
+              <th>[ Calculated Invariant ]</th>
+            </tr>
+          </thead>
+          <tbody id="observationTbody">
+            <!-- Blank until user clicks 'Record Observation' -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SPLIT-PANE RESIZER GUTTER (DRAGGABLE TO LEFT/RIGHT) -->
+    <div class="resizer-gutter" id="resizerGutter" title="Drag to adjust panel width">
+      <div class="resizer-handle"></div>
+    </div>
+
+    <!-- RIGHT PANEL: TOP CONTROLS & LOCKED 8-SECTION PEDAGOGICAL STRUCTURE -->
+    <aside class="panel-right" id="controlsPanel">
+
+      <!-- TOP CONTROLS: PAUSE/RUN & STEP -->
+      <div class="panel-top-controls">
+        <div class="panel-top-row">
+          <button type="button" id="btnToggle">Pause</button>
+          <button type="button" id="btnStep">Step</button>
+        </div>
+
+        <!-- EXPERIMENT SELECTOR (DIRECTLY ABOVE 01/AIM) -->
+        <div class="experiment-selector-box">
+          <label for="experimentSelect">Choose experiment</label>
+          <select id="experimentSelect" class="atlas-select">
+            <option value="">-- Choose experiment from syllabus --</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 01 / Aim -->
+      <section class="atlas-section" data-section="aim" id="sec-01-aim">
+        <h2>01 / Aim</h2>
+        <p id="aimText" class="slot-placeholder">[ Aim statement will populate here from chosen experiment. ]</p>
+      </section>
+
+      <!-- 02 / Apparatus -->
+      <section class="atlas-section" data-section="apparatus" id="sec-02-apparatus">
+        <h2>02 / Apparatus</h2>
+        <ul id="apparatusList">
+          <li><span class="slot-placeholder">[ Apparatus bullet items will populate here from JSON data slot ]</span></li>
+        </ul>
+      </section>
+
+      <!-- 03 / Principles -->
+      <section class="atlas-section" data-section="principles" id="sec-03-principles">
+        <h2>03 / Principles</h2>
+        <p id="principlesSummary" class="slot-placeholder">[ Scientific principles and governing theory will populate here. ]</p>
+        <ul id="principlesList" class="principles-list" style="margin-top:4px;">
+          <li><span class="slot-placeholder">[ Governing MathML formulas will populate here from JSON data slot ]</span></li>
+        </ul>
+      </section>
+
+      <!-- 04 / Procedure -->
+      <section class="atlas-section" data-section="procedure" id="sec-04-procedure">
+        <h2>04 / Procedure</h2>
+        <ol id="procedureList">
+          <li><span class="slot-placeholder">[ Step-by-step procedure steps will populate here from chosen experiment ]</span></li>
+        </ol>
+      </section>
+
+      <!-- 05 / Controls -->
+      <section class="atlas-section" data-section="controls" id="sec-05-controls">
+        <h2>05 / Controls</h2>
+        <div class="preset-row" id="presetContainer">
+          <span class="preset-chip slot-placeholder">[ Presets populate here ]</span>
+        </div>
+        <div class="extra-actions-row" id="extraActionsContainer" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <!-- Optional action buttons slot -->
+        </div>
+        <div class="stepper-container" id="steppersContainer">
+          <p class="slot-placeholder" style="margin: 8px 0;">[ Precision stepper inputs will populate here with white boxes and 16px arrows ]</p>
+        </div>
+      </section>
+
+      <!-- 06 / Live readings -->
+      <section class="atlas-section" data-section="readings" id="sec-06-readings">
+        <h2>06 / Live readings</h2>
+        <ul class="readouts-list" id="readoutsList">
+          <li><span class="slot-placeholder">[ Live telemetry readings will populate here in clean bullet format ]</span></li>
+        </ul>
+      </section>
+
+      <!-- 07 / Validation and limits -->
+      <section class="atlas-section" data-section="validation" id="sec-07-validation">
+        <h2>07 / Validation and limits</h2>
+        <ul id="validationList">
+          <li><span class="slot-placeholder">[ Modeling assumptions and physical boundary limits will populate here ]</span></li>
+        </ul>
+      </section>
+
+      <!-- 08 / Playback & recording (AT THE BOTTOM) -->
+      <section class="atlas-section" data-section="runner" id="sec-08-playback">
+        <h2>08 / Playback & recording</h2>
+        <div class="btn-row" id="playbackButtons">
+          <button type="button" id="btnRecord">Record Observation</button>
+          <button type="button" id="btnReset">Reset to Defaults</button>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <!-- ==================== FEEDBACK DIALOG MODAL ==================== -->
+  <dialog class="feedback-dialog" id="feedbackDialog">
+    <form method="dialog" id="feedbackForm">
+      <h2 style="font-size:18px; margin:0 0 10px 0; color:#173c35;">Report a Problem / Give Feedback</h2>
+      <label>Issue Type
+        <select name="category" required>
+          <option value="physics">Scientific or Math Calculation Issue</option>
+          <option value="visual">Visual / Label / Canvas Overlap</option>
+          <option value="controls">Controls / Responsiveness</option>
+          <option value="pedagogy">Pedagogical / Curriculum Suggestion</option>
+        </select>
+      </label>
+      <label>Description of Issue
+        <textarea name="description" rows="3" placeholder="Describe the issue observed..." required></textarea>
+      </label>
+      <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:10px;">
+        <button type="button" id="btnCancelFeedback">Cancel</button>
+        <button type="submit" id="btnSubmitFeedback">Submit Feedback</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ==================== DRAGGABLE RESIZER & CANVAS SKELETON ==================== -->
+  <script id="classturn-layout-script">
+  // 1. DRAGGABLE RESIZER GUTTER
+  const gutter = document.getElementById('resizerGutter');
+  const panel = document.getElementById('controlsPanel');
+  let isDragging = false;
+
+  gutter.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const newWidth = window.innerWidth - e.clientX - 6;
+    if (newWidth >= 240 && newWidth <= window.innerWidth * 0.75) {
+      panel.style.width = `${newWidth}px`;
+    }
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    }
+  });
+
+  gutter.addEventListener('touchstart', () => { isDragging = true; }, { passive: true });
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging || !e.touches[0]) return;
+    const newWidth = window.innerWidth - e.touches[0].clientX - 6;
+    if (newWidth >= 240 && newWidth <= window.innerWidth * 0.75) {
+      panel.style.width = `${newWidth}px`;
+    }
+  }, { passive: true });
+  window.addEventListener('touchend', () => { isDragging = false; });
+
+  // 2. TACTILE BUTTON CLICKS
+  document.querySelectorAll('button, .preset-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.add('is-clicked');
+      setTimeout(() => btn.classList.remove('is-clicked'), 160);
+    });
+  });
+
+  // 3. REPORT PROBLEM DIALOG
+  const btnReportProblem = document.getElementById('btnReportProblem');
+  const feedbackDialog = document.getElementById('feedbackDialog');
+  const btnCancelFeedback = document.getElementById('btnCancelFeedback');
+  btnReportProblem.addEventListener('click', () => feedbackDialog.showModal());
+  btnCancelFeedback.addEventListener('click', () => feedbackDialog.close());
+
+  // 4. RESET BUTTON (CLEARS OBSERVATIONS TABLE)
+  const btnReset = document.getElementById('btnReset');
+  btnReset.addEventListener('click', () => {
+    const tbody = document.getElementById('observationTbody');
+    if (tbody) tbody.innerHTML = '';
+  });
+
+  </script>
+  <script id="classturnZoomConfig">window.CLASSTURN_ZOOM_CONFIG = {"scale": 1.0, "cx": 400.0, "cy": 250.0, "minLeader": 48, "maxLeader": 80, "minBadgeDist": 40};</script>
+  <script src="classturn-lab-kit.js?v=btn8"></script>
+  <script id="classturn-stage-script">
+  /* Populated from classturn_simulators.db */
+  </script>
+</body>
+</html>

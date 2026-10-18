@@ -1,0 +1,488 @@
+{
+  "updated_at": "2026-10-16 22:28:25",
+  "database_file": "classturn_simulators.db",
+  "total_simulators_indexed": 2123,
+  "total_unique_apparatus_assets": 8615,
+  "top_40_reusable_apparatus_assets": [
+    {
+      "key": "dual",
+      "name": "Dual",
+      "used_in_simulators": 141,
+      "samples": [
+        "u00018",
+        "u00043",
+        "u00058",
+        "u00059",
+        "u00060"
+      ]
+    },
+    {
+      "key": "multi",
+      "name": "Multi",
+      "used_in_simulators": 62,
+      "samples": [
+        "u00123",
+        "u00286",
+        "u00288",
+        "u00327",
+        "u00366"
+      ]
+    },
+    {
+      "key": "high",
+      "name": "High",
+      "used_in_simulators": 52,
+      "samples": [
+        "u00017",
+        "u00018",
+        "u00113",
+        "u00122",
+        "u00159"
+      ]
+    },
+    {
+      "key": "ammeter",
+      "name": "Ammeter",
+      "used_in_simulators": 30,
+      "samples": [
+        "u00091",
+        "u00092",
+        "u00321",
+        "u00331",
+        "u00332"
+      ]
+    },
+    {
+      "key": "voltmeter",
+      "name": "Voltmeter",
+      "used_in_simulators": 26,
+      "samples": [
+        "u00316",
+        "u00321",
+        "u00331",
+        "u00332",
+        "u00440"
+      ]
+    },
+    {
+      "key": "regulated_dc_power_supply",
+      "name": "Regulated DC Power Supply",
+      "used_in_simulators": 25,
+      "samples": [
+        "classturn-ohms-law-pipeline",
+        "u00023",
+        "u00230",
+        "u00258",
+        "u00259"
+      ]
+    },
+    {
+      "key": "pipette",
+      "name": "Pipette",
+      "used_in_simulators": 25,
+      "samples": [
+        "u00242",
+        "u00512",
+        "u00684",
+        "u00778",
+        "u00780"
+      ]
+    },
+    {
+      "key": "conical_flask",
+      "name": "Conical flask",
+      "used_in_simulators": 22,
+      "samples": [
+        "u00002",
+        "u00003",
+        "u00079",
+        "u00239",
+        "u00240"
+      ]
+    },
+    {
+      "key": "three",
+      "name": "Three",
+      "used_in_simulators": 21,
+      "samples": [
+        "u00315",
+        "u00439",
+        "u00443",
+        "u00445",
+        "u01190"
+      ]
+    },
+    {
+      "key": "burette",
+      "name": "Burette",
+      "used_in_simulators": 19,
+      "samples": [
+        "u00003",
+        "u00092",
+        "u00511",
+        "u00512",
+        "u00604"
+      ]
+    },
+    {
+      "key": "beaker",
+      "name": "Beaker",
+      "used_in_simulators": 19,
+      "samples": [
+        "u00079",
+        "u00080",
+        "u00092",
+        "u00713",
+        "u00895"
+      ]
+    },
+    {
+      "key": "operational_amplifier",
+      "name": "Operational Amplifier",
+      "used_in_simulators": 18,
+      "samples": [
+        "u00058",
+        "u00059",
+        "u00060",
+        "u00145",
+        "u00324"
+      ]
+    },
+    {
+      "key": "signal_generator",
+      "name": "Signal Generator",
+      "used_in_simulators": 18,
+      "samples": [
+        "u00146",
+        "u00147",
+        "u00148",
+        "u00165",
+        "u00166"
+      ]
+    },
+    {
+      "key": "water_bath",
+      "name": "Water bath",
+      "used_in_simulators": 17,
+      "samples": [
+        "u00086",
+        "u00160",
+        "u00161",
+        "u00189",
+        "u00375"
+      ]
+    },
+    {
+      "key": "uv",
+      "name": "UV",
+      "used_in_simulators": 17,
+      "samples": [
+        "u00124",
+        "u00125",
+        "u00190",
+        "u00248",
+        "u00462"
+      ]
+    },
+    {
+      "key": "two",
+      "name": "Two",
+      "used_in_simulators": 17,
+      "samples": [
+        "u00192",
+        "u00329",
+        "u00891",
+        "u00892",
+        "u01235"
+      ]
+    },
+    {
+      "key": "bunsen_burner",
+      "name": "Bunsen burner",
+      "used_in_simulators": 16,
+      "samples": [
+        "u00160",
+        "u00185",
+        "u00469",
+        "u00895",
+        "u01074"
+      ]
+    },
+    {
+      "key": "resistor",
+      "name": "Resistor",
+      "used_in_simulators": 15,
+      "samples": [
+        "u00034",
+        "u00316",
+        "u00334",
+        "u00440",
+        "u00441"
+      ]
+    },
+    {
+      "key": "dropper",
+      "name": "Dropper",
+      "used_in_simulators": 14,
+      "samples": [
+        "u00160",
+        "u00161",
+        "u00604",
+        "u00793",
+        "u00797"
+      ]
+    },
+    {
+      "key": "weighing_balance",
+      "name": "Weighing balance",
+      "used_in_simulators": 13,
+      "samples": [
+        "u00002",
+        "u00604",
+        "u00659",
+        "u00713",
+        "u00773"
+      ]
+    },
+    {
+      "key": "measuring_cylinder",
+      "name": "Measuring cylinder",
+      "used_in_simulators": 13,
+      "samples": [
+        "u00002",
+        "u00604",
+        "u00817",
+        "u01537",
+        "u01585"
+      ]
+    },
+    {
+      "key": "step",
+      "name": "Step",
+      "used_in_simulators": 13,
+      "samples": [
+        "u00046",
+        "u00677",
+        "u00755",
+        "u01085",
+        "u01201"
+      ]
+    },
+    {
+      "key": "capacitor",
+      "name": "Capacitor",
+      "used_in_simulators": 13,
+      "samples": [
+        "u00229",
+        "u00316",
+        "u00356",
+        "u00358",
+        "u00621"
+      ]
+    },
+    {
+      "key": "four",
+      "name": "Four",
+      "used_in_simulators": 12,
+      "samples": [
+        "potentiometer",
+        "u00269",
+        "u00505",
+        "u00531",
+        "u00688"
+      ]
+    },
+    {
+      "key": "function_generator",
+      "name": "Function Generator",
+      "used_in_simulators": 12,
+      "samples": [
+        "u00058",
+        "u00061",
+        "u00325",
+        "u00419",
+        "u00501"
+      ]
+    },
+    {
+      "key": "real",
+      "name": "Real",
+      "used_in_simulators": 12,
+      "samples": [
+        "u00139",
+        "u00151",
+        "u00164",
+        "u00562",
+        "u00675"
+      ]
+    },
+    {
+      "key": "digital_storage_oscilloscope",
+      "name": "Digital Storage Oscilloscope",
+      "used_in_simulators": 12,
+      "samples": [
+        "u00570",
+        "u00571",
+        "u01047",
+        "u01257",
+        "u01405"
+      ]
+    },
+    {
+      "key": "breadboard",
+      "name": "Breadboard",
+      "used_in_simulators": 11,
+      "samples": [
+        "u00022",
+        "u00034",
+        "u00229",
+        "u00260",
+        "u00302"
+      ]
+    },
+    {
+      "key": "current",
+      "name": "Current",
+      "used_in_simulators": 11,
+      "samples": [
+        "u00033",
+        "u00330",
+        "u00492",
+        "u00571",
+        "u00936"
+      ]
+    },
+    {
+      "key": "quartz_cuvette",
+      "name": "Quartz Cuvette",
+      "used_in_simulators": 11,
+      "samples": [
+        "u00079",
+        "u00080",
+        "u00084",
+        "u00463",
+        "u00776"
+      ]
+    },
+    {
+      "key": "graduated_measuring_cylinder",
+      "name": "Graduated Measuring Cylinder",
+      "used_in_simulators": 11,
+      "samples": [
+        "u00087",
+        "u00088",
+        "u00239",
+        "u00407",
+        "u00409"
+      ]
+    },
+    {
+      "key": "centrifuge",
+      "name": "Centrifuge",
+      "used_in_simulators": 11,
+      "samples": [
+        "u00189",
+        "u00247",
+        "u00817",
+        "u01008",
+        "u01645"
+      ]
+    },
+    {
+      "key": "incubator",
+      "name": "Incubator",
+      "used_in_simulators": 10,
+      "samples": [
+        "u00086",
+        "u00185",
+        "u00247",
+        "u00652",
+        "u01075"
+      ]
+    },
+    {
+      "key": "digital_multi",
+      "name": "Digital Multi",
+      "used_in_simulators": 10,
+      "samples": [
+        "u00206",
+        "u00249",
+        "u00537",
+        "u00756",
+        "u00913"
+      ]
+    },
+    {
+      "key": "solderless_breadboard",
+      "name": "Solderless Breadboard",
+      "used_in_simulators": 10,
+      "samples": [
+        "u00230",
+        "u00256",
+        "u00258",
+        "u00261",
+        "u00324"
+      ]
+    },
+    {
+      "key": "analytical_balance",
+      "name": "Analytical Balance",
+      "used_in_simulators": 10,
+      "samples": [
+        "u00474",
+        "u00728",
+        "u01004",
+        "u01537",
+        "u01660"
+      ]
+    },
+    {
+      "key": "led",
+      "name": "LED",
+      "used_in_simulators": 9,
+      "samples": [
+        "u00022",
+        "u00034",
+        "u00229",
+        "u00334",
+        "u00569"
+      ]
+    },
+    {
+      "key": "micropipette",
+      "name": "Micropipette",
+      "used_in_simulators": 9,
+      "samples": [
+        "u00079",
+        "u00080",
+        "u00463",
+        "u00781",
+        "u01743"
+      ]
+    },
+    {
+      "key": "volumetric_flask",
+      "name": "Volumetric Flask",
+      "used_in_simulators": 9,
+      "samples": [
+        "u00080",
+        "u00084",
+        "u00182",
+        "u00780",
+        "u00783"
+      ]
+    },
+    {
+      "key": "test_tubes",
+      "name": "Test Tubes",
+      "used_in_simulators": 9,
+      "samples": [
+        "u00087",
+        "u00088",
+        "u00160",
+        "u00161",
+        "u01075"
+      ]
+    }
+  ]
+}

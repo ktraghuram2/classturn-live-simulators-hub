@@ -1,0 +1,279 @@
+{
+  "schema_version": "10.0",
+  "title": "ClassTurn Studio 10.0 — Universal 2,123-Simulator Production QA Master Questionnaire",
+  "description": "Consolidated AI & Tester Verification Questionnaire for validating any picked experiment built on the Locked ClassTurn Legacy Layout across all 2,123 simulators.",
+  "global_rules": {
+    "locked_layout_immutability": "The 8-section ClassTurn Legacy Layout, CSS tokens (#10564b, #edf6f2, #090d16), 64px header, and Style 2 curvy leader lines are strictly locked.",
+    "canvas_mouse_interaction": "100% disabled. Clicking, dragging, or scrolling directly on #simCanvas must do nothing.",
+    "top_right_badges": {
+      "reviewBadge_allowed_values": [
+        "Science verified",
+        "Science not verified"
+      ],
+      "reviewBadge_forbidden_values": [
+        "Science not reviewed",
+        "Review required"
+      ],
+      "benchmarkBadge_allowed_values": [
+        "✓ Benchmarked (±0.5%)",
+        "Benchmarked",
+        "Not benchmarked"
+      ],
+      "benchmarkBadge_forbidden_values": [
+        "✓ MathML preview",
+        "MathML preview"
+      ]
+    },
+    "mathml_rule": "Every mathematical equation, symbol, subscript, superscript, Greek letter, and unit across all sections must use native horizontal MathML (<math display='block'> or <math display='inline'>) or clean Unicode. Zero raw LaTeX ($, \\frac, \\sqrt, \\Omega, _, ^) is permitted anywhere."
+  },
+  "part_1_layout_based_questions": [
+    {
+      "id": "Q01",
+      "category": "Header & Badges",
+      "target_element": "#headerEyebrow",
+      "pedagogical_length": "4 to 10 words (<Discipline / Lab Name> — <Standard or Sub-domain>)",
+      "mathml_check": "Zero raw LaTeX or broken HTML entities (&amp;amp;) in eyebrow text.",
+      "question": "Does #headerEyebrow accurately state the specific discipline, lab name, and standard/sub-domain of the picked experiment within 4 to 10 words?"
+    },
+    {
+      "id": "Q02",
+      "category": "Header & Badges",
+      "target_element": "#headerTitle",
+      "pedagogical_length": "3 to 8 words",
+      "mathml_check": "Zero raw LaTeX, placeholder text, or character encoding artifacts.",
+      "question": "Does #headerTitle display the exact, canonical title of the picked experiment in 3 to 8 words without truncation or overflow?"
+    },
+    {
+      "id": "Q03",
+      "category": "Header & Badges",
+      "target_element": "#reviewBadge",
+      "pedagogical_length": "Exact status string: 'Science verified' or 'Science not verified'",
+      "mathml_check": "Plain status text only.",
+      "question": "Has the science of this simulator (governing laws, equations, units, and physical behavior) been verified? Does #reviewBadge display ONLY 'Science verified' (if verified) or 'Science not verified' (if not yet checked), and NEVER 'Science not reviewed'?"
+    },
+    {
+      "id": "Q04",
+      "category": "Header & Badges",
+      "target_element": "#benchmarkBadge",
+      "pedagogical_length": "Exact status string: '✓ Benchmarked (±0.5%)' / 'Benchmarked' or 'Not benchmarked'",
+      "mathml_check": "Plain status text only (never 'MathML preview').",
+      "question": "Are the simulator's numerical outputs, constants, and parameter ranges benchmarked against authoritative textbook, standard code (NIST/IS/BS/IEEE), or verified internet reference values? Does #benchmarkBadge display ONLY '✓ Benchmarked (±0.5%)' (if benchmarked) or 'Not benchmarked' (if not), and NEVER '✓ MathML preview'?"
+    },
+    {
+      "id": "Q05",
+      "category": "Header & Badges",
+      "target_element": "#btnReportProblem, #feedbackDialog, #btnCancelFeedback",
+      "intended_action_isolation": "Must ONLY open/close the feedback modal without pausing, resetting, or altering any simulation state.",
+      "question": "Does clicking 'Report a problem' (#btnReportProblem) ONLY open #feedbackDialog, and does 'Cancel' (#btnCancelFeedback) ONLY close it, without disturbing the running simulation or controls?"
+    },
+    {
+      "id": "Q06",
+      "category": "Top Panel Controls",
+      "target_element": "#btnToggle",
+      "intended_action_isolation": "Must ONLY pause/resume simulation time progression without resetting inputs, clearing particles, or changing experiment stage.",
+      "question": "Does clicking Pause (#btnToggle) freeze ONLY the canvas animation and change button text to 'Run', and does clicking 'Run' resume smoothly from the exact paused frame without a time jump or state reset?"
+    },
+    {
+      "id": "Q07",
+      "category": "Top Panel Controls",
+      "target_element": "#btnStep",
+      "intended_action_isolation": "Must ONLY advance simulation by 1 discrete time-step or 1 sequential procedure stage and highlight the active step in 04 / Procedure.",
+      "question": "Does clicking Step (#btnStep) advance the picked experiment by exactly one discrete frame (for continuous sims) or one sequential stage (for multi-stage sims) and highlight the matching step in #procedureList, without corrupting user-entered input values?"
+    },
+    {
+      "id": "Q08",
+      "category": "Top Panel Controls",
+      "target_element": "#experimentSelect",
+      "pedagogical_length": "2 or more options, 5 to 12 words each ('Primary Experiment: ...', 'Extended Activity: ...')",
+      "intended_action_isolation": "Must ONLY switch experiment mode/preset for the selected activity without breaking event listeners.",
+      "question": "Does the 'Choose experiment' dropdown (#experimentSelect) list meaningful Primary and Extended activities for this topic, and does switching options cleanly update the experiment configuration?"
+    },
+    {
+      "id": "Q09",
+      "category": "01 / Aim",
+      "target_element": "#sec-01-aim, #aimText",
+      "pedagogical_length": "1 to 2 sentences (20 to 45 words)",
+      "mathml_check": "All physical symbols or units in #aimText must use <math display='inline'> with zero raw LaTeX.",
+      "question": "Does 01 / Aim (#aimText) clearly state what physical quantity or phenomenon is being investigated, using what apparatus/method, in 1 to 2 sentences (20–45 words) with valid inline MathML?"
+    },
+    {
+      "id": "Q10",
+      "category": "02 / Apparatus & Legend Banner",
+      "target_element": "#sec-02-apparatus, #apparatusList, #apparatusLegendBanner",
+      "pedagogical_length": "4 to 8 apparatus items; each item 15 to 30 words (<Name> (<Specification/Range/Accuracy>) — <Role>)",
+      "mathml_check": "All tolerances (±), Greek symbols (Ω, μm, °C), and subscripts in #apparatusList and #apparatusLegendBanner must use <math display='inline'> or clean Unicode.",
+      "question": "Does 02 / Apparatus list all 4 to 8 real instruments needed for the experiment (15–30 words each with lab specs and role), and do the numbered pills (1..N) in #apparatusLegendBanner match #apparatusList 1-to-1 in count, order, and name?"
+    },
+    {
+      "id": "Q11",
+      "category": "03 / Principles",
+      "target_element": "#sec-03-principles, #principlesSummary, #principlesList",
+      "pedagogical_length": "Overview: 1 to 2 paragraphs (60 to 140 words). Equations: 2 to 4 core equations, each with a 3–8 word title, 10–22 word description, display equation, and 'Where:' symbol definitions (5–12 words + unit per symbol).",
+      "mathml_check": "100% of display equations must use horizontal <math display='block'> and all 'Where:' symbols/units must use <math display='inline'>. Zero raw LaTeX (\\frac, \\sqrt, \\cdot, \\text, _, ^).",
+      "question": "Does 03 / Principles provide a 60–140 word theoretical overview and 2–4 accurate governing equations in horizontal MathML with complete 'Where:' symbol/unit definitions that match the exact formulas coded in canvas_js?"
+    },
+    {
+      "id": "Q12",
+      "category": "04 / Procedure",
+      "target_element": "#sec-04-procedure, #procedureList",
+      "pedagogical_length": "Overview: 1 to 2 sentences (25 to 50 words). Steps: 5 to 10 numbered chronological steps, 12 to 28 words each.",
+      "mathml_check": "All variables, symbols, and formulas inside #procedureList must use <math display='inline'>.",
+      "question": "Does 04 / Procedure present 5 to 10 realistic chronological lab steps (12–28 words each), and can the user actually perform EVERY step using the buttons and input boxes provided in 05 / Controls?"
+    },
+    {
+      "id": "Q13",
+      "category": "05 / Controls — Preset Chips",
+      "target_element": "#presetContainer, .preset-chip",
+      "intended_action_isolation": "Clicking Preset P_j must ONLY load P_j's parameter values into .stepper-input boxes and update the simulation, without clearing #observationTbody or triggering destructive actions.",
+      "question": "If preset chips (.preset-chip) are present, does clicking each preset load ONLY its intended parameter values into the control inputs and update the canvas/readouts cleanly?"
+    },
+    {
+      "id": "Q14",
+      "category": "05 / Controls — Custom Action Buttons",
+      "target_element": "#extraActionsContainer, .atlas-action-btn",
+      "intended_action_isolation": "Each .atlas-action-btn B_i must perform ONLY the specific physical action described on its label, never triggering another button's stage or overwriting unrelated independent inputs.",
+      "question": "For EVERY action button (.atlas-action-btn) in 05 / Controls: is its HTML ID wired so clicking it performs ONLY its exact allotted action on the simulation (and no other unintended action), and does it handle repeated clicks cleanly?"
+    },
+    {
+      "id": "Q15",
+      "category": "05 / Controls — Stepper Input Boxes & Up/Down Arrows",
+      "target_element": "#steppersContainer, .stepper-input, .stepper-btn-up, .stepper-btn-down, .stepper-unit",
+      "mathml_check": "All stepper label symbols (<math>), range hints [min – max unit], and .stepper-unit boxes must use clean MathML/Unicode with zero raw LaTeX.",
+      "intended_action_isolation": "Changing input box I_k (via typing, ▲/▼ buttons, or keyboard arrows) must modify ONLY parameter I_k and its mathematically coupled/dependent outputs, never mutating unrelated independent inputs or firing unrelated button actions.",
+      "question": "For EVERY control input box (.stepper-input) and its ▲/▼ buttons: does it enforce [min, max, step], and does changing its value update ONLY its intended physical parameter in the simulation and live readings?"
+    },
+    {
+      "id": "Q16",
+      "category": "06 / Live readings",
+      "target_element": "#sec-06-readings, #readoutsList, .readout-item, .readout-val",
+      "pedagogical_length": "3 to 5 live readout items (.readout-item), each with <Heading> (<Symbol>) and <Numeric Value> <Unit>.",
+      "mathml_check": "All symbols in .readout-heading and units in .readout-val must render in clean MathML/Unicode with zero duplicate units (e.g. 'kg kg') and zero NaN/Infinity.",
+      "intended_action_isolation": "Each readout R_m must change IF AND ONLY IF a control variable in its governing equation changes.",
+      "question": "Do all 3 to 5 live readings in 06 / Live readings calculate accurate benchmarked values from 03 / Principles equations, formatted to clean decimal precision with proper units?"
+    },
+    {
+      "id": "Q17",
+      "category": "07 / Validation and limits",
+      "target_element": "#sec-07-validation, #validationList",
+      "pedagogical_length": "4 to 7 bullet items (2–4 'Assumption:' items and 2–3 'Boundary Limit:' items), 12 to 25 words each.",
+      "mathml_check": "All inequalities, bounds, and symbols in #validationList must use <math display='inline'> with zero raw LaTeX.",
+      "question": "Does 07 / Validation and limits list 2–4 real physical assumptions and 2–3 boundary limits specific to this experiment (12–25 words each) with clean inline MathML?"
+    },
+    {
+      "id": "Q18",
+      "category": "08 / Playback & Observation Notebook",
+      "target_element": "#sec-08-playback, #btnRecord, #btnReset, #observationTable, #observationThead, #observationTbody",
+      "mathml_check": "All column headers in #observationThead must use <math display='inline'> for symbols/units, and recorded <td> cells must contain zero raw LaTeX.",
+      "intended_action_isolation": "#btnRecord must ONLY append 1 row matching the exact columns of #observationThead. #btnReset must restore all inputs, readouts, and canvas state to defaults and clear #observationTbody.",
+      "question": "Does clicking 'Record Observation' (#btnRecord) append exactly 1 row to #observationTbody where every <td> cell matches its <th> column header and unit, and does 'Reset to Defaults' (#btnReset) restore all controls, readouts, canvas stage, and clear the table?"
+    }
+  ],
+  "part_2_canvas_based_questions": [
+    {
+      "id": "Q19",
+      "category": "Canvas Apparatus Authenticity",
+      "target_element": "#simCanvas (Layer 2 Apparatus)",
+      "question": "Does the canvas draw the authentic physical laboratory apparatus of the picked experiment (across Mechanics, Circuits, Optics, Chemistry, Fluids, Civil, Biology, or CS) in its true spatial/coaxial arrangement rather than generic placeholder shapes?"
+    },
+    {
+      "id": "Q20",
+      "category": "Canvas Framing & Zero Truncation",
+      "target_element": "#simCanvas, .canvas-wrapper",
+      "question": "Is 100% of the apparatus setup—including side meters, top frames, bottom benches, waveforms, and moving parts at their extreme positions—fitted inside the 800×500 stage with at least 12px margin on all 4 edges (zero clipping/truncation)?"
+    },
+    {
+      "id": "Q21",
+      "category": "Canvas Aspect Ratio (1:1 Square Pixels)",
+      "target_element": "#simCanvas",
+      "question": "Does the bounding-box fit (Math.min(scaleW, scaleH) with aspect ratio compensation) maintain true 1:1 square pixel proportions so circular dials, lenses, pendulums, and badges are never stretched horizontally or vertically?"
+    },
+    {
+      "id": "Q22",
+      "category": "Canvas Mouse Interaction Lock",
+      "target_element": "#simCanvas, .canvas-wrapper",
+      "question": "Is direct user mouse interaction (clicking, double-clicking, dragging, hovering, wheel-scrolling) on #simCanvas 100% disabled so the simulation can ONLY be operated via the right-hand control panel?"
+    },
+    {
+      "id": "Q23",
+      "category": "Numbered Badges & Style 2 Curvy Leader Lines",
+      "target_element": "#simCanvas (Layer 3 Callouts)",
+      "question": "Are all N numbered badges (1..N matching #apparatusLegendBanner) drawn on top of the apparatus (Layer 3), each connected by a green cubic Bezier S-curve (#34d399) and anchor touch bead landing directly on the correct physical apparatus part?"
+    },
+    {
+      "id": "Q24",
+      "category": "Dynamic Leader-Line Tracking & Zero Overlap",
+      "target_element": "#simCanvas (Layer 3 Callouts)",
+      "question": "Are all badges separated by at least 36–40px with zero overlap against other badges or meter text, and do leader-line touch beads dynamically track apparatus parts that move or rotate?"
+    },
+    {
+      "id": "Q25",
+      "category": "Canvas Text Legibility & Zero Raw LaTeX",
+      "target_element": "#simCanvas (On-Canvas Labels & Meters)",
+      "question": "Is all text rendered inside the canvas (digital LED readouts, scale ticks, node labels) legible (>= 9px), high-contrast, properly fitted inside its meter box without overflowing, and 100% free of raw LaTeX?"
+    },
+    {
+      "id": "Q26",
+      "category": "Canvas Visual Cause-and-Effect — Per Input Box Isolation",
+      "target_element": "#simCanvas <- .stepper-input",
+      "intended_action_isolation": "Changing input box I_k must visually update ONLY the physical feature governed by I_k on the canvas.",
+      "question": "When each control input box (.stepper-input) is modified, does the canvas visually reflect ONLY that parameter's physical effect (e.g., fluid/concrete fill level, ray angle, fringe spacing, wave frequency, beam deflection, meter needle, or packet speed) without disturbing unrelated apparatus parts?"
+    },
+    {
+      "id": "Q27",
+      "category": "Canvas Visual Cause-and-Effect — Per Action Button Isolation",
+      "target_element": "#simCanvas <- .atlas-action-btn",
+      "intended_action_isolation": "Clicking action button B_i must animate ONLY B_i's specific physical mechanism on the canvas.",
+      "question": "When each custom action button (.atlas-action-btn) is clicked, does the canvas animate ONLY that button's intended physical mechanism (e.g., opening a specific trap door, closing a switch, adding a drop, or tamping) and nothing else?"
+    },
+    {
+      "id": "Q28",
+      "category": "Canvas Meter <-> Live Readings Synchronization",
+      "target_element": "#simCanvas Meters <-> #readoutsList",
+      "question": "Does every digital display, weighing scale LED, voltmeter/ammeter needle, thermometer, or oscilloscope readout drawn inside #simCanvas show the exact same numerical value and unit as 06 / Live readings?"
+    }
+  ],
+  "part_3_production_readiness_and_stability_questions": [
+    {
+      "id": "Q29",
+      "category": "Input Crash-Proofing & Edge Cases",
+      "target_element": ".stepper-input",
+      "question": "If a user types an out-of-range value (below min, above max), 0, negative number, or empty string into any .stepper-input box, does the simulator clamp/guard it safely without producing NaN, Infinity, undefined, or division-by-zero on the canvas or readouts?"
+    },
+    {
+      "id": "Q30",
+      "category": "Floating-Point Formatting & Significant Figures",
+      "target_element": ".stepper-input, .readout-val, #observationTbody, #simCanvas",
+      "question": "Are all numbers in input boxes, live readings, canvas meters, and recorded observation rows cleanly rounded to appropriate decimal precision (zero floating-point noise like 15.600000000000001)?"
+    },
+    {
+      "id": "Q31",
+      "category": "Cross-Section Symbol & Unit Consistency",
+      "target_element": "#sec-03-principles, #sec-05-controls, #sec-06-readings, #observationTable, #simCanvas",
+      "question": "Does every physical variable use the exact same symbol and compatible unit across 03 / Principles, 05 / Controls, 06 / Live readings, Observation notebook columns, and on-canvas meters?"
+    },
+    {
+      "id": "Q32",
+      "category": "Draggable Resizer Gutter & Responsive Reflow",
+      "target_element": "#resizerGutter, #controlsPanel, #simCanvas",
+      "question": "When dragging #resizerGutter left/right or resizing the browser window, does #controlsPanel resize smoothly and does #simCanvas dynamically re-fit and re-center without clipping or distortion?"
+    },
+    {
+      "id": "Q33",
+      "category": "60 FPS Single-Loop Animation Stability",
+      "target_element": "window.requestAnimationFrame",
+      "question": "When clicking Reset, Pause/Run, Step, Presets, or Choose experiment repeatedly, does the simulator maintain a single 60 FPS requestAnimationFrame loop without spawning duplicate stacked loops?"
+    },
+    {
+      "id": "Q34",
+      "category": "Zero Console Errors & Offline Self-Containment",
+      "target_element": "window, document, <script>",
+      "question": "Does the HTML file load and execute all interactions with zero JavaScript console errors and zero external internet/CDN requests?"
+    },
+    {
+      "id": "Q35",
+      "category": "Locked Legacy Layout & Database Reconstruction Parity",
+      "target_element": "universal_simulator.html, classturn_simulators.db",
+      "question": "Is the Locked ClassTurn Legacy Layout 100% unaltered, and can this complete simulator be reconstructed solely from classturn_simulators.db + universal_simulator.html with 100% identical content and behavior?"
+    }
+  ]
+}
