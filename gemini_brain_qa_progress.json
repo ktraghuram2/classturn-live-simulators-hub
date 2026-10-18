@@ -1,70 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 01:15:08",
-  "completed_count": 490,
-  "fixed_count": 490,
-  "latest_sim_id": "u00597",
+  "updated_at": "2026-10-19 01:15:58",
+  "completed_count": 495,
+  "fixed_count": 495,
+  "latest_sim_id": "u00603",
   "recent_events": [
-    {
-      "sim_id": "u00548",
-      "status": "FIXED",
-      "time": "01:00:20",
-      "issues": [
-        "Inaccurate line 1-3 power flow equation in canvas_js: referenced V[1] (Bus 2 voltage) instead of V[2] (Bus 3 voltage).",
-        "Misaligned observation table columns in canvas_js btnRecord handler: column 3 inserted vGen2 instead of Bus 3 Voltage Magnitude, shifting all subsequent telemetry values and omitting Line 1-3 Active Flow.",
-        "Unwired telemetry element selectors in canvas_js: queried document.getElementById('read_v3') etc. instead of the value spans with IDs 'val_read_*'.",
-        "Unwired Section 05 action button ('btn_run_fdpf') and stepper buttons ('.stepper-btn') in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u00554",
-      "status": "FIXED",
-      "time": "01:00:28",
-      "issues": [
-        "Broken split MathML equation in principles summary where Eb = Va - Ia and Ra = kΦω were inappropriately separated",
-        "MCB power switch toggle button was completely unwired and MCB state was not modeled in simulation physics or graphics",
-        "Stepper increment and decrement buttons (▲/▼) for field resistance and armature voltage were unwired",
-        "Observation table columns were severely misaligned: 7 values appended into a 6-column table with mismatched column order and untabulated back EMF",
-        "Low-contrast circuit wire using near-black stroke (#0f172a) on dark #090d16 canvas background",
-        "Telemetry update overwrote live readout innerHTML, stripping the MathML unit formatting elements"
-      ]
-    },
-    {
-      "sim_id": "u00551",
-      "status": "FIXED",
-      "time": "01:00:43",
-      "issues": [
-        "Observation table column misalignment: Recorded observation rows generated 11 <td> cells (including counter, V_G2, X_12, and delta_2) while observation_thead_html specifies exactly 7 columns (P_L3, Q_L3, |V_3|, delta_3, Q_G2, k_conv, P_loss).",
-        "Unwired action button: The 'Run Solver to Convergence' action button (#btn_solve_to_convergence) lacked an event listener in canvas_js.",
-        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were not wired to update input values and dispatch change events.",
-        "Unwired experiment selector: The experiment dropdown (#experimentSelect) was not connected to configure test cases for PV bus reactive power limit assessment."
-      ]
-    },
-    {
-      "sim_id": "u00550",
-      "status": "FIXED",
-      "time": "01:01:08",
-      "issues": [
-        "Misaligned observation table columns and missing contingency state column in record button handler",
-        "Unwired contingency action buttons (btn_trip_line_1_2, btn_trip_generator_2, btn_restore_all_elements)",
-        "Unwired stepper up/down buttons (.stepper-btn)",
-        "Unwired experiment options select dropdown",
-        "Raw LaTeX formatting in principles summary prose (|V_i|, sin(δ_i - δ_j), B_{ij} = 1/X_{ij}, P_{lost})",
-        "Spurious MathML conversion of the English indefinite article 'a' in procedure overview, procedure step 4, and principles list equation description"
-      ]
-    },
-    {
-      "sim_id": "u00547",
-      "status": "FIXED",
-      "time": "01:01:45",
-      "issues": [
-        "Replaced unescaped raw LaTeX and ASCII mathematical notation (jQ_i, ^*, sum_{k=1}^N, and unbundled Delta symbols) with clean MathML in principles_summary_html.",
-        "Wired interactive action buttons (btn_toggle_switch and btn_run_powerflow) to toggle physical circuit breaker state and execute Newton-Raphson recalculation.",
-        "Wired precision stepper buttons (.stepper-btn-up and .stepper-btn-down) to dynamically adjust active power, reactive power, and scale factor inputs.",
-        "Corrected observation table column misalignment: rearranged row values to match the 8 table headers exactly (P_mw, Q_mvar, k_scale, P_eff, V_m, theta_2, S_flow, eta_line).",
-        "Linked circuit breaker state to power flow physics, zeroing receiving bus telemetry and pausing particle flow when the grid isolator switch is opened."
-      ]
-    },
     {
       "sim_id": "u00562",
       "status": "FIXED",
@@ -504,6 +444,70 @@
         "Corrected S=1, R=1 prohibited/invalid state in triggerClockPulse to drive both Q and Q_bar LOW (0) conforming to Section 04 procedure step 6 and Section 03 principles (Q11).",
         "Corrected observation table recording in canvas_js to log Present State Q_n instead of clkStr in column 5 (Q18).",
         "Removed direct canvas pointerdown event listener to enforce the 100% canvas mouse interaction lock rule (Q22)."
+      ]
+    },
+    {
+      "sim_id": "u00601",
+      "status": "FIXED",
+      "time": "01:15:58",
+      "issues": [
+        "Misaligned observation table columns: btnRecord prepended an extra trial number cell, shifting data columns out of alignment with the 5 observation headers and omitting Absolute Error Δd.",
+        "Unwired action button: #btn_emit_ping ('Trigger Ultrasonic Pulse (10 μs Ping)') lacked an event listener to trigger acoustic wave packet emission.",
+        "Unwired stepper arrow buttons: .stepper-btn-up and .stepper-btn-down lacked click listeners to dynamically increment/decrement obstacle distance.",
+        "Unwired top-panel controls: added handlers for #btnToggle (Pause/Run), #btnStep (single frame advance), and #btnReset (reset to default parameters and clear table).",
+        "Canvas mouse interaction lock: set pointerEvents to none on #simCanvas to disable direct canvas clicking/dragging in compliance with Q22.",
+        "Corrupted data-unit attributes in readouts_html: sanitized unescaped nested HTML span tags inside data-unit attributes across all live readout elements to clean plain text units ('ms', 'V', 'cm')."
+      ]
+    },
+    {
+      "sim_id": "u00599",
+      "status": "FIXED",
+      "time": "01:15:58",
+      "issues": [
+        "Unwired action buttons in canvas_js: Trigger Single Clock Pulse (#btn_pulse_clock) and Cycle Synthesis Architecture (#btn_cycle_mode) lacked event listeners.",
+        "Unwired telemetry element selectors in canvas_js: syncControlsAndTelemetry queried getElementById('reading_q') etc. instead of the value spans with IDs 'val_reading_q', 'val_reading_q_bar', 'val_reading_clk_bus', and 'val_reading_next_predicted'.",
+        "Numbered badges and leader line anchor mismatch (Q23): Badges 2, 4, and 5 in canvas_js were swapped relative to the legend pills in #apparatusLegendBanner (Pill 2: Clock Generator, Pill 4: IC Array, Pill 5: LED Indicators).",
+        "Canvas mouse interaction lock (Q22): Disabled direct canvas click listener on #simCanvas to guarantee all simulation control is routed exclusively through Section 05 controls.",
+        "Unwired stepper controls and top-panel controls: .stepper-btn-up, .stepper-btn-down, #btnToggle (Pause/Run), #btnStep, and #experimentSelect lacked click and change listeners in canvas_js.",
+        "Observation table recording (Q18): Added dedicated #btnRecord handler generating the exact 7 columns declared in observation_thead_html (Clock Step n, Architecture Mode, Input A, Input B, Present State Q(t), Next State Q(t+1), Complement Q'(t+1)) and reset handler for #btnReset.",
+        "Synthesis architecture support: Expanded simulation logic to model state transitions and excitation prediction across all four declared flip-flop architectures (SR, JK, D, and T) with visual mode feedback on canvas."
+      ]
+    },
+    {
+      "sim_id": "u00596",
+      "status": "FIXED",
+      "time": "01:15:58",
+      "issues": [
+        "Canvas mouse interaction lock (Q22): Disabled direct mouse click and hover event listeners on #simCanvas and set pointerEvents to 'none' so simulation control is routed exclusively through Section 05 controls.",
+        "Unwired Section 05 action buttons: Added click event listeners in canvas_js for 'Trigger Clock Pulse (CLK)' (#btn_clock_pulse) and 'Auto-Sequence Test Pattern (1-0-1-1)' (#btn_load_preset_1011).",
+        "Unwired stepper controls: Added click listeners for .stepper-btn-up and .stepper-btn-down buttons to increment and decrement targeted numeric inputs.",
+        "Unwired top-panel playback controls: Wired #btnReset (clearing register states and observation table), #btnStep (single clock shift), and #btnToggle (auto clock running).",
+        "Observation table column mismatch: Recorded decimal integer value in column 7 to match observation_thead_html header unit '(dec)' instead of hexadecimal notation.",
+        "Telemetry MathML unit preservation: Updated setElemValue to update only the inner text node or value span without clearing MathML unit markup."
+      ]
+    },
+    {
+      "sim_id": "u00595",
+      "status": "FIXED",
+      "time": "01:15:58",
+      "issues": [
+        "Unwired Section 05 action button 'Trigger Single Clock Pulse' (id: btn_trigger_clock_pulse) and stepper buttons in canvas_js.",
+        "Misaligned observation table records logging 7 mismatched values into a 6-column header (missing step counter, misplaced inputs, and orphan voltage column).",
+        "Incorrect canvas pointer hit coordinates for toggle switches (missing trainer.y vertical offset) and pulse pushbutton (offset by 32px from drawn position)."
+      ]
+    },
+    {
+      "sim_id": "u00603",
+      "status": "FIXED",
+      "time": "01:15:58",
+      "issues": [
+        "Unwired Section 05 action buttons: Added click event listeners for 'Start / Stop Titrant Dispense' (#btn_start_titration) and 'Titrate to Equivalence Endpoint' (#btn_titrate_to_endpoint) to control EDTA delivery.",
+        "Unwired precision steppers: Added click event listeners to .stepper-btn elements for incrementing/decrementing EDTA molarity, sample volume, and titrant dispense rate.",
+        "Unwired top-panel controls, reset, and syllabus activity selector: Bound #btnToggle (Pause/Run), #btnStep (single droplet advance), #btnReset (defaults restore), and #experimentSelect (tap vs well water hardness switch).",
+        "Observation table column misalignment: Corrected recorded row from 6 mismatched cells (trial index, molarity, volume, consumed, burette level, hardness) to match the exact 6 columns in observation_thead_html (Sample Volume, EDTA Molarity, Initial Reading V1, Final Reading V2, Volume Consumed V_EDTA, and Total Hardness as CaCO3).",
+        "Cleaned nested HTML span tags inside data-unit attributes across all readouts in readouts_html.",
+        "Corrected live telemetry element selectors in canvas_js: Updated selectors from reading_* to val_reading_* and updated inner numerical text while preserving MathML unit markup.",
+        "Disabled direct canvas mouse interaction per Q22 and ClassTurn locked layout rules, setting pointer-events: none to route all interactions through Section 05 controls."
       ]
     }
   ],
@@ -992,9 +996,14 @@
     "u00592",
     "u00593",
     "u00594",
+    "u00595",
+    "u00596",
     "u00597",
     "u00598",
+    "u00599",
     "u00600",
+    "u00601",
+    "u00603",
     "u00604",
     "u00605",
     "u00606"
