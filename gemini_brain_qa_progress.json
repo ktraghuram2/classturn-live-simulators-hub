@@ -1,9 +1,9 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 20:03:44",
-  "completed_count": 20,
-  "fixed_count": 20,
-  "latest_sim_id": "u00032",
+  "updated_at": "2026-10-18 20:07:42",
+  "completed_count": 25,
+  "fixed_count": 25,
+  "latest_sim_id": "u00043",
   "recent_events": [
     {
       "sim_id": "u00003",
@@ -217,6 +217,75 @@
         "Unwired stepper buttons: The stepper increment and decrement buttons (.stepper-btn, .stepper-btn-up, .stepper-btn-down) for the BCD word and bit inputs A, B, C, D were unhandled in JavaScript, preventing stepper click adjustments.",
         "Misaligned observation table columns: The record button handler generated only 5 table cells with combined bit strings and an unmapped row index, misaligning against the 13 columns defined in observation_thead_html (Decimal Value N10, Inputs A-D, Segments a-g, and Active Segments S7)."
       ]
+    },
+    {
+      "sim_id": "u00007",
+      "status": "FIXED",
+      "time": "20:04:01",
+      "issues": [
+        "Wired #btnToggle Pause/Run button with canonical 'Run' and 'Pause' states and ensured #btnStep steps animation cleanly.",
+        "Wired custom action buttons (#btn_execute_search, #btn_insert_key, #btn_rebalance_tree) to execute search, key insertion, and AVL balance reset.",
+        "Wired observation notebook recording (#btnRecord) to append rows matching all 8 columns of #observationThead, and restored controls to default in #btnReset.",
+        "Corrected setReading selector to find #val_reading-X elements with appropriate units ('levels', 'comps', 'steps', 'diff').",
+        "Fixed swapped live readings order: Reading 2 is Time Complexity T(n) in steps, and Reading 3 is Balance Factor Differential Δh in diff.",
+        "Fixed BST search traversal bug where left branch of right subtree (e.g. key 60 at node RL) terminated with null instead of traversing to RL.",
+        "Added high-contrast text labels ('< 50 Gate' and '> 50 Gate') inside apparatus comparator gate modules.",
+        "Added input clamping in readCtrl and wired #experimentSelect dropdown to switch between Primary and Extended configurations."
+      ]
+    },
+    {
+      "sim_id": "u00020",
+      "status": "FIXED",
+      "time": "20:04:07",
+      "issues": [
+        "Disabled direct canvas mouse drag and wheel zoom listeners in accordance with locked canvas interaction rules (Q22)",
+        "Corrected telemetry DOM updates to target only the value child element, preserving native MathML unit markup inside .readout-val elements (Q16, Q31)",
+        "Relocated Badge 4 to (760, 280) and Badge 5 to (760, 110) to eliminate crossing leader lines and establish clean direct connection to the kinematic gimbal (Q23, Q24)",
+        "Wired Step button (#btnStep) and Reset button (#btnReset) to highlight the active step in 04 / Procedure sequentially (Q07, Q18)",
+        "Removed extraneous potentiometer/bridge placeholder state variables from physics and state initialization (Q26)"
+      ]
+    },
+    {
+      "sim_id": "u00035",
+      "status": "FIXED",
+      "time": "20:05:37",
+      "issues": [
+        "Wired custom action buttons (#btn_auto_solve and #btn_regenerate_graph) which were previously unhandled in canvas_js",
+        "Implemented native #btnRecord click handler to populate all 7 observation table columns in exact alignment with #observationThead headers",
+        "Implemented native #btnReset handler to restore default parameters, clear the observation table, and reinitialize search state",
+        "Wired #experimentSelect dropdown to dynamically switch between Primary (w=1.0) and Extended (w=1.5) heuristic weighting modes",
+        "Wired #btnToggle (Pause/Run) and #btnStep controls for interactive single-step traversal inspection",
+        "Added a 4-tick (3.2s) hold duration upon reaching SUCCESS state so the backtracked optimal path remains clearly visible to students before cycling",
+        "Increased contrast of inactive planar graph links from #334155 to #475569 against dark #090d16 canvas stage",
+        "Converted raw mathematical expressions in aim_html and validation_html into clean inline MathML",
+        "Expanded principles_list_html to include all 3 core governing equations (A* Evaluation Function, Cost Relaxation, and Euclidean Heuristic) with complete MathML and Where symbol specifications"
+      ]
+    },
+    {
+      "sim_id": "u00006",
+      "status": "FIXED",
+      "time": "20:05:58",
+      "issues": [
+        "Unwired custom action buttons in canvas_js: looked for btn_insert, btn_delete, and btn_find, but HTML button IDs are btn_insert_node, btn_delete_node, and btn_find_node.",
+        "Unwired reset button: canvas_js bound btn_reset instead of canonical #btnReset.",
+        "Unwired observation record button and misaligned table columns: implemented recordObservation matching all 6 headers (Inserted Key, Total Nodes, Tree Height, Black-Height, Max Height Bound, Rotations Performed) and wired to #btnRecord.",
+        "Readout unit preservation: setElementText was replacing textContent directly and stripping inline MathML unit spans; now updates firstElementChild to preserve MathML units.",
+        "Missing symbols in observation table header: added MathML symbols h and R to Tree Height and Rotations Performed columns.",
+        "Canvas selector robustness: added #simCanvas selector priority."
+      ]
+    },
+    {
+      "sim_id": "u00043",
+      "status": "FIXED",
+      "time": "20:07:42",
+      "issues": [
+        "Aligned observation table columns in btnRecord with observation_thead_html (6 columns)",
+        "Wired #btn_run_convergence action button to execute simulation steps until stable equilibrium",
+        "Enhanced #btnReset to restore default control values, reinitialize grid, and clear observation table",
+        "Wired top panel controls #btnToggle and #btnStep for pause/run toggle and single-step iteration",
+        "Wired #experimentSelect dropdown to switch between primary and extended experiment activities",
+        "Added bounds clamping in readControls to guard against out-of-range user inputs"
+      ]
     }
   ],
   "completed_ids": [
@@ -224,6 +293,8 @@
     "u00003",
     "u00004",
     "u00005",
+    "u00006",
+    "u00007",
     "u00008",
     "u00009",
     "u00010",
@@ -231,14 +302,17 @@
     "u00015",
     "u00017",
     "u00018",
+    "u00020",
     "u00022",
     "u00023",
     "u00028",
     "u00032",
     "u00033",
     "u00034",
+    "u00035",
     "u00036",
     "u00037",
-    "u00038"
+    "u00038",
+    "u00043"
   ]
 }
