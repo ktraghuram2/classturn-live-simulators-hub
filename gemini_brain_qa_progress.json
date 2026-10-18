@@ -1,9 +1,9 @@
 {
-  "runner_state": "ACTIVE (GEMINI BRAIN AGENTS RUNNING)",
-  "updated_at": "2026-10-18 18:47:40",
+  "runner_state": "ACTIVE (12 GEMINI BRAIN AGENTS RUNNING)",
+  "updated_at": "2026-10-18 18:53:29",
   "completed_count": 2,
   "fixed_count": 2,
-  "latest_sim_id": "u00003",
+  "latest_sim_id": "u00002",
   "recent_events": [
     {
       "sim_id": "u00005",
