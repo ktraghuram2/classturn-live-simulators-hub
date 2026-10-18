@@ -1,74 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 00:11:47",
-  "completed_count": 350,
-  "fixed_count": 350,
-  "latest_sim_id": "u00425",
+  "updated_at": "2026-10-19 00:13:48",
+  "completed_count": 355,
+  "fixed_count": 355,
+  "latest_sim_id": "u00443",
   "recent_events": [
-    {
-      "sim_id": "u00391",
-      "status": "FIXED",
-      "time": "23:37:46",
-      "issues": [
-        "Unwired action buttons: '#btn_generate_calendar' (Execute Dynamic Calendar Build) and '#btn_toggle_leap_test' (Test February Leap Year Rollover) lacked event listeners in canvas_js",
-        "Observation table column misalignment: Recorded rows contained 8 columns instead of matching the 7 thead headers, with 'First Day Offset' and 'Days in Month' column positions swapped and an extraneous 'totalCells' column appended",
-        "Incomplete calendar grid rendering: The row rendering loop was hardcoded to 5 rows ('r < 5'), truncating 6-row months (e.g. August 2026) and omitting days 30-31 from the table preview",
-        "Missing dynamic day stepper upper bound: '#stepper_day' max attribute was static instead of clamping to the active month's computed days total (N_days)"
-      ]
-    },
-    {
-      "sim_id": "u00393",
-      "status": "FIXED",
-      "time": "23:39:28",
-      "issues": [
-        "Fixed principles_summary_html where the English indefinite article 'A' at the start of the overview was improperly formatted as a mathematical variable <math><mrow><mi>A</mi></mrow></math>.",
-        "Wired custom action buttons (#btn_zero_bridge for auto-balancing bridge to null and #btn_apply_tare for preload tare calibration) in canvas_js.",
-        "Wired stepper buttons (.stepper-btn-up and .stepper-btn-down) in canvas_js to allow interactive increment/decrement of compressive load and excitation voltage.",
-        "Wired top panel controls (#btnToggle for pause/run, #btnReset for restoring defaults and clearing table, #btnStep for procedure step highlight navigation, and #experimentSelect for activity modes).",
-        "Preserved child MathML unit elements in live telemetry readouts by updating value text nodes rather than wiping out innerHTML.",
-        "Improved contrast of the ground return wire against the dark #090d16 canvas by replacing #1e293b with high-contrast #64748b.",
-        "Synchronized observation table recording to respect active tare offset and use exact stepped parameter values."
-      ]
-    },
-    {
-      "sim_id": "u00381",
-      "status": "FIXED",
-      "time": "23:39:39",
-      "issues": [
-        "Unwired primary action button #btn_run_chunker for executing sequence labeling and Viterbi decoding",
-        "Unwired stepper up/down buttons (.stepper-btn) leaving manual value adjustments non-functional",
-        "Misaligned observation table columns where 8 td cells were appended under 6 defined th column headers",
-        "Telemetry element selector mismatch using reading_* instead of val_reading_* preventing live readouts from updating",
-        "Low-contrast trellis state labels on dark CRT canvas improved from #64748b to #94a3b8"
-      ]
-    },
-    {
-      "sim_id": "u00394",
-      "status": "FIXED",
-      "time": "23:40:08",
-      "issues": [
-        "Fixed principles_summary_html where the English indefinite article 'A' at the start of the overview was improperly formatted as a mathematical variable <math><mrow><mi>A</mi></mrow></math>.",
-        "Cleaned embedded HTML <span> markup from data-unit attributes in readouts_html to maintain valid attribute values.",
-        "Corrected observation table column misalignment in canvas_js: btnRecord was injecting 6 columns (including an extraneous trial count #${observationCount}) into a 5-column table defined by observation_thead_html.",
-        "Fixed live readout updates in updateTelemetryReadouts to target numeric value spans directly, preserving child MathML unit tags from destructive overwrite.",
-        "Wired up/down stepper buttons (.stepper-btn-up, .stepper-btn-down) to increment and decrement control inputs with range bounds and event dispatching.",
-        "Wired custom action button #btn_autozero_bridge ('Auto-Zero Bridge to Null Point') to tare/balance the Wheatstone bridge reading.",
-        "Wired top panel controls (#btnToggle for pause/run, #btnStep for load incrementation, #btnReset for restoring default parameters and clearing observations, and #experimentSelect for test modes)."
-      ]
-    },
-    {
-      "sim_id": "u00400",
-      "status": "FIXED",
-      "time": "23:41:08",
-      "issues": [
-        "Corrected inverted volumetric discharge unit (/m³s -> m³/s) in principles_list_html and readouts_html",
-        "Removed bloated raw HTML MathML strings embedded inside data-unit attributes in readouts_html",
-        "Removed math italic MathML formatting wrapping the English indefinite article 'A' at the beginning of principles_summary_html",
-        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) to dynamically modify control inputs and dispatch simulation recalculations",
-        "Wired 'Auto-Index Point Gauge to Crest Datum' action button (btn_index_point_gauge) to reset head reading to datum crest level",
-        "Realigned observation table recording in canvas_js to match the 7 observation_thead_html columns (Notch Angle, Head over Crest, Piezometer Rise, Collection Duration, Q_th, Q_act, Cd)"
-      ]
-    },
     {
       "sim_id": "u00401",
       "status": "FIXED",
@@ -506,6 +442,77 @@
         "Eliminated artificial queue truncation that dropped customer arrivals past MAX_VISIBLE_QUEUE, maintaining true M/M/c infinite buffer dynamics while cleanly capping visual token rendering",
         "Repositioned Apparatus 3 leader line anchor point from y=175 to y=215 so it remains physically anchored to the service bank frame across all server counts"
       ]
+    },
+    {
+      "sim_id": "u00437",
+      "status": "FIXED",
+      "time": "00:12:00",
+      "issues": [
+        "Unwired action buttons: 'btn_toggle_filter' (Toggle Filter Capacitor) and 'btn_auto_scale' (Auto-Scale Oscilloscope) had zero event listeners in canvas_js",
+        "Inaccurate physics formulas: canvas_js and readouts used half-wave rectifier equation (Vdc = Vm / pi, yielding 0.637 V and gamma = 1.983) instead of full-wave bridge rectifier physics with capacitive smoothing (Vdc ~ 1.902 V, Vac ~ 0.057 V, gamma ~ 0.030)",
+        "Apparatus description specified single diode producing half-wave rectification instead of 4-diode full-wave bridge network",
+        "Principles overview incorrectly described single diode blocking negative half-cycles with zero load current instead of full-wave bidirectional conduction",
+        "Procedure steps 2 and 3 erroneously referenced single diode anode/cathode connections instead of AC input and DC output terminals of the bridge module",
+        "Principles equations list omitted governing equations for Average DC Output Voltage, AC Ripple Voltage, and Ripple Factor",
+        "Readouts default values displayed incorrect half-wave values (0.637 V, 1.263 V, 1.983) instead of benchmarked full-wave filtered outputs"
+      ]
+    },
+    {
+      "sim_id": "u00434",
+      "status": "FIXED",
+      "time": "00:12:06",
+      "issues": [
+        "Unwired action button (#btn_run_stream): Added click event listener in canvas_js to toggle continuous stream vs paused state",
+        "Unwired top-panel controls (#btnToggle, #btnStep, #btnReset, #experimentSelect): Implemented pause/resume, discrete step execution, reset to defaults with table clearing, and distribution switching in canvas_js",
+        "Unwired stepper controls (.stepper-btn-up, .stepper-btn-down): Added click listeners in canvas_js to increment and decrement arrival rate, service rate, and parameter b",
+        "Unwired observation recording (#btnRecord): Implemented observation table row logging in canvas_js matching all 8 observation thead columns",
+        "Telemetry selector mismatch & unit preservation: Updated telemetry DOM updating in canvas_js to target numeric value spans without wiping out child MathML unit elements",
+        "Canvas interaction lock (Q22): Disabled direct mouse pointer events on #simCanvas to enforce ClassTurn canvas interaction lock",
+        "Fixed Kendall notation fractions in slots: Corrected GI/M/1 (was GI/(M/1)), M/M/1 (was (M/M)/1), and rho / (1 - rho) in principles_summary_html",
+        "Cleaned embedded HTML tags from data-unit attributes in readouts_html",
+        "Sanitized broken fraction units in steppers and observation headers (was customer s/t ime)",
+        "Sanitized inequality formatting in validation_html limits (<math>lambda >= mu</math>)"
+      ]
+    },
+    {
+      "sim_id": "u00444",
+      "status": "FIXED",
+      "time": "00:12:41",
+      "issues": [
+        "Fixed live readouts failing to update because setReadout queried 'reading_v_dc' instead of the element ID 'val_reading_v_dc'.",
+        "Corrected observation table columns alignment: table header defined 6 columns but btnRecord injected 11 columns.",
+        "Corrected rectifier physics for resistive load to support discontinuous conduction formula when alpha > 30 degrees.",
+        "Wired action buttons (btn_fire_pulse, btn_toggle_load_mode) and stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) for full interactivity."
+      ]
+    },
+    {
+      "sim_id": "u00433",
+      "status": "FIXED",
+      "time": "00:13:05",
+      "issues": [
+        "Fixed Kendall queueing notation in header title, aim, principles summary, and procedure from nested stacked fractions ((M/G)/1) to standard horizontal M/G/1, M/M/1, and M/D/1 notation.",
+        "Corrected corrupted unit MathML in steppers and observation table header where 'customers/s' was rendered as a customer fraction s/s.",
+        "Wired customer arrival burst action button (#btn_inject_burst) to inject burst transactions into the FCFS buffer track.",
+        "Wired interactive stepper buttons (.stepper-btn-up and .stepper-btn-down) for arrival and service rate adjustment.",
+        "Wired experiment mode dropdown (#experimentSelect) to toggle between M/M/1 (exponential service) and M/D/1 (deterministic service) variance models in telemetry and simulation.",
+        "Resolved telemetry readout element selector mismatch (reading_* vs val_reading_*) and updated value text nodes directly while preserving unit MathML.",
+        "Connected smoothly interpolated needle angle physics to the analog utilization dial needle.",
+        "Enhanced track slot index label contrast on dark #090d16 canvas from #64748b to #94a3b8."
+      ]
+    },
+    {
+      "sim_id": "u00443",
+      "status": "FIXED",
+      "time": "00:13:47",
+      "issues": [
+        "Cleaned embedded HTML <span> and quote markup from data-unit attributes in readouts_html to maintain valid attribute values.",
+        "Preserved native MathML unit elements in live telemetry readouts by updating only numeric value text without overwriting child unit markup.",
+        "Corrected observation table column misalignment in btnRecord: replaced 8 misaligned cells (with extraneous row index and omitted ripple frequency) with 7 aligned columns matching observation_thead_html (V_LL, alpha, R, V_dc, I_dc, V_rms, f_r).",
+        "Wired unhandled action button #btn_toggle_gate_pulses ('Toggle Gate Firing Pulses') to toggle thyristor gate firing and update conduction state, output waveforms, and telemetry.",
+        "Wired stepper arrow buttons (.stepper-btn-up, .stepper-btn-down) to increment and decrement input parameters within bounds and trigger simulation updates.",
+        "Wired top panel and playback controls (#btnToggle for pause/run, #btnStep for single-stepping and procedure highlighting, #btnReset for defaults restoration, and #experimentSelect for test modes).",
+        "Upgraded sub-9px canvas label fonts to 9px monospace per Q25 legibility guidelines and enhanced contrast of dark DSO probe sensing leads from #065f46 to #10b981 on dark canvas."
+      ]
     }
   ],
   "completed_ids": [
@@ -854,10 +861,15 @@
     "u00429",
     "u00430",
     "u00431",
+    "u00433",
+    "u00434",
     "u00435",
     "u00436",
+    "u00437",
     "u00439",
     "u00440",
-    "u00441"
+    "u00441",
+    "u00443",
+    "u00444"
   ]
 }
