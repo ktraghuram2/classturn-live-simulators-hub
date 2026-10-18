@@ -1,71 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 01:00:06",
-  "completed_count": 450,
-  "fixed_count": 450,
-  "latest_sim_id": "u00544",
+  "updated_at": "2026-10-19 01:01:45",
+  "completed_count": 455,
+  "fixed_count": 455,
+  "latest_sim_id": "u00547",
   "recent_events": [
-    {
-      "sim_id": "u00506",
-      "status": "FIXED",
-      "time": "00:41:46",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 6 columns while observation_thead_html expects 10 columns (b, d, x1, y1, D1, Type1, x2, y2, D2, Type2)",
-        "Unwired action buttons: btn_locate_extrema ('Auto-Locate Critical Points') and btn_project_hessian_contours ('Project Osculating Paraboloid') had no event listeners",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) for control_b and control_d had no click listeners attached",
-        "Tangent plane calculation bug: Slope offsets used subtraction instead of addition (z = z0 + J1*dx + J2*dy), resulting in inverted tangent plane tilt relative to surface gradient",
-        "Procedure step 4 formula typesetting error: Corrupted quadratic exponent in characteristic equation"
-      ]
-    },
-    {
-      "sim_id": "u00498",
-      "status": "FIXED",
-      "time": "00:41:46",
-      "issues": [
-        "Unwired interactive action buttons ('btn_snap_knee', 'btn_toggle_diode') and stepper up/down buttons in canvas_js",
-        "Mismatched badge numbers in canvas_js compared to apparatus legend pills (badge indices were scrambled across apparatus elements)",
-        "Misaligned observation table columns caused by missing '#' header in observation_thead_html relative to the 7 table row cells",
-        "Inaccurate physics formula in procedure step 10 for dynamic reverse resistance (malformed MathML fraction: r_z = Delta (V_Z / Delta) I_Z instead of r_z = Delta V_Z / Delta I_Z)",
-        "Low-contrast black/negative lead wires drawn in #1e293b blending into the dark #090d16 canvas background; upgraded to high-contrast #475569"
-      ]
-    },
-    {
-      "sim_id": "u00508",
-      "status": "FIXED",
-      "time": "00:42:17",
-      "issues": [
-        "Unwired action buttons: neither 'btn_release_hammer' nor 'btn_toggle_material' were bound to event handlers in canvas_js",
-        "Missing specimen material state and toggle logic: simulator aims to evaluate Mild Steel vs Cast Iron, but lacked material toggling and brittle fracture energy physics for Cast Iron",
-        "Unwired stepper buttons: clicking up/down stepper buttons did not change input values because .stepper-btn click listeners were absent",
-        "Observation table column misalignment: recordObservation() injected 7 mismatched columns under 8 table headers, leaving ak missing and data misaligned",
-        "Leader line badge mismatch: canvas badges 2, 3, 4, 5 did not match legend pills (Pill 2 is Hammer, Pill 3 is Anvil, Pill 4 is Specimen, Pill 5 is Dial)",
-        "Corrupted MathML units: (J/c)m² in readouts_html and observation_thead_html corrected to J/cm², and malformed striking velocity range in validation_html corrected"
-      ]
-    },
-    {
-      "sim_id": "u00509",
-      "status": "FIXED",
-      "time": "00:42:18",
-      "issues": [
-        "Unwired action buttons: 'btn_release_hammer' and 'btn_free_swing' in actions_html were not wired in canvas_js to release the pendulum or run tare calibration.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn) and input change/input events on 'speed' and 'notch_depth' were not wired to update values and live telemetry readouts.",
-        "Misaligned observation table columns: recordObservation() injected notch depth into the Friction Loss column, shifting subsequent energy readings and omitting the specimen cross-sectional area column.",
-        "Inverted dial drag pointer physics: dragPointerAngle mapped directly to pendulum displacement angle instead of absorbed energy transit loss, causing inverted and pegged energy readings on the graduated energy dial.",
-        "Missing Free Swing Calibration logic: Free swing mode was not handled, failed to omit the specimen, and did not measure tare friction loss (2.0 J).",
-        "Spurious MathML tags around prose text: Erroneous MathML variable tags around the English indefinite article 'A' in principles_summary_html replaced with plain text."
-      ]
-    },
-    {
-      "sim_id": "u00512",
-      "status": "FIXED",
-      "time": "00:42:37",
-      "issues": [
-        "Wired action buttons ('Dispense Titrant Drops', 'Swirl Conical Flask', and 'Titrate to Equivalence Point') and reset button in canvas_js",
-        "Wired stepper up/down buttons to properly increment and decrement input values",
-        "Aligned observation table recorded row data with all 7 headers in observation_thead_html (Trial, Sample Volume, Sample Normality, Initial Reading, Final Reading, Volume Added, Chloride Concentration)",
-        "Added 50.0 ml burette capacity boundary check to prevent dispensing beyond capacity"
-      ]
-    },
     {
       "sim_id": "u00520",
       "status": "FIXED",
@@ -491,6 +430,66 @@
         "Unwired action buttons: btn_evaluate_access ('Evaluate Access Request') and btn_validate_roles ('Validate Role-Permission Matrix') lacked click event listeners in canvas_js.",
         "Unwired stepper controls: Stepper up/down buttons and parameter input change events lacked synchronous canvas telemetry binding.",
         "Inconsistent permission indices: drawPermissionPool misaligned CRUD operations and IDs, and Admin role listed 'C' instead of 'W'."
+      ]
+    },
+    {
+      "sim_id": "u00548",
+      "status": "FIXED",
+      "time": "01:00:20",
+      "issues": [
+        "Inaccurate line 1-3 power flow equation in canvas_js: referenced V[1] (Bus 2 voltage) instead of V[2] (Bus 3 voltage).",
+        "Misaligned observation table columns in canvas_js btnRecord handler: column 3 inserted vGen2 instead of Bus 3 Voltage Magnitude, shifting all subsequent telemetry values and omitting Line 1-3 Active Flow.",
+        "Unwired telemetry element selectors in canvas_js: queried document.getElementById('read_v3') etc. instead of the value spans with IDs 'val_read_*'.",
+        "Unwired Section 05 action button ('btn_run_fdpf') and stepper buttons ('.stepper-btn') in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u00554",
+      "status": "FIXED",
+      "time": "01:00:28",
+      "issues": [
+        "Broken split MathML equation in principles summary where Eb = Va - Ia and Ra = kΦω were inappropriately separated",
+        "MCB power switch toggle button was completely unwired and MCB state was not modeled in simulation physics or graphics",
+        "Stepper increment and decrement buttons (▲/▼) for field resistance and armature voltage were unwired",
+        "Observation table columns were severely misaligned: 7 values appended into a 6-column table with mismatched column order and untabulated back EMF",
+        "Low-contrast circuit wire using near-black stroke (#0f172a) on dark #090d16 canvas background",
+        "Telemetry update overwrote live readout innerHTML, stripping the MathML unit formatting elements"
+      ]
+    },
+    {
+      "sim_id": "u00551",
+      "status": "FIXED",
+      "time": "01:00:43",
+      "issues": [
+        "Observation table column misalignment: Recorded observation rows generated 11 <td> cells (including counter, V_G2, X_12, and delta_2) while observation_thead_html specifies exactly 7 columns (P_L3, Q_L3, |V_3|, delta_3, Q_G2, k_conv, P_loss).",
+        "Unwired action button: The 'Run Solver to Convergence' action button (#btn_solve_to_convergence) lacked an event listener in canvas_js.",
+        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were not wired to update input values and dispatch change events.",
+        "Unwired experiment selector: The experiment dropdown (#experimentSelect) was not connected to configure test cases for PV bus reactive power limit assessment."
+      ]
+    },
+    {
+      "sim_id": "u00550",
+      "status": "FIXED",
+      "time": "01:01:08",
+      "issues": [
+        "Misaligned observation table columns and missing contingency state column in record button handler",
+        "Unwired contingency action buttons (btn_trip_line_1_2, btn_trip_generator_2, btn_restore_all_elements)",
+        "Unwired stepper up/down buttons (.stepper-btn)",
+        "Unwired experiment options select dropdown",
+        "Raw LaTeX formatting in principles summary prose (|V_i|, sin(δ_i - δ_j), B_{ij} = 1/X_{ij}, P_{lost})",
+        "Spurious MathML conversion of the English indefinite article 'a' in procedure overview, procedure step 4, and principles list equation description"
+      ]
+    },
+    {
+      "sim_id": "u00547",
+      "status": "FIXED",
+      "time": "01:01:45",
+      "issues": [
+        "Replaced unescaped raw LaTeX and ASCII mathematical notation (jQ_i, ^*, sum_{k=1}^N, and unbundled Delta symbols) with clean MathML in principles_summary_html.",
+        "Wired interactive action buttons (btn_toggle_switch and btn_run_powerflow) to toggle physical circuit breaker state and execute Newton-Raphson recalculation.",
+        "Wired precision stepper buttons (.stepper-btn-up and .stepper-btn-down) to dynamically adjust active power, reactive power, and scale factor inputs.",
+        "Corrected observation table column misalignment: rearranged row values to match the 8 table headers exactly (P_mw, Q_mvar, k_scale, P_eff, V_m, theta_2, S_flow, eta_line).",
+        "Linked circuit breaker state to power flow physics, zeroing receiving bus telemetry and pausing particle flow when the grid isolator switch is opened."
       ]
     }
   ],
@@ -944,6 +943,11 @@
     "u00543",
     "u00544",
     "u00545",
-    "u00546"
+    "u00546",
+    "u00547",
+    "u00548",
+    "u00550",
+    "u00551",
+    "u00554"
   ]
 }
