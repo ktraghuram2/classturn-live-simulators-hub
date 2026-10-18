@@ -1,76 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 21:59:46",
-  "completed_count": 140,
-  "fixed_count": 140,
-  "latest_sim_id": "u00187",
+  "updated_at": "2026-10-18 22:01:15",
+  "completed_count": 145,
+  "fixed_count": 145,
+  "latest_sim_id": "u00184",
   "recent_events": [
-    {
-      "sim_id": "u00131",
-      "status": "FIXED",
-      "time": "21:03:15",
-      "issues": [
-        "Fixed corrupted MathML voltage fractions and zero-division artifacts in aim_html and apparatus_html",
-        "Aligned canvas leader badge numbers (1 to 7) to match legend pills and apparatus flow exactly",
-        "Wired Toggle DPST Mains Switch action button and stepper up/down adjustment buttons",
-        "Corrected observation table recording data row to match the 8 observation header columns"
-      ]
-    },
-    {
-      "sim_id": "u00127",
-      "status": "FIXED",
-      "time": "21:03:19",
-      "issues": [
-        "Replaced raw text symbol notation f'_ck in procedure Step 2 with proper horizontal MathML",
-        "Aligned observation table recorded cells with observationThead 8-column schema (removed spurious serial number and fixed column mapping)",
-        "Wired custom action button #btn_mix_concrete to trigger concrete mixing and slump subsidence workability simulation",
-        "Wired .stepper-btn-up and .stepper-btn-down arrow controls for tactile stepping",
-        "Wired #experimentSelect dropdown to switch between standard proportioning and high-efficiency water reduction presets",
-        "Wired #btnReset to restore all stepper inputs, readouts, and canvas physical states to default values",
-        "Added defensive numeric clamping on stepper inputs to guard against division-by-zero and invalid ranges"
-      ]
-    },
-    {
-      "sim_id": "u00140",
-      "status": "FIXED",
-      "time": "21:04:11",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted timeStr as column 1, shifting all data columns relative to the 7 headers in observation_thead_html, and swapped rejected cycles and active clusters.",
-        "Unwired action button: 'Run Full Spanning Tree' (#btn_run_full) lacked a click event listener in canvas_js.",
-        "Unwired stepper controls: up/down buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners in canvas_js to adjust Grid Rows, Grid Columns, and Step Clock Delay.",
-        "Unwired top-panel controls: Pause/Run (#btnToggle), single step (#btnStep), reset (#btnReset), and experiment selector (#experimentSelect) lacked event listeners in canvas_js.",
-        "Telemetry unit erasure: syncTelemetry() directly overwritten textContent on readout containers, destroying inner MathML unit spans inside .readout-val elements.",
-        "Canvas mouse interaction lock: pointer events were not disabled on canvas (#simCanvas), permitting direct click interference on the simulation canvas.",
-        "Missing mathematical symbol notation in observation table headers: Added missing MathML symbols m, V, and C to Columns, Total Vertices, and Final Clusters headers in observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u00145",
-      "status": "FIXED",
-      "time": "21:05:53",
-      "issues": [
-        "Unwired action buttons (#btn_toggle_common_mode and #btn_toggle_diff_mode) prevented users from toggling between common-mode and differential-mode configurations.",
-        "Unwired stepper up/down buttons (.stepper-btn-up and .stepper-btn-down) caused clicking stepper arrows to do nothing.",
-        "Common-mode configuration physics was incomplete in canvas_js, producing zero output voltage and invariant CMRR when common-mode excitation was active.",
-        "LM741 breadboard IC pin connections in drawCircuitWiring were mapped to incorrect physical pins (Pin 1 instead of Pin 2, Pin 2 instead of Pin 3, Pin 7 instead of Pin 6).",
-        "Missing feedback loop wiring from inverting input Pin 2 through resistors R2_1/R2_2 and selector switch S3 to output Pin 6.",
-        "Observation table data cells lacked center alignment and explicit high-contrast text color on dark rows."
-      ]
-    },
-    {
-      "sim_id": "u00141",
-      "status": "FIXED",
-      "time": "21:06:48",
-      "issues": [
-        "Mismatched title and eyebrow: Corrected title from 'Inclined plane with friction' to 'Enzyme Kinetics: Temperature, pH, and Inhibitor' and eyebrow to 'CBSE / NCERT Class XI Biology — Chemical Coordination & Enzyme Kinetics' to match the actual enzyme kinetics apparatus and simulation.",
-        "Misaligned observation table logging: Corrected #btnRecord click handler to append exactly 4 columns matching the 4 #observationThead headers (Temperature, Reaction pH, Inhibitor Strength, Enzyme Activity Rate), removing extraneous Sl. No. and denaturation columns that caused severe column offset and overflow.",
-        "Cleaned observation table headers: Standardized #observationThead header text to eliminate redundant repeated symbol labels ('pH pH' and 'Activity Activity').",
-        "Unwired action buttons: Implemented interactive click handlers in canvas_js for 'Dispense Substrate' (#btn_dispense_substrate) and 'Set Enzyme Optimum' (#btn_auto_optimum).",
-        "Unwired stepper arrow buttons: Wired .stepper-btn-up and .stepper-btn-down to increment and decrement inputs dynamically with boundary clamping.",
-        "Unwired top panel controls: Implemented event listeners for Pause/Run (#btnToggle), Step (#btnStep), Reset to Defaults (#btnReset), and Experiment Mode Selector (#experimentSelect).",
-        "Protected MathML units in telemetry: Updated readout updates in canvas_js to target the numeric value span, preventing destructive overwriting of MathML unit tags in Section 06."
-      ]
-    },
     {
       "sim_id": "u00146",
       "status": "FIXED",
@@ -469,6 +403,66 @@
         "Unwired action buttons: 'Dispense Sample & Stir Eldon Wells', 'Execute 4-Axis Orbital Card Tilt', and 'Toggle Holotable IgM/IgG Lattice View'.",
         "Unwired activity / experiment mode dropdown selection ('experimentSelect' / 'activitySelect')."
       ]
+    },
+    {
+      "sim_id": "u00185",
+      "status": "FIXED",
+      "time": "22:00:44",
+      "issues": [
+        "Observation table columns were misaligned: Disk Potency (C0) was omitted and subsequent parameter columns were shifted out of order with observation_thead_html",
+        "Action buttons (btn_flame_sterilize, btn_dispense_discs, btn_align_caliper) were unwired with no click handlers",
+        "Custom stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners, preventing UI parameter adjustments",
+        "Ciprofloxacin baseZone was 30.5 mm instead of 30.0 mm, creating a slight discrepancy with the default 30.0 mm live reading"
+      ]
+    },
+    {
+      "sim_id": "u00186",
+      "status": "FIXED",
+      "time": "22:00:44",
+      "issues": [
+        "Unwired Section 05 action buttons: Added interactive event listeners for 'Cast Dual-Wedge Agar Matrix' (#btn_pour_wedges), 'Inoculate & Spread Culture' (#btn_inoculate_spread), and 'Incubate & Express Colonies' (#btn_run_incubation).",
+        "Unwired stepper up/down arrow buttons: Wired .stepper-btn-up and .stepper-btn-down buttons to adjust streptomycin concentration, inoculum volume, and incubation time with step resolution and bounds clamping.",
+        "Unwired top-panel controls: Added event listeners for experiment mode dropdown (#experimentSelect) to switch between spontaneous mutant isolation and mutation frequency determination presets, and 'Reset to Defaults' (#btnReset) to restore all inputs and clear the observation table.",
+        "Protected Section 06 MathML units: Modified setTele to target inner numeric value spans, preventing destructive overwriting of native MathML exponents and unit tags.",
+        "Input boundary clamping: Guarded against invalid or zero concentrations and division-by-zero errors in inhibitory boundary position (x_MIC) and mutation frequency (f_m) calculations.",
+        "Visual apparatus contrast: Enhanced drop shadow outlines and apparatus feet strokes on the dark #090d16 canvas background.",
+        "Dynamic spreader motion: Added animated sweeping movement for the glass rod spreader across the Petri dish agar matrix when inoculating and spreading culture."
+      ]
+    },
+    {
+      "sim_id": "u00183",
+      "status": "FIXED",
+      "time": "22:00:44",
+      "issues": [
+        "Misaligned observation table columns: btnRecord logged 7 mismatched parameter columns instead of the 10 defined observation columns (Digit Number, Pattern Type, Triradii Count, Ridge Count, Total Whorls, Total Loops, Total Arches, PII, DI, and TRC).",
+        "Unwired action buttons: act_auto_detect_landmarks ('Auto-Locate Δ and Core Landmarks') and act_auto_trace_ridge ('Trace Hairline and Count Ridge Crossings') lacked event listeners in canvas_js.",
+        "Unwired stepper controls: .stepper-btn buttons (▲/▼) lacked click handlers to increment and decrement input values.",
+        "Telemetry update wiping unit markup: setElementText assigned textContent directly to .readout-val elements, destroying internal MathML unit spans.",
+        "Corrupted HTML attribute values in readouts_html: data-unit attributes contained nested span tags and unescaped quotes injected during slot annotation.",
+        "Missing theoretical equations in principles_list_html: equations for Dankmeijer's Index (DI), Furuhata's Index (FI), and Total Ridge Count (TRC) were omitted, leaving only Equation 0 (PII).",
+        "Enhanced canvas visual fidelity and interaction: added drop-shadow depth to the 10-digit record form, interactive digit selection via canvas clicks on card cells, and animated visual feedback for delta/core detection and hairline ridge counting."
+      ]
+    },
+    {
+      "sim_id": "u00169",
+      "status": "FIXED",
+      "time": "22:00:52",
+      "issues": [
+        "Numbered legend pills in legend_pills_html were misordered and did not correspond to apparatus items or canvas badges 1 through 7.",
+        "Stepper increment and decrement buttons (.stepper-btn) were present in DOM but lacked event listeners in canvas_js.",
+        "Auto-Balance action button (#btn_auto_balance) was present in DOM but lacked an event listener in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u00184",
+      "status": "FIXED",
+      "time": "22:01:15",
+      "issues": [
+        "Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked event listeners to increment/decrement input values.",
+        "Action buttons (#btn_span_length, #btn_span_breadth, and #btn_toggle_projection) had no click event listeners implemented in canvas_js.",
+        "Lack of Norma Verticalis (superior cranial vault aspect) visualization to illustrate bi-euryon breadth measurement alongside norma lateralis length measurement.",
+        "Observation table record button had restricted ID selector lacking fallback for #btn_record."
+      ]
     }
   ],
   "completed_ids": [
@@ -601,6 +595,7 @@
     "u00166",
     "u00167",
     "u00168",
+    "u00169",
     "u00170",
     "u00171",
     "u00172",
@@ -610,6 +605,10 @@
     "u00179",
     "u00181",
     "u00182",
+    "u00183",
+    "u00184",
+    "u00185",
+    "u00186",
     "u00187",
     "u00188"
   ]
