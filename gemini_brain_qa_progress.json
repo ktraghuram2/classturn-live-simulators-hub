@@ -1,65 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 23:45:57",
-  "completed_count": 320,
-  "fixed_count": 320,
-  "latest_sim_id": "u00407",
+  "updated_at": "2026-10-18 23:49:34",
+  "completed_count": 325,
+  "fixed_count": 325,
+  "latest_sim_id": "u00415",
   "recent_events": [
-    {
-      "sim_id": "u00359",
-      "status": "FIXED",
-      "time": "23:24:37",
-      "issues": [
-        "Misaligned observation table columns: btnRecord appended 11 <td> cells (including an unheaded row counter and extra diode PIV) into a 9-column observation thead.",
-        "Unwired action buttons: 'btn_auto_regulate' and 'btn_toggle_non_idealities' lacked event listeners in canvas_js.",
-        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' controls were not wired to step input values.",
-        "Mismatched leader line badges: canvas_js drew Badge 1 on the converter and Badge 3 on the duty controller, conflicting with legend_pills_html where Pill 1 is Duty Ratio Controller, Pill 2 is Push-Pull Converter, and Pill 3 is Rheostat."
-      ]
-    },
-    {
-      "sim_id": "u00365",
-      "status": "FIXED",
-      "time": "23:24:52",
-      "issues": [
-        "Unwired action buttons: Start Automated Sequence (btn_start_cycle) and Emergency Halt / Interlock Trip (btn_e_stop) lacked event listeners.",
-        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn) lacked click listeners to alter input values.",
-        "Misaligned observation table columns: Record button logged 6 mismatched fields instead of all 7 defined in the table header, omitting coarse fill time, fine fill time, and total cycle period.",
-        "Inaccurate pneumatic elevator cylinder speed: Platform extended at 55 mm/s (~0.9 s), contradicting the specified 5.0 s pneumatic extension timer."
-      ]
-    },
-    {
-      "sim_id": "u00363",
-      "status": "FIXED",
-      "time": "23:24:57",
-      "issues": [
-        "Observation table columns were misaligned: row inserted 8 columns (including unrepresented timestamp and dip columns) into a 6-column table header, shifting readings under wrong headings.",
-        "Duplicate MathML symbol tags (<msub><mi>d</mi><mrow><mi>v</mi></mrow></msub> and <msub><mi>t</mi><mrow><mi>b</mi></mrow></msub>) were rendered in observation table header.",
-        "Action button 'btn_project_profile' and stepper adjustment buttons (.stepper-btn-up, .stepper-btn-down) were unwired without click event listeners.",
-        "Low visual contrast on dark #090d16 canvas: background contours (#475569) were near-invisible, basement limestone in borehole blended into chassis backing, and clinometer needle (#090d16 on dark brass) lacked contrast."
-      ]
-    },
-    {
-      "sim_id": "u00367",
-      "status": "FIXED",
-      "time": "23:25:48",
-      "issues": [
-        "Telemetry readout DOM element IDs were misaligned in canvas_js (queried reading_* instead of val_reading_*), which prevented live measurement readouts from updating.",
-        "Observation table record button produced misaligned columns (grouped m, n, p into one cell and displaced resonant frequency, peak pressure, and degeneracy count).",
-        "Action buttons ('Toggle Waveform Freeze' and 'Auto-Tune to Degenerate State') as well as stepper up/down buttons (.stepper-btn) were unwired in canvas_js.",
-        "Animation render loop lacked freeze state support to pause standing wave oscillations and waveform phase elapsed time."
-      ]
-    },
-    {
-      "sim_id": "u00368",
-      "status": "FIXED",
-      "time": "23:25:56",
-      "issues": [
-        "Observation table columns were misaligned: data values were shifted across columns 1-5 with an extra unrepresented history width column and hex formatting instead of binary GHR index.",
-        "Telemetry readout element IDs mismatched: elements were queried using reading_* instead of val_reading_* IDs, preventing telemetry updates.",
-        "Workload pattern action button unwired: #btn_cycle_pattern lacked a click event listener to cycle workload patterns.",
-        "Stepper buttons unwired: .stepper-btn-up and .stepper-btn-down lacked click listeners to increment and decrement stepper inputs."
-      ]
-    },
     {
       "sim_id": "u00358",
       "status": "FIXED",
@@ -487,6 +432,65 @@
         "Wired unwired stepper control buttons (.stepper-btn-up and .stepper-btn-down) across all parameter steppers",
         "Corrected misaligned observation table columns to ensure recorded cells match the 6 table headers (Sample State, Time Elapsed, Calorimeter Temperature, Temperature Rise, Heat Absorbed, Enthalpy of Neutralization)"
       ]
+    },
+    {
+      "sim_id": "u00395",
+      "status": "FIXED",
+      "time": "23:47:09",
+      "issues": [
+        "Fixed observation table column misalignment where 9 td cells were inserted instead of matching the 6 header columns",
+        "Wired missing action button btn_auto_balance_bridge to reset applied strain to zero and re-balance the bridge network",
+        "Wired missing stepper buttons (.stepper-btn) to increment and decrement controls within min/max bounds",
+        "Corrected inverted badge numbering in drawAllBadgesAndLeaderLines so Badge 1 and Badge 2 match legend pills exactly",
+        "Fixed low-contrast negative excitation lead wire on dark #090d16 canvas background",
+        "Made Wheatstone bridge completion resistor labels dynamic based on nominal gage resistance (120 Ω vs 350 Ω)",
+        "Fixed corrupted possessive Poisson's ratio symbol formatting in principles_summary_html"
+      ]
+    },
+    {
+      "sim_id": "u00408",
+      "status": "FIXED",
+      "time": "23:47:19",
+      "issues": [
+        "Observation table logging in btnRecord generated 10 misaligned columns instead of matching the 8 columns defined in observation_thead_html",
+        "Action buttons btn_add_sample and btn_toggle_stirrer were unwired with no click event listeners attached",
+        "Stepper increment and decrement buttons (.stepper-btn) for all four parameters were unwired",
+        "Agitator rotation and tachometer display ran unconditionally without responding to stirrer state controls"
+      ]
+    },
+    {
+      "sim_id": "u00409",
+      "status": "FIXED",
+      "time": "23:49:10",
+      "issues": [
+        "Raw LaTeX syntax ({\\rm ^\\circ C}) leaked into MathML representation in principles_summary_html.",
+        "Legend pills in legend_pills_html mismatched apparatus items and canvas badges in count, numbering, and terminology.",
+        "Action buttons (btn_pour_mix, btn_stir_active, btn_fast_forward_eq) and stepper buttons (.stepper-btn) were unwired in canvas_js.",
+        "Live readout setter calls lacked the 'val_' ID prefix, preventing DOM element updates.",
+        "Observation table record logic generated 8 misaligned columns instead of the 7 columns declared in observation_thead_html.",
+        "Calorimeter transient cooling physics was inverted, yielding physically incorrect heat loss values."
+      ]
+    },
+    {
+      "sim_id": "u00410",
+      "status": "FIXED",
+      "time": "23:49:33",
+      "issues": [
+        "Wired unhandled stepper buttons (.stepper-btn) to adjust control inputs and trigger simulation updates.",
+        "Wired unhandled action button (btn_initiate_reaction) to initiate the reaction dissolution and update thermodynamic telemetry.",
+        "Corrected observation table recording column misalignment where trial number was missing and qP was erroneously inserted.",
+        "Fixed mangled MathML unit representation of kJ/mol in table header and live readouts."
+      ]
+    },
+    {
+      "sim_id": "u00415",
+      "status": "FIXED",
+      "time": "23:49:34",
+      "issues": [
+        "Unwired action buttons: 'btn_auto_balance' (Auto-Balance to Null Point) and 'btn_water_blank' (Insert Pure Solvent Blank Reference) lacked click event listeners in canvas_js.",
+        "Unwired stepper buttons: '.stepper-btn' (increment/decrement buttons) lacked event listeners, preventing user stepping controls from functioning.",
+        "Misaligned observation table: record button inserted 6 columns (including un-headed trial counter and luminance ratio, and swapped tube length and concentration) into a 4-column observation table defined by observation_thead_html."
+      ]
     }
   ],
   "completed_ids": [
@@ -803,12 +807,17 @@
     "u00392",
     "u00393",
     "u00394",
+    "u00395",
     "u00397",
     "u00400",
     "u00401",
     "u00403",
     "u00405",
     "u00406",
-    "u00407"
+    "u00407",
+    "u00408",
+    "u00409",
+    "u00410",
+    "u00415"
   ]
 }
