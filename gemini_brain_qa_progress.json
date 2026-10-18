@@ -1,68 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 22:44:14",
-  "completed_count": 210,
-  "fixed_count": 210,
-  "latest_sim_id": "u00240",
+  "updated_at": "2026-10-18 22:46:50",
+  "completed_count": 215,
+  "fixed_count": 215,
+  "latest_sim_id": "u00265",
   "recent_events": [
-    {
-      "sim_id": "u00223",
-      "status": "FIXED",
-      "time": "22:18:27",
-      "issues": [
-        "Observation table column misalignment: Record button inserted 8 cells (including unheaded trial index and extra micelle density column) instead of matching the 6 observation table headers, and Cleansing Efficiency was swapped with Surface Tension.",
-        "Unwired action buttons: Dispense Soap (#btn_dispense_soap), Agitate with Stirrer (#btn_stir_solution), and Immerse & Wash Fabric (#btn_immerse_cloth) had no click listeners attached.",
-        "Unwired stepper buttons: Up and down stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click handlers to modify control inputs.",
-        "CMC and micelle density parameter discrepancy: Script used CMC = 1.5 g/L instead of 0.8 g/L specified in validation assumptions, causing the micelle density reading to diverge from the baseline 4.82 × 10¹⁸ m⁻³."
-      ]
-    },
-    {
-      "sim_id": "u00217",
-      "status": "FIXED",
-      "time": "22:18:27",
-      "issues": [
-        "Observation table columns were misaligned: btnRecord appended 7 columns instead of the 6 columns defined in observationThead (Cutoff Frequency, Filter Order, Filter Algorithm, Noise Amplitude, Output SNR, Filtered R-Wave Peak).",
-        "Action buttons #btn_apply_filter ('Execute Digital Filtering Pipeline') and #btn_toggle_noise_all ('Inject Combined Clinical Artifacts') were unwired in canvas_js.",
-        "Reset button #btnReset lacked a native handler to reset time, history buffers, and filter memory in canvas_js.",
-        "Normalized Digital Cutoff readout unit had mangled fraction MathML (ra d/s ample) instead of rad/sample.",
-        "Noise Injector specification in apparatus list contained an erroneous fraction MathML for 50/60 Hz powerline interference."
-      ]
-    },
-    {
-      "sim_id": "u00221",
-      "status": "FIXED",
-      "time": "22:18:27",
-      "issues": [
-        "Misaligned observation table columns: record button appended 11 cells with extra trial count, Kv, thermal loss, and loop rate under a 7-column header with swapped current and thrust positions",
-        "Unwired stepper controls: stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to increment/decrement input values",
-        "Unwired action buttons: 'btn_arm_fc' and 'btn_run_continuity' had no event listeners or interactive visual feedback handlers",
-        "Low contrast battery wiring: black ground cable rendered in dark #1e293b without 3D depth border or highlights against dark #090d16 canvas"
-      ]
-    },
-    {
-      "sim_id": "u00226",
-      "status": "FIXED",
-      "time": "22:19:39",
-      "issues": [
-        "Unwired action buttons: 'Execute Cache Read Cycle' (btn_read_access), 'Write Allocate / Fill Cache Line' (btn_fill_line), and 'Invalidate All Cache Lines' (btn_flush_cache) were unhandled in canvas_js.",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down were missing click handlers for incrementing/decrementing controls.",
-        "Observation table column misalignment: btnRecord injected 9 cells into an 8-column table with swapped Index/Tag order, extraneous columns, and omitted Output Data; realigned strictly to the 8 columns defined in observation_thead_html.",
-        "Spurious cycle count on initialization and address change: evaluateCacheAccess(true) on load and input change spuriously incremented totalAccesses and totalHits before any read cycle was executed; changed to evaluateCacheAccess(false) so access counters increment only on clock step."
-      ]
-    },
-    {
-      "sim_id": "u00225",
-      "status": "FIXED",
-      "time": "22:20:08",
-      "issues": [
-        "Unwired stepper up/down buttons: .stepper-btn click events were missing event listeners to increment/decrement input values.",
-        "Unwired action buttons: 'Clock Address Query' (btn_pulse_comparator) and 'Allocate Line via Decoder' (btn_allocate_line) were unhandled in canvas_js.",
-        "Unwired experiment selector: experimentSelect was unhandled, preventing switching between Parallel Hit Detection and Miss Handling/Allocation modes.",
-        "Misaligned observation table columns: Table body recorded 8 <td> elements while observation_thead_html only defined 7 <th> headers.",
-        "Hardcoded valid bit text: Cache directory line cells rendered static 'V:1' text rather than reflecting dynamic line.valid bit state.",
-        "Decoder visual state: 2-to-4 decoder lacked 3D shading and active allocation signal illumination during line replacement."
-      ]
-    },
     {
       "sim_id": "u00216",
       "status": "FIXED",
@@ -492,6 +434,69 @@
         "Wired the action button 'Auto-Titrate to Methyl Red Equivalence Point' (#btn_titrate_endpoint) and the experiment select dropdown (#experimentSelect) in canvas_js.",
         "Fixed methyl red indicator color transition threshold: previously required volSample > volBlank (unreachable due to max 45.0 mL input limit), now correctly shifts around the sample back-titration equivalence point."
       ]
+    },
+    {
+      "sim_id": "u00258",
+      "status": "FIXED",
+      "time": "22:44:21",
+      "issues": [
+        "Mismatched telemetry DOM IDs: corrected query selectors from reading_* to val_reading_* so live readouts update properly.",
+        "Unwired action and stepper buttons: wired btn_cycle_ic, btn_select_gate, experimentSelect, and .stepper-btn click handlers.",
+        "Observation table column misalignment: corrected btnRecord table row insertion from 8 mismatched columns to the 7 defined columns matching observation_thead_html.",
+        "Apparatus badges inverted: swapped Badges 4 and 5 so Badge 4 connects to the IC package and Badge 5 connects to the indicator LED assembly matching legend_pills_html.",
+        "Hardcoded single-gate physics: implemented dynamic multi-IC support (7408 AND, 7432 OR, 7404 NOT, 7400 NAND, 7402 NOR, 7486 XOR) and dynamic IC canvas label markings."
+      ]
+    },
+    {
+      "sim_id": "u00267",
+      "status": "FIXED",
+      "time": "22:45:17",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted 10 cells (with unheaded serial number, stirrer speed, and reaction rate cells) while omitting total feed flowrate, under an 8-column header (NaOH Flowrate, Ethyl Acetate Flowrate, Total Feed Flowrate, Space Time, Reactor Temperature, Effluent Conductivity, Fractional Conversion, Rate Constant).",
+        "Apparatus badge numbering mismatch: Style 2 leader lines assigned badge numbers 1 to CSTR, 2 to Agitator, 3 to NaOH tank, 4 to Ethyl Acetate tank, and 5 to Rotameters, directly contradicting the canonical order defined in apparatus legend pills 1 to 5.",
+        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js.",
+        "Unwired action buttons: Action buttons #btn_steady_state ('Equilibrate Reactor to Steady State') and #btn_quench_titrate ('Take Titration Aliquot & Quench') lacked event listeners in canvas_js.",
+        "Destructive telemetry updates: setReadout replaced entire textContent on span.readout-val elements, wiping out nested MathML unit elements.",
+        "Unwired top panel simulation controls: #btnToggle (Run/Pause), #btnStep, and #btnReset were not implemented in canvas_js.",
+        "Malformed HTML in live readouts: The data-unit attribute on #val_reading_total_flow contained raw nested <span> and <math> markup instead of a plain text unit string.",
+        "Mangled MathML fraction glyphs: Rate constant and conductivity units contained fragmented MathML tags (L/m ol·min and m S/c m) in observation headers and readouts."
+      ]
+    },
+    {
+      "sim_id": "u00269",
+      "status": "FIXED",
+      "time": "22:46:07",
+      "issues": [
+        "Converted raw unformatted LaTeX/plain-text math 'x_u <= x_u_max (0.46 d' in validation_html boundary limit to standard inline MathML.",
+        "Wired action button 'btn_pump_hydraulic_jack' and stepper up/down buttons '.stepper-btn' in canvas_js to allow smooth load pumping and parameter adjustments.",
+        "Corrected misaligned observation table columns in canvas_js to strictly match the 5 thead headers (P, delta, Mu, xu, wcr), removing extra serial number and fck columns, and calculating wcr.",
+        "Swapped badges 3 and 4 in canvas_js to align with legend pills (Badge 3: Reinforced concrete beam specimen, Badge 4: LVDT / Dial gauge).",
+        "Enhanced concrete beam boundary contrast and shading on dark #090d16 canvas background."
+      ]
+    },
+    {
+      "sim_id": "u00268",
+      "status": "FIXED",
+      "time": "22:46:11",
+      "issues": [
+        "Unwired stepper up/down buttons: Stepper control buttons (▲ and ▼) lacked click listeners to increment/decrement input values.",
+        "Unwired action button: 'Equilibrate to Steady State' button had no click handler bound.",
+        "Misaligned observation table columns: The observation recorder inserted 9 columns into a 7-column table header, offsetting all measured values.",
+        "Mismatched apparatus badge numbers: Canvas leader badges were numbered out of order relative to legend pills and flow sequence (1: Coil, 2: Meter, 3: NaOH, 4: EtAc, 5: Rotameter, 6: Tank instead of 1: NaOH, 2: EtAc, 3: Rotameter, 4: Coil, 5: Meter, 6: Tank)."
+      ]
+    },
+    {
+      "sim_id": "u00265",
+      "status": "FIXED",
+      "time": "22:46:50",
+      "issues": [
+        "Fixed observation table recorded row columns to match the 7 headers in observation_thead_html exactly (removed extraneous fm and maxError columns, reordered levels and step size)",
+        "Wired stepper up/down arrow buttons (.stepper-btn) to increment/decrement controls and update live readouts",
+        "Wired action button #btn_toggle_error_trace to toggle visibility of CH4 quantization error trace",
+        "Wired action button #btn_auto_scale_graticule to snap grid lines and display quantization level voltages",
+        "Wired top panel #btnToggle and #btnStep buttons for smooth pause/resume and single-frame stepping",
+        "Wired #experimentSelect dropdown to switch presets between Primary Experiment and Extended Activity"
+      ]
     }
   ],
   "completed_ids": [
@@ -700,10 +705,15 @@
     "u00254",
     "u00255",
     "u00257",
+    "u00258",
     "u00259",
     "u00260",
     "u00261",
     "u00262",
-    "u00266"
+    "u00265",
+    "u00266",
+    "u00267",
+    "u00268",
+    "u00269"
   ]
 }
