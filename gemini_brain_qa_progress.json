@@ -1,71 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-18 21:22:06",
-  "completed_count": 125,
-  "fixed_count": 125,
-  "latest_sim_id": "u00165",
+  "updated_at": "2026-10-18 21:25:28",
+  "completed_count": 130,
+  "fixed_count": 130,
+  "latest_sim_id": "u00171",
   "recent_events": [
-    {
-      "sim_id": "u00124",
-      "status": "FIXED",
-      "time": "20:50:26",
-      "issues": [
-        "Unwired action buttons: 'btn_auto_elute_ph' (Auto-Set Optimal Subtype Elution pH) and 'btn_equilibrate_column' (Equilibrate Column with Binding Buffer pH 8.0) were missing event listeners in canvas_js",
-        "Stepper down button failure: clicking '▼' (stepper-btn-down) incremented instead of decrementing values because the down-direction check omitted '▼' and '.stepper-btn-down'",
-        "Observation table column misalignment: when thCount === 6, btnRecord inserted trialCount and shifted all readings, causing data values to mismatch the 6 observation table headers"
-      ]
-    },
-    {
-      "sim_id": "u00122",
-      "status": "FIXED",
-      "time": "20:50:58",
-      "issues": [
-        "Corrected title and header from 'Friction stir welding torque study' to 'Laser beam welding mode transition study' to match experiment aim, apparatus, principles, controls, and telemetry (Q02).",
-        "Fixed misaligned observation table columns in btnRecord: aligned the 7 recorded <td> cells with observation_thead_html (Laser Power, Traverse Speed, Beam Diameter, Power Density, Linear Heat Input, Peak Temperature, Penetration Depth), removing extraneous trial number and unheadered aspect ratio columns (Q18).",
-        "Wired custom action buttons: Toggle Laser Emission (#btn_trigger_laser) to turn laser emission and thermal physics on/off, and Toggle Transverse Cross-Section Profile (#btn_toggle_view) to render dynamic X-Z melt pool depth/width cross-section overlay (Q14, Q27).",
-        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) across all control inputs with [min, max, step] boundary enforcement (Q15, Q29).",
-        "Wired top panel Pause/Run (#btnToggle) and Step (#btnStep) animation controls, and Reset to Defaults (#btnReset) to restore all parameters and clear the observation table (Q06, Q07, Q18).",
-        "Wired experiment mode selector (#experimentSelect) to synchronize Primary (Conduction vs. Keyhole Mode) and Extended (Heat Input & Penetration Analysis) activities (Q08).",
-        "Preserved native MathML unit markup in live telemetry readouts by updating only value child spans without duplicating unit text (Q16, Q31)."
-      ]
-    },
-    {
-      "sim_id": "u00128",
-      "status": "FIXED",
-      "time": "20:53:05",
-      "issues": [
-        "Numbered badge indices in canvas_js were scrambled relative to legend_pills_html (Retort Stand, Beaker, Conductivity Cell, Temp Sensor, and Stirrer Base were pointing to mismatched badge numbers).",
-        "DOM synchronizer in canvas_js did not wire the actual stepper input IDs ('stepper_salinity_grade', 'stepper_dilution_ratio', 'stepper_temperature', 'stepper_immersion_depth').",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) and action buttons ('btn_calibrate_cell', 'btn_toggle_stirrer') lacked active event listeners in canvas_js.",
-        "Telemetry update function failed to update the actual live reading element IDs ('val_reading_conductance', 'val_reading_apparent_ec', 'val_reading_specific_ec', 'val_reading_tds') and omitted TDS calculation.",
-        "Observation table record handler appended 8 misaligned columns with extraneous trial numbers and cell constant instead of the 7 columns defined in observation_thead_html.",
-        "Physics engine relied on hardcoded categorical indices rather than continuous soluble salt content, dilution ratio, and immersion depth inputs."
-      ]
-    },
-    {
-      "sim_id": "u00129",
-      "status": "FIXED",
-      "time": "20:53:31",
-      "issues": [
-        "Unwired telemetry readout elements: readout value spans in HTML use 'val_reading_*' while canvas_js queried 'reading_*', preventing live telemetry readouts from updating.",
-        "Unwired stepper buttons: up/down stepper buttons (.stepper-btn) lacked event listeners, leaving inputs non-adjustable via buttons.",
-        "Unwired action buttons: 'btn_trigger_survey' and 'btn_toggle_dem_view' had no click handlers attached.",
-        "Missing DEM elevation mesh mode: procedure step 6 and the DEM toggle button require viewing a hypsometric DEM elevation mesh, which was absent from drawTerrainBlock.",
-        "Misaligned observation table columns: canvas_js pushed 9 cells into an 8-column table with Sensor Pixel Pitch, Forward Overlap, and GCP Count swapped and an extraneous demZ column."
-      ]
-    },
-    {
-      "sim_id": "u00079",
-      "status": "FIXED",
-      "time": "20:53:38",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 8 table cells with an extraneous path length column against the 7-column observation table header.",
-        "Unwired stepper buttons: clicking stepper increment and decrement buttons (.stepper-btn) did not update control input values or simulation state.",
-        "Unwired action buttons: 'Auto-Zero Baseline with Blank Solvent' (btn_blank_baseline) and 'Run Full Spectral Scan (380–540 nm)' (btn_full_spectrum_scan) lacked click event listeners.",
-        "Observation table header duplicate symbol: columns 3 and 4 in observation_thead_html contained repeated MathML symbol tags.",
-        "Cuvette liquid color at zero concentration: blank solvent (c_X = 0, c_Y = 0) rendered as opaque black instead of clear optical solvent."
-      ]
-    },
     {
       "sim_id": "u00113",
       "status": "FIXED",
@@ -500,6 +439,60 @@
         "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js to update values and dispatch input/change events.",
         "Canvas click hit-testing for the window function buttons on the PSD analyzer panel was misaligned (using offset x=469 and y=185 instead of spectrum analyzer coordinates x=479 and y=165)."
       ]
+    },
+    {
+      "sim_id": "u00168",
+      "status": "FIXED",
+      "time": "21:22:41",
+      "issues": [
+        "Misaligned observation table columns: tr.innerHTML generated 10 columns starting with trialCount and out-of-order resistance values, mismatching the 9 columns of observation_thead_html (C1, R3, R4, R1, R2, Vd, C2, r2, D2).",
+        "Unwired readout updates: setTxt attempted to update elements with data-id names ('reading_detector_voltage', etc.) while the DOM display spans use 'val_reading_*' IDs, causing telemetry readouts to fail silently.",
+        "Unwired action buttons: 'btn_auto_balance' and 'btn_toggle_ac_source' defined in actions_html lacked event listeners in canvas_js.",
+        "Unwired stepper controls: .stepper-btn buttons (▲/▼) had no click listeners to increment/decrement inputs with data-target.",
+        "Missing AC excitation power toggle logic: AC source display, detector voltmeter, and circuit current pulse animation did not react to excitation state."
+      ]
+    },
+    {
+      "sim_id": "u00147",
+      "status": "FIXED",
+      "time": "21:23:06",
+      "issues": [
+        "Unwired stepper up/down buttons: clicking ▲ and ▼ controls did not increment or decrement parameter values.",
+        "Unwired action buttons: 'btn_generate_sequence' (Regenerate Random Binary Sequence) and 'btn_toggle_demod' (Toggle Coherent / Envelope Demodulation) lacked event listeners.",
+        "Observation table column mismatch: table rows prepended an extra recordCount cell, outputting 8 columns against 7 thead headers and causing visual column shifting."
+      ]
+    },
+    {
+      "sim_id": "u00166",
+      "status": "FIXED",
+      "time": "21:23:25",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted 13 columns (including index, Vs, f, and D) into observationTbody, causing extreme misalignment with the 9 defined headers in observation_thead_html",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down had no click handlers attached in canvas_js",
+        "Unwired action button: #btn_auto_balance ('Auto-Balance to Null Point') was completely unhandled in canvas_js",
+        "Disconnected telemetry readouts: computePhysics() targeted 'reading_*' instead of 'val_reading_*' span IDs present in readouts_html, preventing live readout DOM synchronization"
+      ]
+    },
+    {
+      "sim_id": "u00167",
+      "status": "FIXED",
+      "time": "21:24:16",
+      "issues": [
+        "Observation table record button (btnRecord) generated 9 <td> columns for an 8-column <thead>, introducing an unwanted S.No cell and misaligning Detector Voltage, Calculated Capacitance, and Series Resistance.",
+        "Action button #btn_auto_balance ('Auto-Balance Bridge to Null Point') was completely unwired in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) lacked event listeners in canvas_js, preventing interactive adjustment via the ▲/▼ buttons."
+      ]
+    },
+    {
+      "sim_id": "u00171",
+      "status": "FIXED",
+      "time": "21:25:28",
+      "issues": [
+        "Wired missing click listener for Auto-Balance action button (btn_auto_balance) to calculate exact balance values for R4 and C4 and null the detector",
+        "Wired missing click listeners for stepper increment/decrement buttons (.stepper-btn-up and .stepper-btn-down) to update parameter values within bounds",
+        "Enhanced contrast of COM (-) patch wire and terminal collars on the dark canvas from nearly invisible #0f172a to clear slate #64748b and #475569",
+        "Calibrated test specimen capacitance true_cx from 0.19213 µF to 0.192454 µF so the initial unbalance deflection calculation matches the default 45.620 mV readout exactly"
+      ]
     }
   ],
   "completed_ids": [
@@ -613,6 +606,7 @@
     "u00143",
     "u00145",
     "u00146",
+    "u00147",
     "u00148",
     "u00149",
     "u00150",
@@ -627,6 +621,10 @@
     "u00162",
     "u00163",
     "u00164",
-    "u00165"
+    "u00165",
+    "u00166",
+    "u00167",
+    "u00168",
+    "u00171"
   ]
 }
