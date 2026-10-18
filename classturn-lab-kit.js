@@ -110,6 +110,8 @@
           appliedStretchX: 1.0,
           appliedEffW: W,
           appliedEffH: H,
+          cachedStretchX: 0,
+          needsRectMeasure: true,
           lastEffW: 0,
           lastEffH: 0,
           envMinX: Infinity,
@@ -135,16 +137,20 @@
       var canvas = ctx.canvas;
       var W = (canvas && canvas.width) || 700;
       var H = (canvas && canvas.height) || 420;
-      var stretchX = 1.0;
-      if (canvas && canvas.getBoundingClientRect) {
-        var rect = canvas.getBoundingClientRect();
-        if (rect && rect.width > 20 && rect.height > 20 && W > 0 && H > 0) {
-          var cssAspect = rect.width / rect.height;
-          var bufAspect = W / H;
-          stretchX = Math.max(0.5, Math.min(2.5, cssAspect / bufAspect));
+      if (st.needsRectMeasure || !st.cachedStretchX) {
+        var stretchX = 1.0;
+        if (canvas && canvas.getBoundingClientRect) {
+          var rect = canvas.getBoundingClientRect();
+          if (rect && rect.width > 20 && rect.height > 20 && W > 0 && H > 0) {
+            var cssAspect = rect.width / rect.height;
+            var bufAspect = W / H;
+            stretchX = Math.max(0.5, Math.min(2.5, cssAspect / bufAspect));
+          }
         }
+        st.cachedStretchX = stretchX;
+        st.needsRectMeasure = false;
       }
-      var effW = W * stretchX;
+      var effW = W * st.cachedStretchX;
       var effH = H;
       var cfg = window.CLASSTURN_ZOOM_CONFIG || {};
       return {
@@ -153,7 +159,7 @@
         cy: st.activeCy,
         W: W,
         H: H,
-        stretchX: stretchX,
+        stretchX: st.cachedStretchX,
         effW: effW,
         effH: effH,
         minLeader: cfg.minLeader || 48,
@@ -163,15 +169,14 @@
     }
 
     function toScreenPt(ctx, st, lx, ly) {
-      if (!ctx.getTransform) return { x: lx, y: ly };
-      var m = ctx.getTransform();
-      var bm = st.baseMatrix || { a: 1, d: 1 };
-      var dprX = bm.a || 1;
-      var dprY = bm.d || 1;
-      var stretchX = st.appliedStretchX || 1.0;
+      var s = st.appliedScale || st.activeScale || 1;
+      var cx = st.appliedCx !== undefined ? st.appliedCx : st.activeCx;
+      var cy = st.appliedCy !== undefined ? st.appliedCy : st.activeCy;
+      var effW = st.appliedEffW || 700;
+      var effH = st.appliedEffH || 420;
       return {
-        x: ((m.a * lx + m.c * ly + m.e) / dprX) * stretchX,
-        y: (m.b * lx + m.d * ly + m.f) / dprY
+        x: (lx - cx) * s + effW * 0.5,
+        y: (ly - cy) * s + effH * 0.5
       };
     }
 
@@ -187,9 +192,9 @@
       };
     }
 
-    // Record genuine apparatus bodies & meters (ignoring only full-bleed canvas backgrounds, 1D grid lines, and full-width floor strips)
+    // Record genuine apparatus bodies & meters ONLY during initial calibration frames (framesMeasured < 3)
     function recordFilledApparatusBody(ctx, st, x1, y1, x2, y2) {
-      if (!st.zoomApplied) return;
+      if (!st.zoomApplied || st.framesMeasured >= 3) return;
       var canvas = ctx.canvas;
       var W = (canvas && canvas.width) || 700;
       var H = (canvas && canvas.height) || 420;
@@ -205,15 +210,10 @@
       var bw = maxX - minX;
       var bh = maxY - minY;
 
-      // If in leader layer, ignore small badge disks (<= 38px)
       if (st.inLeaderLayer && bw <= 38 && bh <= 38) return;
-
-      // Ignore only full-bleed backgrounds (>94% of canvas width or >92% of height) or 1D horizontal/vertical grid lines (bw < 6 || bh < 6)
       if (bw > W * 0.94 || bh > H * 0.92) return;
       if (bw < 6 || bh < 6) return;
-      // Ignore full-width floor/bench strips along the very bottom (>85% width at y > 82% height)
       if (minY > H * 0.82 && bw > W * 0.85) return;
-      // Clamp to canvas interior [1, W-1] so even components drawn near the edge are captured and pulled inward
       if (maxX < 2 || minX > W - 2 || maxY < 2 || minY > H - 2) return;
       minX = Math.max(1, minX);
       maxX = Math.min(W - 1, maxX);
@@ -237,7 +237,6 @@
       var effW = st.appliedEffW || zcfg0.effW || W;
       var effH = st.appliedEffH || zcfg0.effH || H;
 
-      // Pair curves, beads, badges, and numbers FIRST so we know the exact apparatus TARGET points (tx, ty)
       var curves = st.curves;
       var beads = st.beads;
       var badges = st.badges;
@@ -334,22 +333,23 @@
         var bx = tx + ux * clampedLen;
         var by = ty + uy * clampedLen;
 
-        // Include tight apparatus anchor target (tx, ty) and short-leader badge in scale-invariant unzoomed simulation borders
-        var uTarget = screenToUnzoomed(st, tx, ty);
-        var uOrigBadge = screenToUnzoomed(st, bxOrig, byOrig);
-        var uDx = uOrigBadge.x - uTarget.x;
-        var uDy = uOrigBadge.y - uTarget.y;
-        var uLen = Math.hypot(uDx, uDy);
-        var uBadgeX = uLen > 2 ? uTarget.x + (uDx / uLen) * 38 : uTarget.x;
-        var uBadgeY = uLen > 2 ? uTarget.y + (uDy / uLen) * 38 : uTarget.y;
-        var tMinX = Math.max(2, Math.min(uTarget.x - 18, uBadgeX - 12));
-        var tMaxX = Math.min(W - 2, Math.max(uTarget.x + 18, uBadgeX + 12));
-        var tMinY = Math.max(2, Math.min(uTarget.y - 18, uBadgeY - 12));
-        var tMaxY = Math.min(H - 2, Math.max(uTarget.y + 18, uBadgeY + 12));
-        if (tMinX < st.frameMinX) st.frameMinX = tMinX;
-        if (tMaxX > st.frameMaxX) st.frameMaxX = tMaxX;
-        if (tMinY < st.frameMinY) st.frameMinY = tMinY;
-        if (tMaxY > st.frameMaxY) st.frameMaxY = tMaxY;
+        if (st.framesMeasured < 3) {
+          var uTarget = screenToUnzoomed(st, tx, ty);
+          var uOrigBadge = screenToUnzoomed(st, bxOrig, byOrig);
+          var uDx = uOrigBadge.x - uTarget.x;
+          var uDy = uOrigBadge.y - uTarget.y;
+          var uLen = Math.hypot(uDx, uDy);
+          var uBadgeX = uLen > 2 ? uTarget.x + (uDx / uLen) * 38 : uTarget.x;
+          var uBadgeY = uLen > 2 ? uTarget.y + (uDy / uLen) * 38 : uTarget.y;
+          var tMinX = Math.max(2, Math.min(uTarget.x - 18, uBadgeX - 12));
+          var tMaxX = Math.min(W - 2, Math.max(uTarget.x + 18, uBadgeX + 12));
+          var tMinY = Math.max(2, Math.min(uTarget.y - 18, uBadgeY - 12));
+          var tMaxY = Math.min(H - 2, Math.max(uTarget.y + 18, uBadgeY + 12));
+          if (tMinX < st.frameMinX) st.frameMinX = tMinX;
+          if (tMaxX > st.frameMaxX) st.frameMaxX = tMaxX;
+          if (tMinY < st.frameMinY) st.frameMinY = tMinY;
+          if (tMaxY > st.frameMaxY) st.frameMaxY = tMaxY;
+        }
 
         tx = Math.max(14, Math.min(effW - 14, tx));
         ty = Math.max(14, Math.min(effH - 14, ty));
@@ -364,9 +364,7 @@
         });
       }
 
-      // Compute & Lock Exact Bounding-Box Fit: Math.min((CanvasW - 24) / SimW, (CanvasH - 24) / SimH)
-      // Matches either SimH to CanvasH or SimW to CanvasW (whichever is smaller) with zero truncation and zero stretching
-      if (st.frameMaxX > st.frameMinX && st.frameMaxY > st.frameMinY) {
+      if (st.framesMeasured < 3 && st.frameMaxX > st.frameMinX && st.frameMaxY > st.frameMinY) {
         var expanded = false;
         if (st.frameMinX < st.envMinX - 0.5) { st.envMinX = st.frameMinX; expanded = true; }
         if (st.frameMaxX > st.envMaxX + 0.5) { st.envMaxX = st.frameMaxX; expanded = true; }
@@ -387,19 +385,14 @@
           var targetCy = (st.envMinY + st.envMaxY) * 0.5;
 
           if (st.framesMeasured <= 3 || sizeChanged || targetScale < st.activeScale) {
-            var scaleDiff = Math.abs(targetScale - st.activeScale) + Math.abs(targetCx - st.activeCx) + Math.abs(targetCy - st.activeCy);
             st.activeScale = targetScale;
             st.activeCx = targetCx;
             st.activeCy = targetCy;
-            if (st.framesMeasured === 1 && scaleDiff > 0.01 && typeof ctLastCallback === "function") {
-              try {
-                ctLastCallback(performance.now() + ctTimeOffset);
-                return;
-              } catch (e) {}
-            }
           }
         }
       }
+
+      if (items.length === 0) return;
 
       var zcfg = getZoomCfg(ctx, st);
 
@@ -411,8 +404,8 @@
       var minTargetClearance = 42;
       var margin = 18;
 
-      for (var iter = 0; iter < 18; iter++) {
-        if (iter < 6) {
+      for (var iter = 0; iter < 8; iter++) {
+        if (iter < 3) {
           for (var a = 0; a < items.length; a++) {
             for (var bIdx = a + 1; bIdx < items.length; bIdx++) {
               var ia = items[a];
@@ -498,9 +491,7 @@
         smoothBadges[cur.num] = { bx: cur.bx, by: cur.by };
       }
 
-      if (items.length > 0) {
-        leaderTargets = items;
-      }
+      leaderTargets = items;
 
       ctx.save();
       if (st.baseMatrix && ctx.setTransform) {
@@ -581,10 +572,10 @@
         st.frameMaxX = -Infinity;
         st.frameMinY = Infinity;
         st.frameMaxY = -Infinity;
-        st.curves = [];
-        st.beads = [];
-        st.badges = [];
-        st.texts = [];
+        st.curves.length = 0;
+        st.beads.length = 0;
+        st.badges.length = 0;
+        st.texts.length = 0;
         if (ctx.getTransform && !st.baseMatrix) {
           st.baseMatrix = ctx.getTransform();
         }
@@ -650,7 +641,9 @@
           st.zoomApplied = true;
           return res;
         }
-        recordFilledApparatusBody(this, st, x, y, x + w, y + h);
+        if (st.framesMeasured < 3) {
+          recordFilledApparatusBody(this, st, x, y, x + w, y + h);
+        }
       }
       return origFillRect.call(this, x, y, w, h);
     };
@@ -667,7 +660,9 @@
           this.restore();
           return res;
         }
-        recordFilledApparatusBody(this, st, x, y, x + w, y + h);
+        if (st.framesMeasured < 3) {
+          recordFilledApparatusBody(this, st, x, y, x + w, y + h);
+        }
       }
       return origStrokeRect.call(this, x, y, w, h);
     };
@@ -675,7 +670,16 @@
     proto.beginPath = function () {
       if (isMainSimCanvas(this)) {
         var st = ensureFrameState(this);
-        st.curPath = { ops: [], suppressed: false, minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity };
+        if (!st.curPath) {
+          st.curPath = { ops: [], suppressed: false, minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity };
+        } else {
+          st.curPath.ops.length = 0;
+          st.curPath.suppressed = false;
+          st.curPath.minX = Infinity;
+          st.curPath.maxX = -Infinity;
+          st.curPath.minY = Infinity;
+          st.curPath.maxY = -Infinity;
+        }
       }
       return origBeginPath.call(this);
     };
@@ -691,9 +695,9 @@
     proto.moveTo = function (x, y) {
       if (isMainSimCanvas(this)) {
         var st = ensureFrameState(this);
-        if (st.curPath) {
+        if (st.curPath && st.curPath.ops.length < 3) {
           st.curPath.ops.push({ type: "moveTo", x: x, y: y });
-          expandPathBounds(st.curPath, x, y, x, y);
+          if (st.framesMeasured < 3) expandPathBounds(st.curPath, x, y, x, y);
         }
       }
       return origMoveTo.call(this, x, y);
@@ -703,8 +707,8 @@
       if (isMainSimCanvas(this)) {
         var st = ensureFrameState(this);
         if (st.curPath) {
-          st.curPath.ops.push({ type: "lineTo", x: x, y: y });
-          expandPathBounds(st.curPath, x, y, x, y);
+          if (st.curPath.ops.length < 3) st.curPath.ops.push({ type: "lineTo", x: x, y: y });
+          if (st.framesMeasured < 3) expandPathBounds(st.curPath, x, y, x, y);
         }
       }
       return origLineTo.call(this, x, y);
@@ -713,17 +717,9 @@
     proto.bezierCurveTo = function (cp1x, cp1y, cp2x, cp2y, x, y) {
       if (isMainSimCanvas(this)) {
         var st = ensureFrameState(this);
-        if (st.curPath) {
-          st.curPath.ops.push({
-            type: "bezier",
-            cp1x: cp1x,
-            cp1y: cp1y,
-            cp2x: cp2x,
-            cp2y: cp2y,
-            x: x,
-            y: y
-          });
-          expandPathBounds(st.curPath, x, y, x, y);
+        if (st.curPath && st.curPath.ops.length < 3) {
+          st.curPath.ops.push({ type: "bezier", x: x, y: y });
+          if (st.framesMeasured < 3) expandPathBounds(st.curPath, x, y, x, y);
         }
       }
       return origBezierCurveTo.call(this, cp1x, cp1y, cp2x, cp2y, x, y);
@@ -732,17 +728,9 @@
     proto.quadraticCurveTo = function (cpx, cpy, x, y) {
       if (isMainSimCanvas(this)) {
         var st = ensureFrameState(this);
-        if (st.curPath) {
-          st.curPath.ops.push({
-            type: "bezier",
-            cp1x: cpx,
-            cp1y: cpy,
-            cp2x: cpx,
-            cp2y: cpy,
-            x: x,
-            y: y
-          });
-          expandPathBounds(st.curPath, x, y, x, y);
+        if (st.curPath && st.curPath.ops.length < 3) {
+          st.curPath.ops.push({ type: "bezier", x: x, y: y });
+          if (st.framesMeasured < 3) expandPathBounds(st.curPath, x, y, x, y);
         }
       }
       return origQuadraticCurveTo.call(this, cpx, cpy, x, y);
@@ -752,14 +740,18 @@
       if (isMainSimCanvas(this)) {
         var st = ensureFrameState(this);
         if (st.curPath) {
-          st.curPath.ops.push({
-            type: "arc",
-            x: x,
-            y: y,
-            r: r,
-            full: Math.abs((ea || 0) - (sa || 0)) >= 6.0
-          });
-          expandPathBounds(st.curPath, x - r, y - r, x + r, y + r);
+          if (r <= 18.5 && st.curPath.ops.length < 2) {
+            st.curPath.ops.push({
+              type: "arc",
+              x: x,
+              y: y,
+              r: r,
+              full: Math.abs((ea || 0) - (sa || 0)) >= 6.0
+            });
+          } else if (st.curPath.ops.length < 2) {
+            st.curPath.ops.push({ type: "arcBig" });
+          }
+          if (st.framesMeasured < 3) expandPathBounds(st.curPath, x - r, y - r, x + r, y + r);
         }
       }
       return origArc.call(this, x, y, r, sa, ea, ccw);
@@ -770,8 +762,8 @@
         if (isMainSimCanvas(this)) {
           var st = ensureFrameState(this);
           if (st.curPath) {
-            st.curPath.ops.push({ type: "ellipse" });
-            expandPathBounds(st.curPath, x - rx, y - ry, x + rx, y + ry);
+            if (st.curPath.ops.length < 2) st.curPath.ops.push({ type: "ellipse" });
+            if (st.framesMeasured < 3) expandPathBounds(st.curPath, x - rx, y - ry, x + rx, y + ry);
           }
         }
         return origEllipse.call(this, x, y, rx, ry, rot, sa, ea, ccw);
@@ -782,8 +774,8 @@
       if (isMainSimCanvas(this)) {
         var st = ensureFrameState(this);
         if (st.curPath) {
-          st.curPath.ops.push({ type: "rect" });
-          expandPathBounds(st.curPath, x, y, x + w, y + h);
+          if (st.curPath.ops.length < 2) st.curPath.ops.push({ type: "rect" });
+          if (st.framesMeasured < 3) expandPathBounds(st.curPath, x, y, x + w, y + h);
         }
       }
       return origRect.call(this, x, y, w, h);
@@ -794,8 +786,8 @@
         if (isMainSimCanvas(this)) {
           var st = ensureFrameState(this);
           if (st.curPath) {
-            st.curPath.ops.push({ type: "roundRect" });
-            expandPathBounds(st.curPath, x, y, x + w, y + h);
+            if (st.curPath.ops.length < 2) st.curPath.ops.push({ type: "roundRect" });
+            if (st.framesMeasured < 3) expandPathBounds(st.curPath, x, y, x + w, y + h);
           }
         }
         return origRoundRect.call(this, x, y, w, h, radii);
@@ -859,7 +851,7 @@
             return;
           }
         }
-        if (cp && cp.maxX > cp.minX) {
+        if (st.framesMeasured < 3 && cp && cp.maxX > cp.minX) {
           recordFilledApparatusBody(this, st, cp.minX, cp.minY, cp.maxX, cp.maxY);
         }
       }
@@ -902,7 +894,7 @@
               return;
             }
           }
-          if (cp.maxX > cp.minX) {
+          if (st.framesMeasured < 3 && cp.maxX > cp.minX) {
             recordFilledApparatusBody(this, st, cp.minX, cp.minY, cp.maxX, cp.maxY);
           }
         }
@@ -927,7 +919,7 @@
   })();
 
   // ============================================================================
-  // 0. 100% DISABLE CANVAS MOUSE / CLICK / DRAG / POINTER INTERACTIONS
+  // 0. 100% DISABLE CANVAS MOUSE / CLICK / DRAG INTERACTIONS (ZERO SCROLL/RESIZE LAG)
   // ============================================================================
   (function disableAllCanvasMouseInteractions() {
     function injectNoPointerStyle() {
@@ -935,7 +927,7 @@
         var st = document.createElement("style");
         st.id = "classturn-no-canvas-mouse";
         st.textContent =
-          "#simCanvas, .canvas-wrapper > canvas, .canvas-wrapper, #apparatusLegendBanner, #apparatusLegendBanner * {" +
+          "#simCanvas, .canvas-wrapper > canvas, #apparatusLegendBanner, #apparatusLegendBanner * {" +
           " pointer-events: none !important; cursor: default !important; user-select: none !important; -webkit-user-select: none !important;" +
           "}";
         (document.head || document.documentElement).appendChild(st);
@@ -956,11 +948,23 @@
     } else {
       document.addEventListener("DOMContentLoaded", injectNoPointerStyle);
     }
+
+    var resizeTimer = null;
     window.addEventListener("resize", function () {
-      if (typeof wakeCanvasFrames === "function") {
-        wakeCanvasFrames(3, 0);
-      }
-    });
+      if (resizeTimer) clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        var c = document.getElementById("simCanvas");
+        if (c) {
+          var ctx = c.getContext && c.getContext("2d");
+          if (ctx && ctx.__ctState) {
+            ctx.__ctState.needsRectMeasure = true;
+          }
+        }
+        if (typeof wakeCanvasFrames === "function") {
+          wakeCanvasFrames(1, 0);
+        }
+      }, 60);
+    }, { passive: true });
 
     if (typeof HTMLCanvasElement !== "undefined" && HTMLCanvasElement.prototype.addEventListener) {
       var origCanvasAddEvt = HTMLCanvasElement.prototype.addEventListener;
@@ -981,30 +985,14 @@
       };
     }
 
-    var blockedEvts = [
-      "click", "dblclick", "mousedown", "mousemove", "mouseup",
-      "pointerdown", "pointermove", "pointerup",
-      "touchstart", "touchmove", "touchend",
-      "wheel", "contextmenu", "dragstart"
-    ];
-    function isCanvasZone(el) {
-      if (!el || !el.closest) return false;
-      if (el.closest("#controlsPanel") || el.closest("#resizerGutter") || el.closest("#stageBottom") || el.closest("header") || el.closest("dialog")) {
-        return false;
-      }
-      return Boolean(
-        el.id === "simCanvas" ||
-        el.tagName === "CANVAS" ||
-        el.closest(".canvas-wrapper") ||
-        el.closest("#stageViewport") ||
-        el.closest("#apparatusLegendBanner")
-      );
-    }
-    for (var i = 0; i < blockedEvts.length; i++) {
+    // Only block direct clicks/mousedown on the canvas element itself (never block wheel/scroll or resizerGutter mousemove)
+    var blockedClickEvts = ["click", "dblclick", "mousedown", "pointerdown", "contextmenu", "dragstart"];
+    for (var i = 0; i < blockedClickEvts.length; i++) {
       window.addEventListener(
-        blockedEvts[i],
+        blockedClickEvts[i],
         function (e) {
-          if (!e._ctAllowSynthetic && isCanvasZone(e.target)) {
+          var el = e.target;
+          if (!e._ctAllowSynthetic && el && (el.id === "simCanvas" || el.tagName === "CANVAS")) {
             e.stopImmediatePropagation();
             e.stopPropagation();
             e.preventDefault();
@@ -1016,7 +1004,7 @@
   })();
 
   // ============================================================================
-  // UNIVERSAL CONTROL & BUTTON ENGINE (100% Button Coverage Across All 2,123 Sims)
+  // UNIVERSAL CONTROL & BUTTON ENGINE (SINGLE-RAF DEDUPLICATED — ZERO DUPLICATE LOOPS)
   // ============================================================================
   var origRAF = window.requestAnimationFrame
     ? window.requestAnimationFrame.bind(window)
@@ -1029,6 +1017,7 @@
   var ctHeldCallbacks = [];
   var ctLastCallback = null;
   var ctPollActive = false;
+  var ctRafScheduled = false;
   var ctActiveSweepTimer = null;
   var ctProcIndex = -1;
 
@@ -1062,11 +1051,12 @@
     }
   }
 
+  var ctCachedReadouts = null;
   function ctApplyReadoutOverrides() {
-    var rList = document.querySelectorAll(".readout-val");
-    for (var i = 0; i < rList.length; i++) {
-      var r = rList[i];
-      if (r._ctOverrideText) {
+    if (!ctCachedReadouts) return;
+    for (var i = 0; i < ctCachedReadouts.length; i++) {
+      var r = ctCachedReadouts[i];
+      if (r._ctOverrideText && r._ctLastText !== r._ctOverrideText) {
         r.textContent = r._ctOverrideText;
       }
     }
@@ -1086,10 +1076,16 @@
       }
       return 0;
     }
+    // Prevent duplicate parallel RAF loops from ever accumulating
+    if (ctRafScheduled) {
+      return 0;
+    }
+    ctRafScheduled = true;
     if (ctPaused && ctStepFrames > 0) {
       ctStepFrames--;
     }
     return origRAF(function (now) {
+      ctRafScheduled = false;
       cb(now + ctTimeOffset);
       ctApplyReadoutOverrides();
     });
@@ -1099,9 +1095,11 @@
     if (advanceSimMs) {
       ctTimeOffset += advanceSimMs;
     }
-    ctStepFrames = Math.max(ctStepFrames, numFrames || 2);
-    if (ctHeldCallbacks.length === 0 && ctLastCallback) {
+    ctStepFrames = Math.max(ctStepFrames, numFrames || 1);
+    if (!ctRafScheduled && ctHeldCallbacks.length === 0 && ctLastCallback) {
+      ctRafScheduled = true;
       origRAF(function (now) {
+        ctRafScheduled = false;
         try {
           ctLastCallback(now + ctTimeOffset);
           ctApplyReadoutOverrides();
@@ -1187,6 +1185,44 @@
     return Math.max(meta.min, Math.min(meta.max, snapped));
   }
 
+  function installNoThrashReadoutGuard(el) {
+    if (!el || el._ctGuardInstalled) return;
+    el._ctGuardInstalled = true;
+    el._ctLastText = el.textContent;
+    var nodeProto = typeof Node !== "undefined" ? Node.prototype : null;
+    var htmlProto = typeof HTMLElement !== "undefined" ? HTMLElement.prototype : null;
+    var tcDesc = nodeProto ? Object.getOwnPropertyDescriptor(nodeProto, "textContent") : null;
+    var itDesc = htmlProto ? Object.getOwnPropertyDescriptor(htmlProto, "innerText") : null;
+    if (tcDesc && tcDesc.set && tcDesc.get) {
+      Object.defineProperty(el, "textContent", {
+        get: function () { return tcDesc.get.call(this); },
+        set: function (v) {
+          var s = String(v === undefined || v === null ? "" : v);
+          if (this._ctLastText === s) return;
+          this._ctLastText = s;
+          tcDesc.set.call(this, s);
+        },
+        configurable: true
+      });
+    }
+    if (itDesc && itDesc.set && itDesc.get) {
+      Object.defineProperty(el, "innerText", {
+        get: function () { return this._ctLastText !== undefined ? this._ctLastText : itDesc.get.call(this); },
+        set: function (v) {
+          var s = String(v === undefined || v === null ? "" : v);
+          if (this._ctLastText === s) return;
+          this._ctLastText = s;
+          if (tcDesc && tcDesc.set) {
+            tcDesc.set.call(this, s);
+          } else {
+            itDesc.set.call(this, s);
+          }
+        },
+        configurable: true
+      });
+    }
+  }
+
   function initLabKit() {
     var canvas = document.getElementById("simCanvas");
     if (!canvas) return;
@@ -1199,6 +1235,25 @@
     if (oldVoice) oldVoice.remove();
     var oldHint = document.getElementById("classturnTargetHint");
     if (oldHint) oldHint.remove();
+
+    // Forward mouse wheel over left stage (outside observation table) to #controlsPanel so scrolling works anywhere on the page
+    var stageContainer = document.getElementById("stageContainer") || document.querySelector(".stage-fixed");
+    var controlsPanelEl = document.getElementById("controlsPanel") || document.querySelector(".panel-right");
+    if (stageContainer && controlsPanelEl && !stageContainer.dataset.ctWheelWired) {
+      stageContainer.dataset.ctWheelWired = "1";
+      stageContainer.addEventListener("wheel", function (e) {
+        if (e.target && e.target.closest && e.target.closest("#stageBottom")) return;
+        controlsPanelEl.scrollTop += e.deltaY;
+      }, { passive: true });
+    }
+
+    // Ensure resizerGutter re-measures canvas rect smoothly after drag
+    window.addEventListener("mouseup", function () {
+      var ctx = canvas.getContext && canvas.getContext("2d");
+      if (ctx && ctx.__ctState) {
+        ctx.__ctState.needsRectMeasure = true;
+      }
+    }, { passive: true });
 
     // Normalize top-right badges: ONLY 'Science verified' / 'Science not verified' and '✓ Benchmarked (±0.5%)' / 'Not benchmarked'
     var revBadge = document.getElementById("reviewBadge");
@@ -1216,10 +1271,12 @@
       }
     }
 
-    // Save initial default values for all steppers and readouts
+    // Save initial default values for all steppers and readouts + install no-thrash DOM guard
     var steppers = getAllSteppers();
     var readouts = Array.prototype.slice.call(document.querySelectorAll(".readout-val"));
+    ctCachedReadouts = readouts;
     for (var ri = 0; ri < readouts.length; ri++) {
+      installNoThrashReadoutGuard(readouts[ri]);
       if (!readouts[ri].dataset.ctDefaultHtml) {
         readouts[ri].dataset.ctDefaultHtml = readouts[ri].innerHTML;
       }
@@ -1294,16 +1351,13 @@
           if (sInp._ctInGuard) return;
           sInp._ctInGuard = true;
           var userVal = sInp.value;
-          try {
-            sInp.focus();
-          } catch (e) {}
           var preSnap = readouts.map(function (r) { return r.textContent; }).join("|");
           var numVal = parseFloat(userVal);
           var phaseShift = 36 + (isNaN(numVal) ? 1 : Math.abs(numVal) * 0.43);
-          wakeCanvasFrames(3, phaseShift);
+          wakeCanvasFrames(1, phaseShift);
 
-          setTimeout(function () {
-            // 1. If an auto-rotating loop overwrote the user's manual angle/position input, lock the user's value
+          if (sInp._ctTimer) clearTimeout(sInp._ctTimer);
+          sInp._ctTimer = setTimeout(function () {
             if (sInp.value !== userVal) {
               sInp.value = userVal;
               var tBtn = document.getElementById("btnToggle") || document.getElementById("btnPause") || document.getElementById("btnPlayPause");
@@ -1311,9 +1365,8 @@
                 tBtn._ctAutoPausedForAngle = true;
                 tBtn.click();
               }
-              wakeCanvasFrames(2, 16);
+              wakeCanvasFrames(1, 16);
             }
-            // 2. If no live reading changed (e.g. companion input at 0 or secondary parameter), ensure live readings & companion update
             var postSnap = readouts.map(function (r) { return r.textContent; }).join("|");
             if (postSnap === preSnap && readouts.length > 0) {
               var defVal = parseFloat(sInp.dataset.ctDefault) || 1;

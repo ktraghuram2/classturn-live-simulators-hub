@@ -216,12 +216,14 @@ def main():
         with ThreadPoolExecutor(max_workers=100) as ex:
             built_meta = list(ex.map(build_one, rows))
 
-        # Copy live_panel.html as both dist/live_panel.html and dist/index.html
-        live_panel_src = ROOT / "live_panel.html"
-        if live_panel_src.exists():
-            shutil.copy2(live_panel_src, OUT_DIR / "live_panel.html")
-            shutil.copy2(live_panel_src, OUT_DIR / "index.html")
-            print(f"Copied live_panel.html to {OUT_DIR / 'live_panel.html'} and {OUT_DIR / 'index.html'}")
+        # Copy live_panel.html as both dist/live_panel.html and dist/index.html + add .nojekyll
+        (OUT_DIR / ".nojekyll").write_text("", encoding="utf-8")
+        for extra in ["live_panel.html", "universal_simulator.html", "legacy_layout_skeleton.html", "simulator_qa_master_questions.json", "database_summary.json"]:
+            src_f = ROOT / extra
+            if src_f.exists():
+                shutil.copy2(src_f, OUT_DIR / extra)
+        if (ROOT / "live_panel.html").exists():
+            shutil.copy2(ROOT / "live_panel.html", OUT_DIR / "index.html")
         print(f"Successfully built all {len(built_meta):,} HTML pages + live_panel.html into {OUT_DIR}")
 
     conn.close()
