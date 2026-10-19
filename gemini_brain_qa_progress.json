@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:14:07",
-  "completed_count": 1938,
-  "fixed_count": 1738,
-  "latest_sim_id": "u01618",
+  "updated_at": "2026-10-19 18:15:21",
+  "completed_count": 1943,
+  "fixed_count": 1742,
+  "latest_sim_id": "u01579",
   "recent_events": [
-    {
-      "sim_id": "u01439",
-      "status": "FIXED",
-      "time": "18:04:41",
-      "issues": [
-        "HTML action buttons (act_enqueue, act_dequeue, act_peek) were unwired in canvas_js due to ID mismatch",
-        "HTML stepper increment and decrement buttons (▲/▼) lacked event listeners in canvas_js",
-        "Observation table columns were misaligned with respect to observation_thead_html (Operand Data, Queue Length, Front/Rear Addresses, and Heap Memory columns out of order)",
-        "Missing operational state telemetry tracking (lastOperation, lastOperand) for logged observation entries"
-      ]
-    },
-    {
-      "sim_id": "u01467",
-      "status": "FIXED",
-      "time": "18:04:44",
-      "issues": [
-        "Observation table recorded only 6 columns instead of 8, causing severe column header misalignment with blank diameter, speed, and flow stress.",
-        "Cycle stroke action button (#btn_cycle_stroke) was not wired to animation play/pause control.",
-        "Toggle FEA overlay action button (#btn_toggle_fea_view) was not wired to toggle plastic strain gradient and contact pressure nip zones.",
-        "Stepper up/down adjustment buttons (.stepper-btn) were not wired to increment/decrement input values."
-      ]
-    },
-    {
-      "sim_id": "u01141",
-      "status": "FIXED",
-      "time": "18:04:55",
-      "issues": [
-        "Observation table record button populated 9 cells (including redundant trial counter and message density) into a 7-column header table, misaligning all recorded data rows.",
-        "Action buttons ('btn_dispatch_sequence' and 'btn_validate_architecture') had no click handlers attached.",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update target control inputs and dispatch events."
-      ]
-    },
-    {
-      "sim_id": "u01435",
-      "status": "FIXED",
-      "time": "18:04:56",
-      "issues": [
-        "Unwired action buttons: btn_tare_balance and btn_smoke_streamlines were present in actions_html but had no click event listeners in canvas_js",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down were missing click event listeners in canvas_js",
-        "Misaligned observation table: btnRecord inserted 11 columns into observationTbody whereas observation_thead_html has exactly 7 columns, omitting Dynamic Pressure q and adding unlisted columns (rowCount, L, rho, Re, v_t)",
-        "Telemetry update unit erasure: setTelemetryText replaced the element textContent directly, wiping out the MathML unit markup child span"
-      ]
-    },
-    {
-      "sim_id": "u01166",
-      "status": "ERROR",
-      "time": "18:05:30",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01286",
-      "status": "ERROR",
-      "time": "18:05:56",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01169",
       "status": "FIXED",
@@ -392,6 +333,63 @@
       "status": "PASS",
       "time": "18:14:06",
       "issues": []
+    },
+    {
+      "sim_id": "u01603",
+      "status": "ERROR",
+      "time": "18:14:14",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01548",
+      "status": "FIXED",
+      "time": "18:14:20",
+      "issues": [
+        "Fixed unclosed HTML tags and verbose MathML character-by-character 'dimensionless' unit rendering in principles_list_html, and restored the complete second electrical equation for lamp voltage and current.",
+        "Fixed broken nested quote attributes in data-unit inside readouts_html.",
+        "Wired #btn_invert_switches and #btn_walk_staircase action buttons as well as stepper up/down buttons and reset button in canvas_js.",
+        "Fixed observation table column misalignment in canvas_js by outputting 5 <td> cells matching the 5 <th> columns in observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u01586",
+      "status": "PASS",
+      "time": "18:14:43",
+      "issues": []
+    },
+    {
+      "sim_id": "u01626",
+      "status": "FIXED",
+      "time": "18:15:07",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01628",
+      "status": "FIXED",
+      "time": "18:15:18",
+      "issues": [
+        "Raw LaTeX (I_%) and (G_%) in procedure_section_html Step 5 rectified with proper MathML notation.",
+        "Missing mathematical symbols W and E in observation_thead_html columns for Word Size and Expect Value added.",
+        "Observation table column data in btnRecord event listener was misaligned with the 9 thead columns due to an unindexed trialCount offset and surplus columns.",
+        "Unwired stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) wired to respective input elements with reactive event dispatching.",
+        "Unwired primary action button #btn_run_blast wired to trigger the BLAST alignment animation and physics refresh."
+      ]
+    },
+    {
+      "sim_id": "u01579",
+      "status": "FIXED",
+      "time": "18:15:21",
+      "issues": [
+        "Unwired action buttons: btn_thermalize and btn_toggle_grid had no event listeners implemented in canvas_js",
+        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down buttons lacked click handlers to adjust stepper input values",
+        "Misaligned observation table columns: btnRecord inserted 8 table cells while the observation table header defines 6 columns",
+        "Observation table DOM ID targets: btnRecord queried un-prefixed IDs like reading_potential_energy instead of val_reading_potential_energy",
+        "Cell-list grid rendering did not respect the toggle state controlled by btn_toggle_grid"
+      ]
     }
   ],
   "completed_ids": [
@@ -1695,6 +1693,7 @@
     "u01544",
     "u01545",
     "u01546",
+    "u01548",
     "u01549",
     "u01550",
     "u01551",
@@ -1724,11 +1723,13 @@
     "u01576",
     "u01577",
     "u01578",
+    "u01579",
     "u01580",
     "u01581",
     "u01582",
     "u01584",
     "u01585",
+    "u01586",
     "u01588",
     "u01590",
     "u01591",
@@ -1763,7 +1764,9 @@
     "u01623",
     "u01624",
     "u01625",
+    "u01626",
     "u01627",
+    "u01628",
     "u01629",
     "u01630",
     "u01631",
