@@ -1,59 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:04:08",
-  "completed_count": 1312,
-  "fixed_count": 1234,
-  "latest_sim_id": "u01644",
+  "updated_at": "2026-10-19 10:05:16",
+  "completed_count": 1317,
+  "fixed_count": 1237,
+  "latest_sim_id": "u01647",
   "recent_events": [
-    {
-      "sim_id": "u01604",
-      "status": "FIXED",
-      "time": "09:50:00",
-      "issues": [
-        "Unwired action buttons: 'btn_evaluate_axioms' and 'btn_generate_problem' were not wired in canvas_js",
-        "Misaligned observation table: canvas_js logged 9 columns containing recordCounter and dampingFactor instead of the 8 specified observation table header columns (Candidate, Time Lag, Rx(tau), Rx(-tau), Rx(0), Symmetry Error, Bound Margin, Validity Status)"
-      ]
-    },
-    {
-      "sim_id": "u01600",
-      "status": "ERROR",
-      "time": "09:50:00",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01609",
-      "status": "PASS",
-      "time": "09:51:33",
-      "issues": []
-    },
-    {
-      "sim_id": "u01605",
-      "status": "PASS",
-      "time": "09:51:53",
-      "issues": []
-    },
-    {
-      "sim_id": "u01612",
-      "status": "FIXED",
-      "time": "09:52:13",
-      "issues": [
-        "Unwired evaluation action button: id 'btn_run_eval' in actions_html was not queried in canvas_js",
-        "Misaligned observation table columns: observation_thead_html defined 5 columns (X, Y, Prototype, Containment Status B, Distance to Nearest Edge dB) but canvas_js appended 7 columns with mismatched headers"
-      ]
-    },
-    {
-      "sim_id": "u01610",
-      "status": "FIXED",
-      "time": "09:52:31",
-      "issues": [
-        "Telemetry DOM bindings in canvas_js queried reading_* instead of val_reading_*, preventing live telemetry readouts from updating.",
-        "Observation table record button in canvas_js inserted 8 table cells with an unheaded trial index and misaligned order, mismatching the 6 columns in observation_thead_html.",
-        "Control action buttons (btn_cycle_voting_system, btn_recenter_candidates, btn_polarize_voters) had no event listeners wired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js."
-      ]
-    },
     {
       "sim_id": "u01611",
       "status": "FIXED",
@@ -356,6 +307,60 @@
         "Misaligned observation table columns: btnRecord recorded 8 columns (including trial counter and motor speed) under a 6-column header; aligned to log the exact 6 columns defined in observation_thead_html (Input A, Input B, Output Y, Output Voltage, Green LED Status, Wiper Motion Status).",
         "Unwired action button: #btn_cycle_inputs was not wired in canvas_js; wired it to cycle through all 4 AND gate truth table states (00 -> 01 -> 10 -> 11 -> 00) and sync with stepper inputs.",
         "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down were not wired; added event listeners to update target inputs and trigger input/change events."
+      ]
+    },
+    {
+      "sim_id": "u01650",
+      "status": "FIXED",
+      "time": "10:05:16",
+      "issues": [
+        "Aligned observation table columns in canvas_js with observation_thead_html (removed extraneous trialCounter column and ordered Treatment Media, Incubation Time, Initial Wound Width, Residual Wound Width, Percentage Wound Closure, Cell Migration Velocity).",
+        "Wired action button #btn_capture_micrograph to trigger observation recording alongside #btnRecord.",
+        "Wired stepper input change and input events to update live telemetry readouts dynamically."
+      ]
+    },
+    {
+      "sim_id": "u01648",
+      "status": "PASS",
+      "time": "10:05:16",
+      "issues": []
+    },
+    {
+      "sim_id": "u01646",
+      "status": "ERROR",
+      "time": "10:05:16",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01649",
+      "status": "PASS",
+      "time": "10:05:16",
+      "issues": []
+    },
+    {
+      "sim_id": "u01651",
+      "status": "FIXED",
+      "time": "10:05:16",
+      "issues": [
+        "canvas_js was truncated/incomplete with an unclosed load event listener and zero canvas 2D rendering or animation logic",
+        "Missing visual rendering of all 4 apparatus elements (Microtiter plate reader, 96-well microtiter plate, CO2 incubator, Laminar air flow) with 3D depth and leader badges on dark #090d16 canvas",
+        "Action buttons 'btn_read_plate' and 'btn_solubilize_formazan' were unwired with no click handlers",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners",
+        "Observation table record button inserted 7 columns while observation_thead_html defined only 5 columns, causing column misalignment"
+      ]
+    },
+    {
+      "sim_id": "u01647",
+      "status": "FIXED",
+      "time": "10:05:16",
+      "issues": [
+        "Corrected simulator title mismatch: title_plain and header_title_html erroneously indicated 'Coagulase Test' while the experiment pedagogical flow, principles, apparatus, and simulation model represent the Catalase Test (Slide and Tube Methods).",
+        "Fixed observation table misalignment: swapped columns 1 and 2 in recorded rows so Bacterial Strain and Testing Method match the observation_thead_html header order.",
+        "Fixed observation table column count mismatch: removed extra 8th result column so recorded rows align with the 7-column observation_thead_html structure.",
+        "Wired interactive action buttons: attached click handlers for 'btn_flame_loop' (Flame Sterilize Loop) and 'btn_dispense_reagent' (Dispense 3% H2O2 Reagent).",
+        "Wired stepper controls: attached click handlers for all .stepper-btn up and down buttons to correctly increment and decrement their target input values within min/max bounds."
       ]
     }
   ],
@@ -1671,6 +1676,11 @@
     "u01642",
     "u01643",
     "u01644",
-    "u01645"
+    "u01645",
+    "u01647",
+    "u01648",
+    "u01649",
+    "u01650",
+    "u01651"
   ]
 }
