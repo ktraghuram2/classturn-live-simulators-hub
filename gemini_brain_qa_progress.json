@@ -1,72 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:03:09",
-  "completed_count": 1307,
-  "fixed_count": 1231,
-  "latest_sim_id": "u01639",
+  "updated_at": "2026-10-19 10:04:08",
+  "completed_count": 1312,
+  "fixed_count": 1234,
+  "latest_sim_id": "u01644",
   "recent_events": [
-    {
-      "sim_id": "u01607",
-      "status": "FIXED",
-      "time": "09:49:57",
-      "issues": [
-        "Telemetry readouts looked for non-existent IDs instead of val_reading_* spans, preventing live readout updates",
-        "Action buttons (btn_open_all_doors, btn_close_all_doors, btn_toggle_arm) were unwired in canvas_js",
-        "Stepper increment/decrement buttons were unhandled in canvas_js",
-        "Observation table columns in canvas_js had 10 columns mismatched against the 8 headers in observation_thead_html",
-        "Legend pills only had 5 pills while canvas apparatus and badges have 6 distinct apparatus components"
-      ]
-    },
-    {
-      "sim_id": "u01597",
-      "status": "FIXED",
-      "time": "09:49:57",
-      "issues": [
-        "Misaligned observation table columns in btnRecord: extra Vin column shifted all data columns, and displacement constant G was missing.",
-        "Unwired action button btn_clamp_coil ('Electromagnetic Clamp'): added toggle handler and coil clamping integration.",
-        "Unwired stepper buttons (.stepper-btn-up and .stepper-btn-down): added click event listeners to increment/decrement stepper inputs."
-      ]
-    },
-    {
-      "sim_id": "u01602",
-      "status": "FIXED",
-      "time": "09:49:57",
-      "issues": [
-        "Unwired action buttons: 'btn_inject_disturbance' and 'btn_autotune_pid' were missing event listeners in canvas_js.",
-        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' had no click handlers to adjust input values.",
-        "Observation table column misalignment: observation_thead_html has 6 data columns but btnRecord generated 7 td elements including an unaligned serial index.",
-        "Disturbance dynamics: metabolic heat surge was not modeled in fermenter thermal balance equations."
-      ]
-    },
-    {
-      "sim_id": "u01599",
-      "status": "FIXED",
-      "time": "09:49:57",
-      "issues": [
-        "Unwired zero-null alignment action button: #btn_zero_align lacked a click event listener in canvas_js",
-        "Unwired stepper buttons: .stepper-btn elements (▲ and ▼) lacked click handlers to increment or decrement control inputs",
-        "Observation table column mismatch: canvas_js generated 9 table cells for 6 observation_thead_html columns, causing table misalignment",
-        "Apparatus badges and leader lines mismatch: badge numbers and target coordinates in canvas_js did not correspond to legend_pills_html and apparatus_html"
-      ]
-    },
-    {
-      "sim_id": "u01606",
-      "status": "FIXED",
-      "time": "09:50:00",
-      "issues": [
-        "Misaligned observation table data columns in canvas_js: Combined Loss, MSE, and L1 values were mapped out-of-order relative to the HTML thead headers.",
-        "Unwired action buttons in canvas_js: 'btn_cycle_class' (cycling Fashion-MNIST item classes) and 'btn_toggle_denoising' (toggling autoencoder denoising filter pipeline) had no event listeners.",
-        "Unwired stepper increment and decrement buttons in canvas_js: '.stepper-btn' controls were not bound to stepper inputs."
-      ]
-    },
-    {
-      "sim_id": "u01603",
-      "status": "ERROR",
-      "time": "09:50:00",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01604",
       "status": "FIXED",
@@ -369,6 +307,55 @@
         "Observation table columns were misaligned: canvas_js generated 9 td elements for a 5-column table header (Standard Torque, Conditioned Voltage, Measured Torque, Measurement Error, Linearity Deviation)",
         "Action buttons 'Auto-Null Zero Offset' (btn_auto_zero) and 'Auto-Calibrate Full-Scale Span' (btn_auto_span) were unwired in canvas_js",
         "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01637",
+      "status": "PASS",
+      "time": "10:03:29",
+      "issues": []
+    },
+    {
+      "sim_id": "u01642",
+      "status": "FIXED",
+      "time": "10:03:35",
+      "issues": [
+        "Misaligned observation table: recording listener inserted 9 columns into a 5-column table",
+        "Swapped Style 2 leader line badges: Badge 4 labeled the Compaction Rammer and Badge 5 labeled the Surcharge Weight, conflicting with Legend Pills 4 (Surcharge Weight) and 5 (Compaction Rammer)",
+        "Unwired interactive controls: 'btn_motor_drive' (motorized platen drive), 'btn_tare_gauges' (zeroing/tare), and stepper buttons lacked event listeners"
+      ]
+    },
+    {
+      "sim_id": "u01645",
+      "status": "PASS",
+      "time": "10:03:36",
+      "issues": []
+    },
+    {
+      "sim_id": "u01640",
+      "status": "ERROR",
+      "time": "10:03:49",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01643",
+      "status": "FIXED",
+      "time": "10:04:05",
+      "issues": [
+        "Fixed unrendered raw LaTeX snippet 'VS_{<math...>,D}' in principles_summary_html to well-formed MathML '<math><mrow><mi>V</mi><msub><mi>S</mi><mrow><mi>H</mi><mo>,</mo><mi>D</mi></mrow></msub></mrow></math>'.",
+        "Converted plain-text partial order relation '(≥_g)' in principles_summary_html to standard inline MathML '(<math><mrow><msub><mo>≥</mo><mi>g</mi></msub></mrow></math>)'."
+      ]
+    },
+    {
+      "sim_id": "u01644",
+      "status": "FIXED",
+      "time": "10:04:08",
+      "issues": [
+        "Misaligned observation table columns: btnRecord recorded 8 columns (including trial counter and motor speed) under a 6-column header; aligned to log the exact 6 columns defined in observation_thead_html (Input A, Input B, Output Y, Output Voltage, Green LED Status, Wiper Motion Status).",
+        "Unwired action button: #btn_cycle_inputs was not wired in canvas_js; wired it to cycle through all 4 AND gate truth table states (00 -> 01 -> 10 -> 11 -> 00) and sync with stepper inputs.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down were not wired; added event listeners to update target inputs and trigger input/change events."
       ]
     }
   ],
@@ -1678,7 +1665,12 @@
     "u01633",
     "u01634",
     "u01635",
+    "u01637",
     "u01639",
-    "u01641"
+    "u01641",
+    "u01642",
+    "u01643",
+    "u01644",
+    "u01645"
   ]
 }
