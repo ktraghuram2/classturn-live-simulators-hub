@@ -1,72 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:27:41",
-  "completed_count": 1582,
-  "fixed_count": 1443,
-  "latest_sim_id": "u02008",
+  "updated_at": "2026-10-19 15:28:25",
+  "completed_count": 1587,
+  "fixed_count": 1448,
+  "latest_sim_id": "u02012",
   "recent_events": [
-    {
-      "sim_id": "u01969",
-      "status": "FIXED",
-      "time": "14:45:06",
-      "issues": [
-        "Misaligned observation table columns: row innerHTML had 5 mismatched columns instead of the 6 columns defined in observation_thead_html (Start Index, Stop Index, Step Stride, Subarray Length, Argmax Index, Memory Span).",
-        "Unwired action buttons: 'btn_execute_slice' and 'btn_run_argmax' lacked click event listeners to execute and visually highlight memory operations.",
-        "Unwired stepper up/down buttons: .stepper-btn controls were not wired to increment/decrement input values and dispatch change events.",
-        "Missing dynamic 3D specular highlight and action pulse feedback on memory buffer cells and reduction meter."
-      ]
-    },
-    {
-      "sim_id": "u01966",
-      "status": "FIXED",
-      "time": "14:45:16",
-      "issues": [
-        "Observation table columns in canvas_js were misaligned with observation_thead_html (active number system column was omitted, shifting decimal, binary, and carry results into mismatched table headers).",
-        "Action buttons (btn_step_arithmetic and btn_instant_compute) and stepper up/down buttons were unwired in canvas_js.",
-        "Experiment selection dropdown (experimentSelect) was unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01963",
-      "status": "FIXED",
-      "time": "14:45:30",
-      "issues": [
-        "Observation table record button generated 10 columns while observation_thead_html defines only 8 columns.",
-        "Telemetry sync in canvas_js queried 'reading_*' element IDs instead of the actual rendered 'val_reading_*' span IDs.",
-        "Stepper increment/decrement buttons (.stepper-btn) were not wired to update inputs and dispatch events.",
-        "Action buttons #btn_run_centrifuge and #btn_measure_absorbance were completely unwired.",
-        "Legend pills 7 and 8 were inverted with respect to spatial layout and leader badges 7 and 8.",
-        "Badge 8 anchor pointed to empty bench space instead of the quartz cuvette."
-      ]
-    },
-    {
-      "sim_id": "u01967",
-      "status": "ERROR",
-      "time": "14:46:01",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01972",
-      "status": "FIXED",
-      "time": "14:46:02",
-      "issues": [
-        "Telemetry DOM element selectors targeted the parent li items ('reading_*') instead of value spans ('val_reading_*'), causing textContent assignment to wipe out the headings and units",
-        "Action buttons ('btn_strike_hammer', 'btn_toggle_harmonic', 'btn_center_nodes') were not wired up to any event listeners in canvas_js",
-        "Stepper increment and decrement buttons ('.stepper-btn') were unwired in canvas_js, preventing manual stepping",
-        "Experiment mode dropdown ('experimentSelect') was not wired in canvas_js",
-        "Boundary node was permanently driven harmonically without allowing the user to pause or observe unperturbed impulse propagation from hammer strikes"
-      ]
-    },
-    {
-      "sim_id": "u01968",
-      "status": "FIXED",
-      "time": "14:46:08",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
     {
       "sim_id": "u01964",
       "status": "ERROR",
@@ -392,6 +330,65 @@
       "status": "PASS",
       "time": "15:27:41",
       "issues": []
+    },
+    {
+      "sim_id": "u01998",
+      "status": "FIXED",
+      "time": "15:27:47",
+      "issues": [
+        "Unwired action buttons: btn_cycle_model and btn_seed_equilibrium lacked click logic to cycle ecological regimes and seed analytical equilibrium coordinates.",
+        "Unwired precision stepper buttons: clicking up/down stepper buttons (.stepper-btn-up, .stepper-btn-down) did not increment or decrement input values.",
+        "Misaligned observation table columns: btnRecord prepended rowCount into an 8-column header with no row number, omitted conversion factor c, and shifted data entries.",
+        "Missing Negative Binomial parasitoid calculation: P1_NB and state.p_nb were absent from recursion equations.",
+        "Low contrast insect outlines: host insects used dark #1e293b outlines against dark microcosm chamber background."
+      ]
+    },
+    {
+      "sim_id": "u02011",
+      "status": "FIXED",
+      "time": "15:28:08",
+      "issues": [
+        "Wired action buttons btn_add_peroxide_and_start and btn_stir_mixture to control reaction playback and stirring animation",
+        "Wired stepper up/down buttons (.stepper-btn) to increment/decrement input values and trigger input events",
+        "Aligned observation table recorded row columns to match the 6 columns in the observation table header"
+      ]
+    },
+    {
+      "sim_id": "u02009",
+      "status": "FIXED",
+      "time": "15:28:13",
+      "issues": [
+        "Observation table record button in canvas_js generated 7 columns instead of 8, omitting the Trial Number and misaligning parameter values with table headers",
+        "Action buttons btn_auto_estimate_period and btn_toggle_gibbs_marker were present in HTML but unhandled and unwired in canvas_js",
+        "Stepper increment and decrement buttons (stepper-btn-up and stepper-btn-down) lacked event listeners in canvas_js, preventing arrow adjustment of simulation controls",
+        "Missing visual overlays on oscilloscope for Gibbs phenomenon overshoot measurement and autocorrelation fundamental period detection"
+      ]
+    },
+    {
+      "sim_id": "u01999",
+      "status": "ERROR",
+      "time": "15:28:23",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02006",
+      "status": "FIXED",
+      "time": "15:28:24",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u02012",
+      "status": "FIXED",
+      "time": "15:28:25",
+      "issues": [
+        "Action button #btn_inject_geodesic_pulse was unhandled in canvas_js; wired it to inject a stream of test particle geodesics",
+        "Stepper increment/decrement buttons (.stepper-btn) had no click handlers bound in canvas_js; added handler to step mass, charge, and radius inputs",
+        "Fragmented spacetime interval equation and raw ASCII/LaTeX horizon notation (r_+, r_-) in principles_summary_html and procedure_section_html replaced with clean inline MathML"
+      ]
     }
   ],
   "completed_ids": [
@@ -1970,12 +1967,17 @@
     "u01995",
     "u01996",
     "u01997",
+    "u01998",
     "u02000",
     "u02001",
     "u02002",
     "u02003",
     "u02004",
     "u02005",
-    "u02008"
+    "u02006",
+    "u02008",
+    "u02009",
+    "u02011",
+    "u02012"
   ]
 }
