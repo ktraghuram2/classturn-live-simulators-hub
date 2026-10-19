@@ -1,56 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:32:45",
-  "completed_count": 1522,
-  "fixed_count": 1394,
-  "latest_sim_id": "u01927",
+  "updated_at": "2026-10-19 14:33:20",
+  "completed_count": 1527,
+  "fixed_count": 1398,
+  "latest_sim_id": "u01925",
   "recent_events": [
-    {
-      "sim_id": "u01886",
-      "status": "PASS",
-      "time": "14:24:48",
-      "issues": []
-    },
-    {
-      "sim_id": "u01887",
-      "status": "FIXED",
-      "time": "14:24:55",
-      "issues": [
-        "Unwired action button '#btn_set_majority_preset' and stepper control buttons in canvas_js",
-        "Mis-rendered English indefinite article 'A' formatted as MathML variable '<math><mrow><mi>A</mi></mrow></math>' at the start of principles_summary_html"
-      ]
-    },
-    {
-      "sim_id": "u01882",
-      "status": "ERROR",
-      "time": "14:25:23",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01888",
-      "status": "FIXED",
-      "time": "14:25:25",
-      "issues": [
-        "Observation table columns in canvas_js were misaligned with observation_thead_html (6 columns with unlisted timestamp vs 7 expected headers)",
-        "Action buttons (#btn_parse_iat, #btn_run_strings) and control steppers (.stepper-btn) were unwired in canvas_js",
-        "Extraneous phantom badges 3 and 4 were drawn in canvas_js without corresponding entries in apparatus list or legend pills",
-        "Corrupted MathML fraction in Entropy unit (rendered as bit s/b yte instead of bits/byte)"
-      ]
-    },
-    {
-      "sim_id": "u01891",
-      "status": "FIXED",
-      "time": "14:25:49",
-      "issues": [
-        "Unwired DOM telemetry elements: IDs in readouts_html are prefixed with 'val_' (val_reading_z_mag, etc.), causing null element lookups and frozen live readouts.",
-        "Unwired action and stepper buttons: btn_map_conjugate, btn_trace_stability_boundary, btn_toggle_mapping_mode, and .stepper-btn lacked click listeners.",
-        "Observation table column count mismatch: thead has 8 columns but observation row only inserted 7 columns with concatenated coordinates and missing numeric stability margin.",
-        "Unrendered LaTeX notation: raw 'z = e^{sT}' rendered in canvas bridge text instead of clean typography.",
-        "Missing Bilinear transformation physics: toggle button lacked implementation of conformal Tustin bilinear frequency warping."
-      ]
-    },
     {
       "sim_id": "u01892",
       "status": "PASS",
@@ -381,6 +335,53 @@
       "issues": [
         "Observation table record button logged 6 mismatched columns instead of the 7 declared columns, causing heat treatment state, magnifications, resolution, constituents, and phase area fraction to be omitted or misaligned.",
         "Action buttons #btn_auto_focus and #btn_center_diaphragm in Section 5 controls were not wired with click handlers in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01926",
+      "status": "FIXED",
+      "time": "14:32:50",
+      "issues": [
+        "Realigned legend_pills_html with the 6 apparatus items and canvas badges, resolving mismatch between ocular/objective order and badge numbering.",
+        "Corrected ctrl_obj_mag stepper in steppers_html from static step=0.0 and max=10.0 to functional step=10.0 and range [10.0 - 100.0] to permit objective lens interchangeability.",
+        "Cleaned up qualitative readout unit in readouts_html to eliminate awkward MathML 'state' symbol rendering for Optical Acuity Quality Status."
+      ]
+    },
+    {
+      "sim_id": "u01928",
+      "status": "PASS",
+      "time": "14:32:50",
+      "issues": []
+    },
+    {
+      "sim_id": "u01912",
+      "status": "FIXED",
+      "time": "14:32:53",
+      "issues": [
+        "Unwired action buttons: #btn_traverse_scan, #btn_auto_null_balance, and #btn_wring_gauges had no event listeners in canvas_js",
+        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down buttons were not bound to stepper inputs or simulation state",
+        "Misaligned observation table columns: Recorded rows inserted slip gauge height into workpiece column and mismatched indicator readings with the 7 observation thead columns",
+        "Calculated taper readout: Live telemetry calculated taper angle was statically bound to nominal theta0 rather than dynamically reflecting dial indicator deflection"
+      ]
+    },
+    {
+      "sim_id": "u01930",
+      "status": "FIXED",
+      "time": "14:33:12",
+      "issues": [
+        "Observation table header (observation_thead_html) had only 6 column headers while record button (btnRecord) generated 7 row columns, omitting Surface Elevation Displacement η and causing column misalignment.",
+        "Surface specific humidity unit in steppers_html and observation_thead_html used malformed MathML dividing by k with g outside ((g/k)g) instead of g/kg.",
+        "Stepper increment and decrement buttons (.stepper-btn) had no click event listeners in canvas_js, leaving user stepper adjustments non-functional."
+      ]
+    },
+    {
+      "sim_id": "u01925",
+      "status": "FIXED",
+      "time": "14:33:19",
+      "issues": [
+        "Unwired action button id='btn_run_scratch' and missing event handlers for stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down)",
+        "Observation table column mismatch: table header has 6 columns (Fn, L, Ft, μ, dp, CPR) but observation recording inserted 9 misaligned columns with extraneous fields and swapped column order",
+        "Malformed unit MathML in steppers_html rendering scratching velocity as m(m/m)in instead of mm/min"
       ]
     }
   ],
@@ -1894,6 +1895,7 @@
     "u01908",
     "u01909",
     "u01910",
+    "u01912",
     "u01913",
     "u01914",
     "u01915",
@@ -1905,7 +1907,11 @@
     "u01921",
     "u01922",
     "u01924",
+    "u01925",
+    "u01926",
     "u01927",
-    "u01929"
+    "u01928",
+    "u01929",
+    "u01930"
   ]
 }
