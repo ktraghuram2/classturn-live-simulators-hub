@@ -1,79 +1,10 @@
 {
   "runner_state": "ACTIVE (6 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 17:16:01",
-  "completed_count": 1872,
-  "fixed_count": 1677,
-  "latest_sim_id": "u01196",
+  "updated_at": "2026-10-19 17:19:23",
+  "completed_count": 1877,
+  "fixed_count": 1682,
+  "latest_sim_id": "u01223",
   "recent_events": [
-    {
-      "sim_id": "u02357",
-      "status": "FIXED",
-      "time": "16:58:04",
-      "issues": [
-        "Observation table record button had 7 mismatched columns with missing H² and field-off mass columns and misplaced data.",
-        "Unwired action buttons: Tare / Zero Analytical Balance (#btn_tare_balance) and Energize / De-energize (#btn_toggle_field) had no event listeners in canvas_js.",
-        "Stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to increment/decrement inputs and fire change events.",
-        "Analytical balance digital display did not account for tare zeroing offset."
-      ]
-    },
-    {
-      "sim_id": "u02355",
-      "status": "FIXED",
-      "time": "16:58:16",
-      "issues": [
-        "Observation table column mismatch: JavaScript inserted 6 columns including an untracked record counter, whereas observation_thead_html defines 5 columns (Treatment Group, Counting Duration, Total Pulses, Glucose Uptake Rate, Fold Stimulation).",
-        "Unwired stepper buttons: Increment and decrement buttons (.stepper-btn) for treatment_condition and incubation_time lacked click event listeners.",
-        "Unwired action buttons: 'btn_cell_scraping' and 'btn_run_scintillation' lacked event listeners to handle user interaction.",
-        "Inactive telemetry readouts: updateTelemetry was defined but never called in the animation loop, leaving live readouts static.",
-        "Truncated canvas_js: Script was cut off mid-expression at line 162 with no apparatus rendering (12-well microtiter plate, CO2 incubator, suction pump, liquid scintillation counter, cell scraper, scintillation tubes), missing Style 2 leader lines with badges 1-6, and missing animation loop startup."
-      ]
-    },
-    {
-      "sim_id": "u02359",
-      "status": "FIXED",
-      "time": "16:58:38",
-      "issues": [
-        "Unwired stepper up/down buttons prevented adjusting knapsack capacity and item parameters",
-        "Unwired auto-solve action button did not trigger knapsack allocation or observation recording",
-        "Added input event listeners and observation notebook row population"
-      ]
-    },
-    {
-      "sim_id": "u02351",
-      "status": "ERROR",
-      "time": "16:59:07",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02353",
-      "status": "ERROR",
-      "time": "16:59:13",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02360",
-      "status": "FIXED",
-      "time": "16:59:16",
-      "issues": [
-        "Unwired action buttons in canvas_js: wired 'btn_load_rcsb' to load PDB preset coordinate records and reset stream, 'btn_run_grep_clean' to advance filter mode to Stage 2 (Clean ATOM), and 'btn_verify_pdb2gmx' to certify 100% purity and record observation.",
-        "Misaligned observation table data columns in canvas_js: rectified 6-column record mapping to match table headers exactly (PDB Structure Preset, Total Raw Records, Crystal Water Records, Heteroatom Records, Cleaned Output Records, Coordinate Purity) instead of shifted trial count and filter mode strings."
-      ]
-    },
-    {
-      "sim_id": "u02365",
-      "status": "FIXED",
-      "time": "16:59:29",
-      "issues": [
-        "Observation table columns in canvas_js were misaligned with observation_thead_html (8 mismatched columns vs 7 defined headers).",
-        "Action buttons (btn_start_traversal, btn_force_handoff_eval) in controls were not wired to simulation logic in canvas_js.",
-        "Control stepper buttons (▲/▼) lacked click handlers for incrementing and decrementing values.",
-        "Telemetry updater replaced entire readout element, erasing MathML unit symbols."
-      ]
-    },
     {
       "sim_id": "u02362",
       "status": "FIXED",
@@ -379,6 +310,72 @@
         "Unwired action buttons: id='btn_compute_step' and id='btn_auto_converge' lacked event listeners in canvas_js",
         "Unwired stepper up/down buttons: .stepper-btn-up and .stepper-btn-down were missing click handlers",
         "Misaligned observation table: recording logic inserted 7 columns while thead only defines 6 columns (Step Coordinate x4, Step Size Interval h, Predicted Value y4^p, Evaluated Slope f4^p, Corrected Value y4^c, Local Truncation Error eps_t)"
+      ]
+    },
+    {
+      "sim_id": "u01141",
+      "status": "ERROR",
+      "time": "17:16:34",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01169",
+      "status": "ERROR",
+      "time": "17:16:54",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01191",
+      "status": "FIXED",
+      "time": "17:17:04",
+      "issues": [
+        "Observation table header observation_thead_html had 9 columns while the recorded data rows had 10 columns (leading trialCount column), causing header/data misalignment. Added missing <th>#</th> column.",
+        "Control panel action buttons (btn_toggle_s1, btn_toggle_s2, btn_toggle_s3, btn_solve_millman) and stepper increment/decrement buttons (.stepper-btn) were not wired to simulation state or DOM events in canvas_js.",
+        "Live telemetry update queries in canvas_js looked for element IDs ammeter_reading, voltmeter_reading, millman_voltage, millman_resistance, and fuse_status instead of the actual rendered span IDs (val_ammeter_reading, val_voltmeter_reading, etc.), preventing live telemetry synchronization."
+      ]
+    },
+    {
+      "sim_id": "u01211",
+      "status": "FIXED",
+      "time": "17:17:16",
+      "issues": [
+        "Observation table row recording inserted 4 cells instead of 5, missing the Nominal Resistance column and misaligning Calculated V/I Ratio with the header",
+        "Action button #btn_toggle_key was not wired to any event listener to control circuit connectivity",
+        "Stepper control buttons (.stepper-btn) were not wired to update voltage and resistance input values"
+      ]
+    },
+    {
+      "sim_id": "u01221",
+      "status": "FIXED",
+      "time": "17:17:29",
+      "issues": [
+        "CONTROL_DEFS lacked channel_count and had mismatching control ranges compared to HTML steppers",
+        "readControlValue and writeControlValue did not map to actual DOM stepper input IDs (control_temp, control_c_left, control_c_right, control_channel_count)",
+        "Action buttons (action_switch_mode, action_equilibrate, action_flush_right) and stepper increment/decrement buttons were unwired",
+        "Canvas rendered 5 numbered badges whereas apparatus and legend pills specify exactly 4 items"
+      ]
+    },
+    {
+      "sim_id": "u01246",
+      "status": "FIXED",
+      "time": "17:18:24",
+      "issues": [
+        "Wired telemetry readout elements in canvas_js using val_reading_* element IDs to ensure live density, error, velocity, and pressure values update correctly.",
+        "Wired btn_agitate_fluid action button to trigger plunger downward displacement impulse into the fluid.",
+        "Wired stepper up/down buttons (.stepper-btn) in canvas_js so clicking controls dynamically adjusts particle count, rest density, solver iterations, and epsilon.",
+        "Closed unclosed ul, div, and li tags in principles_list_html to ensure a valid DOM structure."
+      ]
+    },
+    {
+      "sim_id": "u01223",
+      "status": "FIXED",
+      "time": "17:19:23",
+      "issues": [
+        "Updated in Gemini brain"
       ]
     }
   ],
@@ -1373,6 +1370,7 @@
     "u01187",
     "u01188",
     "u01190",
+    "u01191",
     "u01192",
     "u01194",
     "u01195",
@@ -1388,12 +1386,15 @@
     "u01205",
     "u01206",
     "u01207",
+    "u01211",
     "u01214",
     "u01215",
     "u01216",
     "u01217",
     "u01219",
     "u01220",
+    "u01221",
+    "u01223",
     "u01225",
     "u01226",
     "u01230",
@@ -1408,6 +1409,7 @@
     "u01243",
     "u01244",
     "u01245",
+    "u01246",
     "u01247",
     "u01249",
     "u01250",
