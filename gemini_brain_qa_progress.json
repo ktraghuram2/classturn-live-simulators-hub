@@ -1,59 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:12:42",
-  "completed_count": 1197,
-  "fixed_count": 1144,
-  "latest_sim_id": "u01480",
+  "updated_at": "2026-10-19 09:13:56",
+  "completed_count": 1202,
+  "fixed_count": 1148,
+  "latest_sim_id": "u01499",
   "recent_events": [
-    {
-      "sim_id": "u01445",
-      "status": "FIXED",
-      "time": "08:59:33",
-      "issues": [
-        "Unwired action buttons 'btn_send_bit_0' and 'btn_send_bit_1': wired both buttons to update input_bit_x and trigger a manual clock pulse.",
-        "Misaligned observation table columns: corrected observation recorder from pushing 8 columns with mismatched labels to exactly the 7 columns defined in observation_thead_html (Clock Step n, Input Bit X, QA, QB, QA_next, QB_next, Sequence Output Z).",
-        "Unwired stepper controls: added event delegation to stepper up/down buttons to adjust target values and dispatch input/change events."
-      ]
-    },
-    {
-      "sim_id": "u01451",
-      "status": "FIXED",
-      "time": "08:59:40",
-      "issues": [
-        "Observation table record button injected 8 columns (including trial number and redundant path difference) which was misaligned with the 6 columns in the observation table header.",
-        "The 'Toggle Sodium Illumination' action button (btn_toggle_illumination) was not wired to control light beam emission and fringe visibility in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) lacked click event listeners in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01454",
-      "status": "PASS",
-      "time": "09:01:18",
-      "issues": []
-    },
-    {
-      "sim_id": "u01447",
-      "status": "FIXED",
-      "time": "09:01:33",
-      "issues": [
-        "Observation table column mismatch: btnRecord generated 13 <td> columns while observation_thead_html defines 8 columns.",
-        "Unwired action buttons: btn_synthesize_wss, btn_toggle_input_type, and btn_compute_autocorr lacked click event listeners in canvas_js.",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked click listeners to increment/decrement inputs.",
-        "Malformed MathML in principles_summary_html: rational transfer function H(z) had B*(z/A)*z instead of B(z)/A(z), and output autocorrelation used multiplication dot instead of convolution operator."
-      ]
-    },
-    {
-      "sim_id": "u01455",
-      "status": "FIXED",
-      "time": "09:01:57",
-      "issues": [
-        "Fixed telemetry readout element IDs in canvas_js from reading_* to val_reading_* so live APF, unit cell volume, effective atom count, and theoretical density update dynamically in the DOM during interaction.",
-        "Wired action buttons btn_align_standard_view and btn_close_packed_tangency to support Eulerian alignment to [100] view and analytical calculation of hard-sphere tangency contact.",
-        "Wired stepper buttons (.stepper-btn-up and .stepper-btn-down) with event listeners so that parameter adjustments work reliably.",
-        "Corrected observation table row column structure in btnRecord handler to match exactly the 7 columns in the table header in correct order (System, Bravais Sub-Type, a, r, N_eff, V_cell, APF).",
-        "Removed duplicate Neff math symbol in observation_thead_html."
-      ]
-    },
     {
       "sim_id": "u01453",
       "status": "FIXED",
@@ -379,6 +330,54 @@
         "Observation table tbody lacked structured multi-mode calibration verification rows",
         "Action controls required full event wiring and loop fault toggle simulation",
         "Canvas rendering required enhanced 3D industrial shading, animated current loop circulation, and Style 2 cubic Bezier leader lines with anchor beads"
+      ]
+    },
+    {
+      "sim_id": "u01488",
+      "status": "FIXED",
+      "time": "09:12:45",
+      "issues": [
+        "Live readouts failed to update because updateDomElement queried 'reading_*' instead of 'val_reading_*' and lacked fallback to dataset attributes.",
+        "Action buttons 'toggle_s1', 'toggle_s2', 'auto_balance_tellegen', experiment preset selector, and stepper buttons (▲/▼) were unwired in canvas_js.",
+        "Observation table record button generated 12 columns with rowCount instead of aligning with the 14 columns defined in observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u01494",
+      "status": "FIXED",
+      "time": "09:12:45",
+      "issues": [
+        "Action button id='btn_zero_cross' (Auto-Align to Zero-Crossing Threshold) was unwired in canvas_js",
+        "Stepper control increment/decrement buttons (.stepper-btn) were unwired in canvas_js",
+        "Live telemetry readout IDs in canvas_js mismatched HTML DOM IDs (val_reading_* vs reading_*/val_*)",
+        "Observation table column mismatch: observation_thead_html was missing the # trial index column header present in the table row body"
+      ]
+    },
+    {
+      "sim_id": "u01495",
+      "status": "PASS",
+      "time": "09:12:50",
+      "issues": []
+    },
+    {
+      "sim_id": "u01491",
+      "status": "FIXED",
+      "time": "09:13:34",
+      "issues": [
+        "Observation table row generation inserted 9 columns into a 6-column thead, including unrequested run index, Nmax, and density columns, and misreported total relation pairs |R| as poset.n.",
+        "Action buttons 'btn_transitive_reduction' and 'btn_evaluate_bounds' were unwired in canvas_js; added state management and click listeners.",
+        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) were unwired; added universal click listeners respecting input step, min, and max attributes.",
+        "Added total relation pairs (|R|) counting in calculatePoset to accurately populate the observation notebook record."
+      ]
+    },
+    {
+      "sim_id": "u01499",
+      "status": "FIXED",
+      "time": "09:13:56",
+      "issues": [
+        "Unwired action buttons: 'btn_ignite_arc' and 'btn_cycle_position' were declared in HTML slots but not attached to event listeners in canvas_js",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons had no click handlers to modify control inputs",
+        "Misaligned observation table rows: table headers defined 7 columns (Joint Type, Weld Position, Arc Current, Arc Voltage, Travel Speed, Deposited Length, Net Heat Input) while logger inserted only 6 misaligned values"
       ]
     }
   ],
@@ -1576,9 +1575,14 @@
     "u01485",
     "u01486",
     "u01487",
+    "u01488",
     "u01489",
     "u01490",
+    "u01491",
     "u01492",
-    "u01493"
+    "u01493",
+    "u01494",
+    "u01495",
+    "u01499"
   ]
 }
