@@ -1,86 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:35:35",
-  "completed_count": 1087,
-  "fixed_count": 1055,
-  "latest_sim_id": "u01341",
+  "updated_at": "2026-10-19 08:36:47",
+  "completed_count": 1092,
+  "fixed_count": 1060,
+  "latest_sim_id": "u01347",
   "recent_events": [
-    {
-      "sim_id": "u01280",
-      "status": "FIXED",
-      "time": "08:27:45",
-      "issues": [
-        "Replaced Greek letter ψ mistranslations with standard pressure unit 'psi' across apparatus, principles, procedure, control steppers, live readouts, and observation table headers",
-        "Aligned observation table columns by adding the missing trial index header (#) and matching column order with recorded data rows",
-        "Wired interactive stepper up/down buttons to dynamically modify control inputs",
-        "Wired action button 'Tare Dial Gauge to Zero' (btn_tare_dial_gauge) to calibrate and offset dial indicator readings",
-        "Wired action button 'Toggle Point / Uniform Load Mechanism' (btn_switch_loading_mode) to switch between point and distributed lateral loading",
-        "Wired experiment activity dropdown (experimentSelect) to configure loading presets"
-      ]
-    },
-    {
-      "sim_id": "u01290",
-      "status": "FIXED",
-      "time": "08:27:49",
-      "issues": [
-        "Misaligned observation table columns: row.innerHTML generated 10 td cells for 7 observation table headers, causing data to shift and overflow. Corrected to exactly 7 matching td cells.",
-        "Unwired action buttons: added event listeners for #btn_auto_stabilize (optimizes coolant flow to setpoint) and #btn_inject_inhibitor (quenches radical concentration and accelerates cooling).",
-        "Unwired stepper buttons: added event listener for all .stepper-btn controls to increment and decrement targets within bounds and dispatch input/change events."
-      ]
-    },
-    {
-      "sim_id": "u01296",
-      "status": "FIXED",
-      "time": "08:28:06",
-      "issues": [
-        "Observation table record button injected an extraneous serial number column and misordered the data cells relative to the 6 defined columns in observation_thead_html.",
-        "Action button 'btn_settle_equilibrium' ('Align to Mean Operating Speed') was unhandled and lacked a click event listener.",
-        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01294",
-      "status": "FIXED",
-      "time": "08:28:14",
-      "issues": [
-        "Observation table column mismatch: tbody generated 7 columns with an unrepresented row count cell and disordered metrics (Speed, Mass, Height, Omega, Fc, x) relative to the 6 thead columns (Speed, Mass, Angular Velocity, Height, Sleeve Lift, Centrifugal Force).",
-        "Unwired control action button: 'Engage Spindle Drive Motor' action button lacked a click event listener in canvas_js.",
-        "Unwired stepper controls: .stepper-btn increment and decrement buttons lacked click event listeners in canvas_js.",
-        "Apparatus specification contradiction: upper arms and lower links were specified as L = 150 mm in apparatus_html, which violates geometric feasibility since governor height h = 170.558 mm exceeds 150 mm (effective length is 200 mm)."
-      ]
-    },
-    {
-      "sim_id": "u01293",
-      "status": "FIXED",
-      "time": "08:28:18",
-      "issues": [
-        "Unwired stepper ▲ / ▼ buttons: stepper-btn elements lacked event listeners to increment/decrement input values.",
-        "Unwired action and dropdown controls: btn_compute_all, btn_toggle_operation, and experimentSelect had no event listeners.",
-        "Missing polynomial multiplication logic: buildExecutionSteps only supported addition, lacking mode awareness and multiplication consolidation.",
-        "Misaligned observation table columns: row creation included an unheadered recordCounter and omitted resultant leading coefficient and comparisons columns defined in observation_thead_html.",
-        "ALU display missing multiplication operator: added '*' (×) LED indicator to reflect term multiplication status."
-      ]
-    },
-    {
-      "sim_id": "u01295",
-      "status": "FIXED",
-      "time": "08:28:19",
-      "issues": [
-        "Unwired stepper increment/decrement buttons (.stepper-btn) in canvas simulation JS",
-        "Unwired Start / Pause drive action button (btn_toggle_drive) in canvas simulation JS",
-        "Input elements of type='number' were receiving unit strings ('rpm', 'kg') via updateText, failing HTML5 value validation",
-        "Observation table column mismatch: table header had 5 columns while recorded rows inserted 6 cells (missing index column)",
-        "Procedure step 6 contained corrupt math markup rendering 'e.g.' as 'e.' with a math italic 'g'"
-      ]
-    },
-    {
-      "sim_id": "u01291",
-      "status": "ERROR",
-      "time": "08:28:37",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01297",
       "status": "FIXED",
@@ -394,6 +318,74 @@
       "time": "08:35:34",
       "issues": [
         "Raw LaTeX symbols 'F1_{DT}' and 'F1_{RF}' detected in readouts_html; replaced with valid MathML tags."
+      ]
+    },
+    {
+      "sim_id": "u01344",
+      "status": "ERROR",
+      "time": "08:36:19",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01343",
+      "status": "FIXED",
+      "time": "08:36:19",
+      "issues": [
+        "Unwired action buttons: 'Advance Next Scan Line' (btn_step_scanline) and 'Continuous Rasterize Sweep' (btn_auto_fill) lacked click event listeners in canvas_js",
+        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to modify input values and dispatch events",
+        "Missing concave multi-span mode support: Experiment option 1 ('Concave Multi-Span Rasterization') was not checked in canvas_js, preventing multi-span parity demonstrations",
+        "Corrupted MathML formula in principles_summary_html: inverse slope formula rendered delta x / delta y incorrectly as delta * (x / delta) * y",
+        "Malformed unit in principles_list_html: unit for inverse slope was rendered with invalid nested fraction syntax"
+      ]
+    },
+    {
+      "sim_id": "u01336",
+      "status": "ERROR",
+      "time": "08:36:19",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01345",
+      "status": "FIXED",
+      "time": "08:36:19",
+      "issues": [
+        "Misaligned observation table columns in btnRecord: row contained 6 columns instead of 5, with peak deflection and pitch length inverted and an extraneous unmapped beam power cell",
+        "Unwired action button btn_align_optical_axis: missing click listener to align emission angle to optical axis",
+        "Unwired stepper buttons: stepper-btn up and down buttons lacked click event listeners to modify target input values"
+      ]
+    },
+    {
+      "sim_id": "u01342",
+      "status": "FIXED",
+      "time": "08:36:19",
+      "issues": [
+        "Observation table record button logged mismatched endpoints, spans, and slope instead of matching the 7 defined header columns: Step Index k, Decision Parameter pk, Chosen Direction Dir, Raster X, Raster Y, Ideal Y, and Raster Error.",
+        "Unwired action button btn_auto_rasterize (Auto-Rasterize Full Line) in canvas_js.",
+        "Missing event handlers for stepper up/down buttons and coordinate inputs to refresh rasterization trajectory upon value changes."
+      ]
+    },
+    {
+      "sim_id": "u01346",
+      "status": "FIXED",
+      "time": "08:36:38",
+      "issues": [
+        "Misaligned observation table: tbody created 9 mismatched columns whereas thead defined 6 columns (P, M, e, sigma_max, sigma_min, Mux).",
+        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down buttons lacked click event handlers to increment/decrement input values.",
+        "Unwired action button: #btn_auto_proportion was defined in controls HTML but had no click listener in canvas_js.",
+        "Telemetry update overwriting units: setTelemetryText replaced entire element textContent, wiping out nested MathML unit spans."
+      ]
+    },
+    {
+      "sim_id": "u01347",
+      "status": "FIXED",
+      "time": "08:36:46",
+      "issues": [
+        "Observation table row in canvas_js rendered 8 cells including cross-section dimensions (b × D), whereas observation_thead_html has only 7 headers, causing column misalignment.",
+        "Action button 'btn_optimize_steel' (Auto-Optimize Rebar Detailing) and stepper step buttons were unwired in canvas_js."
       ]
     }
   ],
@@ -1484,6 +1476,11 @@
     "u01337",
     "u01338",
     "u01339",
-    "u01341"
+    "u01341",
+    "u01342",
+    "u01343",
+    "u01345",
+    "u01346",
+    "u01347"
   ]
 }
