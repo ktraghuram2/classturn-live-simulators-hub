@@ -1,56 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:08:32",
-  "completed_count": 1918,
-  "fixed_count": 1721,
-  "latest_sim_id": "u01502",
+  "updated_at": "2026-10-19 18:09:11",
+  "completed_count": 1923,
+  "fixed_count": 1726,
+  "latest_sim_id": "u01498",
   "recent_events": [
-    {
-      "sim_id": "u01364",
-      "status": "FIXED",
-      "time": "17:26:13",
-      "issues": [
-        "Observation table column count mismatch: canvas_js generated 9 <td> columns whereas observation_thead_html defines 5 <th> columns, causing table formatting misalignment.",
-        "Unwired action buttons: #btn_filter_qualifying and #btn_auto_classify had no event listeners in canvas_js.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to increment and decrement input values.",
-        "Unwired experiment selection: #experimentSelect lacked a change listener to dynamically switch between standard core logging and threshold sensitivity analysis modes."
-      ]
-    },
-    {
-      "sim_id": "u01371",
-      "status": "PASS",
-      "time": "17:26:17",
-      "issues": []
-    },
-    {
-      "sim_id": "u01377",
-      "status": "FIXED",
-      "time": "17:26:39",
-      "issues": [
-        "Observation table columns were misaligned: observation tbody injected 6 columns (including redundant enable statuses) while observation thead defines only 5 columns.",
-        "Raw LaTeX escape command (\\exp) present in observation thead MathML label.",
-        "Control action buttons 'btn_cycle_input' (Cycle Next Binary Input) and 'btn_clear_faults' (Clear All Injected Faults) were defined in HTML but unwired in canvas_js.",
-        "Stepper ▲/▼ buttons for fine step adjustment were unhandled in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01384",
-      "status": "FIXED",
-      "time": "17:57:41",
-      "issues": [
-        "Observation table record button inserted columns in wrong order (blow count and inverted density columns) mismatching observation table headers",
-        "Action buttons #btn_drive_cutter and #btn_extract_and_weigh were unwired in canvas_js",
-        "Stepper increment/decrement buttons (.stepper-btn) were unwired in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01399",
-      "status": "ERROR",
-      "time": "17:57:41",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01400",
       "status": "FIXED",
@@ -395,6 +349,61 @@
         "Unwired action buttons: Execute Morphological Synthesis (btn_generate_word) and Validate Grammatical Agreement (btn_verify_paradigm) lacked click event listeners.",
         "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event handlers to modify control inputs.",
         "Unwired experiment options: Paradigm selection dropdown lacked change handler to update initial lexeme and affix indices for marked and unmarked paradigms."
+      ]
+    },
+    {
+      "sim_id": "u01523",
+      "status": "FIXED",
+      "time": "18:08:35",
+      "issues": [
+        "Numbered canvas badges (1-4) were misaligned with DOM legend pills (Pill 1 BIM Model was Badge 4, Pill 2 Reticle was Badge 3, Pill 3 VR Headset was Badge 1, Pill 4 XR Hand was Badge 2)",
+        "Telemetry display element queries in canvas_js referenced reading_* instead of val_reading_* matching readouts_html, preventing live readout updates",
+        "Observation table recording script generated 9 data cells into a table with only 6 column headers in observation_thead_html",
+        "Action buttons (Execute Teleport Locomotion and Toggle BIM Structural Wireframe) and stepper increment/decrement buttons were unwired in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01527",
+      "status": "FIXED",
+      "time": "18:08:42",
+      "issues": [
+        "Unwired action button 'btn_toggle_nibble' (Invert Upper Nibble) and stepper buttons in canvas_js",
+        "Observation table record button generated 6 cells with S.No instead of matching the 5 thead columns (Input Decimal, Input Binary, Output Binary, Output Decimal, Verification Sum)",
+        "Readout heading 'Primary Sensor Output' updated to accurate domain term '8-Bit Output Value (Decimal)'"
+      ]
+    },
+    {
+      "sim_id": "u01504",
+      "status": "FIXED",
+      "time": "18:08:49",
+      "issues": [
+        "Cleaned erroneous MathML conversion of the English indefinite article 'a' and unit 'g' in prose across aim, apparatus, principles, procedure, and validation sections.",
+        "Fixed duplicated symbol representations in observation table column headers (R1, R2, sigma).",
+        "Resolved critical column mismatch in observation table logging, ensuring recorded values (hanger mass, longitudinal fringe diameter, transverse fringe diameter, radii, Young's modulus, and Poisson's ratio) accurately align with table headers.",
+        "Wired interactive action buttons (Center Crosshairs on Central Fringe and Rotate Reticle to Transverse Axis) and numeric stepper increment/decrement buttons."
+      ]
+    },
+    {
+      "sim_id": "u01532",
+      "status": "FIXED",
+      "time": "18:09:05",
+      "issues": [
+        "Observation table column mismatch: btnRecord wrote 6 columns with an unheadered counter and swapped data order; aligned to the 5 columns specified in observation_thead_html (Rheostat Step, Field Current, Generated EMF, Shaft Speed, Field Power).",
+        "Live telemetry selector bug: getElementById queried 'reading_*' instead of 'val_reading_*' defined in readouts_html, preventing telemetry displays from updating; corrected selectors and appended measurement units.",
+        "Unwired action and stepper controls: 'toggle_mcb', 'auto_trace_occ', and stepper buttons (.stepper-btn) had no click event listeners; wired interactive MCB state toggle, automatic OCC tracing, and stepper increment/decrement handlers.",
+        "Uncoupled MCB state: field current and status window did not respond to MCB circuit breaker state; integrated isMcbOn flag into field excitation physics and visual indicator.",
+        "Prose MathML typo in validation_html: English article 'A' in Assumption 1 was mistakenly formatted as a MathML variable."
+      ]
+    },
+    {
+      "sim_id": "u01498",
+      "status": "FIXED",
+      "time": "18:09:11",
+      "issues": [
+        "DOM telemetry readout elements queried 'reading_strain', 'reading_force', etc. instead of the actual IDs 'val_reading_strain', 'val_reading_force', 'val_reading_torque', 'val_reading_billet_speed' present in readouts_html.",
+        "Observation table logging had 8 columns with Temperature and Roll Speed swapped, misaligning with the 7-column observation_thead_html header.",
+        "Action button 'btn_engage_rolls' was unhandled in canvas_js with no event listener or infeed dynamic state.",
+        "Stepper increment and decrement buttons ('.stepper-btn-up', '.stepper-btn-down') lacked click listeners to adjust input values."
       ]
     }
   ],
@@ -1649,11 +1658,13 @@
     "u01494",
     "u01495",
     "u01497",
+    "u01498",
     "u01499",
     "u01500",
     "u01501",
     "u01502",
     "u01503",
+    "u01504",
     "u01505",
     "u01506",
     "u01507",
@@ -1671,13 +1682,16 @@
     "u01519",
     "u01520",
     "u01521",
+    "u01523",
     "u01524",
     "u01525",
     "u01526",
+    "u01527",
     "u01528",
     "u01529",
     "u01530",
     "u01531",
+    "u01532",
     "u01534",
     "u01536",
     "u01537",
