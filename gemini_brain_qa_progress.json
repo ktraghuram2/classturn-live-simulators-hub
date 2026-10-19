@@ -1,71 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:26:48",
-  "completed_count": 1497,
-  "fixed_count": 1374,
-  "latest_sim_id": "u01897",
+  "updated_at": "2026-10-19 14:28:05",
+  "completed_count": 1502,
+  "fixed_count": 1378,
+  "latest_sim_id": "u01902",
   "recent_events": [
-    {
-      "sim_id": "u01859",
-      "status": "PASS",
-      "time": "11:09:33",
-      "issues": []
-    },
-    {
-      "sim_id": "u01852",
-      "status": "FIXED",
-      "time": "11:09:33",
-      "issues": [
-        "Corrupted MathML fraction V/5 in apparatus_html for knife switch specification (was converted from 250 V / 5 A)",
-        "Corrupted MathML division by zero fraction V/0 in apparatus_html for DC voltmeter specification (was converted from 0–5 V / 0–15 V)",
-        "Escaped newlines (\\n\\n) in principles_summary_html prose instead of clean HTML breaks",
-        "Unwired btn_auto_solve_loop action button in canvas_js patched to verify KVL loop summation and record telemetry to the observation table"
-      ]
-    },
-    {
-      "sim_id": "u01861",
-      "status": "PASS",
-      "time": "11:09:37",
-      "issues": []
-    },
-    {
-      "sim_id": "u01856",
-      "status": "FIXED",
-      "time": "11:09:37",
-      "issues": [
-        "Unwired action buttons: 'btn_free_electron_limit' and 'btn_isolated_atom_limit' were present in HTML but lacked click event listeners in canvas_js.",
-        "Unwired stepper buttons: '.stepper-btn' up/down control buttons lacked click handlers to increment and decrement input values.",
-        "Observation table column mismatch: btnRecord appended 7 columns with transposed Delta E1 and Eg values, whereas observation_thead_html defines 6 columns (V0, b, a, P, Delta E1, Eg)."
-      ]
-    },
-    {
-      "sim_id": "u01854",
-      "status": "ERROR",
-      "time": "11:09:46",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01860",
-      "status": "FIXED",
-      "time": "11:10:15",
-      "issues": [
-        "Unwired action buttons: 'btn_generate_random_dataset' and 'btn_snap_to_node' lacked event listeners in canvas_js",
-        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' buttons were unhandled in canvas_js",
-        "Observation table column misalignment: canvas_js injected 7 columns into obsTbody (including index and tangent angle) while observation_thead_html defines exactly 5 columns"
-      ]
-    },
-    {
-      "sim_id": "u01862",
-      "status": "FIXED",
-      "time": "11:12:49",
-      "issues": [
-        "Wired Fire Pulsed Laser Flash action button (btn_fire_laser) to trigger laser excitation pulse",
-        "Wired Automated Spectral Monochromator Sweep action button (btn_acquire_spectrum) to scan probe wavelengths and record transient absorption spectra",
-        "Wired stepper increment and decrement buttons (.stepper-btn) to update input controls and trigger parameter change events"
-      ]
-    },
     {
       "sim_id": "u01871",
       "status": "ERROR",
@@ -368,6 +307,68 @@
         "Observation table columns in recordBtn click handler were misaligned and mismatched against observation_thead_html headers",
         "Action buttons #btn_pushbutton_toggle and #btn_transmit_i2c were unhandled in canvas_js",
         "Stepper increment and decrement buttons (.stepper-btn) were not wired to input controls in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01868",
+      "status": "ERROR",
+      "time": "14:26:53",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01899",
+      "status": "PASS",
+      "time": "14:27:05",
+      "issues": []
+    },
+    {
+      "sim_id": "u01898",
+      "status": "FIXED",
+      "time": "14:27:26",
+      "issues": [
+        "Observation table recorded row had 9 misaligned columns mismatching the 6 table headers; reordered and aligned row to Applied Stress, Temperature, Elapsed Time, Cumulative Strain, Transient Strain Rate, and Slipped Site Fraction.",
+        "Unwired stepper up/down buttons: attached event listeners to all .stepper-btn elements to increment/decrement target inputs within min/max bounds and fire sync events.",
+        "Added missing 'Trigger Micro-Slip Avalanche Step' action button referenced in Procedure Step 4 into actions_html and wired click handler to trigger discrete dislocation avalanche cascade."
+      ]
+    },
+    {
+      "sim_id": "u01900",
+      "status": "FIXED",
+      "time": "14:27:35",
+      "issues": [
+        "Misaligned observation table columns: btnRecord injected 8 table cells with an unheaded '#recordCounter' and extra 'area' while omitting 'tubeRadius', misaligning curvature into the tube radius header.",
+        "Unwired stepper controls: up and down stepper buttons (.stepper-btn) had no click event listeners bound in canvas_js.",
+        "Unwired action buttons: 'btn_toggle_trihedron', 'btn_cycle_color_mode', and 'btn_animate_sweep' had no event listeners or interactive state logic attached."
+      ]
+    },
+    {
+      "sim_id": "u01896",
+      "status": "ERROR",
+      "time": "14:27:54",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01904",
+      "status": "FIXED",
+      "time": "14:28:03",
+      "issues": [
+        "Unwired action buttons: 'Trigger Peak Warp Surge' (#btn_pulse_warp) and 'Toggle Lattice Density' (#btn_toggle_mesh_density) had no event listeners in canvas_js.",
+        "Misaligned observation table columns: Record Observations appended 6 <td> elements for 5 <thead> columns (removed extraneous Effective Curvature cell to align with observation table headers).",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn) had no click event listeners to increment/decrement input values."
+      ]
+    },
+    {
+      "sim_id": "u01902",
+      "status": "FIXED",
+      "time": "14:28:04",
+      "issues": [
+        "Misaligned observation table row columns: canvas_js generated 8 td cells but observation_thead_html specifies 6 columns (removed redundant A_0 and precRate columns)",
+        "Unwired action buttons: #btn_inject_pulse and #btn_clear_waves were declared in actions_html but lacked click event listeners in canvas_js",
+        "Unwired stepper buttons: .stepper-btn up and down increment controls were missing click handler logic in canvas_js"
       ]
     }
   ],
@@ -1868,6 +1869,11 @@
     "u01892",
     "u01894",
     "u01895",
-    "u01897"
+    "u01897",
+    "u01898",
+    "u01899",
+    "u01900",
+    "u01902",
+    "u01904"
   ]
 }
