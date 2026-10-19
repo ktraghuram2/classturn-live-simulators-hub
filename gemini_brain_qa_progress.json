@@ -1,71 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:38:16",
-  "completed_count": 2013,
-  "fixed_count": 1803,
-  "latest_sim_id": "u02136",
+  "updated_at": "2026-10-19 18:39:34",
+  "completed_count": 2018,
+  "fixed_count": 1808,
+  "latest_sim_id": "u02171",
   "recent_events": [
-    {
-      "sim_id": "u01943",
-      "status": "PASS",
-      "time": "18:29:34",
-      "issues": []
-    },
-    {
-      "sim_id": "u01964",
-      "status": "FIXED",
-      "time": "18:29:34",
-      "issues": [
-        "Misaligned observation table rows: btnRecord generated 10 table cells for an observation table with only 6 column headers, causing significant table column shift and visual overflow.",
-        "Unwired action buttons: 'btn_auto_align' (Auto-Align Space Charge Profile) and 'btn_toggle_profile' (Cycle Doping Profile Model) were present in the controls layout but lacked click event listeners in canvas_js.",
-        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to alter input values."
-      ]
-    },
-    {
-      "sim_id": "u01880",
-      "status": "FIXED",
-      "time": "18:29:49",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01932",
-      "status": "PASS",
-      "time": "18:29:53",
-      "issues": []
-    },
-    {
-      "sim_id": "u01957",
-      "status": "FIXED",
-      "time": "18:30:03",
-      "issues": [
-        "Corrected inappropriate MathML fraction tags in apparatus_html for network speed ('10/100 Mbps') and CIDR host IP notation ('/24')",
-        "Replaced italicized math variable <math><mi>C</mi></math> with plain text 'Node C' across apparatus, procedure, controls, and legend pills",
-        "Fixed DOM element ID lookups for live telemetry readouts in canvas_js (val_reading_* instead of reading_*) so numeric readouts update live",
-        "Wired event listeners for 'btn_transmit_packet' (trigger packet traversal) and 'btn_clear_mac_table' (flush bridge MAC cache)",
-        "Added event listeners for stepper up/down buttons to ensure interactive parameter stepping",
-        "Corrected observation table row column mismatch in btnRecord where 8 misaligned values were being appended into a 7-column header table, correctly computing and tabulating the Forwarding Decision column"
-      ]
-    },
-    {
-      "sim_id": "u01984",
-      "status": "FIXED",
-      "time": "18:30:15",
-      "issues": [
-        "Unwired action button btn_execute_cycle in canvas_js",
-        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
-        "Misaligned observation table row columns (7 columns emitted in JS vs 5 columns defined in observation_thead_html)"
-      ]
-    },
-    {
-      "sim_id": "u01971",
-      "status": "FIXED",
-      "time": "18:30:19",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
     {
       "sim_id": "u02010",
       "status": "FIXED",
@@ -359,6 +298,76 @@
         "Unwired action buttons: btn_execute_transfer and btn_execute_withdraw lacked click event listeners in canvas_js",
         "Unwired stepper controls: stepper buttons (.stepper-btn) lacked increment/decrement event listeners in canvas_js",
         "Misaligned observation table columns: btnRecord generated 5 td cells (including an extra serial index) for a 4-column observation table header"
+      ]
+    },
+    {
+      "sim_id": "u02133",
+      "status": "FIXED",
+      "time": "18:38:20",
+      "issues": [
+        "Raw LaTeX theta_\\exp and malformed MathML division in principles equation symbols and units",
+        "Unwired action buttons (#btn_trigger_shift and #btn_sample_chromosomes) in canvas_js",
+        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
+        "Misaligned observation table row schema (9 data columns recorded vs 6 columns in observation_thead_html)"
+      ]
+    },
+    {
+      "sim_id": "u02126",
+      "status": "ERROR",
+      "time": "18:38:32",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02141",
+      "status": "FIXED",
+      "time": "18:38:34",
+      "issues": [
+        "Readout DOM element IDs in updateDisplays() queried 'reading_*' instead of 'val_reading_*', causing live telemetry values to fail updating.",
+        "Observation table record button inserted 8 misaligned columns with serial index and mismatched units into a 7-column table header.",
+        "Action buttons #btn_release_smoke ('Trigger Test Smoke Dispersion') and #btn_auto_calculate_layout ('Optimize Detector Grid Array') were declared in controls but completely unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02147",
+      "status": "FIXED",
+      "time": "18:38:34",
+      "issues": [
+        "Readout element IDs in canvas_js used reading_* instead of val_reading_*, which broke value updates and risked clearing the MathML unit markup",
+        "Action buttons #btn_calibrate_meter and #btn_toggle_weighting were unwired in canvas_js",
+        "Stepper up/down buttons (.stepper-btn) were unwired in canvas_js",
+        "Observation table row generation inserted 7 mismatched columns (including serial number, mV, and V) instead of the 5 canonical columns specified in observation_thead_html",
+        "Weighting filter switch had no dynamic state or visual indicator toggle between A and C weighting"
+      ]
+    },
+    {
+      "sim_id": "u02161",
+      "status": "FIXED",
+      "time": "18:39:00",
+      "issues": [
+        "Misaligned observation table columns in btnRecord: only 7 <td> elements were rendered for an 8-column header, omitting Trial # and Query Type, causing severe offset across all recorded rows.",
+        "Unwired action buttons: btn_exec_exclusion, btn_toggle_noise, btn_toggle_k_anon, and btn_toggle_diff_defense lacked event listeners.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down controls had no click handlers to increment or decrement simulation parameters.",
+        "Inaccurate physics & Laplace noise modeling: sampleLaplace was declared but unused, query results incorrectly mirrored baseline instead of the exclusion cohort sum (baseline - target salary), differencing defense heuristics were never evaluated, and continuous frame jitter was shown instead of calibrated per-query differential privacy noise."
+      ]
+    },
+    {
+      "sim_id": "u02084",
+      "status": "ERROR",
+      "time": "18:39:04",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02171",
+      "status": "FIXED",
+      "time": "18:39:34",
+      "issues": [
+        "Fixed erroneous MathML fraction formatting converting 'C/C++' and 'I/O' into mathematical fractions in principles and procedure slots",
+        "Wired up unwired stepper buttons (.stepper-btn-up, .stepper-btn-down) and action buttons (btn_inject_payload, btn_verify_specifier_match)",
+        "Realigned observation table rows to 6 columns matching observation_thead_html headers (swapped emitted bytes and leaked word into correct columns and removed untracked 7th CVSS column)"
       ]
     }
   ],
@@ -2189,16 +2198,19 @@
     "u02130",
     "u02131",
     "u02132",
+    "u02133",
     "u02134",
     "u02135",
     "u02136",
     "u02139",
     "u02140",
+    "u02141",
     "u02142",
     "u02143",
     "u02144",
     "u02145",
     "u02146",
+    "u02147",
     "u02149",
     "u02150",
     "u02151",
@@ -2210,6 +2222,7 @@
     "u02158",
     "u02159",
     "u02160",
+    "u02161",
     "u02162",
     "u02163",
     "u02164",
@@ -2217,6 +2230,7 @@
     "u02166",
     "u02167",
     "u02168",
+    "u02171",
     "u02176",
     "u02178",
     "u02179",
