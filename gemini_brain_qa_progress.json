@@ -1,67 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:32:42",
-  "completed_count": 1077,
-  "fixed_count": 1045,
-  "latest_sim_id": "u01328",
+  "updated_at": "2026-10-19 08:34:06",
+  "completed_count": 1082,
+  "fixed_count": 1050,
+  "latest_sim_id": "u01325",
   "recent_events": [
-    {
-      "sim_id": "u01272",
-      "status": "PASS",
-      "time": "08:24:18",
-      "issues": []
-    },
-    {
-      "sim_id": "u01275",
-      "status": "FIXED",
-      "time": "08:24:29",
-      "issues": [
-        "Unwired action button #btn_spring_untangle (Force-Directed Untangle Relaxation) in canvas_js",
-        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
-        "Misaligned observation table columns in btnRecord (only recorded 5 columns with swapped faces/crossings instead of the 6 columns defined in observation_thead_html)"
-      ]
-    },
-    {
-      "sim_id": "u01274",
-      "status": "FIXED",
-      "time": "08:24:32",
-      "issues": [
-        "Leader line badge numbering (1, 3, 4) in canvas_js was mismatched with legend pills (Inverter drive unit should be 1, Water circulation pump should be 3, Wave flume tank should be 4).",
-        "Live telemetry readout IDs in canvas_js did not match the actual HTML element IDs (val_reading_incident_height, etc.), preventing values from updating on screen.",
-        "Observation table columns recorded by btnRecord were completely misaligned with the 9 thead column headers (omitted wave period, inserted stem density into depth column, shifted wave heights).",
-        "Interactive stepper ▲ and ▼ buttons (.stepper-btn) were not wired to increment/decrement input values.",
-        "Action buttons (btn_toggle_vegetation, btn_toggle_submergence, btn_calibrate_wavemaker) were defined in HTML but never wired to any event handlers in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01277",
-      "status": "FIXED",
-      "time": "08:24:32",
-      "issues": [
-        "Fixed corrupted exponent 10^-34 rendered as 10^-3 4 in readouts_html and observation_thead_html",
-        "Removed duplicated MathML tags and improved header labels in observation_thead_html",
-        "Added event listener wiring for interactive stepper up/down buttons and sample telemetry action button in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01278",
-      "status": "FIXED",
-      "time": "08:25:50",
-      "issues": [
-        "Telemetry readouts targeted 'reading_*' element IDs instead of 'val_reading_*', preventing live values from updating",
-        "Observation table columns were misaligned and included an unheaded row count column while missing log10(P) and log10(T) columns",
-        "Stepper up/down buttons and thermal equilibrium action button were not wired to event listeners"
-      ]
-    },
-    {
-      "sim_id": "u01285",
-      "status": "FIXED",
-      "time": "08:25:53",
-      "issues": [
-        "Corrected erroneous MathML fractions in procedure steps 2 and 3 where PLC input/output addresses I:1/0, O:2/1, and I:1/3 were converted into mathematical division fractions.",
-        "Wired action buttons ('btn_interlock_scan' and 'btn_trigger_interval_loads') in canvas_js to allow interactive execution of the ladder interlock scan and single-shot timer triggers."
-      ]
-    },
     {
       "sim_id": "u01279",
       "status": "FIXED",
@@ -393,6 +336,67 @@
         "Unwired action button: #btn_trigger_burst ('Synthesize & Trigger Audio Burst') had no click listener to reset burst phase and trigger immediate waveform sweep.",
         "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) were not wired to increment/decrement input values with step, min, and max limits.",
         "Misaligned observation recording table: #btnRecord created rows with mismatched columns (inserted an unheaded row-index cell, combined start/end frequencies into one cell, logged unheaded mid-volume/cycles/cone displacement, and omitted interpolation mode, modulation effect, start volume, end volume, and burst duration). Corrected to match the 10 headers defined in observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u01329",
+      "status": "FIXED",
+      "time": "08:33:05",
+      "issues": [
+        "Unwired action buttons: 'btn_align_source' and 'btn_pulse_wave' lacked click event listeners in canvas_js",
+        "Unwired stepper controls: '.stepper-btn' up and down buttons were not wired to update target inputs in canvas_js",
+        "Observation table column misalignment: observation_thead_html lacked the trial row index header and had 6 columns, while obsTbody row insertion contained 9 mismatched columns including unrepresented parameters"
+      ]
+    },
+    {
+      "sim_id": "u01324",
+      "status": "ERROR",
+      "time": "08:33:21",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01330",
+      "status": "FIXED",
+      "time": "08:33:21",
+      "issues": [
+        "Malformed hybrid LaTeX/MathML fragment (d^(-1/2) outside formula boundary) and subscript bar notation in principles_summary_html",
+        "Nested data-source-path <span> tags inside data-unit HTML attributes in readouts_html",
+        "Missing action button event wiring and conditional rendering guards for reticle, triple points, and grain markers in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01332",
+      "status": "FIXED",
+      "time": "08:33:27",
+      "issues": [
+        "Live telemetry readout DOM binding in canvas_js looked for element IDs matching telemetry keys directly instead of checking the 'val_' prefix used in the readouts HTML, preventing live values from updating in the DOM.",
+        "Action button 'btn_compute_alignment' lacked a click event listener to trigger statevector simulation and SVM re-optimization.",
+        "Custom stepper up/down buttons (.stepper-btn) lacked click event listeners in canvas_js, preventing parameter increments/decrements via UI controls.",
+        "Experiment / activity preset dropdown lacked a change event listener to switch parameter configurations."
+      ]
+    },
+    {
+      "sim_id": "u01334",
+      "status": "FIXED",
+      "time": "08:33:45",
+      "issues": [
+        "Missing mathematical symbol W in observation table column 1 header (Inspection Window W (bp)).",
+        "Missing mathematical symbol L in observation table column 3 header (Genome Length L (bp))."
+      ]
+    },
+    {
+      "sim_id": "u01325",
+      "status": "FIXED",
+      "time": "08:34:06",
+      "issues": [
+        "Unwired action button id='btn_run_complete' (Auto-Run to Acceptance)",
+        "Unwired stepper ▲ / ▼ buttons on all numeric control inputs (.stepper-btn)",
+        "Telemetry readout updater targeted non-existent element IDs ('reading_*' instead of 'val_reading_*')",
+        "Canvas layout collision: State Transition Diagram (Apparatus 3) and Stack Display (Apparatus 4) overlapped between x=630..770, occluding node qr",
+        "Observation table body was not populated with trace records during step execution",
+        "English indefinite article 'a' was erroneously wrapped in MathML <math><mrow><mi>a</mi></mrow></math> in aim_html, principles_summary_html, and procedure_section_html"
       ]
     }
   ],
@@ -1472,7 +1476,12 @@
     "u01314",
     "u01315",
     "u01316",
+    "u01325",
     "u01327",
-    "u01328"
+    "u01328",
+    "u01329",
+    "u01330",
+    "u01332",
+    "u01334"
   ]
 }
