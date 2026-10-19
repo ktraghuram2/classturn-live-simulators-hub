@@ -1,67 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:40:53",
-  "completed_count": 1107,
-  "fixed_count": 1071,
-  "latest_sim_id": "u01368",
+  "updated_at": "2026-10-19 08:42:15",
+  "completed_count": 1112,
+  "fixed_count": 1073,
+  "latest_sim_id": "u01379",
   "recent_events": [
-    {
-      "sim_id": "u01320",
-      "status": "ERROR",
-      "time": "08:32:36",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01328",
-      "status": "FIXED",
-      "time": "08:32:42",
-      "issues": [
-        "Unwired action button: #btn_trigger_burst ('Synthesize & Trigger Audio Burst') had no click listener to reset burst phase and trigger immediate waveform sweep.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) were not wired to increment/decrement input values with step, min, and max limits.",
-        "Misaligned observation recording table: #btnRecord created rows with mismatched columns (inserted an unheaded row-index cell, combined start/end frequencies into one cell, logged unheaded mid-volume/cycles/cone displacement, and omitted interpolation mode, modulation effect, start volume, end volume, and burst duration). Corrected to match the 10 headers defined in observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u01329",
-      "status": "FIXED",
-      "time": "08:33:05",
-      "issues": [
-        "Unwired action buttons: 'btn_align_source' and 'btn_pulse_wave' lacked click event listeners in canvas_js",
-        "Unwired stepper controls: '.stepper-btn' up and down buttons were not wired to update target inputs in canvas_js",
-        "Observation table column misalignment: observation_thead_html lacked the trial row index header and had 6 columns, while obsTbody row insertion contained 9 mismatched columns including unrepresented parameters"
-      ]
-    },
-    {
-      "sim_id": "u01324",
-      "status": "ERROR",
-      "time": "08:33:21",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01330",
-      "status": "FIXED",
-      "time": "08:33:21",
-      "issues": [
-        "Malformed hybrid LaTeX/MathML fragment (d^(-1/2) outside formula boundary) and subscript bar notation in principles_summary_html",
-        "Nested data-source-path <span> tags inside data-unit HTML attributes in readouts_html",
-        "Missing action button event wiring and conditional rendering guards for reticle, triple points, and grain markers in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01332",
-      "status": "FIXED",
-      "time": "08:33:27",
-      "issues": [
-        "Live telemetry readout DOM binding in canvas_js looked for element IDs matching telemetry keys directly instead of checking the 'val_' prefix used in the readouts HTML, preventing live values from updating in the DOM.",
-        "Action button 'btn_compute_alignment' lacked a click event listener to trigger statevector simulation and SVM re-optimization.",
-        "Custom stepper up/down buttons (.stepper-btn) lacked click event listeners in canvas_js, preventing parameter increments/decrements via UI controls.",
-        "Experiment / activity preset dropdown lacked a change event listener to switch parameter configurations."
-      ]
-    },
     {
       "sim_id": "u01334",
       "status": "FIXED",
@@ -385,6 +328,51 @@
         "Uncontrolled auto-stepping in animation loop overriding manual user inspection without toggling",
         "Observation table residual error column recorded signed f(x_{n+1}) instead of absolute residual |f(x_{n+1})|"
       ]
+    },
+    {
+      "sim_id": "u01362",
+      "status": "FIXED",
+      "time": "08:40:59",
+      "issues": [
+        "Observation table columns were misaligned when thCount is 8: the trial count occupied the sequence length column, shifting and omitting Gibbs free energy (ΔG) and melting temperature (Tm). Added an exact 8-column mapping matching observation_thead_html.",
+        "Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to adjust input values, and the primary action button (#btn_transcribe_fold) lacked dynamic folding animation feedback. Wired stepper step increments/decrements and added animated unzipping/zipping state trigger."
+      ]
+    },
+    {
+      "sim_id": "u01351",
+      "status": "ERROR",
+      "time": "08:41:03",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01370",
+      "status": "PASS",
+      "time": "08:41:07",
+      "issues": []
+    },
+    {
+      "sim_id": "u01374",
+      "status": "FIXED",
+      "time": "08:41:51",
+      "issues": [
+        "Unwired action buttons: btn_sensitize_i0, btn_sensitize_i1, and btn_clear_faults had no click handlers attached in canvas_js",
+        "Unwired stepper buttons: .stepper-btn elements were not wired to update input fields and trigger state change events",
+        "Misaligned observation table row: row.innerHTML appended 8 <td> elements for a 7-column observation table schema"
+      ]
+    },
+    {
+      "sim_id": "u01376",
+      "status": "PASS",
+      "time": "08:42:06",
+      "issues": []
+    },
+    {
+      "sim_id": "u01379",
+      "status": "PASS",
+      "time": "08:42:15",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1490,10 +1478,15 @@
     "u01359",
     "u01360",
     "u01361",
+    "u01362",
     "u01363",
     "u01365",
     "u01366",
     "u01368",
-    "u01369"
+    "u01369",
+    "u01370",
+    "u01374",
+    "u01376",
+    "u01379"
   ]
 }
