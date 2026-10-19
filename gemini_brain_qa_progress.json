@@ -1,81 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:58:30",
-  "completed_count": 1637,
-  "fixed_count": 1486,
-  "latest_sim_id": "u02080",
+  "updated_at": "2026-10-19 16:00:42",
+  "completed_count": 1642,
+  "fixed_count": 1491,
+  "latest_sim_id": "u02082",
   "recent_events": [
-    {
-      "sim_id": "u02036",
-      "status": "FIXED",
-      "time": "15:50:47",
-      "issues": [
-        "Unwired action buttons: btn_load_cluster_preset and btn_evaluate_decision_grid lacked event listeners in canvas_js",
-        "Misaligned observation table row columns compared to observation_thead_html (order was swapped and minDist was recorded instead of winning class)",
-        "Telemetry span element IDs in readouts_html (val_reading_*) did not match queried IDs in canvas_js",
-        "Stepper increment/decrement buttons (.stepper-btn) had no click event listeners wired"
-      ]
-    },
-    {
-      "sim_id": "u02040",
-      "status": "PASS",
-      "time": "15:51:07",
-      "issues": []
-    },
-    {
-      "sim_id": "u02039",
-      "status": "FIXED",
-      "time": "15:51:24",
-      "issues": [
-        "Unwired Launch Projectile action button (btn_fire_cannon) in canvas_js",
-        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
-        "Misaligned observation table columns: 8 <td> cells rendered for 7 <th> table headers due to extraneous recIdx column"
-      ]
-    },
-    {
-      "sim_id": "u02041",
-      "status": "FIXED",
-      "time": "15:51:28",
-      "issues": [
-        "Section 6 live readout IDs 'val_reading_*' were missing from broadcastTelemetry() payload, preventing readout updates",
-        "Action buttons #btn_tumble_trials and #btn_evaluate_decision were not wired to simulation logic",
-        "Stepper increment/decrement buttons (.stepper-btn) were missing click event listeners",
-        "Experiment preset dropdown #experimentSelect was missing change listener"
-      ]
-    },
-    {
-      "sim_id": "u02043",
-      "status": "PASS",
-      "time": "15:51:35",
-      "issues": []
-    },
-    {
-      "sim_id": "u02038",
-      "status": "PASS",
-      "time": "15:51:35",
-      "issues": []
-    },
-    {
-      "sim_id": "u02042",
-      "status": "FIXED",
-      "time": "15:51:42",
-      "issues": [
-        "Physics formulas in calculatePhysics() generated unphysical values (bound fraction exceeding 1.0, incorrect migration distances, and uncoupled voltage/matrix parameters).",
-        "Action buttons (btn_toggle_electrophoresis and btn_scan_imager) were wired to generic pulse handlers instead of controlling electrophoresis run state and laser scanning.",
-        "Raw LaTeX escape '\\%' in stepper CONFIG unit for polyacrylamide concentration replaced with '%'"
-      ]
-    },
-    {
-      "sim_id": "u02032",
-      "status": "FIXED",
-      "time": "15:51:42",
-      "issues": [
-        "Corrupted possessive 'potter\\'s wheel' rendered with raw math tags around the 's' in principles_summary_html.",
-        "Unwired action buttons: '#btn_snap_concentric' and '#btn_reconstruct_vessel' were declared in HTML but never referenced or wired up in canvas_js.",
-        "Unwired stepper controls: '.stepper-btn' up and down buttons lacked event listeners in canvas_js.",
-        "Observation table column mismatch: observation_thead_html has 5 columns (Arc Length, Diameter, Circumference, Rim Completeness, Wall Thickness), but canvas_js inserted 7 columns in an incompatible order."
-      ]
-    },
     {
       "sim_id": "u02045",
       "status": "PASS",
@@ -366,6 +295,86 @@
         "Missing event listener wiring for btn_run_continuous action button",
         "Missing experiment dropdown (experimentSelect) mode switching synchronization in syncInputs",
         "Missing click event handlers for stepper up and down buttons"
+      ]
+    },
+    {
+      "sim_id": "u02079",
+      "status": "ERROR",
+      "time": "16:00:41",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02074",
+      "status": "ERROR",
+      "time": "16:00:41",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02081",
+      "status": "FIXED",
+      "time": "16:00:41",
+      "issues": [
+        "Corrected misaligned observation table columns in btnRecord: replaced mismatched 8-column row with the exact 7 columns specified in observation_thead_html (Polynomial Degree, Vector Index, Coordinate Tuple, Evaluated Bit, Codeword Vector, Code Dimension, Minimum Distance).",
+        "Wired action buttons #btn_generate_poly and #btn_evaluate_all in canvas_js to synthesize random eligible Boolean polynomials and step through evaluation tuples.",
+        "Wired interactive stepper buttons (.stepper-btn-up and .stepper-btn-down) in canvas_js to allow smooth stepping of degree_r and vector_index inputs.",
+        "Rectified raw exponent notation '^(m - r)' in principles_summary_html to proper MathML notation."
+      ]
+    },
+    {
+      "sim_id": "u02073",
+      "status": "FIXED",
+      "time": "16:00:41",
+      "issues": [
+        "Telemetry live readouts were not updating because setReadout queried 'id' directly instead of the actual element id 'val_' prefix (e.g. 'val_reading_span')",
+        "Action buttons (Execute Primary Bend, Immerse in Boiling Bath, Execute 20° Re-bend) were unwired with no click event handlers or bending animation logic",
+        "Stepper increment and decrement buttons (▲/▼) lacked click listeners to adjust numeric inputs",
+        "Observation table record button was unwired to capture current test parameters across all 8 standard columns"
+      ]
+    },
+    {
+      "sim_id": "u02076",
+      "status": "FIXED",
+      "time": "16:00:41",
+      "issues": [
+        "Raw LaTeX delimiters and mangled MathML in principles_summary_html where the in-situ compressive strength prose was trapped inside an equation tag with dollar signs, along with erroneous math-mode markup on the English article 'a'.",
+        "Erroneous math-mode markup on the English article 'a' in aim_html.",
+        "Unwired action buttons: 'btn_trigger_impact' (Release Spring Hammer Impact) and 'btn_abrade_surface' (Grind Surface with Abrasive Stone) were not attached to event listeners in canvas_js.",
+        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02068",
+      "status": "ERROR",
+      "time": "16:00:41",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02072",
+      "status": "FIXED",
+      "time": "16:00:41",
+      "issues": [
+        "Misaligned observation table columns: canvas_js generated 6 td cells with row index and combined rows instead of 5 td cells matching the thead specification [Row 1, Row 2, Rank, Nullity, Sum].",
+        "Unwired stepper up/down buttons: .stepper-btn buttons lacked click event listeners to modify matrix input values.",
+        "Unwired action buttons: #btn_gaussian_elimination and #btn_project_nullspace lacked click event listeners.",
+        "Typography issue in principles summary: erroneous MathML tags wrapping the English word 'A' at sentence start."
+      ]
+    },
+    {
+      "sim_id": "u02082",
+      "status": "FIXED",
+      "time": "16:00:41",
+      "issues": [
+        "Observation table record button inserted misaligned columns that did not match the 7-column header defined in observation_thead_html",
+        "Action button btn_toggle_matrix_mode was unwired and did not toggle between Generator Matrix G and Dual Parity Matrix H",
+        "Action button btn_verify_orthogonality was unwired and lacked interactive visual pulse feedback",
+        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) were missing click event listeners",
+        "Synthesizer canvas panel did not dynamically display the dual parity matrix basis rows when in dual mode"
       ]
     }
   ],
@@ -2003,9 +2012,14 @@
     "u02066",
     "u02067",
     "u02071",
+    "u02072",
+    "u02073",
     "u02075",
+    "u02076",
     "u02077",
     "u02078",
-    "u02080"
+    "u02080",
+    "u02081",
+    "u02082"
   ]
 }
