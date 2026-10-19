@@ -1,55 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:40:09",
-  "completed_count": 2023,
-  "fixed_count": 1813,
-  "latest_sim_id": "u02175",
+  "updated_at": "2026-10-19 18:41:06",
+  "completed_count": 2028,
+  "fixed_count": 1817,
+  "latest_sim_id": "u02148",
   "recent_events": [
-    {
-      "sim_id": "u02027",
-      "status": "FIXED",
-      "time": "18:32:43",
-      "issues": [
-        "Observation table record button recorded only 4 <td> columns instead of the 6 columns defined in observation_thead_html (Execution Step, Code Line PC, Variable A, Pointer P Address, Dereferenced Value, Execution Paradigm Mode).",
-        "Action button #btn_switch_module ('Switch Paradigm') and module options dropdown were unhandled in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners."
-      ]
-    },
-    {
-      "sim_id": "u02026",
-      "status": "ERROR",
-      "time": "18:32:48",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01967",
-      "status": "ERROR",
-      "time": "18:32:59",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01889",
-      "status": "ERROR",
-      "time": "18:33:19",
-      "issues": [
-        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--model', 'gemini-4-argon-medium', '--disable-slash-commands"
-      ]
-    },
-    {
-      "sim_id": "u02034",
-      "status": "FIXED",
-      "time": "18:33:25",
-      "issues": [
-        "Unwired action buttons: btn_agarose_click, btn_buffer_click, btn_solution_click, and btn_microwave_click had no click listeners in canvas_js",
-        "Unwired stepper up/down buttons: .stepper-btn controls were missing click listeners to adjust m_a, V_b, and T values",
-        "Unwired experiment select dropdown: experimentSelect was missing a change listener to switch between 1.0% and 2.0% gel presets",
-        "Missing canvas click interaction: clicking apparatus badges on the canvas did not trigger the corresponding action buttons"
-      ]
-    },
     {
       "sim_id": "u01985",
       "status": "ERROR",
@@ -376,6 +331,53 @@
       "issues": [
         "Fixed misaligned observation table columns by removing unheadered timestamp <td> in btnRecord so that data cells align 1:1 with the 6 header columns.",
         "Wired interactive action button 'btn_compile_execute' (Compile and Evaluate AST) to trigger AST verification state and telemetry terminal output."
+      ]
+    },
+    {
+      "sim_id": "u02184",
+      "status": "FIXED",
+      "time": "18:40:32",
+      "issues": [
+        "Misaligned numbered badges 1 and 2 relative to legend_pills_html apparatus order (conical flask and magnetic stirrer-cum-heater were swapped)",
+        "Unwired action and stepper buttons in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u02174",
+      "status": "PASS",
+      "time": "18:40:47",
+      "issues": []
+    },
+    {
+      "sim_id": "u02194",
+      "status": "FIXED",
+      "time": "18:40:49",
+      "issues": [
+        "Unwired action buttons: 'btn_start_tapping' and 'btn_pour_sample' from actions_html were not wired in canvas_js",
+        "Unwired stepper up/down buttons: '.stepper-btn' buttons had no click handlers to adjust sample_mass and tap_count",
+        "Misaligned observation table columns: row generated 9 cells with an unheaded serial number and inverted V0/taps order relative to the 8 header columns in observation_thead_html",
+        "Badge numbering mismatch: Badge 2 was anchored to Analytical Balance and Badge 3 to Graduated Measuring Cylinder, conflicting with legend_pills_html (Pill 2: Cylinder, Pill 3: Balance)",
+        "Telemetry update wiping unit markup: textContent assignment in updateTelemetry removed measurement unit labels from live readouts"
+      ]
+    },
+    {
+      "sim_id": "u02196",
+      "status": "FIXED",
+      "time": "18:41:00",
+      "issues": [
+        "Raw MathML tags for variable 'a' were erroneously used in place of the English indefinite article 'a' in aim_html and principles_summary_html.",
+        "Unwired action button btn_snap_midpoint and stepper up/down buttons (.stepper-btn) in canvas_js.",
+        "Observation table record button generated 6 columns including an unlisted index column (${idx}), causing misalignment with the 5 headers in observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u02148",
+      "status": "FIXED",
+      "time": "18:41:06",
+      "issues": [
+        "Observation table row generation in btnRecord had 8 columns with mismatched units and order, conflicting with the 6 columns in observation_thead_html",
+        "Telemetry display updates in canvas_js called setTxt with raw readout IDs ('reading_*') whereas span IDs in readouts_html use the 'val_' prefix ('val_reading_*')",
+        "Action buttons ('btn_toggle_pump', 'btn_lower_sounding_tape') and stepper increment/decrement buttons had no event listeners wired up in canvas_js"
       ]
     }
   ],
@@ -2220,6 +2222,7 @@
     "u02145",
     "u02146",
     "u02147",
+    "u02148",
     "u02149",
     "u02150",
     "u02151",
@@ -2242,6 +2245,7 @@
     "u02171",
     "u02172",
     "u02173",
+    "u02174",
     "u02175",
     "u02176",
     "u02178",
@@ -2250,6 +2254,7 @@
     "u02181",
     "u02182",
     "u02183",
+    "u02184",
     "u02185",
     "u02186",
     "u02187",
@@ -2258,6 +2263,8 @@
     "u02190",
     "u02191",
     "u02192",
+    "u02194",
+    "u02196",
     "u02197",
     "u02199",
     "u02200",
