@@ -1,70 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:43:17",
-  "completed_count": 1267,
-  "fixed_count": 1200,
-  "latest_sim_id": "u01585",
+  "updated_at": "2026-10-19 09:46:45",
+  "completed_count": 1272,
+  "fixed_count": 1205,
+  "latest_sim_id": "u01591",
   "recent_events": [
-    {
-      "sim_id": "u01552",
-      "status": "FIXED",
-      "time": "09:27:52",
-      "issues": [
-        "Unwired primary action button #btn_detect_jnd ('Mark Just Noticeable Difference')",
-        "Telemetry readouts looked up non-existent element IDs #reading_* instead of #val_reading_*",
-        "Observation table columns were misaligned with headers: included extra expansion rate column and omitted differential threshold ΔI",
-        "Stepper increment and decrement buttons were not wired to update inputs",
-        "Raw LaTeX escape artifacts in MathML in readouts_html and observation_thead_html for percentage difference symbol"
-      ]
-    },
-    {
-      "sim_id": "u01551",
-      "status": "FIXED",
-      "time": "09:28:21",
-      "issues": [
-        "Unwired action buttons: 'btn_clamp_specimen' and 'btn_zero_calibrate' were not wired in canvas_js to clamp the specimen or calibrate to zero.",
-        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' were not bound to adjust input values.",
-        "Observation table column mismatch: btnRecord appended 6 columns instead of the 7 columns declared in observation_thead_html, omitting the Vernier Scale Value (n·LC) column and shifting subsequent data.",
-        "Telemetry element selectors: Readout updates targeted 'reading_*' container IDs rather than the value elements 'val_reading_*'."
-      ]
-    },
-    {
-      "sim_id": "u01555",
-      "status": "FIXED",
-      "time": "09:31:14",
-      "issues": [
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js",
-        "Action buttons #btn_compensation_point and #btn_dark_foil_control were not wired to update distance and filter transmission in setupListeners()",
-        "Telemetry updater replaced innerHTML on multi-child elements, overwriting formatted MathML unit tags"
-      ]
-    },
-    {
-      "sim_id": "u01532",
-      "status": "ERROR",
-      "time": "09:31:14",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01553",
-      "status": "FIXED",
-      "time": "09:31:14",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01557",
-      "status": "FIXED",
-      "time": "09:31:14",
-      "issues": [
-        "Observation table column mismatch: record button generated 12 table columns including trial index, Z position, and matrix element M14, whereas observation_thead defines exactly 9 columns (Shoulder Angle, Elbow Angle, Wrist Angle, Translation X, Translation Y, Translation Z, Palm X, Palm Y, Net Orientation).",
-        "Unwired action buttons: btn_apply_translation, btn_toggle_grids, and btn_toggle_view_lock had no click event listeners registered in canvas_js.",
-        "Unwired stepper controls: stepper-btn-up and stepper-btn-down buttons lacked click handlers to modify numeric input values.",
-        "Missing real-time grid switching: procedure step 6 requires toggling reference grids (XY, YZ, XZ) which was not implemented in canvas_js."
-      ]
-    },
     {
       "sim_id": "u01556",
       "status": "FIXED",
@@ -384,6 +324,68 @@
       "status": "PASS",
       "time": "09:43:17",
       "issues": []
+    },
+    {
+      "sim_id": "u01592",
+      "status": "FIXED",
+      "time": "09:44:48",
+      "issues": [
+        "Unwired action buttons: 'btn_transmit_frame' and 'btn_regenerate_channel' were present in actions_html but unhandled in canvas_js.",
+        "Unwired stepper controls: stepper up/down arrow buttons (.stepper-btn) lacked click event listeners in canvas_js.",
+        "Telemetry readout ID mismatch: canvas_js queried 'reading_*' element IDs instead of the actual value span IDs 'val_reading_*', preventing DOM telemetry updates.",
+        "Observation table column misalignment: the record button pushed 8 disordered values while observation_thead_html only defines 7 specific columns in a different order."
+      ]
+    },
+    {
+      "sim_id": "u01593",
+      "status": "ERROR",
+      "time": "09:45:17",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01596",
+      "status": "FIXED",
+      "time": "09:45:58",
+      "issues": [
+        "Observation table columns were misaligned: observation_thead_html defined 6 separate columns (i, j, k, product, acc, address), but observation logger generated only 5 combined td cells.",
+        "Action button #btn_randomize_matrix was not wired up to randomize matrix values.",
+        "Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to increment/decrement target inputs."
+      ]
+    },
+    {
+      "sim_id": "u01595",
+      "status": "FIXED",
+      "time": "09:46:25",
+      "issues": [
+        "Telemetry DOM element IDs in updateTelemetry() targeted 'reading_*' instead of 'val_reading_*' defined in the HTML slots, preventing live readout updates.",
+        "Observation record table rows in btnRecord were severely misaligned with the 6 defined table header columns (stored indices/key instead of array size, order configuration, comparisons, shifts, max comparisons, and address of last element).",
+        "Action buttons btn_generate_data and btn_auto_sort were completely unwired, and preset permutations (Worst-Case reverse sorted, Best-Case sorted, Average-Case random) were not handled.",
+        "Stepper increment and decrement buttons (▲ / ▼) were not bound to update the array size, base address, and animation speed inputs."
+      ]
+    },
+    {
+      "sim_id": "u01594",
+      "status": "FIXED",
+      "time": "09:46:30",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01591",
+      "status": "FIXED",
+      "time": "09:46:45",
+      "issues": [
+        "Observation table recording was completely misaligned with the 7 thead columns (had 8 cells shifted by one column, missing Time t, and displaying rate/factors under wrong headers)",
+        "Action button 'btn_storm_pulse' (Inject High-Intensity Storm Burst) was unwired in canvas_js",
+        "Stepper increment/decrement buttons (.stepper-btn) and experiment switcher dropdown were not wired to trigger interactive updates",
+        "Front glass basin wall and depth gauge graduations disappeared completely if water depth reached 0 m due to early return in renderWaterBody",
+        "Pre-seeded water surface ripples were not animated or rendered during precipitation",
+        "Momentum scale factor alpha inverted physical logic (should be 1.000 during mass influx, scaling down by remaining depth fraction only during volume extraction)",
+        "Ultrasonic measurement cone guidelines had low contrast (0.22 alpha) against the dark #090d16 canvas"
+      ]
     }
   ],
   "completed_ids": [
@@ -1653,6 +1655,11 @@
     "u01582",
     "u01585",
     "u01588",
-    "u01590"
+    "u01590",
+    "u01591",
+    "u01592",
+    "u01594",
+    "u01595",
+    "u01596"
   ]
 }
