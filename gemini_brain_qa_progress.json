@@ -1,88 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 19:05:28",
-  "completed_count": 2078,
-  "fixed_count": 1862,
-  "latest_sim_id": "u01815",
+  "updated_at": "2026-10-19 19:07:20",
+  "completed_count": 2083,
+  "fixed_count": 1866,
+  "latest_sim_id": "u01705",
   "recent_events": [
-    {
-      "sim_id": "u02319",
-      "status": "FIXED",
-      "time": "18:44:17",
-      "issues": [
-        "Unwired Action Buttons: `#btn_seed_infection` ('Seed Patient-Zero Infection') and `#btn_toggle_layout` ('Relax Force-Directed Layout') lacked event listeners in canvas_js.",
-        "Unwired Stepper Buttons: Stepper increment and decrement buttons (`.stepper-btn`) were not wired to modify numeric input values or sync simulation state.",
-        "Missing Observation Table Logger: No listener was bound to record trials into the Section 08 observation table.",
-        "Malformed Unit in Steppers Slot: The unit for Average Degree was rendered as a broken MathML fraction `link s/n ode` instead of `links/node`."
-      ]
-    },
-    {
-      "sim_id": "u02327",
-      "status": "FIXED",
-      "time": "18:44:43",
-      "issues": [
-        "Fixed distorted mathematical fraction in apparatus specifications (AES-128/256 and kernel I/O)",
-        "Fixed broken fraction representation in Shannon entropy readout and observation table header units ('bit s/b yte' to 'bits/byte')",
-        "Corrected observation table column count and alignment from 8 mismatched cells to the 5 defined table headers",
-        "Wired interactive action buttons (Toggle Format, Apply CLE, Enable TDE, Validate Key)",
-        "Wired up/down stepper buttons to synchronously update numerical inputs and live telemetry"
-      ]
-    },
-    {
-      "sim_id": "u02212",
-      "status": "ERROR",
-      "time": "18:44:46",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02342",
-      "status": "FIXED",
-      "time": "18:45:06",
-      "issues": [
-        "Primary kick action button id 'btn_kick_ball' was not bound in canvas_js",
-        "Goalkeeper patrol action button id 'btn_tux_patrol' was unwired with missing patrol trajectory logic",
-        "Stepper increment and decrement buttons were unhandled in canvas_js",
-        "Observation table logging inserted 10 mismatched columns into a 5-column table structure",
-        "Total distance travelled (s_tot) was not integrated or tracked during physics updates"
-      ]
-    },
-    {
-      "sim_id": "u02361",
-      "status": "FIXED",
-      "time": "18:54:50",
-      "issues": [
-        "Unwired action buttons: Replaced non-existent IDs ('btnOpen', 'btnClose', 'btnToggle') with actual DOM button IDs ('btn_force_toggle', 'btn_all_open', 'btn_all_close').",
-        "Misaligned observation table columns: Reordered row cells to correctly match the 6 columns in observation_thead_html (Switch Number k, Command Action u_k, Contact Status S_k, Blade Position theta_k, DCS Voltage V_DO, Bus System Voltage V_bus).",
-        "Mismatched badge numbers and missing badge: Corrected leader line badges to align with legend_pills_html (Badge 1: Workstation, Badge 2: DCS Module, Badge 3: MOM Actuator, Badge 4: Busbar & Insulators, Badge 5: Incomer GOS, Badge 6: Feeder GOS)."
-      ]
-    },
-    {
-      "sim_id": "u02329",
-      "status": "ERROR",
-      "time": "18:54:50",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02313",
-      "status": "FIXED",
-      "time": "18:54:50",
-      "issues": [
-        "Unwired action button btn_execute_cycle in canvas_js",
-        "Misaligned observation table columns in btnRecord listener where recorded data cells did not match the 6 observation_thead_html headers (Opcode, Field Width, CPI, PC, AC, Execution Time)"
-      ]
-    },
-    {
-      "sim_id": "u02339",
-      "status": "FIXED",
-      "time": "18:54:50",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
     {
       "sim_id": "u02351",
       "status": "FIXED",
@@ -384,6 +306,75 @@
       "sim_id": "u01815",
       "status": "PASS",
       "time": "19:05:28",
+      "issues": []
+    },
+    {
+      "sim_id": "u01767",
+      "status": "ERROR",
+      "time": "19:05:37",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01789",
+      "status": "ERROR",
+      "time": "19:05:54",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01882",
+      "status": "FIXED",
+      "time": "19:06:11",
+      "issues": [
+        "Action buttons 'btn_otaa_join' (Initiate OTAA Join Handshake) and 'btn_transmit_uplink' (Trigger Sensor Uplink Packet) were not explicitly bound to DOM click event listeners in canvas_js initialization."
+      ]
+    },
+    {
+      "sim_id": "u01833",
+      "status": "FIXED",
+      "time": "19:06:13",
+      "issues": [
+        "Observation table recorded only 5 columns, omitting Battery Voltage V_batt and causing column misalignment against the 6-column thead.",
+        "Unwired action buttons: 'btn_toggle_relay' and 'btn_reverse_polarity' had no event listeners attached.",
+        "Unwired stepper buttons: '.stepper-btn' (up/down) buttons lacked click handlers to increment/decrement input values."
+      ]
+    },
+    {
+      "sim_id": "u01870",
+      "status": "FIXED",
+      "time": "19:06:35",
+      "issues": [
+        "Misaligned observation table: record button handler generated 8 mismatched data cells instead of the 6 columns defined in observation_thead_html (Character Identifier, Nominal Height, Tolerance Radius, Mean Deviation, Accuracy Score, Completion Status).",
+        "Unwired action buttons: 'btn_clear_trace' (Clear Current Stroke Path) and 'btn_toggle_guidelines' (Toggle BIS Reference Grid) lacked click event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) and input/change event listeners were not connected in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01889",
+      "status": "FIXED",
+      "time": "19:06:46",
+      "issues": [
+        "Fixed corrupted nested fraction MathML in apparatus_html Ethernet specification",
+        "Corrected corrupted stepper unit pkts/s in steppers_html",
+        "Wired stepper up/down buttons and action trigger button btn_run_snort_inspection in canvas_js",
+        "Aligned observation table row generation to exactly match the 5 columns of observation_thead_html"
+      ]
+    },
+    {
+      "sim_id": "u01655",
+      "status": "ERROR",
+      "time": "19:06:53",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01705",
+      "status": "PASS",
+      "time": "19:07:19",
       "issues": []
     }
   ],
@@ -1840,6 +1831,7 @@
     "u01702",
     "u01703",
     "u01704",
+    "u01705",
     "u01706",
     "u01707",
     "u01708",
@@ -1964,6 +1956,7 @@
     "u01830",
     "u01831",
     "u01832",
+    "u01833",
     "u01835",
     "u01836",
     "u01837",
@@ -1996,6 +1989,7 @@
     "u01866",
     "u01867",
     "u01869",
+    "u01870",
     "u01871",
     "u01872",
     "u01873",
@@ -2007,12 +2001,14 @@
     "u01879",
     "u01880",
     "u01881",
+    "u01882",
     "u01883",
     "u01884",
     "u01885",
     "u01886",
     "u01887",
     "u01888",
+    "u01889",
     "u01890",
     "u01891",
     "u01892",
