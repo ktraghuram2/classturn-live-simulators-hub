@@ -1,76 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:55:57",
-  "completed_count": 1162,
-  "fixed_count": 1116,
-  "latest_sim_id": "u01443",
+  "updated_at": "2026-10-19 08:59:33",
+  "completed_count": 1167,
+  "fixed_count": 1120,
+  "latest_sim_id": "u01445",
   "recent_events": [
-    {
-      "sim_id": "u01403",
-      "status": "PASS",
-      "time": "08:47:18",
-      "issues": []
-    },
-    {
-      "sim_id": "u01401",
-      "status": "FIXED",
-      "time": "08:47:26",
-      "issues": [
-        "Observation table column mismatch: btnRecord inserted 6 columns while observation_thead_html defined 5 columns (removed redundant frameDataSize column to align headers with recorded cells)",
-        "Unwired action buttons: Transmit In-Window Frame (btn_transmit_frame) and Simulate Packet Loss / Timeout (btn_simulate_loss) lacked event listeners",
-        "Unwired stepper buttons: .stepper-btn buttons lacked event listeners to modify inputs and trigger syncControls"
-      ]
-    },
-    {
-      "sim_id": "u01399",
-      "status": "ERROR",
-      "time": "08:47:49",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01402",
-      "status": "FIXED",
-      "time": "08:48:06",
-      "issues": [
-        "Simulator title was mismatched as 'Coaxial capacitive liquid level sensor' instead of 'Flow Measurement using Orifice Plate'",
-        "Observation table columns in record button handler were misaligned with table headers (column count and sequence mismatch)",
-        "Action buttons (btn_prime_pump and btn_zero_calibrate) and stepper controls lacked interactive event handlers in canvas_js",
-        "Raw unformatted prose variables (deltap, Cd) in principles summary and procedure sections replaced with clean MathML"
-      ]
-    },
-    {
-      "sim_id": "u01400",
-      "status": "ERROR",
-      "time": "08:48:40",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01406",
-      "status": "FIXED",
-      "time": "08:48:41",
-      "issues": [
-        "Unwired interactive action buttons (btn_set_irrotational and btn_set_pure_shear) in canvas_js",
-        "Unwired micro-stepper increment/decrement buttons (.stepper-btn) in canvas_js",
-        "Mismatched live telemetry element IDs (val_reading_* vs reading_*) preventing live display updates",
-        "Misaligned observation table row schema with 7 td columns versus 6 thead columns due to extra trial index td",
-        "Shear angle calculation discrepancy using (dv_dx + du_dy) instead of shearRate resulting in double-value angular distortion"
-      ]
-    },
-    {
-      "sim_id": "u01405",
-      "status": "FIXED",
-      "time": "08:48:47",
-      "issues": [
-        "Unwired action buttons: btn_apply_pulse and btn_apply_10_pulses were not hooked to event listeners in canvas_js",
-        "Missing stepper button click listeners for .stepper-btn increment and decrement actions",
-        "Observation table column mismatch: 8th column header is 'Pulse Outcome' but recordObservation populated V50 instead of outcome status",
-        "Apparatus legend numbering mismatch between legend_pills_html and canvas apparatus badges/section 2 items"
-      ]
-    },
     {
       "sim_id": "u01407",
       "status": "FIXED",
@@ -404,6 +338,65 @@
       "issues": [
         "Action buttons #btn_compile_instantiate and #btn_validate_singleton were unwired and lacked interactive feedback and console telemetry updates.",
         "Stepper increment and decrement buttons (.stepper-btn) lacked DOM click handlers for targeting inputs."
+      ]
+    },
+    {
+      "sim_id": "u01438",
+      "status": "ERROR",
+      "time": "08:59:33",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01448",
+      "status": "FIXED",
+      "time": "08:59:33",
+      "issues": [
+        "Unwired action buttons: btn_start_compression, btn_ram_specimen, and btn_strip_specimen were not wired in canvas_js to start hydraulic compression, trigger rammer drop animation, and reset test",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) were missing click event listeners to update numeric inputs and dispatch change events",
+        "Observation table column mismatch: recordObservation appended 7 table cells including an extraneous loading rate column, misaligning data under the 6 defined table header columns"
+      ]
+    },
+    {
+      "sim_id": "u01444",
+      "status": "FIXED",
+      "time": "08:59:33",
+      "issues": [
+        "Unwired action button: 'btn_compile_run' ('Compile & Evaluate Opcode') was not targeted in canvas_js, which queried a non-existent element 'btnRecord'.",
+        "Observation table column mismatch: canvas_js appended 5 cells into an observation table configured with 4 header columns (LHS Expression, RHS Expression, Validation Status, Heap Target Address), causing column misalignment and displaying numeric indices instead of Java tokens."
+      ]
+    },
+    {
+      "sim_id": "u01439",
+      "status": "ERROR",
+      "time": "08:59:33",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01437",
+      "status": "FIXED",
+      "time": "08:59:33",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01440",
+      "status": "PASS",
+      "time": "08:59:33",
+      "issues": []
+    },
+    {
+      "sim_id": "u01445",
+      "status": "FIXED",
+      "time": "08:59:33",
+      "issues": [
+        "Unwired action buttons 'btn_send_bit_0' and 'btn_send_bit_1': wired both buttons to update input_bit_x and trigger a manual clock pulse.",
+        "Misaligned observation table columns: corrected observation recorder from pushing 8 columns with mismatched labels to exactly the 7 columns defined in observation_thead_html (Clock Step n, Input Bit X, QA, QB, QA_next, QB_next, Sequence Output Z).",
+        "Unwired stepper controls: added event delegation to stepper up/down buttons to adjust target values and dispatch input/change events."
       ]
     }
   ],
@@ -1568,7 +1561,12 @@
     "u01433",
     "u01434",
     "u01436",
+    "u01437",
+    "u01440",
     "u01442",
-    "u01443"
+    "u01443",
+    "u01444",
+    "u01445",
+    "u01448"
   ]
 }
