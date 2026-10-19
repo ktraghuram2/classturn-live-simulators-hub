@@ -1,58 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:26:42",
-  "completed_count": 1577,
-  "fixed_count": 1440,
-  "latest_sim_id": "u02004",
+  "updated_at": "2026-10-19 15:27:41",
+  "completed_count": 1582,
+  "fixed_count": 1443,
+  "latest_sim_id": "u02008",
   "recent_events": [
-    {
-      "sim_id": "u01955",
-      "status": "FIXED",
-      "time": "14:43:33",
-      "issues": [
-        "Observation table logging appended 8 data cells instead of matching the 6 declared columns in observation_thead_html",
-        "Action buttons btn_cycle_case and btn_apply_developer were present in HTML slots but lacked interactive click event listeners in canvas_js",
-        "Stepper increment and decrement buttons were unhandled in canvas_js, preventing parameter stepping via UI controls",
-        "calculatePhysics evaluated all defects simultaneously without honoring user-selected inspection cases (Case 1: Sound weld, Case 2: Slag inclusion, Case 3: Root void)",
-        "Capillary dye bleed-out indication width did not respond to developer application state",
-        "Corrupted label text '(UTca)' in actions_html slot for btn_cycle_case"
-      ]
-    },
-    {
-      "sim_id": "u01962",
-      "status": "FIXED",
-      "time": "14:44:44",
-      "issues": [
-        "Replaced erroneous MathML markup for the English indefinite article 'a' in aim_html, principles_summary_html, and validation_html with plain text 'a'."
-      ]
-    },
-    {
-      "sim_id": "u01965",
-      "status": "FIXED",
-      "time": "14:44:46",
-      "issues": [
-        "Telemetry element IDs in canvas_js did not match HTML readout span IDs (val_reading_* vs reading_*) and were missing unit suffixes",
-        "Action buttons (btn_transfer_sample, btn_insert_tube, btn_acquire_spectrum) and stepper arrow buttons were not wired up with interactive event listeners",
-        "Observation table record row had 9 misaligned columns with serial number and stepper inputs instead of the 5 defined observation_thead columns (ν0, B0, Δν, δ, Irel)"
-      ]
-    },
-    {
-      "sim_id": "u01960",
-      "status": "FIXED",
-      "time": "14:44:54",
-      "issues": [
-        "Unwired action buttons: HTML action buttons in actions_html use id='btn_release_cart' and id='btn_return_cart' whereas JS was querying 'btnPlay'/'btnStart' and 'btnReset', leaving the simulator controls inactive.",
-        "Missing stepper increment/decrement button listeners: The stepper buttons (.stepper-btn-up, .stepper-btn-down) were not wired to modify numeric stepper inputs.",
-        "Misaligned observation table columns: JS recordObservation rendered 8 <td> cells starting with trialCount, but observation_thead_html only defines 7 column headers, shifting every recorded measurement by one column.",
-        "Automatic observation recording: cart arrival at pointer photogate now automatically records observation trial data and updates the live timer readout."
-      ]
-    },
-    {
-      "sim_id": "u01961",
-      "status": "PASS",
-      "time": "14:45:01",
-      "issues": []
-    },
     {
       "sim_id": "u01969",
       "status": "FIXED",
@@ -393,6 +345,53 @@
         "Experiment activity selector #experimentSelect was not wired to reconfigure data manifold between uniform/clustered and non-convex distributions",
         "Neighborhood radius telemetry decay schedule had an excessively steep decay exponent (-10.0) causing premature zero-reading during active topological adaptation"
       ]
+    },
+    {
+      "sim_id": "u02003",
+      "status": "FIXED",
+      "time": "15:26:46",
+      "issues": [
+        "Unwired Evaluate Answer button due to missing DOM id lookup 'btn_evaluate_answer'.",
+        "Unwired Generate New Challenge button ('btn_new_challenge') with missing challenge generator logic.",
+        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js.",
+        "Observation table column mismatch: 7 columns generated instead of 6, and target coefficient was placed in column 3 instead of column 5."
+      ]
+    },
+    {
+      "sim_id": "u02000",
+      "status": "FIXED",
+      "time": "15:26:46",
+      "issues": [
+        "Unwired action buttons: 'Execute Gaussian Elimination' (btn_solve_gauss) and 'Superimpose Analytical Reference Curve' (btn_compare_analytical) lacked event listeners.",
+        "Unwired steppers and controls: Stepper buttons (.stepper-btn) and parameter input change events were unhandled.",
+        "Broken live readout IDs: Script queried reading_y1, reading_y2, reading_exact_y1, reading_trunc_error instead of val_reading_y1, val_reading_y2, val_reading_exact_y1, val_reading_trunc_error.",
+        "Misaligned observation table columns: 7 td values were written into 6 header columns due to extraneous boundaryY3 insertion in btnRecord.",
+        "Low-contrast graph elements: Analytical profile (#059669) and ordinate drop lines (#14532d) suffered low contrast against dark #071512 CRT screen background.",
+        "Raw LaTeX in validation section: Formula (y_{i+1} - 2y_i + y_{i-1}) contained raw '2y_i' text and limitation 1 contained unparsed prime symbols."
+      ]
+    },
+    {
+      "sim_id": "u02002",
+      "status": "FIXED",
+      "time": "15:27:12",
+      "issues": [
+        "Observation table record button generated an extra Laser Power column (10 columns inserted instead of 9), shifting and misaligning all computed kinematic velocity columns with table header labels",
+        "Action buttons 'btn_capture_frame_pair' (Trigger Dual Laser Pulse) and 'btn_toggle_vector_field' (Compute Cross-Correlation Vector Overlay) were unhandled in canvas_js",
+        "Stepper increment and decrement buttons ('.stepper-btn') were not wired to input controls in canvas_js",
+        "Greek delta symbols in procedure and validation MathML slots were disconnected from variable letters (e.g. Delta t, Delta x, Delta y)"
+      ]
+    },
+    {
+      "sim_id": "u02001",
+      "status": "PASS",
+      "time": "15:27:15",
+      "issues": []
+    },
+    {
+      "sim_id": "u02008",
+      "status": "PASS",
+      "time": "15:27:41",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1971,7 +1970,12 @@
     "u01995",
     "u01996",
     "u01997",
+    "u02000",
+    "u02001",
+    "u02002",
+    "u02003",
     "u02004",
-    "u02005"
+    "u02005",
+    "u02008"
   ]
 }
