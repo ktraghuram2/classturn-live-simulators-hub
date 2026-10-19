@@ -1,71 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 07:40:40",
-  "completed_count": 912,
-  "fixed_count": 912,
+  "updated_at": "2026-10-19 07:53:23",
+  "completed_count": 917,
+  "fixed_count": 914,
   "latest_sim_id": "u01054",
   "recent_events": [
-    {
-      "sim_id": "u01046",
-      "status": "FIXED",
-      "time": "07:10:09",
-      "issues": [
-        "Unwired action buttons (#btn_trigger_discharge, #btn_flush_dielectric) and stepper input buttons (▲/▼)",
-        "Unwired top panel simulation controls (#btnToggle Pause/Run, #btnStep, #btnReset, #experimentSelect)",
-        "Misaligned observation table columns: missing # header column causing trial numbers to shift into parameter columns",
-        "Malformed Material Removal Rate (MRR) unit (m/m³s instead of mm³/s) in live readouts and observation table header",
-        "Missing equations 1 to 4 and malformed empirical constant unit in Section 03 / Principles governing formulas list"
-      ]
-    },
-    {
-      "sim_id": "u01049",
-      "status": "FIXED",
-      "time": "07:10:20",
-      "issues": [
-        "Raw LaTeX and encoding artifact in Section 02 Apparatus item 3 ('s = H · \\hatx^T ±od 2'): replaced with valid inline MathML.",
-        "Unwired action buttons: added event listeners for #btn_auto_decode (runs iterative min-sum decoding to convergence or max iterations) and #btn_inject_erasure (re-initializes channel with noise and erasures).",
-        "Unwired Reset button: added #btnReset event listener to restore all stepper controls to default settings, clear the observation table, and re-initialize the channel.",
-        "Misaligned observation notebook columns: restructured #btnRecord table row into exactly 6 columns aligned with #observationThead (Iteration, Channel Erasure Rate, Syndrome Weight, Recovered Bits, Mean LLR, Decoding Status).",
-        "Repeated half-step execution glitch: added cycle latches (phase1Done, phase2Done) so check-to-variable and variable-to-check half-steps execute exactly once per 2.4s cycle rather than repeating across multiple animation frames.",
-        "Hardened getStepperVal with min/max clamping to guard against NaN, empty, or out-of-range inputs.",
-        "Synchronized live reading readouts with consistent units (bits, cycles) matching Section 06 specifications."
-      ]
-    },
-    {
-      "sim_id": "u01053",
-      "status": "FIXED",
-      "time": "07:11:02",
-      "issues": [
-        "Corrupted MathML syntax in principles_summary_html for rate of change of frequency d(Δω)/dt rendered as dΔ(ω/d)t.",
-        "Missing parameter symbol R in observation_thead_html Droop Regulation column header.",
-        "Severe mismatch in observation table columns: canvas_js appended 11 columns whereas the observation header defines 6 columns (ΔPL, R, M, Δω_min, Δω_ss, ts).",
-        "Missing transient frequency nadir Δω_min tracking in canvas_js simulation loop.",
-        "Unwired action button btn_restore_secondary_control: had no event listener to apply secondary integral trim (ΔPc = ΔPL) to eliminate steady-state offset.",
-        "Unwired stepper buttons: .stepper-btn (.stepper-btn-up and .stepper-btn-down) lacked click event listeners to modify numerical input values."
-      ]
-    },
-    {
-      "sim_id": "u01059",
-      "status": "FIXED",
-      "time": "07:11:52",
-      "issues": [
-        "Observation table column misalignment: Record button inserted obsCount as first cell and shifted columns, misaligning values against the 8-column header and dropping Field of View.",
-        "Unwired stepper buttons: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click logic to increment/decrement input values and dispatch events.",
-        "Unwired action buttons: Action buttons 'btn_slice_transfer' and 'btn_stain_mount' were unhandled in JavaScript, leaving slide sectioning and coverslip mounting animations inactive."
-      ]
-    },
-    {
-      "sim_id": "u01060",
-      "status": "FIXED",
-      "time": "07:11:59",
-      "issues": [
-        "Misaligned observation table columns: btnRecord only recorded 5 columns instead of all 6 matching observation_thead_html, misassigned row index to elapsed time, shifted energy/probabilities into wrong columns, and omitted ground state phase.",
-        "Unwired action buttons: Synthesize Coherent Superposition (btn_generate_coherent) and Isolate Selected Eigenstate (btn_isolate_eigenstate) lacked click event listeners.",
-        "Unwired stepper and experiment controls: Stepper buttons (.stepper-btn) and experiment select dropdown were unhandled in JavaScript.",
-        "Coherent wavepacket distortion: Complex coefficient synthesis artificially boosted eigenstate n when qNumber > 0 in coherent mode, breaking Poisson statistics and dispersionless packet oscillation.",
-        "Canvas background clearing: Replaced transparent clearRect with solid #090d16 canvas background fill to avoid contrast artifacts on dark laboratory themes."
-      ]
-    },
     {
       "sim_id": "u01050",
       "status": "FIXED",
@@ -539,6 +478,46 @@
         "Telemetry readout unit preservation: updateTelemetry targeted non-existent element IDs (e.g. 'gamma_readout' instead of 'val_gamma_readout') and would wipe out nested MathML unit elements; replaced with setTelemetryField updating the inner value span while preserving unit markup.",
         "Input crash-proofing & range clamping: Added boundary validation and NaN protection in syncInputs() for u1, u2, v1, and v2 inputs across [-3.0, 3.0].",
         "Missing active procedure step highlighting: Added updateProcedureHighlight to dynamically guide users through laboratory procedure steps 1 to 7 during parameter adjustments, update action execution, and observation logging."
+      ]
+    },
+    {
+      "sim_id": "u01104",
+      "status": "PASS",
+      "time": "07:52:36",
+      "issues": []
+    },
+    {
+      "sim_id": "u01105",
+      "status": "PASS",
+      "time": "07:52:55",
+      "issues": []
+    },
+    {
+      "sim_id": "u01101",
+      "status": "FIXED",
+      "time": "07:53:15",
+      "issues": [
+        "Unwired action buttons: 'btn_launch_ignition' and 'btn_stage_separation' had no event listeners in canvas_js",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' had no click handlers to adjust input steppers",
+        "Misaligned observation table: first column logged observation counter instead of flight time (s) matching the observation_thead_html header"
+      ]
+    },
+    {
+      "sim_id": "u01108",
+      "status": "PASS",
+      "time": "07:53:18",
+      "issues": []
+    },
+    {
+      "sim_id": "u01054",
+      "status": "FIXED",
+      "time": "07:53:23",
+      "issues": [
+        "Fixed spurious MathML fractions in apparatus_html: replaced broken fraction in Type A/B immersion oil and 6 V / 20 W illuminator specification with clean, standard notation.",
+        "Synchronized controlDefs IDs and step parameters with steppers_html: bound objective_magnification, coarse_focus (mm), fine_focus (μm), rheostat_brightness (%), iris_diaphragm (%), stage_x (mm), and stage_y (mm) while retaining alias support.",
+        "Corrected live reading DOM IDs in syncFromDOM to match readouts_html: mapped reading_focus_clarity, reading_numerical_aperture, reading_fov_diameter, and reading_field_brightness with matching engineering units.",
+        "Wired interactive action buttons: btn_toggle_light, btn_apply_oil, btn_auto_focus, and btn_rotate_nosepiece with optical stage state updates.",
+        "Aligned observation table recorded row data to precisely match the 8 headers in observation_thead_html: Objective Lens, Ocular Lens, Total Magnification, Numerical Aperture, Aperture Diaphragm, Focus Position, Image Clarity, and Resolving Limit."
       ]
     }
   ],
@@ -1417,6 +1396,7 @@
     "u01051",
     "u01052",
     "u01053",
+    "u01054",
     "u01055",
     "u01056",
     "u01057",
@@ -1452,8 +1432,12 @@
     "u01098",
     "u01099",
     "u01100",
+    "u01101",
     "u01102",
+    "u01104",
+    "u01105",
     "u01106",
-    "u01107"
+    "u01107",
+    "u01108"
   ]
 }
