@@ -1,43 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 19:28:02",
-  "completed_count": 2093,
-  "fixed_count": 1876,
-  "latest_sim_id": "u02104",
+  "updated_at": "2026-10-19 19:29:49",
+  "completed_count": 2097,
+  "fixed_count": 1880,
+  "latest_sim_id": "u01458",
   "recent_events": [
-    {
-      "sim_id": "u01458",
-      "status": "ERROR",
-      "time": "19:03:07",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01636",
-      "status": "ERROR",
-      "time": "19:03:37",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01685",
-      "status": "PASS",
-      "time": "19:04:05",
-      "issues": []
-    },
-    {
-      "sim_id": "u01718",
-      "status": "FIXED",
-      "time": "19:04:11",
-      "issues": [
-        "Numbered leader badges mismatched with apparatus legend pills (Petri plates was labeled 1 instead of 3, Spreader was 2 instead of 4, Water bath was 3 instead of 1, and Micropipette was 4 instead of 2)",
-        "Telemetry readout DOM selectors queried container item IDs rather than value IDs (val_reading_*), failing to update displayed readout values",
-        "Observation table record button inserted 7 columns with extra time and lawn columns into a 5-column table, causing header-data misalignment",
-        "Action buttons (Pour Agar Wedges & Diffuse, Spread Inoculum & Incubate) and stepper increment/decrement buttons were unhandled in canvas_js"
-      ]
-    },
     {
       "sim_id": "u01749",
       "status": "FIXED",
@@ -365,6 +332,44 @@
         "Unwired launch action button: script listened to 'btnLaunch', whereas HTML defined id='btn_launch_particles'.",
         "Missing event listeners for stepper increment/decrement buttons (▲ / ▼).",
         "Observation table columns were misaligned: omitted Table Aperture Width (j) and shifted count/probability columns."
+      ]
+    },
+    {
+      "sim_id": "u02212",
+      "status": "FIXED",
+      "time": "19:28:05",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u02118",
+      "status": "FIXED",
+      "time": "19:28:05",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u02274",
+      "status": "FIXED",
+      "time": "19:29:08",
+      "issues": [
+        "Curvy Leader Line Badges 2 and 3 were inverted: Badge 2 pointed to the lower anvil and Badge 3 pointed to the billet, contradicting Legend Pill 2 (Multi-Diameter Stepped Alloy Billet) and Pill 3 (Lower Stationary Anvil Die Block). Swapped them so badges strictly match legend numbering.",
+        "Observation table columns were misaligned: observation_thead_html defines 7 columns (Pass #, Rotation Angle, Billet Temperature, Bite Reduction, Shaft Diameter, Equivalent Strain, Peak Forging Force), but btnRecord appended a 9-column row with duplicate temperature and extraneous ram speed columns.",
+        "Control action buttons ('btn_execute_forging_stroke', 'btn_rotate_and_advance') and stepper increment/decrement buttons were unwired in canvas_js. Added active event listeners for cycle trigger, manipulator rotation, and stepper inputs."
+      ]
+    },
+    {
+      "sim_id": "u02329",
+      "status": "FIXED",
+      "time": "19:29:21",
+      "issues": [
+        "Unwired action button: canvas_js listened for btn_run / btnRun / btn_start while actions_html defined btn_apply_indentation.",
+        "Unwired telemetry readouts: canvas_js attempted to select IDs reading_force_N, reading_indent_diagonal, reading_crack_length, and reading_fracture_toughness, whereas readouts_html defined them as val_reading_force_N, val_reading_indent_diagonal, val_reading_crack_length, and val_reading_fracture_toughness.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn) lacked click listeners to increment/decrement the corresponding input controls.",
+        "Misaligned observation table columns: The record button in canvas_js added 7 columns (including trial number), causing misalignment with the 6 columns defined in observation_thead_html.",
+        "Synchronous readout updating: Telemetry values were not immediately updated upon changing stepper input controls."
       ]
     }
   ],
@@ -2211,6 +2216,7 @@
     "u02115",
     "u02116",
     "u02117",
+    "u02118",
     "u02119",
     "u02120",
     "u02121",
@@ -2298,6 +2304,7 @@
     "u02209",
     "u02210",
     "u02211",
+    "u02212",
     "u02213",
     "u02214",
     "u02215",
@@ -2358,6 +2365,7 @@
     "u02271",
     "u02272",
     "u02273",
+    "u02274",
     "u02276",
     "u02277",
     "u02278",
@@ -2408,6 +2416,7 @@
     "u02325",
     "u02326",
     "u02327",
+    "u02329",
     "u02330",
     "u02331",
     "u02332",
