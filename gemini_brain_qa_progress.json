@@ -1,74 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 07:55:28",
-  "completed_count": 927,
-  "fixed_count": 922,
-  "latest_sim_id": "u01116",
+  "updated_at": "2026-10-19 07:56:30",
+  "completed_count": 932,
+  "fixed_count": 925,
+  "latest_sim_id": "u01124",
   "recent_events": [
-    {
-      "sim_id": "u01081",
-      "status": "FIXED",
-      "time": "07:19:52",
-      "issues": [
-        "Badge numbers on the canvas did not match legend pills (Motor was badge 1 instead of 3, Auto-transformer was 2 instead of 1, DC Generator was 3 instead of 4, Load Bank was 4 instead of 6, TPST Switch was 5 instead of 2, and DPST Switch was 6 instead of 5).",
-        "Observation table recording button appended 7 columns with unaligned headers into a 5-column table structure.",
-        "Action buttons #btn_auto_unity_pf and #btn_toggle_excitation had no click event listeners attached.",
-        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) were unwired.",
-        "Low contrast #0f172a return wiring and switch terminals on the #090d16 dark canvas were upgraded for clear visibility."
-      ]
-    },
-    {
-      "sim_id": "u01074",
-      "status": "FIXED",
-      "time": "07:20:11",
-      "issues": [
-        "Observation table column misalignment: observation_thead_html defined 7 columns (Incubation Duration, Organism Strain, Broth Color, Medium pH, Redox Potential, Curd State, Gas Production), but btnRecord generated 8 misaligned columns with an unheaded Incubation Temperature column and scrambled column order.",
-        "Unwired Section 05 action buttons: '#btn_tilt_tube' (Invert Rack for Curd Firmness Test) and '#btn_flame_inoculate' (Execute Aseptic Flame & Inoculate Cycle) lacked event listeners and interactive animations in canvas_js.",
-        "Unwired stepper controls: Precision up/down buttons ('.stepper-btn-up', '.stepper-btn-down') lacked event handlers in canvas_js to increment and decrement organism strain, incubation duration, and incubation temperature.",
-        "Unwired top-level and playback controls: '#btnToggle'/'#btnPause' (Pause/Run), '#btnStep', '#experimentSelect' (Experiment Mode Switch), and '#btnReset' lacked event handlers in canvas_js to control playback, discrete step progression, or reset experimental state.",
-        "Missing canvas pointer lock: simCanvas lacked pointerEvents = 'none' to enforce the locked layout immutability standard.",
-        "Destructive telemetry updates: canvas_js set textContent directly on readout value spans, wiping out nested MathML unit elements; rectified with setTelemetryText targeting first child element.",
-        "Nested span tags in data-unit attributes: Readout items in readouts_html contained raw '<span data-source-paths=...>' markup inside data-unit attributes instead of clean text strings ('pH', 'mV', 'color hex', 'mPa·s', 'mL').",
-        "Raw LaTeX and unclosed HTML tags in principles_list_html: Symbol for pK_a contained raw LaTeX 'pK_{a}' rather than MathML, and the equation symbols container was missing closing </ul>, </div>, and </li> tags."
-      ]
-    },
-    {
-      "sim_id": "u01077",
-      "status": "FIXED",
-      "time": "07:21:34",
-      "issues": [
-        "Fixed corrupted MathML in apparatus_html for the Voltmeter specification where multi-range slash notation rendered as division-by-zero fractions.",
-        "Fixed apparatus leader badge mappings in canvas_js: corrected Badge 1 (Alternator), Badge 2 (Prime mover), Badge 3 (Voltmeter), Badge 4 (Ammeter), Badge 5 (Wattmeter), and Badge 6 (Variac) to anchor to their corresponding apparatus elements.",
-        "Fixed observation table misalignment: removed extraneous trialNum cell in btnRecord row generation so the 7 data columns align exactly with the 7 observation table headers.",
-        "Fixed live readings DOM update in canvas_js: setDOM was targeting missing IDs ('reading_field_current') instead of value span IDs ('val_reading_field_current'). Updated setDOM and appended display units.",
-        "Wired up interactive stepper buttons (.stepper-btn-up and .stepper-btn-down) to increment/decrement controls and trigger physics synchronization.",
-        "Wired up action buttons: connected btn_engage_prime_mover to toggle synchronous motor rotation and btn_switch_sequence_mode to cycle between sequence test configurations."
-      ]
-    },
-    {
-      "sim_id": "u01079",
-      "status": "FIXED",
-      "time": "07:22:03",
-      "issues": [
-        "Corrupted MathML zero-division fractions (V/0, A/0, V/300, A/10) in apparatus specifications for Voltmeter, Ammeter, and Wattmeter.",
-        "Erroneous MathML entity in prose: Blondel's theory was rendered with an isolated '<math>s</math>' element.",
-        "Mismatch between legend pill numbering and canvas badge assignments: Badge 1 was drawn on the Motor-Generator set instead of Variac, and Badge 5 on Wattmeter instead of Motor-Generator set.",
-        "Unwired stepper up/down buttons (▲/▼) for variac voltage, motor speed, and armature resistance controls.",
-        "Unwired action buttons: 'Freeze Instant at Direct Axis Alignment' (btn_align_d_axis) and 'Freeze Instant at Quadrature Axis Alignment' (btn_align_q_axis) had no event listeners.",
-        "Observation table column misalignment: Recorded rows inserted 11 cells with a leading serial count column, offsetting all values against the 10 defined table headers.",
-        "Voltmeter meter scale (30 - 80 V) clipped during low (40 V line) and high (140 V line) variac operational ranges; updated scale to 0 - 100 V."
-      ]
-    },
-    {
-      "sim_id": "u01083",
-      "status": "FIXED",
-      "time": "07:22:16",
-      "issues": [
-        "Unwired action buttons: Control buttons for Transformer 1 fault (btn_fault_xfmr1), Transformer 2 fault (btn_fault_xfmr2), 33 kV bus fault (btn_fault_bus), and reclosing breakers (btn_reclose_breakers) lacked click event listeners in canvas_js.",
-        "Unwired stepper adjustment buttons: Stepper up and down buttons (.stepper-btn-up and .stepper-btn-down) for Feeder 1 and Feeder 2 load current inputs were not wired in canvas_js.",
-        "Misaligned observation table: btnRecord generated only 10 columns starting with an extra row counter instead of 13 columns matching the observation header specification (Fault Condition, CB1 Status, CB2 Status, CB3 Status, V1, I1, P1, V2, I2, P2, V3, I3, P3)."
-      ]
-    },
     {
       "sim_id": "u01085",
       "status": "FIXED",
@@ -487,6 +423,51 @@
         "Dynamic conductometer mode display was hardcoded to 'MHOS' instead of reflecting active mode toggling between MHOS and CELL-CONST.",
         "Raw LaTeX/plain-text notation 'Λ_∞' in Step 11 of procedure_section_html was updated to proper MathML."
       ]
+    },
+    {
+      "sim_id": "u01119",
+      "status": "FIXED",
+      "time": "07:55:33",
+      "issues": [
+        "Unwired action button btn_align_minimum (Auto-Align Sensor to First Minimum)",
+        "Unwired stepper increment/decrement buttons in simulation controls",
+        "Misaligned observation table columns with scrambled data and missing trial counter",
+        "Typo in principles summary MathML formula for diffraction intensity (sin(beta/beta)^2 instead of (sin(beta)/beta)^2)",
+        "Curvy leader line 3 badge positioned directly above anchor causing vertical straight line instead of S-curve"
+      ]
+    },
+    {
+      "sim_id": "u01120",
+      "status": "FIXED",
+      "time": "07:55:36",
+      "issues": [
+        "Unwired action buttons: 'btn_perturb_flock' (Perturb Swarm Trajectory) and 'btn_toggle_discrete_rules' (Toggle Discrete Cellular Mode) were present in controls but missing event listeners in canvas_js",
+        "Observation table column misalignment: observation_thead_html defines 6 columns (Separation Weight, Alignment Weight, Cohesion Weight, Polarization Metric, Mean Neighbor Distance, Active Clusters), but btnRecord recorded 10 mismatched columns",
+        "Stepper buttons: added robust interactive step increment/decrement event listeners for .stepper-btn controls"
+      ]
+    },
+    {
+      "sim_id": "u01115",
+      "status": "FIXED",
+      "time": "07:55:43",
+      "issues": [
+        "Misaligned observation table columns: btnRecord injected 7 columns into a 6-column header with mismatched parameters and values.",
+        "Swapped badges 2 and 3 in canvas: Slip gauge was labeled badge '2' and spur gear badge '3', contradicting the legend pills (pill 2 = Spur Gear Specimen, pill 3 = 4 mm Slip Gauge).",
+        "Unwired action buttons: btn_calibrate_slip, btn_align_pitch_line, and btn_index_next_tooth lacked event listeners.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons lacked click handlers to adjust input values."
+      ]
+    },
+    {
+      "sim_id": "u01111",
+      "status": "PASS",
+      "time": "07:56:03",
+      "issues": []
+    },
+    {
+      "sim_id": "u01124",
+      "status": "PASS",
+      "time": "07:56:30",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1411,11 +1392,16 @@
     "u01108",
     "u01109",
     "u01110",
+    "u01111",
     "u01112",
     "u01113",
     "u01114",
+    "u01115",
     "u01116",
     "u01117",
-    "u01118"
+    "u01118",
+    "u01119",
+    "u01120",
+    "u01124"
   ]
 }
