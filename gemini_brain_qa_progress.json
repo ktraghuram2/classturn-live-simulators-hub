@@ -1,9 +1,9 @@
 {
-  "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:58:40",
+  "runner_state": "COMPLETED",
+  "updated_at": "2026-10-19 18:58:43",
   "completed_count": 2063,
   "fixed_count": 1850,
-  "latest_sim_id": "u02367",
+  "latest_sim_id": "ALL DONE",
   "recent_events": [
     {
       "sim_id": "u02223",
