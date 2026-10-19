@@ -1,58 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:46:45",
-  "completed_count": 1272,
-  "fixed_count": 1205,
-  "latest_sim_id": "u01591",
+  "updated_at": "2026-10-19 09:49:57",
+  "completed_count": 1277,
+  "fixed_count": 1210,
+  "latest_sim_id": "u01599",
   "recent_events": [
-    {
-      "sim_id": "u01556",
-      "status": "FIXED",
-      "time": "09:31:14",
-      "issues": [
-        "Wired experimentSelect change listener to dynamically configure parameters between primary and extended protocols",
-        "Added automatic protocol phase progression logic in the 60 FPS animation loop when protocolRunning is triggered",
-        "Reset experimentSelect element to default index in resetDefaults function"
-      ]
-    },
-    {
-      "sim_id": "u01558",
-      "status": "ERROR",
-      "time": "09:31:14",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01559",
-      "status": "FIXED",
-      "time": "09:31:14",
-      "issues": [
-        "Unwired action buttons: btn_drop_sample, btn_run_stream, and btn_toggle_sieve had no click event listeners attached in canvas_js.",
-        "Uncontrolled continuous drop loop: simulation unconditionally dropped blocks at all times rather than responding to user toggle or single-step actions.",
-        "Unwired stepper buttons: .stepper-btn up and down increment controls were not bound to stepper input values.",
-        "Unwired experiment options: experimentSelect change listener was not attached to configure presets.",
-        "Raw mathematical text formatting: '1 - p' in apparatus_html and '(1 - p)^(4 - k)' in principles_summary_html were rendered as raw plain text instead of formatted MathML expressions."
-      ]
-    },
-    {
-      "sim_id": "u01561",
-      "status": "FIXED",
-      "time": "09:31:22",
-      "issues": [
-        "Observation table logged 7 columns including an extraneous clock delay entry, causing data cells to misalign with the 6 thead column headers.",
-        "Action button #btn_compile_execute ('Compile Bytecode & Dispatch Method') was unwired in canvas_js.",
-        "Stepper control increment/decrement buttons (.stepper-btn) lacked click event listeners in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01548",
-      "status": "ERROR",
-      "time": "09:31:22",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01562",
       "status": "FIXED",
@@ -385,6 +337,62 @@
         "Pre-seeded water surface ripples were not animated or rendered during precipitation",
         "Momentum scale factor alpha inverted physical logic (should be 1.000 during mass influx, scaling down by remaining depth fraction only during volume extraction)",
         "Ultrasonic measurement cone guidelines had low contrast (0.22 alpha) against the dark #090d16 canvas"
+      ]
+    },
+    {
+      "sim_id": "u01601",
+      "status": "FIXED",
+      "time": "09:49:57",
+      "issues": [
+        "Fixed telemetry DOM element selector IDs in canvas_js to target val_reading_audit_coverage, val_reading_logging_rate, and val_reading_violation_count so telemetry updates correctly.",
+        "Wired unwired action buttons (#btn_inject_query and #btn_flush_audit_buffer) to simulated query dispatch and audit buffer flush logic.",
+        "Wired stepper up/down buttons (.stepper-btn) to increment/decrement inputs with bounds checks and change event dispatches.",
+        "Aligned observation table recording with the 7 observation table headers (Transaction ID, Executing User, Operation Type, Target Object, Execution Status, Audit Logged, Audit Coverage).",
+        "Corrected broken MathML fraction unit (op s/s) to standard unit string (ops/s) in steppers and live readouts."
+      ]
+    },
+    {
+      "sim_id": "u01607",
+      "status": "FIXED",
+      "time": "09:49:57",
+      "issues": [
+        "Telemetry readouts looked for non-existent IDs instead of val_reading_* spans, preventing live readout updates",
+        "Action buttons (btn_open_all_doors, btn_close_all_doors, btn_toggle_arm) were unwired in canvas_js",
+        "Stepper increment/decrement buttons were unhandled in canvas_js",
+        "Observation table columns in canvas_js had 10 columns mismatched against the 8 headers in observation_thead_html",
+        "Legend pills only had 5 pills while canvas apparatus and badges have 6 distinct apparatus components"
+      ]
+    },
+    {
+      "sim_id": "u01597",
+      "status": "FIXED",
+      "time": "09:49:57",
+      "issues": [
+        "Misaligned observation table columns in btnRecord: extra Vin column shifted all data columns, and displacement constant G was missing.",
+        "Unwired action button btn_clamp_coil ('Electromagnetic Clamp'): added toggle handler and coil clamping integration.",
+        "Unwired stepper buttons (.stepper-btn-up and .stepper-btn-down): added click event listeners to increment/decrement stepper inputs."
+      ]
+    },
+    {
+      "sim_id": "u01602",
+      "status": "FIXED",
+      "time": "09:49:57",
+      "issues": [
+        "Unwired action buttons: 'btn_inject_disturbance' and 'btn_autotune_pid' were missing event listeners in canvas_js.",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' had no click handlers to adjust input values.",
+        "Observation table column misalignment: observation_thead_html has 6 data columns but btnRecord generated 7 td elements including an unaligned serial index.",
+        "Disturbance dynamics: metabolic heat surge was not modeled in fermenter thermal balance equations."
+      ]
+    },
+    {
+      "sim_id": "u01599",
+      "status": "FIXED",
+      "time": "09:49:57",
+      "issues": [
+        "Unwired zero-null alignment action button: #btn_zero_align lacked a click event listener in canvas_js",
+        "Unwired stepper buttons: .stepper-btn elements (▲ and ▼) lacked click handlers to increment or decrement control inputs",
+        "Observation table column mismatch: canvas_js generated 9 table cells for 6 observation_thead_html columns, causing table misalignment",
+        "Apparatus badges and leader lines mismatch: badge numbers and target coordinates in canvas_js did not correspond to legend_pills_html and apparatus_html"
       ]
     }
   ],
@@ -1660,6 +1668,11 @@
     "u01592",
     "u01594",
     "u01595",
-    "u01596"
+    "u01596",
+    "u01597",
+    "u01599",
+    "u01601",
+    "u01602",
+    "u01607"
   ]
 }
