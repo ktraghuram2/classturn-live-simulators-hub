@@ -1,64 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:51:24",
-  "completed_count": 1607,
-  "fixed_count": 1463,
-  "latest_sim_id": "u02039",
+  "updated_at": "2026-10-19 15:51:42",
+  "completed_count": 1612,
+  "fixed_count": 1466,
+  "latest_sim_id": "u02032",
   "recent_events": [
-    {
-      "sim_id": "u01990",
-      "status": "ERROR",
-      "time": "15:26:38",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02005",
-      "status": "FIXED",
-      "time": "15:26:39",
-      "issues": [
-        "Unwired action button #btn_project_subspace ('Compute Optimal Subspace Projection')",
-        "Unwired stepper buttons (.stepper-btn-up and .stepper-btn-down) for principal component selector",
-        "Stateful PRNG gaussian() call inside 60 FPS animation render loop causing CRT scatter point jitter for k >= 4"
-      ]
-    },
-    {
-      "sim_id": "u02004",
-      "status": "FIXED",
-      "time": "15:26:42",
-      "issues": [
-        "Resample button #btn_resample_data was present in the controls HTML but not wired to regenerate data or reinitialize weights in canvas_js",
-        "Stepper increment and decrement buttons were not wired in canvas_js to adjust stepper values",
-        "Observation table record button logged 8 mismatched columns instead of the 5 columns defined in observation_thead_html",
-        "Experiment activity selector #experimentSelect was not wired to reconfigure data manifold between uniform/clustered and non-convex distributions",
-        "Neighborhood radius telemetry decay schedule had an excessively steep decay exponent (-10.0) causing premature zero-reading during active topological adaptation"
-      ]
-    },
-    {
-      "sim_id": "u02003",
-      "status": "FIXED",
-      "time": "15:26:46",
-      "issues": [
-        "Unwired Evaluate Answer button due to missing DOM id lookup 'btn_evaluate_answer'.",
-        "Unwired Generate New Challenge button ('btn_new_challenge') with missing challenge generator logic.",
-        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js.",
-        "Observation table column mismatch: 7 columns generated instead of 6, and target coefficient was placed in column 3 instead of column 5."
-      ]
-    },
-    {
-      "sim_id": "u02000",
-      "status": "FIXED",
-      "time": "15:26:46",
-      "issues": [
-        "Unwired action buttons: 'Execute Gaussian Elimination' (btn_solve_gauss) and 'Superimpose Analytical Reference Curve' (btn_compare_analytical) lacked event listeners.",
-        "Unwired steppers and controls: Stepper buttons (.stepper-btn) and parameter input change events were unhandled.",
-        "Broken live readout IDs: Script queried reading_y1, reading_y2, reading_exact_y1, reading_trunc_error instead of val_reading_y1, val_reading_y2, val_reading_exact_y1, val_reading_trunc_error.",
-        "Misaligned observation table columns: 7 td values were written into 6 header columns due to extraneous boundaryY3 insertion in btnRecord.",
-        "Low-contrast graph elements: Analytical profile (#059669) and ordinate drop lines (#14532d) suffered low contrast against dark #071512 CRT screen background.",
-        "Raw LaTeX in validation section: Formula (y_{i+1} - 2y_i + y_{i-1}) contained raw '2y_i' text and limitation 1 contained unparsed prime symbols."
-      ]
-    },
     {
       "sim_id": "u02002",
       "status": "FIXED",
@@ -379,6 +325,50 @@
         "Unwired Launch Projectile action button (btn_fire_cannon) in canvas_js",
         "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
         "Misaligned observation table columns: 8 <td> cells rendered for 7 <th> table headers due to extraneous recIdx column"
+      ]
+    },
+    {
+      "sim_id": "u02041",
+      "status": "FIXED",
+      "time": "15:51:28",
+      "issues": [
+        "Section 6 live readout IDs 'val_reading_*' were missing from broadcastTelemetry() payload, preventing readout updates",
+        "Action buttons #btn_tumble_trials and #btn_evaluate_decision were not wired to simulation logic",
+        "Stepper increment/decrement buttons (.stepper-btn) were missing click event listeners",
+        "Experiment preset dropdown #experimentSelect was missing change listener"
+      ]
+    },
+    {
+      "sim_id": "u02043",
+      "status": "PASS",
+      "time": "15:51:35",
+      "issues": []
+    },
+    {
+      "sim_id": "u02038",
+      "status": "PASS",
+      "time": "15:51:35",
+      "issues": []
+    },
+    {
+      "sim_id": "u02042",
+      "status": "FIXED",
+      "time": "15:51:42",
+      "issues": [
+        "Physics formulas in calculatePhysics() generated unphysical values (bound fraction exceeding 1.0, incorrect migration distances, and uncoupled voltage/matrix parameters).",
+        "Action buttons (btn_toggle_electrophoresis and btn_scan_imager) were wired to generic pulse handlers instead of controlling electrophoresis run state and laser scanning.",
+        "Raw LaTeX escape '\\%' in stepper CONFIG unit for polyacrylamide concentration replaced with '%'"
+      ]
+    },
+    {
+      "sim_id": "u02032",
+      "status": "FIXED",
+      "time": "15:51:42",
+      "issues": [
+        "Corrupted possessive 'potter\\'s wheel' rendered with raw math tags around the 's' in principles_summary_html.",
+        "Unwired action buttons: '#btn_snap_concentric' and '#btn_reconstruct_vessel' were declared in HTML but never referenced or wired up in canvas_js.",
+        "Unwired stepper controls: '.stepper-btn' up and down buttons lacked event listeners in canvas_js.",
+        "Observation table column mismatch: observation_thead_html has 5 columns (Arc Length, Diameter, Circumference, Rim Completeness, Wall Thickness), but canvas_js inserted 7 columns in an incompatible order."
       ]
     }
   ],
@@ -1984,11 +1974,16 @@
     "u02028",
     "u02029",
     "u02030",
+    "u02032",
     "u02033",
     "u02035",
     "u02036",
     "u02037",
+    "u02038",
     "u02039",
-    "u02040"
+    "u02040",
+    "u02041",
+    "u02042",
+    "u02043"
   ]
 }
