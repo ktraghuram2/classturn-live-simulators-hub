@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:18:00",
-  "completed_count": 1712,
-  "fixed_count": 1542,
-  "latest_sim_id": "u02180",
+  "updated_at": "2026-10-19 16:23:40",
+  "completed_count": 1717,
+  "fixed_count": 1547,
+  "latest_sim_id": "u02181",
   "recent_events": [
-    {
-      "sim_id": "u02143",
-      "status": "PASS",
-      "time": "16:11:31",
-      "issues": []
-    },
-    {
-      "sim_id": "u02144",
-      "status": "PASS",
-      "time": "16:11:35",
-      "issues": []
-    },
-    {
-      "sim_id": "u02142",
-      "status": "FIXED",
-      "time": "16:11:52",
-      "issues": [
-        "Unwired action buttons: Connected btn_toggle_heat_stir and btn_auto_detect_touch in canvas_js.",
-        "Telemetry element IDs mismatch: Fixed selector IDs to match val_reading_* spans in readouts_html so live readings update.",
-        "Misaligned observation table columns: Corrected row insertion from 5 misaligned columns to the 6 expected columns matching observation_thead_html.",
-        "Unwired stepper controls: Bound stepper-btn up and down click handlers to dynamically update input values.",
-        "Canvas badges mismatched with legend pills: Realigned canvas badges 1 through 8 to match the 8 legend pills in legend_pills_html."
-      ]
-    },
-    {
-      "sim_id": "u02127",
-      "status": "ERROR",
-      "time": "16:12:20",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02136",
-      "status": "ERROR",
-      "time": "16:12:20",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02141",
-      "status": "ERROR",
-      "time": "16:12:21",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02146",
-      "status": "FIXED",
-      "time": "16:12:28",
-      "issues": [
-        "Unwired action buttons: btn_step_phase, btn_toggle_partition, and btn_distribute_data were present in DOM but had no event listeners",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down controls lacked click handlers",
-        "Misaligned observation table columns: 6 misordered columns recorded instead of the 7 specified in the observation table header",
-        "Missing partitionStrategy state: Partition strategy toggle between Range and Hash partitioning was unhandled in data packet routing"
-      ]
-    },
     {
       "sim_id": "u02149",
       "status": "FIXED",
@@ -350,6 +291,75 @@
       "status": "PASS",
       "time": "16:18:00",
       "issues": []
+    },
+    {
+      "sim_id": "u02189",
+      "status": "FIXED",
+      "time": "16:23:39",
+      "issues": [
+        "Unwired readout element IDs: canvas_js queried 'reading_comparison', 'reading_balance_delta', and 'reading_gas' instead of the active DOM IDs 'val_reading_comparison', 'val_reading_balance_delta', and 'val_reading_gas'",
+        "Observation table column count mismatch: header has 6 columns (Trial Number, Customer Deposit, Rental Threshold, Comparison Result, Balance Margin, Gas Consumed) but canvas_js was only inserting 5 columns without Trial Number",
+        "Unwired stepper and action controls: stepper buttons ▲/▼ and action buttons 'btn_compile_deploy' and 'btn_execute_compare' had no event listeners in canvas_js",
+        "Leader badge mismatch: canvas_js rendered 4 badges including unindexed badges 3 and 4, and badge 2 pointed to the gas meter on panel 1 instead of matching apparatus pill 2 (Interactive Flowchart Canvas)",
+        "English prose artifact: English article 'a' was erroneously rendered as MathML '<math><mrow><mi>a</mi></mrow></math>' in aim_html, principles_summary_html, and principles_list_html"
+      ]
+    },
+    {
+      "sim_id": "u02183",
+      "status": "ERROR",
+      "time": "16:23:39",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02185",
+      "status": "FIXED",
+      "time": "16:23:39",
+      "issues": [
+        "Unwired action buttons: act_add_detergent_drop, act_place_needle, and act_sprinkle_powder had no event listeners in canvas_js",
+        "Unwired stepper controls: stepper buttons (.stepper-btn-up, .stepper-btn-down) were not bound to stepper inputs",
+        "Observation table column misalignment: observationTbody innerHTML inserted 8 mismatched columns whereas observation_thead_html specifies 6 columns (Water Condition, Detergent Drops Added, Effective Surface Tension, Upward Surface Force on Needle, Needle Flotation Status, Talcum Clearance Radius)",
+        "Unwired activity selector: experimentSelect had no change listener to toggle between purified water and hard water configurations",
+        "Unwired reset button: btnReset had no event handler to reset simulation and clear observations"
+      ]
+    },
+    {
+      "sim_id": "u02184",
+      "status": "ERROR",
+      "time": "16:23:39",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02182",
+      "status": "FIXED",
+      "time": "16:23:39",
+      "issues": [
+        "Corrected malformed MathML unit representation for angular velocity in readouts_html from broken fraction r a (d/s) to rad/s.",
+        "Wired interactive event listeners for 'Toss Polyhedral Rigid Body' action button and numerical stepper controls in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02187",
+      "status": "FIXED",
+      "time": "16:23:39",
+      "issues": [
+        "Misaligned observation table columns in btnRecord: row.innerHTML contained 11 td cells (including rowCount and vf) while observation_thead_html only defines 9 columns, causing severe 2-column data misalignment and table overflow.",
+        "Unwired action button btn_engage_swaging_cycle: The primary 'Engage Rotary Swaging Cycle' action button had no event listener to engage or toggle the machine swaging cycle.",
+        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn) were not wired to update target input values and dispatch change events."
+      ]
+    },
+    {
+      "sim_id": "u02181",
+      "status": "FIXED",
+      "time": "16:23:39",
+      "issues": [
+        "Replaced spurious MathML fraction markup formatting 'I/O' as 'I over O' in apparatus specification with clean prose 'I/O'",
+        "Corrected observation table row recording in canvas_js to match all 6 table columns (Stage, Reference Type, Runtime Class, Dispatched Method, VTable Offset, Validation Status) instead of 5 misaligned cells",
+        "Wired unwired action button btn_compile_run ('Compile and Execute TestDriver') to trigger the execution routine and update telemetry"
+      ]
     }
   ],
   "completed_ids": [
@@ -2064,6 +2074,11 @@
     "u02176",
     "u02178",
     "u02179",
-    "u02180"
+    "u02180",
+    "u02181",
+    "u02182",
+    "u02185",
+    "u02187",
+    "u02189"
   ]
 }
