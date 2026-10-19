@@ -1,57 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:15:33",
-  "completed_count": 1007,
-  "fixed_count": 986,
-  "latest_sim_id": "u01230",
+  "updated_at": "2026-10-19 08:16:09",
+  "completed_count": 1012,
+  "fixed_count": 990,
+  "latest_sim_id": "u01226",
   "recent_events": [
-    {
-      "sim_id": "u01175",
-      "status": "FIXED",
-      "time": "08:06:59",
-      "issues": [
-        "Observation table columns were misaligned: tr.innerHTML grouped prefix and successor tokens into a single cell and appended sequence joint probability, causing counts and calculated probability to misalign with the 6 columns defined in observation_thead_html.",
-        "Unwired action buttons: btn_validate_probability and btn_compute_mle_matrix were present in actions_html but lacked event listeners in canvas_js.",
-        "Unwired stepper arrow controls: stepper-btn elements lacked click event listeners to increment/decrement input values and dispatch change events."
-      ]
-    },
-    {
-      "sim_id": "u01169",
-      "status": "ERROR",
-      "time": "08:07:01",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01176",
-      "status": "FIXED",
-      "time": "08:07:07",
-      "issues": [
-        "Observation table columns in btnRecord were misaligned (recorded 7 values including delta and perplexity, but thead specified 9 columns: Corpus ID, Conditioning Word, Candidate Word, Bigram Count, Unigram Count, Vocab Size, MLE Prob, Laplace Prob, Sentence Likelihood)",
-        "Action buttons (btn_validate_table and btn_evaluate_quiz_sentence) and stepper buttons were not wired to event listeners",
-        "Style 2 leader line badges used collinear anchor coordinates resulting in degenerate straight lines instead of true cubic Bezier S-curves"
-      ]
-    },
-    {
-      "sim_id": "u01171",
-      "status": "FIXED",
-      "time": "08:07:24",
-      "issues": [
-        "Unwired action buttons: 'btn_release_from_rest' and 'btn_set_critical_damping' lacked event listeners in canvas_js.",
-        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' buttons were not wired to step input values.",
-        "Observation table column mismatch: 'btnRecord' inserted 10 columns (including m, k, b and record index) while 'observation_thead_html' defined 7 columns (Time Elapsed, Displacement, Velocity, Acceleration, Spring Force, Damping Force, Total Energy).",
-        "Missing simulation elapsed time tracking: 'simTime' was not accumulated during physics steps for telemetry and table logging.",
-        "Unwired experiment mode selection: '#experimentSelect' had no change handler to toggle between underdamped and critical/overdamped modes.",
-        "Telemetry DOM unit stripping: 'updateTelemetryDOM' overwrote entire 'textContent', discarding MathML unit formatting stored in 'data-unit'."
-      ]
-    },
-    {
-      "sim_id": "u01182",
-      "status": "PASS",
-      "time": "08:07:55",
-      "issues": []
-    },
     {
       "sim_id": "u01183",
       "status": "FIXED",
@@ -382,6 +335,47 @@
       "status": "PASS",
       "time": "08:15:32",
       "issues": []
+    },
+    {
+      "sim_id": "u01238",
+      "status": "PASS",
+      "time": "08:15:48",
+      "issues": []
+    },
+    {
+      "sim_id": "u01235",
+      "status": "FIXED",
+      "time": "08:15:52",
+      "issues": [
+        "Rectified erroneous MathML fraction representation for unit in apparatus specification for Dirichlet Boundary Potential Regulators from vertical fraction C/V to standard '0 - 100 °C / V'"
+      ]
+    },
+    {
+      "sim_id": "u01234",
+      "status": "FIXED",
+      "time": "08:15:53",
+      "issues": [
+        "Simulator title was listed as 'Series RLC Circuit' despite the circuit, aim, apparatus, and theory containing no resistor; updated title slots to 'Series LC Circuit'.",
+        "Canvas leader line badge numbers (3, 4, 1, 2, 5) were scrambled relative to the legend pills (1: AC Source, 2: Ammeter, 3: Inductor, 4: Capacitor, 5: Voltmeter).",
+        "Observation table record button inserted 10 columns (including L and C) which misaligned with the 8-column table header.",
+        "Action button 'btn_tune_resonance' (Auto-Tune to Resonant Frequency) and stepper arrow buttons were unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01207",
+      "status": "FIXED",
+      "time": "08:16:03",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01226",
+      "status": "FIXED",
+      "time": "08:16:09",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
     }
   ],
   "completed_ids": [
@@ -1384,6 +1378,7 @@
     "u01204",
     "u01205",
     "u01206",
+    "u01207",
     "u01214",
     "u01215",
     "u01216",
@@ -1391,6 +1386,10 @@
     "u01219",
     "u01220",
     "u01225",
-    "u01230"
+    "u01226",
+    "u01230",
+    "u01234",
+    "u01235",
+    "u01238"
   ]
 }
