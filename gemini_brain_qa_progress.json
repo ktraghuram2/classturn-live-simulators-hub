@@ -1,66 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:56:15",
-  "completed_count": 1292,
-  "fixed_count": 1222,
-  "latest_sim_id": "u01616",
+  "updated_at": "2026-10-19 09:58:57",
+  "completed_count": 1297,
+  "fixed_count": 1225,
+  "latest_sim_id": "u01627",
   "recent_events": [
-    {
-      "sim_id": "u01579",
-      "status": "ERROR",
-      "time": "09:39:45",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01581",
-      "status": "FIXED",
-      "time": "09:39:58",
-      "issues": [
-        "Unwired action button btn_snap_optimum: clicking it did not reset temperature, pH, and inhibitor to the optimum catalytic conditions of the active enzyme.",
-        "Unwired action button btn_toggle_compare: clicking it did not toggle comparative multi-enzyme profile overlay.",
-        "Unwired stepper up/down buttons: clicking stepper buttons failed to increment or decrement numeric input controls.",
-        "Misaligned observation table data rows: btnRecord inserted 9 cells including a row index that shifted all values into the wrong column of the 8-column header.",
-        "Unwired experimentSelect dropdown: switching activities did not configure corresponding study parameters.",
-        "Leader line 1 was a degenerate straight vertical line rather than a canonical Style 2 curvy Bezier S-curve."
-      ]
-    },
-    {
-      "sim_id": "u01583",
-      "status": "ERROR",
-      "time": "09:40:47",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01582",
-      "status": "FIXED",
-      "time": "09:41:15",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01587",
-      "status": "ERROR",
-      "time": "09:41:49",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01588",
-      "status": "FIXED",
-      "time": "09:42:04",
-      "issues": [
-        "Observation table recorded row columns were completely misaligned with the 6 observation table headers (inserted non-existent trial count and volume columns while omitting flow property classification)",
-        "Action button 'btn_discharge_powder' was unwired in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to input controls in canvas_js",
-        "Experiment select dropdown (#experimentSelect) was not synchronized with the powder formulation stepper"
-      ]
-    },
     {
       "sim_id": "u01584",
       "status": "ERROR",
@@ -382,6 +326,57 @@
       "sim_id": "u01616",
       "status": "PASS",
       "time": "09:56:15",
+      "issues": []
+    },
+    {
+      "sim_id": "u01620",
+      "status": "FIXED",
+      "time": "09:56:22",
+      "issues": [
+        "Observation table had 7 columns defined in the table header but only 6 cells inserted on recording, skipping Bevel Protractor Angle and misaligning Scriber Height Setting",
+        "Stepper increment and decrement buttons (stepper-btn-up, stepper-btn-down) were unwired in canvas_js",
+        "Action buttons (btn_wring_slip_gauges, btn_strike_center_punch, btn_zero_calibrate) were unwired in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01619",
+      "status": "FIXED",
+      "time": "09:56:22",
+      "issues": [
+        "Misaligned observation table columns: btnRecord output 10 columns with an extra trial index and missing status, mismatching the 7 columns in observation_thead_html",
+        "Unwired action buttons: 'Trigger Shake Table Waveform' (#btn_trigger_motion) and 'Release from Initial Tilt Angle' (#btn_release_tilt) lacked event listeners in canvas_js",
+        "Unwired stepper buttons: .stepper-btn elements were missing click handlers to increment and decrement input values",
+        "Unwired experiment options: #experimentSelect was not wired to switch between Floor 1 and Floor 3 configurations"
+      ]
+    },
+    {
+      "sim_id": "u01623",
+      "status": "FIXED",
+      "time": "09:56:53",
+      "issues": [
+        "Stepper increment and decrement buttons were unwired because query selectors did not include .stepper-btn-up and .stepper-btn-down classes matching the HTML template.",
+        "Action buttons #btn_trigger_mitosis and #btn_equilibrate_orbit were present in the UI controls but lacked event listener bindings in JavaScript.",
+        "Observation table record button included unmapped trialCount and tau values, offsetting data cells from the 8 corresponding table header columns."
+      ]
+    },
+    {
+      "sim_id": "u01608",
+      "status": "PASS",
+      "time": "09:58:26",
+      "issues": []
+    },
+    {
+      "sim_id": "u01628",
+      "status": "ERROR",
+      "time": "09:58:50",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01627",
+      "status": "PASS",
+      "time": "09:58:57",
       "issues": []
     }
   ],
@@ -1666,6 +1661,7 @@
     "u01605",
     "u01606",
     "u01607",
+    "u01608",
     "u01609",
     "u01610",
     "u01611",
@@ -1675,8 +1671,12 @@
     "u01615",
     "u01616",
     "u01617",
+    "u01619",
+    "u01620",
     "u01621",
     "u01622",
-    "u01624"
+    "u01623",
+    "u01624",
+    "u01627"
   ]
 }
