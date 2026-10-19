@@ -1,58 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:56:42",
-  "completed_count": 1632,
-  "fixed_count": 1483,
-  "latest_sim_id": "u02071",
+  "updated_at": "2026-10-19 15:58:30",
+  "completed_count": 1637,
+  "fixed_count": 1486,
+  "latest_sim_id": "u02080",
   "recent_events": [
-    {
-      "sim_id": "u02027",
-      "status": "ERROR",
-      "time": "15:50:12",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02035",
-      "status": "FIXED",
-      "time": "15:50:20",
-      "issues": [
-        "Apparatus badges in canvas_js were misaligned with legend pills: Stirrer, Flask, Flea, Beaker were numbered 3, 1, 4, 2 instead of 1, 2, 3, 4 to match legend pills and apparatus list.",
-        "Observation table columns in canvas_js were misaligned with observation_thead_html: contained an extraneous Trial # column and swapped FeCl3 volume/stirrer speed and absorbance/hydrolysis columns vs the 6 thead columns.",
-        "Action buttons (Add FeCl3 Dropwise and Initiate Cellophane Dialysis) and stepper increment/decrement buttons were unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u02037",
-      "status": "FIXED",
-      "time": "15:50:34",
-      "issues": [
-        "Misaligned observation table row logging 10 columns while observation_thead_html defines only 7 columns",
-        "Unwired stepper ▲/▼ buttons (.stepper-btn) for Buffer pH, Sample Mass, Shaker Speed, and Oven Temperature",
-        "Unwired action buttons (#btn_agitate_mixture and #btn_filter_and_dry)"
-      ]
-    },
-    {
-      "sim_id": "u02033",
-      "status": "FIXED",
-      "time": "15:50:36",
-      "issues": [
-        "Unwired action buttons: toggle_capacitor and tune_resonance had no click event listeners wired in canvas_js.",
-        "Unwired stepper buttons: ▲ and ▼ controls for series resistance and parallel capacitance were missing event listeners to increment/decrement input values.",
-        "Misaligned observation table: btnRecord inserted rowIdx as the first cell, offsetting all columns relative to observation_thead_html headers (omitting Capacitor State and shifting Impedance, Current, Power, and Power Factor).",
-        "Redundant header token: Capacitor State column in observation_thead_html had duplicate '<mtext>State</mtext>' MathML content rendering as 'Capacitor State State'.",
-        "Physics engine shunt bypass: calculateCircuitPhysics did not account for the connected/disconnected state of the parallel capacitor."
-      ]
-    },
-    {
-      "sim_id": "u02026",
-      "status": "ERROR",
-      "time": "15:50:40",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u02036",
       "status": "FIXED",
@@ -369,6 +321,51 @@
         "Wired action button #btn_generate_endpoints to regenerate ensemble particle endpoints",
         "Wired action button #btn_single_walk_toggle to pause and resume single-particle stochastic walk",
         "Wired stepper up/down buttons to increment and decrement input parameters properly"
+      ]
+    },
+    {
+      "sim_id": "u02055",
+      "status": "PASS",
+      "time": "15:57:11",
+      "issues": []
+    },
+    {
+      "sim_id": "u02075",
+      "status": "FIXED",
+      "time": "15:57:45",
+      "issues": [
+        "Observation table columns in canvas_js btnRecord were misaligned with the table header and missing Time Elapsed, Amplitude, and Calculated Sine Value columns",
+        "Action button #btn_snap_quadrant_zero was unwired in canvas_js",
+        "Stepper increment and decrement buttons were not wired to input controls in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u02078",
+      "status": "PASS",
+      "time": "15:58:10",
+      "issues": []
+    },
+    {
+      "sim_id": "u02077",
+      "status": "FIXED",
+      "time": "15:58:22",
+      "issues": [
+        "Unwired stepper buttons (.stepper-btn ▲ and ▼) prevented adjusting epicyclic frequency, vertical frequency, and initial radial offset via UI buttons.",
+        "Unwired action button (#btn_align_guiding_center) for aligning the particle state to the guiding center frame.",
+        "Unwired experiment preset dropdown (#experimentSelect) for switching between frequency variation and vertical decoupling modes.",
+        "Misaligned observation table columns: table rows recorded 8 columns containing raw control inputs instead of matching the 6 observation headers (Time Elapsed, Radial Position, Azimuthal Position, Vertical Position, Guiding Center Parameter, Jacobi Constant EJ).",
+        "Telemetry readout span element ID mismatch: setElementText targeted 'reading_x' / 'val_x' instead of 'val_reading_x', 'val_reading_y', 'val_reading_z', 'val_reading_a0', blocking live readout updates."
+      ]
+    },
+    {
+      "sim_id": "u02080",
+      "status": "FIXED",
+      "time": "15:58:30",
+      "issues": [
+        "Observation table columns were misaligned with 7 misordered cells being pushed into a 5-column table",
+        "Missing event listener wiring for btn_run_continuous action button",
+        "Missing experiment dropdown (experimentSelect) mode switching synchronization in syncInputs",
+        "Missing click event handlers for stepper up and down buttons"
       ]
     }
   ],
@@ -1995,6 +1992,7 @@
     "u02052",
     "u02053",
     "u02054",
+    "u02055",
     "u02056",
     "u02057",
     "u02059",
@@ -2004,6 +2002,10 @@
     "u02064",
     "u02066",
     "u02067",
-    "u02071"
+    "u02071",
+    "u02075",
+    "u02077",
+    "u02078",
+    "u02080"
   ]
 }
