@@ -1,21 +1,10 @@
 {
   "runner_state": "ACTIVE (6 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 19:43:59",
-  "completed_count": 2120,
-  "fixed_count": 1891,
-  "latest_sim_id": "classturn-pendulum-pipeline",
+  "updated_at": "2026-10-19 19:44:12",
+  "completed_count": 2121,
+  "fixed_count": 1892,
+  "latest_sim_id": "classturn-ohms-law-pipeline",
   "recent_events": [
-    {
-      "sim_id": "u02060",
-      "status": "FIXED",
-      "time": "19:09:45",
-      "issues": [
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked click event listeners in canvas_js",
-        "Unwired action buttons: #btn_cycle_grid_overlay and #btn_auto_tally_intersections were not implemented or wired in canvas_js",
-        "Telemetry DOM element ID mismatch: live readouts in readouts_html have IDs prefixed with 'val_' (e.g. val_reading_vv_point) while canvas_js attempted to find reading_vv_point directly, preventing readout updates",
-        "Missing automated data row capture on auto-tally for the ASTM stereological observation table"
-      ]
-    },
     {
       "sim_id": "u02068",
       "status": "FIXED",
@@ -360,11 +349,20 @@
       "status": "PASS",
       "time": "19:43:59",
       "issues": []
+    },
+    {
+      "sim_id": "classturn-ohms-law-pipeline",
+      "status": "FIXED",
+      "time": "19:44:11",
+      "issues": [
+        "Unwired action button: #btn_sweep_vi ('Auto-Sweep V-I Operating Points') was queried from DOM but never wired to any click event listener in canvas_js."
+      ]
     }
   ],
   "completed_ids": [
     "classturn-double-slit-pipeline",
     "classturn-hookes-law-pipeline",
+    "classturn-ohms-law-pipeline",
     "classturn-pendulum-pipeline",
     "u00002",
     "u00003",
