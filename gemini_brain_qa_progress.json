@@ -1,99 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 11:02:32",
-  "completed_count": 1447,
-  "fixed_count": 1337,
-  "latest_sim_id": "u01830",
+  "updated_at": "2026-10-19 11:05:02",
+  "completed_count": 1452,
+  "fixed_count": 1341,
+  "latest_sim_id": "u01838",
   "recent_events": [
-    {
-      "sim_id": "u01791",
-      "status": "FIXED",
-      "time": "10:49:08",
-      "issues": [
-        "Corrected malformed MathML unit fraction 'cycle s/i mage' to 'cycles/image' in principles list, live readouts, and observation table header",
-        "Corrected unspaced 'complexintensity' MathML identifier to 'complex intensity' in principles list"
-      ]
-    },
-    {
-      "sim_id": "u01790",
-      "status": "FIXED",
-      "time": "10:49:08",
-      "issues": [
-        "Unwired auto-tune harmonic action buttons (btn_tune_fundamental, btn_tune_third_harmonic, btn_tune_fifth_harmonic).",
-        "Unwired stepper increment and decrement buttons (.stepper-btn).",
-        "Observation table column mismatch: recorded rows had only 8 columns with mismatched data while table header defined 9 columns (harmonic order, fundamental frequency, input peak voltage, cn, vout, experimental ratio cn/c1, theoretical ratio 1/n, relative error)."
-      ]
-    },
-    {
-      "sim_id": "u01787",
-      "status": "FIXED",
-      "time": "10:49:08",
-      "issues": [
-        "Misaligned observation table: canvas_js injected an extra trial number column (obsCount) that created 13 td cells under 12 thead th headers, shifting all physics columns out of alignment",
-        "Unwired action button: #btn_start_transition ('Energize Heater & Run Steady-State') had no event listener wired in canvas_js",
-        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were not hooked to the control_voltage input"
-      ]
-    },
-    {
-      "sim_id": "u01793",
-      "status": "FIXED",
-      "time": "10:49:08",
-      "issues": [
-        "Observation table column mismatch: btnRecord appended 9 table cells into a 7-column header table, shifting data columns out of alignment with the observation table specification",
-        "Unwired action button: #btn_autoscale_timebase lacked an event listener to calibrate and visually isolate trace vertical offsets on the oscilloscope",
-        "Unwired stepper controls: .stepper-btn increment and decrement buttons lacked click event listeners",
-        "Apparatus leader badge numbering mismatch: Badges 2-5 did not match legend pills (Badge 2 pointed to DSO instead of Miller Integrator IC2, Badge 3 pointed to Power Supply instead of Diode Shaping stage, Badge 4 pointed to breadboard capacitor instead of DSO, Badge 5 pointed to diode network instead of Power Supply)",
-        "Low-contrast patch cable strokes: Patch cables used dim tones (#0284c7, #059669) against dark background; updated to vibrant channel-aligned colors (#facc15, #38bdf8, #34d399)"
-      ]
-    },
-    {
-      "sim_id": "u01794",
-      "status": "PASS",
-      "time": "10:49:08",
-      "issues": []
-    },
-    {
-      "sim_id": "u01792",
-      "status": "FIXED",
-      "time": "10:49:17",
-      "issues": [
-        "Wired action button #btn_synthesize_channel to trigger channel impulse response computation and telemetry synchronization.",
-        "Added stepper button (.stepper-btn-up, .stepper-btn-down) click event listeners to increment/decrement numeric controls.",
-        "Corrected observation table row columns to align precisely with the 8 columns defined in the observation table header (Environment, Mean Excess Delay, RMS Delay Spread, Bc 50%, Bc 90%, Max Excess Delay, Transmission Bandwidth, and Fading Regime).",
-        "Preserved MathML unit annotations in live reading displays during telemetry updates."
-      ]
-    },
-    {
-      "sim_id": "u01796",
-      "status": "FIXED",
-      "time": "10:49:23",
-      "issues": [
-        "Replaced erroneous MathML variable tags for the English indefinite article 'a' in principles summary prose and theorem description."
-      ]
-    },
-    {
-      "sim_id": "u01795",
-      "status": "ERROR",
-      "time": "10:49:39",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01799",
-      "status": "PASS",
-      "time": "10:50:14",
-      "issues": []
-    },
-    {
-      "sim_id": "u01798",
-      "status": "FIXED",
-      "time": "10:50:34",
-      "issues": [
-        "Stepper buttons (.stepper-btn-up and .stepper-btn-down) were unwired to mutate input values, only scheduling updatePhysics without incrementing or decrementing",
-        "Action buttons #btn_advance_stage and #btn_optimize_30x were not wired to click handlers in canvas_js"
-      ]
-    },
     {
       "sim_id": "u01800",
       "status": "FIXED",
@@ -372,6 +283,93 @@
       "status": "PASS",
       "time": "11:02:32",
       "issues": []
+    },
+    {
+      "sim_id": "u01832",
+      "status": "FIXED",
+      "time": "11:02:50",
+      "issues": [
+        "Observation table columns misaligned: btnRecord appended 7 table cells while the observation header defines 5 columns (Step Index, Port 1 Value, DAC Current, Output Voltage, Elapsed Time).",
+        "Live telemetry readouts failed to update because updateTelemetry targeted 'reading_*' and 'val_*' instead of the actual element IDs 'val_reading_*'.",
+        "Unwired action button 'btn_toggle_smoothing' in canvas_js.",
+        "Unwired stepper increment/decrement buttons (.stepper-btn) in canvas_js.",
+        "Improper fraction rendering of 'I/O' as MathML fraction <mfrac><mi>I</mi><mi>O</mi></mfrac> in apparatus and principles slots."
+      ]
+    },
+    {
+      "sim_id": "u01825",
+      "status": "ERROR",
+      "time": "11:02:51",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01829",
+      "status": "FIXED",
+      "time": "11:02:51",
+      "issues": [
+        "Style 2 leader line badge numbering in canvas_js (badges 1, 2, 3, 4) did not match legend pills (1: Hot Plate, 2: Flask, 3: Ice/Water sample, 4: Thermometer probe)",
+        "Action button btn_start_heating was unhandled and unlinked in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update inputs and simulation state",
+        "Observation table record button populated mismatched columns (record count, current temperature, phase, cumulative heat, simulated time) instead of matching observation_thead_html (Amount of Ice, Thermal Energy Rate, Size of Beaker, Melting Point, Boiling Point, Melting Time, Boiling Onset Time)",
+        "Malformed MathML fraction syntax for specific heat capacity unit in principles_list_html"
+      ]
+    },
+    {
+      "sim_id": "u01823",
+      "status": "ERROR",
+      "time": "11:02:59",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01831",
+      "status": "ERROR",
+      "time": "11:03:00",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01828",
+      "status": "FIXED",
+      "time": "11:03:33",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01835",
+      "status": "ERROR",
+      "time": "11:04:32",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01841",
+      "status": "PASS",
+      "time": "11:04:46",
+      "issues": []
+    },
+    {
+      "sim_id": "u01833",
+      "status": "ERROR",
+      "time": "11:04:49",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01838",
+      "status": "FIXED",
+      "time": "11:05:02",
+      "issues": [
+        "Unwired action buttons (#btn_goto_ts, #btn_trace_full_irc), experiment select options, and stepper increment/decrement buttons (.stepper-btn).",
+        "Misaligned observation table columns: canvas_js generated 7 cells (including unmapped step length) while observation_thead_html defines 6 columns, causing data shift upon recording rows."
+      ]
     }
   ],
   "completed_ids": [
@@ -1821,6 +1819,11 @@
     "u01824",
     "u01826",
     "u01827",
-    "u01830"
+    "u01828",
+    "u01829",
+    "u01830",
+    "u01832",
+    "u01838",
+    "u01841"
   ]
 }
