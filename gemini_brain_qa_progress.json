@@ -1,51 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:58:57",
-  "completed_count": 1297,
-  "fixed_count": 1225,
-  "latest_sim_id": "u01627",
+  "updated_at": "2026-10-19 10:00:31",
+  "completed_count": 1302,
+  "fixed_count": 1228,
+  "latest_sim_id": "u01629",
   "recent_events": [
-    {
-      "sim_id": "u01584",
-      "status": "ERROR",
-      "time": "09:42:10",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01586",
-      "status": "ERROR",
-      "time": "09:42:22",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01589",
-      "status": "ERROR",
-      "time": "09:42:43",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01590",
-      "status": "FIXED",
-      "time": "09:43:10",
-      "issues": [
-        "Raw unrendered LaTeX string 'AN_{round}' in readouts_html replaced with clean MathML syntax",
-        "Mismatched badge numbers in canvas_js vs legend_pills_html (Badge 1 was Cylinder instead of Digital Balance, Badge 2 was Rod instead of Cylinder, Badge 3 was Balance instead of Rod)",
-        "Observation table columns in canvas_js misaligned with observation_thead_html (extra unheaded trial # cell and swapped Ga/C columns)",
-        "Action buttons (btn_tamp_compact, btn_sieve_shake) and stepper increment/decrement buttons (.stepper-btn) were unwired in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01585",
-      "status": "PASS",
-      "time": "09:43:17",
-      "issues": []
-    },
     {
       "sim_id": "u01592",
       "status": "FIXED",
@@ -377,6 +336,52 @@
       "sim_id": "u01627",
       "status": "PASS",
       "time": "09:58:57",
+      "issues": []
+    },
+    {
+      "sim_id": "u01632",
+      "status": "PASS",
+      "time": "09:59:20",
+      "issues": []
+    },
+    {
+      "sim_id": "u01630",
+      "status": "FIXED",
+      "time": "09:59:32",
+      "issues": [
+        "Unwired action buttons in canvas_js: 'Buy Product (Execute Transaction)', 'Simulate Single Point Failure', and 'Apply Failure Recovery'",
+        "Unwired stepper increment and decrement buttons (stepper-btn-up and stepper-btn-down)",
+        "Observation table column mismatch: recordObservation rendered 9 table data cells across headers configured for only 7 columns",
+        "Missing single point of failure (SPOF) logic: RDBMS availability and processing telemetry remained static during crash simulation without fault-stop behavior"
+      ]
+    },
+    {
+      "sim_id": "u01631",
+      "status": "FIXED",
+      "time": "09:59:38",
+      "issues": [
+        "Unwired action buttons: #btn_advance_stage and #btn_trigger_systole were not connected to simulation state.",
+        "Unwired stepper controls: Stepper up and down buttons (.stepper-btn) had no click listeners attached.",
+        "Misaligned observation table: btnRecord appended 10 td cells with extraneous columns (#trialCount, rRel, etc.) that mismatched the 6 defined thead columns (Atheroma Stage, Lumen Height, Perfusion Pressure, Flow Speed, Pulse Duration, Hemodynamic State).",
+        "Systolic trigger waveform: Dynamic systole simulation lacked manual boost response for the trigger action."
+      ]
+    },
+    {
+      "sim_id": "u01625",
+      "status": "FIXED",
+      "time": "09:59:45",
+      "issues": [
+        "Observation table column mismatch: canvas_js recorded 10 columns including Trial#, fc, and HR, whereas observation_thead_html defines 8 columns (Modality, Gain, fs, Bits, Vin, Vout, Q step, SNR).",
+        "Readout DOM ID mismatch: canvas_js attempted to update 'rd_vin_pp', 'rd_vout_pp', etc., while HTML readout values have IDs 'val_rd_vin_pp', 'val_rd_vout_pp', etc., preventing live readout updates.",
+        "Unwired action and stepper buttons: 'Next Biomedical Modality', 'Previous Biomedical Modality', 'Toggle 50 Hz Powerline Notch Filter', and stepper arrow buttons had no event listeners.",
+        "Missing multi-modality biosignal generation: only ECG was synthesized; EEG (alpha wave) and EMG (motor unit interference) modalities were unimplemented.",
+        "Erroneous MathML fraction markup in prose/units: 50/60 Hz mains and alpha/beta rhythms were incorrectly formatted as fractions (50 over 60, alpha over beta) in apparatus and principles HTML slots."
+      ]
+    },
+    {
+      "sim_id": "u01629",
+      "status": "PASS",
+      "time": "10:00:31",
       "issues": []
     }
   ],
@@ -1677,6 +1682,11 @@
     "u01622",
     "u01623",
     "u01624",
-    "u01627"
+    "u01625",
+    "u01627",
+    "u01629",
+    "u01630",
+    "u01631",
+    "u01632"
   ]
 }
