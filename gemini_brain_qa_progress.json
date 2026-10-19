@@ -1,57 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:24:14",
-  "completed_count": 1042,
-  "fixed_count": 1015,
-  "latest_sim_id": "u01270",
+  "updated_at": "2026-10-19 08:24:34",
+  "completed_count": 1047,
+  "fixed_count": 1018,
+  "latest_sim_id": "u01277",
   "recent_events": [
-    {
-      "sim_id": "u01235",
-      "status": "FIXED",
-      "time": "08:15:52",
-      "issues": [
-        "Rectified erroneous MathML fraction representation for unit in apparatus specification for Dirichlet Boundary Potential Regulators from vertical fraction C/V to standard '0 - 100 °C / V'"
-      ]
-    },
-    {
-      "sim_id": "u01234",
-      "status": "FIXED",
-      "time": "08:15:53",
-      "issues": [
-        "Simulator title was listed as 'Series RLC Circuit' despite the circuit, aim, apparatus, and theory containing no resistor; updated title slots to 'Series LC Circuit'.",
-        "Canvas leader line badge numbers (3, 4, 1, 2, 5) were scrambled relative to the legend pills (1: AC Source, 2: Ammeter, 3: Inductor, 4: Capacitor, 5: Voltmeter).",
-        "Observation table record button inserted 10 columns (including L and C) which misaligned with the 8-column table header.",
-        "Action button 'btn_tune_resonance' (Auto-Tune to Resonant Frequency) and stepper arrow buttons were unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01207",
-      "status": "FIXED",
-      "time": "08:16:03",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01226",
-      "status": "FIXED",
-      "time": "08:16:09",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01242",
-      "status": "FIXED",
-      "time": "08:17:57",
-      "issues": [
-        "Wired missing click handler for action button #btn_toggle_topology to cycle through CMOS TG, Solitary NMOS, and Solitary PMOS modes",
-        "Implemented threshold voltage drop physics for Solitary NMOS (clamping logic HIGH to VDD - Vtn) and Solitary PMOS (clamping logic LOW to |Vtp|)",
-        "Corrected telemetry UI readout target IDs to match slot DOM IDs (val_reading_vout, val_reading_logic_out, val_reading_clk_bar, val_reading_ron)",
-        "Added event listener wiring for all stepper buttons (.stepper-btn) to increment/decrement input values",
-        "Updated IC silicon label to dynamically reflect active circuit topology mode"
-      ]
-    },
     {
       "sim_id": "u01223",
       "status": "ERROR",
@@ -382,6 +335,50 @@
         "Telemetry readout element IDs in JS referenced reading_lt1..reading_lt5 and reading_ref instead of val_reading_lt1..val_reading_lt5 and val_reading_ref, preventing live UI sensor readout updates",
         "Action buttons #btn_fill_tank ('Fill Sensor Tank') and #btn_drain_cycle ('Open Drain Return Valve') were unwired in JS",
         "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were missing click event listeners"
+      ]
+    },
+    {
+      "sim_id": "u01276",
+      "status": "PASS",
+      "time": "08:24:18",
+      "issues": []
+    },
+    {
+      "sim_id": "u01272",
+      "status": "PASS",
+      "time": "08:24:18",
+      "issues": []
+    },
+    {
+      "sim_id": "u01275",
+      "status": "FIXED",
+      "time": "08:24:29",
+      "issues": [
+        "Unwired action button #btn_spring_untangle (Force-Directed Untangle Relaxation) in canvas_js",
+        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
+        "Misaligned observation table columns in btnRecord (only recorded 5 columns with swapped faces/crossings instead of the 6 columns defined in observation_thead_html)"
+      ]
+    },
+    {
+      "sim_id": "u01274",
+      "status": "FIXED",
+      "time": "08:24:32",
+      "issues": [
+        "Leader line badge numbering (1, 3, 4) in canvas_js was mismatched with legend pills (Inverter drive unit should be 1, Water circulation pump should be 3, Wave flume tank should be 4).",
+        "Live telemetry readout IDs in canvas_js did not match the actual HTML element IDs (val_reading_incident_height, etc.), preventing values from updating on screen.",
+        "Observation table columns recorded by btnRecord were completely misaligned with the 9 thead column headers (omitted wave period, inserted stem density into depth column, shifted wave heights).",
+        "Interactive stepper ▲ and ▼ buttons (.stepper-btn) were not wired to increment/decrement input values.",
+        "Action buttons (btn_toggle_vegetation, btn_toggle_submergence, btn_calibrate_wavemaker) were defined in HTML but never wired to any event handlers in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01277",
+      "status": "FIXED",
+      "time": "08:24:32",
+      "issues": [
+        "Fixed corrupted exponent 10^-34 rendered as 10^-3 4 in readouts_html and observation_thead_html",
+        "Removed duplicated MathML tags and improved header labels in observation_thead_html",
+        "Added event listener wiring for interactive stepper up/down buttons and sample telemetry action button in canvas_js"
       ]
     }
   ],
@@ -1427,6 +1424,11 @@
     "u01269",
     "u01270",
     "u01271",
-    "u01273"
+    "u01272",
+    "u01273",
+    "u01274",
+    "u01275",
+    "u01276",
+    "u01277"
   ]
 }
