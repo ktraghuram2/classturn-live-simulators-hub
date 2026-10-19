@@ -1,60 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:13:56",
-  "completed_count": 1202,
-  "fixed_count": 1148,
-  "latest_sim_id": "u01499",
+  "updated_at": "2026-10-19 09:14:52",
+  "completed_count": 1207,
+  "fixed_count": 1152,
+  "latest_sim_id": "u01497",
   "recent_events": [
-    {
-      "sim_id": "u01453",
-      "status": "FIXED",
-      "time": "09:02:04",
-      "issues": [
-        "Unwired action buttons: 'Toggle Slicing Plane' (btn_toggle_cross_section) and 'Re-center Perspective' (btn_align_axes) lacked click listeners.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn) were not attached to input modification listeners.",
-        "Misaligned observation table columns: btnRecord inserted 6 columns with a row index instead of matching the 5 observation thead headers, and transposed Gradient Magnitude and Surface Residual columns.",
-        "Low contrast coordinate cage wireframe: #1e293b wireframe edges were near-invisible on dark #090d16 canvas void."
-      ]
-    },
-    {
-      "sim_id": "u01460",
-      "status": "FIXED",
-      "time": "09:02:19",
-      "issues": [
-        "Inverted apparatus badges: Badge '1' was pointing to the probe and Badge '2' to the heating bath, conflicting with Legend Pill 1 (Heating Bath) and Pill 2 (Thermocouple Probe).",
-        "Unwired live telemetry readouts: updateTelemetry attempted to write to 'val_t1' instead of matching 'val_reading_t1' and risk overwriting entire list item containers.",
-        "Unwired action button: #btn_toggle_heater was present in controls but had no click listener or active visual state in canvas_js.",
-        "Unwired stepper arrow buttons: .stepper-btn-up and .stepper-btn-down were not bound to increment/decrement input values.",
-        "Observation table recording button: Added selector fallbacks for #btnRecord, #btn_record, and #recordBtn."
-      ]
-    },
-    {
-      "sim_id": "u01456",
-      "status": "FIXED",
-      "time": "09:02:22",
-      "issues": [
-        "Unwired action buttons: 'btn_initiate_handshake' and 'btn_send_data' had no event listeners attached in canvas_js.",
-        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' stepper buttons were not wired to update inputs.",
-        "Apparatus badge numbering mismatch: Gateway Router had Badge 2 and Server had Badge 3, contradicting Legend Pills and Apparatus specifications which designate Server as #2 and Gateway Router as #3.",
-        "Missing observation table recording integration for Section 8 data table telemetry."
-      ]
-    },
-    {
-      "sim_id": "u01458",
-      "status": "ERROR",
-      "time": "09:02:52",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01457",
-      "status": "ERROR",
-      "time": "09:02:56",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01459",
       "status": "ERROR",
@@ -379,6 +329,52 @@
         "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons had no click handlers to modify control inputs",
         "Misaligned observation table rows: table headers defined 7 columns (Joint Type, Weld Position, Arc Current, Arc Voltage, Travel Speed, Deposited Length, Net Heat Input) while logger inserted only 6 misaligned values"
       ]
+    },
+    {
+      "sim_id": "u01500",
+      "status": "FIXED",
+      "time": "09:14:11",
+      "issues": [
+        "Readout DOM IDs in canvas_js (val_gas_ratio, etc.) did not target the actual slot elements (val_rd_gas_ratio, etc.), preventing live telemetry updates.",
+        "Observation table record button (btnRecord) generated 10 mismatched columns while the observation thead defined 8 columns in a different order.",
+        "Action buttons (btn_ignite_torch, btn_auto_neutral_flame, btn_trigger_cutting_jet) and input stepper buttons were unhandled in canvas_js.",
+        "Leader line badges 3, 4, 5 in canvas_js were misaligned with the apparatus legend pills (badge 3 pointed to regulator instead of hoses, badge 5 pointed to torch instead of combustion flame).",
+        "Erroneous Greek letter psi (ψ) MathML entity was used instead of engineering unit 'psi' in apparatus specifications and boundary limitations."
+      ]
+    },
+    {
+      "sim_id": "u01503",
+      "status": "FIXED",
+      "time": "09:14:17",
+      "issues": [
+        "Raw unformatted math formula '= mgp' outside MathML in principles_summary_html enclosed in inline MathML <math><mrow><mi>M</mi><mo>=</mo><mi>m</mi><mi>g</mi><mi>p</mi></mrow></math>",
+        "Apparatus specification unit notation for slotted weight hanger masses changed from italic variable <mi>g</mi> to upright roman unit <mi mathvariant=\"normal\">g</mi>",
+        "Leader line anchor for Badge 4 (Scale) re-targeted to point to the graduated metric scale on the bench rather than the knife-edge support stand"
+      ]
+    },
+    {
+      "sim_id": "u01505",
+      "status": "FIXED",
+      "time": "09:14:26",
+      "issues": [
+        "Unwired stepper up/down adjustment buttons: Button elements with .stepper-btn class lacked click event handlers in canvas_js.",
+        "Misaligned observation table row schema: btnRecord appended 7 cells into observationTbody, while observation_thead_html defines 11 distinct columns (Start X1, Start Y1, End X2, End Y2, Outcode P1, Outcode P2, Slope m, Clipped X1, Clipped Y1, Clipped X2, Clipped Y2)."
+      ]
+    },
+    {
+      "sim_id": "u01506",
+      "status": "FIXED",
+      "time": "09:14:49",
+      "issues": [
+        "Unwired action button: 'btn_run_all_clip' ('Complete All 4 Stages') was present in controls slots but lacked a click event listener in canvas_js.",
+        "Observation table column misalignment: btnRecord appended 7 columns with Trial # and Window bounds that did not match the 6 columns defined in observation_thead_html (Clipping Stage, Input Vertices, Output Vertices, Intersections Formed, Clipped Area, Area Retention)."
+      ]
+    },
+    {
+      "sim_id": "u01497",
+      "status": "PASS",
+      "time": "09:14:52",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1583,6 +1579,11 @@
     "u01493",
     "u01494",
     "u01495",
-    "u01499"
+    "u01497",
+    "u01499",
+    "u01500",
+    "u01503",
+    "u01505",
+    "u01506"
   ]
 }
