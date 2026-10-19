@@ -1,85 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:34:15",
-  "completed_count": 1252,
-  "fixed_count": 1188,
-  "latest_sim_id": "u01565",
+  "updated_at": "2026-10-19 09:36:31",
+  "completed_count": 1257,
+  "fixed_count": 1193,
+  "latest_sim_id": "u01572",
   "recent_events": [
-    {
-      "sim_id": "u01528",
-      "status": "FIXED",
-      "time": "09:20:16",
-      "issues": [
-        "Malformed fraction MathML in apparatus specifications: Motor armature rating was formatted as fraction V/4.1 A instead of 220 V, 4.1 A, and Digital I/O channels was formatted as fraction I/O.",
-        "Observation table column misalignment: Header defines 8 columns (VL, Rext, Rf, Va, If, Ia0, n, Wc), but recordBtn inserted 10 cells (extra S.No and Eb), shifting readings under wrong headers.",
-        "Unwired stepper and action controls: Stepper buttons (.stepper-btn) and the starter action button (btn_start_motor) lacked click event listeners in canvas_js.",
-        "Low contrast return wiring: Negative DC circuit return cables used '#0f172a', which was practically invisible against the '#090d16' canvas background."
-      ]
-    },
-    {
-      "sim_id": "u01529",
-      "status": "FIXED",
-      "time": "09:20:21",
-      "issues": [
-        "Unwired action buttons: 'btn_auto_peak_scan' and 'btn_switch_sample' were not attached to event listeners in canvas_js",
-        "Unwired stepper buttons: '.stepper-btn' up/down click handlers were missing in canvas_js",
-        "Observation table column mismatch: observationTbody generated 9 columns (with row index, inverted parameter order, and unrepresented readouts) instead of matching the 6 defined headers in observation_thead_html",
-        "Fluorophore toggling between Quinine Sulfate and Fluorescein was not implemented in calculatePhysics and cuvette rendering"
-      ]
-    },
-    {
-      "sim_id": "u01522",
-      "status": "ERROR",
-      "time": "09:20:32",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01523",
-      "status": "ERROR",
-      "time": "09:20:32",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01525",
-      "status": "FIXED",
-      "time": "09:20:37",
-      "issues": [
-        "Misaligned observation table: record button inserted 7 td cells whereas observation table header (thead) specifies 6 columns (trial, msr, n, d_obs, e_zero, d_corr)",
-        "Broken live readouts in Section 06: updateTelemetry targeted non-existent IDs instead of val_reading_msr, val_reading_csr_division, val_reading_observed, and val_reading_corrected",
-        "Unwired action and stepper buttons: btn_auto_ratchet_clamp, btn_toggle_spindle_lock, and .stepper-btn controls had no event listeners attached",
-        "Mismatched apparatus badge numbering: canvas curvy leader badges 3-8 did not align with legend pills 1-8"
-      ]
-    },
-    {
-      "sim_id": "u01530",
-      "status": "FIXED",
-      "time": "09:20:42",
-      "issues": [
-        "Unwired stepper buttons (▲/▼) and missing real-time input change listeners for delivery head and valve stroke controls in canvas_js",
-        "Unwired action button btn_prime_ram in canvas_js",
-        "Observation table column misalignment: tr.innerHTML generated 10 td cells including unindexed valveStrokeVal while observation_thead_html specifies 9 th columns",
-        "Discharge unit inverted/misformatted as '/m³s' instead of 'm³/s' in readouts_html, observation_thead_html, and principles_list_html",
-        "Erroneous conversion factor 10^4 instead of 10^6 in volumetric discharge equation in principles_list_html"
-      ]
-    },
-    {
-      "sim_id": "u01527",
-      "status": "ERROR",
-      "time": "09:21:17",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01536",
-      "status": "PASS",
-      "time": "09:21:55",
-      "issues": []
-    },
     {
       "sim_id": "u01534",
       "status": "FIXED",
@@ -379,6 +304,89 @@
       "issues": [
         "Unwired action button btn_advance_period ('Advance Simulation Period') leaving the simulation unable to step discrete simulation intervals",
         "Misaligned observation table row generated 8 cells with swapped telemetry parameters instead of 6 cells strictly matching the observation table header"
+      ]
+    },
+    {
+      "sim_id": "u01564",
+      "status": "FIXED",
+      "time": "09:34:33",
+      "issues": [
+        "Unwired Send PING action button: canvas_js searched for btn_send, btn_transmit, btnPing instead of DOM ID btn_send_ping.",
+        "Unwired stepper up/down buttons: missing click event handlers for .stepper-btn controls on Channel Loss Rate and Propagation Latency.",
+        "Misaligned observation table columns: table rows logged lossRate and transitDelay in the wrong columns and omitted the Datagram Transmission Result status column defined in observation_thead_html.",
+        "Mismatched apparatus badge numbers: canvas drew badges 1-5 with Badge 2 as buffer and Badge 4 as receiver node, conflicting with apparatus items and legend pills (Badge 1: Sender Node, Badge 2: Receiver Node).",
+        "Missing observation table clearing on reset: btnReset did not clear obsTbody rows.",
+        "Unthrottled auto-ping generator: spawnPing did not reset lastAutoPingTime, causing auto-pings to collide immediately with manual transmissions."
+      ]
+    },
+    {
+      "sim_id": "u01571",
+      "status": "FIXED",
+      "time": "09:34:33",
+      "issues": [
+        "Raw LaTeX substring '\\lambda' rendered on canvas text instead of unicode symbol 'λ'.",
+        "Telemetry update helper targeted non-existent IDs without 'val_' prefix, failing to update live DOM readout spans.",
+        "Observation table columns were misaligned with the 6 defined headers (n, a, w_hat, lambda, e, MSE).",
+        "Action buttons (btn_reset_covariance, btn_toggle_jammer) and stepper buttons were unwired in canvas_js.",
+        "English indefinite article 'a' was erroneously rendered as a mathematical variable '<math><mrow><mi>a</mi></mrow></math>' in prose slots."
+      ]
+    },
+    {
+      "sim_id": "u01568",
+      "status": "ERROR",
+      "time": "09:34:44",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01567",
+      "status": "FIXED",
+      "time": "09:34:48",
+      "issues": [
+        "Unwired action buttons: 'btn_switch_optimizer' and 'btn_switch_activation' had no click event listeners in canvas_js.",
+        "Unwired stepper buttons: '.stepper-btn' increment and decrement buttons were not wired up in canvas_js.",
+        "Mismatched readout element IDs in updateTelemetry(): readouts HTML uses IDs prefixed with 'val_' ('val_val_accuracy', 'val_training_loss', 'val_gradient_norm', 'val_current_epoch'), preventing live readout telemetry updates.",
+        "Misaligned observation table columns: record button appended 7 <td> values into an observation table configured with 6 header columns."
+      ]
+    },
+    {
+      "sim_id": "u01570",
+      "status": "ERROR",
+      "time": "09:34:48",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01563",
+      "status": "ERROR",
+      "time": "09:35:02",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01573",
+      "status": "FIXED",
+      "time": "09:36:28",
+      "issues": [
+        "Unwired action buttons: #btn_thermal_kick (Inject Thermal Agitation Pulse) and #btn_compute_autocorr (Compute Autocorrelation & PSD) were unhandled in canvas_js",
+        "Misaligned observation table columns: btnRecord inserted recordIndex into the first column, shifting all data columns and omitting Zero-Lag Autocorrelation R_XX(0)",
+        "Missing click handlers for stepper buttons (stepper-btn-up and stepper-btn-down) on Number of Electrons control",
+        "Malformed MathML PSD unit in readouts_html and observation_thead_html (formatted as μ/V² MHz instead of μV²/MHz)"
+      ]
+    },
+    {
+      "sim_id": "u01572",
+      "status": "FIXED",
+      "time": "09:36:30",
+      "issues": [
+        "Bandwidth constant B was set to 1.0e9 (1 GHz) instead of 1.0e7 (10 MHz), which caused a theoretical variance inconsistency with the Nyquist formula and procedure spec",
+        "Action button btn_sample_batch ('Collect 100 Noise Samples') was defined in HTML but was not wired in canvas_js",
+        "Observation table columns were misaligned (7 thead columns vs 6 row cells, missing the Trial # column)",
+        "Stepper up/down buttons were not wired in canvas_js",
+        "Reset button did not clear observation table rows or reset trial counter"
       ]
     }
   ],
@@ -1632,8 +1640,13 @@
     "u01559",
     "u01561",
     "u01562",
+    "u01564",
     "u01565",
     "u01566",
-    "u01569"
+    "u01567",
+    "u01569",
+    "u01571",
+    "u01572",
+    "u01573"
   ]
 }
