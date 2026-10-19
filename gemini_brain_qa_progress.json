@@ -1,72 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:16:09",
-  "completed_count": 1012,
-  "fixed_count": 990,
-  "latest_sim_id": "u01226",
+  "updated_at": "2026-10-19 08:17:57",
+  "completed_count": 1017,
+  "fixed_count": 995,
+  "latest_sim_id": "u01237",
   "recent_events": [
-    {
-      "sim_id": "u01183",
-      "status": "FIXED",
-      "time": "08:08:05",
-      "issues": [
-        "Observation table record handler generated 7 table cells while observation table header defines only 5 columns",
-        "Action buttons btn_start_conversion and btn_eliminate_state lacked interactive click event listeners in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01181",
-      "status": "FIXED",
-      "time": "08:08:10",
-      "issues": [
-        "Replaced raw LaTeX string 'λ_{\\exp}' with proper MathML representation in the Computed Wavelength readout heading.",
-        "Fixed double-escaped '\\exp' string inside MathML <mtext> tag to 'exp' in observation_thead_html.",
-        "Corrected observation table row data population in btnRecord event listener so values align exactly with the 6 thead columns (n, x_left, x_right, D_n, D_n^2, lambda_exp) instead of inserting an unheaded rowCount.",
-        "Wired unhandled action buttons ('btn_align_center' and 'btn_snap_ring') to center the crosswire and auto-traverse to the selected target ring fringe.",
-        "Wired stepper up/down buttons (.stepper-btn) to allow interactive stepping of simulator parameters.",
-        "Re-ordered and corrected Style 2 curvy leader lines and numbered badges (1 to 5) so they correspond 1:1 with the legend pills in legend_pills_html."
-      ]
-    },
-    {
-      "sim_id": "u01179",
-      "status": "PASS",
-      "time": "08:08:10",
-      "issues": []
-    },
-    {
-      "sim_id": "u01186",
-      "status": "FIXED",
-      "time": "08:08:30",
-      "issues": [
-        "Observation table columns were misaligned: btnRecord generated 8 <td> elements with S.No and Vdiff into a 6-column table [Vin, R1, Rf, Vout, Acl, Iin]. Corrected to exactly 6 matching <td> values.",
-        "Unwired action buttons: 'btn_toggle_config' and 'btn_auto_balance' had no event listeners in canvas_js. Wired toggle between inverting and non-inverting modes, and wired auto-balance to reset offset/input.",
-        "Unwired stepper controls: Stepper buttons (▲/▼) for vdc, res1, and res1rf had no event listeners. Added full stepper click handlers updating values and dispatching input/change events.",
-        "Missing non-inverting physics model: The simulation only calculated inverting gain -(Rf/R1). Added non-inverting closed-loop gain (1 + Rf/R1) and high input impedance current calculation when toggled.",
-        "Added breadboard visual state feedback to clearly reflect Inverting vs Non-Inverting operational topology."
-      ]
-    },
-    {
-      "sim_id": "u01187",
-      "status": "FIXED",
-      "time": "08:08:39",
-      "issues": [
-        "Telemetry display element IDs mismatched: canvas_js queried 'reading_vout', 'reading_i', etc. instead of 'val_reading_vout', 'val_reading_i', leaving live readouts unpopulated",
-        "Unwired action buttons: 'btn_toggle_power' and 'btn_set_nominal_benchmark' were missing event listeners in canvas_js",
-        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' stepper buttons were not wired to update inputs",
-        "Observation table column misalignment: Record row generation inserted an unindexed counter column producing 7 cells against 6 thead columns",
-        "Badge numbering & legend discrepancy: Canvas badges were misordered (PSU as 5, Zener as 3, Op-Amp as 1, Transistor as 2, Resistors as 4) and lacked alignment with legend pills"
-      ]
-    },
-    {
-      "sim_id": "u01188",
-      "status": "FIXED",
-      "time": "08:08:50",
-      "issues": [
-        "Unwired action button: Added click event listener for #btn_apply_set_pulse to deliver a 100 ms active-HIGH pulse to input_s.",
-        "Misaligned observation table columns: Corrected btnRecord row creation to match the 5 columns in the observation header (Set Input, Reset Input, Output Voltage Q, Complementary Voltage Q', Total Supply Current ICC) instead of 6 mismatched columns with extra VCC.",
-        "Unwired stepper controls: Added event listeners to .stepper-btn buttons to increment and decrement target inputs respecting min, max, and step."
-      ]
-    },
     {
       "sim_id": "u01184",
       "status": "FIXED",
@@ -375,6 +313,68 @@
       "time": "08:16:09",
       "issues": [
         "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01242",
+      "status": "FIXED",
+      "time": "08:17:57",
+      "issues": [
+        "Wired missing click handler for action button #btn_toggle_topology to cycle through CMOS TG, Solitary NMOS, and Solitary PMOS modes",
+        "Implemented threshold voltage drop physics for Solitary NMOS (clamping logic HIGH to VDD - Vtn) and Solitary PMOS (clamping logic LOW to |Vtp|)",
+        "Corrected telemetry UI readout target IDs to match slot DOM IDs (val_reading_vout, val_reading_logic_out, val_reading_clk_bar, val_reading_ron)",
+        "Added event listener wiring for all stepper buttons (.stepper-btn) to increment/decrement input values",
+        "Updated IC silicon label to dynamically reflect active circuit topology mode"
+      ]
+    },
+    {
+      "sim_id": "u01223",
+      "status": "ERROR",
+      "time": "08:17:57",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01244",
+      "status": "FIXED",
+      "time": "08:17:57",
+      "issues": [
+        "Unwired action buttons: 'btn_generate_topology', 'btn_send_packet', and 'btn_decrypt_payload' lacked click event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn) had no click handlers attached to update client and server counts.",
+        "Hardcoded channel encryption state: 'channelEncryptionState' was declared as a constant 0 with no event listener attached to the 'expSelect' dropdown.",
+        "Observation table column mismatch: The HTML header defined 5 columns (Client ID, Server ID, Channel Encryption, Ciphertext Payload, Decrypted Credential), but canvas_js recorded only 4 misaligned columns.",
+        "Lack of encryption visual state: Packets in transit did not visually differentiate between unencrypted cleartext and encrypted ciphertext payloads."
+      ]
+    },
+    {
+      "sim_id": "u01245",
+      "status": "FIXED",
+      "time": "08:17:57",
+      "issues": [
+        "Observation table record row generated 6 columns including packetStateText, which misaligned with the 5-column header (Client Count, Server Count, Captured Token, Replay Count, Server Status).",
+        "Action buttons (btn_start_transmission, btn_intercept_packet, btn_replay_packet, btn_verify_server_state) and stepper buttons (.stepper-btn) were unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01241",
+      "status": "FIXED",
+      "time": "08:17:57",
+      "issues": [
+        "Telemetry readout elements queried 'reading_*' instead of 'val_reading_*', causing live readouts to remain static",
+        "Observation table columns in btnRecord click handler were misaligned with the table header and missing Tare and Gross mass columns",
+        "Custom stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners",
+        "Action buttons (btn_homogenize, btn_withdraw_aliquot, btn_tare_balance, btn_dry_sample) were unwired",
+        "Analytical balance digital display did not respond to Tare action"
+      ]
+    },
+    {
+      "sim_id": "u01237",
+      "status": "FIXED",
+      "time": "08:17:57",
+      "issues": [
+        "Observation table columns in canvas_js were misaligned with observation_thead_html: the recorded row prepended extra trial index and iteration count columns, shifting all potential values and residual readings into mismatched headers.",
+        "Action buttons (btn_iterate_step, btn_solve_equilibrium) and stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js."
       ]
     }
   ],
@@ -1390,6 +1390,11 @@
     "u01230",
     "u01234",
     "u01235",
-    "u01238"
+    "u01237",
+    "u01238",
+    "u01241",
+    "u01242",
+    "u01244",
+    "u01245"
   ]
 }
