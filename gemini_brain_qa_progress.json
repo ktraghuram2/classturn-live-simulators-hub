@@ -1,74 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 07:53:23",
-  "completed_count": 917,
-  "fixed_count": 914,
-  "latest_sim_id": "u01054",
+  "updated_at": "2026-10-19 07:54:09",
+  "completed_count": 922,
+  "fixed_count": 917,
+  "latest_sim_id": "u01110",
   "recent_events": [
-    {
-      "sim_id": "u01050",
-      "status": "FIXED",
-      "time": "07:13:20",
-      "issues": [
-        "Unwired action buttons (#btn_fill_both and #btn_drain_both) and stepper buttons (.stepper-btn) in canvas_js.",
-        "Misaligned observation table columns: btnRecord inserted 8 cells (including unrequested trial number and LED current cells) for a 6-column thead table.",
-        "Raw LaTeX/MathML prose defect in principles_summary_html: English indefinite article 'A' at paragraph start was erroneously rendered as a MathML variable.",
-        "Unclosed HTML tags in principles_list_html (missing closing </ul>, </div>, and </li> tags).",
-        "Wire termination misalignment on canvas: signal input/output wires were offset from the physical NAND IC gate terminals and the LED module cathode terminal.",
-        "Raw LaTeX underscore notation in canvas tank labels ('L_A' and 'L_B')."
-      ]
-    },
-    {
-      "sim_id": "u01062",
-      "status": "FIXED",
-      "time": "07:13:23",
-      "issues": [
-        "Observation table column misalignment: btnRecord inserted 6 mismatched columns instead of the 9 columns defined in observation_thead_html.",
-        "Unwired interactive action buttons: btn_auto_tune_eigenstate, btn_toggle_wave_representation, and btn_normalize_integral had no event listeners attached in canvas_js.",
-        "Unwired tactile stepper buttons: .stepper-btn buttons had no click listeners to increment or decrement inputs ctrl_energy, ctrl_width, ctrl_depth, ctrl_quantum_number.",
-        "Broken telemetry display: setTelemetryText looked for IDs without prefix 'val_reading_', failing to update the reading value spans in readouts_html.",
-        "Premature eigenvalue locking: state.locked was initialized to true, instantly overwriting the Step 1 default test energy (E = 0.30 eV) before resonance tuning.",
-        "Corrupted MathML notation: apparatus_html item 4 contained malformed MathML representation for exp(-iEt/hbar), and item 1 had variable x instead of multiplication symbol."
-      ]
-    },
-    {
-      "sim_id": "u01066",
-      "status": "FIXED",
-      "time": "07:14:45",
-      "issues": [
-        "Misaligned observation table row cells: The observation thead defines 8 columns (Stage Divisions X, Eyepiece Divisions Y, Stage Distance Ls, Calibration Factor C, Midpoint di, Frequency ni, Arithmetic Mean Diameter d_ln, and Surface-Length Mean Diameter d_sl), but btnRecord rendered only 7 cells with fine focus z erroneously placed into the Ls column and missing the final d_sl column.",
-        "Unwired action buttons: 'Align Scale Zeroes' (btn_align_zero) and 'Traverse Sample Stage' (btn_traverse_field) were unreferenced and had no click event listeners.",
-        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) had no click listeners attached to step the input values."
-      ]
-    },
-    {
-      "sim_id": "u01065",
-      "status": "FIXED",
-      "time": "07:15:03",
-      "issues": [
-        "Stage micrometer rendering lacked ctx.translate(cx, cy), placing the scale baseline outside the circular FOV clipping boundary and making the scale invisible.",
-        "Stage micrometer startX did not align with ocular reticle zero index mark at deltaX = 0, causing spatial misalignment between scales.",
-        "Observation table logging inserted an extraneous S.No. cell (${rowCount}) that shifted all data columns out of alignment with the 7 headers in observation_thead_html.",
-        "Telemetry update routine attempted to set 'val_calibration_factor' instead of the DOM element ID 'val_reading_calibration_factor', leaving Section 06 readouts static.",
-        "Action buttons #btn_align_zeros (Auto-Align Zero Marks) and #btn_toggle_specimen (Mount / Swap Specimen Slide) were unwired in canvas_js.",
-        "Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners, leaving all stepper controls non-interactive on click."
-      ]
-    },
-    {
-      "sim_id": "u01058",
-      "status": "FIXED",
-      "time": "07:16:19",
-      "issues": [
-        "Observation table column misalignment: observation_thead_html defines 7 columns (Section Thickness d, Stain Volume N_stain, Water Volume on Slide N_water, Incubation Time t_stain, Reaction Completion θ(t), Wall Absorbance A_548, Wall Transmittance T_%), but btnRecord logged 10 misaligned columns with an unheaded trial counter and extraneous magnification and contrast columns while ordering properties incorrectly.",
-        "Unwired apparatus action buttons: Action buttons '#btn_slice_transfer' (Slice Stem Section & Brush to Watch Glass), '#btn_dispense_stain' (Dispense Phloroglucinol-HCl Stain Drops), and '#btn_mount_microscope' (Wet-Mount with Needle & Focus Microscope) were present in actions_html but lacked click handlers and procedure step synchronization in canvas_js.",
-        "Unwired stepper controls: Stepper increment and decrement buttons ('.stepper-btn-up', '.stepper-btn-down') were unhandled in canvas_js due to mismatched selector queries, preventing interactive modification of stain volume, water volume, section thickness, incubation time, and objective magnification.",
-        "Unwired top-level controls and incomplete reset: Top-level controls ('#btnToggle', '#btnStep', '#experimentSelect') had no event listeners in canvas_js, and '#btnReset' failed to clear observation table records and reset procedure step highlights.",
-        "Apparatus badges numbering mismatch: Leader line badges in drawLayer3Badges were scrambled relative to the apparatus list and legend pills (Petri dish was anchored to badge 6 instead of 2, Dropper to badge 2 instead of 4, Watch glass to badge 7 instead of 5, Glass slide to badge 4 instead of 6, and Needle to badge 5 instead of 7).",
-        "Unclosed HTML tags in principles_list_html: Equation 0 symbols list was truncated at the end, missing closing </ul>, </div>, and </li> tags.",
-        "Mangled MathML units in principles_list_html: Molar extinction coefficient unit had fragmented MathML ('<mfrac><mrow><mi>L</mi></mrow><mrow><mi>m</mi></mrow></mfrac><mi>o</mi><mi>l</mi>·<mi>c</mi><mi>m</mi>') and cinnamaldehyde concentration unit had split text ('<mi>m</mi><mi>o</mi><mfrac><mrow><mi>l</mi></mrow><mrow><mi>L</mi></mrow></mfrac>') instead of standard compound units.",
-        "Raw LaTeX and nested HTML in readouts_html: Xylem-to-parenchyma contrast ratio symbol contained unparsed LaTeX 'C_{...}' mixed with MathML, and all four readout items contained nested '<span data-source-paths=...>' tags inside their data-unit attributes."
-      ]
-    },
     {
       "sim_id": "u01070",
       "status": "FIXED",
@@ -519,6 +455,50 @@
         "Wired interactive action buttons: btn_toggle_light, btn_apply_oil, btn_auto_focus, and btn_rotate_nosepiece with optical stage state updates.",
         "Aligned observation table recorded row data to precisely match the 8 headers in observation_thead_html: Objective Lens, Ocular Lens, Total Magnification, Numerical Aperture, Aperture Diaphragm, Focus Position, Image Clarity, and Resolving Limit."
       ]
+    },
+    {
+      "sim_id": "u01094",
+      "status": "FIXED",
+      "time": "07:53:36",
+      "issues": [
+        "Fixed telemetry readout element IDs in canvas_js (val_reading_vs1, val_reading_vs2, val_reading_vout, val_reading_sensitivity, val_reading_phase) so DOM telemetry values update dynamically.",
+        "Wired Auto-Balance action button (btn_null_balance) to reset displacement to null (0.0 mm).",
+        "Wired stepper buttons (.stepper-btn-up, .stepper-btn-down) to increment and decrement input values according to step, min, and max attributes.",
+        "Aligned observation table columns in canvas_js to match observation_thead_html exactly (removed extra S.No column and corrected column order with Phase Angle before Sensitivity)."
+      ]
+    },
+    {
+      "sim_id": "u01109",
+      "status": "FIXED",
+      "time": "07:53:46",
+      "issues": [
+        "Unwired action button btn_generate_sample for generating fresh random sample deviates",
+        "Unwired action button btn_toggle_tails for switching between two-tailed and one-tailed t-test",
+        "Unwired stepper buttons (.stepper-btn-up and .stepper-btn-down) preventing parameter adjustment via UI buttons",
+        "Unwired experiment options preset dropdown selector",
+        "Observation table columns misaligned (row generated 9 columns with combined n1/n2 and trial number against an 8-column table header)"
+      ]
+    },
+    {
+      "sim_id": "u01103",
+      "status": "FIXED",
+      "time": "07:53:46",
+      "issues": [
+        "Observation table record handler injected 9 td columns (including Trial #, scale, shear, probe vector) misaligning with the 5 defined observation columns (Dimension, Determinant, Trace, Eigenvalue, Frobenius Norm)",
+        "Stepper buttons (.stepper-btn-up, .stepper-btn-down) and action/reset buttons were not wired in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01112",
+      "status": "PASS",
+      "time": "07:54:00",
+      "issues": []
+    },
+    {
+      "sim_id": "u01110",
+      "status": "PASS",
+      "time": "07:54:09",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1427,6 +1407,7 @@
     "u01091",
     "u01092",
     "u01093",
+    "u01094",
     "u01096",
     "u01097",
     "u01098",
@@ -1434,10 +1415,14 @@
     "u01100",
     "u01101",
     "u01102",
+    "u01103",
     "u01104",
     "u01105",
     "u01106",
     "u01107",
-    "u01108"
+    "u01108",
+    "u01109",
+    "u01110",
+    "u01112"
   ]
 }
