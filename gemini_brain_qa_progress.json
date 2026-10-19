@@ -1,76 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:33:20",
-  "completed_count": 1527,
-  "fixed_count": 1398,
-  "latest_sim_id": "u01925",
+  "updated_at": "2026-10-19 14:34:42",
+  "completed_count": 1532,
+  "fixed_count": 1401,
+  "latest_sim_id": "u01938",
   "recent_events": [
-    {
-      "sim_id": "u01892",
-      "status": "PASS",
-      "time": "14:25:53",
-      "issues": []
-    },
-    {
-      "sim_id": "u01895",
-      "status": "FIXED",
-      "time": "14:26:07",
-      "issues": [
-        "Fixed broken live telemetry readouts: elements were queried by 'reading_*' instead of their actual DOM IDs 'val_reading_*', preventing values from updating during animation.",
-        "Fixed observation table misalignment: btnRecord previously injected 10 mismatched columns (including an unrequested trial index and omitted elapsed time), now properly aligned with the 8 columns defined in the observation table header.",
-        "Wired up unwired action buttons ('Inject Solute & Initiate Mass Transfer' and 'Verify Interfacial Flatness & Vortex Stability') to control simulation timeline and stability verification.",
-        "Wired up stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) to properly increment and decrement input values and trigger input/change events."
-      ]
-    },
-    {
-      "sim_id": "u01894",
-      "status": "FIXED",
-      "time": "14:26:16",
-      "issues": [
-        "Observation table record button generated only 5 data cells while table header specified 8 columns, creating misalignment and missing diameter, squared B, and squared radius",
-        "Auto-tune preset action button ('btn_preset_calibration_orbit') and stepper buttons were unwired in canvas_js",
-        "Observation table column 5 header omitted the trajectory radius symbol r",
-        "Specific charge unit C/kg had malformed MathML fraction splitting kg into k in denominator and trailing g in principles_list_html, readouts_html, and observation_thead_html"
-      ]
-    },
-    {
-      "sim_id": "u01880",
-      "status": "ERROR",
-      "time": "14:26:26",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01890",
-      "status": "FIXED",
-      "time": "14:26:34",
-      "issues": [
-        "Unwired action buttons (btn_thaw_vial, btn_run_centrifuge, btn_apply_trypsin, btn_quench_harvest, btn_count_hemocytometer, btn_freeze_cells) and missing stepper button click handlers",
-        "Mismatched readout element IDs in canvas_js syncControls (reading_* instead of val_reading_*) preventing live telemetry updates",
-        "Misaligned observation table row insertion in btnRecord (7 columns inserted for 6 header columns with mismatched ordering)",
-        "Mangled MathML fraction rendering for units (cells/mL rendered as cell s/m L and °C/min rendered as ° C/m in) in steppers_html, readouts_html, and observation_thead_html"
-      ]
-    },
-    {
-      "sim_id": "u01889",
-      "status": "ERROR",
-      "time": "14:26:38",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01897",
-      "status": "FIXED",
-      "time": "14:26:48",
-      "issues": [
-        "SCL clock pulse animation Y-coordinate used broken cubic Bezier calculation (day * dby + dbx instead of day * sclT + dby, and dbx/dcx instead of dby/dcy)",
-        "Observation table columns in recordBtn click handler were misaligned and mismatched against observation_thead_html headers",
-        "Action buttons #btn_pushbutton_toggle and #btn_transmit_i2c were unhandled in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to input controls in canvas_js"
-      ]
-    },
     {
       "sim_id": "u01868",
       "status": "ERROR",
@@ -383,6 +317,64 @@
         "Observation table column mismatch: table header has 6 columns (Fn, L, Ft, μ, dp, CPR) but observation recording inserted 9 misaligned columns with extraneous fields and swapped column order",
         "Malformed unit MathML in steppers_html rendering scratching velocity as m(m/m)in instead of mm/min"
       ]
+    },
+    {
+      "sim_id": "u01923",
+      "status": "ERROR",
+      "time": "14:33:35",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01931",
+      "status": "PASS",
+      "time": "14:33:45",
+      "issues": []
+    },
+    {
+      "sim_id": "u01936",
+      "status": "FIXED",
+      "time": "14:34:17",
+      "issues": [
+        "Observation table columns in canvas_js (9 td cells including unindexed count and collision rate) were misaligned with the 7 table headers defined in observation_thead_html",
+        "Action button #btn_thermalize ('Equilibrate Kinetic Velocities') was unwired in canvas_js",
+        "Stepper control increment/decrement buttons (.stepper-btn) were unwired for temperature, particle count, molecular mass, and chamber width"
+      ]
+    },
+    {
+      "sim_id": "u01933",
+      "status": "FIXED",
+      "time": "14:34:19",
+      "issues": [
+        "Raw unformatted LaTeX tokens (z_t^* and z_{max}) present in principles overview prose replaced with valid semantic MathML elements."
+      ]
+    },
+    {
+      "sim_id": "u01932",
+      "status": "ERROR",
+      "time": "14:34:23",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01935",
+      "status": "FIXED",
+      "time": "14:34:31",
+      "issues": [
+        "Procedure steps contained generic laboratory circuit boilerplate ('check zero-error and calibration', 'connect the circuit/apparatus') instead of software engineering UML modeling steps.",
+        "Live readout DOM element IDs in updateTelemetry ('reading_total_nodes', 'val_total_nodes') failed to match slot span IDs ('val_reading_total_nodes', etc.), leaving telemetry figures static in the UI.",
+        "Observation table record logging appended 7 td elements including an unheaded timestamp column, misaligning with the 6 th columns in observation_thead_html.",
+        "Action buttons 'Validate UML Semantics' (btn_validate_rules) and 'Auto-Balance Diagram Layout' (btn_rebalance_layout) had no event listener wiring.",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to alter numerical values."
+      ]
+    },
+    {
+      "sim_id": "u01938",
+      "status": "PASS",
+      "time": "14:34:42",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1912,6 +1904,11 @@
     "u01927",
     "u01928",
     "u01929",
-    "u01930"
+    "u01930",
+    "u01931",
+    "u01933",
+    "u01935",
+    "u01936",
+    "u01938"
   ]
 }
