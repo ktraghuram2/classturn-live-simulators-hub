@@ -1,58 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:31:24",
-  "completed_count": 1517,
-  "fixed_count": 1390,
-  "latest_sim_id": "u01921",
+  "updated_at": "2026-10-19 14:32:45",
+  "completed_count": 1522,
+  "fixed_count": 1394,
+  "latest_sim_id": "u01927",
   "recent_events": [
-    {
-      "sim_id": "u01881",
-      "status": "FIXED",
-      "time": "14:23:49",
-      "issues": [
-        "Unwired action buttons: 'Inject Perturbation into Node X', 'Inject Perturbation into Node Y', and 'Quench In-Flight Signals' lacked event listeners.",
-        "Unwired stepper controls: The stepper increment and decrement buttons lacked click event listeners.",
-        "Mismatched numbered badges: Badge 2 pointed to Node Y and Badge 3 pointed to the forward causal arc, conflicting with the legend pills ordering.",
-        "Telemetry readout ID mismatch: updateTelemetry targeted 'reading_*' instead of the actual span IDs 'val_reading_*', preventing readout value updates.",
-        "Misaligned observation table columns: The table header defined [w1, w2, s, v, G, x, y], but the row insertion logic inserted [w1, w2, v, deltaP, G, x, y], omitting Speed Exponent s."
-      ]
-    },
-    {
-      "sim_id": "u01884",
-      "status": "FIXED",
-      "time": "14:24:03",
-      "issues": [
-        "Replaced raw LaTeX string literal '(\\Delta P)' in canvas differential residual heading with unicode '(ΔP)'",
-        "Wired missing action button click handlers for 'btn_embed_bit' (Execute LSB Substitution) and 'btn_extract_payload' (Extract Secret Bitstream)",
-        "Wired interactive stepper up/down buttons (.stepper-btn) to increment and decrement corresponding inputs"
-      ]
-    },
-    {
-      "sim_id": "u01879",
-      "status": "FIXED",
-      "time": "14:24:12",
-      "issues": [
-        "Unwired action buttons: 'btn_auto_fit' (Execute Iterative Parameter Optimization) and 'btn_toggle_model' (Switch Clinical Feature Channel) lacked event listeners in canvas_js",
-        "Unwired stepper controls: Stepper up and down buttons (.stepper-btn-up, .stepper-btn-down) had no click listeners attached to manipulate target parameter inputs",
-        "Misaligned observation table columns: Record button logged trial index instead of Selected Feature x into column 1, and mismatched Decision Boundary, Log Loss, and Accuracy across columns 4-6 relative to observation_thead_html",
-        "Static feature cartridge indicator: Cartridge channel active state was hardcoded to channel 1 instead of responding dynamically to clinical feature switching"
-      ]
-    },
-    {
-      "sim_id": "u01885",
-      "status": "PASS",
-      "time": "14:24:24",
-      "issues": []
-    },
-    {
-      "sim_id": "u01883",
-      "status": "FIXED",
-      "time": "14:24:48",
-      "issues": [
-        "Misaligned observation table columns and extra column in btnRecord click listener (9 columns rendered for 8 header columns, column order swapped Li/tg before Tw/wk)",
-        "Unwired action buttons (btn_transfer_template, btn_cut_segment, btn_assemble_cluster) and stepper up/down buttons (.stepper-btn) in canvas_js"
-      ]
-    },
     {
       "sim_id": "u01886",
       "status": "PASS",
@@ -382,6 +334,53 @@
         "Observation table record button output 9 columns while the table header defined only 7 columns, causing column misalignment",
         "Action buttons (btn_inject_13co2, btn_cryo_quench, btn_solve_flux_map) were present in controls HTML but unwired in canvas_js",
         "Stepper increment/decrement buttons (.stepper-btn) lacked click event listeners in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01917",
+      "status": "FIXED",
+      "time": "14:31:30",
+      "issues": [
+        "Unwired action button: #btn_seed_patient_zero ('Inoculate Patient Zero') in section 5 had no click event listener in canvas_js.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) for transmission probability, recovery rate, mean degree, and initial infected were not wired to update their inputs and trigger sync.",
+        "Observation table column mismatch: btnRecord appended 8 columns whereas the thead defines 6 columns, causing layout misalignment and broken data mapping.",
+        "Missing peak infectious prevalence tracking: Observation table column 5 requires Peak Infectious Prevalence (I_max), which was not tracked during epidemic progression."
+      ]
+    },
+    {
+      "sim_id": "u01922",
+      "status": "FIXED",
+      "time": "14:32:22",
+      "issues": [
+        "Raw LaTeX escape commands (\\arctan, V_{disp}, \\tan, \\sec) in principles_summary_html",
+        "Unwired action buttons (#btn_perturb_heel, #btn_release_equilibrium) and stepper buttons (.stepper-btn-up, .stepper-btn-down) in canvas_js",
+        "Observation table columns misaligned: btnRecord was inserting 11 td elements (including unlisted radius r and weight W) into a 9-column observation table thead",
+        "Apparatus badges 1 and 2 in canvas_js were swapped relative to legend_pills_html (Badge 1 pointed to Cone while Pill 1 was Tank; Badge 2 pointed to Tank while Pill 2 was Cone)"
+      ]
+    },
+    {
+      "sim_id": "u01924",
+      "status": "FIXED",
+      "time": "14:32:39",
+      "issues": [
+        "Observation table record button generated 8 data columns misaligned with the 6-column observation header.",
+        "Stepper up/down buttons (.stepper-btn) lacked click event listeners in canvas_js.",
+        "Action buttons 'btn_auto_pipette_dilution' and 'btn_read_microplate' lacked click handlers."
+      ]
+    },
+    {
+      "sim_id": "u01929",
+      "status": "PASS",
+      "time": "14:32:43",
+      "issues": []
+    },
+    {
+      "sim_id": "u01927",
+      "status": "FIXED",
+      "time": "14:32:45",
+      "issues": [
+        "Observation table record button logged 6 mismatched columns instead of the 7 declared columns, causing heat treatment state, magnifications, resolution, constituents, and phase area fraction to be omitted or misaligned.",
+        "Action buttons #btn_auto_focus and #btn_center_diaphragm in Section 5 controls were not wired with click handlers in canvas_js."
       ]
     }
   ],
@@ -1899,9 +1898,14 @@
     "u01914",
     "u01915",
     "u01916",
+    "u01917",
     "u01918",
     "u01919",
     "u01920",
-    "u01921"
+    "u01921",
+    "u01922",
+    "u01924",
+    "u01927",
+    "u01929"
   ]
 }
