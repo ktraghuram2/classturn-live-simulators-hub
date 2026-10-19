@@ -1,58 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:08:05",
-  "completed_count": 977,
-  "fixed_count": 963,
-  "latest_sim_id": "u01183",
+  "updated_at": "2026-10-19 08:08:50",
+  "completed_count": 982,
+  "fixed_count": 967,
+  "latest_sim_id": "u01188",
   "recent_events": [
-    {
-      "sim_id": "u01140",
-      "status": "FIXED",
-      "time": "07:59:44",
-      "issues": [
-        "Aligned observation table row cells with the 5 observation header columns (Vclamp, INa,peak, IK,ss, Im, Temp) instead of 10 misaligned parameter cells.",
-        "Wired unwired action button 'Perfuse Pronase Protease' (btn_pronase_infusion) to toggle pronase perfusion and eliminate sodium channel inactivation (h = 1).",
-        "Added event handling for stepper up/down buttons (.stepper-btn) to ensure interactive stepping across all input parameters."
-      ]
-    },
-    {
-      "sim_id": "u01138",
-      "status": "FIXED",
-      "time": "07:59:53",
-      "issues": [
-        "Raw LaTeX formatting in steppers_html: '[K^+]_{o}' was not rendered in MathML.",
-        "Unwired action buttons: 'btn_apply_ttx', 'btn_apply_tea', and 'btn_inject_current_pulse' lacked event listeners in canvas_js.",
-        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' buttons were not bound to their target stepper inputs in canvas_js.",
-        "Misaligned observation table row: observation_thead_html has 7 columns (K+ Conc., Temp, Rm, Cm, EK, Vm, Frequency), but btnRecord previously inserted 9 columns including an unreferenced row index, Ena, and tau."
-      ]
-    },
-    {
-      "sim_id": "u01139",
-      "status": "FIXED",
-      "time": "08:00:16",
-      "issues": [
-        "Observation table row template had misaligned columns, an unrequested Trial # prepended, and omitted Membrane Capacitance and peak Na+/K+ currents.",
-        "Action buttons (btn_deliver_pulse, btn_apply_ttx, btn_apply_tea, btn_apply_pronase) were unwired.",
-        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners.",
-        "Pharmacological gating modulations (TTX blocking gNa, TEA blocking gK, Pronase removing h inactivation) were missing from the Hodgkin-Huxley ODE solver."
-      ]
-    },
-    {
-      "sim_id": "u01134",
-      "status": "ERROR",
-      "time": "08:00:44",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01137",
-      "status": "ERROR",
-      "time": "08:00:50",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01143",
       "status": "FIXED",
@@ -389,6 +341,59 @@
       "issues": [
         "Observation table record handler generated 7 table cells while observation table header defines only 5 columns",
         "Action buttons btn_start_conversion and btn_eliminate_state lacked interactive click event listeners in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01181",
+      "status": "FIXED",
+      "time": "08:08:10",
+      "issues": [
+        "Replaced raw LaTeX string 'λ_{\\exp}' with proper MathML representation in the Computed Wavelength readout heading.",
+        "Fixed double-escaped '\\exp' string inside MathML <mtext> tag to 'exp' in observation_thead_html.",
+        "Corrected observation table row data population in btnRecord event listener so values align exactly with the 6 thead columns (n, x_left, x_right, D_n, D_n^2, lambda_exp) instead of inserting an unheaded rowCount.",
+        "Wired unhandled action buttons ('btn_align_center' and 'btn_snap_ring') to center the crosswire and auto-traverse to the selected target ring fringe.",
+        "Wired stepper up/down buttons (.stepper-btn) to allow interactive stepping of simulator parameters.",
+        "Re-ordered and corrected Style 2 curvy leader lines and numbered badges (1 to 5) so they correspond 1:1 with the legend pills in legend_pills_html."
+      ]
+    },
+    {
+      "sim_id": "u01179",
+      "status": "PASS",
+      "time": "08:08:10",
+      "issues": []
+    },
+    {
+      "sim_id": "u01186",
+      "status": "FIXED",
+      "time": "08:08:30",
+      "issues": [
+        "Observation table columns were misaligned: btnRecord generated 8 <td> elements with S.No and Vdiff into a 6-column table [Vin, R1, Rf, Vout, Acl, Iin]. Corrected to exactly 6 matching <td> values.",
+        "Unwired action buttons: 'btn_toggle_config' and 'btn_auto_balance' had no event listeners in canvas_js. Wired toggle between inverting and non-inverting modes, and wired auto-balance to reset offset/input.",
+        "Unwired stepper controls: Stepper buttons (▲/▼) for vdc, res1, and res1rf had no event listeners. Added full stepper click handlers updating values and dispatching input/change events.",
+        "Missing non-inverting physics model: The simulation only calculated inverting gain -(Rf/R1). Added non-inverting closed-loop gain (1 + Rf/R1) and high input impedance current calculation when toggled.",
+        "Added breadboard visual state feedback to clearly reflect Inverting vs Non-Inverting operational topology."
+      ]
+    },
+    {
+      "sim_id": "u01187",
+      "status": "FIXED",
+      "time": "08:08:39",
+      "issues": [
+        "Telemetry display element IDs mismatched: canvas_js queried 'reading_vout', 'reading_i', etc. instead of 'val_reading_vout', 'val_reading_i', leaving live readouts unpopulated",
+        "Unwired action buttons: 'btn_toggle_power' and 'btn_set_nominal_benchmark' were missing event listeners in canvas_js",
+        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' stepper buttons were not wired to update inputs",
+        "Observation table column misalignment: Record row generation inserted an unindexed counter column producing 7 cells against 6 thead columns",
+        "Badge numbering & legend discrepancy: Canvas badges were misordered (PSU as 5, Zener as 3, Op-Amp as 1, Transistor as 2, Resistors as 4) and lacked alignment with legend pills"
+      ]
+    },
+    {
+      "sim_id": "u01188",
+      "status": "FIXED",
+      "time": "08:08:50",
+      "issues": [
+        "Unwired action button: Added click event listener for #btn_apply_set_pulse to deliver a 100 ms active-HIGH pulse to input_s.",
+        "Misaligned observation table columns: Corrected btnRecord row creation to match the 5 columns in the observation header (Set Input, Reset Input, Output Voltage Q, Complementary Voltage Q', Total Supply Current ICC) instead of 6 mismatched columns with extra VCC.",
+        "Unwired stepper controls: Added event listeners to .stepper-btn buttons to increment and decrement target inputs respecting min, max, and step."
       ]
     }
   ],
@@ -1368,7 +1373,12 @@
     "u01175",
     "u01176",
     "u01177",
+    "u01179",
+    "u01181",
     "u01182",
-    "u01183"
+    "u01183",
+    "u01186",
+    "u01187",
+    "u01188"
   ]
 }
