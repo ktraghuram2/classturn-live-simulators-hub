@@ -1,93 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:56:28",
-  "completed_count": 1842,
-  "fixed_count": 1649,
-  "latest_sim_id": "u02347",
+  "updated_at": "2026-10-19 16:58:17",
+  "completed_count": 1847,
+  "fixed_count": 1654,
+  "latest_sim_id": "u02355",
   "recent_events": [
-    {
-      "sim_id": "u02304",
-      "status": "FIXED",
-      "time": "16:48:13",
-      "issues": [
-        "Observation table columns were misaligned between thead and tbody (swapped Gas Flow Rate and Scratch Hardness, plus an extraneous 8th column not in the thead)",
-        "Malformed MathML units in live readouts and observation header: fractional syntax error \\frac{c}{m^3}s for cm³/s and \\frac{g}{c}m^3 for g/cm³",
-        "Missing symbol 't' in the Gassing Duration observation table header",
-        "Action buttons (btn_ram_sand, btn_pierce_vent, btn_inject_co2, btn_strip_corebox) and stepper buttons (▲/▼) had no event listeners wired in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u02306",
-      "status": "PASS",
-      "time": "16:48:16",
-      "issues": []
-    },
-    {
-      "sim_id": "u02307",
-      "status": "FIXED",
-      "time": "16:48:54",
-      "issues": [
-        "Unwired action button: #btn_step_clock ('Apply Single Clock Pulse') lacked an event listener in canvas_js.",
-        "Unwired canvas Reset button: The master reset push-button on the FPGA trainer board was inert without canvas click handling.",
-        "Readout unit truncation: updateTelemetry used el.textContent, wiping out pre-rendered MathML unit child spans on telemetry refresh.",
-        "Unwired experiment mode: experimentSelect dropdown did not automatically toggle clock edge polarity between posedge and negedge modes."
-      ]
-    },
-    {
-      "sim_id": "u02309",
-      "status": "FIXED",
-      "time": "16:49:11",
-      "issues": [
-        "Observation table data row appended 7 columns with misaligned noise data into a 6-column table header.",
-        "Action buttons (btn_direct_write, btn_covert_burst) and stepper controls were not wired to simulation state.",
-        "Validation section contained an erroneous MathML fraction representation (I over O) for the technical term I/O."
-      ]
-    },
-    {
-      "sim_id": "u02311",
-      "status": "PASS",
-      "time": "16:49:28",
-      "issues": []
-    },
-    {
-      "sim_id": "u02310",
-      "status": "FIXED",
-      "time": "16:49:32",
-      "issues": [
-        "Unwired action button btn_attempt_transfer (Initiate Direct Data Transfer) in canvas_js",
-        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js preventing parameter adjustment via UI buttons",
-        "Missing reset control listener for btnReset in canvas_js",
-        "Corrupted MathML formatting in Inbound Flux unit rendering (fraction byte s/s instead of text bytes/s) in readouts_html and observation_thead_html"
-      ]
-    },
-    {
-      "sim_id": "u02314",
-      "status": "FIXED",
-      "time": "16:49:37",
-      "issues": [
-        "Unwired action buttons: Execute Synchronous Round (btn_step_round), Simulate Node Crash (btn_inject_crash), and Auto-Run to Consensus (btn_run_consensus) had no event listeners in canvas_js",
-        "Unwired stepper buttons: Stepper up and down buttons (.stepper-btn) had no click event listeners to increment/decrement input values and sync simulator state",
-        "Misaligned observation table columns: btnRecord logged 6 <td> elements including an extra total node count column for a 5-column table header"
-      ]
-    },
-    {
-      "sim_id": "u02317",
-      "status": "PASS",
-      "time": "16:49:53",
-      "issues": []
-    },
-    {
-      "sim_id": "u02315",
-      "status": "FIXED",
-      "time": "16:50:08",
-      "issues": [
-        "Raw LaTeX 'pK_{a}' was present without MathML markup in principles_list_html equation symbols",
-        "Observation table rows generated 8 data cells, misaligned with the 6-column header specification in observation_thead_html",
-        "Unwired action buttons ('btn_switch_stress_reagent' and 'btn_dispense_aliquot')",
-        "Unwired stepper controls (stepper-btn-up and stepper-btn-down buttons)",
-        "Burette 3 and calculateChemistry were hardcoded strictly to HCl, lacking dynamic support for NaOH stress testing"
-      ]
-    },
     {
       "sim_id": "u02318",
       "status": "FIXED",
@@ -381,6 +298,94 @@
         "Replaced spurious MathML fraction representation for pCAMBIA 1300/2300 binary vector in apparatus specifications with plain text notation",
         "Replaced awkward MathML fraction representation for thermal cycler ramp rate 3.5 °C/s in apparatus specifications with clean text notation",
         "Replaced spurious MathML fraction representation for pCAMBIA 1300/2300 binary vector in Step 2 procedure text with plain text notation"
+      ]
+    },
+    {
+      "sim_id": "u02342",
+      "status": "ERROR",
+      "time": "16:56:36",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02348",
+      "status": "FIXED",
+      "time": "16:56:51",
+      "issues": [
+        "Unwired action button (#btn_autofit_waveform) for auto-calibrating CRO trace",
+        "Unwired stepper up/down buttons (.stepper-btn) in controls panel",
+        "Misaligned observation table columns and missing fields in recordBtn click handler"
+      ]
+    },
+    {
+      "sim_id": "u02327",
+      "status": "ERROR",
+      "time": "16:57:17",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02352",
+      "status": "FIXED",
+      "time": "16:57:36",
+      "issues": [
+        "Raw LaTeX syntax '+ 2D_0' in procedure step 2 prose replaced with standard MathML presentation tags",
+        "Unwired action buttons ('btn_step_ssa' and 'btn_relax_eq') and unhandled stepper buttons ('stepper-btn-up'/'stepper-btn-down')",
+        "Observation table column mismatch: removed 9th column 'N_total' to match the 8 defined observation headers"
+      ]
+    },
+    {
+      "sim_id": "u02349",
+      "status": "ERROR",
+      "time": "16:57:52",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02356",
+      "status": "ERROR",
+      "time": "16:58:00",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02354",
+      "status": "FIXED",
+      "time": "16:58:01",
+      "issues": [
+        "Wired stepper controls by updating IDs to match HTML input elements (ctrl_std_conc, ctrl_centrifuge_rpm, ctrl_incubation_temp, ctrl_dilution_factor)",
+        "Corrected live readout element IDs and added unit formatting for val_reading_extinction_std, val_reading_extinction_test, val_reading_transmittance, and val_reading_estimated_glucose",
+        "Wired action buttons btn_centrifuge_spin and btn_incubate_transfer to update parameters and recompute physics",
+        "Aligned observation table columns in btnRecord to match the 6-column thead structure (C_std, T_inc, A_std, A_test, D_f, C_test)",
+        "Corrected GOD-POD standard calibration curve calculation so standard glucose concentration is independent of test supernatant dilution factor",
+        "Added missing Callout Badge 5 for Spectrophotometer / Colorimeter and re-anchored Callout 4 to Reaction Cuvette Rack matching legend pills"
+      ]
+    },
+    {
+      "sim_id": "u02357",
+      "status": "FIXED",
+      "time": "16:58:04",
+      "issues": [
+        "Observation table record button had 7 mismatched columns with missing H² and field-off mass columns and misplaced data.",
+        "Unwired action buttons: Tare / Zero Analytical Balance (#btn_tare_balance) and Energize / De-energize (#btn_toggle_field) had no event listeners in canvas_js.",
+        "Stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to increment/decrement inputs and fire change events.",
+        "Analytical balance digital display did not account for tare zeroing offset."
+      ]
+    },
+    {
+      "sim_id": "u02355",
+      "status": "FIXED",
+      "time": "16:58:16",
+      "issues": [
+        "Observation table column mismatch: JavaScript inserted 6 columns including an untracked record counter, whereas observation_thead_html defines 5 columns (Treatment Group, Counting Duration, Total Pulses, Glucose Uptake Rate, Fold Stimulation).",
+        "Unwired stepper buttons: Increment and decrement buttons (.stepper-btn) for treatment_condition and incubation_time lacked click event listeners.",
+        "Unwired action buttons: 'btn_cell_scraping' and 'btn_run_scintillation' lacked event listeners to handle user interaction.",
+        "Inactive telemetry readouts: updateTelemetry was defined but never called in the animation loop, leaving live readouts static.",
+        "Truncated canvas_js: Script was cut off mid-expression at line 162 with no apparatus rendering (12-well microtiter plate, CO2 incubator, suction pump, liquid scintillation counter, cell scraper, scintillation tubes), missing Style 2 leader lines with badges 1-6, and missing animation loop startup."
       ]
     }
   ],
@@ -2226,6 +2231,11 @@
     "u02344",
     "u02345",
     "u02346",
-    "u02347"
+    "u02347",
+    "u02348",
+    "u02352",
+    "u02354",
+    "u02355",
+    "u02357"
   ]
 }
