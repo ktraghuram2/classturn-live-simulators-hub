@@ -1,56 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:53:14",
-  "completed_count": 1152,
-  "fixed_count": 1106,
-  "latest_sim_id": "u01422",
+  "updated_at": "2026-10-19 08:54:24",
+  "completed_count": 1157,
+  "fixed_count": 1111,
+  "latest_sim_id": "u01432",
   "recent_events": [
-    {
-      "sim_id": "u01385",
-      "status": "FIXED",
-      "time": "08:44:49",
-      "issues": [
-        "Unwired action button #btn_show_construction_lines ('Toggle Geometric Division Rays') and unhandled stepper buttons",
-        "Misaligned observation table: recordObservation generated 6 cells with incorrect headers instead of matching the 7 table header columns",
-        "Geometric division rays were drawn unconditionally without checking toggled state"
-      ]
-    },
-    {
-      "sim_id": "u01371",
-      "status": "ERROR",
-      "time": "08:45:11",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01393",
-      "status": "FIXED",
-      "time": "08:45:26",
-      "issues": [
-        "Observation table column misalignment: observation_thead_html defined 6 columns (Driver Present, Buckled Up, Inverted Buckle, Ignition Switch, Warning Light, Alarm Sound Level), but btnRecord generated 7 columns with an unaligned obsCount column and swapped the ordering of Ignition Switch and Inverted Buckle.",
-        "Unwired action and stepper buttons: #btn_trigger_critical_hazard and the stepper up/down buttons (.stepper-btn) were not wired in canvas_js.",
-        "Direct canvas switch interactivity: Added canvas click detection allowing users to toggle Driver, Buckle, and Ignition switch states directly on the board."
-      ]
-    },
-    {
-      "sim_id": "u01387",
-      "status": "FIXED",
-      "time": "08:45:34",
-      "issues": [
-        "Observation table column mismatch: table header had 6 columns omitting the trial index (#) while rows appended 7 columns, and Main Scale Reading was logging total target distance rather than whole meter reading.",
-        "Unwired action button: #btn_snap_coincidence lacked a click event listener in canvas_js.",
-        "Unwired stepper controls: .stepper-btn up/down controls lacked click event handlers and inputs lacked input/change event listeners in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01377",
-      "status": "ERROR",
-      "time": "08:45:43",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01372",
       "status": "ERROR",
@@ -393,6 +347,57 @@
         "Corrected broken unit expressions (m(m/s) to mm/s and (m/m³)s to mm³/s) across steppers_html, readouts_html, and observation_thead_html",
         "Wired up interactive action buttons (btn_build_platform, btn_material_reservoir, btn_print_heads, btn_milling_head, btn_start_process, btn_stop_process) and stepper increment/decrement buttons in canvas_js",
         "Aligned observation table recorded columns in canvas_js with observation_thead_html (Thickness, Speed, Droplet Vol, Packing Density, Saturation, Porosity, Build Rate)"
+      ]
+    },
+    {
+      "sim_id": "u01429",
+      "status": "FIXED",
+      "time": "08:53:49",
+      "issues": [
+        "Unwired action buttons: btn_auto_roll, btn_step_division, and btn_construct_tangent_normal had no event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) had no click event listeners to modify input values.",
+        "Observation table column mismatch: btnRecord inserted 7 table cells including an undeclared serial number and baseline length, misaligning with the 6-column header (R, theta, x, y, rho, alpha).",
+        "Missing and misassigned Style 2 leader lines: Badge 5 was missing for Tangent & Normal Protractor Ruler, and Badge 4 pointed to the drafter head instead of the tracing pen and cycloid locus."
+      ]
+    },
+    {
+      "sim_id": "u01428",
+      "status": "FIXED",
+      "time": "08:53:59",
+      "issues": [
+        "Unwired action buttons ('Compact & Demould Slump Cone' and 'Start Vibration & Timer') and stepper increment/decrement buttons in canvas_js",
+        "Misaligned observation table columns where recorded rows inserted 8 columns (including trial index and peak acceleration) into a 6-column header",
+        "Unclosed HTML tags (missing closing </ul>, </div>, and </li>) in principles_list_html"
+      ]
+    },
+    {
+      "sim_id": "u01427",
+      "status": "FIXED",
+      "time": "08:54:00",
+      "issues": [
+        "Stepper increment and decrement buttons (.stepper-btn-up / .stepper-btn-down) were unwired in canvas_js, preventing UI parameter adjustments when clicking buttons",
+        "Experiment select dropdown (#experimentSelect) was unwired to simulation reset and mode handling"
+      ]
+    },
+    {
+      "sim_id": "u01425",
+      "status": "FIXED",
+      "time": "08:54:01",
+      "issues": [
+        "Observation table columns in btnRecord had 14 columns (including rowCount, H, and L) causing severe misalignment with the 11 columns in observation_thead_html",
+        "Action button #btn_solve_sway_equilibrium was unwired in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update inputs and trigger simulation recalculations",
+        "setElText function directly overwrote textContent on readout elements, erasing inner MathML unit elements"
+      ]
+    },
+    {
+      "sim_id": "u01432",
+      "status": "FIXED",
+      "time": "08:54:24",
+      "issues": [
+        "Observation table record button injected 8 mismatched columns (with trial serial number and load torque) which were misaligned with the 7 columns in observation_thead_html.",
+        "Action buttons (#btn_toggle_mcb and #btn_set_rated_voltage) lacked click event listeners in canvas_js.",
+        "Stepper adjustment buttons (.stepper-btn-up and .stepper-btn-down) lacked click event handlers in canvas_js."
       ]
     }
   ],
@@ -1548,6 +1553,11 @@
     "u01422",
     "u01423",
     "u01424",
-    "u01426"
+    "u01425",
+    "u01426",
+    "u01427",
+    "u01428",
+    "u01429",
+    "u01432"
   ]
 }
