@@ -1,54 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:46:40",
-  "completed_count": 1802,
-  "fixed_count": 1616,
-  "latest_sim_id": "u02296",
+  "updated_at": "2026-10-19 16:47:45",
+  "completed_count": 1807,
+  "fixed_count": 1620,
+  "latest_sim_id": "u02303",
   "recent_events": [
-    {
-      "sim_id": "u02258",
-      "status": "PASS",
-      "time": "16:39:06",
-      "issues": []
-    },
-    {
-      "sim_id": "u02260",
-      "status": "PASS",
-      "time": "16:39:12",
-      "issues": []
-    },
-    {
-      "sim_id": "u02256",
-      "status": "FIXED",
-      "time": "16:39:16",
-      "issues": [
-        "Misaligned observation table columns in canvas_js relative to observation_thead_html headers (swapped VCC, angle, RSIG, Vout, ADC count)",
-        "Unwired action buttons in canvas_js: Center Wiper (btn_center_wiper) and Sweep Rotation (btn_sweep_rotation)",
-        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js for potentiometer position and supply voltage",
-        "Apparatus leader line badges 1-4 swapped and misnumbered relative to legend pills 1-4"
-      ]
-    },
-    {
-      "sim_id": "u02259",
-      "status": "FIXED",
-      "time": "16:39:26",
-      "issues": [
-        "Misaligned observation table columns: tr.innerHTML generated 10 columns (including unlisted serial number, load, and elongation %) while thead specified exactly 7 columns (Rolling Reduction, Gauge Length, Crosshead Extension, Tensile Strain, Tensile Stress, Yield Strength, Ultimate Tensile Strength).",
-        "Unwired action and stepper buttons: btn_roll_strip (Perform Cold Rolling Pass) and btn_run_tensile_test (Execute Automated Tensile Test) were declared in controls but lacked event listeners in canvas_js, and .stepper-btn up/down controls were unwired.",
-        "Legend pills mismatch: legend_pills_html contained 6 elements with misaligned names and numbers that did not match the 5 apparatus items and 5 Style 2 canvas badges."
-      ]
-    },
-    {
-      "sim_id": "u02257",
-      "status": "FIXED",
-      "time": "16:39:34",
-      "issues": [
-        "Unwired action buttons: Advance Tooling Stage (#btn_advance_stage) and Engage Turning Tool (#btn_engage_chisel) were not bound to click handlers",
-        "Unwired stepper up/down buttons: Stepper buttons (.stepper-btn) were missing event listeners to increment and decrement input values",
-        "Unwired observation record button: Observation logging button (#btnRecord) was not recording telemetry data rows into #observationTbody",
-        "Malformed MathML unit: Cutting speed unit was structured as a fraction m/m in instead of m/min in readouts_html and observation_thead_html"
-      ]
-    },
     {
       "sim_id": "u02264",
       "status": "FIXED",
@@ -388,6 +344,56 @@
         "Apparatus badges 2, 3, and 4 in canvas were numbered inconsistently with legend pills (Illumination lamp is #2, Syringe is #3, Sample stage is #4)",
         "Action buttons (btn_dispense_drop, btn_auto_fit_tangents, btn_ultrasonic_clean) lacked interactive event listener wiring",
         "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to alter parameter inputs"
+      ]
+    },
+    {
+      "sim_id": "u02299",
+      "status": "PASS",
+      "time": "16:46:46",
+      "issues": []
+    },
+    {
+      "sim_id": "u02295",
+      "status": "FIXED",
+      "time": "16:47:15",
+      "issues": [
+        "Fixed misaligned observation table columns: observation_thead_html defines 6 columns [Domain Index, Variable Node, Prior Probability, Conditional Likelihood, Joint Probability, CPT Completion Rate] but btnRecord inserted 7 mismatched columns.",
+        "Wired interactive action buttons: btn_validate_dag (DAG topology and acyclicity validator) and btn_compute_joint (joint probability distribution calculator).",
+        "Wired up/down stepper control buttons (.stepper-btn) to modify domain, prior probability, and conditional likelihood parameters.",
+        "Corrected symbol typographical error in principles_list_html where the parent target node symbol in the symbol list displayed Greek letter Xi instead of X_i."
+      ]
+    },
+    {
+      "sim_id": "u02297",
+      "status": "FIXED",
+      "time": "16:47:21",
+      "issues": [
+        "Unwired action buttons: btn_trigger_interrupt, btn_execute_kernel, and btn_context_switch lacked interactive click event listeners.",
+        "Unwired stepper controls: Stepper up and down buttons (.stepper-btn-up, .stepper-btn-down) were not bound to modify timer_quantum, switch_overhead, or instruction_pointer_step.",
+        "Missing observation recording: No event handler existed for #btn_record / #recordBtn to append records aligned with the 7 observation table columns.",
+        "Missing experiment presets: #experimentSelect lacked a change listener to switch between primary preemption and quantum sizing analysis."
+      ]
+    },
+    {
+      "sim_id": "u02300",
+      "status": "FIXED",
+      "time": "16:47:37",
+      "issues": [
+        "Observation table column mismatch: canvas_js pushed 9 td cells into observation_tbody while observation_thead_html defines exactly 6 column headers",
+        "Unwired action buttons: btn_toggle_flow_mode and btn_thermal_equilibrium had no event listeners attached in canvas_js",
+        "Unwired stepper controls: .stepper-btn buttons lacked click handlers in canvas_js",
+        "Notation inconsistency: T_{inf} was used in principles_list_html description and validation_html instead of canonical T_{\\infty}",
+        "Unformatted math symbols: plain text dQ/dt used in procedure steps 4 and 7 instead of MathML formatting"
+      ]
+    },
+    {
+      "sim_id": "u02303",
+      "status": "FIXED",
+      "time": "16:47:45",
+      "issues": [
+        "Misaligned observation table columns: btnRecord injected 7 columns with an unrequested row index and merged coordinate tuple, causing column shift against the 6-column thead structure (Vertex X, Vertex Y, Vertex Z, Primitive Mode, Vector Magnitude, Azimuth Angle).",
+        "Unwired action buttons: 'btn_cycle_primitive' and 'btn_snap_isometric' had no click event listeners attached in canvas_js.",
+        "Unwired stepper buttons: '.stepper-btn' up and down arrow buttons had no click event listeners attached in canvas_js."
       ]
     }
   ],
@@ -2193,6 +2199,11 @@
     "u02291",
     "u02292",
     "u02293",
-    "u02296"
+    "u02295",
+    "u02296",
+    "u02297",
+    "u02299",
+    "u02300",
+    "u02303"
   ]
 }
