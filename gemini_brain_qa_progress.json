@@ -1,57 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 11:00:21",
-  "completed_count": 1442,
-  "fixed_count": 1335,
-  "latest_sim_id": "u01820",
+  "updated_at": "2026-10-19 11:02:32",
+  "completed_count": 1447,
+  "fixed_count": 1337,
+  "latest_sim_id": "u01830",
   "recent_events": [
-    {
-      "sim_id": "u01784",
-      "status": "FIXED",
-      "time": "10:46:54",
-      "issues": [
-        "Unwired action buttons: 'btn_step_relax' (Execute Single Cell Relaxation) and 'btn_full_pivot_pass' (Complete Current Pivot Pass) had no event listeners attached in canvas_js.",
-        "Misaligned observation table columns: btnRecord generated only 6 <td> elements by combining source and destination into '(i, j)', causing a mismatch with the 7 <th> columns defined in observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u01771",
-      "status": "FIXED",
-      "time": "10:46:56",
-      "issues": [
-        "Observation table recorder inserted 7 mismatched columns instead of the 6 defined in observation thead (Step Index, Dividend Polynomial, Divisor Polynomial, Quotient Polynomial, Remainder Polynomial, Minimal Polynomial Match).",
-        "Action button btn_auto_gcd ('Auto-Compute Euclidean GCD') was unwired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) had no click listeners attached to update stepper inputs."
-      ]
-    },
-    {
-      "sim_id": "u01785",
-      "status": "FIXED",
-      "time": "10:47:08",
-      "issues": [
-        "Raw LaTeX string 'MW_{protein}' in principles_list_html replaced with proper MathML notation.",
-        "Observation table columns were misaligned due to extra trial count, MR, and m_fitc values exceeding and misaligning the 9 specified thead columns.",
-        "Stepper up/down buttons and action buttons (centrifugation spin, zero blank, spectrophotometer scan) were unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01786",
-      "status": "FIXED",
-      "time": "10:47:09",
-      "issues": [
-        "Unwired stepper buttons: clicking ▲ and ▼ on control steppers had no event listeners attached and did not change input values.",
-        "Unwired action buttons: 'btn_center_probe' (Align Probe to Airfoil Suction Peak) and 'btn_toggle_atmosphere' (Switch Earth / Mars Atmospheric Profile) were missing event listeners.",
-        "Misaligned observation table: record button inserted 10 columns for a 9-column header, omitting wing planform area, misplacing thickness and camber, and swapping probe pressure and flow velocity.",
-        "Static probe position: traversing pitot-static probe coordinates were hardcoded and did not update upon suction peak alignment.",
-        "Missing atmospheric model toggle: switching between Earth and Mars density models had no dynamic calculation logic."
-      ]
-    },
-    {
-      "sim_id": "u01788",
-      "status": "PASS",
-      "time": "10:47:34",
-      "issues": []
-    },
     {
       "sim_id": "u01791",
       "status": "FIXED",
@@ -382,6 +335,43 @@
         "Corrected typographical error 'transferirng' to 'transferring' in Step 8 of Procedure.",
         "Cleaned malformed nested HTML span tags and unescaped quote collisions inside data-unit attributes in the Live Readouts slot."
       ]
+    },
+    {
+      "sim_id": "u01817",
+      "status": "FIXED",
+      "time": "11:00:25",
+      "issues": [
+        "Corrected corrupted MathML fraction formatting in unit 'bit\\frac{s}{p}ixel' to '<mtext>bits/pixel</mtext>' in readouts_html and observation_thead_html"
+      ]
+    },
+    {
+      "sim_id": "u01824",
+      "status": "FIXED",
+      "time": "11:00:55",
+      "issues": [
+        "Unwired interactive stepper increment/decrement buttons (.stepper-btn)",
+        "Unwired action buttons ('btn_inject_bolus' and 'btn_infuse_rescue')",
+        "Misaligned observation table columns in btnRecord: row inserted a timestamp and 6 mismatched fields instead of the 7 specified columns (P0, N0, Anti-Inflammatory, Endotoxin, Cytokine Peak, Barrier TEER, System State)",
+        "Unwired experiment options selector ('experimentSelect') for mapping bifurcation and rescue modes"
+      ]
+    },
+    {
+      "sim_id": "u01827",
+      "status": "PASS",
+      "time": "11:02:03",
+      "issues": []
+    },
+    {
+      "sim_id": "u01826",
+      "status": "PASS",
+      "time": "11:02:30",
+      "issues": []
+    },
+    {
+      "sim_id": "u01830",
+      "status": "PASS",
+      "time": "11:02:32",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1822,10 +1812,15 @@
     "u01813",
     "u01814",
     "u01816",
+    "u01817",
     "u01818",
     "u01819",
     "u01820",
     "u01821",
-    "u01822"
+    "u01822",
+    "u01824",
+    "u01826",
+    "u01827",
+    "u01830"
   ]
 }
