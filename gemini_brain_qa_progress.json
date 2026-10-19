@@ -1,52 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:41:06",
-  "completed_count": 2028,
-  "fixed_count": 1817,
-  "latest_sim_id": "u02148",
+  "updated_at": "2026-10-19 18:41:37",
+  "completed_count": 2033,
+  "fixed_count": 1822,
+  "latest_sim_id": "u02198",
   "recent_events": [
-    {
-      "sim_id": "u01985",
-      "status": "ERROR",
-      "time": "18:34:02",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02044",
-      "status": "ERROR",
-      "time": "18:34:10",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02031",
-      "status": "ERROR",
-      "time": "18:34:31",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02007",
-      "status": "ERROR",
-      "time": "18:34:32",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02069",
-      "status": "FIXED",
-      "time": "18:34:38",
-      "issues": [
-        "Action buttons #btn_toggle_subset and #btn_compute_closure were unwired in canvas_js",
-        "Stepper inputs #subset_selector and #partition_preset and stepper up/down buttons were unwired in canvas_js",
-        "Apparatus badges #2 (Axiomatic Verification Logic Engine) and #3 (Boolean Set Lattice & Venn Visualizer) were swapped on canvas relative to legend pills"
-      ]
-    },
     {
       "sim_id": "u02068",
       "status": "ERROR",
@@ -378,6 +336,59 @@
         "Observation table row generation in btnRecord had 8 columns with mismatched units and order, conflicting with the 6 columns in observation_thead_html",
         "Telemetry display updates in canvas_js called setTxt with raw readout IDs ('reading_*') whereas span IDs in readouts_html use the 'val_' prefix ('val_reading_*')",
         "Action buttons ('btn_toggle_pump', 'btn_lower_sounding_tape') and stepper increment/decrement buttons had no event listeners wired up in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u02195",
+      "status": "FIXED",
+      "time": "18:41:15",
+      "issues": [
+        "Reichert-Meissl formula in principles equation lacked the 1.1x multiplier accounting for the 100 mL aliquot titrated from the 110 mL total distillate (RM = 1.1 * (T1 - T2)).",
+        "Action buttons (btn_auto_titrate and btn_flush_condenser) in actions_html were unwired in canvas_js.",
+        "Interactive stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02223",
+      "status": "FIXED",
+      "time": "18:41:26",
+      "issues": [
+        "Unwired action buttons: 'btn_submit_valid_login' and 'btn_submit_invalid_login' had no event listeners attached.",
+        "Unwired stepper up/down buttons: '.stepper-btn-up' and '.stepper-btn-down' were not bound to modify control inputs.",
+        "Misaligned observation table: 'btnRecord' inserted only 5 data cells into a 6-column header table, omitting the trial index and offsetting entropy into the trial column.",
+        "Apparatus badge count mismatch: canvas rendered Badges 3 and 4, whereas apparatus_html and legend_pills define only 2 apparatus elements."
+      ]
+    },
+    {
+      "sim_id": "u02228",
+      "status": "FIXED",
+      "time": "18:41:31",
+      "issues": [
+        "Unwired stepper buttons (.stepper-btn-up, .stepper-btn-down)",
+        "Unwired Action button 'Auto-Tune TMD to Frame Resonance' (btn_autotune_tmd)",
+        "Observation table column mismatch: canvas_js generated 7 <td> cells while observation_thead_html specifies 5 <th> columns",
+        "Telemetry selectors targeted parent <li> elements via [data-id] instead of val_reading_* spans, wiping out labels and headings on update"
+      ]
+    },
+    {
+      "sim_id": "u02219",
+      "status": "FIXED",
+      "time": "18:41:36",
+      "issues": [
+        "Observation table recorded row contained 8 misaligned columns out of sync with the 6 columns defined in observation_thead_html",
+        "Action buttons ('btn_toggle_torch' and 'btn_agitate_suspension') and stepper buttons were unhandled in canvas_js",
+        "Light beam, Tyndall cone, and detector spot remained visible and active regardless of light source toggled state"
+      ]
+    },
+    {
+      "sim_id": "u02198",
+      "status": "FIXED",
+      "time": "18:41:37",
+      "issues": [
+        "Unwired action buttons: #btn_auto_balance and #btn_evacuate_base were missing click event listeners",
+        "Unwired stepper controls: .stepper-btn ▲/▼ stepper buttons and input event listeners were not connected to update simulator physics",
+        "Observation table column misalignment: Record Observation inserted 7 td cells with an untracked row index against a 6-column thead header",
+        "Apparatus badge numbering mismatch: Vacuum Manifold was labelled badge 4 instead of 2, Wheatstone Bridge was badge 2 instead of 3, and Meter was badge 3 instead of 4 relative to legend pills"
       ]
     }
   ],
@@ -2264,8 +2275,10 @@
     "u02191",
     "u02192",
     "u02194",
+    "u02195",
     "u02196",
     "u02197",
+    "u02198",
     "u02199",
     "u02200",
     "u02201",
@@ -2284,13 +2297,16 @@
     "u02215",
     "u02216",
     "u02218",
+    "u02219",
     "u02220",
     "u02221",
     "u02222",
+    "u02223",
     "u02224",
     "u02225",
     "u02226",
     "u02227",
+    "u02228",
     "u02230",
     "u02231",
     "u02232",
