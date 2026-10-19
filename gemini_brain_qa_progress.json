@@ -1,64 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:33:18",
-  "completed_count": 1757,
-  "fixed_count": 1579,
-  "latest_sim_id": "u02242",
+  "updated_at": "2026-10-19 16:34:23",
+  "completed_count": 1762,
+  "fixed_count": 1582,
+  "latest_sim_id": "u02246",
   "recent_events": [
-    {
-      "sim_id": "u02203",
-      "status": "PASS",
-      "time": "16:26:10",
-      "issues": []
-    },
-    {
-      "sim_id": "u02194",
-      "status": "ERROR",
-      "time": "16:26:20",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02202",
-      "status": "FIXED",
-      "time": "16:26:22",
-      "issues": [
-        "Fixed broken MathML formatting for 'van 't Hoff' in aim_html and principles_summary_html",
-        "Corrected malformed MathML unit fractions and spelled-out 'dimensionless' in principles_list_html",
-        "Cleaned up data-unit attributes in readouts_html containing nested HTML span tags and unrendered MathML",
-        "Corrected observation table header units in observation_thead_html for solubility and dimensionless terms"
-      ]
-    },
-    {
-      "sim_id": "u02197",
-      "status": "FIXED",
-      "time": "16:26:28",
-      "issues": [
-        "Misaligned observation table: JS recorded 8 columns (including extra trial count and inclination angle) whereas HTML observation table header has exactly 6 columns (Interpolation Factor, Surface U, Surface V, Blended Color Value, U-Tangent Magnitude, Normal Z Component).",
-        "Unwired action buttons: 'btn_evaluate_normal' (Orthogonalize Normal Vector) and 'btn_toggle_surface_warp' (Toggle Dynamic Wave Distortion) lacked event listeners and interactive visual state handling.",
-        "Unwired stepper arrow buttons: '.stepper-btn-up' and '.stepper-btn-down' buttons were not listening to click events.",
-        "Low contrast mesh grid lines: grid line stroke 'rgba(15, 23, 42, 0.45)' had poor visibility on dark #090d16 canvas and manifold surface."
-      ]
-    },
-    {
-      "sim_id": "u02205",
-      "status": "FIXED",
-      "time": "16:26:32",
-      "issues": [
-        "Wired action buttons: btn_level_tribrach (auto-leveling tribrach tilt to 0), btn_fire_edm (triggering wave packet animation), and btn_toggle_view (toggling reticle view)",
-        "Wired stepper buttons (.stepper-btn-up and .stepper-btn-down) to correctly increment/decrement stepper input values within min/max bounds and fire update events",
-        "Wired observation table record button (btnRecord) to append all 6 telemetry readings matching the 6 observation table header columns"
-      ]
-    },
-    {
-      "sim_id": "u02196",
-      "status": "ERROR",
-      "time": "16:26:32",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u02204",
       "status": "FIXED",
@@ -391,6 +337,56 @@
       "status": "PASS",
       "time": "16:33:18",
       "issues": []
+    },
+    {
+      "sim_id": "u02239",
+      "status": "FIXED",
+      "time": "16:33:35",
+      "issues": [
+        "Swapped leader line badges 2 and 3: Workstation was numbered 2 and Decomposer was numbered 3, misaligned with Legend Pills 2 (Multispectral Band Decomposer) and 3 (Scilab Workstation).",
+        "Unwired action buttons: 'btn_auto_center_vegetation' and 'btn_extract_radiometry' lacked click event listeners in canvas_js.",
+        "Unwired stepper up/down controls: Stepper buttons (.stepper-btn) lacked increment/decrement click handlers in canvas_js.",
+        "Misaligned observation table columns: tr.innerHTML generated 7 columns with Trial rowCount and transposed data that did not match the 7 observation_thead_html columns (Upper-Left Row, Upper-Left Col, Window Dimension, Spectral Band, Window Pixels, Mean Brightness, NDVI Index)."
+      ]
+    },
+    {
+      "sim_id": "u02243",
+      "status": "PASS",
+      "time": "16:33:41",
+      "issues": []
+    },
+    {
+      "sim_id": "u02247",
+      "status": "PASS",
+      "time": "16:33:54",
+      "issues": []
+    },
+    {
+      "sim_id": "u02241",
+      "status": "ERROR",
+      "time": "16:34:03",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02244",
+      "status": "FIXED",
+      "time": "16:34:22",
+      "issues": [
+        "Observation table columns were misaligned with the table header (reagents A and B were combined into one column, reaction time and acetoin were shifted, and hue column rendered percentage instead of visual color band)",
+        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) were unhandled in canvas_js",
+        "Action control buttons (Flame Loop & Inoculate, Dispense Reagents, Gently Aerate & Mix Tube) were missing event listeners",
+        "Preset selection dropdown (expSelect) was not connected to update the bacterial strain parameter"
+      ]
+    },
+    {
+      "sim_id": "u02246",
+      "status": "FIXED",
+      "time": "16:34:23",
+      "issues": [
+        "Apparatus badges and leader lines in canvas_js had mismatched numbering with legend_pills_html: Badge 1 pointed to Transparent Cylindrical Tank instead of Variable Speed Motor & Turntable Base, Badge 2 pointed to Motor instead of Tank, Badge 3 pointed to Vernier Depth Gauge instead of Forced Vortex Liquid Paraboloid, Badge 4 pointed to Digital Tachometer instead of Vernier Depth Gauge, Badge 5 pointed to Annular Spillway instead of Digital Tachometer, and Badge 6 for Annular Spillway & Overflow Basin was missing entirely. Realigned all 6 leader badges and touch anchors to strictly match the 6 legend pills."
+      ]
     }
   ],
   "completed_ids": [
@@ -2149,7 +2145,12 @@
     "u02236",
     "u02237",
     "u02238",
+    "u02239",
     "u02240",
-    "u02242"
+    "u02242",
+    "u02243",
+    "u02244",
+    "u02246",
+    "u02247"
   ]
 }
