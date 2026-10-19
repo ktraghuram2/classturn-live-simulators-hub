@@ -1,57 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:13:58",
-  "completed_count": 1697,
-  "fixed_count": 1534,
-  "latest_sim_id": "u02154",
+  "updated_at": "2026-10-19 16:14:56",
+  "completed_count": 1702,
+  "fixed_count": 1537,
+  "latest_sim_id": "u02160",
   "recent_events": [
-    {
-      "sim_id": "u02115",
-      "status": "FIXED",
-      "time": "16:07:12",
-      "issues": [
-        "Telemetry readout elements in canvas_js queried nonexistent IDs ('reading_epoch', 'val_epoch', etc.) instead of the DOM IDs in slots ('val_reading_epoch', 'val_reading_eta', 'val_reading_sigma', 'val_reading_tour_length', 'val_reading_bmu_dist'), preventing live metric updates",
-        "Action buttons ('btn_run_epoch', 'btn_auto_converge', 'btn_randomize_cities') were declared in HTML slots but completely unhandled and unwired in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to alter parameters",
-        "Simulation loop lacked auto-convergence termination when training reached maxEpochs"
-      ]
-    },
-    {
-      "sim_id": "u02112",
-      "status": "ERROR",
-      "time": "16:07:21",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02114",
-      "status": "ERROR",
-      "time": "16:07:45",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02120",
-      "status": "FIXED",
-      "time": "16:08:06",
-      "issues": [
-        "Live telemetry readout lookups in canvas_js targeted non-existent IDs (reading_*) instead of the rendered value element IDs (val_reading_*), preventing telemetry updates.",
-        "Observation table recorded rows had 5 <td> cells whereas the header defines 6 columns, omitting Total Dilution on Plate (D_plate) and causing column misalignment.",
-        "Action buttons (btn_transfer_aliquot, btn_spread_plate, btn_auto_count_colonies) and stepper up/down buttons were unhandled in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u02122",
-      "status": "FIXED",
-      "time": "16:08:11",
-      "issues": [
-        "Misaligned observation table columns: Relative Centrifugal Force and Water Bath Temp were inverted in row data relative to the table header order",
-        "Unwired action preset buttons (btn_preset_150g, btn_preset_350g, btn_transfer_purify) in canvas_js",
-        "Unwired stepper up/down increment/decrement buttons (.stepper-btn) in canvas_js"
-      ]
-    },
     {
       "sim_id": "u02119",
       "status": "FIXED",
@@ -383,6 +336,47 @@
         "Missing stepper up/down button event listeners for control_p1_dose, control_p2_dose, and control_sample_size",
         "Missing observation table row recording handler for btnRecord",
         "Missing complete 2D/3D canvas rendering engine for Strains Box, Mating Site, and Punnett Square Tool with Style 2 leader lines"
+      ]
+    },
+    {
+      "sim_id": "u02156",
+      "status": "PASS",
+      "time": "16:14:02",
+      "issues": []
+    },
+    {
+      "sim_id": "u02159",
+      "status": "FIXED",
+      "time": "16:14:25",
+      "issues": [
+        "Unwired action button: canvas_js searched for 'btnRecord' instead of the slot button ID 'btn_evaluate_stability'.",
+        "Misaligned observation table columns: canvas_js generated 8 columns including trial count, mismatching the 7-column schema in observation_thead_html.",
+        "Inverted badge pointers: Badge 3 pointed to intermediate pinned support fixture while Legend Pill 3 is Internal Release Hinge Coupler; Badge 5 pointed to hinge coupler while Legend Pill 5 is Pinned Support Fixture.",
+        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn) had no click listeners attached in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02158",
+      "status": "PASS",
+      "time": "16:14:27",
+      "issues": []
+    },
+    {
+      "sim_id": "u02163",
+      "status": "FIXED",
+      "time": "16:14:52",
+      "issues": [
+        "Fixed misaligned observation table columns: removed extraneous specimen radius R column from observation table rows to match the 6-column thead specification (z, θ, As, rs, Pp, Mc)."
+      ]
+    },
+    {
+      "sim_id": "u02160",
+      "status": "FIXED",
+      "time": "16:14:56",
+      "issues": [
+        "Observation table columns in btnRecord were misaligned (5 columns instead of the 6 headers in observation_thead_html; missing dedicated Source Node, Destination Node, and Active Route Path columns)",
+        "Stepper increment/decrement buttons (.stepper-btn) lacked click event listeners in canvas_js",
+        "Action buttons btn_transmit_packet and btn_commit_routing_table lacked click event listeners in canvas_js"
       ]
     }
   ],
@@ -2083,6 +2077,11 @@
     "u02152",
     "u02154",
     "u02155",
-    "u02157"
+    "u02156",
+    "u02157",
+    "u02158",
+    "u02159",
+    "u02160",
+    "u02163"
   ]
 }
