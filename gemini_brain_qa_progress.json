@@ -1,63 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:50:55",
-  "completed_count": 1422,
-  "fixed_count": 1316,
-  "latest_sim_id": "u01800",
+  "updated_at": "2026-10-19 10:51:58",
+  "completed_count": 1427,
+  "fixed_count": 1321,
+  "latest_sim_id": "u01797",
   "recent_events": [
-    {
-      "sim_id": "u01755",
-      "status": "ERROR",
-      "time": "10:39:08",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01759",
-      "status": "FIXED",
-      "time": "10:39:25",
-      "issues": [
-        "Unwired DCS action buttons: btn_toggle_bottom_valve and btn_trigger_emergency_interlock lacked click listeners to command valve OND sequencing and trip safety high-level interlock.",
-        "Misaligned observation table columns: btnRecord row previously inserted only 4 columns for a 7-column header; aligned all 7 telemetry columns (Run Mode, Agitator Speed, Feed Flow Rate, Timer Preset, Broth Volume, Valve State, and Tip Speed).",
-        "Unwired stepper up/down buttons: attached event listeners to .stepper-btn controls for reliable incremental adjustments.",
-        "Telemetry readout unit preservation: updated updateTelemetry to target inner value span, avoiding erasing MathML unit symbols.",
-        "Interlock logic integration: connected safety high-level trip to shut off nutrient feed flow rate and display safety annunciator alert on DCS console mimic."
-      ]
-    },
-    {
-      "sim_id": "u01760",
-      "status": "FIXED",
-      "time": "10:40:01",
-      "issues": [
-        "Numbered badges 3, 4, and 5 in canvas_js were misaligned with legend_pills_html (Badge 3 pointed to Transmission Line instead of Ammeter; Badge 4 pointed to Ammeter instead of Voltmeter; Badge 5 pointed to Voltmeter instead of Transmission Line).",
-        "Action button 'btn_open_circuit_test' and stepper buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01762",
-      "status": "PASS",
-      "time": "10:40:15",
-      "issues": []
-    },
-    {
-      "sim_id": "u01758",
-      "status": "ERROR",
-      "time": "10:40:19",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01768",
-      "status": "FIXED",
-      "time": "10:40:24",
-      "issues": [
-        "Observation table recorded 8 columns while observation_thead_html defines exactly 6 columns, with swapped column order (specific gravity and initial mass inverted).",
-        "Stepper up and down increment buttons (.stepper-btn) had no click listeners attached to modify inputs and trigger synchronization.",
-        "Action buttons ('Execute Immersion & Drying Cycle' and 'Run Mechanical Sieve Shaking') had no click event handlers wired."
-      ]
-    },
     {
       "sim_id": "u01766",
       "status": "FIXED",
@@ -368,6 +315,66 @@
         "Unwired action buttons: 'btn_apply_seating' and 'btn_settle_equilibrium' lacked click event listeners in canvas_js",
         "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' buttons were not connected to their target numeric inputs",
         "Observation table sync: ensured dynamically appended observation records strictly match the 5 headers defined in observation_thead_html"
+      ]
+    },
+    {
+      "sim_id": "u01802",
+      "status": "FIXED",
+      "time": "10:51:10",
+      "issues": [
+        "Unwired action buttons: btn_switch_sample, btn_cycle_feature_type, and btn_auto_digitize_boundary were unhandled in canvas_js.",
+        "Unwired stepper up/down buttons in canvas_js preventing interactive parameter adjustment.",
+        "Observation table column misalignment: btnRecord appended 5 values (with record count and raw cursor X) instead of the 6 columns defined in observation_thead_html (Feature Class, Sample Base Map, Vertex Count, Ground Length, Enclosed Area, Assigned Layer Color).",
+        "Telemetry readings for vertex count, path length, and enclosed area were hardcoded to parcel polygon metrics instead of adapting to the active digitized feature class (Point, Polyline, or Polygon)."
+      ]
+    },
+    {
+      "sim_id": "u01804",
+      "status": "FIXED",
+      "time": "10:51:10",
+      "issues": [
+        "Unwired action button #btn_auto_solve allowed the simulation to run continuously in an uncontrollable loop on page load without manual start or pause controls.",
+        "Unwired stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) prevented user interaction with numerical parameter controls.",
+        "Misaligned observation table columns in btnRecord event listener where step count, target amount, remaining balance, and denomination were mapped to incorrect header metrics."
+      ]
+    },
+    {
+      "sim_id": "u01801",
+      "status": "FIXED",
+      "time": "10:51:10",
+      "issues": [
+        "Observation table columns were misaligned: rowCount was inserted as the first column, shifting all metrics and omitting the required Map Sheet Distance d (mm) column.",
+        "Action buttons #btn_toggle_layout and #btn_align_elements lacked event handlers in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01789",
+      "status": "ERROR",
+      "time": "10:51:15",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01805",
+      "status": "FIXED",
+      "time": "10:51:45",
+      "issues": [
+        "Observation table columns in btnRecord were misaligned with thead: included an extra count/index column and inverted OLR and Surface Emission positions.",
+        "Stepper buttons (.stepper-btn) were unwired in canvas_js, preventing parameter adjustments via increment/decrement controls.",
+        "Action button #btn_restore_target_temps was unwired, preventing restoration of the baseline observed target temperature profile."
+      ]
+    },
+    {
+      "sim_id": "u01797",
+      "status": "FIXED",
+      "time": "10:51:58",
+      "issues": [
+        "Fixed corrupted MathML division artifact in Microcarrier Density stepper label (Ag 10.5 / W 19.2) and malformed g/cm³ unit markup.",
+        "Wired action buttons (btn_coat_dna, btn_fire_gun, btn_incubate_selective) so user interactions correctly prepare particles, fire the gene gun, and advance to incubation.",
+        "Wired stepper up/down buttons to increment and decrement input values using stepUp/stepDown and trigger input events.",
+        "Corrected observation table recording mismatch where 10 cell values were misaligned with the 7 thead columns."
       ]
     }
   ],
@@ -1791,8 +1798,13 @@
     "u01793",
     "u01794",
     "u01796",
+    "u01797",
     "u01798",
     "u01799",
-    "u01800"
+    "u01800",
+    "u01801",
+    "u01802",
+    "u01804",
+    "u01805"
   ]
 }
