@@ -1,71 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 07:11:53",
-  "completed_count": 876,
-  "fixed_count": 876,
-  "latest_sim_id": "u01059",
+  "updated_at": "2026-10-19 07:15:03",
+  "completed_count": 881,
+  "fixed_count": 881,
+  "latest_sim_id": "u01065",
   "recent_events": [
-    {
-      "sim_id": "u01006",
-      "status": "FIXED",
-      "time": "06:54:28",
-      "issues": [
-        "Style 2 leader line badge numbers 1 through 5 mismatched the apparatus elements in legend_pills_html.",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to input controls in canvas_js.",
-        "Control action buttons (btn_toggle_action_mode and btn_auto_zero_calibrate) and activity mode select (experimentSelect) were unwired.",
-        "Reverse-acting calibration physics transfer function (20 mA down to 4 mA) was missing from live telemetry, simulation physics loop, and observation recording."
-      ]
-    },
-    {
-      "sim_id": "u00995",
-      "status": "FIXED",
-      "time": "06:54:29",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 12 table cells including unlisted record count, redundant parameters, and transposed columns, whereas observation_thead_html specifies exactly 8 columns.",
-        "Unwired stepper buttons: The increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) lacked click event listeners in canvas_js.",
-        "Unwired action buttons: Both 'btn_recalibrate_origin' and 'btn_trigger_haptic_pulse' were not wired to click handlers and lacked canvas feedback.",
-        "Latency equation discrepancy: Motion-to-photon latency formula added the full frame budget time (tFrame) instead of display scan-out/illumination time (tDisplay), causing the default live reading to jump to 19.3 ms rather than matching the default 14.8 ms.",
-        "Missing visual feedback for actions: Added canvas floor datum recalibration animation, dynamic haptic pulse shockwaves, and real-time MTP latency / frame budget HUD banner."
-      ]
-    },
-    {
-      "sim_id": "u01018",
-      "status": "FIXED",
-      "time": "06:54:34",
-      "issues": [
-        "Observation table columns were completely misaligned: the thead defined 6 columns (Crank Angle θi, Crank Length r1, Rocker Angle θ4, Foot X, Foot Y, Foot Speed vG), but btnRecord inserted 8 mismatched columns (row index, r1, crank angle, omega, theta4, foot X, foot Y, duty ratio) without calculating or displaying foot speed.",
-        "Action button 'Trace Full Gait Cycle' (#btn_trace_gait) was not wired with an event listener in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update target input values and trigger change events.",
-        "Crank length input in steppers_html had an initial value of 50.0 mm which exceeded the specified max attribute of 46.0 mm and violated the Grashof mobility criterion for full crank revolution; corrected to nominal 36.0 mm.",
-        "Stepper 0 label in steppers_html incorrectly referred to the crank as 'Link AB (Crank r1)' instead of 'Crank OA (r1)'.",
-        "Apparatus and procedure prose referenced 50.0 mm baseline crank length which contradicted the 20-46 mm permissible Grashof range; updated to nominal 36.0 mm."
-      ]
-    },
-    {
-      "sim_id": "u01017",
-      "status": "FIXED",
-      "time": "06:56:15",
-      "issues": [
-        "Unwired Section 05 action button: '#btn_trace_full_stride' (Trace Full Stride Cycle) lacked event listeners and active gait trajectory highlighting in canvas_js.",
-        "Unwired stepper controls: Precision up/down buttons ('.stepper-btn-up', '.stepper-btn-down') lacked event handlers in canvas_js to increment and decrement Crank Angle and Angular Velocity.",
-        "Unwired top-level and playback controls: '#btnToggle' (Pause/Run), '#btnStep' (Discrete Step), '#experimentSelect' (Mode Switch), and '#btnReset' lacked event handlers in canvas_js to control playback, advance stages, or reset the apparatus and clear the observation table.",
-        "Missing canvas pointer lock: Canvas element lacked pointerEvents = 'none' and had direct mouse drag handlers enabled on the canvas, violating the ClassTurn locked layout immutability standard (Q22).",
-        "Destructive telemetry updates: canvas_js set textContent directly on readout value spans, wiping out nested MathML unit elements; replaced with non-destructive setTelemetryField targeting inner value span and preserving unit markup.",
-        "Malformed data-unit attributes in readouts_html: Live readout list items contained nested raw <span> tags inside their data-unit HTML attributes instead of clean text strings ('mm', '°', 'RPM').",
-        "Unclosed HTML tags in principles_list_html: The principles list equation symbols section was missing closing </ul>, </div>, and </li> tags.",
-        "Accidental global variable leak: canvas_js had 'SolDatumEndX = 540' inside ctx.lineTo instead of direct coordinate value."
-      ]
-    },
-    {
-      "sim_id": "u01019",
-      "status": "FIXED",
-      "time": "06:56:26",
-      "issues": [
-        "Misaligned observation table columns: The observation recorder injected 13 cells including an unlisted trial number, valve percentage, and vane angle, shifting the recorded data out of alignment with the 11 columns in the table header.",
-        "Unwired action button: The 'Auto-Govern to Rated Speed (1500 RPM)' button (#btn_govern_speed) lacked an event listener to adjust the gate valve to maintain 1500 RPM.",
-        "Unwired stepper buttons: The increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) for the load, gate valve opening, and guide vane angle inputs lacked click handlers."
-      ]
-    },
     {
       "sim_id": "u01024",
       "status": "FIXED",
@@ -521,6 +460,67 @@
         "Observation table column misalignment: Record button inserted obsCount as first cell and shifted columns, misaligning values against the 8-column header and dropping Field of View.",
         "Unwired stepper buttons: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click logic to increment/decrement input values and dispatch events.",
         "Unwired action buttons: Action buttons 'btn_slice_transfer' and 'btn_stain_mount' were unhandled in JavaScript, leaving slide sectioning and coverslip mounting animations inactive."
+      ]
+    },
+    {
+      "sim_id": "u01060",
+      "status": "FIXED",
+      "time": "07:11:59",
+      "issues": [
+        "Misaligned observation table columns: btnRecord only recorded 5 columns instead of all 6 matching observation_thead_html, misassigned row index to elapsed time, shifted energy/probabilities into wrong columns, and omitted ground state phase.",
+        "Unwired action buttons: Synthesize Coherent Superposition (btn_generate_coherent) and Isolate Selected Eigenstate (btn_isolate_eigenstate) lacked click event listeners.",
+        "Unwired stepper and experiment controls: Stepper buttons (.stepper-btn) and experiment select dropdown were unhandled in JavaScript.",
+        "Coherent wavepacket distortion: Complex coefficient synthesis artificially boosted eigenstate n when qNumber > 0 in coherent mode, breaking Poisson statistics and dispersionless packet oscillation.",
+        "Canvas background clearing: Replaced transparent clearRect with solid #090d16 canvas background fill to avoid contrast artifacts on dark laboratory themes."
+      ]
+    },
+    {
+      "sim_id": "u01050",
+      "status": "FIXED",
+      "time": "07:13:20",
+      "issues": [
+        "Unwired action buttons (#btn_fill_both and #btn_drain_both) and stepper buttons (.stepper-btn) in canvas_js.",
+        "Misaligned observation table columns: btnRecord inserted 8 cells (including unrequested trial number and LED current cells) for a 6-column thead table.",
+        "Raw LaTeX/MathML prose defect in principles_summary_html: English indefinite article 'A' at paragraph start was erroneously rendered as a MathML variable.",
+        "Unclosed HTML tags in principles_list_html (missing closing </ul>, </div>, and </li> tags).",
+        "Wire termination misalignment on canvas: signal input/output wires were offset from the physical NAND IC gate terminals and the LED module cathode terminal.",
+        "Raw LaTeX underscore notation in canvas tank labels ('L_A' and 'L_B')."
+      ]
+    },
+    {
+      "sim_id": "u01062",
+      "status": "FIXED",
+      "time": "07:13:23",
+      "issues": [
+        "Observation table column misalignment: btnRecord inserted 6 mismatched columns instead of the 9 columns defined in observation_thead_html.",
+        "Unwired interactive action buttons: btn_auto_tune_eigenstate, btn_toggle_wave_representation, and btn_normalize_integral had no event listeners attached in canvas_js.",
+        "Unwired tactile stepper buttons: .stepper-btn buttons had no click listeners to increment or decrement inputs ctrl_energy, ctrl_width, ctrl_depth, ctrl_quantum_number.",
+        "Broken telemetry display: setTelemetryText looked for IDs without prefix 'val_reading_', failing to update the reading value spans in readouts_html.",
+        "Premature eigenvalue locking: state.locked was initialized to true, instantly overwriting the Step 1 default test energy (E = 0.30 eV) before resonance tuning.",
+        "Corrupted MathML notation: apparatus_html item 4 contained malformed MathML representation for exp(-iEt/hbar), and item 1 had variable x instead of multiplication symbol."
+      ]
+    },
+    {
+      "sim_id": "u01066",
+      "status": "FIXED",
+      "time": "07:14:45",
+      "issues": [
+        "Misaligned observation table row cells: The observation thead defines 8 columns (Stage Divisions X, Eyepiece Divisions Y, Stage Distance Ls, Calibration Factor C, Midpoint di, Frequency ni, Arithmetic Mean Diameter d_ln, and Surface-Length Mean Diameter d_sl), but btnRecord rendered only 7 cells with fine focus z erroneously placed into the Ls column and missing the final d_sl column.",
+        "Unwired action buttons: 'Align Scale Zeroes' (btn_align_zero) and 'Traverse Sample Stage' (btn_traverse_field) were unreferenced and had no click event listeners.",
+        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) had no click listeners attached to step the input values."
+      ]
+    },
+    {
+      "sim_id": "u01065",
+      "status": "FIXED",
+      "time": "07:15:03",
+      "issues": [
+        "Stage micrometer rendering lacked ctx.translate(cx, cy), placing the scale baseline outside the circular FOV clipping boundary and making the scale invisible.",
+        "Stage micrometer startX did not align with ocular reticle zero index mark at deltaX = 0, causing spatial misalignment between scales.",
+        "Observation table logging inserted an extraneous S.No. cell (${rowCount}) that shifted all data columns out of alignment with the 7 headers in observation_thead_html.",
+        "Telemetry update routine attempted to set 'val_calibration_factor' instead of the DOM element ID 'val_reading_calibration_factor', leaving Section 06 readouts static.",
+        "Action buttons #btn_align_zeros (Auto-Align Zero Marks) and #btn_toggle_specimen (Mount / Swap Specimen Slide) were unwired in canvas_js.",
+        "Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners, leaving all stepper controls non-interactive on click."
       ]
     }
   ],
@@ -1395,11 +1395,16 @@
     "u01046",
     "u01047",
     "u01049",
+    "u01050",
     "u01052",
     "u01053",
     "u01055",
     "u01056",
     "u01057",
-    "u01059"
+    "u01059",
+    "u01060",
+    "u01062",
+    "u01065",
+    "u01066"
   ]
 }
