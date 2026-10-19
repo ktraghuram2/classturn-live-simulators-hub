@@ -1,77 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:23:52",
-  "completed_count": 1352,
-  "fixed_count": 1266,
-  "latest_sim_id": "u01702",
+  "updated_at": "2026-10-19 10:26:04",
+  "completed_count": 1357,
+  "fixed_count": 1270,
+  "latest_sim_id": "u01713",
   "recent_events": [
-    {
-      "sim_id": "u01655",
-      "status": "ERROR",
-      "time": "10:07:11",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01657",
-      "status": "FIXED",
-      "time": "10:07:14",
-      "issues": [
-        "Fixed broken LaTeX fraction MathML in actions_html button label for Toggle Quadrant Polarity (Q-I / Q-III)",
-        "Wired unwired action buttons btn_trigger_gate (Inject Gate Trigger Pulse) and btn_toggle_polarity (Toggle Quadrant Polarity) in canvas_js",
-        "Wired interactive stepper buttons (.stepper-btn) in canvas_js",
-        "Fixed observation table columns mismatch in canvas_js to strictly match the 5 header columns in observation_thead_html",
-        "Added bidirectional Quadrant I and Quadrant III polarity switching state and visual canvas indicator banner"
-      ]
-    },
-    {
-      "sim_id": "u01663",
-      "status": "FIXED",
-      "time": "10:07:17",
-      "issues": [
-        "Corrected unrendered raw exponent ^(i-1) in apparatus_html and principles_summary_html to well-formed MathML <msup><mn>2</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msup>",
-        "Connected unwired action buttons #btn_dispatch_lookup and #btn_remove_peer to reset tracer animation and simulate node departures",
-        "Added event listener bindings for stepper buttons (.stepper-btn) to increment/decrement input controls",
-        "Aligned observation table recorded row columns to match the 7 observation table headers in observation_thead_html"
-      ]
-    },
-    {
-      "sim_id": "u01662",
-      "status": "FIXED",
-      "time": "10:07:47",
-      "issues": [
-        "Readout telemetry display element lookups in canvas_js used mismatched IDs (val_hh_stage etc. instead of val_reading_*) and targeted container <li> elements rather than value spans",
-        "Observation table recording was misaligned with observation_thead_html: pushed 9 values for an 8-column table, omitted elapsed incubation time, and shifted temperature and magnification into wrong columns",
-        "Interactive action buttons (btn_candling, btn_heart_focus, btn_advance_stage) and stepper up/down controls (.stepper-btn) were not wired with event listeners in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01659",
-      "status": "ERROR",
-      "time": "10:07:48",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01658",
-      "status": "ERROR",
-      "time": "10:08:08",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01665",
-      "status": "FIXED",
-      "time": "10:08:21",
-      "issues": [
-        "Unwired action buttons: 'btn_strobe_single' and 'btn_toggle_continuous_strobe' in actions_html had no event listeners in canvas_js.",
-        "Unwired stepper buttons: .stepper-btn (.stepper-btn-up and .stepper-btn-down) were not connected to increment/decrement rateFactor.",
-        "Misaligned observation table columns: canvas_js recorded sampleCount (N_s) into column 1, shifting rate factor into column 2, deltaTheta into column 3, and thetaApparent into column 4, while omitting column 5 (Observed Motion State) entirely."
-      ]
-    },
     {
       "sim_id": "u01667",
       "status": "ERROR",
@@ -381,6 +314,68 @@
         "Observation recording function (btnRecord) generated 9 table columns while observation_thead_html specifies exactly 7 columns, causing table column misalignment.",
         "Action buttons btn_fill_sinks and btn_delineate_watershed were declared in controls but lacked event listener wiring in canvas_js.",
         "Stepper increment and decrement buttons (.stepper-btn) lacked click event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01690",
+      "status": "ERROR",
+      "time": "10:24:06",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01708",
+      "status": "PASS",
+      "time": "10:24:10",
+      "issues": []
+    },
+    {
+      "sim_id": "u01704",
+      "status": "FIXED",
+      "time": "10:24:18",
+      "issues": [
+        "Observation table columns in canvas_js were misaligned with observation_thead_html (contained an extra serial number column and swapped resistance/voltage/ADC column order).",
+        "Action button btn_align_north ('Align Vane to North (0°)') was unwired in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) were unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01709",
+      "status": "FIXED",
+      "time": "10:24:40",
+      "issues": [
+        "Unwired action buttons: btn_center_pointer ('Hover Pointer onto Target Center') and btn_park_pointer ('Park Pointer at Viewport Origin') lacked event listeners.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners to increment or decrement parameter inputs.",
+        "Observation table column mismatch: btnRecord generated 9 table data cells whereas observation_thead_html defined only 6 table headers, causing severe column misalignment."
+      ]
+    },
+    {
+      "sim_id": "u01707",
+      "status": "FIXED",
+      "time": "10:24:46",
+      "issues": [
+        "Unwired action buttons: 'btn_trace_shortest_path' and 'btn_cycle_topology' lacked event handlers for auto-tracing optimal regulatory paths and cycling co-expression topology datasets.",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' controls lacked increment/decrement event listeners to update numeric inputs.",
+        "Misaligned observation table columns: 'btnRecord' inserted 9 data cells (including rowIdx and unrepresented metrics) into an observation table defining exactly 6 columns."
+      ]
+    },
+    {
+      "sim_id": "u01706",
+      "status": "ERROR",
+      "time": "10:25:30",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01713",
+      "status": "FIXED",
+      "time": "10:26:04",
+      "issues": [
+        "Observation table columns in record handler were misaligned with the 6 header columns (contained 8 cells with inverted hops and latency order).",
+        "Action buttons (Transmit DNS Query and Flush Local DNS Cache) were not wired to trigger packet dispatch or reset cache.",
+        "Interactive stepper increment/decrement buttons were missing click event listeners."
       ]
     }
   ],
@@ -1736,6 +1731,11 @@
     "u01699",
     "u01700",
     "u01701",
-    "u01702"
+    "u01702",
+    "u01704",
+    "u01707",
+    "u01708",
+    "u01709",
+    "u01713"
   ]
 }
