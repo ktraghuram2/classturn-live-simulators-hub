@@ -1,71 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:13:52",
-  "completed_count": 1002,
-  "fixed_count": 983,
-  "latest_sim_id": "u01216",
+  "updated_at": "2026-10-19 08:15:33",
+  "completed_count": 1007,
+  "fixed_count": 986,
+  "latest_sim_id": "u01230",
   "recent_events": [
-    {
-      "sim_id": "u01168",
-      "status": "FIXED",
-      "time": "08:05:32",
-      "issues": [
-        "Misaligned observation table row schema in btnRecord handler writing 5 columns into a 6-column table",
-        "Unwired action button btn_propagate_logic and stepper increment/decrement buttons in canvas_js",
-        "Product bit mapping array divergence from true 8-bit multiplier arithmetic"
-      ]
-    },
-    {
-      "sim_id": "u01166",
-      "status": "ERROR",
-      "time": "08:06:14",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01172",
-      "status": "FIXED",
-      "time": "08:06:22",
-      "issues": [
-        "Observation table columns in btnRecord were misaligned with observation_thead_html (Exciter Frequency ω was missing, while F_net1 and P_diss were shifted into incorrect columns).",
-        "Section 5 Action buttons 'btn_release_displacement' (Release from Initial Displacements) and 'btn_toggle_harmonic_force' (Toggle Harmonic Shaker Excitation) were unwired in canvas_js.",
-        "Stepper arrow buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners, preventing incrementing/decrementing stepper inputs.",
-        "Telemetry readouts failed to update because updateTelemetryReadouts queried document.getElementById(id) instead of id='val_' + id as defined in readouts_html.",
-        "Harmonic shaker excitation state was hardcoded on without a toggle flag, preventing procedure Step 4 free vibration analysis."
-      ]
-    },
-    {
-      "sim_id": "u01173",
-      "status": "PASS",
-      "time": "08:06:29",
-      "issues": []
-    },
-    {
-      "sim_id": "u01177",
-      "status": "PASS",
-      "time": "08:06:34",
-      "issues": []
-    },
-    {
-      "sim_id": "u01170",
-      "status": "FIXED",
-      "time": "08:06:47",
-      "issues": [
-        "Observation table recording was misaligned with the 8-column header (lacked Trial # column, inserted unexpected clearance and stripping force columns mismatching table header).",
-        "Action button #btn_cycle_press ('Execute Stamping Stroke') lacked an event listener in canvas_js.",
-        "Stepper increment/decrement buttons (.stepper-btn) lacked click event listeners to update numeric inputs."
-      ]
-    },
-    {
-      "sim_id": "u01174",
-      "status": "FIXED",
-      "time": "08:06:53",
-      "issues": [
-        "Unwired stepper increment and decrement buttons (stepper-btn-up and stepper-btn-down) in controls panel",
-        "Unwired action button btn_sweep_trace (Auto-Sweep Drain Voltage Trace)"
-      ]
-    },
     {
       "sim_id": "u01175",
       "status": "FIXED",
@@ -380,6 +319,69 @@
         "Unwired action buttons: connected btn_scan_all_frames (automated frame & coordinate scanner) and btn_focus_longest_orf (direct focus on canonical Frame +2, 36 bp ORF starting at bp 26)",
         "Observation table column mismatch: removed spurious scan cursor position column from observation row to correctly match the 6 columns in observation_thead_html (Reading Frame, Start Position, Stop Position, Modular Check, ORF Length, Peptide Length)"
       ]
+    },
+    {
+      "sim_id": "u01219",
+      "status": "FIXED",
+      "time": "08:14:12",
+      "issues": [
+        "Misaligned observation table row schema: tbody rendered 11 columns with row index, EVM, PAPR, and throughput, causing total column mismatch against the 8-column header specification.",
+        "Unwired action buttons: 'Transmit OFDM Frame' (btn_transmit_frame) and 'Switch Equalization' (btn_toggle_equalizer) lacked click event listeners in canvas_js.",
+        "Unwired stepper controls: .stepper-btn up and down buttons were not wired to update target inputs and dispatch input events."
+      ]
+    },
+    {
+      "sim_id": "u01217",
+      "status": "PASS",
+      "time": "08:14:26",
+      "issues": []
+    },
+    {
+      "sim_id": "u01211",
+      "status": "ERROR",
+      "time": "08:14:29",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01220",
+      "status": "FIXED",
+      "time": "08:14:31",
+      "issues": [
+        "Observation table columns in btnRecord (7 columns) were completely misaligned with the 9 columns in observation_thead_html",
+        "Action buttons btn_toggle_display_mode, btn_cycle_waveform, and btn_auto_trigger were completely unhandled in canvas_js",
+        "Stepper increment/decrement buttons (.stepper-btn) were not wired to update inputs and fire change events",
+        "Lissajous XY mode display was completely missing from the CRT render loop despite being a core experiment requirement",
+        "Function generator waveform selection buttons and CRT waveform rendering were hardcoded to sine without square/triangle wave support"
+      ]
+    },
+    {
+      "sim_id": "u01221",
+      "status": "ERROR",
+      "time": "08:15:12",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01225",
+      "status": "FIXED",
+      "time": "08:15:16",
+      "issues": [
+        "Unwired live DOM readouts: getElementById looked for non-existent IDs instead of val_reading_* spans.",
+        "Unwired stepper arrow buttons: clicking up/down stepper buttons did not adjust input values.",
+        "Unwired action buttons: Generate Clutter Obstacles, Clear All Obstacles, and Cycle Environment Profile buttons lacked event handlers.",
+        "Crashing Leader Line 3: referencing obstacles[1] directly caused a fatal TypeError when obstacles were cleared.",
+        "Misaligned observation log columns: row.innerHTML recorded 9 columns in a mismatched order against a 6-column header table.",
+        "Static pathloss exponent: pathloss did not respond to toggling environment propagation profiles."
+      ]
+    },
+    {
+      "sim_id": "u01230",
+      "status": "PASS",
+      "time": "08:15:32",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1384,6 +1386,11 @@
     "u01206",
     "u01214",
     "u01215",
-    "u01216"
+    "u01216",
+    "u01217",
+    "u01219",
+    "u01220",
+    "u01225",
+    "u01230"
   ]
 }
