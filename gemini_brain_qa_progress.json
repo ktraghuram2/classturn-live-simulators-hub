@@ -1,81 +1,10 @@
 {
   "runner_state": "ACTIVE (6 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 17:26:40",
-  "completed_count": 1892,
-  "fixed_count": 1695,
-  "latest_sim_id": "u01377",
+  "updated_at": "2026-10-19 17:59:17",
+  "completed_count": 1897,
+  "fixed_count": 1700,
+  "latest_sim_id": "u01438",
   "recent_events": [
-    {
-      "sim_id": "u02386",
-      "status": "ERROR",
-      "time": "17:11:06",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02384",
-      "status": "FIXED",
-      "time": "17:11:06",
-      "issues": [
-        "Observation table record button (btnRecord) generated only 6 cells, misaligning with the 8-column header (Trial Number, Sample, Mass, V1, V2, Displaced Volume, Density, Identified Metal).",
-        "Atlas action buttons (action_tare, action_submerge, action_retrieve) lacked click event listeners in canvas_js.",
-        "Stepper control buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to dynamically increment or decrement input values.",
-        "Sample ingot was rendered simultaneously on the analytical balance pan and inside the graduated cylinder rather than tracking physical sample placement according to lab actions."
-      ]
-    },
-    {
-      "sim_id": "u01087",
-      "status": "PASS",
-      "time": "17:13:13",
-      "issues": []
-    },
-    {
-      "sim_id": "u01130",
-      "status": "FIXED",
-      "time": "17:13:44",
-      "issues": [
-        "Action button #btn_eutectoid_preset and .stepper-btn controls were unwired in canvas_js",
-        "Observation table column 6 recorded numeric cementite fraction instead of microstructure morphology text matching the table header",
-        "Eutectoid isotherm A1 was set to 727.0 °C in canvas_js whereas 723.0 °C is specified across pedagogical slots, presets, and validation",
-        "Carbon content unit in stepper and observation table header displayed truncated MathML 'wt' instead of 'wt%'"
-      ]
-    },
-    {
-      "sim_id": "u01134",
-      "status": "FIXED",
-      "time": "17:13:51",
-      "issues": [
-        "Misaligned observation table row insertion in btnRecord event listener: observation table defines 8 columns (Sim Clock Time, PID, Arrival Time, Burst Time, Priority, Avg Wait Time, Avg Turnaround Time, Core Utilization), but the row generator only appended 7 columns, omitting Arrival Time and Priority and misaligning the remaining metric columns."
-      ]
-    },
-    {
-      "sim_id": "u01128",
-      "status": "FIXED",
-      "time": "17:14:01",
-      "issues": [
-        "Unwired action buttons: 'btn_traverse_step' (Advance Probe) and 'btn_zero_dpcal' (Auto-Zero DPCal) were missing click event listeners in canvas_js",
-        "Unwired stepper buttons: '.stepper-btn' (▲ and ▼ buttons for station, fan velocity, and density) had no click event handlers",
-        "Raw LaTeX/MathML variable error: English indefinite article 'A' before 'Pitot-static tube' was erroneously rendered as mathematical variable <mi>A</mi> in principles_summary_html and procedure_section_html",
-        "Malformed HTML attributes in readouts_html: 'data-unit' attributes contained unescaped nested HTML tags and MathML nodes instead of clean unit strings"
-      ]
-    },
-    {
-      "sim_id": "u01121",
-      "status": "ERROR",
-      "time": "17:14:30",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01132",
-      "status": "ERROR",
-      "time": "17:14:35",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01137",
       "status": "ERROR",
@@ -368,6 +297,83 @@
         "Raw LaTeX escape command (\\exp) present in observation thead MathML label.",
         "Control action buttons 'btn_cycle_input' (Cycle Next Binary Input) and 'btn_clear_faults' (Clear All Injected Faults) were defined in HTML but unwired in canvas_js.",
         "Stepper ▲/▼ buttons for fine step adjustment were unhandled in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01384",
+      "status": "FIXED",
+      "time": "17:57:41",
+      "issues": [
+        "Observation table record button inserted columns in wrong order (blow count and inverted density columns) mismatching observation table headers",
+        "Action buttons #btn_drive_cutter and #btn_extract_and_weigh were unwired in canvas_js",
+        "Stepper increment/decrement buttons (.stepper-btn) were unwired in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01399",
+      "status": "ERROR",
+      "time": "17:57:41",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01400",
+      "status": "FIXED",
+      "time": "17:57:41",
+      "issues": [
+        "Unwired action buttons: Transmit Frame, Inject Frame Loss, and Inject ACK Loss controls lacked click event listeners in canvas_js.",
+        "Unwired stepper buttons: Stepper increment and decrement buttons (▲/▼) had no click event listeners.",
+        "Observation table column mismatch: btnRecord inserted 8 cells into a 6-column observation table.",
+        "Inject ACK Loss handling was unhandled in acknowledgment packet generation.",
+        "Corrupted MathML tags wrapping the English indefinite article 'a' across principles and procedure text."
+      ]
+    },
+    {
+      "sim_id": "u01394",
+      "status": "FIXED",
+      "time": "17:57:41",
+      "issues": [
+        "Unwired action buttons: Cockpit Annunciator Lamp & Horn Test (btn_lamp_test) and Preset Overheat & Stall (btn_preset_overheat_stall)",
+        "Unwired stepper up/down buttons (.stepper-btn) for temperature, pressure, and RPM inputs",
+        "Misaligned observation table columns: recordRow placed hazardOr under Column 4 (Warning Light Y_light), causing misalignment with header columns",
+        "Raw Greek letter psi (\\psi) erroneously rendered in place of unit 'psi' in apparatus and validation slots, and duplicate symbol in observation thead"
+      ]
+    },
+    {
+      "sim_id": "u01395",
+      "status": "ERROR",
+      "time": "17:57:41",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01372",
+      "status": "ERROR",
+      "time": "17:57:41",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01459",
+      "status": "FIXED",
+      "time": "17:58:59",
+      "issues": [
+        "Action buttons (btn_start_milling, btn_stop_milling, btn_get_final_sample) were unwired to simulation state controls.",
+        "Stepper up/down buttons (.stepper-btn) were missing event listeners to increment/decrement parameter inputs.",
+        "Observation table recorded row columns were misaligned with observation_thead_html (8 columns with unheaded row index and swapped elapsed time/thickness vs 6 header columns)."
+      ]
+    },
+    {
+      "sim_id": "u01438",
+      "status": "FIXED",
+      "time": "17:59:17",
+      "issues": [
+        "Observation table columns were misaligned: recordObservation recorded stack depth in the Operation column and top address in the Stack Depth column, omitting operation tracking and shifting table data out of sync with the headers.",
+        "Stepper buttons (stepper-btn-up and stepper-btn-down) lacked event listeners in canvas_js, preventing users from incrementing or decrementing the input value using the UI controls.",
+        "Maximum visual stack capacity in canvas_js was constrained to 5 nodes instead of 7 nodes as specified in the apparatus specification and boundary validation limits."
       ]
     }
   ],
@@ -1516,14 +1522,17 @@
     "u01381",
     "u01382",
     "u01383",
+    "u01384",
     "u01385",
     "u01386",
     "u01387",
     "u01389",
     "u01393",
+    "u01394",
     "u01396",
     "u01397",
     "u01398",
+    "u01400",
     "u01401",
     "u01402",
     "u01403",
@@ -1558,6 +1567,7 @@
     "u01434",
     "u01436",
     "u01437",
+    "u01438",
     "u01440",
     "u01442",
     "u01443",
@@ -1571,6 +1581,7 @@
     "u01454",
     "u01455",
     "u01456",
+    "u01459",
     "u01460",
     "u01461",
     "u01463",
