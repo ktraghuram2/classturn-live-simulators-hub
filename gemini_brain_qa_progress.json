@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:04:41",
-  "completed_count": 1908,
-  "fixed_count": 1711,
-  "latest_sim_id": "u01439",
+  "updated_at": "2026-10-19 18:06:28",
+  "completed_count": 1913,
+  "fixed_count": 1716,
+  "latest_sim_id": "u01481",
   "recent_events": [
-    {
-      "sim_id": "u01248",
-      "status": "ERROR",
-      "time": "17:20:26",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01320",
-      "status": "PASS",
-      "time": "17:21:27",
-      "issues": []
-    },
-    {
-      "sim_id": "u01305",
-      "status": "FIXED",
-      "time": "17:21:40",
-      "issues": [
-        "Raw LaTeX syntax ('2d\\sinθ') found in principles_summary_html prose replaced with valid MathML",
-        "Unwired control action buttons ('btn_switch_sample', 'btn_select_crystal', 'btn_full_scan') and stepper buttons (▲/▼) in canvas_js",
-        "Misaligned observation table columns: 7 columns were being written to a 9-column table schema with missing specimen type, crystal spacing, and element line identifier"
-      ]
-    },
-    {
-      "sim_id": "u01291",
-      "status": "ERROR",
-      "time": "17:22:06",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01313",
-      "status": "FIXED",
-      "time": "17:22:19",
-      "issues": [
-        "Observation table record hook generated 10 misaligned columns instead of matching the 8 columns defined in the header (Set Point, Kp, Ki, Kd, Steady-State Temp, Steady-State Error, Rise Time, Peak Overshoot).",
-        "Action buttons btn_energize_heater and btn_convective_cooling were unwired in canvas_js, allowing the heater and stopwatch to run continuously without user activation.",
-        "Stepper increment/decrement buttons were unwired in canvas_js, preventing manual stepping of temperature setpoints and PID parameters."
-      ]
-    },
-    {
-      "sim_id": "u01302",
-      "status": "ERROR",
-      "time": "17:22:40",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01323",
-      "status": "FIXED",
-      "time": "17:22:57",
-      "issues": [
-        "Observation table row recording appended 9 <td> cells while observation_thead_html defined only 5 columns (Elapsed Time, Still Pot Temp, Vapor Head Temp, Distillate Purity, Collected Volume).",
-        "Action buttons (btn_toggle_heating, btn_swap_receiver) and stepper spin buttons (.stepper-btn) in HTML controls were not wired with event listeners in canvas_js."
-      ]
-    },
     {
       "sim_id": "u01324",
       "status": "FIXED",
@@ -386,6 +327,72 @@
         "HTML stepper increment and decrement buttons (▲/▼) lacked event listeners in canvas_js",
         "Observation table columns were misaligned with respect to observation_thead_html (Operand Data, Queue Length, Front/Rear Addresses, and Heap Memory columns out of order)",
         "Missing operational state telemetry tracking (lastOperation, lastOperand) for logged observation entries"
+      ]
+    },
+    {
+      "sim_id": "u01467",
+      "status": "FIXED",
+      "time": "18:04:44",
+      "issues": [
+        "Observation table recorded only 6 columns instead of 8, causing severe column header misalignment with blank diameter, speed, and flow stress.",
+        "Cycle stroke action button (#btn_cycle_stroke) was not wired to animation play/pause control.",
+        "Toggle FEA overlay action button (#btn_toggle_fea_view) was not wired to toggle plastic strain gradient and contact pressure nip zones.",
+        "Stepper up/down adjustment buttons (.stepper-btn) were not wired to increment/decrement input values."
+      ]
+    },
+    {
+      "sim_id": "u01141",
+      "status": "FIXED",
+      "time": "18:04:55",
+      "issues": [
+        "Observation table record button populated 9 cells (including redundant trial counter and message density) into a 7-column header table, misaligning all recorded data rows.",
+        "Action buttons ('btn_dispatch_sequence' and 'btn_validate_architecture') had no click handlers attached.",
+        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update target control inputs and dispatch events."
+      ]
+    },
+    {
+      "sim_id": "u01435",
+      "status": "FIXED",
+      "time": "18:04:56",
+      "issues": [
+        "Unwired action buttons: btn_tare_balance and btn_smoke_streamlines were present in actions_html but had no click event listeners in canvas_js",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down were missing click event listeners in canvas_js",
+        "Misaligned observation table: btnRecord inserted 11 columns into observationTbody whereas observation_thead_html has exactly 7 columns, omitting Dynamic Pressure q and adding unlisted columns (rowCount, L, rho, Re, v_t)",
+        "Telemetry update unit erasure: setTelemetryText replaced the element textContent directly, wiping out the MathML unit markup child span"
+      ]
+    },
+    {
+      "sim_id": "u01166",
+      "status": "ERROR",
+      "time": "18:05:30",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01286",
+      "status": "ERROR",
+      "time": "18:05:56",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01169",
+      "status": "FIXED",
+      "time": "18:06:03",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01481",
+      "status": "FIXED",
+      "time": "18:06:28",
+      "issues": [
+        "Corrected telemetry readout element IDs in updateTelemetryDisplays() to match 'val_reading_*' IDs declared in readouts_html",
+        "Wired action buttons #btn_begin_transaction and #btn_inject_failure to enable interactive protocol triggering and fault injection",
+        "Added event listener bindings for stepper up/down buttons (#num_participants, #animation_speed, #failure_scenario_index) to support direct user increment/decrement"
       ]
     }
   ],
@@ -1342,6 +1349,7 @@
     "u01138",
     "u01139",
     "u01140",
+    "u01141",
     "u01143",
     "u01145",
     "u01146",
@@ -1364,6 +1372,7 @@
     "u01165",
     "u01167",
     "u01168",
+    "u01169",
     "u01170",
     "u01171",
     "u01172",
@@ -1586,6 +1595,7 @@
     "u01432",
     "u01433",
     "u01434",
+    "u01435",
     "u01436",
     "u01437",
     "u01438",
@@ -1611,6 +1621,7 @@
     "u01464",
     "u01465",
     "u01466",
+    "u01467",
     "u01468",
     "u01469",
     "u01470",
@@ -1618,6 +1629,7 @@
     "u01474",
     "u01476",
     "u01480",
+    "u01481",
     "u01482",
     "u01483",
     "u01484",
