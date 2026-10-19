@@ -1,63 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:47:42",
-  "completed_count": 1592,
-  "fixed_count": 1453,
-  "latest_sim_id": "u02017",
+  "updated_at": "2026-10-19 15:49:01",
+  "completed_count": 1597,
+  "fixed_count": 1455,
+  "latest_sim_id": "u02022",
   "recent_events": [
-    {
-      "sim_id": "u01981",
-      "status": "FIXED",
-      "time": "15:23:28",
-      "issues": [
-        "Fixed syntax error at line 349 where canvas_js was truncated mid-statement without a render loop or animation handler.",
-        "Resolved control element ID mismatch: canvas_js listened to 'noc', 'yi', etc., while HTML inputs use 'control_noc', 'control_yi', 'control_b', etc.",
-        "Wired up stepper buttons (.stepper-btn-up, .stepper-btn-down) to increment and decrement input values properly.",
-        "Wired up action buttons 'btn_simulate_flight' (foraging bout simulation) and 'btn_find_optimal_b' (automatic determination of optimal departure flower b*).",
-        "Corrected telemetry readout binding: updateTelemetryDOM targeted non-existent IDs instead of val_reading_cur_cal, val_reading_net_energy, val_reading_total_time, and val_reading_energy_rate.",
-        "Aligned observation table recordings: recordObservation previously output 8 columns while observation_thead_html expects exactly 5 columns.",
-        "Added high-fidelity 2D visual simulation with lupine inflorescence spike, animated bumblebee with wing flutter and proboscis extension, graduated nectary crop meters, bioenergetic rate curve display, and Style 2 leader lines."
-      ]
-    },
-    {
-      "sim_id": "u01979",
-      "status": "ERROR",
-      "time": "15:23:28",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01984",
-      "status": "ERROR",
-      "time": "15:23:28",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01977",
-      "status": "FIXED",
-      "time": "15:23:28",
-      "issues": [
-        "setTelemetryText looked up 'val_displacement' instead of 'val_reading_displacement', failing to update all live readout displays",
-        "All four action buttons (btn_release_oscillation, btn_damp_to_equilibrium, btn_toggle_configuration, btn_mount_mystery_mass) had no click event listeners wired in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js",
-        "btnRecord appended 8 columns starting with spring constant k, misaligning all 7 observation table column headers",
-        "Canvas leader badges included 6 badges with a mismatch against legend_pills_html (which defines exactly 5 pills, with Pill 3 as Mystery Masses)"
-      ]
-    },
-    {
-      "sim_id": "u01976",
-      "status": "FIXED",
-      "time": "15:23:28",
-      "issues": [
-        "Observation table columns in btnRecord mismatched observation_thead_html (logged 7 columns instead of 9, skipping clearance, addendum, dedendum, and outside diameter alignment)",
-        "Live readout update function failed to update DOM values because element IDs in readouts_html are prefixed with 'val_' (e.g., val_reading_pitch_radius)",
-        "Action buttons toggle_rotation and align_caliper_probe in actions_html were unwired without event listeners",
-        "Stepper increment and decrement buttons (.stepper-btn) were unwired without event listeners"
-      ]
-    },
     {
       "sim_id": "u01982",
       "status": "FIXED",
@@ -397,6 +344,44 @@
         "Misaligned observation table columns in btnRecord click handler: recorded 6 columns with timestamp and steam pressure instead of the 7 matching observation table headers.",
         "Misinterpreted Greek letter psi in procedure Step 1 where pneumatic supply pressure unit was written as \\psi instead of psi."
       ]
+    },
+    {
+      "sim_id": "u02018",
+      "status": "FIXED",
+      "time": "15:47:44",
+      "issues": [
+        "Mismatched numbered badges in canvas_js: Leader lines 1 to 14 did not correspond to legend_pills_html (Heavy Bench and Distillate Receiver Tank were omitted, shifting all component badge numbers).",
+        "Observation table column mismatch: btnRecord generated 11 columns with out-of-order parameters while observation_thead_html specifies 8 columns (Elapsed Time, TT3, TT1, TT2, FT3, FT2, LT, PT).",
+        "Interactive control wiring: Stepper up/down buttons and action buttons (Toggle SCR Reboiler Heating, Toggle Total Reflux / Distillate Split) lacked event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02021",
+      "status": "FIXED",
+      "time": "15:47:44",
+      "issues": [
+        "Unwired stepper buttons (▲/▼) in control panel preventing incremental parameter adjustments",
+        "Unwired action buttons ('btn_homogenize_lyse' and 'btn_centrifuge_elute')",
+        "Observation table column mismatch where 8-column table without Trial column caused trial count to shift all values and drop Specific Yield"
+      ]
+    },
+    {
+      "sim_id": "u02020",
+      "status": "PASS",
+      "time": "15:47:44",
+      "issues": []
+    },
+    {
+      "sim_id": "u02028",
+      "status": "PASS",
+      "time": "15:48:39",
+      "issues": []
+    },
+    {
+      "sim_id": "u02022",
+      "status": "PASS",
+      "time": "15:49:01",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1991,6 +1976,11 @@
     "u02015",
     "u02016",
     "u02017",
-    "u02019"
+    "u02018",
+    "u02019",
+    "u02020",
+    "u02021",
+    "u02022",
+    "u02028"
   ]
 }
