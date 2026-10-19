@@ -1,68 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 17:02:34",
-  "completed_count": 1862,
-  "fixed_count": 1668,
-  "latest_sim_id": "u02375",
+  "updated_at": "2026-10-19 17:11:06",
+  "completed_count": 1867,
+  "fixed_count": 1673,
+  "latest_sim_id": "u02384",
   "recent_events": [
-    {
-      "sim_id": "u02341",
-      "status": "FIXED",
-      "time": "16:55:31",
-      "issues": [
-        "Live readout DOM selectors targeted wrapper li elements instead of value spans (val_reading_*), preventing live telemetry updates",
-        "Action button btn_verify_region (Validate Anatomical Feature Selection) was completely unwired in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn) had no click event listeners attached",
-        "Observation table logged static 100.0% accuracy instead of live verification status"
-      ]
-    },
-    {
-      "sim_id": "u02346",
-      "status": "PASS",
-      "time": "16:56:06",
-      "issues": []
-    },
-    {
-      "sim_id": "u02344",
-      "status": "FIXED",
-      "time": "16:56:06",
-      "issues": [
-        "Fixed corrupted MathML in readout units where counts/s rendered as count s/s fraction and kV/cm rendered as k V/c m.",
-        "Fixed observation table column count mismatch: JS record button injected 9 columns into a 5-column table header.",
-        "Wired up interactive stepper up/down buttons (.stepper-btn) and the timed acquisition action button (#btn_start_count).",
-        "Cleaned up spurious MathML wrapping around English article 'a' and fraction notation in prose descriptions."
-      ]
-    },
-    {
-      "sim_id": "u02339",
-      "status": "ERROR",
-      "time": "16:56:06",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02343",
-      "status": "FIXED",
-      "time": "16:56:06",
-      "issues": [
-        "Observation table columns were misaligned because tr.innerHTML prepended rowCount as a first <td>, resulting in 11 data cells for 10 <th> table headers.",
-        "Action buttons were unwired: 'Toggle Pump Motor' (id='btn_start_pump') and 'Close Collection Drain Gate' (id='btn_measure_flow') had no event listeners in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) for the delivery valve throttle had no click listeners attached.",
-        "Hydraulic output power equation in getPhysics() used an inaccurate fluid density of 850.0 kg/m³ instead of 890.0 kg/m³ as defined in the apparatus validation assumptions.",
-        "Typo in curvy leader drawing call in canvas_js: 'ay = b.ay' in function arguments created an unintentional global variable."
-      ]
-    },
-    {
-      "sim_id": "u02345",
-      "status": "FIXED",
-      "time": "16:56:16",
-      "issues": [
-        "Replaced incorrect Greek letter psi (ψ) with standard pressure unit 'psi' in biolistic helium delivery apparatus specification",
-        "Corrected typographic concatenation 'theHPLC/GC-MS' to 'the HPLC/GC-MS' and standardized inline notation of ΔL_indel in procedure Step 4",
-        "Wired action buttons btn_advance_workflow and btn_pulse_and_validate to dynamically increment protocol stage and trigger validation refresh"
-      ]
-    },
     {
       "sim_id": "u02347",
       "status": "FIXED",
@@ -379,6 +321,69 @@
       "issues": [
         "Observation table rows generated 7 columns instead of 6 and were misaligned with the observation table header columns",
         "Action buttons (btn_merge_nearest, btn_split_heaviest_edge, btn_toggle_linkage) and stepper up/down buttons were unwired"
+      ]
+    },
+    {
+      "sim_id": "u02379",
+      "status": "FIXED",
+      "time": "17:11:06",
+      "issues": [
+        "Unwired action button #btn_validate_submit in canvas_js",
+        "Misaligned observation table columns: removed extra recordIndex cell and aligned the 6 data cells with the 6 header columns (Preset, Username Length, Email Match, Password Strength, Phone Digits, Submission Status)",
+        "Added click handler wiring for stepper increment/decrement buttons"
+      ]
+    },
+    {
+      "sim_id": "u02385",
+      "status": "FIXED",
+      "time": "17:11:06",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted 9 columns into tbody whereas observation_thead_html defines exactly 6 columns in a different sequence.",
+        "Mismatched curvy leader line badges: canvas badge numbers 1, 2, 4, 6, and 7 pointed to wrong apparatus components relative to legend_pills_html.",
+        "Unwired action and stepper controls: stepper buttons and action buttons (actuate_gas_valve_1, throttle_gas_valve_2, clean_membrane_flush) lacked event listeners."
+      ]
+    },
+    {
+      "sim_id": "u02383",
+      "status": "FIXED",
+      "time": "17:11:06",
+      "issues": [
+        "Misalignment between observation table header (6 columns) and btnRecord row insertion (9 columns)",
+        "Telemetry readouts failed to update in DOM because setTelemetry targeted 'read_*' IDs instead of 'val_read_*'",
+        "Action buttons (Execute Grammatical Abbott Sieve, Route Token to Ross Category, Synthesize Top-Level Domain Classes) and stepper buttons were unwired in canvas_js",
+        "Malformed MathML fraction artifact converting 'attributes/class' into 'attribute s/c lass' in observation table header and live readouts"
+      ]
+    },
+    {
+      "sim_id": "u02382",
+      "status": "FIXED",
+      "time": "17:11:06",
+      "issues": [
+        "Fixed raw HTML/MathML and broken unit '/J/sm³' with illegal leading slash inside observation table header and telemetry readouts.",
+        "Fixed corrupted data-unit attributes in readouts_html containing nested HTML span tags.",
+        "Corrected broken MathML unit fraction formatting in steppers_html for sensitivity stepper.",
+        "Corrected observation table row alignment in canvas_js: removed extraneous Serial No and Sv columns and added missing Retentivity (Br) and Coercivity (Hc) columns matching the 7 thead headers.",
+        "Corrected non-physical hysteresis energy loss formula in canvas_js to depend directly on peak flux density Bm via the Steinmetz power-law relation rather than artificial scaling with resistance and display sensitivity.",
+        "Wired up stepper ▲/▼ buttons with data-target handlers and wired up the Auto-Trace B-H Saturation Cycle action button."
+      ]
+    },
+    {
+      "sim_id": "u02386",
+      "status": "ERROR",
+      "time": "17:11:06",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02384",
+      "status": "FIXED",
+      "time": "17:11:06",
+      "issues": [
+        "Observation table record button (btnRecord) generated only 6 cells, misaligning with the 8-column header (Trial Number, Sample, Mass, V1, V2, Displaced Volume, Density, Identified Metal).",
+        "Atlas action buttons (action_tare, action_submerge, action_retrieve) lacked click event listeners in canvas_js.",
+        "Stepper control buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to dynamically increment or decrement input values.",
+        "Sample ingot was rendered simultaneously on the analytical balance pan and inside the graduated cylinder rather than tracking physical sample placement according to lab actions."
       ]
     }
   ],
@@ -2243,7 +2248,12 @@
     "u02376",
     "u02377",
     "u02378",
+    "u02379",
     "u02380",
-    "u02381"
+    "u02381",
+    "u02382",
+    "u02383",
+    "u02384",
+    "u02385"
   ]
 }
