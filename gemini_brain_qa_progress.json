@@ -1,77 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:20:28",
-  "completed_count": 1963,
-  "fixed_count": 1761,
-  "latest_sim_id": "u01755",
+  "updated_at": "2026-10-19 18:22:50",
+  "completed_count": 1968,
+  "fixed_count": 1765,
+  "latest_sim_id": "u01775",
   "recent_events": [
-    {
-      "sim_id": "u01542",
-      "status": "FIXED",
-      "time": "18:12:04",
-      "issues": [
-        "Observation table in canvas_js had 8 columns (including trial index, f, C, E, Rsh, Q_meas, Q_true, E_c) whereas observation_thead_html defines 6 columns (f, C, E_c, Q_meas, Q_true, C_d), causing column misalignment and missing C_d",
-        "Actions buttons #btn_auto_resonate and #btn_double_frequency were declared in HTML slots but not wired to event listeners in canvas_js",
-        "Observation thead tuning capacitance header was missing the symbol C"
-      ]
-    },
-    {
-      "sim_id": "u01584",
-      "status": "FIXED",
-      "time": "18:13:03",
-      "issues": [
-        "Wired up unhandled action button btn_digest_ignite to advance separation stage and synchronized with stage stepper",
-        "Corrected gravimetric precipitate mass calculation in observation recording by dividing elemental mass by gravimetric factors rather than multiplying",
-        "Aligned observation table row data with all 10 schema columns including %Sn, %Pb, and Total %, removing misaligned Stage string"
-      ]
-    },
-    {
-      "sim_id": "u01575",
-      "status": "FIXED",
-      "time": "18:13:07",
-      "issues": [
-        "Replaced malformed MathML fraction for C/C++ in apparatus_html with standard clean text",
-        "Reordered legend_pills_html into standard sequential order 1, 2, 3, 4",
-        "Wired unwired action button #btn_run_current_row in canvas_js to step row execution",
-        "Wired up/down stepper buttons (.stepper-btn) to increment/decrement inputs and fire input change events",
-        "Corrected observation table logging in canvas_js from 7 misaligned columns to the 5 columns defined in observation_thead_html",
-        "Aligned canvas badge numbers with apparatus legend pills (Badge 2 for Variable Watch Panel, Badge 4 for Loop Execution Controller)"
-      ]
-    },
-    {
-      "sim_id": "u01600",
-      "status": "FIXED",
-      "time": "18:13:15",
-      "issues": [
-        "Unwired action buttons: 'btn_step_forward' (Execute Next Instruction) and 'btn_trigger_gc' (Trigger Garbage Collection Sweep) were not bound to click handlers.",
-        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' were missing event listeners to increment/decrement the inputs.",
-        "Misaligned observation table columns: 'btnRecord' inserted relationship mode text into the stack depth column and shifted values out of alignment with the 6 table headers, omitting 'Coupling Ratio'."
-      ]
-    },
-    {
-      "sim_id": "u01570",
-      "status": "FIXED",
-      "time": "18:13:49",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01583",
-      "status": "ERROR",
-      "time": "18:13:56",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01587",
-      "status": "ERROR",
-      "time": "18:14:05",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01618",
       "status": "PASS",
@@ -385,6 +318,67 @@
         "Misaligned observation table row insertion (6 <td> cells created for 5 <th> table headers, pushing values out of alignment).",
         "Unwired stepper buttons (.stepper-btn) and experiment preset dropdown (experimentSelect) in canvas_js.",
         "Corrupted possessive suffix in header_title_html where 's was erroneously converted into a MathML variable."
+      ]
+    },
+    {
+      "sim_id": "u01749",
+      "status": "ERROR",
+      "time": "18:21:12",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01718",
+      "status": "ERROR",
+      "time": "18:21:17",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01765",
+      "status": "FIXED",
+      "time": "18:21:18",
+      "issues": [
+        "Unwired action buttons: 'btn_restore_signature' and 'btn_inject_corruption' were not wired to restore magic bytes or inject corruption",
+        "Unwired stepper controls: Stepper up/down arrow buttons (.stepper-btn) had no click event handlers and were ignored by the sync loop"
+      ]
+    },
+    {
+      "sim_id": "u01735",
+      "status": "PASS",
+      "time": "18:21:54",
+      "issues": []
+    },
+    {
+      "sim_id": "u01761",
+      "status": "FIXED",
+      "time": "18:22:03",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01773",
+      "status": "FIXED",
+      "time": "18:22:18",
+      "issues": [
+        "Unwired 'Resample Stochastic Data Points' action button (btn_resample_dataset) and static dataset generation lacking stateful stochastic resampling",
+        "Unwired stepper up/down buttons and experiment activity select dropdown in canvas_js",
+        "Missing text labels, telemetry readouts, axis labels, and high-contrast hardware instrument titles on canvas units",
+        "Malformed MathML identifier 'epsilon' in apparatus_html replaced with proper greek epsilon symbol ε"
+      ]
+    },
+    {
+      "sim_id": "u01775",
+      "status": "FIXED",
+      "time": "18:22:49",
+      "issues": [
+        "Observation table columns were misaligned: row output swapped analyte element and sample name, and inserted emission wavelength instead of dilution factor.",
+        "Action buttons 'btn_aspirate_sample' and 'btn_zero_calibrate' were present in controls but unwired in canvas_js.",
+        "Stepper buttons (.stepper-btn) lacked click event listeners in canvas_js, preventing up/down stepper adjustments.",
+        "Experiment mode selector ('experimentSelect') was not connected, preventing switching between Standard Calibration and Fruit Juice Sample Analysis."
       ]
     }
   ],
@@ -1857,6 +1851,7 @@
     "u01732",
     "u01733",
     "u01734",
+    "u01735",
     "u01736",
     "u01737",
     "u01738",
@@ -1879,14 +1874,18 @@
     "u01757",
     "u01759",
     "u01760",
+    "u01761",
     "u01762",
     "u01764",
+    "u01765",
     "u01766",
     "u01768",
     "u01769",
     "u01770",
     "u01771",
+    "u01773",
     "u01774",
+    "u01775",
     "u01776",
     "u01777",
     "u01778",
