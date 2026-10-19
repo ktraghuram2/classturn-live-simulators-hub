@@ -1,98 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:26:04",
-  "completed_count": 1357,
-  "fixed_count": 1270,
-  "latest_sim_id": "u01713",
+  "updated_at": "2026-10-19 10:30:01",
+  "completed_count": 1362,
+  "fixed_count": 1272,
+  "latest_sim_id": "u01719",
   "recent_events": [
-    {
-      "sim_id": "u01667",
-      "status": "ERROR",
-      "time": "10:08:24",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01669",
-      "status": "FIXED",
-      "time": "10:08:40",
-      "issues": [
-        "Misaligned observation table: record row generated 7 <td> cells with an undeclared S.No column while observation_thead_html defines only 6 <th> columns, causing severe column shift.",
-        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down buttons lacked click event listeners in canvas_js, preventing user interaction via stepper buttons."
-      ]
-    },
-    {
-      "sim_id": "u01670",
-      "status": "FIXED",
-      "time": "10:08:48",
-      "issues": [
-        "Unwired action buttons: 'btn_step_kmer_scan' (advance window & add edge) and 'btn_trace_eulerian_walk' (trace Eulerian walk) were missing click event listeners in canvas_js.",
-        "Unwired stepper buttons: stepper-btn-up and stepper-btn-down were not wired to increment/decrement input values in canvas_js.",
-        "Misaligned observation table columns: btnRecord pushed 9 cells (including serial, window index, repeat motif) while observation_thead_html defined only 6 columns (N, k, node size k-1, edge count E_k, unique nodes V_u, compression ratio C_r).",
-        "Activity selection dropdown (Activity 1 vs Activity 2) was unhandled in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01664",
-      "status": "FIXED",
-      "time": "10:09:19",
-      "issues": [
-        "Unwired action buttons: 'btn_validate_chunking' and 'btn_auto_chunk' defined in actions_html were completely unhandled in canvas_js.",
-        "Misaligned observation table columns: 'btnRecord' appended 8 columns with mismatched schema (counter, lang, sentence, cursor, ratio, accuracy, precision, f1) whereas observation_thead_html defines exactly 6 columns (Sentence Index, Total Tokens, Correctly Tagged Tokens, Token Accuracy, Chunk Precision, Harmonic F1 Score).",
-        "Missing stepper button bindings: Custom stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) were unhandled.",
-        "Missing interactive phrase chunk bracket visualization and clickable token tag cycling on the 2D canvas."
-      ]
-    },
-    {
-      "sim_id": "u01673",
-      "status": "FIXED",
-      "time": "10:09:27",
-      "issues": [
-        "Unwired action buttons: Trigger Power-On Cycle (#btn_power_cycle) and Discharge Timing Capacitor (#btn_discharge_cap) had no event listeners attached.",
-        "Unwired stepper controls: Stepper up and down buttons (.stepper-btn) had no click listeners attached to step and fire change events on inputs.",
-        "Misaligned observation table columns: Observation table row generation produced 8 cells (including unheadered S.No, Vc, and Vout) for a 6-column table header; corrected to 6 matching columns."
-      ]
-    },
-    {
-      "sim_id": "u01668",
-      "status": "ERROR",
-      "time": "10:09:31",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01674",
-      "status": "FIXED",
-      "time": "10:09:44",
-      "issues": [
-        "Observation table columns in canvas_js were misaligned with the 7 thead columns and included an extra 8th column (gravity)",
-        "Action buttons (btn_tare_balance, btn_dispense_sample) and stepper up/down buttons were unwired in canvas_js",
-        "Digital balance display lacked tare toggle between gross and net mass",
-        "Dispenser feed nozzle lacked active fluid dispensing stream animation upon trigger",
-        "Hydrometer float bottom was unconstrained and visually protruded through cylinder base during low fluid volume"
-      ]
-    },
-    {
-      "sim_id": "u01671",
-      "status": "FIXED",
-      "time": "10:10:14",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01675",
-      "status": "FIXED",
-      "time": "10:10:36",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 8 mismatched columns instead of the 7 columns specified in observation_thead_html (Liquid Service, Reference Density, Vibration Period, Period Squared, Resonant Frequency, Measured Density, Percentage Error).",
-        "Unwired action button: 'Excite Tuning Fork Resonance' (id 'btn_excite_resonance') was not wired to any event listener or feedback state.",
-        "Unwired stepper buttons: Stepper up/down controls (.stepper-btn) had no click listeners bound to adjust target numeric inputs.",
-        "Numbered leader badge mismatch: Canvas badges (1=Probe, 2=Actuator, 3=Beaker, 4=Telemetry, 5=Stand) were out of sync with the apparatus legend pills (1=Stand, 2=Probe, 3=Actuator, 4=Beaker, 5=Telemetry)."
-      ]
-    },
     {
       "sim_id": "u01666",
       "status": "ERROR",
@@ -377,6 +289,77 @@
         "Action buttons (Transmit DNS Query and Flush Local DNS Cache) were not wired to trigger packet dispatch or reset cache.",
         "Interactive stepper increment/decrement buttons were missing click event listeners."
       ]
+    },
+    {
+      "sim_id": "u01712",
+      "status": "FIXED",
+      "time": "10:26:35",
+      "issues": [
+        "Misaligned observation table columns: btnRecord injected 10 values (including extraneous rowIdx, enzyme, and window cursor cells) into a 7-column observation table, displacing all data columns.",
+        "Unwired action buttons: btn_load_fasta, btn_scan_kmers, and btn_map_restriction lacked click event handlers.",
+        "Unwired stepper controls: Stepper up/down buttons (.stepper-btn) with data-target did not modify input values or fire change events.",
+        "Sliding window cursor upper bound clamp was hardcoded to 120 instead of allowing full sequence inspection up to 600 bp."
+      ]
+    },
+    {
+      "sim_id": "u01711",
+      "status": "ERROR",
+      "time": "10:27:07",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01714",
+      "status": "ERROR",
+      "time": "10:27:26",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01716",
+      "status": "PASS",
+      "time": "10:27:50",
+      "issues": []
+    },
+    {
+      "sim_id": "u01717",
+      "status": "FIXED",
+      "time": "10:28:39",
+      "issues": [
+        "Unbound live readouts in canvas_js: telemetry elements were queried using 'reading_max_revenue', 'reading_optimal_first_cut', and 'reading_revenue_density' instead of the active DOM IDs 'val_reading_max_revenue', 'val_reading_optimal_first_cut', and 'val_reading_revenue_density'.",
+        "Unwired action button in canvas_js: #btn_solve_optimal ('Execute Optimal Cutting Strategy') lacked a click event handler to apply the DP optimal first cut s[n] to the candidate cut stepper and translate the cutter assembly.",
+        "Unwired stepper buttons in canvas_js: .stepper-btn-up and .stepper-btn-down controls lacked click listeners to increment/decrement the rod length and candidate cut values."
+      ]
+    },
+    {
+      "sim_id": "u01705",
+      "status": "ERROR",
+      "time": "10:28:43",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01703",
+      "status": "ERROR",
+      "time": "10:28:57",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01715",
+      "status": "PASS",
+      "time": "10:29:12",
+      "issues": []
+    },
+    {
+      "sim_id": "u01719",
+      "status": "PASS",
+      "time": "10:30:01",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1736,6 +1719,11 @@
     "u01707",
     "u01708",
     "u01709",
-    "u01713"
+    "u01712",
+    "u01713",
+    "u01715",
+    "u01716",
+    "u01717",
+    "u01719"
   ]
 }
