@@ -1,89 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:43:36",
-  "completed_count": 2043,
-  "fixed_count": 1832,
-  "latest_sim_id": "u02312",
+  "updated_at": "2026-10-19 18:45:06",
+  "completed_count": 2048,
+  "fixed_count": 1836,
+  "latest_sim_id": "u02342",
   "recent_events": [
-    {
-      "sim_id": "u02114",
-      "status": "FIXED",
-      "time": "18:37:16",
-      "issues": [
-        "Telemetry readout DOM IDs in canvas_js queried 'reading_*' instead of 'val_reading_*', preventing real-time telemetry updates",
-        "Action buttons #btn_update_min and #btn_auto_sort were completely unwired in canvas_js",
-        "Stepper increment and decrement buttons were unhandled in canvas_js",
-        "Observation table had no row logging logic during algorithmic pass completion and simulation reset"
-      ]
-    },
-    {
-      "sim_id": "u02104",
-      "status": "ERROR",
-      "time": "18:37:19",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02074",
-      "status": "FIXED",
-      "time": "18:37:23",
-      "issues": [
-        "Unwired action button 'btn_start_heating' and stepper up/down buttons in canvas_js",
-        "Misaligned observation table row insertion in canvas_js (table has 6 columns: Tube, Temp, Opacity, Consistency, Denaturation, Turbidity, but script recorded only 4 mismatched columns)",
-        "Swapped curvy leader badges 4 and 5 relative to legend pills (Badge 4 pointed to Test Tubes while Legend Pill 4 is Water Bath Machine; Badge 5 pointed to Water Bath Machine while Legend Pill 5 is Test Tubes)"
-      ]
-    },
-    {
-      "sim_id": "u02127",
-      "status": "FIXED",
-      "time": "18:37:41",
-      "issues": [
-        "Observation table record button generated 6 mismatched columns with wrong reading element IDs instead of the 7 observation table columns defined in the header",
-        "Action buttons 'btn_emergency_brake' and 'btn_recenter_steering' were not wired to update vehicle brake/throttle and steering controls"
-      ]
-    },
-    {
-      "sim_id": "u02090",
-      "status": "FIXED",
-      "time": "18:38:11",
-      "issues": [
-        "Fixed inverted discharge rate unit symbol (/m³s -> m³/s) in readouts_html and observation_thead_html",
-        "Wired up Inject Dye Stream (btn_inject_dye) and Drain Measuring Tank (btn_drain_tank) action buttons in canvas_js",
-        "Wired up experiment regime dropdown select (experimentSelect) presets to update velocity",
-        "Wired up custom stepper buttons (.stepper-btn) to increment/decrement inputs properly",
-        "Corrected observation table water level column unit from mm to m to match header specification"
-      ]
-    },
-    {
-      "sim_id": "u02118",
-      "status": "ERROR",
-      "time": "18:38:14",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02136",
-      "status": "FIXED",
-      "time": "18:38:16",
-      "issues": [
-        "Unwired action buttons: btn_execute_transfer and btn_execute_withdraw lacked click event listeners in canvas_js",
-        "Unwired stepper controls: stepper buttons (.stepper-btn) lacked increment/decrement event listeners in canvas_js",
-        "Misaligned observation table columns: btnRecord generated 5 td cells (including an extra serial index) for a 4-column observation table header"
-      ]
-    },
-    {
-      "sim_id": "u02133",
-      "status": "FIXED",
-      "time": "18:38:20",
-      "issues": [
-        "Raw LaTeX theta_\\exp and malformed MathML division in principles equation symbols and units",
-        "Unwired action buttons (#btn_trigger_shift and #btn_sample_chromosomes) in canvas_js",
-        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
-        "Misaligned observation table row schema (9 data columns recorded vs 6 columns in observation_thead_html)"
-      ]
-    },
     {
       "sim_id": "u02126",
       "status": "ERROR",
@@ -407,6 +328,81 @@
         "Unwired action button btn_run_instruction in canvas_js",
         "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
         "Misaligned observation table row schema (6 columns instead of 7, missing Step/Cycle and PC columns)"
+      ]
+    },
+    {
+      "sim_id": "u02275",
+      "status": "ERROR",
+      "time": "18:43:40",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02274",
+      "status": "ERROR",
+      "time": "18:43:41",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02294",
+      "status": "FIXED",
+      "time": "18:43:44",
+      "issues": [
+        "Corrected malformed MathML fraction in observation table headers and readouts where 'vnodes/node' and 'keys/node' were incorrectly split as fractions across words",
+        "Restored missing variable symbol 'n' in the Machines observation column header",
+        "Wired batch and server node mutation action buttons (btn_add_items, btn_remove_items, btn_add_machine, btn_remove_machine) and stepper up/down controls"
+      ]
+    },
+    {
+      "sim_id": "u02324",
+      "status": "PASS",
+      "time": "18:44:03",
+      "issues": []
+    },
+    {
+      "sim_id": "u02319",
+      "status": "FIXED",
+      "time": "18:44:17",
+      "issues": [
+        "Unwired Action Buttons: `#btn_seed_infection` ('Seed Patient-Zero Infection') and `#btn_toggle_layout` ('Relax Force-Directed Layout') lacked event listeners in canvas_js.",
+        "Unwired Stepper Buttons: Stepper increment and decrement buttons (`.stepper-btn`) were not wired to modify numeric input values or sync simulation state.",
+        "Missing Observation Table Logger: No listener was bound to record trials into the Section 08 observation table.",
+        "Malformed Unit in Steppers Slot: The unit for Average Degree was rendered as a broken MathML fraction `link s/n ode` instead of `links/node`."
+      ]
+    },
+    {
+      "sim_id": "u02327",
+      "status": "FIXED",
+      "time": "18:44:43",
+      "issues": [
+        "Fixed distorted mathematical fraction in apparatus specifications (AES-128/256 and kernel I/O)",
+        "Fixed broken fraction representation in Shannon entropy readout and observation table header units ('bit s/b yte' to 'bits/byte')",
+        "Corrected observation table column count and alignment from 8 mismatched cells to the 5 defined table headers",
+        "Wired interactive action buttons (Toggle Format, Apply CLE, Enable TDE, Validate Key)",
+        "Wired up/down stepper buttons to synchronously update numerical inputs and live telemetry"
+      ]
+    },
+    {
+      "sim_id": "u02212",
+      "status": "ERROR",
+      "time": "18:44:46",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02342",
+      "status": "FIXED",
+      "time": "18:45:06",
+      "issues": [
+        "Primary kick action button id 'btn_kick_ball' was not bound in canvas_js",
+        "Goalkeeper patrol action button id 'btn_tux_patrol' was unwired with missing patrol trajectory logic",
+        "Stepper increment and decrement buttons were unhandled in canvas_js",
+        "Observation table logging inserted 10 mismatched columns into a 5-column table structure",
+        "Total distance travelled (s_tot) was not integrated or tracked during physics updates"
       ]
     }
   ],
@@ -2387,6 +2383,7 @@
     "u02291",
     "u02292",
     "u02293",
+    "u02294",
     "u02295",
     "u02296",
     "u02297",
@@ -2408,11 +2405,14 @@
     "u02315",
     "u02317",
     "u02318",
+    "u02319",
     "u02320",
     "u02321",
     "u02322",
+    "u02324",
     "u02325",
     "u02326",
+    "u02327",
     "u02330",
     "u02331",
     "u02332",
@@ -2424,6 +2424,7 @@
     "u02338",
     "u02340",
     "u02341",
+    "u02342",
     "u02343",
     "u02344",
     "u02345",
