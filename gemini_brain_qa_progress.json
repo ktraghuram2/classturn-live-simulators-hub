@@ -1,66 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:14:56",
-  "completed_count": 1702,
-  "fixed_count": 1537,
-  "latest_sim_id": "u02160",
+  "updated_at": "2026-10-19 16:15:51",
+  "completed_count": 1707,
+  "fixed_count": 1539,
+  "latest_sim_id": "u02167",
   "recent_events": [
-    {
-      "sim_id": "u02119",
-      "status": "FIXED",
-      "time": "16:08:14",
-      "issues": [
-        "Fixed corrupted MathML fraction rendering for 'C/C++' (rendered as fraction C over C) in apparatus and validation slots",
-        "Wired missing click event listener for 'Execute Sequence Algorithm' action button (id 'btn_execute_algorithm')",
-        "Added event listeners for stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) to dynamically modify numeric parameter inputs",
-        "Corrected observation table row generation to output 6 columns matching observation_thead_html instead of 8 misaligned columns"
-      ]
-    },
-    {
-      "sim_id": "u02121",
-      "status": "FIXED",
-      "time": "16:08:39",
-      "issues": [
-        "Replaced raw unrendered LaTeX string t_{\\exp} in steppers_html with standard inline MathML markup",
-        "Corrected LaTeX literal \\exp and plain (s) in observation_thead_html to proper MathML presentation",
-        "Wired up Section 5 external control action buttons ('btn_start_sequence' and 'btn_toggle_distractor') in canvas_js",
-        "Implemented tactile stepper buttons (.stepper-btn-up, .stepper-btn-down) event handlers in canvas_js",
-        "Added automatic observation table logging upon trial completion in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u02117",
-      "status": "FIXED",
-      "time": "16:08:43",
-      "issues": [
-        "Observation table columns in recordBtn click handler were misaligned with the thead header (outputted 7 columns with serial number and combined vector coordinate string instead of 8 separate columns matching c1, c2, c3, ||c||_1, ||c||_2, ||c||_inf, ||A||_1, ||A||_inf).",
-        "Unwired action buttons #btn_normalize_vector and #btn_transpose_matrix in canvas_js.",
-        "Unwired stepper increment/decrement buttons (.stepper-btn-up and .stepper-btn-down) in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u02123",
-      "status": "FIXED",
-      "time": "16:08:52",
-      "issues": [
-        "Observation table columns were misaligned: an unlisted serial number column shifted all data cells, displacing geometry type, depth, and slant height across table columns",
-        "Action buttons were unwired: Simulate Diffuse Radiation Rays (#btn_toggle_ray_tracing) and Toggle 3D Section Cutaway (#btn_toggle_cutaway) lacked click event listeners and state management",
-        "Stepper buttons were unwired: .stepper-btn ▲ and ▼ increment/decrement buttons had no event listeners attached in canvas_js",
-        "Activity selector synchronization mismatch: #select_experiment option values ('0', '1', '2') were incompatible with canvas_js string comparisons ('cylinder', 'cone', 'hemisphere')",
-        "Hemispherical cavity gauge readout displayed independent depth stepper H rather than the kinematically locked depth H = D / 2"
-      ]
-    },
-    {
-      "sim_id": "u02124",
-      "status": "FIXED",
-      "time": "16:09:00",
-      "issues": [
-        "Unwired Action Button: Wired 'btn_toggle_envelope' to cycle between ADSR, Exponential, and Rectangular amplitude envelope profiles and display current profile.",
-        "Unwired Stepper Controls: Added click event listeners for '.stepper-btn' up/down steppers to update frequency, sampling rate, volume, and harmonic weight values.",
-        "Misaligned Observation Table: Realigned recorded row columns to match the 6 specified header columns exactly by removing unlisted row count and Nyquist frequency cells.",
-        "Experiment Select Support: Added change listener to experiment selector dropdown to switch between pure fundamental tone analysis and harmonic overtone timbre modulation."
-      ]
-    },
     {
       "sim_id": "u02118",
       "status": "ERROR",
@@ -377,6 +321,43 @@
         "Observation table columns in btnRecord were misaligned (5 columns instead of the 6 headers in observation_thead_html; missing dedicated Source Node, Destination Node, and Active Route Path columns)",
         "Stepper increment/decrement buttons (.stepper-btn) lacked click event listeners in canvas_js",
         "Action buttons btn_transmit_packet and btn_commit_routing_table lacked click event listeners in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u02162",
+      "status": "PASS",
+      "time": "16:15:01",
+      "issues": []
+    },
+    {
+      "sim_id": "u02164",
+      "status": "PASS",
+      "time": "16:15:04",
+      "issues": []
+    },
+    {
+      "sim_id": "u02165",
+      "status": "FIXED",
+      "time": "16:15:07",
+      "issues": [
+        "Apparatus numbered badges 4 and 5 in canvas_js were inverted relative to apparatus item ordering (Badge 4 represents Lyapunov Energy Function Meter & Landscape Display, Badge 5 represents State Vector LED Array & Activation Galvanometer)."
+      ]
+    },
+    {
+      "sim_id": "u02166",
+      "status": "PASS",
+      "time": "16:15:19",
+      "issues": []
+    },
+    {
+      "sim_id": "u02167",
+      "status": "FIXED",
+      "time": "16:15:51",
+      "issues": [
+        "Misaligned observation table row schema (10 columns inserted into a 6-column header)",
+        "Unwired stepper up/down buttons (clicking ▲ / ▼ did not update stepper inputs or trigger recalculations)",
+        "Unwired action button btn_purge_air ('Purge Air Pockets & Prime Main')",
+        "Erroneous Greek letter psi (ψ) MathML entity in apparatus casing pressure rating specification instead of standard psi unit"
       ]
     }
   ],
@@ -2082,6 +2063,11 @@
     "u02158",
     "u02159",
     "u02160",
-    "u02163"
+    "u02162",
+    "u02163",
+    "u02164",
+    "u02165",
+    "u02166",
+    "u02167"
   ]
 }
