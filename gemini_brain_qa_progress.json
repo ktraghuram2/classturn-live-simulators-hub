@@ -1,65 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:02:30",
-  "completed_count": 952,
-  "fixed_count": 944,
-  "latest_sim_id": "u01152",
+  "updated_at": "2026-10-19 08:03:50",
+  "completed_count": 957,
+  "fixed_count": 947,
+  "latest_sim_id": "u01160",
   "recent_events": [
-    {
-      "sim_id": "u01103",
-      "status": "FIXED",
-      "time": "07:53:46",
-      "issues": [
-        "Observation table record handler injected 9 td columns (including Trial #, scale, shear, probe vector) misaligning with the 5 defined observation columns (Dimension, Determinant, Trace, Eigenvalue, Frobenius Norm)",
-        "Stepper buttons (.stepper-btn-up, .stepper-btn-down) and action/reset buttons were not wired in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01112",
-      "status": "PASS",
-      "time": "07:54:00",
-      "issues": []
-    },
-    {
-      "sim_id": "u01110",
-      "status": "PASS",
-      "time": "07:54:09",
-      "issues": []
-    },
-    {
-      "sim_id": "u01114",
-      "status": "FIXED",
-      "time": "07:54:49",
-      "issues": [
-        "Unwired action buttons 'btn_align_slip_gauge' (4 mm slip gauge calibration) and 'btn_auto_seat_caliper' (seat caliper on pitch circle).",
-        "Unwired stepper up/down buttons (.stepper-btn) across all 4 stepper input controls.",
-        "Observation recording table generated only 7 misaligned columns instead of matching the 9 columns specified in observation_thead_html.",
-        "Live telemetry updater failed to update readout elements whose DOM element IDs use the 'val_' prefix ('val_reading_*')."
-      ]
-    },
-    {
-      "sim_id": "u01113",
-      "status": "FIXED",
-      "time": "07:54:59",
-      "issues": [
-        "Observation table columns in recordObservationRow were misaligned (generating 12 mismatched fields instead of the 9 defined in the observation header).",
-        "Action button btn_resample ('Generate New Independent Random Samples') was completely unwired.",
-        "Action button btn_toggle_tails ('Toggle Significance Level alpha') was completely unwired, with critical Z thresholds and acceptance regions hardcoded to alpha=0.05 (Z=+-1.96).",
-        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js.",
-        "Experiment options select dropdown lacked change event wiring for baseline and disparity modes."
-      ]
-    },
-    {
-      "sim_id": "u01118",
-      "status": "FIXED",
-      "time": "07:55:02",
-      "issues": [
-        "Observation table columns misaligned: 6 data cells generated for 5-column thead by improperly including Stirrer RPM.",
-        "Live telemetry readout IDs mismatched: DOM IDs in readouts_html use 'val_reading_*' while updateTelemetry targeted 'reading_*' and 'val_*'.",
-        "Unwired stepper buttons: .stepper-btn elements lacked click event listeners for incrementing/decrementing controls.",
-        "Unwired action button: 'btn_calibrate_buffer' had no click listener to perform standard buffer calibration to pH 7.0."
-      ]
-    },
     {
       "sim_id": "u01117",
       "status": "FIXED",
@@ -388,6 +333,61 @@
         "Observation table row generation pushed 7 numerical columns instead of the 6 standardized columns defined in observation_thead_html (Bacterial Strain, Incubation Time, Slant Reaction, Butt Reaction, Gas Production, H2S Production)",
         "Action buttons (btn_sterilize_and_inoculate, btn_run_incubation) and stepper increment/decrement buttons (.stepper-btn) were unhandled and not wired to event listeners",
         "Numbered apparatus badges in canvas_js inverted Badge 3 and Badge 4 relative to legend_pills_html (Legend Pill 3 is TSB broth and Pill 4 is TSI slants, but canvas rendered Badge 4 on broth and Badge 3 on slants)"
+      ]
+    },
+    {
+      "sim_id": "u01141",
+      "status": "ERROR",
+      "time": "08:02:34",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01145",
+      "status": "PASS",
+      "time": "08:02:50",
+      "issues": []
+    },
+    {
+      "sim_id": "u01154",
+      "status": "FIXED",
+      "time": "08:03:09",
+      "issues": [
+        "Raw/broken MathML formatting for discharge units (/m³s instead of m³/s) in readouts and observation table header",
+        "Mangled MathML fraction for inlet flow rate unit (L/m in instead of L/min) in steppers",
+        "Unwired stepper ▲/▼ buttons for inlet flow rate, orifice diameter, and trajectory station",
+        "Unwired action buttons: 'Toggle Collection Valve' (btn_start_collection) and 'Align Jet Trajectory Pointer' (btn_align_pointer)",
+        "Observation table columns severely misaligned: tbody row appended 12 unmapped columns with record count and mismatched order, while thead had 11 columns with water head, coordinates, discharge, and hydraulic coefficients"
+      ]
+    },
+    {
+      "sim_id": "u01150",
+      "status": "PASS",
+      "time": "08:03:26",
+      "issues": []
+    },
+    {
+      "sim_id": "u01156",
+      "status": "FIXED",
+      "time": "08:03:47",
+      "issues": [
+        "Unwired action buttons: btn_toggle_pump, btn_toggle_drain, and btn_fill_to_target lacked click listeners in canvas_js",
+        "Unwired stepper controls: stepper buttons (.stepper-btn) lacked increment and decrement event listeners",
+        "Misaligned observation table: canvas_js inserted 9 td cells for an observation table header configured with only 7 columns",
+        "Corrupted data-unit attributes in readouts_html containing nested HTML span tags rather than plain unit strings",
+        "Spurious MathML tags enclosing English prose words and abbreviations in aim_html and procedure_section_html"
+      ]
+    },
+    {
+      "sim_id": "u01160",
+      "status": "FIXED",
+      "time": "08:03:50",
+      "issues": [
+        "Unwired action button: btn_sweep_servo lacked a click event listener and animation logic to sweep the servo horn between 0° and 180°.",
+        "Unwired stepper buttons: .stepper-btn (▲ and ▼) elements lacked click listeners to increment or decrement control inputs.",
+        "Telemetry display bug: Stepper rotor angle readout was wrapped with modulo 360°, resetting to 0.0° instead of displaying total angular displacement (360.0°) on completing 2048 steps.",
+        "Raw math formatting artifact: In apparatus_html, digital I/O pins was rendered as a vertical fraction (I over O) via MathML instead of clean text 'I/O'."
       ]
     }
   ],
@@ -1338,11 +1338,16 @@
     "u01139",
     "u01140",
     "u01143",
+    "u01145",
     "u01146",
     "u01147",
     "u01148",
+    "u01150",
     "u01151",
     "u01152",
-    "u01153"
+    "u01153",
+    "u01154",
+    "u01156",
+    "u01160"
   ]
 }
