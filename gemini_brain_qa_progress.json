@@ -1,53 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:28:58",
-  "completed_count": 1062,
-  "fixed_count": 1032,
-  "latest_sim_id": "u01297",
+  "updated_at": "2026-10-19 08:29:45",
+  "completed_count": 1067,
+  "fixed_count": 1035,
+  "latest_sim_id": "u01303",
   "recent_events": [
-    {
-      "sim_id": "u01260",
-      "status": "PASS",
-      "time": "08:21:01",
-      "issues": []
-    },
-    {
-      "sim_id": "u01259",
-      "status": "FIXED",
-      "time": "08:21:27",
-      "issues": [
-        "Observation table columns mismatched: table header defined 5 columns (Bridge Resistance, Theoretical Frequency, Observed Period, Measured Frequency, Peak-to-Peak Voltage), but record button created 6 columns starting with a row index, misaligning all data rows.",
-        "Unwired control actions: 'btn_toggle_power' and 'btn_autoscale_oscilloscope' had no event listeners or simulation state bindings.",
-        "Stepper buttons not wired: script queried '[data-stepper]' instead of the actual '.stepper-btn' elements with 'data-target'.",
-        "Numbered badges inverted relative to legend pills: Badge 1 pointed to IC741 and Badge 2 to Wien Bridge Network, while Legend Pill 1 is Wien Bridge Network and Pill 2 is Operational Amplifier (IC741)."
-      ]
-    },
-    {
-      "sim_id": "u01262",
-      "status": "FIXED",
-      "time": "08:21:28",
-      "issues": [
-        "Observation table record button logged columns out of order: Transmitted Intensity I(x) (column 6), Quantum Efficiency η (column 7), and Generation Rate G (column 8) were transposed relative to the observation table headers."
-      ]
-    },
-    {
-      "sim_id": "u01261",
-      "status": "FIXED",
-      "time": "08:21:41",
-      "issues": [
-        "Unwired action buttons: 'btn_tune_bandgap' (Tune Photon Energy to Bandgap Threshold) and 'btn_toggle_bandgap_type' (Toggle Direct / Indirect Specimen) were not hooked up to any event listeners.",
-        "Unwired stepper buttons: clicking .stepper-btn-up and .stepper-btn-down had no event handlers to increment or decrement inputs.",
-        "Misaligned observation table columns: row creation inverted columns (placed Photon Energy and Temperature ahead of Specimen Material), omitted Crystal Quality entirely, and left Carrier Generation Rate column empty."
-      ]
-    },
-    {
-      "sim_id": "u01254",
-      "status": "ERROR",
-      "time": "08:21:52",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01264",
       "status": "PASS",
@@ -384,6 +341,49 @@
         "Unwired action buttons: 'btn_dispense_drop', 'btn_toggle_stirrer', and 'btn_find_inflection' lacked click event listeners in canvas_js.",
         "Unwired stepper controls: Stepper up and down buttons ('.stepper-btn-up', '.stepper-btn-down') were not bound to input adjustments and dispatch events.",
         "Static stirrer state: Implemented interactive 'stirrerActive' state toggled by the stirrer button, controlling rotation, fluid vortex, crystals swirling, and power LED."
+      ]
+    },
+    {
+      "sim_id": "u01300",
+      "status": "PASS",
+      "time": "08:29:44",
+      "issues": []
+    },
+    {
+      "sim_id": "u01301",
+      "status": "FIXED",
+      "time": "08:29:44",
+      "issues": [
+        "Fixed erroneous MathML tag inside possessive noun 'Lenz\\'s law' in principles_summary_html where apostrophe-s was misparsed as mathematical variable slip s.",
+        "Wired unhandled 'Toggle MCB Power & DOL Starter' action button (#btn_toggle_power) to toggle motor energization state, updating meters and mechanical rotation.",
+        "Wired unhandled stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) for W1 and W2 weight controls to increment/decrement values and trigger syncInputs.",
+        "Corrected observation table row column misalignment: removed extraneous trial number column and aligned speed and torque cells with the table headers."
+      ]
+    },
+    {
+      "sim_id": "u01304",
+      "status": "PASS",
+      "time": "08:29:44",
+      "issues": []
+    },
+    {
+      "sim_id": "u01298",
+      "status": "FIXED",
+      "time": "08:29:44",
+      "issues": [
+        "Apparatus badge numbering in canvas_js was mismatched with legend_pills_html: Badge 1 was pointing to Conductivity Meter, Badge 2 to Conductivity Cell, Badge 3 to Burette, and Badge 4 to Beaker, whereas legend pills define 1: Burette, 2: Beaker, 3: Conductivity cell, 4: Conductivity meter, 5: Pipette.",
+        "Observation table row generation was misaligned with observation_thead_html: the header specifies 3 columns (Volume of NaOH, Conductance, Resistance), but the record button inserted a row starting with recordCount (S.No) into column 1 and omitted the Resistance calculation entirely.",
+        "Primary action button (#btn_dispense_drop) and stepper buttons (.stepper-btn-up, .stepper-btn-down) were unhandled in canvas_js, leaving them unresponsive to user interactions."
+      ]
+    },
+    {
+      "sim_id": "u01303",
+      "status": "FIXED",
+      "time": "08:29:45",
+      "issues": [
+        "Observation table columns in canvas_js row builder were misaligned with the 7 headers in observation_thead_html (an extraneous serial number and count rate column were present while the extrapolated lattice parameter a0 column was missing).",
+        "Action buttons btn_peak_search (Auto-Align to Nearest Peak Centroid) and btn_compute_extrapolation (Execute Nelson-Riley Regression Fit) were defined in actions_html but lacked event listeners in canvas_js.",
+        "Stepper input increment/decrement buttons (.stepper-btn) were not wired to update inputs in canvas_js."
       ]
     }
   ],
@@ -1449,6 +1449,11 @@
     "u01294",
     "u01295",
     "u01296",
-    "u01297"
+    "u01297",
+    "u01298",
+    "u01300",
+    "u01301",
+    "u01303",
+    "u01304"
   ]
 }
