@@ -1,102 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:45:26",
-  "completed_count": 1122,
-  "fixed_count": 1080,
-  "latest_sim_id": "u01393",
+  "updated_at": "2026-10-19 08:47:19",
+  "completed_count": 1127,
+  "fixed_count": 1083,
+  "latest_sim_id": "u01403",
   "recent_events": [
-    {
-      "sim_id": "u01345",
-      "status": "FIXED",
-      "time": "08:36:19",
-      "issues": [
-        "Misaligned observation table columns in btnRecord: row contained 6 columns instead of 5, with peak deflection and pitch length inverted and an extraneous unmapped beam power cell",
-        "Unwired action button btn_align_optical_axis: missing click listener to align emission angle to optical axis",
-        "Unwired stepper buttons: stepper-btn up and down buttons lacked click event listeners to modify target input values"
-      ]
-    },
-    {
-      "sim_id": "u01342",
-      "status": "FIXED",
-      "time": "08:36:19",
-      "issues": [
-        "Observation table record button logged mismatched endpoints, spans, and slope instead of matching the 7 defined header columns: Step Index k, Decision Parameter pk, Chosen Direction Dir, Raster X, Raster Y, Ideal Y, and Raster Error.",
-        "Unwired action button btn_auto_rasterize (Auto-Rasterize Full Line) in canvas_js.",
-        "Missing event handlers for stepper up/down buttons and coordinate inputs to refresh rasterization trajectory upon value changes."
-      ]
-    },
-    {
-      "sim_id": "u01346",
-      "status": "FIXED",
-      "time": "08:36:38",
-      "issues": [
-        "Misaligned observation table: tbody created 9 mismatched columns whereas thead defined 6 columns (P, M, e, sigma_max, sigma_min, Mux).",
-        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down buttons lacked click event handlers to increment/decrement input values.",
-        "Unwired action button: #btn_auto_proportion was defined in controls HTML but had no click listener in canvas_js.",
-        "Telemetry update overwriting units: setTelemetryText replaced entire element textContent, wiping out nested MathML unit spans."
-      ]
-    },
-    {
-      "sim_id": "u01347",
-      "status": "FIXED",
-      "time": "08:36:46",
-      "issues": [
-        "Observation table row in canvas_js rendered 8 cells including cross-section dimensions (b × D), whereas observation_thead_html has only 7 headers, causing column misalignment.",
-        "Action button 'btn_optimize_steel' (Auto-Optimize Rebar Detailing) and stepper step buttons were unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01340",
-      "status": "FIXED",
-      "time": "08:36:51",
-      "issues": [
-        "Observation table columns in canvas_js were misaligned with the table header (logging tree count and depth in place of feature coordinates X1 and X2).",
-        "Interactive action buttons ('btn_classify_sample' and 'btn_toggle_criterion') and stepper adjustment buttons lacked event listeners in canvas_js.",
-        "Observation table header for Ensemble Trees was missing symbol MathML markup."
-      ]
-    },
-    {
-      "sim_id": "u01355",
-      "status": "FIXED",
-      "time": "08:37:50",
-      "issues": [
-        "Unwired action buttons: 'btn_auto_run' (Auto Run to Base Case) and 'btn_complete_unwind' (Fast-Forward Unwinding) were missing event listeners in canvas_js",
-        "Unwired stepper up/down buttons: '.stepper-btn' elements were missing click event listeners in canvas_js",
-        "Misaligned observation table columns: btnRecord inserted trial number and step index instead of matching the 5 table headers (Problem Name, Input Parameter, Peak Stack Depth, Total Steps, Computed Result)",
-        "Orphaned Badge 3 on canvas: Canvas rendered Badge 3 without a corresponding apparatus item or legend pill in the layout"
-      ]
-    },
-    {
-      "sim_id": "u01354",
-      "status": "FIXED",
-      "time": "08:37:56",
-      "issues": [
-        "Observation table columns in canvas_js were misaligned with observation_thead_html (8 columns generated vs 6 specified in the header).",
-        "Action button btn_run_unwind was unwired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js.",
-        "Unclosed tags (</ul>, </div>, </li>) and unformatted math expressions in principles_list_html."
-      ]
-    },
-    {
-      "sim_id": "u01353",
-      "status": "FIXED",
-      "time": "08:38:01",
-      "issues": [
-        "Misaligned observation table row schema (rendered 9 td cells across 6 th columns)",
-        "Unwired action button btn_schedule_code (Software Instruction Scheduling)",
-        "Unwired stepper increment and decrement buttons"
-      ]
-    },
-    {
-      "sim_id": "u01352",
-      "status": "FIXED",
-      "time": "08:38:10",
-      "issues": [
-        "Raw broken LaTeX in observation_thead_html for column 6 (unmatched brace and escaped underscore in MathML)",
-        "Observation table columns in btnRecord (7 columns) did not match the 9 columns declared in observation_thead_html",
-        "Action buttons (btn_run_trace, btn_flush_pipeline) and stepper up/down buttons were unhandled/unwired in canvas_js"
-      ]
-    },
     {
       "sim_id": "u01356",
       "status": "ERROR",
@@ -360,6 +268,82 @@
         "Unwired action and stepper buttons: #btn_trigger_critical_hazard and the stepper up/down buttons (.stepper-btn) were not wired in canvas_js.",
         "Direct canvas switch interactivity: Added canvas click detection allowing users to toggle Driver, Buckle, and Ignition switch states directly on the board."
       ]
+    },
+    {
+      "sim_id": "u01387",
+      "status": "FIXED",
+      "time": "08:45:34",
+      "issues": [
+        "Observation table column mismatch: table header had 6 columns omitting the trial index (#) while rows appended 7 columns, and Main Scale Reading was logging total target distance rather than whole meter reading.",
+        "Unwired action button: #btn_snap_coincidence lacked a click event listener in canvas_js.",
+        "Unwired stepper controls: .stepper-btn up/down controls lacked click event handlers and inputs lacked input/change event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01377",
+      "status": "ERROR",
+      "time": "08:45:43",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01372",
+      "status": "ERROR",
+      "time": "08:45:48",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01397",
+      "status": "PASS",
+      "time": "08:46:05",
+      "issues": []
+    },
+    {
+      "sim_id": "u01396",
+      "status": "FIXED",
+      "time": "08:46:07",
+      "issues": [
+        "Unwired interactive action buttons (btn_execute_step, btn_auto_handshake, btn_transmit_secure_ping) and stepper increment/decrement buttons (.stepper-btn) in canvas_js",
+        "Erroneous MathML fraction tags in apparatus_html where '1.2/1.3' and '128/256-bit' were formatted as math fractions",
+        "Erroneous MathML single-letter math formatting for 'e.g.' in principles_summary_html",
+        "Erroneous MathML fraction tag in validation_html where socket 'I/O' was formatted as a math fraction"
+      ]
+    },
+    {
+      "sim_id": "u01386",
+      "status": "FIXED",
+      "time": "08:46:12",
+      "issues": [
+        "Observation table columns in canvas_js were misaligned with the 7 thead columns and prepended an unaligned trial index",
+        "Readout DOM element references in canvas_js targeted parent list items instead of val_reading_* value spans",
+        "Action buttons (btn_construct_grid, btn_align_divider) and stepper increment/decrement controls were unwired in canvas_js",
+        "Legend pills HTML (6 items) did not match the 5 apparatus components and leader badges in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01384",
+      "status": "ERROR",
+      "time": "08:46:42",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01395",
+      "status": "ERROR",
+      "time": "08:47:08",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01403",
+      "status": "PASS",
+      "time": "08:47:18",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1483,7 +1467,12 @@
     "u01382",
     "u01383",
     "u01385",
+    "u01386",
+    "u01387",
     "u01389",
-    "u01393"
+    "u01393",
+    "u01396",
+    "u01397",
+    "u01403"
   ]
 }
