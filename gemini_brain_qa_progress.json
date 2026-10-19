@@ -1,59 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:41:05",
-  "completed_count": 1782,
-  "fixed_count": 1599,
-  "latest_sim_id": "u02266",
+  "updated_at": "2026-10-19 16:42:00",
+  "completed_count": 1787,
+  "fixed_count": 1603,
+  "latest_sim_id": "u02277",
   "recent_events": [
-    {
-      "sim_id": "u02230",
-      "status": "FIXED",
-      "time": "16:31:37",
-      "issues": [
-        "Observation table column mismatch: btnRecord generated only 5 columns with slit width instead of the 6 columns defined in observation_thead_html (Star Identifier, Measured Wavelength, Identified Transition Feature, Normalized Core Flux, Effective Temperature, Spectral Classification).",
-        "Unwired action buttons: 'btn_auto_centroid_line' and 'btn_reference_arc_overlay' had no click event listeners or functional implementations in canvas_js.",
-        "Unwired stepper buttons: '.stepper-btn' up/down buttons had no click listeners to increment/decrement input values and dispatch change events.",
-        "Legend pill mismatch with leader badges: Pill 4 is 'Focal Plane Spectral Dispersion Strip' and Pill 5 is 'Wavelength Scanner Vernier Reticle', but Badge 4 pointed to the vernier drum and Badge 5 pointed to the calibration lamp."
-      ]
-    },
-    {
-      "sim_id": "u02228",
-      "status": "ERROR",
-      "time": "16:31:39",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02229",
-      "status": "ERROR",
-      "time": "16:31:51",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02232",
-      "status": "FIXED",
-      "time": "16:31:53",
-      "issues": [
-        "Readout DOM IDs in syncDOM() (val_v_u, etc.) did not match readouts_html DOM element IDs (val_reading_v_u, val_reading_flame_height, val_reading_flame_area, val_reading_cone_half_angle, val_reading_s_l), preventing live telemetry updates.",
-        "Observation table recorder inserted 8 columns with mismatched data (including row index and cone half angle) instead of the 7 columns defined in observation_thead_html (Mixture Flow Rate, Equivalence Ratio, Burner Diameter, Approach Velocity, Flame Cone Height, Flame Surface Area, Laminar Burning Velocity).",
-        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) and action button (btn_auto_align_graticule) were not bound to click events.",
-        "Style 2 leader line badges in canvas_js were misnumbered and omitted apparatus item 5 (Premixed Conical Flame Envelope), causing desynchronization with the 7 legend pills."
-      ]
-    },
-    {
-      "sim_id": "u02235",
-      "status": "FIXED",
-      "time": "16:32:02",
-      "issues": [
-        "Runtime crash caused by undefined variable 'omega' in render loop when updating telemetry readout 'read_angular_velocity'",
-        "Action buttons (btn_toggle_mode, btn_swap_phases, btn_freeze_vector) and stepper arrow buttons were unwired and non-functional",
-        "DC excitation mode and ctrl_dc_angle stepper were not implemented in the physics calculation, preventing verification of static pole alignments",
-        "Observation table columns in btnRecord script had 7 misaligned fields with trial count and angular velocity instead of the 6 columns defined in observation_thead_html (Supply Frequency, Peak Phase Current, Peak Coil Flux Density Bm, Resultant Field Density Bnet, Synchronous Speed Ns, Rotation Direction)"
-      ]
-    },
     {
       "sim_id": "u02237",
       "status": "FIXED",
@@ -381,6 +332,55 @@
         "Resolved observation table misalignment between 6 header columns and 8 recorded row cells in canvas_js",
         "Wired interactive action buttons (btn_send_request and btn_simulate_packet_loss) and stepper increment/decrement controls in canvas_js"
       ]
+    },
+    {
+      "sim_id": "u02270",
+      "status": "FIXED",
+      "time": "16:41:13",
+      "issues": [
+        "Misaligned observation table row schema with the 9-column observation_thead_html header (removed extraneous trialCount and clr columns, and correctly ordered Ri, SHF, LHF, and Net energy flux)",
+        "Unwired action button btn_equilibrate_flux (implemented equilibrium solver to find and set equilibrium upper soil temperature Tu where Net surface energy flux equals zero)",
+        "Unwired stepper up/down buttons (added click listeners for all .stepper-btn elements to increment/decrement respective inputs within min/max bounds)"
+      ]
+    },
+    {
+      "sim_id": "u02267",
+      "status": "FIXED",
+      "time": "16:41:25",
+      "issues": [
+        "Misaligned observation table columns: btnRecord generated 9 table cells (including rowCount, qrad, sBulk) for a 6-column observation header.",
+        "Unwired action and stepper controls: Execute adjustment (#btn_trigger_adjustment), surface thermal perturbation (#btn_perturb_surface), and stepper buttons (.stepper-btn) had no event listener attachments.",
+        "Static console readout: Digital enthalpy display in drawEnthalpyConsole was hardcoded to 0.00 J/m² instead of referencing physics.deltaH.",
+        "Fragmented MathML unit rendering: Denominators for K/km, K/day, and J/(kg·K) were split across outside tokens in principles, steppers, readouts, and table headers."
+      ]
+    },
+    {
+      "sim_id": "u02272",
+      "status": "FIXED",
+      "time": "16:41:25",
+      "issues": [
+        "Observation table record handler contained 7 table data cells for 6 table header columns due to an extraneous total liquid volume cell, causing severe misalignment of equilibrium temperature and heat exchanged readings.",
+        "Action button #btn_dispense_stir was unwired in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02273",
+      "status": "FIXED",
+      "time": "16:41:46",
+      "issues": [
+        "Action button `btn_execute_stroke` was unwired in canvas_js, preventing execution of forging strokes and recording of passes.",
+        "Stepper increment and decrement buttons (`.stepper-btn-up`, `.stepper-btn-down`) lacked click event listeners in canvas_js.",
+        "Observation table recorder inserted 7 data cells including an unmapped billet height cell, misaligning values against the 6-column header.",
+        "Experiment mode select dropdown was not wired to automatically toggle rotation angle between 90° (Square) and 60° (Hexagonal).",
+        "Callout Badge 3 for the high-temperature billet was located at (420, 395) inside the lower anvil bed; repositioned to (620, 240) in clear space with an authentic S-curve."
+      ]
+    },
+    {
+      "sim_id": "u02277",
+      "status": "PASS",
+      "time": "16:42:00",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -2164,7 +2164,12 @@
     "u02264",
     "u02265",
     "u02266",
+    "u02267",
     "u02268",
-    "u02269"
+    "u02269",
+    "u02270",
+    "u02272",
+    "u02273",
+    "u02277"
   ]
 }
