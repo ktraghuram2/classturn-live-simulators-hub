@@ -1,73 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:12:10",
-  "completed_count": 992,
-  "fixed_count": 974,
-  "latest_sim_id": "u01185",
+  "updated_at": "2026-10-19 08:12:52",
+  "completed_count": 997,
+  "fixed_count": 978,
+  "latest_sim_id": "u01204",
   "recent_events": [
-    {
-      "sim_id": "u01156",
-      "status": "FIXED",
-      "time": "08:03:47",
-      "issues": [
-        "Unwired action buttons: btn_toggle_pump, btn_toggle_drain, and btn_fill_to_target lacked click listeners in canvas_js",
-        "Unwired stepper controls: stepper buttons (.stepper-btn) lacked increment and decrement event listeners",
-        "Misaligned observation table: canvas_js inserted 9 td cells for an observation table header configured with only 7 columns",
-        "Corrupted data-unit attributes in readouts_html containing nested HTML span tags rather than plain unit strings",
-        "Spurious MathML tags enclosing English prose words and abbreviations in aim_html and procedure_section_html"
-      ]
-    },
-    {
-      "sim_id": "u01160",
-      "status": "FIXED",
-      "time": "08:03:50",
-      "issues": [
-        "Unwired action button: btn_sweep_servo lacked a click event listener and animation logic to sweep the servo horn between 0° and 180°.",
-        "Unwired stepper buttons: .stepper-btn (▲ and ▼) elements lacked click listeners to increment or decrement control inputs.",
-        "Telemetry display bug: Stepper rotor angle readout was wrapped with modulo 360°, resetting to 0.0° instead of displaying total angular displacement (360.0°) on completing 2048 steps.",
-        "Raw math formatting artifact: In apparatus_html, digital I/O pins was rendered as a vertical fraction (I over O) via MathML instead of clean text 'I/O'."
-      ]
-    },
-    {
-      "sim_id": "u01161",
-      "status": "FIXED",
-      "time": "08:03:56",
-      "issues": [
-        "Mangled MathML notation in actions_html: The select control toggle button label contained an erroneous fraction '<mfrac><mrow><mi>s</mi></mrow><mrow><mi>s</mi></mrow></mfrac>̄' instead of proper 's / s̄' (<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>s</mi><mo>/</mo><mover><mi>s</mi><mo accent=\"true\">―</mo></mover></mrow></math>) notation."
-      ]
-    },
-    {
-      "sim_id": "u01159",
-      "status": "FIXED",
-      "time": "08:04:13",
-      "issues": [
-        "Observation table row generation in canvas_js included an unmapped trial index and placed balancing radius r out of order, misaligning with the 12-column table header",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update numeric inputs or trigger physics updates",
-        "Action button 'btn_attach_balancing_mass' had no event listener or integration with the balance state",
-        "Counterbalance mass and reaction forces did not dynamically toggle to demonstrate bearing vibration elimination upon balancing"
-      ]
-    },
-    {
-      "sim_id": "u01163",
-      "status": "FIXED",
-      "time": "08:04:45",
-      "issues": [
-        "Corrupted nested MathML fraction and mangled unit string 'bit/s/sHz' in Channel Capacity live readout and table header rectified to clean 'bit/s/Hz'",
-        "Observation table columns in canvas_js btnRecord were severely misaligned (8 columns with mismatched headers vs 6 defined table header columns)",
-        "Action controls btn_generate_channel and btn_optimize_waterfilling were unhandled in canvas_js event initialization"
-      ]
-    },
-    {
-      "sim_id": "u01164",
-      "status": "FIXED",
-      "time": "08:04:47",
-      "issues": [
-        "Misaligned observation table columns: logObservation generated 8 columns including an unsynchronized trialCount column and misplaced metrics, whereas observation_thead_html expects 7 columns (Active Antennas N, Combining Method, Channel Spacing, Average SNR, Output SNR, Diversity Gain, Combining Efficiency).",
-        "Unwired stepper arrow buttons: .stepper-btn-up and .stepper-btn-down were not bound to click listeners, preventing step-wise UI control of antennas, SNR, spacing, and combining mode.",
-        "Unwired action buttons: Action buttons #btn_new_fading_profile and #btn_toggle_simo_miso lacked event listeners to re-seed Rayleigh fading realizations or toggle SIMO/MISO topology.",
-        "Erratic diversity gain calculation: Diversity gain subtracted fluctuating single-branch instantaneous fading rather than baseline channel average SNR (avgSnrDb), causing telemetry instability."
-      ]
-    },
     {
       "sim_id": "u01158",
       "status": "FIXED",
@@ -390,6 +327,59 @@
         "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked click event listeners in canvas_js",
         "Misaligned observation table columns: row.innerHTML contained an extraneous count/serial number cell and had Output Voltage and Closed-Loop Gain transposed relative to observation_thead_html",
         "Missing operational amplifier output voltage clipping at ±14.0 V saturation rails in readInputs()"
+      ]
+    },
+    {
+      "sim_id": "u01199",
+      "status": "FIXED",
+      "time": "08:12:14",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01191",
+      "status": "ERROR",
+      "time": "08:12:16",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01200",
+      "status": "FIXED",
+      "time": "08:12:37",
+      "issues": [
+        "Raw LaTeX '*_{i+1}' in principles_summary_html replaced with proper MathML notation",
+        "Observation table column mismatch: btnRecord generated 9 columns against the 6-column header (fixed to align with Step Index, Abscissa, Numerical Solution, Euler Slope, Corrector Slope, and Mean Slope)",
+        "Unwired stepper up/down buttons: connected event listeners to step controls by input step size and bounds",
+        "Unwired action button #btn_cycle_equation: implemented differential equation cycling across test equations (f1, f2, f3)"
+      ]
+    },
+    {
+      "sim_id": "u01206",
+      "status": "FIXED",
+      "time": "08:12:48",
+      "issues": [
+        "Observation table recorder row generated 8 <td> elements, causing column misalignment with the 7 observation table headers; removed the extraneous aN column."
+      ]
+    },
+    {
+      "sim_id": "u01203",
+      "status": "PASS",
+      "time": "08:12:50",
+      "issues": []
+    },
+    {
+      "sim_id": "u01204",
+      "status": "FIXED",
+      "time": "08:12:51",
+      "issues": [
+        "Observation table record row had 7 columns misaligned with the 8 columns in thead (inserted h as coordinate x, shifted values, and omitted derivative/slope column).",
+        "Action button btn_solve_full_domain (Solve and Trace Entire Domain) was present in HTML controls but was completely unwired in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) had data-target attributes but were not wired up to any click handlers in canvas_js.",
+        "Activity selection dropdown (System 1, System 2, System 3) was not wired up to the governing equations f(x, y, z) and g(x, y, z).",
+        "Live telemetry readouts were statically pinned to node 1 instead of dynamically updating to reflect the currentNode swept by the playhead."
       ]
     }
   ],
@@ -1384,7 +1374,12 @@
     "u01195",
     "u01197",
     "u01198",
+    "u01199",
+    "u01200",
     "u01201",
-    "u01202"
+    "u01202",
+    "u01203",
+    "u01204",
+    "u01206"
   ]
 }
