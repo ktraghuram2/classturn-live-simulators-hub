@@ -1,61 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:48:17",
-  "completed_count": 1812,
-  "fixed_count": 1624,
-  "latest_sim_id": "u02306",
+  "updated_at": "2026-10-19 16:49:37",
+  "completed_count": 1817,
+  "fixed_count": 1628,
+  "latest_sim_id": "u02314",
   "recent_events": [
-    {
-      "sim_id": "u02263",
-      "status": "ERROR",
-      "time": "16:41:00",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02266",
-      "status": "FIXED",
-      "time": "16:41:05",
-      "issues": [
-        "Fixed corrupted fraction notation for Layer 2/3 in apparatus specification",
-        "Rectified malformed nested fraction representation of Kendall M/M/1 queueing notation in principles summary",
-        "Cleaned up fractional math layout for compound rate unit (req/s) and MathML-wrapped text (index) in steppers, readouts, and observation headers",
-        "Resolved observation table misalignment between 6 header columns and 8 recorded row cells in canvas_js",
-        "Wired interactive action buttons (btn_send_request and btn_simulate_packet_loss) and stepper increment/decrement controls in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u02270",
-      "status": "FIXED",
-      "time": "16:41:13",
-      "issues": [
-        "Misaligned observation table row schema with the 9-column observation_thead_html header (removed extraneous trialCount and clr columns, and correctly ordered Ri, SHF, LHF, and Net energy flux)",
-        "Unwired action button btn_equilibrate_flux (implemented equilibrium solver to find and set equilibrium upper soil temperature Tu where Net surface energy flux equals zero)",
-        "Unwired stepper up/down buttons (added click listeners for all .stepper-btn elements to increment/decrement respective inputs within min/max bounds)"
-      ]
-    },
-    {
-      "sim_id": "u02267",
-      "status": "FIXED",
-      "time": "16:41:25",
-      "issues": [
-        "Misaligned observation table columns: btnRecord generated 9 table cells (including rowCount, qrad, sBulk) for a 6-column observation header.",
-        "Unwired action and stepper controls: Execute adjustment (#btn_trigger_adjustment), surface thermal perturbation (#btn_perturb_surface), and stepper buttons (.stepper-btn) had no event listener attachments.",
-        "Static console readout: Digital enthalpy display in drawEnthalpyConsole was hardcoded to 0.00 J/m² instead of referencing physics.deltaH.",
-        "Fragmented MathML unit rendering: Denominators for K/km, K/day, and J/(kg·K) were split across outside tokens in principles, steppers, readouts, and table headers."
-      ]
-    },
-    {
-      "sim_id": "u02272",
-      "status": "FIXED",
-      "time": "16:41:25",
-      "issues": [
-        "Observation table record handler contained 7 table data cells for 6 table header columns due to an extraneous total liquid volume cell, causing severe misalignment of equilibrium temperature and heat exchanged readings.",
-        "Action button #btn_dispense_stir was unwired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js."
-      ]
-    },
     {
       "sim_id": "u02273",
       "status": "FIXED",
@@ -393,6 +342,54 @@
       "status": "PASS",
       "time": "16:48:16",
       "issues": []
+    },
+    {
+      "sim_id": "u02307",
+      "status": "FIXED",
+      "time": "16:48:54",
+      "issues": [
+        "Unwired action button: #btn_step_clock ('Apply Single Clock Pulse') lacked an event listener in canvas_js.",
+        "Unwired canvas Reset button: The master reset push-button on the FPGA trainer board was inert without canvas click handling.",
+        "Readout unit truncation: updateTelemetry used el.textContent, wiping out pre-rendered MathML unit child spans on telemetry refresh.",
+        "Unwired experiment mode: experimentSelect dropdown did not automatically toggle clock edge polarity between posedge and negedge modes."
+      ]
+    },
+    {
+      "sim_id": "u02309",
+      "status": "FIXED",
+      "time": "16:49:11",
+      "issues": [
+        "Observation table data row appended 7 columns with misaligned noise data into a 6-column table header.",
+        "Action buttons (btn_direct_write, btn_covert_burst) and stepper controls were not wired to simulation state.",
+        "Validation section contained an erroneous MathML fraction representation (I over O) for the technical term I/O."
+      ]
+    },
+    {
+      "sim_id": "u02311",
+      "status": "PASS",
+      "time": "16:49:28",
+      "issues": []
+    },
+    {
+      "sim_id": "u02310",
+      "status": "FIXED",
+      "time": "16:49:32",
+      "issues": [
+        "Unwired action button btn_attempt_transfer (Initiate Direct Data Transfer) in canvas_js",
+        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js preventing parameter adjustment via UI buttons",
+        "Missing reset control listener for btnReset in canvas_js",
+        "Corrupted MathML formatting in Inbound Flux unit rendering (fraction byte s/s instead of text bytes/s) in readouts_html and observation_thead_html"
+      ]
+    },
+    {
+      "sim_id": "u02314",
+      "status": "FIXED",
+      "time": "16:49:37",
+      "issues": [
+        "Unwired action buttons: Execute Synchronous Round (btn_step_round), Simulate Node Crash (btn_inject_crash), and Auto-Run to Consensus (btn_run_consensus) had no event listeners in canvas_js",
+        "Unwired stepper buttons: Stepper up and down buttons (.stepper-btn) had no click event listeners to increment/decrement input values and sync simulator state",
+        "Misaligned observation table columns: btnRecord logged 6 <td> elements including an extra total node count column for a 5-column table header"
+      ]
     }
   ],
   "completed_ids": [
@@ -2207,6 +2204,11 @@
     "u02303",
     "u02304",
     "u02305",
-    "u02306"
+    "u02306",
+    "u02307",
+    "u02309",
+    "u02310",
+    "u02311",
+    "u02314"
   ]
 }
