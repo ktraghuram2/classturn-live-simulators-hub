@@ -1,64 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 19:04:22",
-  "completed_count": 2073,
-  "fixed_count": 1858,
-  "latest_sim_id": "u01749",
+  "updated_at": "2026-10-19 19:05:28",
+  "completed_count": 2078,
+  "fixed_count": 1862,
+  "latest_sim_id": "u01815",
   "recent_events": [
-    {
-      "sim_id": "u02285",
-      "status": "FIXED",
-      "time": "18:43:09",
-      "issues": [
-        "Misaligned observation table columns: btnRecord generated 7 columns including an extraneous Temperature column, shifting and mismatching the 6-column observation table header (Run Number, C1, C2, Ratio, Discharge Time, EMF)",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons lacked click handlers to adjust concentration and temperature inputs",
-        "Unwired action buttons: btn_insert_salt_bridge, btn_connect_voltmeter, and btn_add_na2s had no event listeners or interactive state bindings in canvas_js",
-        "Inaccurate physics & lack of equilibrium decay: cell potential remained static over time instead of decaying toward dynamic equilibrium (0.00 V) during spontaneous discharge as specified in the Aim and Step 7",
-        "Missing chemical perturbation and open-circuit behavior: disconnecting leads or salt bridge failed to drop EMF to 0 V, and adding Na2S lacked black CuS precipitation and sharp potential shifts"
-      ]
-    },
-    {
-      "sim_id": "u02312",
-      "status": "FIXED",
-      "time": "18:43:36",
-      "issues": [
-        "Unwired action button btn_run_instruction in canvas_js",
-        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
-        "Misaligned observation table row schema (6 columns instead of 7, missing Step/Cycle and PC columns)"
-      ]
-    },
-    {
-      "sim_id": "u02275",
-      "status": "ERROR",
-      "time": "18:43:40",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02274",
-      "status": "ERROR",
-      "time": "18:43:41",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02294",
-      "status": "FIXED",
-      "time": "18:43:44",
-      "issues": [
-        "Corrected malformed MathML fraction in observation table headers and readouts where 'vnodes/node' and 'keys/node' were incorrectly split as fractions across words",
-        "Restored missing variable symbol 'n' in the Machines observation column header",
-        "Wired batch and server node mutation action buttons (btn_add_items, btn_remove_items, btn_add_machine, btn_remove_machine) and stepper up/down controls"
-      ]
-    },
-    {
-      "sim_id": "u02324",
-      "status": "PASS",
-      "time": "18:44:03",
-      "issues": []
-    },
     {
       "sim_id": "u02319",
       "status": "FIXED",
@@ -387,6 +333,58 @@
         "Action buttons 'btn_generate_seed' and 'btn_verify_seed' were unhandled",
         "Stepper control buttons (.stepper-btn) and input change listeners were not wired to update transaction parameters"
       ]
+    },
+    {
+      "sim_id": "u01758",
+      "status": "FIXED",
+      "time": "19:04:25",
+      "issues": [
+        "Telemetry update IDs in canvas_js (reading_feature_size, reading_calibration_factor, etc.) did not match readout span IDs (val_reading_feature_size, val_reading_calibration_factor, etc.), preventing live telemetry display",
+        "Action buttons #btn_calibrate_scale ('Snap Caliper to Scale Bar') and #btn_auto_focus ('Auto-Focus Beam Stigmatator') declared in actions_html were not wired to event listeners in canvas_js",
+        "Stepper up/down buttons (.stepper-btn) lacked click handlers to increment and decrement control inputs",
+        "Observation table row generation in recordBtn had 6 columns including an undeclared serial number, misaligning all columns against the 5 observation_thead_html headers"
+      ]
+    },
+    {
+      "sim_id": "u01399",
+      "status": "FIXED",
+      "time": "19:04:52",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01522",
+      "status": "ERROR",
+      "time": "19:05:03",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01772",
+      "status": "FIXED",
+      "time": "19:05:08",
+      "issues": [
+        "Unwired action buttons: 'Initiate Spinodal Decomposition' (btn_quench_phase_separation) and 'Relax to Capillary Equilibrium' (btn_equilibrate_interface) had no event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper up and down buttons (.stepper-btn) had no click listeners attached to dynamically increment and decrement input values.",
+        "Misaligned observation table columns: 8 data cells were being appended to a 7-column table, swapping CFL into the liquid density column, shifting all densities, and omitting the interface width column entirely.",
+        "Missing interface width calculation and dynamic phase quench relaxation state variables in simulation logic."
+      ]
+    },
+    {
+      "sim_id": "u01583",
+      "status": "FIXED",
+      "time": "19:05:27",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01815",
+      "status": "PASS",
+      "time": "19:05:28",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1559,6 +1557,7 @@
     "u01396",
     "u01397",
     "u01398",
+    "u01399",
     "u01400",
     "u01401",
     "u01402",
@@ -1728,6 +1727,7 @@
     "u01580",
     "u01581",
     "u01582",
+    "u01583",
     "u01584",
     "u01585",
     "u01586",
@@ -1892,6 +1892,7 @@
     "u01755",
     "u01756",
     "u01757",
+    "u01758",
     "u01759",
     "u01760",
     "u01761",
@@ -1903,6 +1904,7 @@
     "u01769",
     "u01770",
     "u01771",
+    "u01772",
     "u01773",
     "u01774",
     "u01775",
@@ -1944,6 +1946,7 @@
     "u01812",
     "u01813",
     "u01814",
+    "u01815",
     "u01816",
     "u01817",
     "u01818",
