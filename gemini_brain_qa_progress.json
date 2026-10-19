@@ -1,55 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:22:49",
-  "completed_count": 1037,
-  "fixed_count": 1011,
-  "latest_sim_id": "u01269",
+  "updated_at": "2026-10-19 08:24:14",
+  "completed_count": 1042,
+  "fixed_count": 1015,
+  "latest_sim_id": "u01270",
   "recent_events": [
-    {
-      "sim_id": "u01220",
-      "status": "FIXED",
-      "time": "08:14:31",
-      "issues": [
-        "Observation table columns in btnRecord (7 columns) were completely misaligned with the 9 columns in observation_thead_html",
-        "Action buttons btn_toggle_display_mode, btn_cycle_waveform, and btn_auto_trigger were completely unhandled in canvas_js",
-        "Stepper increment/decrement buttons (.stepper-btn) were not wired to update inputs and fire change events",
-        "Lissajous XY mode display was completely missing from the CRT render loop despite being a core experiment requirement",
-        "Function generator waveform selection buttons and CRT waveform rendering were hardcoded to sine without square/triangle wave support"
-      ]
-    },
-    {
-      "sim_id": "u01221",
-      "status": "ERROR",
-      "time": "08:15:12",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01225",
-      "status": "FIXED",
-      "time": "08:15:16",
-      "issues": [
-        "Unwired live DOM readouts: getElementById looked for non-existent IDs instead of val_reading_* spans.",
-        "Unwired stepper arrow buttons: clicking up/down stepper buttons did not adjust input values.",
-        "Unwired action buttons: Generate Clutter Obstacles, Clear All Obstacles, and Cycle Environment Profile buttons lacked event handlers.",
-        "Crashing Leader Line 3: referencing obstacles[1] directly caused a fatal TypeError when obstacles were cleared.",
-        "Misaligned observation log columns: row.innerHTML recorded 9 columns in a mismatched order against a 6-column header table.",
-        "Static pathloss exponent: pathloss did not respond to toggling environment propagation profiles."
-      ]
-    },
-    {
-      "sim_id": "u01230",
-      "status": "PASS",
-      "time": "08:15:32",
-      "issues": []
-    },
-    {
-      "sim_id": "u01238",
-      "status": "PASS",
-      "time": "08:15:48",
-      "issues": []
-    },
     {
       "sim_id": "u01235",
       "status": "FIXED",
@@ -381,6 +336,53 @@
       "status": "PASS",
       "time": "08:22:48",
       "issues": []
+    },
+    {
+      "sim_id": "u01271",
+      "status": "PASS",
+      "time": "08:24:14",
+      "issues": []
+    },
+    {
+      "sim_id": "u01268",
+      "status": "FIXED",
+      "time": "08:24:14",
+      "issues": [
+        "Action button #btn_auto_critical_damping was defined in HTML but had no click listener wired in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn) were not wired to input controls in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01273",
+      "status": "FIXED",
+      "time": "08:24:14",
+      "issues": [
+        "Unwired action button btn_generate_wave_train: clicking the wave generator button had no effect on simulation state.",
+        "Unwired stepper buttons: clicking stepper up/down controls (data-target) did not increment or decrement values.",
+        "Observation table column misalignment: recorded rows injected 8 <td> elements (including serial # and wavelength) while observation_thead_html defines exactly 6 columns.",
+        "Mismatched apparatus badge numbering and leader line targets: badges 1-6 in canvas_js were shifted and misaligned with legend pills (Pill 1 = Wave Generator, Pill 2 = Probe 1, Pill 3 = Breakwater, Pill 4 = Probe 2, Pill 5 = Beach, Pill 6 = Flume Tank)."
+      ]
+    },
+    {
+      "sim_id": "u01267",
+      "status": "FIXED",
+      "time": "08:24:14",
+      "issues": [
+        "Observation table record handler was writing 11 columns into a 7-column table header; corrected columns and order to match observation_thead_html exactly.",
+        "Action buttons (Auto-Tune PI via IMC and Inject Load Disturbance) were not wired to click event handlers; added complete implementations.",
+        "Control panel stepper buttons (▲/▼) lacked click event listeners; wired universal .stepper-btn handler with step, min, and max clamping.",
+        "Experiment mode dropdown lacked a change event listener to switch between baseline and dead-time scenarios; added experimentSelect handler."
+      ]
+    },
+    {
+      "sim_id": "u01270",
+      "status": "FIXED",
+      "time": "08:24:14",
+      "issues": [
+        "Telemetry readout element IDs in JS referenced reading_lt1..reading_lt5 and reading_ref instead of val_reading_lt1..val_reading_lt5 and val_reading_ref, preventing live UI sensor readout updates",
+        "Action buttons #btn_fill_tank ('Fill Sensor Tank') and #btn_drain_cycle ('Open Drain Return Valve') were unwired in JS",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were missing click event listeners"
+      ]
     }
   ],
   "completed_ids": [
@@ -1420,6 +1422,11 @@
     "u01264",
     "u01265",
     "u01266",
-    "u01269"
+    "u01267",
+    "u01268",
+    "u01269",
+    "u01270",
+    "u01271",
+    "u01273"
   ]
 }
