@@ -1,77 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:10:30",
-  "completed_count": 1682,
-  "fixed_count": 1522,
-  "latest_sim_id": "u02132",
+  "updated_at": "2026-10-19 16:11:52",
+  "completed_count": 1687,
+  "fixed_count": 1525,
+  "latest_sim_id": "u02142",
   "recent_events": [
-    {
-      "sim_id": "u02094",
-      "status": "FIXED",
-      "time": "16:02:58",
-      "issues": [
-        "Corrected leader line badges 3 and 4 which were inverted relative to legend pills (badge 3 now correctly targets Ring Test Specimen and badge 4 targets Lower Compression Die Platen & Bolster Base)",
-        "Fixed updateTelemetry to resolve 'val_' prefixed readout elements and preserve unit MathML/child elements",
-        "Aligned observation table row columns to match the 7 columns in observation_thead_html instead of writing 10 misaligned columns",
-        "Wired up stepper button controls (.stepper-btn) for incrementing and decrementing parameter inputs",
-        "Wired up action buttons actuate_hydraulic_compression and optical_scan_profile"
-      ]
-    },
-    {
-      "sim_id": "u02096",
-      "status": "FIXED",
-      "time": "16:03:25",
-      "issues": [
-        "Unwired action button btn_seek_resonance (Auto-Tune to Resonant Frequency) in canvas_js",
-        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
-        "DOM element ID mismatch for telemetry readouts: canvas_js queried reading_* instead of val_reading_*",
-        "Observation table column mismatch: btnRecord inserted 7 columns with an extra index column and swapped f/R order, conflicting with the 6 observation_thead_html columns"
-      ]
-    },
-    {
-      "sim_id": "u02098",
-      "status": "PASS",
-      "time": "16:03:32",
-      "issues": []
-    },
-    {
-      "sim_id": "u02100",
-      "status": "PASS",
-      "time": "16:03:37",
-      "issues": []
-    },
-    {
-      "sim_id": "u02097",
-      "status": "FIXED",
-      "time": "16:03:44",
-      "issues": [
-        "Unwired action button: 'btn_run_full_training' had no click event handler to trigger sequence training iterations",
-        "Unwired stepper controls: '.stepper-btn' increment and decrement buttons lacked click event listeners to modify stepper input values",
-        "Missing telemetry synchronization: 'setTelemetry' helper was defined but never invoked to update Section 06 Live Readings during training or baseline initialization"
-      ]
-    },
-    {
-      "sim_id": "u02101",
-      "status": "FIXED",
-      "time": "16:03:51",
-      "issues": [
-        "Unwired action buttons: 'btn_cache_blocking' (Apply Cache Tiling & Vectorization) and 'btn_align_ridge' (Align Kernel to Ridge Point) lacked event listeners in canvas_js.",
-        "Unwired stepper buttons: Up and down stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to increment and decrement inputs.",
-        "Observation table column mismatch: btnRecord generated 8 td cells including a row index, misaligning with the 7 th columns specified in observation_thead_html.",
-        "Leader line touch beads: Badges 2 and 3 touched the outer chassis perimeter with short lines (<30px) instead of the functional multicore die and PHY controller hub."
-      ]
-    },
-    {
-      "sim_id": "u02095",
-      "status": "FIXED",
-      "time": "16:04:28",
-      "issues": [
-        "Misaligned observation table: record button inserted 10 columns into a 6-column thead table",
-        "Unwired action buttons: btn_cycle_forming and btn_toggle_strain_map had no event listeners attached",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down were missing click handlers to increment/decrement input values",
-        "Mismatched legend pills: legend_pills_html indices and names did not correspond to Canvas leader line badges 1-6"
-      ]
-    },
     {
       "sim_id": "u02090",
       "status": "ERROR",
@@ -381,6 +314,68 @@
         "Action buttons ('btn_apply_lpcb' and 'btn_toggle_view') lacked event listeners and interactive state handling in canvas_js.",
         "Stepper increment and decrement buttons (.stepper-btn) had no click event listeners to update stepper input values.",
         "Preset selector ('experimentSelect') had no change event listener to switch between incubation kinetics scenarios."
+      ]
+    },
+    {
+      "sim_id": "u02126",
+      "status": "ERROR",
+      "time": "16:10:36",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02133",
+      "status": "ERROR",
+      "time": "16:11:06",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02135",
+      "status": "FIXED",
+      "time": "16:11:12",
+      "issues": [
+        "Observation table column mismatch: row.innerHTML generated 8 <td> cells (including runCount and duplicate miner reward) instead of the 6 columns defined in observation_thead_html",
+        "Unwired action buttons: btn_create_contract, btn_deploy, btn_play, btn_find_miner, and btn_initiate_transaction were completely unwired in canvas_js",
+        "Unwired stepper controls: .stepper-btn buttons lacked click event listeners to modify stepper inputs",
+        "Live readout unit erasure: setField in updateDOMReadouts replaced entire textContent, wiping out nested MathML unit elements"
+      ]
+    },
+    {
+      "sim_id": "u02139",
+      "status": "FIXED",
+      "time": "16:11:21",
+      "issues": [
+        "Telemetry display elements targeted non-existent element IDs instead of val_reading_* spans",
+        "Stepper increment and decrement buttons were unwired",
+        "Action buttons btn_execute_smart_contract and btn_verify_ledger_integrity had no click listeners",
+        "Observation table columns were misaligned with the table header schema"
+      ]
+    },
+    {
+      "sim_id": "u02143",
+      "status": "PASS",
+      "time": "16:11:31",
+      "issues": []
+    },
+    {
+      "sim_id": "u02144",
+      "status": "PASS",
+      "time": "16:11:35",
+      "issues": []
+    },
+    {
+      "sim_id": "u02142",
+      "status": "FIXED",
+      "time": "16:11:52",
+      "issues": [
+        "Unwired action buttons: Connected btn_toggle_heat_stir and btn_auto_detect_touch in canvas_js.",
+        "Telemetry element IDs mismatch: Fixed selector IDs to match val_reading_* spans in readouts_html so live readings update.",
+        "Misaligned observation table columns: Corrected row insertion from 5 misaligned columns to the 6 expected columns matching observation_thead_html.",
+        "Unwired stepper controls: Bound stepper-btn up and down click handlers to dynamically update input values.",
+        "Canvas badges mismatched with legend pills: Realigned canvas badges 1 through 8 to match the 8 legend pills in legend_pills_html."
       ]
     }
   ],
@@ -2066,6 +2061,11 @@
     "u02130",
     "u02131",
     "u02132",
-    "u02134"
+    "u02134",
+    "u02135",
+    "u02139",
+    "u02142",
+    "u02143",
+    "u02144"
   ]
 }
