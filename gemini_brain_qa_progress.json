@@ -1,62 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:43:33",
-  "completed_count": 1547,
-  "fixed_count": 1415,
-  "latest_sim_id": "u01955",
+  "updated_at": "2026-10-19 14:45:07",
+  "completed_count": 1552,
+  "fixed_count": 1419,
+  "latest_sim_id": "u01969",
   "recent_events": [
-    {
-      "sim_id": "u01911",
-      "status": "ERROR",
-      "time": "14:31:19",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01920",
-      "status": "FIXED",
-      "time": "14:31:20",
-      "issues": [
-        "Unwired action buttons: btn_compute_full_mac and btn_tamper_bit had no event listeners in canvas_js",
-        "Unwired stepper arrow buttons: .stepper-btn-up and .stepper-btn-down were not bound to increment/decrement stepper inputs",
-        "Telemetry update failure: setVal stripped 'reading_' prefix preventing resolution of val_reading_* DOM element IDs",
-        "Observation table column mismatch: btnRecord innerHTML logged columns misaligned with observation_thead_html (Block Size, Msg Len, Key swapped)",
-        "Missing visual feedback for message bit tampering and integrity failure status"
-      ]
-    },
-    {
-      "sim_id": "u01921",
-      "status": "FIXED",
-      "time": "14:31:23",
-      "issues": [
-        "Observation table record button output 9 columns while the table header defined only 7 columns, causing column misalignment",
-        "Action buttons (btn_inject_13co2, btn_cryo_quench, btn_solve_flux_map) were present in controls HTML but unwired in canvas_js",
-        "Stepper increment/decrement buttons (.stepper-btn) lacked click event listeners in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01917",
-      "status": "FIXED",
-      "time": "14:31:30",
-      "issues": [
-        "Unwired action button: #btn_seed_patient_zero ('Inoculate Patient Zero') in section 5 had no click event listener in canvas_js.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) for transmission probability, recovery rate, mean degree, and initial infected were not wired to update their inputs and trigger sync.",
-        "Observation table column mismatch: btnRecord appended 8 columns whereas the thead defines 6 columns, causing layout misalignment and broken data mapping.",
-        "Missing peak infectious prevalence tracking: Observation table column 5 requires Peak Infectious Prevalence (I_max), which was not tracked during epidemic progression."
-      ]
-    },
-    {
-      "sim_id": "u01922",
-      "status": "FIXED",
-      "time": "14:32:22",
-      "issues": [
-        "Raw LaTeX escape commands (\\arctan, V_{disp}, \\tan, \\sec) in principles_summary_html",
-        "Unwired action buttons (#btn_perturb_heel, #btn_release_equilibrium) and stepper buttons (.stepper-btn-up, .stepper-btn-down) in canvas_js",
-        "Observation table columns misaligned: btnRecord was inserting 11 td elements (including unlisted radius r and weight W) into a 9-column observation table thead",
-        "Apparatus badges 1 and 2 in canvas_js were swapped relative to legend_pills_html (Badge 1 pointed to Cone while Pill 1 was Tank; Badge 2 pointed to Tank while Pill 2 was Cone)"
-      ]
-    },
     {
       "sim_id": "u01924",
       "status": "FIXED",
@@ -379,6 +327,52 @@
         "calculatePhysics evaluated all defects simultaneously without honoring user-selected inspection cases (Case 1: Sound weld, Case 2: Slag inclusion, Case 3: Root void)",
         "Capillary dye bleed-out indication width did not respond to developer application state",
         "Corrupted label text '(UTca)' in actions_html slot for btn_cycle_case"
+      ]
+    },
+    {
+      "sim_id": "u01962",
+      "status": "FIXED",
+      "time": "14:44:44",
+      "issues": [
+        "Replaced erroneous MathML markup for the English indefinite article 'a' in aim_html, principles_summary_html, and validation_html with plain text 'a'."
+      ]
+    },
+    {
+      "sim_id": "u01965",
+      "status": "FIXED",
+      "time": "14:44:46",
+      "issues": [
+        "Telemetry element IDs in canvas_js did not match HTML readout span IDs (val_reading_* vs reading_*) and were missing unit suffixes",
+        "Action buttons (btn_transfer_sample, btn_insert_tube, btn_acquire_spectrum) and stepper arrow buttons were not wired up with interactive event listeners",
+        "Observation table record row had 9 misaligned columns with serial number and stepper inputs instead of the 5 defined observation_thead columns (ν0, B0, Δν, δ, Irel)"
+      ]
+    },
+    {
+      "sim_id": "u01960",
+      "status": "FIXED",
+      "time": "14:44:54",
+      "issues": [
+        "Unwired action buttons: HTML action buttons in actions_html use id='btn_release_cart' and id='btn_return_cart' whereas JS was querying 'btnPlay'/'btnStart' and 'btnReset', leaving the simulator controls inactive.",
+        "Missing stepper increment/decrement button listeners: The stepper buttons (.stepper-btn-up, .stepper-btn-down) were not wired to modify numeric stepper inputs.",
+        "Misaligned observation table columns: JS recordObservation rendered 8 <td> cells starting with trialCount, but observation_thead_html only defines 7 column headers, shifting every recorded measurement by one column.",
+        "Automatic observation recording: cart arrival at pointer photogate now automatically records observation trial data and updates the live timer readout."
+      ]
+    },
+    {
+      "sim_id": "u01961",
+      "status": "PASS",
+      "time": "14:45:01",
+      "issues": []
+    },
+    {
+      "sim_id": "u01969",
+      "status": "FIXED",
+      "time": "14:45:06",
+      "issues": [
+        "Misaligned observation table columns: row innerHTML had 5 mismatched columns instead of the 6 columns defined in observation_thead_html (Start Index, Stop Index, Step Stride, Subarray Length, Argmax Index, Memory Span).",
+        "Unwired action buttons: 'btn_execute_slice' and 'btn_run_argmax' lacked click event listeners to execute and visually highlight memory operations.",
+        "Unwired stepper up/down buttons: .stepper-btn controls were not wired to increment/decrement input values and dispatch change events.",
+        "Missing dynamic 3D specular highlight and action pulse feedback on memory buffer cells and reduction meter."
       ]
     }
   ],
@@ -1929,6 +1923,11 @@
     "u01954",
     "u01955",
     "u01958",
-    "u01959"
+    "u01959",
+    "u01960",
+    "u01961",
+    "u01962",
+    "u01965",
+    "u01969"
   ]
 }
