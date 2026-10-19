@@ -1,63 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:46:28",
-  "completed_count": 1407,
-  "fixed_count": 1304,
-  "latest_sim_id": "u01783",
+  "updated_at": "2026-10-19 10:47:34",
+  "completed_count": 1412,
+  "fixed_count": 1308,
+  "latest_sim_id": "u01788",
   "recent_events": [
-    {
-      "sim_id": "u01732",
-      "status": "ERROR",
-      "time": "10:35:24",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01744",
-      "status": "FIXED",
-      "time": "10:35:56",
-      "issues": [
-        "Raw MathML tags wrapping the English indefinite article 'A' in procedure overview and 'Class A' in apparatus specification",
-        "Misaligned observation table columns where recorded row values were shifted by one column relative to the headers",
-        "Unwired action buttons ('btn_blank_calibrate', 'btn_load_soft_drink'), unhandled stepper up/down buttons, and unhandled experiment mode selector",
-        "Numbered leader badges only drew 4 items pointing to incorrect locations instead of the 7 apparatus elements in the legend"
-      ]
-    },
-    {
-      "sim_id": "u01743",
-      "status": "FIXED",
-      "time": "10:36:28",
-      "issues": [
-        "Mangled MathML in principles_summary_html and validation_html where tetraborate ion formula [B4O5(OH)4]2- was corrupted as 4 squared minus.",
-        "Raw broken MathML in readouts_html displaying 'dimensionless' as a rendered unit and malformed fractional MathML for kJ/mol and J/(mol·K).",
-        "Malformed 'dimensionless' unit annotations in observation_thead_html table headers.",
-        "Alignment mismatch between canvas_js leader line badge indices (1: Burette, 2: Conical Flask, 3: Measuring Cylinder, 4: Micropipette, 5: Retort Stand, 6: White Tile) and legend_pills_html order.",
-        "Unwired stepper ▲/▼ buttons and action buttons (btn_dispense_drop, btn_add_indicator) in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01740",
-      "status": "PASS",
-      "time": "10:36:33",
-      "issues": []
-    },
-    {
-      "sim_id": "u01747",
-      "status": "FIXED",
-      "time": "10:36:42",
-      "issues": [
-        "Observation table body rendered 9 data cells mismatched against the 6 observation columns declared in observation_thead_html",
-        "Action buttons (btn_generate_blocks, btn_render_cfg, and btn_verify_complexity) lacked event listeners in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn) lacked click handling in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01746",
-      "status": "PASS",
-      "time": "10:36:44",
-      "issues": []
-    },
     {
       "sim_id": "u01737",
       "status": "ERROR",
@@ -355,6 +302,61 @@
         "Misaligned observation table columns: tr generation in btnRecord had an unlisted runCount column, missing glass cover status column, dye rate instead of Re_b, and missing shoulder streamline spacing column relative to observation_thead_html",
         "Missing glassCover state and visual behavior: toggling the glass cover did not update state or render diffusion breakdown when unsealed"
       ]
+    },
+    {
+      "sim_id": "u01782",
+      "status": "ERROR",
+      "time": "10:46:45",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01784",
+      "status": "FIXED",
+      "time": "10:46:54",
+      "issues": [
+        "Unwired action buttons: 'btn_step_relax' (Execute Single Cell Relaxation) and 'btn_full_pivot_pass' (Complete Current Pivot Pass) had no event listeners attached in canvas_js.",
+        "Misaligned observation table columns: btnRecord generated only 6 <td> elements by combining source and destination into '(i, j)', causing a mismatch with the 7 <th> columns defined in observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u01771",
+      "status": "FIXED",
+      "time": "10:46:56",
+      "issues": [
+        "Observation table recorder inserted 7 mismatched columns instead of the 6 defined in observation thead (Step Index, Dividend Polynomial, Divisor Polynomial, Quotient Polynomial, Remainder Polynomial, Minimal Polynomial Match).",
+        "Action button btn_auto_gcd ('Auto-Compute Euclidean GCD') was unwired in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn) had no click listeners attached to update stepper inputs."
+      ]
+    },
+    {
+      "sim_id": "u01785",
+      "status": "FIXED",
+      "time": "10:47:08",
+      "issues": [
+        "Raw LaTeX string 'MW_{protein}' in principles_list_html replaced with proper MathML notation.",
+        "Observation table columns were misaligned due to extra trial count, MR, and m_fitc values exceeding and misaligning the 9 specified thead columns.",
+        "Stepper up/down buttons and action buttons (centrifugation spin, zero blank, spectrophotometer scan) were unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01786",
+      "status": "FIXED",
+      "time": "10:47:09",
+      "issues": [
+        "Unwired stepper buttons: clicking ▲ and ▼ on control steppers had no event listeners attached and did not change input values.",
+        "Unwired action buttons: 'btn_center_probe' (Align Probe to Airfoil Suction Peak) and 'btn_toggle_atmosphere' (Switch Earth / Mars Atmospheric Profile) were missing event listeners.",
+        "Misaligned observation table: record button inserted 10 columns for a 9-column header, omitting wing planform area, misplacing thickness and camber, and swapping probe pressure and flow velocity.",
+        "Static probe position: traversing pitot-static probe coordinates were hardcoded and did not update upon suction peak alignment.",
+        "Missing atmospheric model toggle: switching between Earth and Mars density models had no dynamic calculation logic."
+      ]
+    },
+    {
+      "sim_id": "u01788",
+      "status": "PASS",
+      "time": "10:47:34",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1758,12 +1760,17 @@
     "u01768",
     "u01769",
     "u01770",
+    "u01771",
     "u01774",
     "u01776",
     "u01777",
     "u01779",
     "u01780",
     "u01781",
-    "u01783"
+    "u01783",
+    "u01784",
+    "u01785",
+    "u01786",
+    "u01788"
   ]
 }
