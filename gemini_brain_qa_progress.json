@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:05:32",
-  "completed_count": 967,
-  "fixed_count": 956,
-  "latest_sim_id": "u01168",
+  "updated_at": "2026-10-19 08:06:53",
+  "completed_count": 972,
+  "fixed_count": 959,
+  "latest_sim_id": "u01174",
   "recent_events": [
-    {
-      "sim_id": "u01126",
-      "status": "FIXED",
-      "time": "07:57:14",
-      "issues": [
-        "canvas_js was truncated mid-expression with a syntax error at line 111 (ctx.quadrati) and omitted all rendering and animation loops",
-        "Telemetry update selectors queried non-existent DOM element IDs instead of the active val_reading_* readout spans",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to input controls",
-        "Dispersal pulse action button (#btn_trigger_dispersal) was unwired",
-        "Observation recording function injected 9 table columns against an observation thead configured with 6 columns",
-        "Missing visual rendering implementations for apparatus items 1-4 (Habitat Patch Grid Board, Dispersal Corridor Network, Telemetry Sensor, and Extinction Regulator)"
-      ]
-    },
-    {
-      "sim_id": "u01121",
-      "status": "ERROR",
-      "time": "07:57:24",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01129",
-      "status": "FIXED",
-      "time": "07:57:27",
-      "issues": [
-        "Unwired interactive action buttons (btn_toggle_cast_iron, btn_auto_focus, btn_toggle_phase_overlay) and stepper increment/decrement buttons in canvas_js.",
-        "Missing observation table recording handler on btnRecord to append rows corresponding to all 7 observation table columns.",
-        "Truncated unit 'wt.' instead of standard 'wt.%' in steppers_html, observation_thead_html, and readouts_html.",
-        "Missing units (%) and (HBW) on live readout values in readouts_html."
-      ]
-    },
-    {
-      "sim_id": "u01087",
-      "status": "ERROR",
-      "time": "07:58:08",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01127",
-      "status": "FIXED",
-      "time": "07:58:08",
-      "issues": [
-        "Unwired action button #btn_traverse_anemometer left non-functional; wired it to cycle traverse stations across equal-area radial rings",
-        "Unwired stepper increment/decrement buttons (▲/▼) for duct diameter and damper opening; wired click handlers with range clamping",
-        "Vane anemometer probe was statically rendered at duct centerline without moving across traverse stations during measurement"
-      ]
-    },
-    {
-      "sim_id": "u01131",
-      "status": "FIXED",
-      "time": "07:58:08",
-      "issues": [
-        "Unwired action buttons (#btn_heat_soak, #btn_quench_cool, #btn_grind_polish, #btn_apply_etch, #btn_inspect_microstructure) and stepper up/down buttons in canvas_js",
-        "Missing observation table row logging on microscope inspection and hardness testing"
-      ]
-    },
     {
       "sim_id": "u01133",
       "status": "FIXED",
@@ -396,6 +337,57 @@
         "Misaligned observation table row schema in btnRecord handler writing 5 columns into a 6-column table",
         "Unwired action button btn_propagate_logic and stepper increment/decrement buttons in canvas_js",
         "Product bit mapping array divergence from true 8-bit multiplier arithmetic"
+      ]
+    },
+    {
+      "sim_id": "u01166",
+      "status": "ERROR",
+      "time": "08:06:14",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01172",
+      "status": "FIXED",
+      "time": "08:06:22",
+      "issues": [
+        "Observation table columns in btnRecord were misaligned with observation_thead_html (Exciter Frequency ω was missing, while F_net1 and P_diss were shifted into incorrect columns).",
+        "Section 5 Action buttons 'btn_release_displacement' (Release from Initial Displacements) and 'btn_toggle_harmonic_force' (Toggle Harmonic Shaker Excitation) were unwired in canvas_js.",
+        "Stepper arrow buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners, preventing incrementing/decrementing stepper inputs.",
+        "Telemetry readouts failed to update because updateTelemetryReadouts queried document.getElementById(id) instead of id='val_' + id as defined in readouts_html.",
+        "Harmonic shaker excitation state was hardcoded on without a toggle flag, preventing procedure Step 4 free vibration analysis."
+      ]
+    },
+    {
+      "sim_id": "u01173",
+      "status": "PASS",
+      "time": "08:06:29",
+      "issues": []
+    },
+    {
+      "sim_id": "u01177",
+      "status": "PASS",
+      "time": "08:06:34",
+      "issues": []
+    },
+    {
+      "sim_id": "u01170",
+      "status": "FIXED",
+      "time": "08:06:47",
+      "issues": [
+        "Observation table recording was misaligned with the 8-column header (lacked Trial # column, inserted unexpected clearance and stripping force columns mismatching table header).",
+        "Action button #btn_cycle_press ('Execute Stamping Stroke') lacked an event listener in canvas_js.",
+        "Stepper increment/decrement buttons (.stepper-btn) lacked click event listeners to update numeric inputs."
+      ]
+    },
+    {
+      "sim_id": "u01174",
+      "status": "FIXED",
+      "time": "08:06:53",
+      "issues": [
+        "Unwired stepper increment and decrement buttons (stepper-btn-up and stepper-btn-down) in controls panel",
+        "Unwired action button btn_sweep_trace (Auto-Sweep Drain Voltage Trace)"
       ]
     }
   ],
@@ -1366,6 +1358,11 @@
     "u01164",
     "u01165",
     "u01167",
-    "u01168"
+    "u01168",
+    "u01170",
+    "u01172",
+    "u01173",
+    "u01174",
+    "u01177"
   ]
 }
