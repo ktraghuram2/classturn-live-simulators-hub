@@ -1,71 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:39:52",
-  "completed_count": 1777,
-  "fixed_count": 1594,
-  "latest_sim_id": "u02264",
+  "updated_at": "2026-10-19 16:41:05",
+  "completed_count": 1782,
+  "fixed_count": 1599,
+  "latest_sim_id": "u02266",
   "recent_events": [
-    {
-      "sim_id": "u02221",
-      "status": "FIXED",
-      "time": "16:30:20",
-      "issues": [
-        "Observation table columns misalignment: btnRecord previously populated 8 mismatched columns instead of the 7 specified by observation_thead_html (Bar Diameter, Forging Temp, Heading Force Fu, Clamping Force Fc, Clamping Ratio Fc/Fu, Energy Absorbed Delta E, Die Gaping delta_gap).",
-        "Unwired action buttons: 'btn_engage_clutch' and 'btn_step_cycle' lacked event listeners to control the cycle or step through crank angles.",
-        "Unwired control steppers: Up and down stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked event handlers to increment and decrement input values."
-      ]
-    },
-    {
-      "sim_id": "u02227",
-      "status": "FIXED",
-      "time": "16:30:29",
-      "issues": [
-        "Unwired action buttons: Switch Working Electrode Material (#btn_cycle_electrode) and Auto-Sweep Overpotential Domain (#btn_auto_polarize) had no event listeners in canvas_js",
-        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) and input events were unhandled in canvas_js",
-        "Observation table column mismatch: btnRecord inserted 7 values (S.No, overpotential, alpha, temp, current, log current, Tafel slope) while observation_thead_html defined 5 columns (Material, overpotential, current, log current, Tafel slope)",
-        "Mangled MathML in prose: The English indefinite article 'a' was converted into MathML <mi>a</mi> across apparatus, principles, and procedure slots",
-        "Mangled unit formulas in principles: C/mol was formatted as (C/m)ol and J/(mol*K) as (J/m)ol*K in principles_list_html",
-        "Electrode kinetics interactivity: Added dynamic material properties for Lead (Pb), Zinc (Zn), and Silver (Ag) with corresponding exchange current densities, distinct substrate colors, and label feedback on canvas"
-      ]
-    },
-    {
-      "sim_id": "u02225",
-      "status": "FIXED",
-      "time": "16:30:32",
-      "issues": [
-        "Unwired stepper increment and decrement buttons (.stepper-btn) in controls section",
-        "Unwired action buttons for probe traversal (#btn_traverse_probe) and tracer injection (#btn_pulse_tracers)",
-        "DOM telemetry updateField replaced entire readout container text content, obliterating unit markup",
-        "Duplicated acceleration mathematical symbol tags in observation table column headers"
-      ]
-    },
-    {
-      "sim_id": "u02226",
-      "status": "FIXED",
-      "time": "16:30:38",
-      "issues": [
-        "Misaligned observation table columns: row generator inserted an extra trial number column shifting all 9 aerodynamic telemetry parameters by one column.",
-        "Unwired action buttons: 'btn_toggle_evasee' (Attach/Detach Evasee) and 'btn_traverse_anemometer' (Traverse Anemometer & Pitot Tube) had no event listeners or visual state bindings.",
-        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) for duct diameter were unhandled in JavaScript.",
-        "Raw LaTeX fraction formatting: 'w/o' rendered as a MathML fraction (w over o) in observation table headers.",
-        "Malformed HTML attributes: 'data-unit' attributes in live readouts contained nested unescaped quotes and MathML fragments breaking attribute syntax.",
-        "Raw LaTeX formatting in apparatus and legend pills: '(D.P.)' rendered with MathML variable markup on the letter D."
-      ]
-    },
-    {
-      "sim_id": "u02223",
-      "status": "ERROR",
-      "time": "16:30:50",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02220",
-      "status": "PASS",
-      "time": "16:31:00",
-      "issues": []
-    },
     {
       "sim_id": "u02230",
       "status": "FIXED",
@@ -375,6 +314,72 @@
         "Wired missing stepper buttons (.stepper-btn-up, .stepper-btn-down) to allow users to increment and decrement initial sand weight and NaOH volume inputs.",
         "Wired unwired action buttons (btn_agitate_wash, btn_siphon_clay, btn_dry_sample) with click listeners and visual active feedback to guide users through the multi-stage AFS clay determination process.",
         "Aligned observation table recorded sand weight precision to 2 decimal places to match the analytical balance precision specification."
+      ]
+    },
+    {
+      "sim_id": "u02265",
+      "status": "FIXED",
+      "time": "16:40:03",
+      "issues": [
+        "Corrected spurious MathML fraction rendering for TCP port numbers (80/8080) in apparatus specifications.",
+        "Added missing variable symbol B to Bandwidth column header in observation table.",
+        "Wired dispatch and response action buttons and connected stepper increment/decrement buttons in canvas_js for complete user control."
+      ]
+    },
+    {
+      "sim_id": "u02262",
+      "status": "FIXED",
+      "time": "16:40:07",
+      "issues": [
+        "Misaligned observation table columns in canvas_js: observation_thead_html expects 7 columns (Current, Magnetic Field, Da, Db, Db^2-Da^2, Wavenumber Shift, Bohr Magneton), but canvas_js populated 6 columns including theta which had no header, misaligning all recorded data.",
+        "Unwired action buttons ('btn_insert_hall_probe' and 'btn_align_etalon') in canvas_js.",
+        "Unwired stepper up/down buttons (▲/▼) in canvas_js preventing interactive increments/decrements.",
+        "Malformed math markup in procedure_section_html: unrendered raw notation 'D_(k+1)' in Step 5 and raw unicode combining character 'Δν̃' in Step 8.",
+        "Malformed math markup in validation_html: 'cos θ ≈ 1 - θ²/2' split across raw text and partial MathML.",
+        "Broken exponent notation in readouts_html and observation_thead_html: '10⁻²4' and '<msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup>4' instead of '10⁻²⁴'."
+      ]
+    },
+    {
+      "sim_id": "u02268",
+      "status": "FIXED",
+      "time": "16:40:30",
+      "issues": [
+        "Unwired action button id 'btn_inject_pulse' (canvas_js was querying 'btnPulse' and 'btnInject')",
+        "Missing action handler for button id 'btn_reverse_flow' (Invert Flow Direction)",
+        "Unwired stepper-btn buttons in canvas_js",
+        "Misaligned observation table columns: thead defines 7 columns (Time, U, K, Peak Conc, Diff Flux, Adv Flux, Pe) but tbody emitted 9 columns inserting pulse width and flux convergence, displacing and misaligning all remaining data cells"
+      ]
+    },
+    {
+      "sim_id": "u02269",
+      "status": "FIXED",
+      "time": "16:40:58",
+      "issues": [
+        "Unwired action buttons: 'Inject Localized Thermal Pulse' (btn_inject_pulse) and 'Invert Flow Direction' (btn_invert_flow) had no event listeners in canvas_js.",
+        "Unwired stepper controls: stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to increment/decrement inputs.",
+        "Frozen live telemetry readouts: setReadingVal queried getElementById(id) instead of checking id='val_' + id, causing readout elements to never update dynamically.",
+        "Observation table column mismatch: btnRecord appended 9 <td> columns (including dt) while the table header had only 8 columns, causing severe column misalignment.",
+        "Malformed MathML in observation_thead_html: flux convergence derivative was improperly structured as -\\partial (F/\\partial) x instead of -(\\partial F / \\partial x)."
+      ]
+    },
+    {
+      "sim_id": "u02263",
+      "status": "ERROR",
+      "time": "16:41:00",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02266",
+      "status": "FIXED",
+      "time": "16:41:05",
+      "issues": [
+        "Fixed corrupted fraction notation for Layer 2/3 in apparatus specification",
+        "Rectified malformed nested fraction representation of Kendall M/M/1 queueing notation in principles summary",
+        "Cleaned up fractional math layout for compound rate unit (req/s) and MathML-wrapped text (index) in steppers, readouts, and observation headers",
+        "Resolved observation table misalignment between 6 header columns and 8 recorded row cells in canvas_js",
+        "Wired interactive action buttons (btn_send_request and btn_simulate_packet_loss) and stepper increment/decrement controls in canvas_js"
       ]
     }
   ],
@@ -2155,6 +2160,11 @@
     "u02258",
     "u02259",
     "u02260",
-    "u02264"
+    "u02262",
+    "u02264",
+    "u02265",
+    "u02266",
+    "u02268",
+    "u02269"
   ]
 }
