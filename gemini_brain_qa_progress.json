@@ -1,54 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:54:45",
-  "completed_count": 1432,
-  "fixed_count": 1326,
-  "latest_sim_id": "u01812",
+  "updated_at": "2026-10-19 10:57:10",
+  "completed_count": 1437,
+  "fixed_count": 1331,
+  "latest_sim_id": "u01818",
   "recent_events": [
-    {
-      "sim_id": "u01772",
-      "status": "ERROR",
-      "time": "10:42:59",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01773",
-      "status": "ERROR",
-      "time": "10:43:15",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01770",
-      "status": "FIXED",
-      "time": "10:43:35",
-      "issues": [
-        "Unwired action buttons: btn_cycle_generator and btn_compute_full_gcd had no click event listeners attached in canvas_js",
-        "Misaligned observation table: btnRecord dynamically pushed 9 table cells, whereas observation_thead_html defined only 7 columns",
-        "Undeclared global assignment: m5StartBX variable was assigned without declaration in canvas_js",
-        "Malformed MathML in observation table header: columns 3, 4, and 5 contained corrupted rm^circ degree notations with stray newline break tags"
-      ]
-    },
-    {
-      "sim_id": "u01776",
-      "status": "PASS",
-      "time": "10:44:32",
-      "issues": []
-    },
-    {
-      "sim_id": "u01777",
-      "status": "FIXED",
-      "time": "10:45:06",
-      "issues": [
-        "Observation table logging in canvas_js injected 7 misaligned columns (including record index and hammer force) instead of the 5 declared observation columns (Excitation Frequency, Wavenumber, Flexural Wavelength, Phase Velocity, Group Velocity)",
-        "Modal hammer action button (#btn_strike_hammer) was unreferenced and unwired in canvas_js",
-        "Stepper stepper-btn up and down controls were not bound to input adjustments in canvas_js",
-        "Telemetry update helper setVal overwritten the parent element textContent directly, destroying child MathML unit rendering"
-      ]
-    },
     {
       "sim_id": "u01779",
       "status": "FIXED",
@@ -376,6 +332,55 @@
       "issues": [
         "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) leaving numeric inputs non-steppable via UI buttons",
         "Unwired experiment action buttons (#btn_inject_avalanche_pulse and #btn_optimize_transit_frequency) with no click event listeners attached"
+      ]
+    },
+    {
+      "sim_id": "u01778",
+      "status": "FIXED",
+      "time": "10:55:08",
+      "issues": [
+        "Unwired action buttons: Connected btn_normalize_latch to trigger latch cycle and btn_perturb_ulp to inject a 1-ULP perturbation.",
+        "Unwired stepper controls: Attached event listeners to .stepper-btn-up and .stepper-btn-down to increment/decrement control_v and control_bit_idx.",
+        "Observation table column misalignment: Removed extraneous Serial Number and Reconstructed Float td elements in canvas_js to match the 6-column observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u01814",
+      "status": "FIXED",
+      "time": "10:55:23",
+      "issues": [
+        "Unwired action buttons: 'btn_pump_stroke' (Pump Effort Lever) and 'btn_release_valve' (Open Pressure Release Valve) had no event listeners or stroke animation logic.",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' controls were not wired to update inputs and trigger telemetry calculation.",
+        "Misaligned observation table columns: 'btnRecord' generated 7 mismatched columns including an unrequested count column instead of the 8 columns defined in the table header (Plunger Diameter, Ram Diameter, Plunger Area, Ram Area, Applied Effort Force, Transmitted Pressure, Weight Lifted, Mechanical Advantage)."
+      ]
+    },
+    {
+      "sim_id": "u01813",
+      "status": "FIXED",
+      "time": "10:56:23",
+      "issues": [
+        "Observation table record button logged 7 columns in an incorrect order instead of the 8 columns matching the table header (missing Horizontal FOV and misaligning refresh rate/resolution).",
+        "Action buttons #toggle_tracking_frustum and #cycle_lens_cross_section were present in HTML but had no event listeners or interactive state handling in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01816",
+      "status": "FIXED",
+      "time": "10:56:36",
+      "issues": [
+        "Fixed setDisplay selector in canvas_js so that readout spans with id val_reading_* update properly",
+        "Aligned observation table row data columns to match the 8-column observation_thead_html header by removing extraneous record counter and accuracy cells",
+        "Wired action buttons btn_validate_classification and btn_auto_detect_inconsistencies in canvas_js",
+        "Wired stepper up/down buttons to increment and decrement input values and trigger input events"
+      ]
+    },
+    {
+      "sim_id": "u01818",
+      "status": "FIXED",
+      "time": "10:57:09",
+      "issues": [
+        "Replaced erroneous MathML tags (<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>a</mi></mrow></math>) representing the English indefinite article 'a' in narrative prose with plain text 'a' in aim_html, principles_summary_html, and procedure_section_html."
       ]
     }
   ],
@@ -1784,6 +1789,7 @@
     "u01774",
     "u01776",
     "u01777",
+    "u01778",
     "u01779",
     "u01780",
     "u01781",
@@ -1811,6 +1817,10 @@
     "u01809",
     "u01810",
     "u01811",
-    "u01812"
+    "u01812",
+    "u01813",
+    "u01814",
+    "u01816",
+    "u01818"
   ]
 }
