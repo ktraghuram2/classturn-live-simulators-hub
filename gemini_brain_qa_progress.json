@@ -1,72 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:58:17",
-  "completed_count": 1847,
-  "fixed_count": 1654,
-  "latest_sim_id": "u02355",
+  "updated_at": "2026-10-19 16:59:46",
+  "completed_count": 1852,
+  "fixed_count": 1659,
+  "latest_sim_id": "u02358",
   "recent_events": [
-    {
-      "sim_id": "u02318",
-      "status": "FIXED",
-      "time": "16:50:23",
-      "issues": [
-        "Unwired action buttons: #btn_inject_payload and #btn_fix_code had no click event listeners in canvas_js",
-        "Unwired stepper controls: .stepper-btn ▲/▼ buttons had no click event listeners to modify input values",
-        "Telemetry readout ID mismatch: updateTelemetry queried non-existent elements #reading_* instead of #val_reading_* defined in readouts_html",
-        "Misaligned observation table: record handler generated 5 columns with an unlisted serial number instead of the 4 columns defined in observation_thead_html"
-      ]
-    },
-    {
-      "sim_id": "u02312",
-      "status": "ERROR",
-      "time": "16:50:24",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02313",
-      "status": "ERROR",
-      "time": "16:50:25",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02320",
-      "status": "FIXED",
-      "time": "16:50:46",
-      "issues": [
-        "Observation table recording was writing 8 misaligned columns instead of matching the 6 columns defined in observation_thead_html (Algorithm Name, Message Length, Mutation Bit Index, Hamming Distance, Avalanche Diffusion, and Preimage Match).",
-        "Action buttons (#btn_test_avalanche, #btn_run_preimage_attack, #btn_switch_algorithm) lacked click event listeners in canvas_js.",
-        "Engine state indicator LEDs and output width telemetry were hardcoded and did not update upon toggling the cryptographic hash engine (SHA-256 vs MD5).",
-        "Custom stepper up/down buttons (.stepper-btn) lacked event listeners in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u02308",
-      "status": "ERROR",
-      "time": "16:50:57",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02322",
-      "status": "FIXED",
-      "time": "16:51:27",
-      "issues": [
-        "Section 5 HTML action buttons (Sense Channel CCA, Wait IFS, Transmit RTS, Transmit Data, Trigger Exponential Backoff, Toggle Contending Bot) were not attached to event listeners in canvas_js.",
-        "Section 5 stepper buttons (▲/▼) and manual input events for collision counter (k) and base backoff time were not wired to update the simulation parameters in real time.",
-        "Section 8 observation table was not populated with trial results when contention backoff delays or transmission events occurred."
-      ]
-    },
-    {
-      "sim_id": "u02302",
-      "status": "PASS",
-      "time": "16:51:37",
-      "issues": []
-    },
     {
       "sim_id": "u02321",
       "status": "FIXED",
@@ -386,6 +324,73 @@
         "Unwired action buttons: 'btn_cell_scraping' and 'btn_run_scintillation' lacked event listeners to handle user interaction.",
         "Inactive telemetry readouts: updateTelemetry was defined but never called in the animation loop, leaving live readouts static.",
         "Truncated canvas_js: Script was cut off mid-expression at line 162 with no apparatus rendering (12-well microtiter plate, CO2 incubator, suction pump, liquid scintillation counter, cell scraper, scintillation tubes), missing Style 2 leader lines with badges 1-6, and missing animation loop startup."
+      ]
+    },
+    {
+      "sim_id": "u02359",
+      "status": "FIXED",
+      "time": "16:58:38",
+      "issues": [
+        "Unwired stepper up/down buttons prevented adjusting knapsack capacity and item parameters",
+        "Unwired auto-solve action button did not trigger knapsack allocation or observation recording",
+        "Added input event listeners and observation notebook row population"
+      ]
+    },
+    {
+      "sim_id": "u02351",
+      "status": "ERROR",
+      "time": "16:59:07",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02353",
+      "status": "ERROR",
+      "time": "16:59:13",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02360",
+      "status": "FIXED",
+      "time": "16:59:16",
+      "issues": [
+        "Unwired action buttons in canvas_js: wired 'btn_load_rcsb' to load PDB preset coordinate records and reset stream, 'btn_run_grep_clean' to advance filter mode to Stage 2 (Clean ATOM), and 'btn_verify_pdb2gmx' to certify 100% purity and record observation.",
+        "Misaligned observation table data columns in canvas_js: rectified 6-column record mapping to match table headers exactly (PDB Structure Preset, Total Raw Records, Crystal Water Records, Heteroatom Records, Cleaned Output Records, Coordinate Purity) instead of shifted trial count and filter mode strings."
+      ]
+    },
+    {
+      "sim_id": "u02365",
+      "status": "FIXED",
+      "time": "16:59:29",
+      "issues": [
+        "Observation table columns in canvas_js were misaligned with observation_thead_html (8 mismatched columns vs 7 defined headers).",
+        "Action buttons (btn_start_traversal, btn_force_handoff_eval) in controls were not wired to simulation logic in canvas_js.",
+        "Control stepper buttons (▲/▼) lacked click handlers for incrementing and decrementing values.",
+        "Telemetry updater replaced entire readout element, erasing MathML unit symbols."
+      ]
+    },
+    {
+      "sim_id": "u02362",
+      "status": "FIXED",
+      "time": "16:59:35",
+      "issues": [
+        "Unwired action button btn_project_symmetry_elements in canvas_js",
+        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
+        "Misaligned observation table columns: tbody generated 6 cells while thead defines 4 columns",
+        "Low-contrast atom outlines and borders (#090d16 stroke on #090d16 canvas) obscuring 3D spherical definition"
+      ]
+    },
+    {
+      "sim_id": "u02358",
+      "status": "FIXED",
+      "time": "16:59:46",
+      "issues": [
+        "Unwired action buttons: 'btn_generate_graph', 'btn_greedy_solve', and 'btn_clear_colors' had no click event listeners attached.",
+        "Unwired stepper controls: Stepper buttons ('.stepper-btn-up', '.stepper-btn-down') were missing click handlers to increment or decrement vertex and color counts.",
+        "Observation table columns misaligned: Recorded table row generated 7 columns (including an unmapped trial index and Brooks bound while omitting edge count) instead of the 6 columns defined in observation_thead_html (Vertices, Edges, Palette Colors, Colors Used, Conflicts, Max Degree)."
       ]
     }
   ],
@@ -2236,6 +2241,11 @@
     "u02352",
     "u02354",
     "u02355",
-    "u02357"
+    "u02357",
+    "u02358",
+    "u02359",
+    "u02360",
+    "u02362",
+    "u02365"
   ]
 }
