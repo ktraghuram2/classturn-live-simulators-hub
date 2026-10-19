@@ -1,60 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:44:37",
-  "completed_count": 1402,
-  "fixed_count": 1299,
-  "latest_sim_id": "u01776",
+  "updated_at": "2026-10-19 10:46:28",
+  "completed_count": 1407,
+  "fixed_count": 1304,
+  "latest_sim_id": "u01783",
   "recent_events": [
-    {
-      "sim_id": "u01728",
-      "status": "ERROR",
-      "time": "10:34:07",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01731",
-      "status": "ERROR",
-      "time": "10:34:26",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01738",
-      "status": "FIXED",
-      "time": "10:34:35",
-      "issues": [
-        "Fixed Acklam inverse normal CDF calculation in normInv: tail formula was missing factor of 2 in Math.sqrt(-2.0 * Math.log(r)), skewing tail percentile z-scores",
-        "Corrected DOM queries in updateTelemetry: target IDs in HTML are val_rdg_* rather than rdg_*, which caused all 5 live telemetry readouts to fail to update",
-        "Wired up unhandled action buttons btn_align_cursor ('Align Anthropometer Cursor to Vertex') and btn_compute_distribution ('Fit Gaussian Normal Distribution')",
-        "Wired up unhandled stepper up/down buttons (.stepper-btn) to increment/decrement input values and dispatch change events",
-        "Fixed observation table columns: thead has 7 columns (including Sample Mean and Standard Deviation), but tbody previously injected only 6 misaligned columns"
-      ]
-    },
-    {
-      "sim_id": "u01739",
-      "status": "PASS",
-      "time": "10:34:40",
-      "issues": []
-    },
-    {
-      "sim_id": "u01741",
-      "status": "PASS",
-      "time": "10:35:09",
-      "issues": []
-    },
-    {
-      "sim_id": "u01742",
-      "status": "FIXED",
-      "time": "10:35:23",
-      "issues": [
-        "Misaligned observation table columns: btnRecord was generating 7 columns (including trial index and incubation temperature), but observation_thead_html specifies 5 columns (Volume, Concentration, Path Length, Absorbance, Transmittance)",
-        "Unwired action buttons: btn_heat_waterbath, btn_zero_blank, and btn_transfer_cuvette lacked click event listeners in canvas_js",
-        "Unwired stepper controls: .stepper-btn up and down buttons were not incrementing/decrementing input values or triggering input/change events"
-      ]
-    },
     {
       "sim_id": "u01732",
       "status": "ERROR",
@@ -342,6 +292,69 @@
       "status": "PASS",
       "time": "10:44:32",
       "issues": []
+    },
+    {
+      "sim_id": "u01777",
+      "status": "FIXED",
+      "time": "10:45:06",
+      "issues": [
+        "Observation table logging in canvas_js injected 7 misaligned columns (including record index and hammer force) instead of the 5 declared observation columns (Excitation Frequency, Wavenumber, Flexural Wavelength, Phase Velocity, Group Velocity)",
+        "Modal hammer action button (#btn_strike_hammer) was unreferenced and unwired in canvas_js",
+        "Stepper stepper-btn up and down controls were not bound to input adjustments in canvas_js",
+        "Telemetry update helper setVal overwritten the parent element textContent directly, destroying child MathML unit rendering"
+      ]
+    },
+    {
+      "sim_id": "u01779",
+      "status": "FIXED",
+      "time": "10:45:30",
+      "issues": [
+        "Observation table columns were misaligned: canvas_js inserted 6 columns with an extra trial number and stirrer speed instead of the 5 columns defined in observation_thead_html (Standard Volume Added, Electrode Potential, Logarithm of Fluoride Conc., Fluoride Concentration, and Solution pH).",
+        "Action buttons btn_immerse_electrodes ('Immerse Electrodes into Solution') and btn_calibrate_meter ('Calibrate ISE Meter') were declared in controls but completely unwired in canvas_js.",
+        "Custom stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) targeting v_std and stirrer_speed lacked click event handlers in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01775",
+      "status": "ERROR",
+      "time": "10:45:37",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01780",
+      "status": "FIXED",
+      "time": "10:46:20",
+      "issues": [
+        "Corrected malformed LaTeX/MathML in reading 5 ('CD4 to CD8 Ratio') inside readouts_html where raw 'R_{CD<math><mfrac><mn>4</mn><mi>C</mi></mfrac></math>D8}' was embedded.",
+        "Corrected malformed LaTeX symbol in observation table column 8 ('CD4:CD8 Ratio') inside observation_thead_html.",
+        "Fixed column misalignment in observation table logging: table header defined 9 columns while btnRecord was appending 10 columns including unaligned coreWidth and rcf; corrected to align with FSC Gain Voltage and header layout.",
+        "Completed truncated canvas_js render loop and missing physics calculations (sscSignal, pCd4, pCd8, ratio, rcf, and full telemetry synchronization).",
+        "Wired stepper up/down stepper buttons and simulator action buttons (sheath flush, sample injection toggle, and lymphocyte R1 gate toggle).",
+        "Implemented complete 60 FPS visual simulation rendering on dark #090d16 canvas with 3D radial cell shading, laser excitation fluorescence flashes, hydrodynamic core stream calculation, and Style 2 cubic Bezier leader lines with anchor touch beads for all 8 apparatus items."
+      ]
+    },
+    {
+      "sim_id": "u01781",
+      "status": "FIXED",
+      "time": "10:46:21",
+      "issues": [
+        "Observation table row data cells had 9 columns with extraneous Sl. No, L, and L1 columns, which misaligned with the 6 header columns (d, h2, h1, v_B, Q_ls, p_C) and inverted the h1/h2 column order.",
+        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) had no click listeners attached to update the target numeric inputs.",
+        "Action buttons 'btn_prime_syphon' and 'btn_flush_system' were unwired without event handlers."
+      ]
+    },
+    {
+      "sim_id": "u01783",
+      "status": "FIXED",
+      "time": "10:46:28",
+      "issues": [
+        "Unwired action buttons: btn_toggle_model, btn_toggle_glass, and btn_purge_dye were missing DOM event listeners in canvas_js",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down were missing click handlers to increment and decrement input values",
+        "Misaligned observation table columns: tr generation in btnRecord had an unlisted runCount column, missing glass cover status column, dye rate instead of Re_b, and missing shoulder streamline spacing column relative to observation_thead_html",
+        "Missing glassCover state and visual behavior: toggling the glass cover did not update state or render diffusion breakdown when unsealed"
+      ]
     }
   ],
   "completed_ids": [
@@ -1746,6 +1759,11 @@
     "u01769",
     "u01770",
     "u01774",
-    "u01776"
+    "u01776",
+    "u01777",
+    "u01779",
+    "u01780",
+    "u01781",
+    "u01783"
   ]
 }
