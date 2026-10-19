@@ -1,66 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:13:07",
-  "completed_count": 1692,
-  "fixed_count": 1530,
-  "latest_sim_id": "u02150",
+  "updated_at": "2026-10-19 16:13:58",
+  "completed_count": 1697,
+  "fixed_count": 1534,
+  "latest_sim_id": "u02154",
   "recent_events": [
-    {
-      "sim_id": "u02110",
-      "status": "PASS",
-      "time": "16:06:50",
-      "issues": []
-    },
-    {
-      "sim_id": "u02107",
-      "status": "FIXED",
-      "time": "16:06:50",
-      "issues": [
-        "Observation table columns misaligned: observation_thead_html defines 12 columns including S_O and B_O vector components, but btnRecord only generated 6 table cells",
-        "Unwired action button: 'btn_align_vernal_equinox' was defined in actions_html and procedure Step 5 but had no click event handler in canvas_js",
-        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down buttons were missing click event listeners in canvas_js",
-        "Inaccurate transformation matrix and vector kinematics: T_OI rows 1 and 2 and S_O in canvas_js were non-orthonormal and inconsistent with standard LVLH orbital reference frame physics"
-      ]
-    },
-    {
-      "sim_id": "u02109",
-      "status": "FIXED",
-      "time": "16:06:50",
-      "issues": [
-        "Raw LaTeX en-dash '--' in principles_summary_html MathML replaced with clean Unicode en-dash '–'",
-        "Observation table recording row misaligned: table header defines 8 columns but JS only appended 6 mismatched cells",
-        "Action buttons (btn_dispatch_ping, btn_toggle_protocol) were unwired in canvas_js",
-        "Protocol state was hardcoded in canvas_js instead of responding to toggle protocol action and affecting latency physics",
-        "Stepper increment/decrement buttons (.stepper-btn) were not wired to trigger physics updates"
-      ]
-    },
-    {
-      "sim_id": "u02104",
-      "status": "ERROR",
-      "time": "16:06:50",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02113",
-      "status": "FIXED",
-      "time": "16:06:50",
-      "issues": [
-        "Unwired action buttons: 'btn_single_sample' and 'btn_randomize_partition' had no click event listeners attached in canvas_js",
-        "Digital Value Console button hitboxes in canvas mousedown were offset (530 + v * 42, y=86) and misaligned with rendered buttons (540 + v * 44, y=88)",
-        "Stepper arrow buttons (.stepper-btn) lacked click handling in canvas_js",
-        "Point-in-hexagon collision test in pointInHex had inaccurate boundary slope formulation"
-      ]
-    },
-    {
-      "sim_id": "u02085",
-      "status": "ERROR",
-      "time": "16:06:57",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u02115",
       "status": "FIXED",
@@ -382,6 +326,63 @@
         "Observation table columns were misaligned: 1H NMR shift and mass spectrometry m/z columns were swapped, and the 7th column (Elucidated Compound) was missing.",
         "Action buttons 'btn_start_scan' and 'btn_purge_chamber' lacked event listeners in canvas_js.",
         "Stepper increment and decrement buttons (.stepper-btn) were not wired to update input values in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02151",
+      "status": "FIXED",
+      "time": "16:13:27",
+      "issues": [
+        "Unwired action button #btn_release_gravity for triggering gravitational load application",
+        "Unwired stepper buttons (.stepper-btn-up and .stepper-btn-down) for solid particle spacing dp",
+        "Misaligned observation table data rows lacking centered column alignment with thead headers",
+        "Low-contrast discretization lattice lines on the solid cube against dark blue gradient"
+      ]
+    },
+    {
+      "sim_id": "u02152",
+      "status": "FIXED",
+      "time": "16:13:38",
+      "issues": [
+        "Observation table columns in canvas_js were misaligned with observation_thead_html (appended 9 columns with misplaced tLoss and protocolStep instead of the 8 defined columns starting with mouseAge)",
+        "Unwired action buttons (#btn_advance_step and #btn_excise_organs) in canvas_js",
+        "Unwired stepper increment/decrement buttons (.stepper-btn) and experiment preset dropdown (#experimentSelect)"
+      ]
+    },
+    {
+      "sim_id": "u02148",
+      "status": "ERROR",
+      "time": "16:13:43",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02157",
+      "status": "FIXED",
+      "time": "16:13:43",
+      "issues": [
+        "Unwired action button #btn_dispatch_event ('Dispatch Event Trigger')",
+        "Unwired stepper up/down buttons (.stepper-btn-up and .stepper-btn-down)",
+        "Observation table columns count and order misaligned with observation_thead_html (8 columns recorded instead of the defined 6 columns)"
+      ]
+    },
+    {
+      "sim_id": "u02155",
+      "status": "PASS",
+      "time": "16:13:50",
+      "issues": []
+    },
+    {
+      "sim_id": "u02154",
+      "status": "FIXED",
+      "time": "16:13:58",
+      "issues": [
+        "canvas_js was truncated at line 100 with incomplete updateTelemetry function",
+        "Missing action button event listeners for btn_mate_cross and btn_tetrad_dissect",
+        "Missing stepper up/down button event listeners for control_p1_dose, control_p2_dose, and control_sample_size",
+        "Missing observation table row recording handler for btnRecord",
+        "Missing complete 2D/3D canvas rendering engine for Strains Box, Mating Site, and Punnett Square Tool with Style 2 leader lines"
       ]
     }
   ],
@@ -2077,6 +2078,11 @@
     "u02145",
     "u02146",
     "u02149",
-    "u02150"
+    "u02150",
+    "u02151",
+    "u02152",
+    "u02154",
+    "u02155",
+    "u02157"
   ]
 }
