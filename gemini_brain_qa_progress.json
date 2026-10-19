@@ -1,58 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:37:29",
-  "completed_count": 1387,
-  "fixed_count": 1290,
-  "latest_sim_id": "u01748",
+  "updated_at": "2026-10-19 10:38:36",
+  "completed_count": 1392,
+  "fixed_count": 1291,
+  "latest_sim_id": "u01756",
   "recent_events": [
-    {
-      "sim_id": "u01711",
-      "status": "ERROR",
-      "time": "10:27:07",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01714",
-      "status": "ERROR",
-      "time": "10:27:26",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01716",
-      "status": "PASS",
-      "time": "10:27:50",
-      "issues": []
-    },
-    {
-      "sim_id": "u01717",
-      "status": "FIXED",
-      "time": "10:28:39",
-      "issues": [
-        "Unbound live readouts in canvas_js: telemetry elements were queried using 'reading_max_revenue', 'reading_optimal_first_cut', and 'reading_revenue_density' instead of the active DOM IDs 'val_reading_max_revenue', 'val_reading_optimal_first_cut', and 'val_reading_revenue_density'.",
-        "Unwired action button in canvas_js: #btn_solve_optimal ('Execute Optimal Cutting Strategy') lacked a click event handler to apply the DP optimal first cut s[n] to the candidate cut stepper and translate the cutter assembly.",
-        "Unwired stepper buttons in canvas_js: .stepper-btn-up and .stepper-btn-down controls lacked click listeners to increment/decrement the rod length and candidate cut values."
-      ]
-    },
-    {
-      "sim_id": "u01705",
-      "status": "ERROR",
-      "time": "10:28:43",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01703",
-      "status": "ERROR",
-      "time": "10:28:57",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01715",
       "status": "PASS",
@@ -355,6 +307,47 @@
         "Observation table recording lacked a lower-bound guard for developer headcount (Math.max(1, ...)) and used inconsistent precision for project size",
         "Canvas chassis modules lacked 3D elevation shadow and high-contrast silhouette against the dark #090d16 canvas"
       ]
+    },
+    {
+      "sim_id": "u01753",
+      "status": "PASS",
+      "time": "10:38:36",
+      "issues": []
+    },
+    {
+      "sim_id": "u01752",
+      "status": "PASS",
+      "time": "10:38:36",
+      "issues": []
+    },
+    {
+      "sim_id": "u01757",
+      "status": "PASS",
+      "time": "10:38:36",
+      "issues": []
+    },
+    {
+      "sim_id": "u01749",
+      "status": "ERROR",
+      "time": "10:38:36",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01754",
+      "status": "FIXED",
+      "time": "10:38:36",
+      "issues": [
+        "Observation table record button had misaligned columns (combined substrate/solution in col 0, misplaced concentration, and shifted temperature and displacement columns).",
+        "Action buttons (btn_dip_strip, btn_polish_surface) and stepper increment/decrement buttons were unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01756",
+      "status": "PASS",
+      "time": "10:38:36",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1744,6 +1737,11 @@
     "u01746",
     "u01747",
     "u01748",
-    "u01751"
+    "u01751",
+    "u01752",
+    "u01753",
+    "u01754",
+    "u01756",
+    "u01757"
   ]
 }
