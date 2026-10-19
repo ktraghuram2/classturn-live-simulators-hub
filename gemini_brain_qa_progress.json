@@ -1,97 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:02:04",
-  "completed_count": 1172,
-  "fixed_count": 1124,
-  "latest_sim_id": "u01453",
+  "updated_at": "2026-10-19 09:04:54",
+  "completed_count": 1177,
+  "fixed_count": 1127,
+  "latest_sim_id": "u01465",
   "recent_events": [
-    {
-      "sim_id": "u01409",
-      "status": "FIXED",
-      "time": "08:49:21",
-      "issues": [
-        "Misaligned observation table columns: canvas_js inserted 11 cells (including timestamp and redundant control values) into observationTbody, but observation_thead_html defined only 7 table columns.",
-        "Unwired action preset and cycle buttons: btn_preset_aluminium, btn_preset_steel, btn_preset_titanium, and btn_auto_wrap_cycle lacked click event listeners in canvas_js.",
-        "Unwired stepper up/down buttons: Stepper buttons (.stepper-btn) were not hooked up to increment/decrement their corresponding control input values."
-      ]
-    },
-    {
-      "sim_id": "u01410",
-      "status": "FIXED",
-      "time": "08:49:36",
-      "issues": [
-        "Unwired action buttons: btn_brute_force_scan, btn_frequency_match, and btn_verify_submission were defined in HTML but had no event listeners in canvas_js.",
-        "Unwired stepper up/down buttons: .stepper-btn elements were missing click handlers to increment/decrement inputs and trigger sync events.",
-        "Observation table column misalignment: btnRecord inserted shiftKey, rotStr, trialKey, corr, keyspace, and matchStatus instead of aligning with the thead columns (Trial Number n, Shift Key k, Rotor Angular Deflection θ, Ciphertext Character Index, Decrypted Character Index P, Frequency Correlation Index I_k).",
-        "Raw LaTeX escape characters: Removed raw LaTeX escape braces \\{ and \\} in principles_summary_html prose."
-      ]
-    },
-    {
-      "sim_id": "u01411",
-      "status": "FIXED",
-      "time": "08:50:37",
-      "issues": [
-        "Unwired action buttons: 'btn_apply_substitution' and 'btn_cycle_cipher' had no click listeners attached.",
-        "Destructive auto-mapping in syncInputs(): every animation frame automatically bound the selected cipher character to the candidate plaintext, corrupting substitutions when browsing cipher characters.",
-        "Unwired stepper up/down buttons: .stepper-btn click events were not wired in the simulation script.",
-        "Misaligned observation table columns: btnRecord inserted 8 <td> elements into a 6-column <thead> table, causing table misalignment."
-      ]
-    },
-    {
-      "sim_id": "u01412",
-      "status": "PASS",
-      "time": "08:50:37",
-      "issues": []
-    },
-    {
-      "sim_id": "u01414",
-      "status": "FIXED",
-      "time": "08:50:37",
-      "issues": [
-        "Fixed live readouts telemetry by referencing 'val_reading_*' DOM IDs matching readouts_html",
-        "Enabled quadrature sine-cosine generation mode so basis signals can achieve true mathematical orthogonality",
-        "Corrected observation table row injection in btnRecord to align with the 5 columns of observation_thead_html",
-        "Wired up btn_switch_signals to toggle between sine-cosine quadrature pair and sine-sine in-phase pair",
-        "Wired up btn_compute_orthogonality to execute and record gated dot product integration",
-        "Wired up stepper up/down buttons across all control inputs"
-      ]
-    },
-    {
-      "sim_id": "u01415",
-      "status": "FIXED",
-      "time": "08:50:37",
-      "issues": [
-        "Replaced raw unrendered LaTeX symbol (Δ RT_{Simon}) in principles_summary_html and procedure_section_html with standard MathML markup",
-        "Corrected unrendered LaTeX symbol Δ RT_{Simon} in readouts_html to standard MathML and sanitized data-unit attributes",
-        "Wired unwired action buttons (btn_present_trial, btn_respond_left, btn_respond_right) to trial presentation and response handlers in canvas_js",
-        "Fixed observation ledger column misalignment where Response Key column was omitted, shifting Response Time and Accuracy out of alignment with thead"
-      ]
-    },
-    {
-      "sim_id": "u01416",
-      "status": "FIXED",
-      "time": "08:50:54",
-      "issues": [
-        "Converted raw LaTeX symbol t_{\\exp} in steppers_html to standard MathML",
-        "Converted raw LaTeX symbol Δ RT_{interference} in principles_list_html to standard MathML",
-        "Converted raw LaTeX symbol Δ RT_{interference} in readouts_html to standard MathML",
-        "Wired unattached control action buttons (btn_present_stimulus and btn_simulate_response) to trigger live trial sequences and simulated responses",
-        "Wired stepper up/down control buttons to properly step and clamp values with change events",
-        "Fixed observation logging in canvas_js to properly map to observation_thead_html headers (Trial Number, Word, Font Ink Color, Condition, RT, ACC)"
-      ]
-    },
-    {
-      "sim_id": "u01413",
-      "status": "FIXED",
-      "time": "08:51:15",
-      "issues": [
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired, preventing users from adjusting initial wet soil mass and oven temperature via UI buttons.",
-        "Action buttons ('btn_start_drying' and 'btn_transfer_balance') were completely unwired without container transfer or drying sequence logic.",
-        "Experiment selector ('experimentSelect') was unwired, fixing specimen water content statically at 25.0% regardless of chosen soil type.",
-        "Observation table columns were misaligned: Initial Wet Soil Mass (M_wet) was omitted, causing column headers and recorded data cells (m3, mw, mDry) to misalign.",
-        "Oven PID set-value (SV) display was hardcoded to 105.0°C instead of dynamically reflecting the user-adjusted oven temperature stepper."
-      ]
-    },
     {
       "sim_id": "u01418",
       "status": "FIXED",
@@ -401,6 +314,75 @@
         "Unwired stepper controls: Stepper buttons (.stepper-btn) were not attached to input modification listeners.",
         "Misaligned observation table columns: btnRecord inserted 6 columns with a row index instead of matching the 5 observation thead headers, and transposed Gradient Magnitude and Surface Residual columns.",
         "Low contrast coordinate cage wireframe: #1e293b wireframe edges were near-invisible on dark #090d16 canvas void."
+      ]
+    },
+    {
+      "sim_id": "u01460",
+      "status": "FIXED",
+      "time": "09:02:19",
+      "issues": [
+        "Inverted apparatus badges: Badge '1' was pointing to the probe and Badge '2' to the heating bath, conflicting with Legend Pill 1 (Heating Bath) and Pill 2 (Thermocouple Probe).",
+        "Unwired live telemetry readouts: updateTelemetry attempted to write to 'val_t1' instead of matching 'val_reading_t1' and risk overwriting entire list item containers.",
+        "Unwired action button: #btn_toggle_heater was present in controls but had no click listener or active visual state in canvas_js.",
+        "Unwired stepper arrow buttons: .stepper-btn-up and .stepper-btn-down were not bound to increment/decrement input values.",
+        "Observation table recording button: Added selector fallbacks for #btnRecord, #btn_record, and #recordBtn."
+      ]
+    },
+    {
+      "sim_id": "u01456",
+      "status": "FIXED",
+      "time": "09:02:22",
+      "issues": [
+        "Unwired action buttons: 'btn_initiate_handshake' and 'btn_send_data' had no event listeners attached in canvas_js.",
+        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' stepper buttons were not wired to update inputs.",
+        "Apparatus badge numbering mismatch: Gateway Router had Badge 2 and Server had Badge 3, contradicting Legend Pills and Apparatus specifications which designate Server as #2 and Gateway Router as #3.",
+        "Missing observation table recording integration for Section 8 data table telemetry."
+      ]
+    },
+    {
+      "sim_id": "u01458",
+      "status": "ERROR",
+      "time": "09:02:52",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01457",
+      "status": "ERROR",
+      "time": "09:02:56",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01459",
+      "status": "ERROR",
+      "time": "09:03:01",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01463",
+      "status": "PASS",
+      "time": "09:03:21",
+      "issues": []
+    },
+    {
+      "sim_id": "u01461",
+      "status": "PASS",
+      "time": "09:03:25",
+      "issues": []
+    },
+    {
+      "sim_id": "u01465",
+      "status": "FIXED",
+      "time": "09:04:54",
+      "issues": [
+        "Observation table columns in canvas_js were scrambled and had 9 columns instead of the 8 columns specified in observation_thead_html (Thermal Conductivity k, Conduction Area A, Distance dx, Hot Temp TH, Cold Temp TC, Temp Difference ΔT, Heat Transfer Rate dQ/dt, Thermal Resistance R_th)",
+        "Preset action buttons (btn_preset_copper, btn_preset_aluminium, btn_preset_glass, btn_preset_foam, and btn_steady_state) were completely unwired in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn) lacked click event listeners in canvas_js"
       ]
     }
   ],
@@ -1576,6 +1558,11 @@
     "u01451",
     "u01453",
     "u01454",
-    "u01455"
+    "u01455",
+    "u01456",
+    "u01460",
+    "u01461",
+    "u01463",
+    "u01465"
   ]
 }
