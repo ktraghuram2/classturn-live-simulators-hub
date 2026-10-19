@@ -1,63 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:53:26",
-  "completed_count": 1287,
-  "fixed_count": 1218,
-  "latest_sim_id": "u01615",
+  "updated_at": "2026-10-19 09:56:15",
+  "completed_count": 1292,
+  "fixed_count": 1222,
+  "latest_sim_id": "u01616",
   "recent_events": [
-    {
-      "sim_id": "u01577",
-      "status": "PASS",
-      "time": "09:36:59",
-      "issues": []
-    },
-    {
-      "sim_id": "u01574",
-      "status": "FIXED",
-      "time": "09:37:15",
-      "issues": [
-        "Unwired action button: 'Collect Effluent Aliquot' (btn_collect_breakthrough_sample) was not targeted by the observation recording listener, which was searching only for 'btnRecord'.",
-        "Unwired action button: 'Toggle Feed Inflow' (btn_toggle_feed_flow) was not wired, allowing pump rotation and fluid animations to run unconditionally.",
-        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners to update numeric inputs.",
-        "Misaligned observation table columns: Canvas script generated 9 columns with inverted ordering, missing the 'Solute Adsorbed Mass x' column and inserting unheadered columns (row index, valve opening, superficial velocity) that clashed with the 7 defined header columns."
-      ]
-    },
-    {
-      "sim_id": "u01575",
-      "status": "ERROR",
-      "time": "09:37:38",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01576",
-      "status": "PASS",
-      "time": "09:37:48",
-      "issues": []
-    },
-    {
-      "sim_id": "u01580",
-      "status": "FIXED",
-      "time": "09:38:04",
-      "issues": [
-        "Unwired action buttons ('btn_step_wall' and 'btn_auto_generate') and unwired stepper increment/decrement buttons in canvas_js",
-        "Misaligned observation table data columns in btnRecord event listener (injected time and combined dimensions instead of matching the 6 specific table columns)",
-        "Missing column variable symbol m in observation_thead_html"
-      ]
-    },
-    {
-      "sim_id": "u01578",
-      "status": "FIXED",
-      "time": "09:38:34",
-      "issues": [
-        "Fixed telemetry readout element IDs in canvas_js which did not match canonical val_reading_* IDs in readouts_html, preventing live UI telemetry updates.",
-        "Wired up stepper up/down buttons (▲/▼) in canvas_js so clicking them increments/decrements control inputs.",
-        "Wired action buttons (btn_apply_indentation and btn_align_reticle) to actuate indentation cycles and synchronize telemetry.",
-        "Corrected observation table row formatting in canvas_js to match the 6 columns in observation_thead_html (Aging Time, Applied Load, Diagonal d1, Diagonal d2, Mean Diagonal d, Vickers Hardness HV) instead of misaligned columns with an extraneous index column.",
-        "Calibrated peak aging hardness kinetics model in canvas_js from 139 HV to 177 HV to match the peak hardness stated in the principles summary."
-      ]
-    },
     {
       "sim_id": "u01579",
       "status": "ERROR",
@@ -381,6 +328,61 @@
         "Action buttons #btn_press_button and #btn_pulse_alert and stepper up/down buttons were missing explicit event handlers in canvas_js",
         "Readouts HTML contained malformed nested HTML tag and quotes inside data-unit attributes"
       ]
+    },
+    {
+      "sim_id": "u01618",
+      "status": "ERROR",
+      "time": "09:56:15",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01624",
+      "status": "FIXED",
+      "time": "09:56:15",
+      "issues": [
+        "Wired unhandled action buttons btn1 (Upload First FASTA File) and btn2 (Upload Second FASTA File & Run Brute-Force Compare) to trigger comparison and telemetry updates.",
+        "Added increment and decrement logic to stepper buttons (.stepper-btn-up, .stepper-btn-down) which previously did not adjust input values.",
+        "Realigned observation table cells in btnRecord to match the exact 7 headers in observation_thead_html, removing extra trial index, scan speed, and duplicate Hamming columns.",
+        "Corrected sequence comparison calculation so positional match status, Hamming distance, and percentage identity evaluate actual nucleotide equality (dna1[i] === dna2[i]) under both substitutions and reading-frame shifts."
+      ]
+    },
+    {
+      "sim_id": "u01621",
+      "status": "FIXED",
+      "time": "09:56:15",
+      "issues": [
+        "Unwired action button (#btn_auto_solve) preventing automated Best-First Search traversal execution.",
+        "Unwired stepper increment/decrement buttons (.stepper-btn-up and .stepper-btn-down) for step index, heuristic bias weight, and execution interval.",
+        "Missing observation table row population as heuristic search steps advance."
+      ]
+    },
+    {
+      "sim_id": "u01622",
+      "status": "FIXED",
+      "time": "09:56:15",
+      "issues": [
+        "Unwired action button btn_align_circular_orbit for calculating circular orbital velocity",
+        "Unwired action button btn_toggle_gravity_vectors for toggling dynamic vector field arrows",
+        "Unwired stepper increment/decrement buttons (.stepper-btn)",
+        "Observation table columns mismatch between observation_thead_html (6 columns) and tbody (9 columns)",
+        "Corrupted exponent formatting in table headers and readout data-unit (10²0 instead of 10²⁰)"
+      ]
+    },
+    {
+      "sim_id": "u01617",
+      "status": "FIXED",
+      "time": "09:56:15",
+      "issues": [
+        "Rectified unrendered raw LaTeX/pseudo-LaTeX exponents and symbols in principles_summary_html: replaced α^(2t), α^(2i), α^(4i), and phi_(2t-1)(X) with valid MathML tags."
+      ]
+    },
+    {
+      "sim_id": "u01616",
+      "status": "PASS",
+      "time": "09:56:15",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1670,6 +1672,11 @@
     "u01612",
     "u01613",
     "u01614",
-    "u01615"
+    "u01615",
+    "u01616",
+    "u01617",
+    "u01621",
+    "u01622",
+    "u01624"
   ]
 }
