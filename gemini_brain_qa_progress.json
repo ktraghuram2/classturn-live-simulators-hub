@@ -1,58 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:02:18",
-  "completed_count": 1647,
-  "fixed_count": 1494,
-  "latest_sim_id": "u02088",
+  "updated_at": "2026-10-19 16:03:25",
+  "completed_count": 1652,
+  "fixed_count": 1499,
+  "latest_sim_id": "u02096",
   "recent_events": [
-    {
-      "sim_id": "u02051",
-      "status": "FIXED",
-      "time": "15:53:00",
-      "issues": [
-        "Observation table column mismatch: btnRecord inserted 8 <td> elements into a 5-column table header; corrected to match the 5 header columns (Path Length, Transit Time, Pulse Velocity, Dynamic Elastic Modulus, Concrete Quality).",
-        "Leader line badge number misalignment: Concrete Specimen was assigned badge 6 instead of 3, and Receiving Transducer was assigned badge 3 instead of 4, conflicting with legend_pills_html. Corrected badge order to strictly match legend pills.",
-        "Unwired action and stepper buttons: btn_calibrate_zero, btn_toggle_arrangement, btn_toggle_moisture, and stepper up/down buttons (.stepper-btn) lacked event listeners in canvas_js. Added interactive event handlers and physics state toggles."
-      ]
-    },
-    {
-      "sim_id": "u02052",
-      "status": "PASS",
-      "time": "15:53:03",
-      "issues": []
-    },
-    {
-      "sim_id": "u02047",
-      "status": "FIXED",
-      "time": "15:53:18",
-      "issues": [
-        "Raw LaTeX symbols (Addr_{proxy}, Addr_{logic}) in readouts_html converted to semantic MathML",
-        "Numbered canvas badges reordered (Badge 1: Proxy, Badge 2: Logic, Badge 3: Caller) to match legend pills and apparatus list, and phantom unlisted Badge 4 removed",
-        "Observation table columns in recordObservation() realigned from 5 mismatched cells to all 6 table columns (Sequence, Active Logic, Selected Op, Step Value, Storage Counter, Gas Consumed)",
-        "Wired unwired controls panel action buttons (btn_trigger_fallback, btn_upgrade_implementation) and stepper adjustment buttons (.stepper-btn-up, .stepper-btn-down)",
-        "Updated telemetry DOM selectors from reading_* to val_reading_* to avoid overwriting heading elements and preserve unit display"
-      ]
-    },
-    {
-      "sim_id": "u02049",
-      "status": "FIXED",
-      "time": "15:53:20",
-      "issues": [
-        "Telemetry element IDs in canvas_js targeted parent container IDs (reading_snr) instead of the actual value span IDs (val_reading_snr, val_reading_bits, etc.), preventing live telemetry updates",
-        "Action buttons (btn_cycle_modulation_mode and btn_auto_align_filter) and stepper buttons lacked event listeners in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u02053",
-      "status": "FIXED",
-      "time": "15:53:28",
-      "issues": [
-        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) in canvas_js",
-        "Unwired action button (#btn_map_streamlines: Inject Test Current & Map Streamlines) in canvas_js",
-        "Unwired experiment options selector (#experimentSelect) in canvas_js",
-        "Unclosed HTML tags (missing </ul></div></li>) in principles_list_html"
-      ]
-    },
     {
       "sim_id": "u02054",
       "status": "FIXED",
@@ -378,6 +330,64 @@
         "Unwired stepper buttons: Added click event listeners for .stepper-btn controls with step sizing, boundary clamping, and input/change event dispatching.",
         "Misaligned observation table columns: Corrected observation row data cells from 9 mismatched columns to 7 columns matching the observation thead (T, TK, 10³/TK, I, V, ρ, ln(ρ)).",
         "Telemetry readout ID mismatch: Enhanced setElText to resolve both ID and val_ID prefixes with engineering units so live readings display properly."
+      ]
+    },
+    {
+      "sim_id": "u02091",
+      "status": "FIXED",
+      "time": "16:02:23",
+      "issues": [
+        "Replaced spurious MathML '<math><mrow><mi>a</mi></mrow></math>' elements incorrectly substituting the English indefinite article 'a' across apparatus_html, principles_summary_html, and procedure_section_html.",
+        "Fixed corrupted MathML formatting for 'ng/μL' and 'ratio' units inside readouts_html.",
+        "Corrected observation table row schema mismatch in canvas_js: replaced 10 misordered td cells with the exact 8 defined table columns matching thead headers.",
+        "Wired interactive controls for all stepper up/down buttons (▲/▼) and unhandled action buttons (Advance Workflow Stage, Pulse Centrifuge Spin, Toggle UV Transilluminator).",
+        "Linked UV Transilluminator canvas rendering directly to toggle state, correctly darkening UV excitative fluorescence and band emission when UV is in standby."
+      ]
+    },
+    {
+      "sim_id": "u02092",
+      "status": "FIXED",
+      "time": "16:02:25",
+      "issues": [
+        "Observation table columns were misaligned: observation_thead_html defined 7 columns (p, m0, n, beta, theta_c, r_ring, N_pe), but btnRecord injected 8 columns with mismatched data (#run, species, p, n, beta, theta_c, r_ring, N_pe). Aligned tbody cells to 7 matching columns.",
+        "Action buttons 'btn_inject_pulse' and 'btn_hough_fit' were defined in controls HTML but had no event listeners wired in canvas_js. Added click handlers for pulse injection and circle reconstruction.",
+        "Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners in canvas_js, and species mass required stepped navigation between hadron rest masses (pion 139.6, kaon 493.7, proton 938.3 MeV/c²). Added full stepper event listener support.",
+        "Validation section contained unformatted raw text math equations ('theta_c_max = arccos(1/n)', 'beta', 'dn/dlambda'). Upgraded to proper MathML markup."
+      ]
+    },
+    {
+      "sim_id": "u02086",
+      "status": "FIXED",
+      "time": "16:02:35",
+      "issues": [
+        "Telemetry DOM element lookup IDs in canvas_js used 'reading_*' instead of matching 'val_reading_*' spans, preventing live readout updates.",
+        "Observation table data columns in btnRecord were severely misaligned with observation_thead_html headers (R_L placed at index 1 instead of index 5, shifting V_rect, V_dc, and V_out).",
+        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) were unwired with no click event handlers.",
+        "Action buttons #btn_toggle_channel ('Toggle CRO Channel Display') and #btn_toggle_filter ('Engage / Bypass Filter Capacitor') had no event listeners or state hooks.",
+        "CRO live waveform rendering only rendered DC waveforms and did not respond to channel toggles (CH1 AC / CH2 DC) or filter bypass state."
+      ]
+    },
+    {
+      "sim_id": "u02094",
+      "status": "FIXED",
+      "time": "16:02:58",
+      "issues": [
+        "Corrected leader line badges 3 and 4 which were inverted relative to legend pills (badge 3 now correctly targets Ring Test Specimen and badge 4 targets Lower Compression Die Platen & Bolster Base)",
+        "Fixed updateTelemetry to resolve 'val_' prefixed readout elements and preserve unit MathML/child elements",
+        "Aligned observation table row columns to match the 7 columns in observation_thead_html instead of writing 10 misaligned columns",
+        "Wired up stepper button controls (.stepper-btn) for incrementing and decrementing parameter inputs",
+        "Wired up action buttons actuate_hydraulic_compression and optical_scan_profile"
+      ]
+    },
+    {
+      "sim_id": "u02096",
+      "status": "FIXED",
+      "time": "16:03:25",
+      "issues": [
+        "Unwired action button btn_seek_resonance (Auto-Tune to Resonant Frequency) in canvas_js",
+        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
+        "DOM element ID mismatch for telemetry readouts: canvas_js queried reading_* instead of val_reading_*",
+        "Observation table column mismatch: btnRecord inserted 7 columns with an extra index column and swapped f/R order, conflicting with the 6 observation_thead_html columns"
       ]
     }
   ],
@@ -2025,9 +2035,14 @@
     "u02081",
     "u02082",
     "u02083",
+    "u02086",
     "u02087",
     "u02088",
     "u02089",
-    "u02093"
+    "u02091",
+    "u02092",
+    "u02093",
+    "u02094",
+    "u02096"
   ]
 }
