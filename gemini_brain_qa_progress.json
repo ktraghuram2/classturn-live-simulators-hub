@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:34:36",
-  "completed_count": 1377,
-  "fixed_count": 1284,
-  "latest_sim_id": "u01738",
+  "updated_at": "2026-10-19 10:36:28",
+  "completed_count": 1382,
+  "fixed_count": 1287,
+  "latest_sim_id": "u01743",
   "recent_events": [
-    {
-      "sim_id": "u01700",
-      "status": "FIXED",
-      "time": "10:20:44",
-      "issues": [
-        "Replaced erroneous mathematical fraction formatting in apparatus and validation slots where 'CLIP ViT-L/14' was incorrectly represented as L over 14",
-        "Corrected epsilon_theta notation in principles summary MathML to properly display Greek symbol theta rather than literal text string 'theta'"
-      ]
-    },
-    {
-      "sim_id": "u01701",
-      "status": "FIXED",
-      "time": "10:21:24",
-      "issues": [
-        "Unwired action button: #btn_inject_disturbance had no event listener wired in canvas_js",
-        "Telemetry DOM element IDs: canvas_js queried reading_* instead of val_reading_* value containers",
-        "Observation table columns misaligned: btnRecord inserted 7 misordered cells instead of matching the 8 columns defined in observation_thead_html",
-        "Apparatus badge numbering mismatch: Badges 4, 5, and 6 were swapped relative to legend_pills_html"
-      ]
-    },
-    {
-      "sim_id": "u01685",
-      "status": "ERROR",
-      "time": "10:22:08",
-      "issues": [
-        "agy.exe busy/rate-limited (code 1): error: Eligibility check failed: failed to get profile picture: Get \"https://lh3.googleusercontent.com/a/ACg8ocI5Z-q8MAW3awM"
-      ]
-    },
-    {
-      "sim_id": "u01699",
-      "status": "FIXED",
-      "time": "10:23:45",
-      "issues": [
-        "Unwired interactive stepper buttons (.stepper-btn-up and .stepper-btn-down) for load current, bias slope, and fault magnitude controls.",
-        "Unwired action buttons (#btn_toggle_cb and #btn_inject_fault_f1) with missing click event handlers for circuit breaker manual toggle and internal fault F1 injection.",
-        "Mismatched live telemetry DOM element IDs in canvas_js (queried container data-ids instead of val_reading_* value elements, preventing readings from updating).",
-        "Apparatus leader line badge numbering in canvas_js was misaligned with legend pills (Badge 1 pointed to Transformer instead of Circuit Breaker, Badge 5 pointed to Circuit Breaker instead of Relay).",
-        "Corrupted MathML fractions in apparatus_html specification strings for voltage ratio and CT ratings.",
-        "Lowercase delta symbol in validation_html winding connection assumption."
-      ]
-    },
-    {
-      "sim_id": "u01702",
-      "status": "FIXED",
-      "time": "10:23:52",
-      "issues": [
-        "Observation recording function (btnRecord) generated 9 table columns while observation_thead_html specifies exactly 7 columns, causing table column misalignment.",
-        "Action buttons btn_fill_sinks and btn_delineate_watershed were declared in controls but lacked event listener wiring in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) lacked click event listeners in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01690",
-      "status": "ERROR",
-      "time": "10:24:06",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01708",
       "status": "PASS",
@@ -365,6 +306,59 @@
         "Wired up unhandled action buttons btn_align_cursor ('Align Anthropometer Cursor to Vertex') and btn_compute_distribution ('Fit Gaussian Normal Distribution')",
         "Wired up unhandled stepper up/down buttons (.stepper-btn) to increment/decrement input values and dispatch change events",
         "Fixed observation table columns: thead has 7 columns (including Sample Mean and Standard Deviation), but tbody previously injected only 6 misaligned columns"
+      ]
+    },
+    {
+      "sim_id": "u01739",
+      "status": "PASS",
+      "time": "10:34:40",
+      "issues": []
+    },
+    {
+      "sim_id": "u01741",
+      "status": "PASS",
+      "time": "10:35:09",
+      "issues": []
+    },
+    {
+      "sim_id": "u01742",
+      "status": "FIXED",
+      "time": "10:35:23",
+      "issues": [
+        "Misaligned observation table columns: btnRecord was generating 7 columns (including trial index and incubation temperature), but observation_thead_html specifies 5 columns (Volume, Concentration, Path Length, Absorbance, Transmittance)",
+        "Unwired action buttons: btn_heat_waterbath, btn_zero_blank, and btn_transfer_cuvette lacked click event listeners in canvas_js",
+        "Unwired stepper controls: .stepper-btn up and down buttons were not incrementing/decrementing input values or triggering input/change events"
+      ]
+    },
+    {
+      "sim_id": "u01732",
+      "status": "ERROR",
+      "time": "10:35:24",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01744",
+      "status": "FIXED",
+      "time": "10:35:56",
+      "issues": [
+        "Raw MathML tags wrapping the English indefinite article 'A' in procedure overview and 'Class A' in apparatus specification",
+        "Misaligned observation table columns where recorded row values were shifted by one column relative to the headers",
+        "Unwired action buttons ('btn_blank_calibrate', 'btn_load_soft_drink'), unhandled stepper up/down buttons, and unhandled experiment mode selector",
+        "Numbered leader badges only drew 4 items pointing to incorrect locations instead of the 7 apparatus elements in the legend"
+      ]
+    },
+    {
+      "sim_id": "u01743",
+      "status": "FIXED",
+      "time": "10:36:28",
+      "issues": [
+        "Mangled MathML in principles_summary_html and validation_html where tetraborate ion formula [B4O5(OH)4]2- was corrupted as 4 squared minus.",
+        "Raw broken MathML in readouts_html displaying 'dimensionless' as a rendered unit and malformed fractional MathML for kJ/mol and J/(mol·K).",
+        "Malformed 'dimensionless' unit annotations in observation_thead_html table headers.",
+        "Alignment mismatch between canvas_js leader line badge indices (1: Burette, 2: Conical Flask, 3: Measuring Cylinder, 4: Micropipette, 5: Retort Stand, 6: White Tile) and legend_pills_html order.",
+        "Unwired stepper ▲/▼ buttons and action buttons (btn_dispense_drop, btn_add_indicator) in canvas_js."
       ]
     }
   ],
@@ -1745,6 +1739,11 @@
     "u01733",
     "u01734",
     "u01736",
-    "u01738"
+    "u01738",
+    "u01739",
+    "u01741",
+    "u01742",
+    "u01743",
+    "u01744"
   ]
 }
