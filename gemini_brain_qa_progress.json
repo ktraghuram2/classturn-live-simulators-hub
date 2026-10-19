@@ -1,101 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:47:44",
-  "completed_count": 1562,
-  "fixed_count": 1427,
-  "latest_sim_id": "u01980",
+  "updated_at": "2026-10-19 15:23:28",
+  "completed_count": 1567,
+  "fixed_count": 1431,
+  "latest_sim_id": "u01986",
   "recent_events": [
-    {
-      "sim_id": "u01932",
-      "status": "ERROR",
-      "time": "14:34:23",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01935",
-      "status": "FIXED",
-      "time": "14:34:31",
-      "issues": [
-        "Procedure steps contained generic laboratory circuit boilerplate ('check zero-error and calibration', 'connect the circuit/apparatus') instead of software engineering UML modeling steps.",
-        "Live readout DOM element IDs in updateTelemetry ('reading_total_nodes', 'val_total_nodes') failed to match slot span IDs ('val_reading_total_nodes', etc.), leaving telemetry figures static in the UI.",
-        "Observation table record logging appended 7 td elements including an unheaded timestamp column, misaligning with the 6 th columns in observation_thead_html.",
-        "Action buttons 'Validate UML Semantics' (btn_validate_rules) and 'Auto-Balance Diagram Layout' (btn_rebalance_layout) had no event listener wiring.",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to alter numerical values."
-      ]
-    },
-    {
-      "sim_id": "u01938",
-      "status": "PASS",
-      "time": "14:34:42",
-      "issues": []
-    },
-    {
-      "sim_id": "u01940",
-      "status": "FIXED",
-      "time": "14:35:04",
-      "issues": [
-        "Unwired action buttons: 'btn_toggle_3d_mode' and 'btn_saturate_hydrogens' lacked event listeners and execution logic",
-        "Missing 3D stereochemical representation modes: balls, stick, VDW space-filling, and wireframe switching was not implemented in canvas_js",
-        "Unwired stepper controls: stepper buttons (.stepper-btn) were not bound to input adjustments",
-        "Observation table column mismatch: btnRecord appended 6 columns including an unsynchronized trial index with permuted columns against the 5 thead headers"
-      ]
-    },
-    {
-      "sim_id": "u01934",
-      "status": "FIXED",
-      "time": "14:35:04",
-      "issues": [
-        "DOM telemetry readout IDs (val_validity_score, val_throughput, val_balance_ratio, val_violation_count) in renderLoop did not match the HTML element IDs (val_reading_*)",
-        "Observation table recording row was misaligned with 8 columns instead of 7, swapping packet rate and data stores count and erroneously injecting throughput",
-        "Action buttons (btn_validate_dfd, btn_cycle_flow_path) and stepper increment/decrement buttons (.stepper-btn) lacked event listener wiring",
-        "Conduits and animated particle tokens connected to sub-process p2 and data store d1 remained rendered even when process_count < 2 or data_store_count < 1"
-      ]
-    },
-    {
-      "sim_id": "u01939",
-      "status": "FIXED",
-      "time": "14:35:17",
-      "issues": [
-        "Simulator title was erroneously labeled 'Magnetic Tweezers' despite entire experiment, apparatus, and physics modeling Optical Tweezers",
-        "Action buttons (Recenter Bead and Test Trap Release) and stepper increment/decrement buttons were unhandled in canvas_js",
-        "Observation table columns were misaligned (6 columns logged including particle diameter and max reflection force, while thead has 5 columns: Displacement, Laser Power, Restoring Force, Trap Stiffness, Potential Energy)",
-        "Canvas badges 3 and 4 were mismatched with legend pills (Badge 3 pointed to bead and Badge 4 pointed to piezo stage, whereas Legend Pill 3 is Microfluidic Flow Chamber and Pill 4 is Dielectric Microparticle)"
-      ]
-    },
-    {
-      "sim_id": "u01942",
-      "status": "FIXED",
-      "time": "14:35:37",
-      "issues": [
-        "Observation table columns were misaligned due to an extraneous rowIdx cell causing an 8-to-7 column mismatch with the header.",
-        "Section 6 live readings failed to update because telemetry selectors queried missing element IDs ('reading_m1', etc.) instead of value span IDs ('val_reading_m1', etc.).",
-        "Section 5 Stepper buttons (▲/▼) and 'Acknowledge DCS Alarm' action button were unwired in canvas_js.",
-        "Legend pills 3, 4, and 5 were misordered relative to apparatus elements and canvas positions (Feeders F1/F2 at pos 3, CB6 at pos 4, Meters at pos 5)."
-      ]
-    },
-    {
-      "sim_id": "u01944",
-      "status": "FIXED",
-      "time": "14:35:46",
-      "issues": [
-        "Telemetry readout elements (val_reading_*) were not matched by updateTelemetryUI id selector",
-        "Observation table columns were misaligned (7 cells recorded vs 6 header columns; columns swapped and missing Mean Hardness)",
-        "Action buttons (Execute Rammer Drop Blow and Engage Indenter into Core) were unwired",
-        "Stepper increment and decrement buttons were unwired"
-      ]
-    },
-    {
-      "sim_id": "u01945",
-      "status": "FIXED",
-      "time": "14:36:17",
-      "issues": [
-        "Observation table data row included an extraneous index cell (${idx}) creating 7 columns while observation_thead_html defines exactly 6 columns, causing misaligned table telemetry",
-        "Action button 'btn_dispense_anesthetic' was unattached and lacked an event listener to execute or signal anesthetic delivery",
-        "Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to increment/decrement stepper values and dispatch input events"
-      ]
-    },
     {
       "sim_id": "u01949",
       "status": "FIXED",
@@ -383,6 +292,95 @@
         "Action button 'btn_toggle_laser' was present in actions_html but not wired to toggle laser state in canvas_js",
         "Stepper increment and decrement buttons were not wired to update target input values and trigger input events in canvas_js"
       ]
+    },
+    {
+      "sim_id": "u01981",
+      "status": "FIXED",
+      "time": "15:23:28",
+      "issues": [
+        "Fixed syntax error at line 349 where canvas_js was truncated mid-statement without a render loop or animation handler.",
+        "Resolved control element ID mismatch: canvas_js listened to 'noc', 'yi', etc., while HTML inputs use 'control_noc', 'control_yi', 'control_b', etc.",
+        "Wired up stepper buttons (.stepper-btn-up, .stepper-btn-down) to increment and decrement input values properly.",
+        "Wired up action buttons 'btn_simulate_flight' (foraging bout simulation) and 'btn_find_optimal_b' (automatic determination of optimal departure flower b*).",
+        "Corrected telemetry readout binding: updateTelemetryDOM targeted non-existent IDs instead of val_reading_cur_cal, val_reading_net_energy, val_reading_total_time, and val_reading_energy_rate.",
+        "Aligned observation table recordings: recordObservation previously output 8 columns while observation_thead_html expects exactly 5 columns.",
+        "Added high-fidelity 2D visual simulation with lupine inflorescence spike, animated bumblebee with wing flutter and proboscis extension, graduated nectary crop meters, bioenergetic rate curve display, and Style 2 leader lines."
+      ]
+    },
+    {
+      "sim_id": "u01979",
+      "status": "ERROR",
+      "time": "15:23:28",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01984",
+      "status": "ERROR",
+      "time": "15:23:28",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01977",
+      "status": "FIXED",
+      "time": "15:23:28",
+      "issues": [
+        "setTelemetryText looked up 'val_displacement' instead of 'val_reading_displacement', failing to update all live readout displays",
+        "All four action buttons (btn_release_oscillation, btn_damp_to_equilibrium, btn_toggle_configuration, btn_mount_mystery_mass) had no click event listeners wired in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js",
+        "btnRecord appended 8 columns starting with spring constant k, misaligning all 7 observation table column headers",
+        "Canvas leader badges included 6 badges with a mismatch against legend_pills_html (which defines exactly 5 pills, with Pill 3 as Mystery Masses)"
+      ]
+    },
+    {
+      "sim_id": "u01976",
+      "status": "FIXED",
+      "time": "15:23:28",
+      "issues": [
+        "Observation table columns in btnRecord mismatched observation_thead_html (logged 7 columns instead of 9, skipping clearance, addendum, dedendum, and outside diameter alignment)",
+        "Live readout update function failed to update DOM values because element IDs in readouts_html are prefixed with 'val_' (e.g., val_reading_pitch_radius)",
+        "Action buttons toggle_rotation and align_caliper_probe in actions_html were unwired without event listeners",
+        "Stepper increment and decrement buttons (.stepper-btn) were unwired without event listeners"
+      ]
+    },
+    {
+      "sim_id": "u01982",
+      "status": "FIXED",
+      "time": "15:23:28",
+      "issues": [
+        "Fixed grammatical corruption where the English indefinite article 'a' was converted into MathML italic variables in aim, apparatus, and principles slots.",
+        "Fixed '800 x 500' CRT coordinate specification using italic MathML 'x' instead of the multiplication sign in apparatus.",
+        "Added missing 'Execute Single Descent Step' action button to actions_html to satisfy Section 4 procedure Step 4.",
+        "Wired stepper up/down buttons (.stepper-btn) to increment/decrement input values cleanly.",
+        "Wired HTML action buttons ('btn_auto_converge' and 'btn_step') in canvas_js so DOM controls execute simulation logic.",
+        "Fixed updateTelemetryDisplay to properly update <input> values using .value instead of .textContent.",
+        "Added automatic halt to auto-iteration loop when the gradient convergence threshold (|f'(x)| < 0.001) is reached."
+      ]
+    },
+    {
+      "sim_id": "u01983",
+      "status": "ERROR",
+      "time": "15:23:28",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01985",
+      "status": "ERROR",
+      "time": "15:23:28",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01986",
+      "status": "PASS",
+      "time": "15:23:28",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1946,7 +1944,12 @@
     "u01973",
     "u01974",
     "u01975",
+    "u01976",
+    "u01977",
     "u01978",
-    "u01980"
+    "u01980",
+    "u01981",
+    "u01982",
+    "u01986"
   ]
 }
