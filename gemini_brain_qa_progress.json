@@ -1,91 +1,10 @@
 {
   "runner_state": "ACTIVE (6 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 17:19:23",
-  "completed_count": 1877,
-  "fixed_count": 1682,
-  "latest_sim_id": "u01223",
+  "updated_at": "2026-10-19 17:22:19",
+  "completed_count": 1882,
+  "fixed_count": 1686,
+  "latest_sim_id": "u01313",
   "recent_events": [
-    {
-      "sim_id": "u02362",
-      "status": "FIXED",
-      "time": "16:59:35",
-      "issues": [
-        "Unwired action button btn_project_symmetry_elements in canvas_js",
-        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
-        "Misaligned observation table columns: tbody generated 6 cells while thead defines 4 columns",
-        "Low-contrast atom outlines and borders (#090d16 stroke on #090d16 canvas) obscuring 3D spherical definition"
-      ]
-    },
-    {
-      "sim_id": "u02358",
-      "status": "FIXED",
-      "time": "16:59:46",
-      "issues": [
-        "Unwired action buttons: 'btn_generate_graph', 'btn_greedy_solve', and 'btn_clear_colors' had no click event listeners attached.",
-        "Unwired stepper controls: Stepper buttons ('.stepper-btn-up', '.stepper-btn-down') were missing click handlers to increment or decrement vertex and color counts.",
-        "Observation table columns misaligned: Recorded table row generated 7 columns (including an unmapped trial index and Brooks bound while omitting edge count) instead of the 6 columns defined in observation_thead_html (Vertices, Edges, Palette Colors, Colors Used, Conflicts, Max Degree)."
-      ]
-    },
-    {
-      "sim_id": "u02364",
-      "status": "ERROR",
-      "time": "16:59:54",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02368",
-      "status": "FIXED",
-      "time": "17:00:44",
-      "issues": [
-        "Observation table header in observation_thead_html was missing the '#' trial number column present in table body rows, causing a 1-column offset.",
-        "Observation table header contained duplicated formula strings in column 4 (cos²(θ)) and column 5 (Intensity Ratio).",
-        "Action buttons 'btn_cross_polarizers' and 'btn_align_parallel' were unwired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u02361",
-      "status": "ERROR",
-      "time": "17:00:45",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02370",
-      "status": "FIXED",
-      "time": "17:00:54",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u02373",
-      "status": "PASS",
-      "time": "17:00:55",
-      "issues": []
-    },
-    {
-      "sim_id": "u02371",
-      "status": "FIXED",
-      "time": "17:01:03",
-      "issues": [
-        "Unwired action button #btn_dispense_react ('Dispense Reagent and Initiate Reaction'): Attached click handler to reset reactionProgress to 0.0 and currentTemp to tInitial to re-initiate reaction",
-        "Unwired action button #btn_toggle_stirrer ('Toggle Magnetic Stirrer Active State'): Attached click handler to toggle stirrerActive state in state and canvas rendering",
-        "Unwired stepper controls (.stepper-btn): Added event listener delegation for up/down stepper buttons to increment/decrement input values according to min, max, and step attributes",
-        "Telemetry sign mismatch for liveQ: Fixed liveQ calculation in updateTelemetry to match negative thermodynamic reaction heat convention (default val -2225.0 J) instead of inverting the sign"
-      ]
-    },
-    {
-      "sim_id": "u02366",
-      "status": "ERROR",
-      "time": "17:01:12",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u02367",
       "status": "ERROR",
@@ -376,6 +295,85 @@
       "time": "17:19:23",
       "issues": [
         "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01166",
+      "status": "ERROR",
+      "time": "17:19:57",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01254",
+      "status": "ERROR",
+      "time": "17:20:01",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01257",
+      "status": "FIXED",
+      "time": "17:20:06",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01258",
+      "status": "FIXED",
+      "time": "17:20:20",
+      "issues": [
+        "Simulator title incorrectly stated 'BJT Phase Shift Oscillator' instead of 'RC Phase Shift Oscillator' despite an op-amp circuit design across all slots and canvas visuals",
+        "Observation table record button appended 8 cells into a 6-column header causing column misalignment",
+        "Action button 'btn_auto_tune_barkhausen' was unwired in canvas_js",
+        "Stepper up/down buttons (.stepper-btn) had no click event listeners wired in canvas_js",
+        "Barkhausen oscillation criterion in calculatePhysics allowed sustained oscillations below unity loop gain (threshold was 0.95 instead of 1.0)",
+        "PCB silkscreen text used low-contrast dark green (#065f46) on a dark PCB background"
+      ]
+    },
+    {
+      "sim_id": "u01248",
+      "status": "ERROR",
+      "time": "17:20:26",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01320",
+      "status": "PASS",
+      "time": "17:21:27",
+      "issues": []
+    },
+    {
+      "sim_id": "u01305",
+      "status": "FIXED",
+      "time": "17:21:40",
+      "issues": [
+        "Raw LaTeX syntax ('2d\\sinθ') found in principles_summary_html prose replaced with valid MathML",
+        "Unwired control action buttons ('btn_switch_sample', 'btn_select_crystal', 'btn_full_scan') and stepper buttons (▲/▼) in canvas_js",
+        "Misaligned observation table columns: 7 columns were being written to a 9-column table schema with missing specimen type, crystal spacing, and element line identifier"
+      ]
+    },
+    {
+      "sim_id": "u01291",
+      "status": "ERROR",
+      "time": "17:22:06",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01313",
+      "status": "FIXED",
+      "time": "17:22:19",
+      "issues": [
+        "Observation table record hook generated 10 misaligned columns instead of matching the 8 columns defined in the header (Set Point, Kp, Ki, Kd, Steady-State Temp, Steady-State Error, Rise Time, Peak Overshoot).",
+        "Action buttons btn_energize_heater and btn_convective_cooling were unwired in canvas_js, allowing the heater and stopwatch to run continuously without user activation.",
+        "Stepper increment/decrement buttons were unwired in canvas_js, preventing manual stepping of temperature setpoints and PID parameters."
       ]
     }
   ],
@@ -1418,6 +1416,8 @@
     "u01253",
     "u01255",
     "u01256",
+    "u01257",
+    "u01258",
     "u01259",
     "u01260",
     "u01261",
@@ -1458,13 +1458,16 @@
     "u01301",
     "u01303",
     "u01304",
+    "u01305",
     "u01309",
     "u01310",
     "u01311",
     "u01312",
+    "u01313",
     "u01314",
     "u01315",
     "u01316",
+    "u01320",
     "u01325",
     "u01327",
     "u01328",
