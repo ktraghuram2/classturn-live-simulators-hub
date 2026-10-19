@@ -1,85 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:12:05",
-  "completed_count": 1933,
-  "fixed_count": 1734,
-  "latest_sim_id": "u01542",
+  "updated_at": "2026-10-19 18:14:07",
+  "completed_count": 1938,
+  "fixed_count": 1738,
+  "latest_sim_id": "u01618",
   "recent_events": [
-    {
-      "sim_id": "u01254",
-      "status": "FIXED",
-      "time": "18:02:55",
-      "issues": [
-        "Raw LaTeX pK_{a} in principles_list_html was not rendered in MathML like other symbols.",
-        "Observation table rows in canvas_js had 6 mismatched columns instead of the 5 defined in the observation header (NaOH Volume, Measured pH, Derivative, Net Charge, Dominant Ionic Species).",
-        "Leader line badge numbers in canvas_js did not align with legend pills (Badge 2 pointed to pH meter instead of retort stand, Badge 6 pointed to retort stand instead of stirrer base).",
-        "Action buttons (dispense_drop, calibrate_electrode) and stepper increment/decrement buttons were unwired."
-      ]
-    },
-    {
-      "sim_id": "u01121",
-      "status": "FIXED",
-      "time": "18:02:58",
-      "issues": [
-        "Unwired stepper up/down buttons: Stepper ▲ and ▼ buttons (.stepper-btn) had no click listeners in canvas_js.",
-        "Unwired action button: Main action button #btn_trigger_weld had no click listener in canvas_js.",
-        "Observation table column mismatch: Observation table row generated 10 columns with extraneous trial index and gas flow, misaligning with the 8 thead columns.",
-        "Readout element ID mismatch: Telemetry sync updated element IDs like 'reading_current' instead of 'val_reading_current' defined in the HTML slots.",
-        "Corrupted MathML tags in prose: The English word 'a' was erroneously rendered as inline MathML <math><mrow><mi>a</mi></mrow></math> in principles_summary_html, procedure_section_html, and validation_html."
-      ]
-    },
-    {
-      "sim_id": "u01335",
-      "status": "FIXED",
-      "time": "18:03:02",
-      "issues": [
-        "Unwired action buttons: 'btn_run_uniprot_query' and 'btn_locate_hydrophobic_core' defined in actions_html lacked event listener bindings in canvas_js.",
-        "Observation table column mismatch: btnRecord inserted 8 cells with an unindexed row count and swapped column order, whereas observation_thead_html defines exactly 7 columns (Accession Index, Polypeptide Length, Molecular Mass, CDS Length, Scan Window Size, Scan Start Position, Window GRAVY Score)."
-      ]
-    },
-    {
-      "sim_id": "u01137",
-      "status": "FIXED",
-      "time": "18:03:12",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted an unrepresented row number index, shifting Vertex Count, Density, Algorithm, Selected Edges, and Weight columns.",
-        "Unwired action buttons: 'btn_solve_mst' (Auto-Solve Minimum Spanning Tree) and 'btn_toggle_algorithm' (Switch Kruskal / Prim Mode) were present in HTML but had no click handlers.",
-        "Unwired stepper buttons: '.stepper-btn' up/down buttons lacked click handlers in canvas_js.",
-        "Missing Prim's algorithm implementation: Prim mode toggle was present in experiment options and action buttons, but simulation only executed Kruskal's algorithm."
-      ]
-    },
-    {
-      "sim_id": "u01291",
-      "status": "FIXED",
-      "time": "18:03:12",
-      "issues": [
-        "Unwired action button 'btn_inject_reactant' (Inject Reactant Charge) in canvas_js",
-        "Unwired stepper up/down buttons for reactor temperature regulation (trxr_control)",
-        "Observation table had 5 columns including elapsed time, but recording was misaligned without elapsed time tracking"
-      ]
-    },
-    {
-      "sim_id": "u01302",
-      "status": "FIXED",
-      "time": "18:03:16",
-      "issues": [
-        "Unwired action button btn_run_scan: Added click handler to automate theta-2theta goniometer scan from 20 deg to 90 deg and log detected Bragg peaks into the observation table.",
-        "Misaligned observation table columns: Corrected tr generation from 5 mismatched cells to all 6 columns matching observation_thead_html (Diffraction Angle 2theta, Bragg Angle theta, Diffracted Intensity, Interplanar Spacing d, Miller Indices (hkl), and Cubic Lattice Parameter a).",
-        "Unwired stepper buttons: Added event listeners to handle stepper-btn-up and stepper-btn-down clicks across all control inputs.",
-        "Erroneous MathML tags for English prose: Replaced misleading MathML tags encoding the English article 'a' as a variable in aim_html, apparatus_html, principles_summary_html, and procedure_section_html."
-      ]
-    },
-    {
-      "sim_id": "u01350",
-      "status": "FIXED",
-      "time": "18:04:15",
-      "issues": [
-        "Corrected typographical spacing error in Section 2 Apparatus description ('cross-correlationdot' to 'cross-correlation dot').",
-        "Wired Advance Receptive Field Scan action button (#btn_step_kernel) to advance the convolution scan position state.",
-        "Wired interactive stepper increment and decrement buttons (.stepper-btn) to update input controls.",
-        "Added live synchronization of simulation mathematical state to Section 6 DOM readout elements."
-      ]
-    },
     {
       "sim_id": "u01439",
       "status": "FIXED",
@@ -404,6 +329,69 @@
         "Actions buttons #btn_auto_resonate and #btn_double_frequency were declared in HTML slots but not wired to event listeners in canvas_js",
         "Observation thead tuning capacitance header was missing the symbol C"
       ]
+    },
+    {
+      "sim_id": "u01584",
+      "status": "FIXED",
+      "time": "18:13:03",
+      "issues": [
+        "Wired up unhandled action button btn_digest_ignite to advance separation stage and synchronized with stage stepper",
+        "Corrected gravimetric precipitate mass calculation in observation recording by dividing elemental mass by gravimetric factors rather than multiplying",
+        "Aligned observation table row data with all 10 schema columns including %Sn, %Pb, and Total %, removing misaligned Stage string"
+      ]
+    },
+    {
+      "sim_id": "u01575",
+      "status": "FIXED",
+      "time": "18:13:07",
+      "issues": [
+        "Replaced malformed MathML fraction for C/C++ in apparatus_html with standard clean text",
+        "Reordered legend_pills_html into standard sequential order 1, 2, 3, 4",
+        "Wired unwired action button #btn_run_current_row in canvas_js to step row execution",
+        "Wired up/down stepper buttons (.stepper-btn) to increment/decrement inputs and fire input change events",
+        "Corrected observation table logging in canvas_js from 7 misaligned columns to the 5 columns defined in observation_thead_html",
+        "Aligned canvas badge numbers with apparatus legend pills (Badge 2 for Variable Watch Panel, Badge 4 for Loop Execution Controller)"
+      ]
+    },
+    {
+      "sim_id": "u01600",
+      "status": "FIXED",
+      "time": "18:13:15",
+      "issues": [
+        "Unwired action buttons: 'btn_step_forward' (Execute Next Instruction) and 'btn_trigger_gc' (Trigger Garbage Collection Sweep) were not bound to click handlers.",
+        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' were missing event listeners to increment/decrement the inputs.",
+        "Misaligned observation table columns: 'btnRecord' inserted relationship mode text into the stack depth column and shifted values out of alignment with the 6 table headers, omitting 'Coupling Ratio'."
+      ]
+    },
+    {
+      "sim_id": "u01570",
+      "status": "FIXED",
+      "time": "18:13:49",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01583",
+      "status": "ERROR",
+      "time": "18:13:56",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01587",
+      "status": "ERROR",
+      "time": "18:14:05",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01618",
+      "status": "PASS",
+      "time": "18:14:06",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1727,16 +1715,19 @@
     "u01567",
     "u01568",
     "u01569",
+    "u01570",
     "u01571",
     "u01572",
     "u01573",
     "u01574",
+    "u01575",
     "u01576",
     "u01577",
     "u01578",
     "u01580",
     "u01581",
     "u01582",
+    "u01584",
     "u01585",
     "u01588",
     "u01590",
@@ -1747,6 +1738,7 @@
     "u01596",
     "u01597",
     "u01599",
+    "u01600",
     "u01601",
     "u01602",
     "u01604",
@@ -1763,6 +1755,7 @@
     "u01615",
     "u01616",
     "u01617",
+    "u01618",
     "u01619",
     "u01620",
     "u01621",
