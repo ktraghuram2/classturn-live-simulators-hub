@@ -1,66 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:54:22",
-  "completed_count": 1832,
-  "fixed_count": 1641,
-  "latest_sim_id": "u02335",
+  "updated_at": "2026-10-19 16:55:31",
+  "completed_count": 1837,
+  "fixed_count": 1645,
+  "latest_sim_id": "u02341",
   "recent_events": [
-    {
-      "sim_id": "u02293",
-      "status": "FIXED",
-      "time": "16:46:12",
-      "issues": [
-        "Mismatched control IDs in canvas_js: DOM steppers have IDs 'initial_pop', 'juv_survival_mult', and 'proj_time', while CONTROL_DEFS used 'initial_cohort', 'juvenile_survival', and 'projection_steps', preventing control adjustments from syncing.",
-        "Unwired action buttons: 'btn_project_trajectory' and 'btn_apply_headstarting' were not wired to trigger trajectory projection and juvenile head-starting intervention.",
-        "Mismatched readout ID: Canvas JS updated 'reading_projected_pop' instead of 'reading_nt', leaving the projected population readout stagnant.",
-        "Observation table column mismatch: When recording to a 7-column table, rowCount was inserted as Species Archetype and vital rates were shifted by one column, corrupting logged records.",
-        "Orphan 5th apparatus badge: Canvas JS rendered 5 badges whereas the apparatus list and legend pills only define 4 apparatus modules."
-      ]
-    },
-    {
-      "sim_id": "u02294",
-      "status": "ERROR",
-      "time": "16:46:26",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02282",
-      "status": "ERROR",
-      "time": "16:46:27",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02296",
-      "status": "FIXED",
-      "time": "16:46:37",
-      "issues": [
-        "Observation table row in btnRecord populated 11 columns into an 8-column table header, causing severe column misalignment across all recorded readings",
-        "Apparatus badges 2, 3, and 4 in canvas were numbered inconsistently with legend pills (Illumination lamp is #2, Syringe is #3, Sample stage is #4)",
-        "Action buttons (btn_dispense_drop, btn_auto_fit_tangents, btn_ultrasonic_clean) lacked interactive event listener wiring",
-        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to alter parameter inputs"
-      ]
-    },
-    {
-      "sim_id": "u02299",
-      "status": "PASS",
-      "time": "16:46:46",
-      "issues": []
-    },
-    {
-      "sim_id": "u02295",
-      "status": "FIXED",
-      "time": "16:47:15",
-      "issues": [
-        "Fixed misaligned observation table columns: observation_thead_html defines 6 columns [Domain Index, Variable Node, Prior Probability, Conditional Likelihood, Joint Probability, CPT Completion Rate] but btnRecord inserted 7 mismatched columns.",
-        "Wired interactive action buttons: btn_validate_dag (DAG topology and acyclicity validator) and btn_compute_joint (joint probability distribution calculator).",
-        "Wired up/down stepper control buttons (.stepper-btn) to modify domain, prior probability, and conditional likelihood parameters.",
-        "Corrected symbol typographical error in principles_list_html where the parent target node symbol in the symbol list displayed Greek letter Xi instead of X_i."
-      ]
-    },
     {
       "sim_id": "u02297",
       "status": "FIXED",
@@ -393,6 +337,63 @@
       "time": "16:54:22",
       "issues": [
         "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u02337",
+      "status": "FIXED",
+      "time": "16:54:28",
+      "issues": [
+        "Unwired action button id btn_run_ga_clustering was missing from the run/start event listeners in canvas_js",
+        "Unwired action button id btn_load_sample_dataset was not implemented or bound in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were not wired to update input values on click",
+        "Observation table columns were misaligned for 7-column header: state.trialCount was incorrectly inserted as first column while Current Generation was omitted, causing all values to shift across headers"
+      ]
+    },
+    {
+      "sim_id": "u02338",
+      "status": "PASS",
+      "time": "16:54:46",
+      "issues": []
+    },
+    {
+      "sim_id": "u02336",
+      "status": "FIXED",
+      "time": "16:54:47",
+      "issues": [
+        "Fixed ReferenceError thrown by undeclared 'pmax' and 'tmax' variables in updatePhysics() during alpha-cut calculation",
+        "Wired interactive stepper up/down buttons and input event listeners for Section 05 parameter controls",
+        "Wired action buttons #btn_compute_fwa and #btn_normalize_weights for automated synthesis and weight normalization",
+        "Aligned observation table recorded row cells with the 9 columns of observation_thead_html (alpha level, sensor intervals, FWA bounds)"
+      ]
+    },
+    {
+      "sim_id": "u02340",
+      "status": "FIXED",
+      "time": "16:55:07",
+      "issues": [
+        "Misaligned observation table columns: JS logged 7 columns (#, Angle, Mode, Velocity, Area, Retention, Score) but observation table header defines 5 columns (Angle, Target Region, Effective Area, Retention Index, Validation Status).",
+        "Unwired action buttons: btn_toggle_cutaway and btn_validate_region defined in controls lacked event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn) were not wired to update inputs and sync telemetry in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02323",
+      "status": "ERROR",
+      "time": "16:55:23",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02341",
+      "status": "FIXED",
+      "time": "16:55:31",
+      "issues": [
+        "Live readout DOM selectors targeted wrapper li elements instead of value spans (val_reading_*), preventing live telemetry updates",
+        "Action button btn_verify_region (Validate Anatomical Feature Selection) was completely unwired in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn) had no click event listeners attached",
+        "Observation table logged static 100.0% accuracy instead of live verification status"
       ]
     }
   ],
@@ -2228,6 +2229,11 @@
     "u02332",
     "u02333",
     "u02334",
-    "u02335"
+    "u02335",
+    "u02336",
+    "u02337",
+    "u02338",
+    "u02340",
+    "u02341"
   ]
 }
