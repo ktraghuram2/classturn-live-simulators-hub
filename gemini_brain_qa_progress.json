@@ -1,25 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 07:38:42",
-  "completed_count": 911,
-  "fixed_count": 911,
-  "latest_sim_id": "u01107",
+  "updated_at": "2026-10-19 07:40:40",
+  "completed_count": 912,
+  "fixed_count": 912,
+  "latest_sim_id": "u01054",
   "recent_events": [
-    {
-      "sim_id": "u01055",
-      "status": "FIXED",
-      "time": "07:09:55",
-      "issues": [
-        "Observation table column misalignment: observation_thead_html defined columns as Objective Power, Eyepiece Power, Theoretical Magnification, User Calculated Magnification, Field of View Diameter, and Verification Status, but observation logging swapped the order of User Calculated Magnification and Field of View Diameter, and logged a raw error value instead of explicit verification status.",
-        "Misaligned Style 2 leader line badges: Badges in canvas_js did not align with legend_pills_html (Pill 2 is Body Tube, Pill 3 is Objective & Revolving Nosepiece, Pill 4 is Stage, Pill 5 is Substage Condenser, and Pill 6 is Microscope Stand & Chassis Base); Badges 2 through 6 were renumbered and re-anchored to correctly point to their corresponding apparatus components.",
-        "Unwired Section 05 action button: The action button '#btn_verify_calc' ('Verify Magnification & Trace Ray Path') was not wired in canvas_js to validate arithmetic calculations, animate visual confirmation, and record verified readings into the observation log table.",
-        "Unwired stepper control buttons: The stepper increment/decrement buttons ('.stepper-btn-up', '.stepper-btn-down') lacked click listeners in canvas_js to adjust objective power, eyepiece power, and user calculated values.",
-        "Unwired top-level controls: '#btnToggle' (Pause/Run), '#btnStep', '#experimentSelect', and '#btnReset' lacked event listeners to freeze canvas animation, step through objective powers, switch between primary and extended activities, or reset simulation parameters.",
-        "Missing canvas pointer lock: simCanvas lacked pointerEvents = 'none' to enforce the locked layout rule preventing direct mouse clicks or dragging on the canvas.",
-        "Unclosed HTML container in principles_list_html: Equation 0 symbols list was truncated without closing </ul>, </div>, and </li> tags.",
-        "Malformed data-unit attributes in readouts_html: Live readout list items contained nested raw <span> tags inside their data-unit HTML attributes instead of clean text strings ('X', 'mm')."
-      ]
-    },
     {
       "sim_id": "u01046",
       "status": "FIXED",
@@ -536,6 +521,24 @@
         "Action buttons 'Execute Relaxation Cycle' (btn_run_annealing) and 'Randomize Node Coordinates' (btn_scramble_nodes) were unwired with no click handlers.",
         "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners, preventing manual stepper adjustments.",
         "Experiment mode dropdown (experimentSelect) and observation clear button (btnClear) were not wired."
+      ]
+    },
+    {
+      "sim_id": "u01106",
+      "status": "FIXED",
+      "time": "07:39:46",
+      "issues": [
+        "Observation table column misalignment: observation_thead_html defined 8 columns (u1, u2, v1, v2, gamma, solX1, solX2, residualNorm), but canvas_js logged 9 columns by erroneously injecting math.normCorrection.toFixed(3) between gamma and solX1, corrupting table layout.",
+        "Unwired Section 05 action button: '#btn_inject_update' ('Compute Rank-One Correction') was defined in actions_html but completely unhandled in canvas_js.",
+        "Unwired precision stepper arrow buttons: '.stepper-btn-up' and '.stepper-btn-down' controls for u1_val, u2_val, v1_val, and v2_val lacked click event listeners in canvas_js.",
+        "Unwired top-level and playback controls: '#btnToggle' (Pause/Run toggle), '#btnStep' (Discrete Step), '#experimentSelect' (Primary Experiment vs Critical Singularity Boundary Exploration dropdown), and '#btnReset' lacked event listeners in canvas_js.",
+        "Missing canvas pointer lock: simCanvas lacked pointerEvents = 'none' to enforce the ClassTurn locked layout immutability rule disabling direct canvas mouse interactions.",
+        "Malformed data-unit attributes in readouts_html: Live readout elements contained nested raw <span> tags with data-source-paths inside their data-unit HTML attributes instead of clean unit strings ('dimensionless', empty string).",
+        "Unclosed HTML container in principles_list_html: Equation 0 symbols list was truncated without closing </ul>, </div>, and </li> tags.",
+        "Redundant mathematical symbol in observation table header: observation_thead_html contained duplicate Greek characters ('Denominator Γ γ (-)') in column 5; cleaned to 'Denominator γ (-)'.",
+        "Telemetry readout unit preservation: updateTelemetry targeted non-existent element IDs (e.g. 'gamma_readout' instead of 'val_gamma_readout') and would wipe out nested MathML unit elements; replaced with setTelemetryField updating the inner value span while preserving unit markup.",
+        "Input crash-proofing & range clamping: Added boundary validation and NaN protection in syncInputs() for u1, u2, v1, and v2 inputs across [-3.0, 3.0].",
+        "Missing active procedure step highlighting: Added updateProcedureHighlight to dynamically guide users through laboratory procedure steps 1 to 7 during parameter adjustments, update action execution, and observation logging."
       ]
     }
   ],
@@ -1450,6 +1453,7 @@
     "u01099",
     "u01100",
     "u01102",
+    "u01106",
     "u01107"
   ]
 }
