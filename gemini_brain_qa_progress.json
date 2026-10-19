@@ -1,49 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:49:36",
-  "completed_count": 1137,
-  "fixed_count": 1093,
-  "latest_sim_id": "u01410",
+  "updated_at": "2026-10-19 08:50:55",
+  "completed_count": 1142,
+  "fixed_count": 1097,
+  "latest_sim_id": "u01416",
   "recent_events": [
-    {
-      "sim_id": "u01362",
-      "status": "FIXED",
-      "time": "08:40:59",
-      "issues": [
-        "Observation table columns were misaligned when thCount is 8: the trial count occupied the sequence length column, shifting and omitting Gibbs free energy (ΔG) and melting temperature (Tm). Added an exact 8-column mapping matching observation_thead_html.",
-        "Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to adjust input values, and the primary action button (#btn_transcribe_fold) lacked dynamic folding animation feedback. Wired stepper step increments/decrements and added animated unzipping/zipping state trigger."
-      ]
-    },
-    {
-      "sim_id": "u01351",
-      "status": "ERROR",
-      "time": "08:41:03",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01370",
-      "status": "PASS",
-      "time": "08:41:07",
-      "issues": []
-    },
-    {
-      "sim_id": "u01374",
-      "status": "FIXED",
-      "time": "08:41:51",
-      "issues": [
-        "Unwired action buttons: btn_sensitize_i0, btn_sensitize_i1, and btn_clear_faults had no click handlers attached in canvas_js",
-        "Unwired stepper buttons: .stepper-btn elements were not wired to update input fields and trigger state change events",
-        "Misaligned observation table row: row.innerHTML appended 8 <td> elements for a 7-column observation table schema"
-      ]
-    },
-    {
-      "sim_id": "u01376",
-      "status": "PASS",
-      "time": "08:42:06",
-      "issues": []
-    },
     {
       "sim_id": "u01379",
       "status": "PASS",
@@ -357,6 +318,60 @@
         "Unwired stepper up/down buttons: .stepper-btn elements were missing click handlers to increment/decrement inputs and trigger sync events.",
         "Observation table column misalignment: btnRecord inserted shiftKey, rotStr, trialKey, corr, keyspace, and matchStatus instead of aligning with the thead columns (Trial Number n, Shift Key k, Rotor Angular Deflection θ, Ciphertext Character Index, Decrypted Character Index P, Frequency Correlation Index I_k).",
         "Raw LaTeX escape characters: Removed raw LaTeX escape braces \\{ and \\} in principles_summary_html prose."
+      ]
+    },
+    {
+      "sim_id": "u01411",
+      "status": "FIXED",
+      "time": "08:50:37",
+      "issues": [
+        "Unwired action buttons: 'btn_apply_substitution' and 'btn_cycle_cipher' had no click listeners attached.",
+        "Destructive auto-mapping in syncInputs(): every animation frame automatically bound the selected cipher character to the candidate plaintext, corrupting substitutions when browsing cipher characters.",
+        "Unwired stepper up/down buttons: .stepper-btn click events were not wired in the simulation script.",
+        "Misaligned observation table columns: btnRecord inserted 8 <td> elements into a 6-column <thead> table, causing table misalignment."
+      ]
+    },
+    {
+      "sim_id": "u01412",
+      "status": "PASS",
+      "time": "08:50:37",
+      "issues": []
+    },
+    {
+      "sim_id": "u01414",
+      "status": "FIXED",
+      "time": "08:50:37",
+      "issues": [
+        "Fixed live readouts telemetry by referencing 'val_reading_*' DOM IDs matching readouts_html",
+        "Enabled quadrature sine-cosine generation mode so basis signals can achieve true mathematical orthogonality",
+        "Corrected observation table row injection in btnRecord to align with the 5 columns of observation_thead_html",
+        "Wired up btn_switch_signals to toggle between sine-cosine quadrature pair and sine-sine in-phase pair",
+        "Wired up btn_compute_orthogonality to execute and record gated dot product integration",
+        "Wired up stepper up/down buttons across all control inputs"
+      ]
+    },
+    {
+      "sim_id": "u01415",
+      "status": "FIXED",
+      "time": "08:50:37",
+      "issues": [
+        "Replaced raw unrendered LaTeX symbol (Δ RT_{Simon}) in principles_summary_html and procedure_section_html with standard MathML markup",
+        "Corrected unrendered LaTeX symbol Δ RT_{Simon} in readouts_html to standard MathML and sanitized data-unit attributes",
+        "Wired unwired action buttons (btn_present_trial, btn_respond_left, btn_respond_right) to trial presentation and response handlers in canvas_js",
+        "Fixed observation ledger column misalignment where Response Key column was omitted, shifting Response Time and Accuracy out of alignment with thead"
+      ]
+    },
+    {
+      "sim_id": "u01416",
+      "status": "FIXED",
+      "time": "08:50:54",
+      "issues": [
+        "Converted raw LaTeX symbol t_{\\exp} in steppers_html to standard MathML",
+        "Converted raw LaTeX symbol Δ RT_{interference} in principles_list_html to standard MathML",
+        "Converted raw LaTeX symbol Δ RT_{interference} in readouts_html to standard MathML",
+        "Wired unattached control action buttons (btn_present_stimulus and btn_simulate_response) to trigger live trial sequences and simulated responses",
+        "Wired stepper up/down control buttons to properly step and clamp values with change events",
+        "Fixed observation logging in canvas_js to properly map to observation_thead_html headers (Trial Number, Word, Font Ink Color, Condition, RT, ACC)"
       ]
     }
   ],
@@ -1497,6 +1512,11 @@
     "u01407",
     "u01408",
     "u01409",
-    "u01410"
+    "u01410",
+    "u01411",
+    "u01412",
+    "u01414",
+    "u01415",
+    "u01416"
   ]
 }
