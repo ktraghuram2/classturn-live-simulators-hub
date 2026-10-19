@@ -1,59 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:09:11",
-  "completed_count": 1923,
-  "fixed_count": 1726,
-  "latest_sim_id": "u01498",
+  "updated_at": "2026-10-19 18:11:36",
+  "completed_count": 1928,
+  "fixed_count": 1729,
+  "latest_sim_id": "u01533",
   "recent_events": [
-    {
-      "sim_id": "u01400",
-      "status": "FIXED",
-      "time": "17:57:41",
-      "issues": [
-        "Unwired action buttons: Transmit Frame, Inject Frame Loss, and Inject ACK Loss controls lacked click event listeners in canvas_js.",
-        "Unwired stepper buttons: Stepper increment and decrement buttons (▲/▼) had no click event listeners.",
-        "Observation table column mismatch: btnRecord inserted 8 cells into a 6-column observation table.",
-        "Inject ACK Loss handling was unhandled in acknowledgment packet generation.",
-        "Corrupted MathML tags wrapping the English indefinite article 'a' across principles and procedure text."
-      ]
-    },
-    {
-      "sim_id": "u01394",
-      "status": "FIXED",
-      "time": "17:57:41",
-      "issues": [
-        "Unwired action buttons: Cockpit Annunciator Lamp & Horn Test (btn_lamp_test) and Preset Overheat & Stall (btn_preset_overheat_stall)",
-        "Unwired stepper up/down buttons (.stepper-btn) for temperature, pressure, and RPM inputs",
-        "Misaligned observation table columns: recordRow placed hazardOr under Column 4 (Warning Light Y_light), causing misalignment with header columns",
-        "Raw Greek letter psi (\\psi) erroneously rendered in place of unit 'psi' in apparatus and validation slots, and duplicate symbol in observation thead"
-      ]
-    },
-    {
-      "sim_id": "u01395",
-      "status": "ERROR",
-      "time": "17:57:41",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01372",
-      "status": "ERROR",
-      "time": "17:57:41",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01459",
-      "status": "FIXED",
-      "time": "17:58:59",
-      "issues": [
-        "Action buttons (btn_start_milling, btn_stop_milling, btn_get_final_sample) were unwired to simulation state controls.",
-        "Stepper up/down buttons (.stepper-btn) were missing event listeners to increment/decrement parameter inputs.",
-        "Observation table recorded row columns were misaligned with observation_thead_html (8 columns with unheaded row index and swapped elapsed time/thickness vs 6 header columns)."
-      ]
-    },
     {
       "sim_id": "u01438",
       "status": "FIXED",
@@ -404,6 +355,50 @@
         "Observation table logging had 8 columns with Temperature and Roll Speed swapped, misaligning with the 7-column observation_thead_html header.",
         "Action button 'btn_engage_rolls' was unhandled in canvas_js with no event listener or infeed dynamic state.",
         "Stepper increment and decrement buttons ('.stepper-btn-up', '.stepper-btn-down') lacked click listeners to adjust input values."
+      ]
+    },
+    {
+      "sim_id": "u01473",
+      "status": "PASS",
+      "time": "18:11:36",
+      "issues": []
+    },
+    {
+      "sim_id": "u01558",
+      "status": "PASS",
+      "time": "18:11:36",
+      "issues": []
+    },
+    {
+      "sim_id": "u01538",
+      "status": "FIXED",
+      "time": "18:11:36",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01568",
+      "status": "FIXED",
+      "time": "18:11:36",
+      "issues": [
+        "Leader line badge numbering was inverted between Gateway Router (was assigned badge 3, but legend pill 2 specifies Gateway Router) and Target Server (was assigned badge 2, but legend pill 3 specifies Target Server).",
+        "Action buttons ('Launch SYN Flood Attack' and 'Toggle SYN Cookie Defense') were completely unwired in canvas_js.",
+        "Observation table columns were misaligned: canvas_js generated 8 columns including unlisted Ns, Rtot, and Pdrop, while omitting Connection State (S_conn) mandated by observation_thead_html (6 columns).",
+        "Stepper increment and decrement buttons (.stepper-btn) had no click event handlers attached in canvas_js.",
+        "Raw LaTeX escape slash (\\_) was present in MathML SYN_RECV connection state token in principles_summary_html."
+      ]
+    },
+    {
+      "sim_id": "u01533",
+      "status": "FIXED",
+      "time": "18:11:36",
+      "issues": [
+        "Observation table recording was injecting 8 misaligned columns instead of matching the 6 columns declared in observation_thead_html (Trial # n, Code Order, Min Distance d_min, Error Weight w_e, Target Degree i, Majority Output a_S)",
+        "Action button #btn_compute_majority ('Execute Majority Vote & Peel Degree') was present in DOM actions_html but completely unwired in canvas_js",
+        "DOM stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to increment/decrement control values",
+        "Canvas latched monomial bit display rendered raw LaTeX string 'a_{12}' instead of clean unicode subscript notation 'a₁₂'",
+        "Raw superscript caret notation '^(m-r)' and '^(m-i)' was present outside MathML containers in apparatus_html and principles_summary_html"
       ]
     }
   ],
@@ -1638,6 +1633,7 @@
     "u01469",
     "u01470",
     "u01472",
+    "u01473",
     "u01474",
     "u01475",
     "u01476",
@@ -1692,9 +1688,11 @@
     "u01530",
     "u01531",
     "u01532",
+    "u01533",
     "u01534",
     "u01536",
     "u01537",
+    "u01538",
     "u01540",
     "u01541",
     "u01543",
@@ -1710,6 +1708,7 @@
     "u01555",
     "u01556",
     "u01557",
+    "u01558",
     "u01559",
     "u01561",
     "u01562",
@@ -1717,6 +1716,7 @@
     "u01565",
     "u01566",
     "u01567",
+    "u01568",
     "u01569",
     "u01571",
     "u01572",
