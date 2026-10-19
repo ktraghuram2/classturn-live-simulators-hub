@@ -1,36 +1,10 @@
 {
-  "runner_state": "ACTIVE (6 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 17:59:17",
-  "completed_count": 1897,
-  "fixed_count": 1700,
-  "latest_sim_id": "u01438",
+  "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
+  "updated_at": "2026-10-19 18:01:12",
+  "completed_count": 1898,
+  "fixed_count": 1701,
+  "latest_sim_id": "u01121",
   "recent_events": [
-    {
-      "sim_id": "u01137",
-      "status": "ERROR",
-      "time": "17:15:58",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01196",
-      "status": "FIXED",
-      "time": "17:16:01",
-      "issues": [
-        "Unwired action buttons: id='btn_compute_step' and id='btn_auto_converge' lacked event listeners in canvas_js",
-        "Unwired stepper up/down buttons: .stepper-btn-up and .stepper-btn-down were missing click handlers",
-        "Misaligned observation table: recording logic inserted 7 columns while thead only defines 6 columns (Step Coordinate x4, Step Size Interval h, Predicted Value y4^p, Evaluated Slope f4^p, Corrected Value y4^c, Local Truncation Error eps_t)"
-      ]
-    },
-    {
-      "sim_id": "u01141",
-      "status": "ERROR",
-      "time": "17:16:34",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01169",
       "status": "ERROR",
@@ -374,6 +348,32 @@
         "Observation table columns were misaligned: recordObservation recorded stack depth in the Operation column and top address in the Stack Depth column, omitting operation tracking and shifting table data out of sync with the headers.",
         "Stepper buttons (stepper-btn-up and stepper-btn-down) lacked event listeners in canvas_js, preventing users from incrementing or decrementing the input value using the UI controls.",
         "Maximum visual stack capacity in canvas_js was constrained to 5 nodes instead of 7 nodes as specified in the apparatus specification and boundary validation limits."
+      ]
+    },
+    {
+      "sim_id": "u01457",
+      "status": "FIXED",
+      "time": "17:59:31",
+      "issues": [
+        "Unwired action buttons (#btn_toggle_vectors and #btn_trigger_seismic) in canvas_js",
+        "Unwired stepper buttons (.stepper-btn) for incrementing and decrementing simulation parameters",
+        "Malformed HTML markup in readouts_html with unescaped nested tags and quotes inside data-unit attributes"
+      ]
+    },
+    {
+      "sim_id": "u01435",
+      "status": "ERROR",
+      "time": "17:59:51",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01458",
+      "status": "ERROR",
+      "time": "17:59:55",
+      "issues": [
+        "Unknown error"
       ]
     }
   ],
@@ -1581,6 +1581,7 @@
     "u01454",
     "u01455",
     "u01456",
+    "u01457",
     "u01459",
     "u01460",
     "u01461",
