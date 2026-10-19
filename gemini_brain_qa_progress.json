@@ -1,95 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:34:38",
-  "completed_count": 2003,
-  "fixed_count": 1794,
-  "latest_sim_id": "u02069",
+  "updated_at": "2026-10-19 18:37:08",
+  "completed_count": 2008,
+  "fixed_count": 1798,
+  "latest_sim_id": "u02112",
   "recent_events": [
-    {
-      "sim_id": "u01854",
-      "status": "FIXED",
-      "time": "18:25:41",
-      "issues": [
-        "Corrupted MathML formatting in units: 'Abs/s' rendered as fraction s/s, 'mg/mL' split as m(g/m)L, 's/Abs' split as (s/A)bs, and 'mL/mg' split as m(L/m)g across observation table header and readouts.",
-        "Orphan leader badge #5 drawn in canvas JS without a corresponding apparatus entry in legend pills (legend only defines badges 1 to 4).",
-        "Missing 'reaction_time' definition in CONTROL_DEFS and initial state in canvas JS preventing stepper event binding."
-      ]
-    },
-    {
-      "sim_id": "u01745",
-      "status": "FIXED",
-      "time": "18:25:55",
-      "issues": [
-        "Live telemetry DOM updates in calculatePhysics() overwrote #val_reading_* textContent without preserving measurement units (AU, mg/mL, %).",
-        "When the simulation was paused, changing stepper controls or clicking action buttons updated internal variables without refreshing the canvas scene.",
-        "All five Style 2 leader lines in drawScene() had identical badge and anchor X coordinates (bx === tx), degenerating cubic Bezier S-curves into vertical straight lines."
-      ]
-    },
-    {
-      "sim_id": "u01866",
-      "status": "PASS",
-      "time": "18:26:07",
-      "issues": []
-    },
-    {
-      "sim_id": "u01871",
-      "status": "PASS",
-      "time": "18:26:31",
-      "issues": []
-    },
-    {
-      "sim_id": "u01825",
-      "status": "PASS",
-      "time": "18:26:32",
-      "issues": []
-    },
-    {
-      "sim_id": "u01868",
-      "status": "ERROR",
-      "time": "18:26:58",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01835",
-      "status": "FIXED",
-      "time": "18:27:14",
-      "issues": [
-        "Mismatched Curvy Leader line numbers with legend pills (DC Motor was numbered 3 instead of 1, Arduino was 1 instead of 4, NPN Transistor was 4 instead of 3).",
-        "Unwired action and stepper buttons: btn_toggle_pin, btn_step_speed_up, btn_step_speed_down, and stepper up/down controls lacked click handlers.",
-        "Observation table data row columns were misaligned and included 7 columns instead of the 5 defined in the table header, with mismatched order."
-      ]
-    },
-    {
-      "sim_id": "u01870",
-      "status": "ERROR",
-      "time": "18:27:27",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01923",
-      "status": "FIXED",
-      "time": "18:27:39",
-      "issues": [
-        "Duplicate badge number in legend_pills_html: Item 5 (Bytecode Dispatch & Return Value Bus) had badge 4 instead of badge 5",
-        "Unwired action button btn_dispatch and stepper up/down controls in canvas_js",
-        "Misaligned observation table row columns where argument type displaced dimension values, causing header and cell mismatch"
-      ]
-    },
-    {
-      "sim_id": "u01837",
-      "status": "FIXED",
-      "time": "18:27:49",
-      "issues": [
-        "Observation table logging appended 8 columns into a 5-column table, causing severe column misalignment with the headers.",
-        "Action buttons #btn_cycle_method and #btn_auto_sweep were not wired to any event listeners in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js.",
-        "Interpolated ordinate yInterp in render() was hardcoded to linear interpolation between Node 1 and Node 2 rather than evaluating the selected polynomial, causing reticle detachment from the curve."
-      ]
-    },
     {
       "sim_id": "u01882",
       "status": "ERROR",
@@ -352,6 +267,94 @@
         "Action buttons #btn_toggle_subset and #btn_compute_closure were unwired in canvas_js",
         "Stepper inputs #subset_selector and #partition_preset and stepper up/down buttons were unwired in canvas_js",
         "Apparatus badges #2 (Axiomatic Verification Logic Engine) and #3 (Boolean Set Lattice & Venn Visualizer) were swapped on canvas relative to legend pills"
+      ]
+    },
+    {
+      "sim_id": "u02068",
+      "status": "ERROR",
+      "time": "18:35:11",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01979",
+      "status": "ERROR",
+      "time": "18:35:47",
+      "issues": [
+        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--model', 'gemini-4-argon-medium', '--disable-slash-commands"
+      ]
+    },
+    {
+      "sim_id": "u02058",
+      "status": "ERROR",
+      "time": "18:35:56",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02099",
+      "status": "FIXED",
+      "time": "18:36:04",
+      "issues": [
+        "Telemetry DOM IDs in canvas_js queried reading_fc, reading_vunbal, and reading_error instead of the actual slot element IDs val_reading_fc, val_reading_vunbal, and val_reading_error.",
+        "Action button #btn_autobalance defined in actions_html was not wired up to an event listener in canvas_js.",
+        "Stepper buttons (.stepper-btn-up, .stepper-btn-down) defined in steppers_html lacked click handlers in canvas_js.",
+        "Observation table tr template contained 7 <td> cells with an extra unmapped recordCount column, misaligning values against the 6 <th> columns in observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u02065",
+      "status": "FIXED",
+      "time": "18:36:10",
+      "issues": [
+        "Wired unhandled action buttons: btn_distribute_centers ('Auto-Distribute Centers Uniformly') and btn_fit_weights ('Compute Least-Squares Optimal Weights')",
+        "Added interactive click handlers to stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) for kernel spread, center count, and weight gain",
+        "Corrected off-by-one observation table column misalignment where an unheaded trial index pushed values into incorrect table columns"
+      ]
+    },
+    {
+      "sim_id": "u02085",
+      "status": "FIXED",
+      "time": "18:36:11",
+      "issues": [
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unhandled and non-functional in canvas_js.",
+        "Action buttons ('btn_tune_mode_peak' and 'btn_toggle_modulation') lacked event listener bindings in canvas_js.",
+        "Observation table header lacked a serial number (#) column and had columns misaligned with the recorded data sequence in btnRecord.",
+        "Readout HTML data-unit attributes contained nested raw HTML span markup instead of clean plain text units."
+      ]
+    },
+    {
+      "sim_id": "u02079",
+      "status": "ERROR",
+      "time": "18:36:28",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02060",
+      "status": "ERROR",
+      "time": "18:36:48",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02070",
+      "status": "PASS",
+      "time": "18:36:56",
+      "issues": []
+    },
+    {
+      "sim_id": "u02112",
+      "status": "FIXED",
+      "time": "18:37:08",
+      "issues": [
+        "Wired missing action button btn_excite_resonance to trigger resonant excitation cycle and reset modal phase.",
+        "Wired stepper buttons (.stepper-btn-up, .stepper-btn-down) for mode order and deformation amplitude gain.",
+        "Fixed misaligned observation table columns by aligning recorded row data (5 columns) with observation table header structure (5 columns)."
       ]
     }
   ],
@@ -2121,9 +2124,11 @@
     "u02062",
     "u02063",
     "u02064",
+    "u02065",
     "u02066",
     "u02067",
     "u02069",
+    "u02070",
     "u02071",
     "u02072",
     "u02073",
@@ -2135,6 +2140,7 @@
     "u02081",
     "u02082",
     "u02083",
+    "u02085",
     "u02086",
     "u02087",
     "u02088",
@@ -2147,6 +2153,7 @@
     "u02096",
     "u02097",
     "u02098",
+    "u02099",
     "u02100",
     "u02101",
     "u02102",
@@ -2158,6 +2165,7 @@
     "u02109",
     "u02110",
     "u02111",
+    "u02112",
     "u02113",
     "u02115",
     "u02117",
