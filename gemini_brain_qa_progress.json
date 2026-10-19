@@ -1,89 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:14:52",
-  "completed_count": 1207,
-  "fixed_count": 1152,
-  "latest_sim_id": "u01497",
+  "updated_at": "2026-10-19 09:16:49",
+  "completed_count": 1212,
+  "fixed_count": 1156,
+  "latest_sim_id": "u01510",
   "recent_events": [
-    {
-      "sim_id": "u01459",
-      "status": "ERROR",
-      "time": "09:03:01",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01463",
-      "status": "PASS",
-      "time": "09:03:21",
-      "issues": []
-    },
-    {
-      "sim_id": "u01461",
-      "status": "PASS",
-      "time": "09:03:25",
-      "issues": []
-    },
-    {
-      "sim_id": "u01465",
-      "status": "FIXED",
-      "time": "09:04:54",
-      "issues": [
-        "Observation table columns in canvas_js were scrambled and had 9 columns instead of the 8 columns specified in observation_thead_html (Thermal Conductivity k, Conduction Area A, Distance dx, Hot Temp TH, Cold Temp TC, Temp Difference ΔT, Heat Transfer Rate dQ/dt, Thermal Resistance R_th)",
-        "Preset action buttons (btn_preset_copper, btn_preset_aluminium, btn_preset_glass, btn_preset_foam, and btn_steady_state) were completely unwired in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn) lacked click event listeners in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01466",
-      "status": "FIXED",
-      "time": "09:05:57",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01468",
-      "status": "FIXED",
-      "time": "09:06:15",
-      "issues": [
-        "Misaligned observation table columns: row innerHTML appended 9 cells into a 7-column thead, included unlisted index/speed columns, and swapped contact pressure and rolling force order",
-        "Unwired controls: action button (#btn_execute_stroke) and stepper adjustment buttons (.stepper-btn) lacked event listeners",
-        "Inaccurate major diameter physics: formula lacked the characteristic 3:1 blank-to-major diameter expansion sensitivity ratio"
-      ]
-    },
-    {
-      "sim_id": "u01470",
-      "status": "FIXED",
-      "time": "09:06:25",
-      "issues": [
-        "Inaccurate physics in wattmeter equations: Wattmeter readings in the two-wattmeter method are P1 = VL * IL * cos(30° - φ) and P2 = VL * IL * cos(30° + φ). The code incorrectly multiplied by sqrt(3) in both P1 and P2, resulting in an erroneous total active power (1572 W instead of 907.2 W for 9 x 100 W bulbs).",
-        "Unwired action button: The MCB toggle button (#btn_toggle_mcb) had no event listener to energize/de-energize the circuit.",
-        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event handlers to modify input values.",
-        "Misaligned observation table columns: The record button callback inserted 8 cells starting with an unheaded Trial S.No., offsetting all 7 observation table column values against the defined headers.",
-        "Incorrect default readout values: Wattmeter 1 and Wattmeter 2 live readouts displayed 786.0 W instead of the correct 453.8 W, and total active power displayed 1572.0 W instead of 907.6 W."
-      ]
-    },
-    {
-      "sim_id": "u01467",
-      "status": "ERROR",
-      "time": "09:06:39",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01472",
-      "status": "FIXED",
-      "time": "09:06:45",
-      "issues": [
-        "Badge numbering mismatch between legend pills and canvas leader lines (Badge 1 pointed to Mould instead of Thermostatic Water Bath Tank; Badge 2 pointed to Glass Plates instead of Le Chatelier Mould; Badge 3 pointed to Water Bath Tank instead of Glass Plates and Lead Weight).",
-        "Unwired action button #btn_accelerate_boil ('Simulate 3-Hour Boiling Cycle') in canvas_js with no event listener or boiling simulation sequence.",
-        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacking click handlers.",
-        "Static animGap parameter: indicator tip separation was hardcoded to 12.00 mm and never dynamically updated on physics recalculation or animated during boiling."
-      ]
-    },
     {
       "sim_id": "u01469",
       "status": "FIXED",
@@ -375,6 +296,87 @@
       "status": "PASS",
       "time": "09:14:52",
       "issues": []
+    },
+    {
+      "sim_id": "u01501",
+      "status": "ERROR",
+      "time": "09:14:57",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01507",
+      "status": "PASS",
+      "time": "09:15:14",
+      "issues": []
+    },
+    {
+      "sim_id": "u01498",
+      "status": "ERROR",
+      "time": "09:15:21",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01502",
+      "status": "ERROR",
+      "time": "09:15:29",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01504",
+      "status": "ERROR",
+      "time": "09:15:30",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01508",
+      "status": "FIXED",
+      "time": "09:15:59",
+      "issues": [
+        "Raw LaTeX symbols (RT_{base} and Δ RT_{conflict}) in principles_list_html replaced with proper inline MathML",
+        "Unwired HTML action buttons (btn_present_stimulus, btn_press_on, btn_press_off) and experiment mode selector wired in canvas_js",
+        "Missing observation table row population on user trial completion wired to observation tbody in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01509",
+      "status": "FIXED",
+      "time": "09:16:12",
+      "issues": [
+        "Misaligned observation table columns: btnRecord recorded 9 values into a 7-column table by inserting extraneous clock rate and error rate values into state, codeword, and metric columns.",
+        "Unwired action buttons: Clock Pulse (btn_clock_step), Inject Inversion (btn_inject_error), and Traceback (btn_traceback_decode) had no click event listeners.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) and input change/input events were not wired to update simulation parameters.",
+        "Unwired experiment mode selection: Changing experiment modes did not adjust channel error rate or update control states."
+      ]
+    },
+    {
+      "sim_id": "u01513",
+      "status": "FIXED",
+      "time": "09:16:34",
+      "issues": [
+        "Unwired action buttons: btn_highlight_flux and btn_sync_lock lacked click event listeners in canvas_js",
+        "Unwired stepper controls: up/down stepper buttons (.stepper-btn) had no click event listeners to modify input values",
+        "Observation table columns mismatch: 7 data cells were appended per row for a 5-column table header, misaligning speed, field current, flux, frequency, and EMF readings"
+      ]
+    },
+    {
+      "sim_id": "u01510",
+      "status": "FIXED",
+      "time": "09:16:49",
+      "issues": [
+        "Fixed inaccurate parity equations in computeParity where b1 and b0 expressions were swapped and did not match the (7,4) cyclic code LFSR division remainder for g(X) = 1 + X + X^3.",
+        "Corrected cyclic syndrome lookup vector mappings in getSyndromeForError for bit error positions 3 through 7 to align with X^i mod (X^3 + X + 1) in GF(2).",
+        "Wired missing action button #btn_auto_encode_decode to autonomously step through clock shift cycles 0 to 14.",
+        "Added click handlers for all stepper up/down buttons (.stepper-btn) to increment/decrement parameter inputs.",
+        "Realigined observation table record columns 1:1 with observation_thead_html (Message u, Parity b, Codeword v, Error Index, Received Vector r, Syndrome Vector S, Corrected Codeword, Status)."
+      ]
     }
   ],
   "completed_ids": [
@@ -1584,6 +1586,11 @@
     "u01500",
     "u01503",
     "u01505",
-    "u01506"
+    "u01506",
+    "u01507",
+    "u01508",
+    "u01509",
+    "u01510",
+    "u01513"
   ]
 }
