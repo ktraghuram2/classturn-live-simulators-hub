@@ -1,89 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 11:09:33",
-  "completed_count": 1467,
-  "fixed_count": 1352,
-  "latest_sim_id": "u01852",
+  "updated_at": "2026-10-19 14:20:12",
+  "completed_count": 1472,
+  "fixed_count": 1355,
+  "latest_sim_id": "u01872",
   "recent_events": [
-    {
-      "sim_id": "u01816",
-      "status": "FIXED",
-      "time": "10:56:36",
-      "issues": [
-        "Fixed setDisplay selector in canvas_js so that readout spans with id val_reading_* update properly",
-        "Aligned observation table row data columns to match the 8-column observation_thead_html header by removing extraneous record counter and accuracy cells",
-        "Wired action buttons btn_validate_classification and btn_auto_detect_inconsistencies in canvas_js",
-        "Wired stepper up/down buttons to increment and decrement input values and trigger input events"
-      ]
-    },
-    {
-      "sim_id": "u01818",
-      "status": "FIXED",
-      "time": "10:57:09",
-      "issues": [
-        "Replaced erroneous MathML tags (<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>a</mi></mrow></math>) representing the English indefinite article 'a' in narrative prose with plain text 'a' in aim_html, principles_summary_html, and procedure_section_html."
-      ]
-    },
-    {
-      "sim_id": "u01821",
-      "status": "FIXED",
-      "time": "11:00:21",
-      "issues": [
-        "Leader badge numbers 4, 7, and 8 were misaligned with legend pills (PC was badge 7 instead of 4, V3-V6 was badge 4 instead of 8, LSL was badge 8 instead of 7).",
-        "Action buttons (btn_toggle_inlet, btn_discharge_run) and stepper up/down buttons were completely unwired.",
-        "Observation table recording function outputted 8 columns with mismatched ordering against the 7 columns in observation_thead_html.",
-        "Live telemetry updateDomText calls targeted missing element IDs (missing val_ prefix).",
-        "Water level was statically bound without dynamic tank draining, filling, or LSL safety interlock cutoff."
-      ]
-    },
-    {
-      "sim_id": "u01806",
-      "status": "FIXED",
-      "time": "11:00:21",
-      "issues": [
-        "Wired up inactive action buttons (btn_auto_encode, btn_inject_flip, btn_correct_error) to perform automatic modulo-2 parity calculation, single-bit channel error injection, and error correction.",
-        "Wired up all stepper up/down buttons (.stepper-btn) to increment and decrement input values respecting defined step, min, and max limits.",
-        "Corrected observation table recording to generate all 8 columns defined in the table header, including Transmitted Codeword and Decoded Message, resolving column misalignment."
-      ]
-    },
-    {
-      "sim_id": "u01815",
-      "status": "ERROR",
-      "time": "11:00:21",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01819",
-      "status": "PASS",
-      "time": "11:00:21",
-      "issues": []
-    },
-    {
-      "sim_id": "u01822",
-      "status": "FIXED",
-      "time": "11:00:21",
-      "issues": [
-        "Unwired action button #btn_inject_impulse preventing unit impulse sequence injection upon click",
-        "Unwired stepper buttons ▲/▼ in stepper controls preventing interactive value modification",
-        "Missing change event listener on experiment dropdown (#experimentSelect / #expSelect) to switch operating kernels",
-        "Annotation badge 3 leader line length violated minLeader constraint (38.3px < 48px)",
-        "Observation table recording button lacked fallback row insertion when framework auto-record is inactive"
-      ]
-    },
-    {
-      "sim_id": "u01820",
-      "status": "FIXED",
-      "time": "11:00:21",
-      "issues": [
-        "Replaced corrupted MathML tags rendering the English indefinite article 'a' as an italic math variable in Aim, Principles, Procedure, Apparatus, and Validation slots.",
-        "Corrected 'Protein A/G' notation which was erroneously formatted as a mathematical fraction 'A over G' in text prose.",
-        "Fixed '13,000 × g' centrifugation speed rendering where '000 × g' was placed inside a MathML construct.",
-        "Corrected typographical error 'transferirng' to 'transferring' in Step 8 of Procedure.",
-        "Cleaned malformed nested HTML span tags and unescaped quote collisions inside data-unit attributes in the Live Readouts slot."
-      ]
-    },
     {
       "sim_id": "u01817",
       "status": "FIXED",
@@ -367,6 +288,72 @@
         "Escaped newlines (\\n\\n) in principles_summary_html prose instead of clean HTML breaks",
         "Unwired btn_auto_solve_loop action button in canvas_js patched to verify KVL loop summation and record telemetry to the observation table"
       ]
+    },
+    {
+      "sim_id": "u01861",
+      "status": "PASS",
+      "time": "11:09:37",
+      "issues": []
+    },
+    {
+      "sim_id": "u01856",
+      "status": "FIXED",
+      "time": "11:09:37",
+      "issues": [
+        "Unwired action buttons: 'btn_free_electron_limit' and 'btn_isolated_atom_limit' were present in HTML but lacked click event listeners in canvas_js.",
+        "Unwired stepper buttons: '.stepper-btn' up/down control buttons lacked click handlers to increment and decrement input values.",
+        "Observation table column mismatch: btnRecord appended 7 columns with transposed Delta E1 and Eg values, whereas observation_thead_html defines 6 columns (V0, b, a, P, Delta E1, Eg)."
+      ]
+    },
+    {
+      "sim_id": "u01854",
+      "status": "ERROR",
+      "time": "11:09:46",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01860",
+      "status": "FIXED",
+      "time": "11:10:15",
+      "issues": [
+        "Unwired action buttons: 'btn_generate_random_dataset' and 'btn_snap_to_node' lacked event listeners in canvas_js",
+        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' buttons were unhandled in canvas_js",
+        "Observation table column misalignment: canvas_js injected 7 columns into obsTbody (including index and tangent angle) while observation_thead_html defines exactly 5 columns"
+      ]
+    },
+    {
+      "sim_id": "u01862",
+      "status": "FIXED",
+      "time": "11:12:49",
+      "issues": [
+        "Wired Fire Pulsed Laser Flash action button (btn_fire_laser) to trigger laser excitation pulse",
+        "Wired Automated Spectral Monochromator Sweep action button (btn_acquire_spectrum) to scan probe wavelengths and record transient absorption spectra",
+        "Wired stepper increment and decrement buttons (.stepper-btn) to update input controls and trigger parameter change events"
+      ]
+    },
+    {
+      "sim_id": "u01871",
+      "status": "ERROR",
+      "time": "13:45:31",
+      "issues": [
+        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--model', 'gemini-3.8-flash-high', '--disable-slash-commands"
+      ]
+    },
+    {
+      "sim_id": "u01870",
+      "status": "ERROR",
+      "time": "14:19:38",
+      "issues": [
+        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--model', 'gemini-3.8-flash-high', '--disable-slash-commands"
+      ]
+    },
+    {
+      "sim_id": "u01872",
+      "status": "PASS",
+      "time": "14:20:12",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1835,7 +1822,12 @@
     "u01852",
     "u01853",
     "u01855",
+    "u01856",
     "u01858",
-    "u01859"
+    "u01859",
+    "u01860",
+    "u01861",
+    "u01862",
+    "u01872"
   ]
 }
