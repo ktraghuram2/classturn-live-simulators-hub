@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:31:23",
-  "completed_count": 1072,
-  "fixed_count": 1040,
-  "latest_sim_id": "u01314",
+  "updated_at": "2026-10-19 08:32:42",
+  "completed_count": 1077,
+  "fixed_count": 1045,
+  "latest_sim_id": "u01328",
   "recent_events": [
-    {
-      "sim_id": "u01269",
-      "status": "PASS",
-      "time": "08:22:48",
-      "issues": []
-    },
-    {
-      "sim_id": "u01271",
-      "status": "PASS",
-      "time": "08:24:14",
-      "issues": []
-    },
-    {
-      "sim_id": "u01268",
-      "status": "FIXED",
-      "time": "08:24:14",
-      "issues": [
-        "Action button #btn_auto_critical_damping was defined in HTML but had no click listener wired in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to input controls in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01273",
-      "status": "FIXED",
-      "time": "08:24:14",
-      "issues": [
-        "Unwired action button btn_generate_wave_train: clicking the wave generator button had no effect on simulation state.",
-        "Unwired stepper buttons: clicking stepper up/down controls (data-target) did not increment or decrement values.",
-        "Observation table column misalignment: recorded rows injected 8 <td> elements (including serial # and wavelength) while observation_thead_html defines exactly 6 columns.",
-        "Mismatched apparatus badge numbering and leader line targets: badges 1-6 in canvas_js were shifted and misaligned with legend pills (Pill 1 = Wave Generator, Pill 2 = Probe 1, Pill 3 = Breakwater, Pill 4 = Probe 2, Pill 5 = Beach, Pill 6 = Flume Tank)."
-      ]
-    },
-    {
-      "sim_id": "u01267",
-      "status": "FIXED",
-      "time": "08:24:14",
-      "issues": [
-        "Observation table record handler was writing 11 columns into a 7-column table header; corrected columns and order to match observation_thead_html exactly.",
-        "Action buttons (Auto-Tune PI via IMC and Inject Load Disturbance) were not wired to click event handlers; added complete implementations.",
-        "Control panel stepper buttons (▲/▼) lacked click event listeners; wired universal .stepper-btn handler with step, min, and max clamping.",
-        "Experiment mode dropdown lacked a change event listener to switch between baseline and dead-time scenarios; added experimentSelect handler."
-      ]
-    },
-    {
-      "sim_id": "u01270",
-      "status": "FIXED",
-      "time": "08:24:14",
-      "issues": [
-        "Telemetry readout element IDs in JS referenced reading_lt1..reading_lt5 and reading_ref instead of val_reading_lt1..val_reading_lt5 and val_reading_ref, preventing live UI sensor readout updates",
-        "Action buttons #btn_fill_tank ('Fill Sensor Tank') and #btn_drain_cycle ('Open Drain Return Valve') were unwired in JS",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were missing click event listeners"
-      ]
-    },
-    {
-      "sim_id": "u01276",
-      "status": "PASS",
-      "time": "08:24:18",
-      "issues": []
-    },
     {
       "sim_id": "u01272",
       "status": "PASS",
@@ -388,6 +329,70 @@
         "Observation table columns inserted by btnRecord were completely misaligned with observation_thead_html headers (mismatched columns for construction mode, base dimension, compass radius, bisected segment/angle, polygon side count, interior angle, and side length).",
         "Action button 'btn_auto_construct' was unwired without a click event listener.",
         "Stepper increment and decrement buttons (.stepper-btn) were unwired without click event listeners to update parameter inputs and dispatch input events for live telemetry updates."
+      ]
+    },
+    {
+      "sim_id": "u01313",
+      "status": "ERROR",
+      "time": "08:31:27",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01316",
+      "status": "FIXED",
+      "time": "08:31:43",
+      "issues": [
+        "Observation table logging generated 9 td cells (including an unlisted index, azimuth, and weight) whereas the observation thead only defined 6 columns, resulting in severe table column misalignment.",
+        "Action buttons 'btn_align_axis' and 'btn_normalize_weights' defined in actions_html were completely unreferenced and unwired in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01315",
+      "status": "FIXED",
+      "time": "08:31:55",
+      "issues": [
+        "Unwired action buttons: 'btn_construct_circumcircle' and 'btn_toggle_bisectors' lacked click event listeners to toggle circumcircle and bisector ray rendering.",
+        "Unwired stepper buttons: ▲ and ▼ controls on numeric inputs lacked click listeners to increment/decrement parameter values.",
+        "Misaligned observation table columns: 'btnRecord' generated 4 mismatched columns instead of all 6 columns defined in 'observation_thead_html' (Base Segment c, Vertex C Ordinate y_C, Side a, Side b, Area Δ, Circumradius R)."
+      ]
+    },
+    {
+      "sim_id": "u01299",
+      "status": "FIXED",
+      "time": "08:32:12",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01327",
+      "status": "FIXED",
+      "time": "08:32:26",
+      "issues": [
+        "Unwired Auto-Trace Derivation action button (#btn_auto_parse): added play/pause stepper progression handler.",
+        "Unwired stepper up/down buttons (.stepper-btn): added event listeners for stepper increment/decrement with input and change events.",
+        "Observation log table column mismatch: corrected logged <tr> from 7 misaligned cells to the 5 exact columns matching observation_thead_html (Step Index, Current State, Remaining Input, Top Stack Symbol, Stack Depth)."
+      ]
+    },
+    {
+      "sim_id": "u01320",
+      "status": "ERROR",
+      "time": "08:32:36",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01328",
+      "status": "FIXED",
+      "time": "08:32:42",
+      "issues": [
+        "Unwired action button: #btn_trigger_burst ('Synthesize & Trigger Audio Burst') had no click listener to reset burst phase and trigger immediate waveform sweep.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) were not wired to increment/decrement input values with step, min, and max limits.",
+        "Misaligned observation recording table: #btnRecord created rows with mismatched columns (inserted an unheaded row-index cell, combined start/end frequencies into one cell, logged unheaded mid-volume/cycles/cone displacement, and omitted interpolation mode, modulation effect, start volume, end volume, and burst duration). Corrected to match the 10 headers defined in observation_thead_html."
       ]
     }
   ],
@@ -1455,6 +1460,7 @@
     "u01296",
     "u01297",
     "u01298",
+    "u01299",
     "u01300",
     "u01301",
     "u01303",
@@ -1463,6 +1469,10 @@
     "u01310",
     "u01311",
     "u01312",
-    "u01314"
+    "u01314",
+    "u01315",
+    "u01316",
+    "u01327",
+    "u01328"
   ]
 }
