@@ -1,76 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:30:19",
-  "completed_count": 1512,
-  "fixed_count": 1386,
-  "latest_sim_id": "u01918",
+  "updated_at": "2026-10-19 14:31:24",
+  "completed_count": 1517,
+  "fixed_count": 1390,
+  "latest_sim_id": "u01921",
   "recent_events": [
-    {
-      "sim_id": "u01869",
-      "status": "FIXED",
-      "time": "14:22:44",
-      "issues": [
-        "Fixed raw LaTeX delimiters (\\left( ... \\right)_T_1) and malformed nested HTML tags inside the data-unit attributes of readouts_html, converting them to standard MathML and plain unit strings.",
-        "Wired Atlas action buttons (action_steam_flow, action_fast_steady, action_start_cooling) and stepper buttons (.stepper-btn) in canvas_js to allow interactive control of simulation parameters and states.",
-        "Rectified observation table row structure in recordObservation() to exactly match the 6 columns defined in observation_thead_html (t, T1, T2, T2-T1, dT/dt, k), eliminating the extra mismatched columns.",
-        "Aligned canvas Style 2 numbered leader line badges (1 to 8) to match the exact order of elements in legend_pills_html and apparatus_html."
-      ]
-    },
-    {
-      "sim_id": "u01877",
-      "status": "FIXED",
-      "time": "14:22:46",
-      "issues": [
-        "Unwired action buttons in canvas_js: Event listeners were attached to non-existent IDs (btn_insert, btn_delete, btn_traverse, btn_reset) instead of the actual action button IDs defined in actions_html (btn_insert_head, btn_insert_tail, btn_insert_pos, btn_delete_val).",
-        "Missing dedicated routines for Head Insertion (O(1) time complexity), Tail Insertion, and Positional Insertion corresponding to the experiment controls.",
-        "Unwired stepper controls: .stepper-btn up/down controls lacked click event handlers to adjust input values for node_val, target_idx, and target_val.",
-        "Misaligned observation table columns: btnRecord injected 4 data cells into the table row, whereas observation_thead_html defines 6 columns (Operation Performed, Node Count, Target Index, Payload Value, Pointer Traversal Steps, Heap Memory Consumed)."
-      ]
-    },
-    {
-      "sim_id": "u01876",
-      "status": "FIXED",
-      "time": "14:22:50",
-      "issues": [
-        "Rectified raw LaTeX subscript/superscript '_{B_1}^{B_2}' and English indefinite article math tag in aim_html to clean MathML",
-        "Fixed observation table misalignment where row recording emitted 10 columns with an unheaded row index instead of the 8 defined column headers",
-        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) to mutate values and dispatch sync events",
-        "Wired action buttons btn_verify_linearity to demonstrate vector linearity and btn_invert_transformation to compute and apply the matrix inverse"
-      ]
-    },
-    {
-      "sim_id": "u01864",
-      "status": "FIXED",
-      "time": "14:22:56",
-      "issues": [
-        "Unwired action buttons: btn_run_drc and btn_auto_correct_drc had no event listeners in canvas_js",
-        "Unwired stepper buttons: stepper-btn up and down controls were not wired to update inputs and dispatch change events",
-        "Hitbox misalignment: Mask palette click boundaries (i * 36) did not match drawn button positions (104 + i * 40)",
-        "Knurled dial center offset: mousedown checked (692, 355, r=28) instead of the rendered dial center (693, 358, r=32)"
-      ]
-    },
-    {
-      "sim_id": "u01873",
-      "status": "FIXED",
-      "time": "14:23:22",
-      "issues": [
-        "Scheme 1 was labeled and simulated as Unipolar NRZ instead of Unipolar RZ as specified in Aim and Procedure Step 3",
-        "Telemetry readout elements targeted non-existent IDs 'reading_*' instead of 'val_reading_*', preventing live telemetry updates",
-        "Action buttons (btn_cycle_encoding, btn_invert_data, btn_toggle_clock_overlay) and stepper up/down controls were completely unhandled",
-        "Observation table record generator was misaligned with table headers (Peak Voltage was swapped with Bit Pattern) and included an unmapped 8th column"
-      ]
-    },
-    {
-      "sim_id": "u01878",
-      "status": "FIXED",
-      "time": "14:23:33",
-      "issues": [
-        "Observation table recording was misaligned with the 8 thead columns, inserting trial counts and compound strings instead of matching the specific variables in order.",
-        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) lacked event handlers in bindControls().",
-        "Action buttons #btn_pulse_geochemical_vent ('Pulse H2 / H2S Geochemical Plume') and #btn_induce_bottleneck ('Trigger Environmental Stress Bottleneck') were unwired in bindControls().",
-        "Experiment selection dropdown (#experimentSelect) was not wired to reconfigure parameters between neutral drift and trade-off conditions."
-      ]
-    },
     {
       "sim_id": "u01881",
       "status": "FIXED",
@@ -389,6 +323,66 @@
       "status": "PASS",
       "time": "14:30:19",
       "issues": []
+    },
+    {
+      "sim_id": "u01915",
+      "status": "PASS",
+      "time": "14:31:10",
+      "issues": []
+    },
+    {
+      "sim_id": "u01916",
+      "status": "FIXED",
+      "time": "14:31:11",
+      "issues": [
+        "Raw LaTeX strings (VA_{SAM}, VA_{SYS}) in steppers_html converted to proper MathML.",
+        "Raw LaTeX strings (PA_{SAM}, PA_{SYS}) in readouts_html converted to proper MathML.",
+        "Unwrapped unit string (MB) in observation_thead_html converted to consistent MathML.",
+        "Observation table column mismatch: canvas_js inserted 9 td cells (including runCount, paSam, paSys) into a 6-column table, throwing headers out of alignment. Fixed to 6 corresponding columns.",
+        "Unwired stepper up/down buttons and action buttons (btn_run_imageinfo, btn_run_hivelist, btn_dump_hashes, btn_crack_passwords) in canvas_js properly wired with event listeners.",
+        "Experiment select dropdown wired to configure parameters between primary profiling and extended cracking modes."
+      ]
+    },
+    {
+      "sim_id": "u01919",
+      "status": "FIXED",
+      "time": "14:31:12",
+      "issues": [
+        "Unwired 'Overlay Analytical Error-Function Curve' action button (btn_toggle_analytical) and missing erf analytical curve rendering",
+        "Misaligned observation table row schema (7 columns emitted vs 6 columns in table header, missing Relative Deviation calculation)",
+        "Unwired stepper up/down buttons (.stepper-btn)",
+        "Erroneous diffusivity unit MathML notation (m/m^2 s instead of mm^2/s)"
+      ]
+    },
+    {
+      "sim_id": "u01911",
+      "status": "ERROR",
+      "time": "14:31:19",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01920",
+      "status": "FIXED",
+      "time": "14:31:20",
+      "issues": [
+        "Unwired action buttons: btn_compute_full_mac and btn_tamper_bit had no event listeners in canvas_js",
+        "Unwired stepper arrow buttons: .stepper-btn-up and .stepper-btn-down were not bound to increment/decrement stepper inputs",
+        "Telemetry update failure: setVal stripped 'reading_' prefix preventing resolution of val_reading_* DOM element IDs",
+        "Observation table column mismatch: btnRecord innerHTML logged columns misaligned with observation_thead_html (Block Size, Msg Len, Key swapped)",
+        "Missing visual feedback for message bit tampering and integrity failure status"
+      ]
+    },
+    {
+      "sim_id": "u01921",
+      "status": "FIXED",
+      "time": "14:31:23",
+      "issues": [
+        "Observation table record button output 9 columns while the table header defined only 7 columns, causing column misalignment",
+        "Action buttons (btn_inject_13co2, btn_cryo_quench, btn_solve_flux_map) were present in controls HTML but unwired in canvas_js",
+        "Stepper increment/decrement buttons (.stepper-btn) lacked click event listeners in canvas_js"
+      ]
     }
   ],
   "completed_ids": [
@@ -1903,6 +1897,11 @@
     "u01910",
     "u01913",
     "u01914",
-    "u01918"
+    "u01915",
+    "u01916",
+    "u01918",
+    "u01919",
+    "u01920",
+    "u01921"
   ]
 }
