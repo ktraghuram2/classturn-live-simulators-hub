@@ -1,72 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:18:15",
-  "completed_count": 1217,
-  "fixed_count": 1160,
-  "latest_sim_id": "u01515",
+  "updated_at": "2026-10-19 09:19:33",
+  "completed_count": 1222,
+  "fixed_count": 1163,
+  "latest_sim_id": "u01524",
   "recent_events": [
-    {
-      "sim_id": "u01476",
-      "status": "FIXED",
-      "time": "09:08:53",
-      "issues": [
-        "Fixed corrupted LaTeX string and broken MathML formatting in principles_list_html equation (Lipofection Reagent-to-DNA Stoichiometric Ratio) and symbol definitions",
-        "Fixed raw LaTeX delimiters and corrupted MathML in readouts_html for Lipofectamine-to-DNA Ratio symbol (R_{L/D}) and μL/μg unit",
-        "Corrected observation table header observation_thead_html symbol for Reagent-to-DNA Ratio and added Protocol Stage symbol S",
-        "Added missing event listeners in canvas_js for stepper increment/decrement buttons (.stepper-btn) and the Auto-Set Optimal Lipofection action button (#btn_auto_optimize)",
-        "Enhanced updateDisplaySpan in canvas_js to target val_reading_${id} and preserve nested unit spans"
-      ]
-    },
-    {
-      "sim_id": "u01482",
-      "status": "FIXED",
-      "time": "09:09:43",
-      "issues": [
-        "Unwired action button: #btn_toggle_power was present in controls but had no event listener or power toggle logic in canvas_js.",
-        "Telemetry readout ID mismatch: canvas_js attempted to update 'reading_*' element IDs instead of 'val_reading_*', preventing live values from updating in the UI.",
-        "Unwired stepper stepper-btn buttons: up and down stepper control buttons had no click handlers attached in canvas_js.",
-        "Observation table column misalignment: btnRecord dynamically appended 7 arbitrary columns, completely misaligning with the 6 defined columns in observation_thead_html.",
-        "Superscript typo in units: corrected '10⁻¹0 m²/N' to '10⁻¹⁰ m²/N' across readouts_html and observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u01485",
-      "status": "FIXED",
-      "time": "09:10:52",
-      "issues": [
-        "Fixed MathML subscript formatting in procedure_section_html Step 6 where theta/theta_0 was rendered as theta/theta followed by 0",
-        "Aligned observation table recorded row columns in canvas_js with the 7 headers in observation_thead_html",
-        "Wired interactive action buttons #btn_transfer_quench and #btn_preheat_specimen to plunge and preheat specimen",
-        "Wired stepper buttons (.stepper-btn) to increment and decrement input values"
-      ]
-    },
-    {
-      "sim_id": "u01477",
-      "status": "ERROR",
-      "time": "09:10:52",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01483",
-      "status": "FIXED",
-      "time": "09:10:52",
-      "issues": [
-        "Readout DOM selectors in canvas_js targeted parent container IDs instead of val_reading_* spans",
-        "Action buttons btn_start_search and btn_generate_array were unhandled in canvas_js",
-        "Stepper increment and decrement buttons were unhandled in canvas_js",
-        "Observation table rows were not being populated upon search completion"
-      ]
-    },
-    {
-      "sim_id": "u01475",
-      "status": "ERROR",
-      "time": "09:10:52",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01471",
       "status": "ERROR",
@@ -378,6 +316,52 @@
         "Observation table column mismatch: 7 td values were inserted into a 6-column thead, causing s_max to displace and misalign subsequent telemetry columns",
         "Missing Value Threshold stepper parameter (control_1 / tau_null) was not connected to missing cell generation in the feature matrix"
       ]
+    },
+    {
+      "sim_id": "u01511",
+      "status": "ERROR",
+      "time": "09:18:19",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01516",
+      "status": "PASS",
+      "time": "09:18:19",
+      "issues": []
+    },
+    {
+      "sim_id": "u01520",
+      "status": "FIXED",
+      "time": "09:18:19",
+      "issues": [
+        "Observation table columns were misaligned with the header: the row created on recording lacked the Crystal Habit column (only 7 cells for 8 table headers), causing streak, hardness, luster, and weight values to shift into incorrect column headers."
+      ]
+    },
+    {
+      "sim_id": "u01512",
+      "status": "FIXED",
+      "time": "09:18:19",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01521",
+      "status": "FIXED",
+      "time": "09:18:42",
+      "issues": [
+        "Unwired action buttons: 'btn_auto_balance' and 'btn_toggle_cell' in actions_html lacked click event listeners in canvas_js.",
+        "Unwired stepper controls: stepper buttons with data-target were not wired to increment/decrement the respective inputs.",
+        "Misaligned observation table: canvas_js generated 7 table columns whereas observation_thead_html defined 5 columns (Active Cell, Balancing Length, Potential Gradient, Galvanometer Current, Measured Electromotive Force)."
+      ]
+    },
+    {
+      "sim_id": "u01524",
+      "status": "PASS",
+      "time": "09:19:33",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1592,11 +1576,16 @@
     "u01508",
     "u01509",
     "u01510",
+    "u01512",
     "u01513",
     "u01514",
     "u01515",
+    "u01516",
     "u01517",
     "u01518",
-    "u01519"
+    "u01519",
+    "u01520",
+    "u01521",
+    "u01524"
   ]
 }
