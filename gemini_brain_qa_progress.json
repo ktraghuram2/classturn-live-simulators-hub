@@ -1,81 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:11:52",
-  "completed_count": 1687,
-  "fixed_count": 1525,
-  "latest_sim_id": "u02142",
+  "updated_at": "2026-10-19 16:13:07",
+  "completed_count": 1692,
+  "fixed_count": 1530,
+  "latest_sim_id": "u02150",
   "recent_events": [
-    {
-      "sim_id": "u02090",
-      "status": "ERROR",
-      "time": "16:04:36",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02102",
-      "status": "FIXED",
-      "time": "16:04:39",
-      "issues": [
-        "Unwired action button: canvas_js listened to 'btnRecord' instead of the slot's action button 'btn_iterate_step'.",
-        "Observation table column misalignment: tr generated 7 cells while observation_thead_html defines 6 headers (excess width cell displaced approx error into a non-existent column).",
-        "Equation preset mismatch: evalF evaluated arbitrary formulas instead of advertised transcendental presets exp(x)*cos(x)-1.4=0 and cos(x)-x*exp(x)=0.",
-        "Unwired stepper controls: stepper up and down buttons lacked click event listeners in canvas_js.",
-        "Function curve contrast: added luminous glow to enhance curve readability on the dark #090d16 canvas floor."
-      ]
-    },
-    {
-      "sim_id": "u02105",
-      "status": "PASS",
-      "time": "16:04:49",
-      "issues": []
-    },
-    {
-      "sim_id": "u02103",
-      "status": "FIXED",
-      "time": "16:05:00",
-      "issues": [
-        "Unwired action button: #btn_evaluate_roots ('Execute Null-Balance Root Evaluation') from actions_html was not wired in canvas_js",
-        "Unwired stepper controls: .stepper-btn elements for perturbation parameter and order were not connected to event listeners in canvas_js",
-        "Misaligned observation table columns: row template inserted 7 columns with an extra serial number index cell, misaligning against the 6 defined observation table headers"
-      ]
-    },
-    {
-      "sim_id": "u02106",
-      "status": "FIXED",
-      "time": "16:05:06",
-      "issues": [
-        "Unwired action buttons #btn_dispatch_all ('Dispatch Optimal Elevator Calls') and #btn_spawn_burst ('Inject Ground Peak Arrival Burst')",
-        "Unwired stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) and experiment selector",
-        "Car door opening condition in dispatchController failed to open doors when onboard passengers arrived at destination floor if floor queue was empty"
-      ]
-    },
-    {
-      "sim_id": "u02099",
-      "status": "ERROR",
-      "time": "16:05:25",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02108",
-      "status": "PASS",
-      "time": "16:05:44",
-      "issues": []
-    },
-    {
-      "sim_id": "u02111",
-      "status": "FIXED",
-      "time": "16:06:50",
-      "issues": [
-        "Unwired stepper buttons: clicking stepper buttons did not adjust wavelength or power values",
-        "Unwired action button: #btn_capture_trace was missing an event listener in canvas_js",
-        "Misaligned observation table columns: row entries had an extraneous serial count and lacked inverse fourth-power λ⁻⁴, misaligning with the 5 thead columns",
-        "Readout DOM element selection: canvas_js targeted parent li elements instead of val_reading_* value spans"
-      ]
-    },
     {
       "sim_id": "u02110",
       "status": "PASS",
@@ -376,6 +305,83 @@
         "Misaligned observation table columns: Corrected row insertion from 5 misaligned columns to the 6 expected columns matching observation_thead_html.",
         "Unwired stepper controls: Bound stepper-btn up and down click handlers to dynamically update input values.",
         "Canvas badges mismatched with legend pills: Realigned canvas badges 1 through 8 to match the 8 legend pills in legend_pills_html."
+      ]
+    },
+    {
+      "sim_id": "u02127",
+      "status": "ERROR",
+      "time": "16:12:20",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02136",
+      "status": "ERROR",
+      "time": "16:12:20",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02141",
+      "status": "ERROR",
+      "time": "16:12:21",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02146",
+      "status": "FIXED",
+      "time": "16:12:28",
+      "issues": [
+        "Unwired action buttons: btn_step_phase, btn_toggle_partition, and btn_distribute_data were present in DOM but had no event listeners",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down controls lacked click handlers",
+        "Misaligned observation table columns: 6 misordered columns recorded instead of the 7 specified in the observation table header",
+        "Missing partitionStrategy state: Partition strategy toggle between Range and Hash partitioning was unhandled in data packet routing"
+      ]
+    },
+    {
+      "sim_id": "u02149",
+      "status": "FIXED",
+      "time": "16:12:39",
+      "issues": [
+        "Misaligned observation table columns: btnRecord injected 7 columns (including un-headed S.No, Span, and LRV while omitting theoretical current) instead of matching the 5 defined observation columns (Applied Pressure, Ideal Current, Measured Current, Percentage Span, Calibration Error).",
+        "Unwired Digital Zero Trim action button: #btn_zero_trim lacked an event listener to adjust and trim sensor zero calibration offset.",
+        "Unwired stepper controls: .stepper-btn up/down controls lacked click listeners to increment and decrement inputs within min/max bounds.",
+        "Unwired experiment mode selection: #experimentSelect lacked change handling to apply span verification and zero elevation presets."
+      ]
+    },
+    {
+      "sim_id": "u02145",
+      "status": "FIXED",
+      "time": "16:12:40",
+      "issues": [
+        "Observation table columns in canvas_js were misaligned with the 5 thead columns and emitted 8 mismatched tds",
+        "Viscous drag coefficient gamma calculation in canvas_js caused terminal velocity drift reading to mismatch the 1.57 um/s telemetry spec by 1000x",
+        "Action buttons (Auto-Focus Bead Tracking, Relax Magnetic Field) and stepper increment/decrement buttons were unwired in canvas_js",
+        "principles_list_html had unclosed HTML tags at the end of the symbol list"
+      ]
+    },
+    {
+      "sim_id": "u02140",
+      "status": "FIXED",
+      "time": "16:12:48",
+      "issues": [
+        "Live readouts were not updating because elements in readouts_html have id 'val_reading_*' while canvas_js targeted 'reading_*'",
+        "Observation table record button generated 7 columns with mismatched headers instead of the 6 columns defined in observation_thead_html",
+        "Action buttons (btn_trigger_fault and btn_find_cct) and stepper buttons (.stepper-btn-up and .stepper-btn-down) had no event listeners wired in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u02150",
+      "status": "FIXED",
+      "time": "16:13:06",
+      "issues": [
+        "Observation table columns were misaligned: 1H NMR shift and mass spectrometry m/z columns were swapped, and the 7th column (Elucidated Compound) was missing.",
+        "Action buttons 'btn_start_scan' and 'btn_purge_chamber' lacked event listeners in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update input values in canvas_js."
       ]
     }
   ],
@@ -2064,8 +2070,13 @@
     "u02134",
     "u02135",
     "u02139",
+    "u02140",
     "u02142",
     "u02143",
-    "u02144"
+    "u02144",
+    "u02145",
+    "u02146",
+    "u02149",
+    "u02150"
   ]
 }
