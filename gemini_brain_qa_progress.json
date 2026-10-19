@@ -1,85 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:49:01",
-  "completed_count": 1597,
-  "fixed_count": 1455,
-  "latest_sim_id": "u02022",
+  "updated_at": "2026-10-19 15:50:20",
+  "completed_count": 1602,
+  "fixed_count": 1459,
+  "latest_sim_id": "u02035",
   "recent_events": [
-    {
-      "sim_id": "u01982",
-      "status": "FIXED",
-      "time": "15:23:28",
-      "issues": [
-        "Fixed grammatical corruption where the English indefinite article 'a' was converted into MathML italic variables in aim, apparatus, and principles slots.",
-        "Fixed '800 x 500' CRT coordinate specification using italic MathML 'x' instead of the multiplication sign in apparatus.",
-        "Added missing 'Execute Single Descent Step' action button to actions_html to satisfy Section 4 procedure Step 4.",
-        "Wired stepper up/down buttons (.stepper-btn) to increment/decrement input values cleanly.",
-        "Wired HTML action buttons ('btn_auto_converge' and 'btn_step') in canvas_js so DOM controls execute simulation logic.",
-        "Fixed updateTelemetryDisplay to properly update <input> values using .value instead of .textContent.",
-        "Added automatic halt to auto-iteration loop when the gradient convergence threshold (|f'(x)| < 0.001) is reached."
-      ]
-    },
-    {
-      "sim_id": "u01983",
-      "status": "ERROR",
-      "time": "15:23:28",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01985",
-      "status": "ERROR",
-      "time": "15:23:28",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01986",
-      "status": "PASS",
-      "time": "15:23:28",
-      "issues": []
-    },
-    {
-      "sim_id": "u01971",
-      "status": "ERROR",
-      "time": "15:23:31",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01993",
-      "status": "FIXED",
-      "time": "15:24:50",
-      "issues": [
-        "Unwired action button: #btn_initiate_switching ('Initiate 3-Phase Transmission') had no click event listener in canvas_js.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click handlers to increment and decrement inputs.",
-        "Misaligned observation table columns: #btnRecord appended 8 columns whereas observation_thead_html defines 6 columns (Packet Index, Payload Size, Ingress Port, Egress Port, Hop Transmission Delay, Cumulative Transit Latency)."
-      ]
-    },
-    {
-      "sim_id": "u01992",
-      "status": "FIXED",
-      "time": "15:24:51",
-      "issues": [
-        "Observation table recorded 8 columns instead of matching the 6 defined header columns (removed extraneous trial count and cycle interval, aligned peak current and delivered energy columns with header)",
-        "Action button #btn_toggle_waveform ('Switch Monophasic / Biphasic Waveform') had no event listener wired in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired",
-        "Experiment select element (#experimentSelect) was unwired to the pulse waveform mode control"
-      ]
-    },
-    {
-      "sim_id": "u01996",
-      "status": "FIXED",
-      "time": "15:24:58",
-      "issues": [
-        "Unwired action buttons: 'btn_run_relaxation' and 'btn_clamp_preset' lacked click event listeners in canvas_js",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to increment/decrement parameter inputs",
-        "Observation table column misalignment: Recording listener inserted 6 mismatched columns into a 5-column table, omitting clamped unit count and recognized schema prototype classification"
-      ]
-    },
     {
       "sim_id": "u01995",
       "status": "PASS",
@@ -382,6 +307,81 @@
       "status": "PASS",
       "time": "15:49:01",
       "issues": []
+    },
+    {
+      "sim_id": "u02029",
+      "status": "PASS",
+      "time": "15:49:05",
+      "issues": []
+    },
+    {
+      "sim_id": "u02025",
+      "status": "FIXED",
+      "time": "15:49:07",
+      "issues": [
+        "Duplicate word 'certified certified' in apparatus specification for Methylene Blue Thiocyanate Reagent",
+        "Misaligned legend pills numbering and apparatus element names relative to canvas Style 2 numbered leader badges",
+        "Observation table record button generated 8 misordered columns instead of exactly matching the 6 defined observation table header columns",
+        "Unwired action buttons ('btn_invert_tube', 'btn_accelerate_clock') and stepper increment/decrement buttons ('.stepper-btn')"
+      ]
+    },
+    {
+      "sim_id": "u02023",
+      "status": "FIXED",
+      "time": "15:49:10",
+      "issues": [
+        "Unwired action buttons ('btn_dispense_discs' and 'btn_measure_zones') and unhandled experimentSelect dropdown",
+        "Unwired stepper up/down buttons (.stepper-btn) preventing arrow stepping",
+        "Misaligned observation table columns where N_sensitive was omitted and curing efficiency and viability were shifted into wrong headers",
+        "setReadout was overriding entire element textContent causing child MathML unit elements to be destroyed",
+        "Added inhibition zone measurement caliper dimension lines with diameter readouts toggled by Measure Inhibition Zones button"
+      ]
+    },
+    {
+      "sim_id": "u02030",
+      "status": "FIXED",
+      "time": "15:49:29",
+      "issues": [
+        "Wired up the action button btn_toggle_rotation so clicking Toggle Continuous 360° Rotation starts/pauses link rotation.",
+        "Wired up the action button btn_clear_locus to toggle and clear the rendered elliptical locus trajectory.",
+        "Added event listener wiring for all stepper ▲/▼ buttons (.stepper-btn) to increment/decrement link lengths and angle smoothly.",
+        "Corrected observation table row alignment in btnRecord so recorded columns strictly match the 9 headers (Link Angle θ, Link AB Length l, Link AC Length lC, Slider A Position xA, Slider B Position yB, Point C xC, Point C yC, Semi-Horizontal Axis a, Semi-Vertical Axis b) instead of 10 misaligned columns.",
+        "Added missing mathematical symbol a in Semi-Horizontal Axis header within observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u02024",
+      "status": "ERROR",
+      "time": "15:49:56",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02031",
+      "status": "ERROR",
+      "time": "15:50:11",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02027",
+      "status": "ERROR",
+      "time": "15:50:12",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02035",
+      "status": "FIXED",
+      "time": "15:50:20",
+      "issues": [
+        "Apparatus badges in canvas_js were misaligned with legend pills: Stirrer, Flask, Flea, Beaker were numbered 3, 1, 4, 2 instead of 1, 2, 3, 4 to match legend pills and apparatus list.",
+        "Observation table columns in canvas_js were misaligned with observation_thead_html: contained an extraneous Trial # column and swapped FeCl3 volume/stirrer speed and absorbance/hydrolysis columns vs the 6 thead columns.",
+        "Action buttons (Add FeCl3 Dropwise and Initiate Cellophane Dialysis) and stepper increment/decrement buttons were unwired in canvas_js."
+      ]
     }
   ],
   "completed_ids": [
@@ -1981,6 +1981,11 @@
     "u02020",
     "u02021",
     "u02022",
-    "u02028"
+    "u02023",
+    "u02025",
+    "u02028",
+    "u02029",
+    "u02030",
+    "u02035"
   ]
 }
