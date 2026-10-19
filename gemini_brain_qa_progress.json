@@ -1,77 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 17:02:05",
-  "completed_count": 1857,
-  "fixed_count": 1663,
-  "latest_sim_id": "u02378",
+  "updated_at": "2026-10-19 17:02:34",
+  "completed_count": 1862,
+  "fixed_count": 1668,
+  "latest_sim_id": "u02375",
   "recent_events": [
-    {
-      "sim_id": "u02334",
-      "status": "FIXED",
-      "time": "16:54:04",
-      "issues": [
-        "Fixed telemetry readout element IDs in canvas_js (val_reading_pz, val_reading_px, val_reading_fz1, val_reading_fz2) which previously failed to update live readings.",
-        "Wired stepper up/down buttons (.stepper-btn) to increment/decrement integration boundaries and sync telemetry.",
-        "Corrected observation table row insertion in btnRecord to align with all 7 columns (Transformation Kernel, z1, z2, fZ(z1), fZ(z2), PZ, PX).",
-        "Implemented dual-mode kernel support for both Quadratic (Z = X^2) and Exponential (Z = e^X) transformations with dynamic pre-image and density curves.",
-        "Wired action buttons (btn_select_quadratic, btn_select_exponential, btn_map_integral) and experiment dropdown to switch kernels and trigger pre-image mapping.",
-        "Cleaned up duplicate symbol tags in observation_thead_html table column headers."
-      ]
-    },
-    {
-      "sim_id": "u02335",
-      "status": "FIXED",
-      "time": "16:54:22",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u02337",
-      "status": "FIXED",
-      "time": "16:54:28",
-      "issues": [
-        "Unwired action button id btn_run_ga_clustering was missing from the run/start event listeners in canvas_js",
-        "Unwired action button id btn_load_sample_dataset was not implemented or bound in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were not wired to update input values on click",
-        "Observation table columns were misaligned for 7-column header: state.trialCount was incorrectly inserted as first column while Current Generation was omitted, causing all values to shift across headers"
-      ]
-    },
-    {
-      "sim_id": "u02338",
-      "status": "PASS",
-      "time": "16:54:46",
-      "issues": []
-    },
-    {
-      "sim_id": "u02336",
-      "status": "FIXED",
-      "time": "16:54:47",
-      "issues": [
-        "Fixed ReferenceError thrown by undeclared 'pmax' and 'tmax' variables in updatePhysics() during alpha-cut calculation",
-        "Wired interactive stepper up/down buttons and input event listeners for Section 05 parameter controls",
-        "Wired action buttons #btn_compute_fwa and #btn_normalize_weights for automated synthesis and weight normalization",
-        "Aligned observation table recorded row cells with the 9 columns of observation_thead_html (alpha level, sensor intervals, FWA bounds)"
-      ]
-    },
-    {
-      "sim_id": "u02340",
-      "status": "FIXED",
-      "time": "16:55:07",
-      "issues": [
-        "Misaligned observation table columns: JS logged 7 columns (#, Angle, Mode, Velocity, Area, Retention, Score) but observation table header defines 5 columns (Angle, Target Region, Effective Area, Retention Index, Validation Status).",
-        "Unwired action buttons: btn_toggle_cutaway and btn_validate_region defined in controls lacked event listeners in canvas_js.",
-        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn) were not wired to update inputs and sync telemetry in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u02323",
-      "status": "ERROR",
-      "time": "16:55:23",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u02341",
       "status": "FIXED",
@@ -379,6 +312,73 @@
         "Observation table columns in canvas_js were misaligned with observation_thead_html: recorded respiration rate and RMSSD instead of Cardiac Beat Number and Successive Beat Difference |ΔRR|.",
         "Action button #btn_deep_vagal_breath was present in controls but unwired in canvas_js.",
         "Stepper controls (.stepper-btn) were present in controls but unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02376",
+      "status": "FIXED",
+      "time": "17:02:09",
+      "issues": [
+        "Telemetry readout DOM target IDs in canvas_js did not match HTML slot IDs (used 'reading_*' instead of 'val_reading_*'), preventing live value updates.",
+        "Observation table recording was misaligned with the 6-column header (recorded only 5 cells, omitted impulse line length, and lacked calculated flow rate).",
+        "Action buttons (btn_purge_equalize for equalizing valve and btn_validate_hookup for BoM audit) had no event listener implementations in canvas_js.",
+        "Interactive stepper increment/decrement buttons (.stepper-btn) were unwired in canvas_js.",
+        "Observation table header contained an inverted unit slash (/m³h instead of m³/h) in the calculated flow rate column."
+      ]
+    },
+    {
+      "sim_id": "u02377",
+      "status": "FIXED",
+      "time": "17:02:11",
+      "issues": [
+        "Unwired action buttons: 'btn_orient_to_source' (Face Toward Sound Source) and 'btn_emit_pulse' (Emit Acoustic Wavefront) were not wired to any event listeners.",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' controls were not wired to increment or decrement the stepper input values.",
+        "Misaligned observation table columns: btnRecord inserted 8 table cells while the observation table header contains only 5 columns (Separation Distance, Heading Angle, Azimuth Angle, Acoustic Gain, Sound Level)."
+      ]
+    },
+    {
+      "sim_id": "u02374",
+      "status": "ERROR",
+      "time": "17:02:20",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02380",
+      "status": "FIXED",
+      "time": "17:02:25",
+      "issues": [
+        "Wired action buttons 'btn_trigger_pulse' and 'btn_toggle_power' and attached stepper increment/decrement event listeners in canvas_js",
+        "Corrected observation table row column 6 to display percentage deviation (% Error) instead of upper threshold voltage in volts"
+      ]
+    },
+    {
+      "sim_id": "u02381",
+      "status": "FIXED",
+      "time": "17:02:27",
+      "issues": [
+        "Observation table rows recorded by btnRecord generated 7 mismatched columns instead of the 5 columns defined in observation_thead_html (V1, V2, V_titre, Fehling factor F, Reducing sugar % RS).",
+        "Action buttons (#btn_dispense_drop, #btn_add_indicator, #btn_toggle_boil) defined in actions_html were not wired with event listeners in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn) lacked click handling in canvas_js.",
+        "Reaction flask solution color transition in drawConicalFlask hardcoded vEnd to 25.0 mL instead of computing stoichiometric equivalence dynamically from mSample."
+      ]
+    },
+    {
+      "sim_id": "u02372",
+      "status": "ERROR",
+      "time": "17:02:31",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02375",
+      "status": "FIXED",
+      "time": "17:02:33",
+      "issues": [
+        "Observation table rows generated 7 columns instead of 6 and were misaligned with the observation table header columns",
+        "Action buttons (btn_merge_nearest, btn_split_heaviest_edge, btn_toggle_linkage) and stepper up/down buttons were unwired"
       ]
     }
   ],
@@ -2239,6 +2239,11 @@
     "u02370",
     "u02371",
     "u02373",
-    "u02378"
+    "u02375",
+    "u02376",
+    "u02377",
+    "u02378",
+    "u02380",
+    "u02381"
   ]
 }
