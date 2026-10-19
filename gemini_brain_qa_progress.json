@@ -1,57 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 11:07:55",
-  "completed_count": 1462,
-  "fixed_count": 1349,
-  "latest_sim_id": "u01849",
+  "updated_at": "2026-10-19 11:09:33",
+  "completed_count": 1467,
+  "fixed_count": 1352,
+  "latest_sim_id": "u01852",
   "recent_events": [
-    {
-      "sim_id": "u01808",
-      "status": "ERROR",
-      "time": "10:54:35",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01812",
-      "status": "FIXED",
-      "time": "10:54:44",
-      "issues": [
-        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) leaving numeric inputs non-steppable via UI buttons",
-        "Unwired experiment action buttons (#btn_inject_avalanche_pulse and #btn_optimize_transit_frequency) with no click event listeners attached"
-      ]
-    },
-    {
-      "sim_id": "u01778",
-      "status": "FIXED",
-      "time": "10:55:08",
-      "issues": [
-        "Unwired action buttons: Connected btn_normalize_latch to trigger latch cycle and btn_perturb_ulp to inject a 1-ULP perturbation.",
-        "Unwired stepper controls: Attached event listeners to .stepper-btn-up and .stepper-btn-down to increment/decrement control_v and control_bit_idx.",
-        "Observation table column misalignment: Removed extraneous Serial Number and Reconstructed Float td elements in canvas_js to match the 6-column observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u01814",
-      "status": "FIXED",
-      "time": "10:55:23",
-      "issues": [
-        "Unwired action buttons: 'btn_pump_stroke' (Pump Effort Lever) and 'btn_release_valve' (Open Pressure Release Valve) had no event listeners or stroke animation logic.",
-        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' controls were not wired to update inputs and trigger telemetry calculation.",
-        "Misaligned observation table columns: 'btnRecord' generated 7 mismatched columns including an unrequested count column instead of the 8 columns defined in the table header (Plunger Diameter, Ram Diameter, Plunger Area, Ram Area, Applied Effort Force, Transmitted Pressure, Weight Lifted, Mechanical Advantage)."
-      ]
-    },
-    {
-      "sim_id": "u01813",
-      "status": "FIXED",
-      "time": "10:56:23",
-      "issues": [
-        "Observation table record button logged 7 columns in an incorrect order instead of the 8 columns matching the table header (missing Horizontal FOV and misaligning refresh rate/resolution).",
-        "Action buttons #toggle_tracking_frustum and #cycle_lens_cross_section were present in HTML but had no event listeners or interactive state handling in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js."
-      ]
-    },
     {
       "sim_id": "u01816",
       "status": "FIXED",
@@ -368,6 +321,51 @@
         "Nested MathML fraction error for ceramic composition PLZT 9/65/35 in apparatus_html",
         "Corrupted data-unit attributes containing embedded HTML spans in readouts_html",
         "Mismatched and malformed MathML unit /V²m² for squared electric field in observation_thead_html and readouts_html"
+      ]
+    },
+    {
+      "sim_id": "u01851",
+      "status": "FIXED",
+      "time": "11:09:33",
+      "issues": [
+        "Telemetry readouts in canvas_js queried DOM IDs without the 'val_' prefix ('reading_dki_extensible' instead of 'val_reading_dki_extensible'), which returned null and prevented live readout telemetry from updating",
+        "Observation table record button had 9 columns instead of 7, omitting the Configuration counter column and misaligning data cells with the defined table headers",
+        "Action button 'btn_animate_dof' ('Excite Kinematic Modes & Sways') was present in controls but unwired in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js",
+        "Experiment mode select dropdown was unwired for switching structural topology presets"
+      ]
+    },
+    {
+      "sim_id": "u01855",
+      "status": "FIXED",
+      "time": "11:09:33",
+      "issues": [
+        "Unwired stepper buttons (▲/▼) prevented user interaction with shift, offset, and pattern length controls.",
+        "Unwired action button 'Run Automated Search Cycle' (btn_auto_search) failed to trigger automated simulation cycling.",
+        "Observation table columns were misaligned: btnRecord generated 7 columns with an unwanted timestamp, conflicting with the 6 columns defined in observation_thead_html (Shift Position, Pattern Pointer j, Text Character, Pattern Character, Comparison Result, Cumulative Comparisons)."
+      ]
+    },
+    {
+      "sim_id": "u01858",
+      "status": "PASS",
+      "time": "11:09:33",
+      "issues": []
+    },
+    {
+      "sim_id": "u01859",
+      "status": "PASS",
+      "time": "11:09:33",
+      "issues": []
+    },
+    {
+      "sim_id": "u01852",
+      "status": "FIXED",
+      "time": "11:09:33",
+      "issues": [
+        "Corrupted MathML fraction V/5 in apparatus_html for knife switch specification (was converted from 250 V / 5 A)",
+        "Corrupted MathML division by zero fraction V/0 in apparatus_html for DC voltmeter specification (was converted from 0–5 V / 0–15 V)",
+        "Escaped newlines (\\n\\n) in principles_summary_html prose instead of clean HTML breaks",
+        "Unwired btn_auto_solve_loop action button in canvas_js patched to verify KVL loop summation and record telemetry to the observation table"
       ]
     }
   ],
@@ -1833,6 +1831,11 @@
     "u01847",
     "u01848",
     "u01849",
-    "u01853"
+    "u01851",
+    "u01852",
+    "u01853",
+    "u01855",
+    "u01858",
+    "u01859"
   ]
 }
