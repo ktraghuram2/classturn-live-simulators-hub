@@ -1,88 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:06:52",
-  "completed_count": 1322,
-  "fixed_count": 1240,
-  "latest_sim_id": "u01660",
+  "updated_at": "2026-10-19 10:08:21",
+  "completed_count": 1327,
+  "fixed_count": 1245,
+  "latest_sim_id": "u01665",
   "recent_events": [
-    {
-      "sim_id": "u01624",
-      "status": "FIXED",
-      "time": "09:56:15",
-      "issues": [
-        "Wired unhandled action buttons btn1 (Upload First FASTA File) and btn2 (Upload Second FASTA File & Run Brute-Force Compare) to trigger comparison and telemetry updates.",
-        "Added increment and decrement logic to stepper buttons (.stepper-btn-up, .stepper-btn-down) which previously did not adjust input values.",
-        "Realigned observation table cells in btnRecord to match the exact 7 headers in observation_thead_html, removing extra trial index, scan speed, and duplicate Hamming columns.",
-        "Corrected sequence comparison calculation so positional match status, Hamming distance, and percentage identity evaluate actual nucleotide equality (dna1[i] === dna2[i]) under both substitutions and reading-frame shifts."
-      ]
-    },
-    {
-      "sim_id": "u01621",
-      "status": "FIXED",
-      "time": "09:56:15",
-      "issues": [
-        "Unwired action button (#btn_auto_solve) preventing automated Best-First Search traversal execution.",
-        "Unwired stepper increment/decrement buttons (.stepper-btn-up and .stepper-btn-down) for step index, heuristic bias weight, and execution interval.",
-        "Missing observation table row population as heuristic search steps advance."
-      ]
-    },
-    {
-      "sim_id": "u01622",
-      "status": "FIXED",
-      "time": "09:56:15",
-      "issues": [
-        "Unwired action button btn_align_circular_orbit for calculating circular orbital velocity",
-        "Unwired action button btn_toggle_gravity_vectors for toggling dynamic vector field arrows",
-        "Unwired stepper increment/decrement buttons (.stepper-btn)",
-        "Observation table columns mismatch between observation_thead_html (6 columns) and tbody (9 columns)",
-        "Corrupted exponent formatting in table headers and readout data-unit (10²0 instead of 10²⁰)"
-      ]
-    },
-    {
-      "sim_id": "u01617",
-      "status": "FIXED",
-      "time": "09:56:15",
-      "issues": [
-        "Rectified unrendered raw LaTeX/pseudo-LaTeX exponents and symbols in principles_summary_html: replaced α^(2t), α^(2i), α^(4i), and phi_(2t-1)(X) with valid MathML tags."
-      ]
-    },
-    {
-      "sim_id": "u01616",
-      "status": "PASS",
-      "time": "09:56:15",
-      "issues": []
-    },
-    {
-      "sim_id": "u01620",
-      "status": "FIXED",
-      "time": "09:56:22",
-      "issues": [
-        "Observation table had 7 columns defined in the table header but only 6 cells inserted on recording, skipping Bevel Protractor Angle and misaligning Scriber Height Setting",
-        "Stepper increment and decrement buttons (stepper-btn-up, stepper-btn-down) were unwired in canvas_js",
-        "Action buttons (btn_wring_slip_gauges, btn_strike_center_punch, btn_zero_calibrate) were unwired in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01619",
-      "status": "FIXED",
-      "time": "09:56:22",
-      "issues": [
-        "Misaligned observation table columns: btnRecord output 10 columns with an extra trial index and missing status, mismatching the 7 columns in observation_thead_html",
-        "Unwired action buttons: 'Trigger Shake Table Waveform' (#btn_trigger_motion) and 'Release from Initial Tilt Angle' (#btn_release_tilt) lacked event listeners in canvas_js",
-        "Unwired stepper buttons: .stepper-btn elements were missing click handlers to increment and decrement input values",
-        "Unwired experiment options: #experimentSelect was not wired to switch between Floor 1 and Floor 3 configurations"
-      ]
-    },
-    {
-      "sim_id": "u01623",
-      "status": "FIXED",
-      "time": "09:56:53",
-      "issues": [
-        "Stepper increment and decrement buttons were unwired because query selectors did not include .stepper-btn-up and .stepper-btn-down classes matching the HTML template.",
-        "Action buttons #btn_trigger_mitosis and #btn_equilibrate_orbit were present in the UI controls but lacked event listener bindings in JavaScript.",
-        "Observation table record button included unmapped trialCount and tau values, offsetting data cells from the 8 corresponding table header columns."
-      ]
-    },
     {
       "sim_id": "u01608",
       "status": "PASS",
@@ -352,6 +274,83 @@
         "Unwired live telemetry readouts: canvas_js searched for 'reading_*' container IDs rather than 'val_reading_*' value span IDs, blocking live readout updates.",
         "Unwired action button: 'Weigh Precipitate on Analytical Balance' (btn_weigh_precipitate) was defined in HTML but had no event listener to toggle precipitate weighing on the analytical balance.",
         "Unwired stepper controls: Stepper up and down buttons lacked event listeners, rendering manual increment/decrement clicks unresponsive."
+      ]
+    },
+    {
+      "sim_id": "u01656",
+      "status": "FIXED",
+      "time": "10:06:59",
+      "issues": [
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js, preventing parameter adjustment via UI steppers.",
+        "Action button #btn_stir_bath was unwired, failing to control or toggle the oil bath stirrer animation.",
+        "Observation table recording row inserted 8 mismatched columns with row index and raw input settings instead of matching the 7 table header columns with calculated T_K, V_th, I, R, ln(R), and 1/T."
+      ]
+    },
+    {
+      "sim_id": "u01655",
+      "status": "ERROR",
+      "time": "10:07:11",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01657",
+      "status": "FIXED",
+      "time": "10:07:14",
+      "issues": [
+        "Fixed broken LaTeX fraction MathML in actions_html button label for Toggle Quadrant Polarity (Q-I / Q-III)",
+        "Wired unwired action buttons btn_trigger_gate (Inject Gate Trigger Pulse) and btn_toggle_polarity (Toggle Quadrant Polarity) in canvas_js",
+        "Wired interactive stepper buttons (.stepper-btn) in canvas_js",
+        "Fixed observation table columns mismatch in canvas_js to strictly match the 5 header columns in observation_thead_html",
+        "Added bidirectional Quadrant I and Quadrant III polarity switching state and visual canvas indicator banner"
+      ]
+    },
+    {
+      "sim_id": "u01663",
+      "status": "FIXED",
+      "time": "10:07:17",
+      "issues": [
+        "Corrected unrendered raw exponent ^(i-1) in apparatus_html and principles_summary_html to well-formed MathML <msup><mn>2</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msup>",
+        "Connected unwired action buttons #btn_dispatch_lookup and #btn_remove_peer to reset tracer animation and simulate node departures",
+        "Added event listener bindings for stepper buttons (.stepper-btn) to increment/decrement input controls",
+        "Aligned observation table recorded row columns to match the 7 observation table headers in observation_thead_html"
+      ]
+    },
+    {
+      "sim_id": "u01662",
+      "status": "FIXED",
+      "time": "10:07:47",
+      "issues": [
+        "Readout telemetry display element lookups in canvas_js used mismatched IDs (val_hh_stage etc. instead of val_reading_*) and targeted container <li> elements rather than value spans",
+        "Observation table recording was misaligned with observation_thead_html: pushed 9 values for an 8-column table, omitted elapsed incubation time, and shifted temperature and magnification into wrong columns",
+        "Interactive action buttons (btn_candling, btn_heart_focus, btn_advance_stage) and stepper up/down controls (.stepper-btn) were not wired with event listeners in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01659",
+      "status": "ERROR",
+      "time": "10:07:48",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01658",
+      "status": "ERROR",
+      "time": "10:08:08",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01665",
+      "status": "FIXED",
+      "time": "10:08:21",
+      "issues": [
+        "Unwired action buttons: 'btn_strobe_single' and 'btn_toggle_continuous_strobe' in actions_html had no event listeners in canvas_js.",
+        "Unwired stepper buttons: .stepper-btn (.stepper-btn-up and .stepper-btn-down) were not connected to increment/decrement rateFactor.",
+        "Misaligned observation table columns: canvas_js recorded sampleCount (N_s) into column 1, shifting rate factor into column 2, deltaTheta into column 3, and thetaApparent into column 4, while omitting column 5 (Observed Motion State) entirely."
       ]
     }
   ],
@@ -1676,7 +1675,12 @@
     "u01652",
     "u01653",
     "u01654",
+    "u01656",
+    "u01657",
     "u01660",
-    "u01661"
+    "u01661",
+    "u01662",
+    "u01663",
+    "u01665"
   ]
 }
