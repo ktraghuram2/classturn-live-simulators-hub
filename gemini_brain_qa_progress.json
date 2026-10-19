@@ -1,67 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:19:33",
-  "completed_count": 1222,
-  "fixed_count": 1163,
-  "latest_sim_id": "u01524",
+  "updated_at": "2026-10-19 09:20:42",
+  "completed_count": 1227,
+  "fixed_count": 1168,
+  "latest_sim_id": "u01530",
   "recent_events": [
-    {
-      "sim_id": "u01471",
-      "status": "ERROR",
-      "time": "09:10:52",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01484",
-      "status": "FIXED",
-      "time": "09:10:52",
-      "issues": [
-        "Wired up the unhandled 'Generate New Sorted Array' action button (btn_generate_sorted_array) to generate new strictly sorted elements and reset search state.",
-        "Fixed live telemetry readouts by targeting val_reading_* element IDs that contain the display values in the HTML slots.",
-        "Aligned observation table columns: removed extra query element cell so the 6 row cells match the 6 thead headers exactly.",
-        "Wired experiment mode selection change listener to handle target switching for absent element analysis."
-      ]
-    },
-    {
-      "sim_id": "u01486",
-      "status": "PASS",
-      "time": "09:10:52",
-      "issues": []
-    },
-    {
-      "sim_id": "u01481",
-      "status": "ERROR",
-      "time": "09:11:50",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01487",
-      "status": "PASS",
-      "time": "09:11:56",
-      "issues": []
-    },
-    {
-      "sim_id": "u01493",
-      "status": "FIXED",
-      "time": "09:12:13",
-      "issues": [
-        "Misaligned observation table columns: 8 columns recorded instead of the 6 columns defined in observation_thead_html, with mismatched order",
-        "Unwired action buttons: btn_trigger_trial, btn_press_left, and btn_press_right had no event listeners in canvas_js",
-        "Unwired stepper controls: stepper-btn up/down buttons had no click listeners to mutate input values and trigger updates"
-      ]
-    },
-    {
-      "sim_id": "u01490",
-      "status": "FIXED",
-      "time": "09:12:19",
-      "issues": [
-        "Corrected malformed MathML in principles_summary_html where radius of gyration formula rendered J*(G/M) instead of J_G/M."
-      ]
-    },
     {
       "sim_id": "u01489",
       "status": "FIXED",
@@ -362,6 +305,77 @@
       "status": "PASS",
       "time": "09:19:33",
       "issues": []
+    },
+    {
+      "sim_id": "u01526",
+      "status": "FIXED",
+      "time": "09:20:09",
+      "issues": [
+        "Live readout DOM element ID mismatch: canvas_js queried 'reading_*' instead of 'val_reading_*', preventing real-time telemetry updates.",
+        "Observation table column mismatch: canvas_js generated 8 columns including unheaded trial count and strike azimuth, misaligning with the 6-column header.",
+        "Unwired stepper controls and action buttons: stepper increment/decrement buttons and action buttons ('Auto-Align Strike Lines', 'Project Geological Profile') lacked event listeners."
+      ]
+    },
+    {
+      "sim_id": "u01528",
+      "status": "FIXED",
+      "time": "09:20:16",
+      "issues": [
+        "Malformed fraction MathML in apparatus specifications: Motor armature rating was formatted as fraction V/4.1 A instead of 220 V, 4.1 A, and Digital I/O channels was formatted as fraction I/O.",
+        "Observation table column misalignment: Header defines 8 columns (VL, Rext, Rf, Va, If, Ia0, n, Wc), but recordBtn inserted 10 cells (extra S.No and Eb), shifting readings under wrong headers.",
+        "Unwired stepper and action controls: Stepper buttons (.stepper-btn) and the starter action button (btn_start_motor) lacked click event listeners in canvas_js.",
+        "Low contrast return wiring: Negative DC circuit return cables used '#0f172a', which was practically invisible against the '#090d16' canvas background."
+      ]
+    },
+    {
+      "sim_id": "u01529",
+      "status": "FIXED",
+      "time": "09:20:21",
+      "issues": [
+        "Unwired action buttons: 'btn_auto_peak_scan' and 'btn_switch_sample' were not attached to event listeners in canvas_js",
+        "Unwired stepper buttons: '.stepper-btn' up/down click handlers were missing in canvas_js",
+        "Observation table column mismatch: observationTbody generated 9 columns (with row index, inverted parameter order, and unrepresented readouts) instead of matching the 6 defined headers in observation_thead_html",
+        "Fluorophore toggling between Quinine Sulfate and Fluorescein was not implemented in calculatePhysics and cuvette rendering"
+      ]
+    },
+    {
+      "sim_id": "u01522",
+      "status": "ERROR",
+      "time": "09:20:32",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01523",
+      "status": "ERROR",
+      "time": "09:20:32",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01525",
+      "status": "FIXED",
+      "time": "09:20:37",
+      "issues": [
+        "Misaligned observation table: record button inserted 7 td cells whereas observation table header (thead) specifies 6 columns (trial, msr, n, d_obs, e_zero, d_corr)",
+        "Broken live readouts in Section 06: updateTelemetry targeted non-existent IDs instead of val_reading_msr, val_reading_csr_division, val_reading_observed, and val_reading_corrected",
+        "Unwired action and stepper buttons: btn_auto_ratchet_clamp, btn_toggle_spindle_lock, and .stepper-btn controls had no event listeners attached",
+        "Mismatched apparatus badge numbering: canvas curvy leader badges 3-8 did not align with legend pills 1-8"
+      ]
+    },
+    {
+      "sim_id": "u01530",
+      "status": "FIXED",
+      "time": "09:20:42",
+      "issues": [
+        "Unwired stepper buttons (▲/▼) and missing real-time input change listeners for delivery head and valve stroke controls in canvas_js",
+        "Unwired action button btn_prime_ram in canvas_js",
+        "Observation table column misalignment: tr.innerHTML generated 10 td cells including unindexed valveStrokeVal while observation_thead_html specifies 9 th columns",
+        "Discharge unit inverted/misformatted as '/m³s' instead of 'm³/s' in readouts_html, observation_thead_html, and principles_list_html",
+        "Erroneous conversion factor 10^4 instead of 10^6 in volumetric discharge equation in principles_list_html"
+      ]
     }
   ],
   "completed_ids": [
@@ -1586,6 +1600,11 @@
     "u01519",
     "u01520",
     "u01521",
-    "u01524"
+    "u01524",
+    "u01525",
+    "u01526",
+    "u01528",
+    "u01529",
+    "u01530"
   ]
 }
