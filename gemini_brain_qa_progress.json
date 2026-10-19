@@ -1,68 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:47:19",
-  "completed_count": 1127,
-  "fixed_count": 1083,
-  "latest_sim_id": "u01403",
+  "updated_at": "2026-10-19 08:48:51",
+  "completed_count": 1132,
+  "fixed_count": 1088,
+  "latest_sim_id": "u01407",
   "recent_events": [
-    {
-      "sim_id": "u01356",
-      "status": "ERROR",
-      "time": "08:38:14",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01357",
-      "status": "FIXED",
-      "time": "08:38:32",
-      "issues": [
-        "Unwired action buttons: 'btn_trigger_harmonic' (Trigger Resonant Base Excitation) and 'btn_free_decay' (Release from Initial Modal Offset) were present in HTML but had no event listeners or physics state handling in canvas_js.",
-        "Unwired stepper up/down buttons: clicking the stepper buttons did not increment/decrement values because only input/change on the input fields were monitored.",
-        "Observation table column misalignment: the observation row rendered 12 <td> cells with observation index and 3 stiffness values, misaligning against the 9 columns defined in observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u01359",
-      "status": "PASS",
-      "time": "08:38:44",
-      "issues": []
-    },
-    {
-      "sim_id": "u01350",
-      "status": "ERROR",
-      "time": "08:38:44",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01361",
-      "status": "PASS",
-      "time": "08:39:18",
-      "issues": []
-    },
-    {
-      "sim_id": "u01360",
-      "status": "FIXED",
-      "time": "08:39:21",
-      "issues": [
-        "Observation table logging appended only 8 values which were misaligned against the 11 defined table headers",
-        "Action button 'btn_feed_slab' (Engage Feed Mechanism) was unhandled in canvas_js",
-        "Action button 'btn_toggle_coolant' (Apply Emulsion Lubrication) was unhandled in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to input controls in canvas_js",
-        "Animation loop lacked dynamic feed mechanism engagement toggle control"
-      ]
-    },
-    {
-      "sim_id": "u01358",
-      "status": "ERROR",
-      "time": "08:39:42",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01365",
       "status": "PASS",
@@ -344,6 +286,75 @@
       "status": "PASS",
       "time": "08:47:18",
       "issues": []
+    },
+    {
+      "sim_id": "u01401",
+      "status": "FIXED",
+      "time": "08:47:26",
+      "issues": [
+        "Observation table column mismatch: btnRecord inserted 6 columns while observation_thead_html defined 5 columns (removed redundant frameDataSize column to align headers with recorded cells)",
+        "Unwired action buttons: Transmit In-Window Frame (btn_transmit_frame) and Simulate Packet Loss / Timeout (btn_simulate_loss) lacked event listeners",
+        "Unwired stepper buttons: .stepper-btn buttons lacked event listeners to modify inputs and trigger syncControls"
+      ]
+    },
+    {
+      "sim_id": "u01399",
+      "status": "ERROR",
+      "time": "08:47:49",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01402",
+      "status": "FIXED",
+      "time": "08:48:06",
+      "issues": [
+        "Simulator title was mismatched as 'Coaxial capacitive liquid level sensor' instead of 'Flow Measurement using Orifice Plate'",
+        "Observation table columns in record button handler were misaligned with table headers (column count and sequence mismatch)",
+        "Action buttons (btn_prime_pump and btn_zero_calibrate) and stepper controls lacked interactive event handlers in canvas_js",
+        "Raw unformatted prose variables (deltap, Cd) in principles summary and procedure sections replaced with clean MathML"
+      ]
+    },
+    {
+      "sim_id": "u01400",
+      "status": "ERROR",
+      "time": "08:48:40",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01406",
+      "status": "FIXED",
+      "time": "08:48:41",
+      "issues": [
+        "Unwired interactive action buttons (btn_set_irrotational and btn_set_pure_shear) in canvas_js",
+        "Unwired micro-stepper increment/decrement buttons (.stepper-btn) in canvas_js",
+        "Mismatched live telemetry element IDs (val_reading_* vs reading_*) preventing live display updates",
+        "Misaligned observation table row schema with 7 td columns versus 6 thead columns due to extra trial index td",
+        "Shear angle calculation discrepancy using (dv_dx + du_dy) instead of shearRate resulting in double-value angular distortion"
+      ]
+    },
+    {
+      "sim_id": "u01405",
+      "status": "FIXED",
+      "time": "08:48:47",
+      "issues": [
+        "Unwired action buttons: btn_apply_pulse and btn_apply_10_pulses were not hooked to event listeners in canvas_js",
+        "Missing stepper button click listeners for .stepper-btn increment and decrement actions",
+        "Observation table column mismatch: 8th column header is 'Pulse Outcome' but recordObservation populated V50 instead of outcome status",
+        "Apparatus legend numbering mismatch between legend_pills_html and canvas apparatus badges/section 2 items"
+      ]
+    },
+    {
+      "sim_id": "u01407",
+      "status": "FIXED",
+      "time": "08:48:51",
+      "issues": [
+        "Fixed malformed MathML partial derivative fractions in principles_summary_html",
+        "Corrected velocity potential unit representation in principles_list_html from (/m^2 s) to (m^2/s)"
+      ]
     }
   ],
   "completed_ids": [
@@ -1473,6 +1484,11 @@
     "u01393",
     "u01396",
     "u01397",
-    "u01403"
+    "u01401",
+    "u01402",
+    "u01403",
+    "u01405",
+    "u01406",
+    "u01407"
   ]
 }
