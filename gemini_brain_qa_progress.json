@@ -1,65 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:43:37",
-  "completed_count": 1117,
-  "fixed_count": 1076,
-  "latest_sim_id": "u01381",
+  "updated_at": "2026-10-19 08:45:26",
+  "completed_count": 1122,
+  "fixed_count": 1080,
+  "latest_sim_id": "u01393",
   "recent_events": [
-    {
-      "sim_id": "u01339",
-      "status": "FIXED",
-      "time": "08:35:18",
-      "issues": [
-        "Observation table thead was missing the leading '#' (serial number / trial) column header, causing a 1-column shift misalignment against the 10 data columns rendered by btnRecord.",
-        "Action buttons 'btn_insert_shield' (Toggle Radiation Shield Insertion) and 'btn_thermal_equilibrium' (Fast-Forward to Radiative Equilibrium) were declared in HTML slots but completely unwired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js, preventing mouse interaction on stepper controls.",
-        "Simulation physics and photon rendering did not account for the toggled radiation shield removal state."
-      ]
-    },
-    {
-      "sim_id": "u01335",
-      "status": "ERROR",
-      "time": "08:35:26",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01341",
-      "status": "FIXED",
-      "time": "08:35:34",
-      "issues": [
-        "Raw LaTeX symbols 'F1_{DT}' and 'F1_{RF}' detected in readouts_html; replaced with valid MathML tags."
-      ]
-    },
-    {
-      "sim_id": "u01344",
-      "status": "ERROR",
-      "time": "08:36:19",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01343",
-      "status": "FIXED",
-      "time": "08:36:19",
-      "issues": [
-        "Unwired action buttons: 'Advance Next Scan Line' (btn_step_scanline) and 'Continuous Rasterize Sweep' (btn_auto_fill) lacked click event listeners in canvas_js",
-        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to modify input values and dispatch events",
-        "Missing concave multi-span mode support: Experiment option 1 ('Concave Multi-Span Rasterization') was not checked in canvas_js, preventing multi-span parity demonstrations",
-        "Corrupted MathML formula in principles_summary_html: inverse slope formula rendered delta x / delta y incorrectly as delta * (x / delta) * y",
-        "Malformed unit in principles_list_html: unit for inverse slope was rendered with invalid nested fraction syntax"
-      ]
-    },
-    {
-      "sim_id": "u01336",
-      "status": "ERROR",
-      "time": "08:36:19",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01345",
       "status": "FIXED",
@@ -360,6 +305,60 @@
         "Action buttons act_snap_nyquist and act_set_oversample in Section 05 Controls were unwired",
         "Stepper adjustment buttons (.stepper-btn) were unwired",
         "Telemetry apparent frequency calculation and oscilloscope aliased envelope lacked multi-order spectral folding and phase alignment"
+      ]
+    },
+    {
+      "sim_id": "u01382",
+      "status": "FIXED",
+      "time": "08:43:47",
+      "issues": [
+        "Cleaned malformed HTML tags embedded inside data-unit attributes of readout-val elements",
+        "Corrected malformed MathML unit fractions representing g/cm³ in readouts_html"
+      ]
+    },
+    {
+      "sim_id": "u01383",
+      "status": "FIXED",
+      "time": "08:44:39",
+      "issues": [
+        "Telemetry DOM element selectors targeted IDs like 'reading_w1'/'val_w1' instead of 'val_reading_w1', preventing live readout updates.",
+        "Action buttons ('btn_drop_rammer', 'btn_trim_collar', 'btn_dry_sample') were declared in HTML slots but unwired in canvas_js.",
+        "Stepper stepper-btn up and down controls were unwired in canvas_js.",
+        "Observation table recorder created 9 misaligned columns with mismatched attributes instead of the 10 columns specified by observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u01389",
+      "status": "PASS",
+      "time": "08:44:46",
+      "issues": []
+    },
+    {
+      "sim_id": "u01385",
+      "status": "FIXED",
+      "time": "08:44:49",
+      "issues": [
+        "Unwired action button #btn_show_construction_lines ('Toggle Geometric Division Rays') and unhandled stepper buttons",
+        "Misaligned observation table: recordObservation generated 6 cells with incorrect headers instead of matching the 7 table header columns",
+        "Geometric division rays were drawn unconditionally without checking toggled state"
+      ]
+    },
+    {
+      "sim_id": "u01371",
+      "status": "ERROR",
+      "time": "08:45:11",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01393",
+      "status": "FIXED",
+      "time": "08:45:26",
+      "issues": [
+        "Observation table column misalignment: observation_thead_html defined 6 columns (Driver Present, Buckled Up, Inverted Buckle, Ignition Switch, Warning Light, Alarm Sound Level), but btnRecord generated 7 columns with an unaligned obsCount column and swapped the ordering of Ignition Switch and Inverted Buckle.",
+        "Unwired action and stepper buttons: #btn_trigger_critical_hazard and the stepper up/down buttons (.stepper-btn) were not wired in canvas_js.",
+        "Direct canvas switch interactivity: Added canvas click detection allowing users to toggle Driver, Buckle, and Ignition switch states directly on the board."
       ]
     }
   ],
@@ -1480,6 +1479,11 @@
     "u01378",
     "u01379",
     "u01380",
-    "u01381"
+    "u01381",
+    "u01382",
+    "u01383",
+    "u01385",
+    "u01389",
+    "u01393"
   ]
 }
