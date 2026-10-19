@@ -1,97 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:21:42",
-  "completed_count": 1032,
-  "fixed_count": 1008,
-  "latest_sim_id": "u01261",
+  "updated_at": "2026-10-19 08:22:49",
+  "completed_count": 1037,
+  "fixed_count": 1011,
+  "latest_sim_id": "u01269",
   "recent_events": [
-    {
-      "sim_id": "u01204",
-      "status": "FIXED",
-      "time": "08:12:51",
-      "issues": [
-        "Observation table record row had 7 columns misaligned with the 8 columns in thead (inserted h as coordinate x, shifted values, and omitted derivative/slope column).",
-        "Action button btn_solve_full_domain (Solve and Trace Entire Domain) was present in HTML controls but was completely unwired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) had data-target attributes but were not wired up to any click handlers in canvas_js.",
-        "Activity selection dropdown (System 1, System 2, System 3) was not wired up to the governing equations f(x, y, z) and g(x, y, z).",
-        "Live telemetry readouts were statically pinned to node 1 instead of dynamically updating to reflect the currentNode swept by the playhead."
-      ]
-    },
-    {
-      "sim_id": "u01180",
-      "status": "FIXED",
-      "time": "08:12:56",
-      "issues": [
-        "Misaligned observation table row insertion in canvas_js: btnRecord inserted a serial number and unformatted columns that did not match the 5 table header columns (Elapsed Time, Sample Temperature, Temperature Excess, Physical Phase, Instantaneous Cooling Rate).",
-        "Unwired interactive controls in canvas_js: stepper buttons (.stepper-btn-up and .stepper-btn-down) and action buttons (btn_stir_sample and btn_toggle_air_jacket) had no event listeners attached.",
-        "Missing visual rendering and physics response for the outer air jacket action in canvas_js.",
-        "Malformed derivative MathML expression in principles_summary_html: rendered as d(T/d)t instead of dT/dt."
-      ]
-    },
-    {
-      "sim_id": "u01205",
-      "status": "FIXED",
-      "time": "08:12:58",
-      "issues": [
-        "Observation table row generation produced only 5 columns instead of matching the 6-column thead schema (missing Step Index and separating Euler vs RK4 approximations).",
-        "Action buttons 'btn_toggle_method' and 'btn_overlay_exact' were declared in actions_html but left unwired in canvas_js.",
-        "Stepper arrow buttons (.stepper-btn-up / .stepper-btn-down) lacked interactive click handlers in canvas_js.",
-        "ODE solver only supported RK4 without capability to toggle to Euler's method or toggle the analytical curve overlay."
-      ]
-    },
-    {
-      "sim_id": "u01215",
-      "status": "FIXED",
-      "time": "08:13:48",
-      "issues": [
-        "Wired unwired action button #btn_invert_test to execute dual XOR decryption loopback and log verified state",
-        "Added event handling for stepper up/down buttons (.stepper-btn) to increment and decrement inputs smoothly",
-        "Wired experiment mode selection dropdown (#experimentSelect) to toggle between single-step verification and key cyclicity analysis",
-        "Enhanced XOR logic gate symbol outline stroke contrast within 74HC86 DIP packages for crisp visibility on dark PCB background"
-      ]
-    },
-    {
-      "sim_id": "u01214",
-      "status": "FIXED",
-      "time": "08:13:49",
-      "issues": [
-        "Unwired action buttons (#btn_generate_random_key and #btn_verify_perfect_secrecy)",
-        "Unwired stepper increment/decrement buttons (.stepper-btn)"
-      ]
-    },
-    {
-      "sim_id": "u01216",
-      "status": "FIXED",
-      "time": "08:13:51",
-      "issues": [
-        "Unwired action buttons: connected btn_scan_all_frames (automated frame & coordinate scanner) and btn_focus_longest_orf (direct focus on canonical Frame +2, 36 bp ORF starting at bp 26)",
-        "Observation table column mismatch: removed spurious scan cursor position column from observation row to correctly match the 6 columns in observation_thead_html (Reading Frame, Start Position, Stop Position, Modular Check, ORF Length, Peptide Length)"
-      ]
-    },
-    {
-      "sim_id": "u01219",
-      "status": "FIXED",
-      "time": "08:14:12",
-      "issues": [
-        "Misaligned observation table row schema: tbody rendered 11 columns with row index, EVM, PAPR, and throughput, causing total column mismatch against the 8-column header specification.",
-        "Unwired action buttons: 'Transmit OFDM Frame' (btn_transmit_frame) and 'Switch Equalization' (btn_toggle_equalizer) lacked click event listeners in canvas_js.",
-        "Unwired stepper controls: .stepper-btn up and down buttons were not wired to update target inputs and dispatch input events."
-      ]
-    },
-    {
-      "sim_id": "u01217",
-      "status": "PASS",
-      "time": "08:14:26",
-      "issues": []
-    },
-    {
-      "sim_id": "u01211",
-      "status": "ERROR",
-      "time": "08:14:29",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01220",
       "status": "FIXED",
@@ -391,6 +304,83 @@
         "Unwired stepper buttons: clicking .stepper-btn-up and .stepper-btn-down had no event handlers to increment or decrement inputs.",
         "Misaligned observation table columns: row creation inverted columns (placed Photon Energy and Temperature ahead of Specimen Material), omitted Crystal Quality entirely, and left Carrier Generation Rate column empty."
       ]
+    },
+    {
+      "sim_id": "u01254",
+      "status": "ERROR",
+      "time": "08:21:52",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01264",
+      "status": "PASS",
+      "time": "08:22:10",
+      "issues": []
+    },
+    {
+      "sim_id": "u01257",
+      "status": "ERROR",
+      "time": "08:22:11",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01248",
+      "status": "ERROR",
+      "time": "08:22:11",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01258",
+      "status": "ERROR",
+      "time": "08:22:22",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01263",
+      "status": "FIXED",
+      "time": "08:22:24",
+      "issues": [
+        "Raw unformatted pseudo-LaTeX subscript 'ΔB_pp' in procedure_section_html Step 6 replaced with proper MathML.",
+        "Raw unformatted pseudo-LaTeX '(ΔB_mod < 0.07 mT)' in validation_html Limitation 2 replaced with proper MathML.",
+        "Duplicate word typo 'optical optical access ports' in apparatus_html item 3 corrected to 'optical access ports'.",
+        "Missing event listeners for stepper-btn-up and stepper-btn-down buttons in canvas_js, preventing user adjustment of static field, microwave frequency, and power controls.",
+        "Missing click event listeners for action buttons 'btn_autotune_cavity' and 'btn_field_sweep' in canvas_js.",
+        "Derivative lineshape scaling in canvas_js scaled by 16.0 without screen clipping, causing signal deflections exceeding 600px that severely overflowed the 220px oscilloscope screen boundary. Added clipping rectangle and scaled vertical amplitude to 1.8.",
+        "Off-resonance Landé g-factor calculation in canvas_js used instantaneous static magnetic field B0 instead of resonance field Bres, causing reported g-factor to drift incorrectly away from the DPPH material constant 2.0036."
+      ]
+    },
+    {
+      "sim_id": "u01265",
+      "status": "FIXED",
+      "time": "08:22:31",
+      "issues": [
+        "Unwired stepper buttons: Added click event listeners for .stepper-btn controls to handle increment and decrement operations respecting min, max, and step attributes.",
+        "Observation table column count mismatch: Removed unindexed serial number and redundant proportional gain columns from row insertion to match the 8 defined columns in observation_thead_html.",
+        "Apparatus badge numbering and mapping mismatch: Reordered Style 2 leader line badges to align Badge 1 with Process Control Simulator Panel, Badge 2 with Oscilloscope, and Badge 3 with Function Generator matching legend_pills_html, and removed unlisted Badge 4."
+      ]
+    },
+    {
+      "sim_id": "u01266",
+      "status": "FIXED",
+      "time": "08:22:45",
+      "issues": [
+        "Corrupted LaTeX formula in apparatus_html: '0–10 V / 4–20 mA' was erroneously formatted as fraction '\\frac{V}{4}' in transducer specification",
+        "Invalid 5-argument strokeRect call on rounded transmitter flange in canvas_js corrected to stroke the rounded path"
+      ]
+    },
+    {
+      "sim_id": "u01269",
+      "status": "PASS",
+      "time": "08:22:48",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1425,6 +1415,11 @@
     "u01259",
     "u01260",
     "u01261",
-    "u01262"
+    "u01262",
+    "u01263",
+    "u01264",
+    "u01265",
+    "u01266",
+    "u01269"
   ]
 }
