@@ -1,85 +1,10 @@
 {
   "runner_state": "ACTIVE (6 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 17:12:08",
-  "completed_count": 1867,
-  "fixed_count": 1673,
-  "latest_sim_id": "u01087",
+  "updated_at": "2026-10-19 17:16:01",
+  "completed_count": 1872,
+  "fixed_count": 1677,
+  "latest_sim_id": "u01196",
   "recent_events": [
-    {
-      "sim_id": "u02347",
-      "status": "FIXED",
-      "time": "16:56:28",
-      "issues": [
-        "Replaced spurious MathML fraction representation for pCAMBIA 1300/2300 binary vector in apparatus specifications with plain text notation",
-        "Replaced awkward MathML fraction representation for thermal cycler ramp rate 3.5 °C/s in apparatus specifications with clean text notation",
-        "Replaced spurious MathML fraction representation for pCAMBIA 1300/2300 binary vector in Step 2 procedure text with plain text notation"
-      ]
-    },
-    {
-      "sim_id": "u02342",
-      "status": "ERROR",
-      "time": "16:56:36",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02348",
-      "status": "FIXED",
-      "time": "16:56:51",
-      "issues": [
-        "Unwired action button (#btn_autofit_waveform) for auto-calibrating CRO trace",
-        "Unwired stepper up/down buttons (.stepper-btn) in controls panel",
-        "Misaligned observation table columns and missing fields in recordBtn click handler"
-      ]
-    },
-    {
-      "sim_id": "u02327",
-      "status": "ERROR",
-      "time": "16:57:17",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02352",
-      "status": "FIXED",
-      "time": "16:57:36",
-      "issues": [
-        "Raw LaTeX syntax '+ 2D_0' in procedure step 2 prose replaced with standard MathML presentation tags",
-        "Unwired action buttons ('btn_step_ssa' and 'btn_relax_eq') and unhandled stepper buttons ('stepper-btn-up'/'stepper-btn-down')",
-        "Observation table column mismatch: removed 9th column 'N_total' to match the 8 defined observation headers"
-      ]
-    },
-    {
-      "sim_id": "u02349",
-      "status": "ERROR",
-      "time": "16:57:52",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02356",
-      "status": "ERROR",
-      "time": "16:58:00",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02354",
-      "status": "FIXED",
-      "time": "16:58:01",
-      "issues": [
-        "Wired stepper controls by updating IDs to match HTML input elements (ctrl_std_conc, ctrl_centrifuge_rpm, ctrl_incubation_temp, ctrl_dilution_factor)",
-        "Corrected live readout element IDs and added unit formatting for val_reading_extinction_std, val_reading_extinction_test, val_reading_transmittance, and val_reading_estimated_glucose",
-        "Wired action buttons btn_centrifuge_spin and btn_incubate_transfer to update parameters and recompute physics",
-        "Aligned observation table columns in btnRecord to match the 6-column thead structure (C_std, T_inc, A_std, A_test, D_f, C_test)",
-        "Corrected GOD-POD standard calibration curve calculation so standard glucose concentration is independent of test supernatant dilution factor",
-        "Added missing Callout Badge 5 for Spectrophotometer / Colorimeter and re-anchored Callout 4 to Reaction Cuvette Rack matching legend pills"
-      ]
-    },
     {
       "sim_id": "u02357",
       "status": "FIXED",
@@ -384,6 +309,76 @@
         "Atlas action buttons (action_tare, action_submerge, action_retrieve) lacked click event listeners in canvas_js.",
         "Stepper control buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to dynamically increment or decrement input values.",
         "Sample ingot was rendered simultaneously on the analytical balance pan and inside the graduated cylinder rather than tracking physical sample placement according to lab actions."
+      ]
+    },
+    {
+      "sim_id": "u01087",
+      "status": "PASS",
+      "time": "17:13:13",
+      "issues": []
+    },
+    {
+      "sim_id": "u01130",
+      "status": "FIXED",
+      "time": "17:13:44",
+      "issues": [
+        "Action button #btn_eutectoid_preset and .stepper-btn controls were unwired in canvas_js",
+        "Observation table column 6 recorded numeric cementite fraction instead of microstructure morphology text matching the table header",
+        "Eutectoid isotherm A1 was set to 727.0 °C in canvas_js whereas 723.0 °C is specified across pedagogical slots, presets, and validation",
+        "Carbon content unit in stepper and observation table header displayed truncated MathML 'wt' instead of 'wt%'"
+      ]
+    },
+    {
+      "sim_id": "u01134",
+      "status": "FIXED",
+      "time": "17:13:51",
+      "issues": [
+        "Misaligned observation table row insertion in btnRecord event listener: observation table defines 8 columns (Sim Clock Time, PID, Arrival Time, Burst Time, Priority, Avg Wait Time, Avg Turnaround Time, Core Utilization), but the row generator only appended 7 columns, omitting Arrival Time and Priority and misaligning the remaining metric columns."
+      ]
+    },
+    {
+      "sim_id": "u01128",
+      "status": "FIXED",
+      "time": "17:14:01",
+      "issues": [
+        "Unwired action buttons: 'btn_traverse_step' (Advance Probe) and 'btn_zero_dpcal' (Auto-Zero DPCal) were missing click event listeners in canvas_js",
+        "Unwired stepper buttons: '.stepper-btn' (▲ and ▼ buttons for station, fan velocity, and density) had no click event handlers",
+        "Raw LaTeX/MathML variable error: English indefinite article 'A' before 'Pitot-static tube' was erroneously rendered as mathematical variable <mi>A</mi> in principles_summary_html and procedure_section_html",
+        "Malformed HTML attributes in readouts_html: 'data-unit' attributes contained unescaped nested HTML tags and MathML nodes instead of clean unit strings"
+      ]
+    },
+    {
+      "sim_id": "u01121",
+      "status": "ERROR",
+      "time": "17:14:30",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01132",
+      "status": "ERROR",
+      "time": "17:14:35",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01137",
+      "status": "ERROR",
+      "time": "17:15:58",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01196",
+      "status": "FIXED",
+      "time": "17:16:01",
+      "issues": [
+        "Unwired action buttons: id='btn_compute_step' and id='btn_auto_converge' lacked event listeners in canvas_js",
+        "Unwired stepper up/down buttons: .stepper-btn-up and .stepper-btn-down were missing click handlers",
+        "Misaligned observation table: recording logic inserted 7 columns while thead only defines 6 columns (Step Coordinate x4, Step Size Interval h, Predicted Value y4^p, Evaluated Slope f4^p, Corrected Value y4^c, Local Truncation Error eps_t)"
       ]
     }
   ],
@@ -1288,6 +1283,7 @@
     "u01084",
     "u01085",
     "u01086",
+    "u01087",
     "u01088",
     "u01089",
     "u01091",
@@ -1325,9 +1321,12 @@
     "u01125",
     "u01126",
     "u01127",
+    "u01128",
     "u01129",
+    "u01130",
     "u01131",
     "u01133",
+    "u01134",
     "u01135",
     "u01136",
     "u01138",
@@ -1377,6 +1376,7 @@
     "u01192",
     "u01194",
     "u01195",
+    "u01196",
     "u01197",
     "u01198",
     "u01199",
