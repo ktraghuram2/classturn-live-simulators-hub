@@ -1,75 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:36:28",
-  "completed_count": 1382,
-  "fixed_count": 1287,
-  "latest_sim_id": "u01743",
+  "updated_at": "2026-10-19 10:37:29",
+  "completed_count": 1387,
+  "fixed_count": 1290,
+  "latest_sim_id": "u01748",
   "recent_events": [
-    {
-      "sim_id": "u01708",
-      "status": "PASS",
-      "time": "10:24:10",
-      "issues": []
-    },
-    {
-      "sim_id": "u01704",
-      "status": "FIXED",
-      "time": "10:24:18",
-      "issues": [
-        "Observation table columns in canvas_js were misaligned with observation_thead_html (contained an extra serial number column and swapped resistance/voltage/ADC column order).",
-        "Action button btn_align_north ('Align Vane to North (0°)') was unwired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) were unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01709",
-      "status": "FIXED",
-      "time": "10:24:40",
-      "issues": [
-        "Unwired action buttons: btn_center_pointer ('Hover Pointer onto Target Center') and btn_park_pointer ('Park Pointer at Viewport Origin') lacked event listeners.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners to increment or decrement parameter inputs.",
-        "Observation table column mismatch: btnRecord generated 9 table data cells whereas observation_thead_html defined only 6 table headers, causing severe column misalignment."
-      ]
-    },
-    {
-      "sim_id": "u01707",
-      "status": "FIXED",
-      "time": "10:24:46",
-      "issues": [
-        "Unwired action buttons: 'btn_trace_shortest_path' and 'btn_cycle_topology' lacked event handlers for auto-tracing optimal regulatory paths and cycling co-expression topology datasets.",
-        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' controls lacked increment/decrement event listeners to update numeric inputs.",
-        "Misaligned observation table columns: 'btnRecord' inserted 9 data cells (including rowIdx and unrepresented metrics) into an observation table defining exactly 6 columns."
-      ]
-    },
-    {
-      "sim_id": "u01706",
-      "status": "ERROR",
-      "time": "10:25:30",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01713",
-      "status": "FIXED",
-      "time": "10:26:04",
-      "issues": [
-        "Observation table columns in record handler were misaligned with the 6 header columns (contained 8 cells with inverted hops and latency order).",
-        "Action buttons (Transmit DNS Query and Flush Local DNS Cache) were not wired to trigger packet dispatch or reset cache.",
-        "Interactive stepper increment/decrement buttons were missing click event listeners."
-      ]
-    },
-    {
-      "sim_id": "u01712",
-      "status": "FIXED",
-      "time": "10:26:35",
-      "issues": [
-        "Misaligned observation table columns: btnRecord injected 10 values (including extraneous rowIdx, enzyme, and window cursor cells) into a 7-column observation table, displacing all data columns.",
-        "Unwired action buttons: btn_load_fasta, btn_scan_kmers, and btn_map_restriction lacked click event handlers.",
-        "Unwired stepper controls: Stepper up/down buttons (.stepper-btn) with data-target did not modify input values or fire change events.",
-        "Sliding window cursor upper bound clamp was hardcoded to 120 instead of allowing full sequence inspection up to 600 bp."
-      ]
-    },
     {
       "sim_id": "u01711",
       "status": "ERROR",
@@ -359,6 +294,66 @@
         "Malformed 'dimensionless' unit annotations in observation_thead_html table headers.",
         "Alignment mismatch between canvas_js leader line badge indices (1: Burette, 2: Conical Flask, 3: Measuring Cylinder, 4: Micropipette, 5: Retort Stand, 6: White Tile) and legend_pills_html order.",
         "Unwired stepper ▲/▼ buttons and action buttons (btn_dispense_drop, btn_add_indicator) in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01740",
+      "status": "PASS",
+      "time": "10:36:33",
+      "issues": []
+    },
+    {
+      "sim_id": "u01747",
+      "status": "FIXED",
+      "time": "10:36:42",
+      "issues": [
+        "Observation table body rendered 9 data cells mismatched against the 6 observation columns declared in observation_thead_html",
+        "Action buttons (btn_generate_blocks, btn_render_cfg, and btn_verify_complexity) lacked event listeners in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn) lacked click handling in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01746",
+      "status": "PASS",
+      "time": "10:36:44",
+      "issues": []
+    },
+    {
+      "sim_id": "u01737",
+      "status": "ERROR",
+      "time": "10:36:44",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01745",
+      "status": "ERROR",
+      "time": "10:37:14",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01751",
+      "status": "FIXED",
+      "time": "10:37:25",
+      "issues": [
+        "Leader line badge count (5 badges) was misaligned with the 4 legend pills and apparatus elements; badge 5 was orphaned and badge 2/4 targets were transposed.",
+        "Control identifiers in CONTROL_DEFS and DOM readers were mismatched with HTML stepper IDs (control_mutation_rate, control_mutation_magnitude, control_beneficial_bias, control_nutrient_feed).",
+        "Action buttons (btn_stress_pulse, btn_nutrient_pulse) and stepper up/down buttons were missing active event bindings to mutate simulation parameters."
+      ]
+    },
+    {
+      "sim_id": "u01748",
+      "status": "FIXED",
+      "time": "10:37:28",
+      "issues": [
+        "Raw math italic '<math><mrow><mi>a</mi></mrow></math>' erroneously replaced the English indefinite article 'a' in principles_summary_html, procedure_section_html, principles_list_html, and validation_html",
+        "Action button #btn_cycle_mode ('Cycle Project Mode') was defined in HTML but unwired in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js",
+        "Observation table recording lacked a lower-bound guard for developer headcount (Math.max(1, ...)) and used inconsistent precision for project size",
+        "Canvas chassis modules lacked 3D elevation shadow and high-contrast silhouette against the dark #090d16 canvas"
       ]
     }
   ],
@@ -1741,9 +1736,14 @@
     "u01736",
     "u01738",
     "u01739",
+    "u01740",
     "u01741",
     "u01742",
     "u01743",
-    "u01744"
+    "u01744",
+    "u01746",
+    "u01747",
+    "u01748",
+    "u01751"
   ]
 }
