@@ -1,51 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:50:55",
-  "completed_count": 1142,
-  "fixed_count": 1097,
-  "latest_sim_id": "u01416",
+  "updated_at": "2026-10-19 08:51:36",
+  "completed_count": 1147,
+  "fixed_count": 1102,
+  "latest_sim_id": "u01420",
   "recent_events": [
-    {
-      "sim_id": "u01379",
-      "status": "PASS",
-      "time": "08:42:15",
-      "issues": []
-    },
-    {
-      "sim_id": "u01375",
-      "status": "FIXED",
-      "time": "08:43:12",
-      "issues": [
-        "Unwired action buttons: 'btn_inject_fault' and 'btn_cycle_vectors' had no click event listeners registered in canvas_js.",
-        "Telemetry update targeting wrong element IDs: updateTelemetry attempted to write to 'val_nominal_addr' and parent <li> containers instead of 'val_reading_nominal_addr', 'val_reading_effective_x', 'val_reading_faulty_addr', and 'val_reading_fault_detected'.",
-        "Style 2 leader line badge numbering mismatch: Badge 1 was linked to the 4-to-16 Decoder IC and Badge 2 to the Logic Switches, directly conflicting with the Legend Pills which specify Pill 1 as Toggle Switches, Pill 2 as Fault Injection Module, and Pill 3 as Decoder IC.",
-        "Unwired HTML stepper buttons: added event listeners for '.stepper-btn' up/down controls so UI stepper buttons manipulate input values."
-      ]
-    },
-    {
-      "sim_id": "u01378",
-      "status": "PASS",
-      "time": "08:43:12",
-      "issues": []
-    },
-    {
-      "sim_id": "u01373",
-      "status": "FIXED",
-      "time": "08:43:12",
-      "issues": [
-        "Unwired action button id='btn_auto_converge' ('Auto-Iterate to Root Convergence') in canvas_js",
-        "Unwired stepper adjustment buttons (.stepper-btn-up, .stepper-btn-down) for interactive parameter inputs in canvas_js",
-        "Missing experiment mode switch handler for Primary vs Extended Activity selection"
-      ]
-    },
-    {
-      "sim_id": "u01364",
-      "status": "ERROR",
-      "time": "08:43:12",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01380",
       "status": "PASS",
@@ -372,6 +331,64 @@
         "Wired unattached control action buttons (btn_present_stimulus and btn_simulate_response) to trigger live trial sequences and simulated responses",
         "Wired stepper up/down control buttons to properly step and clamp values with change events",
         "Fixed observation logging in canvas_js to properly map to observation_thead_html headers (Trial Number, Word, Font Ink Color, Condition, RT, ACC)"
+      ]
+    },
+    {
+      "sim_id": "u01413",
+      "status": "FIXED",
+      "time": "08:51:15",
+      "issues": [
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired, preventing users from adjusting initial wet soil mass and oven temperature via UI buttons.",
+        "Action buttons ('btn_start_drying' and 'btn_transfer_balance') were completely unwired without container transfer or drying sequence logic.",
+        "Experiment selector ('experimentSelect') was unwired, fixing specimen water content statically at 25.0% regardless of chosen soil type.",
+        "Observation table columns were misaligned: Initial Wet Soil Mass (M_wet) was omitted, causing column headers and recorded data cells (m3, mw, mDry) to misalign.",
+        "Oven PID set-value (SV) display was hardcoded to 105.0°C instead of dynamically reflecting the user-adjusted oven temperature stepper."
+      ]
+    },
+    {
+      "sim_id": "u01418",
+      "status": "FIXED",
+      "time": "08:51:15",
+      "issues": [
+        "Fixed telemetry readout element ID lookup in canvas_js (val_reading_* vs reading_*) which previously prevented live telemetry displays from updating.",
+        "Wired Auto-Home axes button (btn_home_axes) and filament prime/extrude button (btn_extrude_test) in canvas_js.",
+        "Wired stepper up/down buttons (.stepper-btn) to increment/decrement target input fields and trigger reactive changes.",
+        "Realigned observation table columns in btnRecord click handler: removed extra unheaded Trial # column and unheaded current draw, added Print Speed column to match the 8 defined columns in observation_thead_html.",
+        "Corrected volumetric flow rate unit in readouts_html and observation_thead_html from corrupted 'm/m³s' (m/m³ * s) to 'mm³/s'."
+      ]
+    },
+    {
+      "sim_id": "u01417",
+      "status": "FIXED",
+      "time": "08:51:15",
+      "issues": [
+        "Unwired action buttons: btn_home_axes (G28 auto-home) and btn_extrude_test were missing event listeners in canvas_js",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down controls lacked click handlers to increment/decrement input values",
+        "Observation table column mismatch: observationTbody recorded only 6 columns while the table header defined 8 columns, omitting Nx and Nz stepper counts",
+        "Malformed unit in readouts_html: volumetric flow rate displayed corrupted 'm/m³s' with inverted MathML fraction",
+        "Malformed unit in observation_thead_html: flow rate column header contained inverted MathML fraction instead of mm³/s",
+        "Fractional formatting artifact in apparatus_html: 2020/2040 V-slot profile was rendered as an arithmetic fraction"
+      ]
+    },
+    {
+      "sim_id": "u01419",
+      "status": "FIXED",
+      "time": "08:51:24",
+      "issues": [
+        "Unwired Auto-Home (btn_home_axes) and Circular Bed Calibration (btn_circular_toolpath) action buttons",
+        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down)",
+        "Observation table column count mismatch: logged rows contained 8 columns with an extra tilt column while observation headers contain 7 columns"
+      ]
+    },
+    {
+      "sim_id": "u01420",
+      "status": "FIXED",
+      "time": "08:51:36",
+      "issues": [
+        "Fixed corrupt MathML representations for physical units across principles_list_html, steppers_html, readouts_html, and observation_thead_html (corrected J/mm³, mm/s, and dimensionless).",
+        "Fixed observation table column mismatch: removed unmapped 8th column from observation tbody row in canvas_js to align with the 7 headers defined in observation_thead_html.",
+        "Wired interactive stepper buttons (▲/▼) and input change listeners in canvas_js so laser power, scan speed, layer thickness, and hatch spacing can be adjusted interactively.",
+        "Wired phase action buttons (Dispense Powder, Spread Layer, Execute Laser Sintering Cycle, Lower Fabrication Platform) to control simulation phases."
       ]
     }
   ],
@@ -1515,8 +1532,13 @@
     "u01410",
     "u01411",
     "u01412",
+    "u01413",
     "u01414",
     "u01415",
-    "u01416"
+    "u01416",
+    "u01417",
+    "u01418",
+    "u01419",
+    "u01420"
   ]
 }
