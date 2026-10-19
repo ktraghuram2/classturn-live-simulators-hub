@@ -1,64 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:10:25",
-  "completed_count": 987,
-  "fixed_count": 971,
-  "latest_sim_id": "u01198",
+  "updated_at": "2026-10-19 08:12:10",
+  "completed_count": 992,
+  "fixed_count": 974,
+  "latest_sim_id": "u01185",
   "recent_events": [
-    {
-      "sim_id": "u01153",
-      "status": "FIXED",
-      "time": "08:02:14",
-      "issues": [
-        "Unwired action buttons ('btn_divert_flow' and 'btn_drain_measuring_tank') and stepper ▲/▼ buttons in canvas_js",
-        "Telemetry updateTelemetry referenced nonexistent element IDs ('reading_*') instead of the actual span IDs ('val_reading_*')",
-        "Observation table recordObservation appended 8 columns (including trial count and theoretical velocity) while observation_thead_html only defines 6 columns",
-        "Malformed discharge units formatted as '/m³s' instead of 'm³/s' in readouts_html and observation_thead_html",
-        "Missing legend pill for item 6 (Digital Stopwatch) in legend_pills_html to match canvas badge 6"
-      ]
-    },
-    {
-      "sim_id": "u01152",
-      "status": "FIXED",
-      "time": "08:02:30",
-      "issues": [
-        "Observation table row generation pushed 7 numerical columns instead of the 6 standardized columns defined in observation_thead_html (Bacterial Strain, Incubation Time, Slant Reaction, Butt Reaction, Gas Production, H2S Production)",
-        "Action buttons (btn_sterilize_and_inoculate, btn_run_incubation) and stepper increment/decrement buttons (.stepper-btn) were unhandled and not wired to event listeners",
-        "Numbered apparatus badges in canvas_js inverted Badge 3 and Badge 4 relative to legend_pills_html (Legend Pill 3 is TSB broth and Pill 4 is TSI slants, but canvas rendered Badge 4 on broth and Badge 3 on slants)"
-      ]
-    },
-    {
-      "sim_id": "u01141",
-      "status": "ERROR",
-      "time": "08:02:34",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01145",
-      "status": "PASS",
-      "time": "08:02:50",
-      "issues": []
-    },
-    {
-      "sim_id": "u01154",
-      "status": "FIXED",
-      "time": "08:03:09",
-      "issues": [
-        "Raw/broken MathML formatting for discharge units (/m³s instead of m³/s) in readouts and observation table header",
-        "Mangled MathML fraction for inlet flow rate unit (L/m in instead of L/min) in steppers",
-        "Unwired stepper ▲/▼ buttons for inlet flow rate, orifice diameter, and trajectory station",
-        "Unwired action buttons: 'Toggle Collection Valve' (btn_start_collection) and 'Align Jet Trajectory Pointer' (btn_align_pointer)",
-        "Observation table columns severely misaligned: tbody row appended 12 unmapped columns with record count and mismatched order, while thead had 11 columns with water head, coordinates, discharge, and hydraulic coefficients"
-      ]
-    },
-    {
-      "sim_id": "u01150",
-      "status": "PASS",
-      "time": "08:03:26",
-      "issues": []
-    },
     {
       "sim_id": "u01156",
       "status": "FIXED",
@@ -392,6 +338,58 @@
         "Observation table column mismatch: recordObservation() generated 9 values while observation_thead_html defines only 5 columns.",
         "Unwired action buttons: btn_compute_predictor and btn_refine_corrector lacked event listeners in canvas_js.",
         "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked event listeners to increment and decrement inputs."
+      ]
+    },
+    {
+      "sim_id": "u01190",
+      "status": "FIXED",
+      "time": "08:11:19",
+      "issues": [
+        "Cleaned raw LaTeX '\\exp' inside observation table header slot (replaced with 'exp' and standardized unit MathML).",
+        "Aligned observation table row cells with the 9 table headers (V1, V2, R1, R2, VTh, RTh, RL, IL(th), IL(exp)) instead of 11 shifted columns.",
+        "Wired action buttons ('btn_measure_voc', 'btn_measure_isc', 'btn_connect_load') to actuate switch detents and synchronize state.",
+        "Wired stepper buttons ('.stepper-btn') and input change listeners to ensure controls properly update and synchronize parameters.",
+        "Corrected apparatus badge numbering and leader line assignments (Badges 3, 4, 5, 6) to match the legend pills exactly."
+      ]
+    },
+    {
+      "sim_id": "u01196",
+      "status": "ERROR",
+      "time": "08:11:19",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01195",
+      "status": "FIXED",
+      "time": "08:11:19",
+      "issues": [
+        "Unwired action buttons ('btn_apply_load' and 'btn_hold_pause') and unwired stepper buttons for simulation speed multiplier.",
+        "Misaligned observation table columns where btnRecord injected 5 table cells into an observation table whose header defines exactly 4 columns."
+      ]
+    },
+    {
+      "sim_id": "u01201",
+      "status": "PASS",
+      "time": "08:11:22",
+      "issues": []
+    },
+    {
+      "sim_id": "u01202",
+      "status": "PASS",
+      "time": "08:11:42",
+      "issues": []
+    },
+    {
+      "sim_id": "u01185",
+      "status": "FIXED",
+      "time": "08:12:09",
+      "issues": [
+        "Unwired action buttons: 'Set Unity Gain Configuration' and 'Invert Input Voltage Polarity' lacked click event listeners in canvas_js",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked click event listeners in canvas_js",
+        "Misaligned observation table columns: row.innerHTML contained an extraneous count/serial number cell and had Output Voltage and Closed-Loop Gain transposed relative to observation_thead_html",
+        "Missing operational amplifier output voltage clipping at ±14.0 V saturation rails in readInputs()"
       ]
     }
   ],
@@ -1376,12 +1374,17 @@
     "u01182",
     "u01183",
     "u01184",
+    "u01185",
     "u01186",
     "u01187",
     "u01188",
+    "u01190",
     "u01192",
     "u01194",
+    "u01195",
     "u01197",
-    "u01198"
+    "u01198",
+    "u01201",
+    "u01202"
   ]
 }
