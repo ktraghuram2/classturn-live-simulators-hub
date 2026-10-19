@@ -1,64 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:03:50",
-  "completed_count": 957,
-  "fixed_count": 947,
-  "latest_sim_id": "u01160",
+  "updated_at": "2026-10-19 08:04:54",
+  "completed_count": 962,
+  "fixed_count": 952,
+  "latest_sim_id": "u01158",
   "recent_events": [
-    {
-      "sim_id": "u01117",
-      "status": "FIXED",
-      "time": "07:55:15",
-      "issues": [
-        "Observation table column misalignment: setupObservationRecorder generated 6 table columns including an extraneous serial count column, causing data values to shift out of alignment with the 5-column header (Concentration Index, SDS Concentration, Measured Conductance, Specific Conductance, Micellar Regime).",
-        "Unwired interactive controls: The 'Mix and Equilibrate Solution' action button (btn_stir_and_equilibrate) and stepper increment/decrement buttons (.stepper-btn) had no click event listeners bound in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01116",
-      "status": "FIXED",
-      "time": "07:55:28",
-      "issues": [
-        "Observation table columns were misaligned: row innerHTML had 9 columns with an unrepresented temperature value and shifted conductance/cell constant positions, differing from the 8 columns defined in thead.",
-        "Action buttons #btn_calibrate_cell and #btn_toggle_mode as well as stepper increment/decrement buttons (.stepper-btn) were unhandled in canvas_js.",
-        "Canvas leader badges 4 and 6 were misaligned with legend pills: Badge 4 pointed to the magnetic stirrer instead of the coaxial cable, and Badge 6 pointed to the platinum electrodes instead of the workstation bench.",
-        "Dynamic conductometer mode display was hardcoded to 'MHOS' instead of reflecting active mode toggling between MHOS and CELL-CONST.",
-        "Raw LaTeX/plain-text notation 'Λ_∞' in Step 11 of procedure_section_html was updated to proper MathML."
-      ]
-    },
-    {
-      "sim_id": "u01119",
-      "status": "FIXED",
-      "time": "07:55:33",
-      "issues": [
-        "Unwired action button btn_align_minimum (Auto-Align Sensor to First Minimum)",
-        "Unwired stepper increment/decrement buttons in simulation controls",
-        "Misaligned observation table columns with scrambled data and missing trial counter",
-        "Typo in principles summary MathML formula for diffraction intensity (sin(beta/beta)^2 instead of (sin(beta)/beta)^2)",
-        "Curvy leader line 3 badge positioned directly above anchor causing vertical straight line instead of S-curve"
-      ]
-    },
-    {
-      "sim_id": "u01120",
-      "status": "FIXED",
-      "time": "07:55:36",
-      "issues": [
-        "Unwired action buttons: 'btn_perturb_flock' (Perturb Swarm Trajectory) and 'btn_toggle_discrete_rules' (Toggle Discrete Cellular Mode) were present in controls but missing event listeners in canvas_js",
-        "Observation table column misalignment: observation_thead_html defines 6 columns (Separation Weight, Alignment Weight, Cohesion Weight, Polarization Metric, Mean Neighbor Distance, Active Clusters), but btnRecord recorded 10 mismatched columns",
-        "Stepper buttons: added robust interactive step increment/decrement event listeners for .stepper-btn controls"
-      ]
-    },
-    {
-      "sim_id": "u01115",
-      "status": "FIXED",
-      "time": "07:55:43",
-      "issues": [
-        "Misaligned observation table columns: btnRecord injected 7 columns into a 6-column header with mismatched parameters and values.",
-        "Swapped badges 2 and 3 in canvas: Slip gauge was labeled badge '2' and spur gear badge '3', contradicting the legend pills (pill 2 = Spur Gear Specimen, pill 3 = 4 mm Slip Gauge).",
-        "Unwired action buttons: btn_calibrate_slip, btn_align_pitch_line, and btn_index_next_tooth lacked event listeners.",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons lacked click handlers to adjust input values."
-      ]
-    },
     {
       "sim_id": "u01111",
       "status": "PASS",
@@ -388,6 +334,58 @@
         "Unwired stepper buttons: .stepper-btn (▲ and ▼) elements lacked click listeners to increment or decrement control inputs.",
         "Telemetry display bug: Stepper rotor angle readout was wrapped with modulo 360°, resetting to 0.0° instead of displaying total angular displacement (360.0°) on completing 2048 steps.",
         "Raw math formatting artifact: In apparatus_html, digital I/O pins was rendered as a vertical fraction (I over O) via MathML instead of clean text 'I/O'."
+      ]
+    },
+    {
+      "sim_id": "u01161",
+      "status": "FIXED",
+      "time": "08:03:56",
+      "issues": [
+        "Mangled MathML notation in actions_html: The select control toggle button label contained an erroneous fraction '<mfrac><mrow><mi>s</mi></mrow><mrow><mi>s</mi></mrow></mfrac>̄' instead of proper 's / s̄' (<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>s</mi><mo>/</mo><mover><mi>s</mi><mo accent=\"true\">―</mo></mover></mrow></math>) notation."
+      ]
+    },
+    {
+      "sim_id": "u01159",
+      "status": "FIXED",
+      "time": "08:04:13",
+      "issues": [
+        "Observation table row generation in canvas_js included an unmapped trial index and placed balancing radius r out of order, misaligning with the 12-column table header",
+        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update numeric inputs or trigger physics updates",
+        "Action button 'btn_attach_balancing_mass' had no event listener or integration with the balance state",
+        "Counterbalance mass and reaction forces did not dynamically toggle to demonstrate bearing vibration elimination upon balancing"
+      ]
+    },
+    {
+      "sim_id": "u01163",
+      "status": "FIXED",
+      "time": "08:04:45",
+      "issues": [
+        "Corrupted nested MathML fraction and mangled unit string 'bit/s/sHz' in Channel Capacity live readout and table header rectified to clean 'bit/s/Hz'",
+        "Observation table columns in canvas_js btnRecord were severely misaligned (8 columns with mismatched headers vs 6 defined table header columns)",
+        "Action controls btn_generate_channel and btn_optimize_waterfilling were unhandled in canvas_js event initialization"
+      ]
+    },
+    {
+      "sim_id": "u01164",
+      "status": "FIXED",
+      "time": "08:04:47",
+      "issues": [
+        "Misaligned observation table columns: logObservation generated 8 columns including an unsynchronized trialCount column and misplaced metrics, whereas observation_thead_html expects 7 columns (Active Antennas N, Combining Method, Channel Spacing, Average SNR, Output SNR, Diversity Gain, Combining Efficiency).",
+        "Unwired stepper arrow buttons: .stepper-btn-up and .stepper-btn-down were not bound to click listeners, preventing step-wise UI control of antennas, SNR, spacing, and combining mode.",
+        "Unwired action buttons: Action buttons #btn_new_fading_profile and #btn_toggle_simo_miso lacked event listeners to re-seed Rayleigh fading realizations or toggle SIMO/MISO topology.",
+        "Erratic diversity gain calculation: Diversity gain subtracted fluctuating single-branch instantaneous fading rather than baseline channel average SNR (avgSnrDb), causing telemetry instability."
+      ]
+    },
+    {
+      "sim_id": "u01158",
+      "status": "FIXED",
+      "time": "08:04:53",
+      "issues": [
+        "Inaccurate dynamic balancing physics: Plane A balancing mass calculation erroneously used couple moments about the origin (plane 2) instead of moments about Plane B, and Plane B mass calculation contained an erroneous 0.5 attenuation factor.",
+        "Unwired readout DOM updates: computePhysics() targeted non-existent element IDs ('rd_*') rather than actual readout value elements ('val_rd_*'), failing to update telemetry on user interaction.",
+        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners and did not modify input values.",
+        "Unwired action buttons: 'btn_auto_balance' and 'btn_toggle_rotation' had no event listeners to toggle counterweight balancing or engage/disengage motor rotation.",
+        "Discrepancy in readouts_html default values: Initial static display showed buggy mass values (12.50 kg and 17.50 kg) rather than true equilibrium counterweights (45.00 kg and 35.00 kg)."
       ]
     }
   ],
@@ -1348,6 +1346,11 @@
     "u01153",
     "u01154",
     "u01156",
-    "u01160"
+    "u01158",
+    "u01159",
+    "u01160",
+    "u01161",
+    "u01163",
+    "u01164"
   ]
 }
