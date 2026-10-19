@@ -1,86 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:15:21",
-  "completed_count": 1943,
-  "fixed_count": 1742,
-  "latest_sim_id": "u01579",
+  "updated_at": "2026-10-19 18:16:56",
+  "completed_count": 1948,
+  "fixed_count": 1747,
+  "latest_sim_id": "u01668",
   "recent_events": [
-    {
-      "sim_id": "u01169",
-      "status": "FIXED",
-      "time": "18:06:03",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01481",
-      "status": "FIXED",
-      "time": "18:06:28",
-      "issues": [
-        "Corrected telemetry readout element IDs in updateTelemetryDisplays() to match 'val_reading_*' IDs declared in readouts_html",
-        "Wired action buttons #btn_begin_transaction and #btn_inject_failure to enable interactive protocol triggering and fault injection",
-        "Added event listener bindings for stepper up/down buttons (#num_participants, #animation_speed, #failure_scenario_index) to support direct user increment/decrement"
-      ]
-    },
-    {
-      "sim_id": "u01475",
-      "status": "FIXED",
-      "time": "18:06:40",
-      "issues": [
-        "Observation table columns misaligned: tbody was appending 9 cells with an unlisted charge ratio and numeric index instead of 8 cells matching the thead (Sample Type, V_lipid, m_DNA, Confluency, t_inc, eta, Viability, Intensity)",
-        "Apparatus leader line badges 1 and 4 were inverted: badge 1 was anchored to the 35mm culture plate on the microscope stage instead of the microfuge tube stand, and badge 4 was anchored to the tube stand instead of the culture plate",
-        "Action buttons (Sample toggle Test/Control, Assemble lipoplexes, Aspirate/Dispense, Switch microscope filter) and stepper up/down buttons were unhandled in canvas_js",
-        "Control sample condition (0.0% transfection efficiency and 0 GFP intensity for Plate C without plasmid) was not enforced when toggling to Control sample",
-        "Raw LaTeX/MathML artifact in observation table header: Sample Type had pseudo-math code unit"
-      ]
-    },
-    {
-      "sim_id": "u01395",
-      "status": "ERROR",
-      "time": "18:06:58",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01372",
-      "status": "FIXED",
-      "time": "18:07:04",
-      "issues": [
-        "Unwired action button 'Run to Full Convergence' (id='btn_auto_converge') in canvas_js",
-        "Unwired stepper step buttons (.stepper-btn-up, .stepper-btn-down) in canvas_js",
-        "Spurious MathML tag for the English indefinite article 'a' in aim_html and principles_summary_html",
-        "Raw superscript caret formatting outside MathML in principles_summary_html"
-      ]
-    },
-    {
-      "sim_id": "u01458",
-      "status": "ERROR",
-      "time": "18:07:12",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01399",
-      "status": "ERROR",
-      "time": "18:07:17",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01501",
-      "status": "FIXED",
-      "time": "18:07:23",
-      "issues": [
-        "Misaligned observation table columns: column 3 contained POS instead of Affix Length, column 4 contained Concordance Score instead of Root Ratio, column 5 contained Root Ratio instead of Concordance Score, and column 6 displayed text instead of numerical V_state.",
-        "Unwired action button: Parse & Validate Features (#btn_validate_features) had no event listener registered in canvas_js.",
-        "Unwired experiment options selector (#experiment_select) and stepper controls (.stepper-btn).",
-        "Malformed MathML in validation_html: English grammatical gender normalization was rendered as an algebraic fraction N/A (<mfrac><mrow><mi>N</mi></mrow><mrow><mi>A</mi></mrow></mfrac>) instead of standard text 'N/A'."
-      ]
-    },
     {
       "sim_id": "u01511",
       "status": "FIXED",
@@ -389,6 +313,81 @@
         "Misaligned observation table columns: btnRecord inserted 8 table cells while the observation table header defines 6 columns",
         "Observation table DOM ID targets: btnRecord queried un-prefixed IDs like reading_potential_energy instead of val_reading_potential_energy",
         "Cell-list grid rendering did not respect the toggle state controlled by btn_toggle_grid"
+      ]
+    },
+    {
+      "sim_id": "u01589",
+      "status": "FIXED",
+      "time": "18:15:48",
+      "issues": [
+        "Unwired action buttons: canvas_js listened for 'btnPlay' and 'btnDrop' instead of 'btn_spin_disk' and 'btn_drop_accessory' defined in actions_html",
+        "Observation table column mismatch: btnRecord inserted 8 mismatched values including an unheadered index, misaligning with the 9 defined table header columns",
+        "Malformed angular momentum unit: 'kg·/m²s' with misplaced division slash corrected to 'kg·m²/s' in readouts_html and observation_thead_html"
+      ]
+    },
+    {
+      "sim_id": "u01659",
+      "status": "FIXED",
+      "time": "18:15:49",
+      "issues": [
+        "Observation table cells in btnRecord were misaligned with observation_thead_html columns (missing separate initial and final burette readings, causing column shifts).",
+        "Action buttons ('btn_swirl_and_dispense' and 'btn_add_starch') and stepper increment/decrement buttons were unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01658",
+      "status": "FIXED",
+      "time": "18:15:50",
+      "issues": [
+        "Inaccurate Einstein-Stokes diffusion coefficient numerator coefficient in computePhysics (1.380649e-5 instead of 1.380649e-2), suppressing computed diffusivity D, RMS step displacement dx_rms, and stochastic force F_rms by three orders of magnitude.",
+        "Unwired action buttons #btn_sample_gaussian and #btn_physiological_preset, preventing students from triggering stochastic Gaussian kicks and loading the mammalian physiological preset state (310 K).",
+        "Missing explicit value increment/decrement handler for stepper buttons (.stepper-btn-up, .stepper-btn-down) on control inputs.",
+        "Missing mathematical symbol D in the observation table header column for Diffusion Coefficient."
+      ]
+    },
+    {
+      "sim_id": "u01636",
+      "status": "ERROR",
+      "time": "18:16:04",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01655",
+      "status": "ERROR",
+      "time": "18:16:28",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01593",
+      "status": "ERROR",
+      "time": "18:16:28",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01667",
+      "status": "FIXED",
+      "time": "18:16:36",
+      "issues": [
+        "Observation table columns in canvas_js were misaligned with observation_thead_html (8 columns rendered including extra index and gear ratio, while the table header expects 6 columns: Va, Ra, Ia, Eb, Nrpm, Te)",
+        "Action buttons (btn_step_load and btn_cycle_tap) and stepper buttons (.stepper-btn) were unwired in canvas_js",
+        "Coupled ODE solver lacked transient load resisting torque handling for the 'Apply Transient Shaft Load' button"
+      ]
+    },
+    {
+      "sim_id": "u01668",
+      "status": "FIXED",
+      "time": "18:16:56",
+      "issues": [
+        "Wired action button #btn_inject_query (Trigger Unauthorized SQL Intrusion) to dispatch packet intrusion events.",
+        "Wired stepper up/down controls (.stepper-btn) to increment and decrement input values properly.",
+        "Aligned observation table columns by removing superfluous 6th column (${totalIntercepted}) in record button handler to match 5-column table header.",
+        "Fixed leader badge numbering to align with apparatus legend pills (Badge 1: Decoy Database Server, Badge 2: Live Attack Console, Badge 3: Security Monitoring System, Badge 4: Log Analysis Panel)."
       ]
     }
   ],
@@ -1731,6 +1730,7 @@
     "u01585",
     "u01586",
     "u01588",
+    "u01589",
     "u01590",
     "u01591",
     "u01592",
@@ -1791,12 +1791,16 @@
     "u01654",
     "u01656",
     "u01657",
+    "u01658",
+    "u01659",
     "u01660",
     "u01661",
     "u01662",
     "u01663",
     "u01664",
     "u01665",
+    "u01667",
+    "u01668",
     "u01669",
     "u01670",
     "u01671",
