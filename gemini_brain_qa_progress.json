@@ -1,108 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:40:36",
-  "completed_count": 1397,
-  "fixed_count": 1295,
-  "latest_sim_id": "u01766",
+  "updated_at": "2026-10-19 10:44:37",
+  "completed_count": 1402,
+  "fixed_count": 1299,
+  "latest_sim_id": "u01776",
   "recent_events": [
-    {
-      "sim_id": "u01721",
-      "status": "FIXED",
-      "time": "10:31:40",
-      "issues": [
-        "Corrected malformed MathML unit representation in steppers_html and observation_thead_html where 'cm/min' was incorrectly parsed as 'c(m/m)in'."
-      ]
-    },
-    {
-      "sim_id": "u01727",
-      "status": "FIXED",
-      "time": "10:31:43",
-      "issues": [
-        "Observation table record hook inserted 9 columns in mismatched order instead of the 7 columns defined in observation_thead_html (Excitation Frequency, Bond Thickness, Bond Shear Modulus, Shear Lag Parameter, Strain Transfer Ratio, Conductance, Susceptance).",
-        "Action buttons #btn_sweep_admittance and #btn_optimize_bond_line were unhandled in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) lacked event listeners in canvas_js.",
-        "Legend pills 2 and 3 were transposed relative to apparatus item order and canvas badge numbering."
-      ]
-    },
-    {
-      "sim_id": "u01720",
-      "status": "FIXED",
-      "time": "10:32:10",
-      "issues": [
-        "Fixed raw LaTeX '\\left[CO_{2}\\right]' in steppers_html by converting it into inline MathML.",
-        "Corrected typo 'M/J/m²day' to 'MJ/m²/day' in steppers_html and observation_thead_html.",
-        "Fixed malformed fraction MathML rendering for 'tillers/m²' and 'leaves/stalk' in readouts_html and observation_thead_html.",
-        "Corrected base physiological temperature threshold tbase from 10.0 °C to 9.0 °C in canvas_js in accordance with SAMUCA principles and validation criteria.",
-        "Wired up interactive click handlers for .stepper-btn controls (▲ and ▼) in canvas_js to allow adjusting microclimatic inputs.",
-        "Fixed column misalignment in observation table row generation (aligned SRAD, CO2, Tmax, Tmin, CANHT, XLAI, atln to match observation_thead_html)."
-      ]
-    },
-    {
-      "sim_id": "u01730",
-      "status": "PASS",
-      "time": "10:32:41",
-      "issues": []
-    },
-    {
-      "sim_id": "u01729",
-      "status": "FIXED",
-      "time": "10:32:51",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 9 columns (including trialCount, gel, and dcor) while observation_thead_html only defines 6 columns.",
-        "Unwired action buttons: 'btn_verify_connections' and 'btn_auto_align_landmarks' were declared in actions_html but had no event listeners in canvas_js.",
-        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' stepper buttons were not wired to update input values."
-      ]
-    },
-    {
-      "sim_id": "u01733",
-      "status": "FIXED",
-      "time": "10:33:27",
-      "issues": [
-        "Unwired interactive action buttons (btn_transilluminate, btn_pierce_shell, btn_inject_inoculum, btn_seal_and_incubate) in simulation script.",
-        "Unwired stepper control increment/decrement buttons (.stepper-btn) in canvas_js.",
-        "Misaligned observation table row schema: tr.innerHTML generated 7 columns with a leading run counter (#) and out-of-order fields, while observation_thead_html defines exactly 6 columns (Embryo Age, Needle Depth, Inoculum Volume, Dilution Exponent, Observed Pock Count, Embryonic Survival)."
-      ]
-    },
-    {
-      "sim_id": "u01724",
-      "status": "FIXED",
-      "time": "10:33:35",
-      "issues": [
-        "Stepper increment and decrement buttons (▲/▼) were not wired to update input values or dispatch input events",
-        "Action buttons ('Strike Arc & Run Welding Pass' and 'Section & Measure Transverse Bead Profile') had no event listeners attached in simulation script",
-        "Observation table header row contained 8 columns while the tbody row contained 9 columns (missing '#' trial number header), causing complete column misalignment",
-        "Malformed MathML fraction in travel speed unit 'mm/min' rendered erroneously as 'm m/m in'"
-      ]
-    },
-    {
-      "sim_id": "u01735",
-      "status": "ERROR",
-      "time": "10:34:00",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01736",
-      "status": "FIXED",
-      "time": "10:34:03",
-      "issues": [
-        "Unwired stepper arrow buttons: clicking .stepper-btn-up and .stepper-btn-down did not increment or decrement stepper input values",
-        "Unwired action buttons: btn_run_takeoff_sim and btn_optimize_cruise_range had no event listeners attached in canvas_js",
-        "Misaligned observation table columns: record button prepended an unheaded trial index and omitted takeoff distance, causing table cells to misalign with the 7 thead columns"
-      ]
-    },
-    {
-      "sim_id": "u01734",
-      "status": "FIXED",
-      "time": "10:34:06",
-      "issues": [
-        "Unwired action button btn_insert_salt_bridge and stepper up/down buttons (.stepper-btn) in canvas_js",
-        "Misaligned observation table columns: row generated 7 misaligned columns with an unheaded recordCount while omitting Reaction Quotient (Q) and Equilibrium Constant Logarithm (log10 K) columns present in the 8-column header",
-        "Procedure step 10 used lowercase delta (δ_G) instead of capital Delta (ΔG) for Gibbs free energy",
-        "Principles summary contained malformed entity representation <mi>&</mi><mi>l</mi><mi>t</mi><mi>; in MathML"
-      ]
-    },
     {
       "sim_id": "u01728",
       "status": "ERROR",
@@ -355,6 +257,91 @@
         "Observation table column mismatch: btnRecord appended 5 columns instead of matching the 6 columns defined in observation_thead_html (Transmission Round, Congestion Window, Slow Start Threshold, Protocol State, Round Trip Time, Throughput).",
         "Malformed MathML throughput unit representation in observation_thead_html and readouts_html causing display of 'packet s/s' instead of 'packets/s'."
       ]
+    },
+    {
+      "sim_id": "u01761",
+      "status": "ERROR",
+      "time": "10:41:34",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01764",
+      "status": "FIXED",
+      "time": "10:42:05",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01765",
+      "status": "ERROR",
+      "time": "10:42:06",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01767",
+      "status": "ERROR",
+      "time": "10:42:23",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01769",
+      "status": "FIXED",
+      "time": "10:42:37",
+      "issues": [
+        "Observation table record button injected 9 columns while the observation header defined only 6 columns, causing severe table misalignment.",
+        "Action buttons (btn_euclidean_shift and btn_verify_identity) in actions_html were completely unwired in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn) lacked event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01774",
+      "status": "FIXED",
+      "time": "10:42:46",
+      "issues": [
+        "Observation table column misalignment: btnRecord appended row data starting with Target Amplitude instead of Trial Number, omitting the first column and misaligning all data relative to the 6 column table headers.",
+        "Unwired action buttons: 'btn_acquire_target' (Trigger Ballistic Acquisition Move) and 'btn_generate_random_target' (Generate New Random Target Position) had no event listeners attached.",
+        "Unwired stepper controls: Stepper buttons with classes '.stepper-btn-up' and '.stepper-btn-down' were not wired to modify input values or fire sync events."
+      ]
+    },
+    {
+      "sim_id": "u01772",
+      "status": "ERROR",
+      "time": "10:42:59",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01773",
+      "status": "ERROR",
+      "time": "10:43:15",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01770",
+      "status": "FIXED",
+      "time": "10:43:35",
+      "issues": [
+        "Unwired action buttons: btn_cycle_generator and btn_compute_full_gcd had no click event listeners attached in canvas_js",
+        "Misaligned observation table: btnRecord dynamically pushed 9 table cells, whereas observation_thead_html defined only 7 columns",
+        "Undeclared global assignment: m5StartBX variable was assigned without declaration in canvas_js",
+        "Malformed MathML in observation table header: columns 3, 4, and 5 contained corrupted rm^circ degree notations with stray newline break tags"
+      ]
+    },
+    {
+      "sim_id": "u01776",
+      "status": "PASS",
+      "time": "10:44:32",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1753,7 +1740,12 @@
     "u01759",
     "u01760",
     "u01762",
+    "u01764",
     "u01766",
-    "u01768"
+    "u01768",
+    "u01769",
+    "u01770",
+    "u01774",
+    "u01776"
   ]
 }
