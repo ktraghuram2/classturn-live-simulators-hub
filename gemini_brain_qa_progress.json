@@ -1,61 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:05:44",
-  "completed_count": 1662,
-  "fixed_count": 1505,
-  "latest_sim_id": "u02108",
+  "updated_at": "2026-10-19 16:06:50",
+  "completed_count": 1667,
+  "fixed_count": 1509,
+  "latest_sim_id": "u02113",
   "recent_events": [
-    {
-      "sim_id": "u02069",
-      "status": "ERROR",
-      "time": "15:56:00",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02070",
-      "status": "ERROR",
-      "time": "15:56:16",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02065",
-      "status": "ERROR",
-      "time": "15:56:37",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02071",
-      "status": "FIXED",
-      "time": "15:56:42",
-      "issues": [
-        "Fixed pt.zy typo to pt.ny in canvas_js which caused ensemble particle cloud coordinates to evaluate to NaN and fail to render",
-        "Wired action button #btn_generate_endpoints to regenerate ensemble particle endpoints",
-        "Wired action button #btn_single_walk_toggle to pause and resume single-particle stochastic walk",
-        "Wired stepper up/down buttons to increment and decrement input parameters properly"
-      ]
-    },
-    {
-      "sim_id": "u02055",
-      "status": "PASS",
-      "time": "15:57:11",
-      "issues": []
-    },
-    {
-      "sim_id": "u02075",
-      "status": "FIXED",
-      "time": "15:57:45",
-      "issues": [
-        "Observation table columns in canvas_js btnRecord were misaligned with the table header and missing Time Elapsed, Amplitude, and Calculated Sine Value columns",
-        "Action button #btn_snap_quadrant_zero was unwired in canvas_js",
-        "Stepper increment and decrement buttons were not wired to input controls in canvas_js"
-      ]
-    },
     {
       "sim_id": "u02078",
       "status": "PASS",
@@ -380,6 +329,65 @@
       "status": "PASS",
       "time": "16:05:44",
       "issues": []
+    },
+    {
+      "sim_id": "u02111",
+      "status": "FIXED",
+      "time": "16:06:50",
+      "issues": [
+        "Unwired stepper buttons: clicking stepper buttons did not adjust wavelength or power values",
+        "Unwired action button: #btn_capture_trace was missing an event listener in canvas_js",
+        "Misaligned observation table columns: row entries had an extraneous serial count and lacked inverse fourth-power λ⁻⁴, misaligning with the 5 thead columns",
+        "Readout DOM element selection: canvas_js targeted parent li elements instead of val_reading_* value spans"
+      ]
+    },
+    {
+      "sim_id": "u02110",
+      "status": "PASS",
+      "time": "16:06:50",
+      "issues": []
+    },
+    {
+      "sim_id": "u02107",
+      "status": "FIXED",
+      "time": "16:06:50",
+      "issues": [
+        "Observation table columns misaligned: observation_thead_html defines 12 columns including S_O and B_O vector components, but btnRecord only generated 6 table cells",
+        "Unwired action button: 'btn_align_vernal_equinox' was defined in actions_html and procedure Step 5 but had no click event handler in canvas_js",
+        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down buttons were missing click event listeners in canvas_js",
+        "Inaccurate transformation matrix and vector kinematics: T_OI rows 1 and 2 and S_O in canvas_js were non-orthonormal and inconsistent with standard LVLH orbital reference frame physics"
+      ]
+    },
+    {
+      "sim_id": "u02109",
+      "status": "FIXED",
+      "time": "16:06:50",
+      "issues": [
+        "Raw LaTeX en-dash '--' in principles_summary_html MathML replaced with clean Unicode en-dash '–'",
+        "Observation table recording row misaligned: table header defines 8 columns but JS only appended 6 mismatched cells",
+        "Action buttons (btn_dispatch_ping, btn_toggle_protocol) were unwired in canvas_js",
+        "Protocol state was hardcoded in canvas_js instead of responding to toggle protocol action and affecting latency physics",
+        "Stepper increment/decrement buttons (.stepper-btn) were not wired to trigger physics updates"
+      ]
+    },
+    {
+      "sim_id": "u02104",
+      "status": "ERROR",
+      "time": "16:06:50",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02113",
+      "status": "FIXED",
+      "time": "16:06:50",
+      "issues": [
+        "Unwired action buttons: 'btn_single_sample' and 'btn_randomize_partition' had no click event listeners attached in canvas_js",
+        "Digital Value Console button hitboxes in canvas mousedown were offset (530 + v * 42, y=86) and misaligned with rendered buttons (540 + v * 44, y=88)",
+        "Stepper arrow buttons (.stepper-btn) lacked click handling in canvas_js",
+        "Point-in-hexagon collision test in pointInHex had inaccurate boundary slope formulation"
+      ]
     }
   ],
   "completed_ids": [
@@ -2044,6 +2052,11 @@
     "u02103",
     "u02105",
     "u02106",
-    "u02108"
+    "u02107",
+    "u02108",
+    "u02109",
+    "u02110",
+    "u02111",
+    "u02113"
   ]
 }
