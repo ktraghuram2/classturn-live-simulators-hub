@@ -1,55 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:23:22",
-  "completed_count": 1482,
-  "fixed_count": 1362,
-  "latest_sim_id": "u01873",
+  "updated_at": "2026-10-19 14:24:24",
+  "completed_count": 1487,
+  "fixed_count": 1366,
+  "latest_sim_id": "u01885",
   "recent_events": [
-    {
-      "sim_id": "u01841",
-      "status": "PASS",
-      "time": "11:04:46",
-      "issues": []
-    },
-    {
-      "sim_id": "u01833",
-      "status": "ERROR",
-      "time": "11:04:49",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01838",
-      "status": "FIXED",
-      "time": "11:05:02",
-      "issues": [
-        "Unwired action buttons (#btn_goto_ts, #btn_trace_full_irc), experiment select options, and stepper increment/decrement buttons (.stepper-btn).",
-        "Misaligned observation table columns: canvas_js generated 7 cells (including unmapped step length) while observation_thead_html defines 6 columns, causing data shift upon recording rows."
-      ]
-    },
-    {
-      "sim_id": "u01839",
-      "status": "FIXED",
-      "time": "11:05:13",
-      "issues": [
-        "Replaced Greek capital letter Pi (Π) with proper product name 'Pi' across title_plain, header_title_html, aim_html, apparatus_html, principles_summary_html, and legend_pills_html.",
-        "Fixed nonsensical fraction rendering USB 3.0 / 2.0 (rendered as \\frac{3.0}{2.0} in MathML) in apparatus_html and legend_pills_html.",
-        "Aligned observation table recorded columns in canvas_js to match all 7 columns defined in observation_thead_html (Physical Pin, BCM Identifier, Active Mode, Pin Voltage, Sourced Current, Signal Rise Time, Total Rail Current).",
-        "Wired unwired action buttons 'btn_toggle_alt_mode' (cycles through ALT multiplexer peripheral functions) and 'btn_inject_test_packet' (triggers visual packet burst trace across PCB).",
-        "Wired stepper up/down controls and interactive on-canvas pin selection click handler."
-      ]
-    },
-    {
-      "sim_id": "u01840",
-      "status": "FIXED",
-      "time": "11:05:28",
-      "issues": [
-        "Action preset buttons (btn_bright_light, btn_dark_shroud, btn_compensation_point, btn_bunsen_burner, btn_students_entering) and activity dropdown were unwired in canvas_js",
-        "Stepper up/down buttons lacked numeric increment/decrement handling on target inputs",
-        "Observation table columns were misaligned: btnRecord generated 10 columns with extra and reordered fields while observation_thead_html defined exactly 7 columns"
-      ]
-    },
     {
       "sim_id": "u01843",
       "status": "PASS",
@@ -364,6 +319,56 @@
         "Action buttons (btn_cycle_encoding, btn_invert_data, btn_toggle_clock_overlay) and stepper up/down controls were completely unhandled",
         "Observation table record generator was misaligned with table headers (Peak Voltage was swapped with Bit Pattern) and included an unmapped 8th column"
       ]
+    },
+    {
+      "sim_id": "u01878",
+      "status": "FIXED",
+      "time": "14:23:33",
+      "issues": [
+        "Observation table recording was misaligned with the 8 thead columns, inserting trial counts and compound strings instead of matching the specific variables in order.",
+        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) lacked event handlers in bindControls().",
+        "Action buttons #btn_pulse_geochemical_vent ('Pulse H2 / H2S Geochemical Plume') and #btn_induce_bottleneck ('Trigger Environmental Stress Bottleneck') were unwired in bindControls().",
+        "Experiment selection dropdown (#experimentSelect) was not wired to reconfigure parameters between neutral drift and trade-off conditions."
+      ]
+    },
+    {
+      "sim_id": "u01881",
+      "status": "FIXED",
+      "time": "14:23:49",
+      "issues": [
+        "Unwired action buttons: 'Inject Perturbation into Node X', 'Inject Perturbation into Node Y', and 'Quench In-Flight Signals' lacked event listeners.",
+        "Unwired stepper controls: The stepper increment and decrement buttons lacked click event listeners.",
+        "Mismatched numbered badges: Badge 2 pointed to Node Y and Badge 3 pointed to the forward causal arc, conflicting with the legend pills ordering.",
+        "Telemetry readout ID mismatch: updateTelemetry targeted 'reading_*' instead of the actual span IDs 'val_reading_*', preventing readout value updates.",
+        "Misaligned observation table columns: The table header defined [w1, w2, s, v, G, x, y], but the row insertion logic inserted [w1, w2, v, deltaP, G, x, y], omitting Speed Exponent s."
+      ]
+    },
+    {
+      "sim_id": "u01884",
+      "status": "FIXED",
+      "time": "14:24:03",
+      "issues": [
+        "Replaced raw LaTeX string literal '(\\Delta P)' in canvas differential residual heading with unicode '(ΔP)'",
+        "Wired missing action button click handlers for 'btn_embed_bit' (Execute LSB Substitution) and 'btn_extract_payload' (Extract Secret Bitstream)",
+        "Wired interactive stepper up/down buttons (.stepper-btn) to increment and decrement corresponding inputs"
+      ]
+    },
+    {
+      "sim_id": "u01879",
+      "status": "FIXED",
+      "time": "14:24:12",
+      "issues": [
+        "Unwired action buttons: 'btn_auto_fit' (Execute Iterative Parameter Optimization) and 'btn_toggle_model' (Switch Clinical Feature Channel) lacked event listeners in canvas_js",
+        "Unwired stepper controls: Stepper up and down buttons (.stepper-btn-up, .stepper-btn-down) had no click listeners attached to manipulate target parameter inputs",
+        "Misaligned observation table columns: Record button logged trial index instead of Selected Feature x into column 1, and mismatched Decision Boundary, Log Loss, and Accuracy across columns 4-6 relative to observation_thead_html",
+        "Static feature cartridge indicator: Cartridge channel active state was hardcoded to channel 1 instead of responding dynamically to clinical feature switching"
+      ]
+    },
+    {
+      "sim_id": "u01885",
+      "status": "PASS",
+      "time": "14:24:24",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1848,6 +1853,11 @@
     "u01874",
     "u01875",
     "u01876",
-    "u01877"
+    "u01877",
+    "u01878",
+    "u01879",
+    "u01881",
+    "u01884",
+    "u01885"
   ]
 }
