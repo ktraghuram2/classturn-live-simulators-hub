@@ -1,61 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:24:24",
-  "completed_count": 1487,
-  "fixed_count": 1366,
-  "latest_sim_id": "u01885",
+  "updated_at": "2026-10-19 14:25:49",
+  "completed_count": 1492,
+  "fixed_count": 1370,
+  "latest_sim_id": "u01891",
   "recent_events": [
-    {
-      "sim_id": "u01843",
-      "status": "PASS",
-      "time": "11:05:54",
-      "issues": []
-    },
-    {
-      "sim_id": "u01837",
-      "status": "ERROR",
-      "time": "11:05:56",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01842",
-      "status": "ERROR",
-      "time": "11:06:15",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01836",
-      "status": "FIXED",
-      "time": "11:06:16",
-      "issues": [
-        "Inaccurate physics/equations: fBase was computing a mock cubic polynomial approximation rather than the analytical function f(x) = a * exp(x) - x^2 specified in the aim, equations, and procedure.",
-        "Misaligned observation table columns: record button handler inserted an unheaded trial index cell (obsCount), shifting all measurement values one column to the right.",
-        "Unwired stepper controls: up and down stepper buttons (.stepper-btn) had no click listeners attached to increment/decrement input values.",
-        "Unwired action button: Execute Gaussian Elimination and Plot Spline button (#act_solve) had no event listener to recalculate and refresh readouts."
-      ]
-    },
-    {
-      "sim_id": "u01844",
-      "status": "FIXED",
-      "time": "11:06:27",
-      "issues": [
-        "Observation table columns were misaligned with observation_thead_html (headers expect launch angle, obstacle radius, collision count, path length, and mean free path, but recorder populated collision count, path, mean free path, speed, and obstacle radius).",
-        "Section 5 action buttons 'btn_fire_particle' (Launch Particle Trajectory) and 'btn_clear_trace' (Clear Trajectory Trace) were unwired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to modify inputs and dispatch sync events."
-      ]
-    },
-    {
-      "sim_id": "u01845",
-      "status": "FIXED",
-      "time": "11:06:47",
-      "issues": [
-        "Replaced erroneous MathML fraction conversion for 'I/O' with plain text 'I/O' in procedure step 2"
-      ]
-    },
     {
       "sim_id": "u01848",
       "status": "FIXED",
@@ -369,6 +318,61 @@
       "status": "PASS",
       "time": "14:24:24",
       "issues": []
+    },
+    {
+      "sim_id": "u01883",
+      "status": "FIXED",
+      "time": "14:24:48",
+      "issues": [
+        "Misaligned observation table columns and extra column in btnRecord click listener (9 columns rendered for 8 header columns, column order swapped Li/tg before Tw/wk)",
+        "Unwired action buttons (btn_transfer_template, btn_cut_segment, btn_assemble_cluster) and stepper up/down buttons (.stepper-btn) in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01886",
+      "status": "PASS",
+      "time": "14:24:48",
+      "issues": []
+    },
+    {
+      "sim_id": "u01887",
+      "status": "FIXED",
+      "time": "14:24:55",
+      "issues": [
+        "Unwired action button '#btn_set_majority_preset' and stepper control buttons in canvas_js",
+        "Mis-rendered English indefinite article 'A' formatted as MathML variable '<math><mrow><mi>A</mi></mrow></math>' at the start of principles_summary_html"
+      ]
+    },
+    {
+      "sim_id": "u01882",
+      "status": "ERROR",
+      "time": "14:25:23",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01888",
+      "status": "FIXED",
+      "time": "14:25:25",
+      "issues": [
+        "Observation table columns in canvas_js were misaligned with observation_thead_html (6 columns with unlisted timestamp vs 7 expected headers)",
+        "Action buttons (#btn_parse_iat, #btn_run_strings) and control steppers (.stepper-btn) were unwired in canvas_js",
+        "Extraneous phantom badges 3 and 4 were drawn in canvas_js without corresponding entries in apparatus list or legend pills",
+        "Corrupted MathML fraction in Entropy unit (rendered as bit s/b yte instead of bits/byte)"
+      ]
+    },
+    {
+      "sim_id": "u01891",
+      "status": "FIXED",
+      "time": "14:25:49",
+      "issues": [
+        "Unwired DOM telemetry elements: IDs in readouts_html are prefixed with 'val_' (val_reading_z_mag, etc.), causing null element lookups and frozen live readouts.",
+        "Unwired action and stepper buttons: btn_map_conjugate, btn_trace_stability_boundary, btn_toggle_mapping_mode, and .stepper-btn lacked click listeners.",
+        "Observation table column count mismatch: thead has 8 columns but observation row only inserted 7 columns with concatenated coordinates and missing numeric stability margin.",
+        "Unrendered LaTeX notation: raw 'z = e^{sT}' rendered in canvas bridge text instead of clean typography.",
+        "Missing Bilinear transformation physics: toggle button lacked implementation of conformal Tustin bilinear frequency warping."
+      ]
     }
   ],
   "completed_ids": [
@@ -1857,7 +1861,12 @@
     "u01878",
     "u01879",
     "u01881",
+    "u01883",
     "u01884",
-    "u01885"
+    "u01885",
+    "u01886",
+    "u01887",
+    "u01888",
+    "u01891"
   ]
 }
