@@ -1,73 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:19:46",
-  "completed_count": 1347,
-  "fixed_count": 1261,
-  "latest_sim_id": "u01697",
+  "updated_at": "2026-10-19 10:23:52",
+  "completed_count": 1352,
+  "fixed_count": 1266,
+  "latest_sim_id": "u01702",
   "recent_events": [
-    {
-      "sim_id": "u01647",
-      "status": "FIXED",
-      "time": "10:05:16",
-      "issues": [
-        "Corrected simulator title mismatch: title_plain and header_title_html erroneously indicated 'Coagulase Test' while the experiment pedagogical flow, principles, apparatus, and simulation model represent the Catalase Test (Slide and Tube Methods).",
-        "Fixed observation table misalignment: swapped columns 1 and 2 in recorded rows so Bacterial Strain and Testing Method match the observation_thead_html header order.",
-        "Fixed observation table column count mismatch: removed extra 8th result column so recorded rows align with the 7-column observation_thead_html structure.",
-        "Wired interactive action buttons: attached click handlers for 'btn_flame_loop' (Flame Sterilize Loop) and 'btn_dispense_reagent' (Dispense 3% H2O2 Reagent).",
-        "Wired stepper controls: attached click handlers for all .stepper-btn up and down buttons to correctly increment and decrement their target input values within min/max bounds."
-      ]
-    },
-    {
-      "sim_id": "u01652",
-      "status": "FIXED",
-      "time": "10:05:20",
-      "issues": [
-        "Unwired action button: btn_pulse_inducer had no click listener to inject an inducer pulse into the diffusion field.",
-        "Misaligned observation table columns: Total Cell Count column was missing from recorded row, causing length, signal, GFP, and force values to shift into incorrect table cells."
-      ]
-    },
-    {
-      "sim_id": "u01653",
-      "status": "PASS",
-      "time": "10:05:25",
-      "issues": []
-    },
-    {
-      "sim_id": "u01654",
-      "status": "FIXED",
-      "time": "10:06:29",
-      "issues": [
-        "Misaligned observation table columns: removed extra doorway vent width (ventW) entry and reordered interface height (z_int) and upper layer temperature (T_u) to match table thead column order exactly.",
-        "Unwired action and stepper buttons: added event listeners for btn_ignite_burner, btn_integrate_profile, and .stepper-btn controls to ensure interactive reactivity."
-      ]
-    },
-    {
-      "sim_id": "u01661",
-      "status": "PASS",
-      "time": "10:06:37",
-      "issues": []
-    },
-    {
-      "sim_id": "u01660",
-      "status": "FIXED",
-      "time": "10:06:52",
-      "issues": [
-        "Observation table column mismatch: observation_thead_html defined 5 columns while canvas_js appended 7 columns including unrepresented trial count and Al2O3 columns, causing table misalignment.",
-        "Unwired live telemetry readouts: canvas_js searched for 'reading_*' container IDs rather than 'val_reading_*' value span IDs, blocking live readout updates.",
-        "Unwired action button: 'Weigh Precipitate on Analytical Balance' (btn_weigh_precipitate) was defined in HTML but had no event listener to toggle precipitate weighing on the analytical balance.",
-        "Unwired stepper controls: Stepper up and down buttons lacked event listeners, rendering manual increment/decrement clicks unresponsive."
-      ]
-    },
-    {
-      "sim_id": "u01656",
-      "status": "FIXED",
-      "time": "10:06:59",
-      "issues": [
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js, preventing parameter adjustment via UI steppers.",
-        "Action button #btn_stir_bath was unwired, failing to control or toggle the oil bath stirrer animation.",
-        "Observation table recording row inserted 8 mismatched columns with row index and raw input settings instead of matching the 7 table header columns with calculated T_K, V_th, I, R, ln(R), and 1/T."
-      ]
-    },
     {
       "sim_id": "u01655",
       "status": "ERROR",
@@ -378,6 +315,73 @@
       "status": "PASS",
       "time": "10:19:46",
       "issues": []
+    },
+    {
+      "sim_id": "u01676",
+      "status": "FIXED",
+      "time": "10:20:13",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01696",
+      "status": "ERROR",
+      "time": "10:20:27",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01700",
+      "status": "FIXED",
+      "time": "10:20:44",
+      "issues": [
+        "Replaced erroneous mathematical fraction formatting in apparatus and validation slots where 'CLIP ViT-L/14' was incorrectly represented as L over 14",
+        "Corrected epsilon_theta notation in principles summary MathML to properly display Greek symbol theta rather than literal text string 'theta'"
+      ]
+    },
+    {
+      "sim_id": "u01701",
+      "status": "FIXED",
+      "time": "10:21:24",
+      "issues": [
+        "Unwired action button: #btn_inject_disturbance had no event listener wired in canvas_js",
+        "Telemetry DOM element IDs: canvas_js queried reading_* instead of val_reading_* value containers",
+        "Observation table columns misaligned: btnRecord inserted 7 misordered cells instead of matching the 8 columns defined in observation_thead_html",
+        "Apparatus badge numbering mismatch: Badges 4, 5, and 6 were swapped relative to legend_pills_html"
+      ]
+    },
+    {
+      "sim_id": "u01685",
+      "status": "ERROR",
+      "time": "10:22:08",
+      "issues": [
+        "agy.exe busy/rate-limited (code 1): error: Eligibility check failed: failed to get profile picture: Get \"https://lh3.googleusercontent.com/a/ACg8ocI5Z-q8MAW3awM"
+      ]
+    },
+    {
+      "sim_id": "u01699",
+      "status": "FIXED",
+      "time": "10:23:45",
+      "issues": [
+        "Unwired interactive stepper buttons (.stepper-btn-up and .stepper-btn-down) for load current, bias slope, and fault magnitude controls.",
+        "Unwired action buttons (#btn_toggle_cb and #btn_inject_fault_f1) with missing click event handlers for circuit breaker manual toggle and internal fault F1 injection.",
+        "Mismatched live telemetry DOM element IDs in canvas_js (queried container data-ids instead of val_reading_* value elements, preventing readings from updating).",
+        "Apparatus leader line badge numbering in canvas_js was misaligned with legend pills (Badge 1 pointed to Transformer instead of Circuit Breaker, Badge 5 pointed to Circuit Breaker instead of Relay).",
+        "Corrupted MathML fractions in apparatus_html specification strings for voltage ratio and CT ratings.",
+        "Lowercase delta symbol in validation_html winding connection assumption."
+      ]
+    },
+    {
+      "sim_id": "u01702",
+      "status": "FIXED",
+      "time": "10:23:52",
+      "issues": [
+        "Observation recording function (btnRecord) generated 9 table columns while observation_thead_html specifies exactly 7 columns, causing table column misalignment.",
+        "Action buttons btn_fill_sinks and btn_delineate_watershed were declared in controls but lacked event listener wiring in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn) lacked click event listeners in canvas_js."
+      ]
     }
   ],
   "completed_ids": [
@@ -1715,6 +1719,7 @@
     "u01673",
     "u01674",
     "u01675",
+    "u01676",
     "u01677",
     "u01678",
     "u01680",
@@ -1727,6 +1732,10 @@
     "u01692",
     "u01693",
     "u01694",
-    "u01697"
+    "u01697",
+    "u01699",
+    "u01700",
+    "u01701",
+    "u01702"
   ]
 }
