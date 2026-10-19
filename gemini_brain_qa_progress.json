@@ -1,82 +1,10 @@
 {
   "runner_state": "ACTIVE (6 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 17:25:10",
-  "completed_count": 1887,
-  "fixed_count": 1691,
-  "latest_sim_id": "u01344",
+  "updated_at": "2026-10-19 17:26:40",
+  "completed_count": 1892,
+  "fixed_count": 1695,
+  "latest_sim_id": "u01377",
   "recent_events": [
-    {
-      "sim_id": "u02381",
-      "status": "FIXED",
-      "time": "17:02:27",
-      "issues": [
-        "Observation table rows recorded by btnRecord generated 7 mismatched columns instead of the 5 columns defined in observation_thead_html (V1, V2, V_titre, Fehling factor F, Reducing sugar % RS).",
-        "Action buttons (#btn_dispense_drop, #btn_add_indicator, #btn_toggle_boil) defined in actions_html were not wired with event listeners in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) lacked click handling in canvas_js.",
-        "Reaction flask solution color transition in drawConicalFlask hardcoded vEnd to 25.0 mL instead of computing stoichiometric equivalence dynamically from mSample."
-      ]
-    },
-    {
-      "sim_id": "u02372",
-      "status": "ERROR",
-      "time": "17:02:31",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02375",
-      "status": "FIXED",
-      "time": "17:02:33",
-      "issues": [
-        "Observation table rows generated 7 columns instead of 6 and were misaligned with the observation table header columns",
-        "Action buttons (btn_merge_nearest, btn_split_heaviest_edge, btn_toggle_linkage) and stepper up/down buttons were unwired"
-      ]
-    },
-    {
-      "sim_id": "u02379",
-      "status": "FIXED",
-      "time": "17:11:06",
-      "issues": [
-        "Unwired action button #btn_validate_submit in canvas_js",
-        "Misaligned observation table columns: removed extra recordIndex cell and aligned the 6 data cells with the 6 header columns (Preset, Username Length, Email Match, Password Strength, Phone Digits, Submission Status)",
-        "Added click handler wiring for stepper increment/decrement buttons"
-      ]
-    },
-    {
-      "sim_id": "u02385",
-      "status": "FIXED",
-      "time": "17:11:06",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 9 columns into tbody whereas observation_thead_html defines exactly 6 columns in a different sequence.",
-        "Mismatched curvy leader line badges: canvas badge numbers 1, 2, 4, 6, and 7 pointed to wrong apparatus components relative to legend_pills_html.",
-        "Unwired action and stepper controls: stepper buttons and action buttons (actuate_gas_valve_1, throttle_gas_valve_2, clean_membrane_flush) lacked event listeners."
-      ]
-    },
-    {
-      "sim_id": "u02383",
-      "status": "FIXED",
-      "time": "17:11:06",
-      "issues": [
-        "Misalignment between observation table header (6 columns) and btnRecord row insertion (9 columns)",
-        "Telemetry readouts failed to update in DOM because setTelemetry targeted 'read_*' IDs instead of 'val_read_*'",
-        "Action buttons (Execute Grammatical Abbott Sieve, Route Token to Ross Category, Synthesize Top-Level Domain Classes) and stepper buttons were unwired in canvas_js",
-        "Malformed MathML fraction artifact converting 'attributes/class' into 'attribute s/c lass' in observation table header and live readouts"
-      ]
-    },
-    {
-      "sim_id": "u02382",
-      "status": "FIXED",
-      "time": "17:11:06",
-      "issues": [
-        "Fixed raw HTML/MathML and broken unit '/J/sm³' with illegal leading slash inside observation table header and telemetry readouts.",
-        "Fixed corrupted data-unit attributes in readouts_html containing nested HTML span tags.",
-        "Corrected broken MathML unit fraction formatting in steppers_html for sensitivity stepper.",
-        "Corrected observation table row alignment in canvas_js: removed extraneous Serial No and Sv columns and added missing Retentivity (Br) and Coercivity (Hc) columns matching the 7 thead headers.",
-        "Corrected non-physical hysteresis energy loss formula in canvas_js to depend directly on peak flux density Bm via the Steinmetz power-law relation rather than artificial scaling with resistance and display sensitivity.",
-        "Wired up stepper ▲/▼ buttons with data-target handlers and wired up the Auto-Trace B-H Saturation Cycle action button."
-      ]
-    },
     {
       "sim_id": "u02386",
       "status": "ERROR",
@@ -375,6 +303,71 @@
         "Misaligned observation table columns: row generated 10 columns with an unmapped row index and swapped columns instead of matching the 8 columns defined in observation_thead_html",
         "Unwired action buttons: 'btn_align_focal_axis' and 'btn_sweep_incident_fan' lacked event listeners",
         "Unwired stepper controls: Stepper up and down buttons (.stepper-btn) lacked click event listeners to increment/decrement input values"
+      ]
+    },
+    {
+      "sim_id": "u01335",
+      "status": "ERROR",
+      "time": "17:25:17",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01358",
+      "status": "FIXED",
+      "time": "17:25:22",
+      "issues": [
+        "Unwired 'Trigger Seismic Ground Motion' action button (btn_trigger_earthquake) and unwired stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down).",
+        "Observation table column misalignment: observation_thead_html defines 7 columns, but btnRecord listener inserted an extra trial number <td> as the first cell, shifting all 7 observation columns out of alignment with their headers.",
+        "Observation table recorded instantaneous displacement rather than tracking peak ground displacement and peak roof drift amplitudes as specified in table headers.",
+        "Low contrast dark-on-dark safety hazard chevron striping on foundation base (#1e293b and #0f172a) updated to high-contrast safety amber (#f59e0b) and slate (#1e293b)."
+      ]
+    },
+    {
+      "sim_id": "u01350",
+      "status": "ERROR",
+      "time": "17:25:32",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01356",
+      "status": "FIXED",
+      "time": "17:25:37",
+      "issues": [
+        "Observation table columns were misaligned and mismatched the 8-column header (rendered 10 columns, missing pseudo-velocity Sv, and duplicated oscillator frame outputs).",
+        "Action button 'btn_compute_spectrum' from actions_html was unwired in canvas_js.",
+        "Input stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01364",
+      "status": "FIXED",
+      "time": "17:26:13",
+      "issues": [
+        "Observation table column count mismatch: canvas_js generated 9 <td> columns whereas observation_thead_html defines 5 <th> columns, causing table formatting misalignment.",
+        "Unwired action buttons: #btn_filter_qualifying and #btn_auto_classify had no event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to increment and decrement input values.",
+        "Unwired experiment selection: #experimentSelect lacked a change listener to dynamically switch between standard core logging and threshold sensitivity analysis modes."
+      ]
+    },
+    {
+      "sim_id": "u01371",
+      "status": "PASS",
+      "time": "17:26:17",
+      "issues": []
+    },
+    {
+      "sim_id": "u01377",
+      "status": "FIXED",
+      "time": "17:26:39",
+      "issues": [
+        "Observation table columns were misaligned: observation tbody injected 6 columns (including redundant enable statuses) while observation thead defines only 5 columns.",
+        "Raw LaTeX escape command (\\exp) present in observation thead MathML label.",
+        "Control action buttons 'btn_cycle_input' (Cycle Next Binary Input) and 'btn_clear_faults' (Clear All Injected Faults) were defined in HTML but unwired in canvas_js.",
+        "Stepper ▲/▼ buttons for fine step adjustment were unhandled in canvas_js."
       ]
     }
   ],
@@ -1497,21 +1490,26 @@
     "u01353",
     "u01354",
     "u01355",
+    "u01356",
     "u01357",
+    "u01358",
     "u01359",
     "u01360",
     "u01361",
     "u01362",
     "u01363",
+    "u01364",
     "u01365",
     "u01366",
     "u01368",
     "u01369",
     "u01370",
+    "u01371",
     "u01373",
     "u01374",
     "u01375",
     "u01376",
+    "u01377",
     "u01378",
     "u01379",
     "u01380",
