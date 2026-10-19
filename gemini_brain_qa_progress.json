@@ -1,66 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:53:00",
-  "completed_count": 1827,
-  "fixed_count": 1636,
-  "latest_sim_id": "u02331",
+  "updated_at": "2026-10-19 16:54:22",
+  "completed_count": 1832,
+  "fixed_count": 1641,
+  "latest_sim_id": "u02335",
   "recent_events": [
-    {
-      "sim_id": "u02283",
-      "status": "ERROR",
-      "time": "16:44:45",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02290",
-      "status": "FIXED",
-      "time": "16:45:02",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 8 mismatched columns including an unlisted trial index, swapping Conic Type into column 5 and missing PF/PM ratio, while the table header defines 7 columns (Eccentricity, Distance d, Abscissa x, Focal Distance PF, Directrix Distance PM, Locus Ratio PF/PM, Conic Classification).",
-        "Unwired action buttons: btn_sweep_locus_arcs and btn_construct_tangent_normal lacked click event handlers in canvas_js.",
-        "Unwired stepper buttons: .stepper-btn up/down controls were missing click event listeners in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u02285",
-      "status": "ERROR",
-      "time": "16:45:29",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02286",
-      "status": "ERROR",
-      "time": "16:45:35",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02291",
-      "status": "FIXED",
-      "time": "16:45:39",
-      "issues": [
-        "Unwired action buttons: 'btn_broadcast_tx' and 'btn_fast_forward_block' were not bound to click event listeners.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to increment/decrement input values.",
-        "Misaligned observation table: Row recording only had 6 columns with incorrect metrics instead of all 7 columns matching observation_thead_html (Block Height, Validator, Stake %, Selection Prob %, Tx Value, Sender Balance, Receiver Balance).",
-        "Missing ledger balance transfer: Consumed mempool transactions did not adjust sender and receiver account balances upon block minting."
-      ]
-    },
-    {
-      "sim_id": "u02292",
-      "status": "FIXED",
-      "time": "16:46:08",
-      "issues": [
-        "Corrected title and header from 'Proof of Work (PoW)' to 'Proof of Stake (PoS)' to resolve scientific mismatch with stake-weighted consensus equations and apparatus.",
-        "Fixed observation table columns in canvas_js to output 5 matching columns (Block Number, Selected Validator, Validator Stake, Transactions Included, Validator Balance) aligning with observation_thead_html instead of 10 misaligned columns.",
-        "Wired interactive action buttons ('btn_broadcast_tx' and 'btn_mint_block') and stepper increment/decrement buttons (▲/▼) to ensure controls respond to user interaction.",
-        "Implemented real-time telemetry updates inside tick() loop via setTelemetry() for countdown_timer, mempool_count, alice_selection_prob, and active_validator_balance."
-      ]
-    },
     {
       "sim_id": "u02293",
       "status": "FIXED",
@@ -391,6 +335,64 @@
         "Observation table column mismatch: recordObservation() injected 5 columns into a 4-column observation table header",
         "Readout unit erasure: setElementVal() overwritten textContent completely erasing MathML unit spans",
         "Extended activity decoupled: experimentSelect mode was not integrated to distinguish between primary tank thresholding and manual test switch override"
+      ]
+    },
+    {
+      "sim_id": "u02330",
+      "status": "FIXED",
+      "time": "16:53:09",
+      "issues": [
+        "Unwired action buttons: 'btn_baseline_blank' (Zero Baseline) and 'btn_full_spectrum_scan' (Execute Full Spectral Scan) had no event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper up and down buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js to step inputs.",
+        "Misaligned observation table columns: 'btnRecord' inserted 8 td cells into 'observationTbody', whereas 'observation_thead_html' defined 6 column headers.",
+        "Observation table header notation: Observation column 1 used uppercase Greek Pi (<mi>Π</mi>) instead of lowercase pi (<mi>π</mi>) for Number of π Electrons."
+      ]
+    },
+    {
+      "sim_id": "u02333",
+      "status": "FIXED",
+      "time": "16:53:46",
+      "issues": [
+        "Observation table columns were misaligned: rectangle length and width were merged into a single cell ('l × w cm'), which shifted triangle side, circle radius, and total area into wrong columns and placed stack depth frames into total area.",
+        "Action button #btn_execute_calls ('Compile & Invoke Function Call Stack') had no click listener wired in canvas_js.",
+        "Interactive precision stepper buttons (.stepper-btn-up and .stepper-btn-down) were not bound to click event handlers in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02332",
+      "status": "FIXED",
+      "time": "16:53:53",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u02329",
+      "status": "ERROR",
+      "time": "16:53:58",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02334",
+      "status": "FIXED",
+      "time": "16:54:04",
+      "issues": [
+        "Fixed telemetry readout element IDs in canvas_js (val_reading_pz, val_reading_px, val_reading_fz1, val_reading_fz2) which previously failed to update live readings.",
+        "Wired stepper up/down buttons (.stepper-btn) to increment/decrement integration boundaries and sync telemetry.",
+        "Corrected observation table row insertion in btnRecord to align with all 7 columns (Transformation Kernel, z1, z2, fZ(z1), fZ(z2), PZ, PX).",
+        "Implemented dual-mode kernel support for both Quadratic (Z = X^2) and Exponential (Z = e^X) transformations with dynamic pre-image and density curves.",
+        "Wired action buttons (btn_select_quadratic, btn_select_exponential, btn_map_integral) and experiment dropdown to switch kernels and trigger pre-image mapping.",
+        "Cleaned up duplicate symbol tags in observation_thead_html table column headers."
+      ]
+    },
+    {
+      "sim_id": "u02335",
+      "status": "FIXED",
+      "time": "16:54:22",
+      "issues": [
+        "Updated in Gemini brain"
       ]
     }
   ],
@@ -2221,6 +2223,11 @@
     "u02322",
     "u02325",
     "u02326",
-    "u02331"
+    "u02330",
+    "u02331",
+    "u02332",
+    "u02333",
+    "u02334",
+    "u02335"
   ]
 }
