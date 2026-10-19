@@ -1,56 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:27:08",
-  "completed_count": 1732,
-  "fixed_count": 1558,
-  "latest_sim_id": "u02207",
+  "updated_at": "2026-10-19 16:28:01",
+  "completed_count": 1737,
+  "fixed_count": 1562,
+  "latest_sim_id": "u02213",
   "recent_events": [
-    {
-      "sim_id": "u02167",
-      "status": "FIXED",
-      "time": "16:15:51",
-      "issues": [
-        "Misaligned observation table row schema (10 columns inserted into a 6-column header)",
-        "Unwired stepper up/down buttons (clicking ▲ / ▼ did not update stepper inputs or trigger recalculations)",
-        "Unwired action button btn_purge_air ('Purge Air Pockets & Prime Main')",
-        "Erroneous Greek letter psi (ψ) MathML entity in apparatus casing pressure rating specification instead of standard psi unit"
-      ]
-    },
-    {
-      "sim_id": "u02168",
-      "status": "FIXED",
-      "time": "16:15:55",
-      "issues": [
-        "Observation table row appended 9 columns with mismatched column order and extra index cell instead of the 8 columns in observation_thead_html",
-        "Action button btn_inject_pulse (Inject Concentrated Tracer Pulse) was unhandled in canvas_js",
-        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js",
-        "Transient injected tracer particles lacked lifecycle recycling/culling on conduit exit"
-      ]
-    },
-    {
-      "sim_id": "u02161",
-      "status": "ERROR",
-      "time": "16:16:17",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02147",
-      "status": "ERROR",
-      "time": "16:16:52",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02172",
-      "status": "ERROR",
-      "time": "16:17:03",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u02171",
       "status": "ERROR",
@@ -368,6 +322,53 @@
       "sim_id": "u02207",
       "status": "PASS",
       "time": "16:27:07",
+      "issues": []
+    },
+    {
+      "sim_id": "u02211",
+      "status": "FIXED",
+      "time": "16:27:37",
+      "issues": [
+        "Added live readout DOM synchronization for 'val_reading_*' element IDs used in Section 6 live readings."
+      ]
+    },
+    {
+      "sim_id": "u02208",
+      "status": "FIXED",
+      "time": "16:27:41",
+      "issues": [
+        "Corrupted unit MathML ('unit s/s tep') in principles_list_html, readouts_html, and observation_thead_html caused by LaTeX fraction parsing of 'units/step'",
+        "Misaligned observation table rows caused by inserting 7 <td> cells into 6 <th> columns due to prepended recordCount",
+        "Unwired action button btn_cycle_signal_phase ('Force Immediate Signal Phase Switch') in canvas_js",
+        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) for vehicle counts and simulation clock frequency"
+      ]
+    },
+    {
+      "sim_id": "u02215",
+      "status": "FIXED",
+      "time": "16:27:58",
+      "issues": [
+        "Observation table columns in btnRecord (11 columns) were completely misaligned with the 8 columns defined in observation_thead_html",
+        "Missing wiring for Action button #btn_drain_tank2 (Drain Weighing Tank to Reservoir)",
+        "Missing event listeners for stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down)",
+        "Turbine flow rate Q_turb calculation in render() evaluated to +0.80% error instead of matching the documented baseline +0.40% error"
+      ]
+    },
+    {
+      "sim_id": "u02210",
+      "status": "FIXED",
+      "time": "16:27:59",
+      "issues": [
+        "Unwired action buttons: 'btn_toggle_model' (switching MobileNetV2 and VGG19 backbones) and 'btn_train_epoch' (stepping epoch optimization) had no event listeners wired in canvas_js",
+        "Misaligned observation table: recorded rows contained 9 columns with shifted data, placing learning rate and accuracy into loss columns and omitting the model architecture column defined in the 8 thead columns",
+        "Principles summary typo: state of gradient update multiplier during layer freezing was incorrectly written as m_l = 1 instead of m_l = 0",
+        "Missing visual indicator on canvas when switching backbone architecture between MobileNetV2 and VGG19"
+      ]
+    },
+    {
+      "sim_id": "u02213",
+      "status": "PASS",
+      "time": "16:28:01",
       "issues": []
     }
   ],
@@ -2103,6 +2104,11 @@
     "u02204",
     "u02205",
     "u02206",
-    "u02207"
+    "u02207",
+    "u02208",
+    "u02210",
+    "u02211",
+    "u02213",
+    "u02215"
   ]
 }
