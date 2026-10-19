@@ -1,54 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:47:34",
-  "completed_count": 1412,
-  "fixed_count": 1308,
-  "latest_sim_id": "u01788",
+  "updated_at": "2026-10-19 10:49:08",
+  "completed_count": 1417,
+  "fixed_count": 1312,
+  "latest_sim_id": "u01794",
   "recent_events": [
-    {
-      "sim_id": "u01737",
-      "status": "ERROR",
-      "time": "10:36:44",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01745",
-      "status": "ERROR",
-      "time": "10:37:14",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01751",
-      "status": "FIXED",
-      "time": "10:37:25",
-      "issues": [
-        "Leader line badge count (5 badges) was misaligned with the 4 legend pills and apparatus elements; badge 5 was orphaned and badge 2/4 targets were transposed.",
-        "Control identifiers in CONTROL_DEFS and DOM readers were mismatched with HTML stepper IDs (control_mutation_rate, control_mutation_magnitude, control_beneficial_bias, control_nutrient_feed).",
-        "Action buttons (btn_stress_pulse, btn_nutrient_pulse) and stepper up/down buttons were missing active event bindings to mutate simulation parameters."
-      ]
-    },
-    {
-      "sim_id": "u01748",
-      "status": "FIXED",
-      "time": "10:37:28",
-      "issues": [
-        "Raw math italic '<math><mrow><mi>a</mi></mrow></math>' erroneously replaced the English indefinite article 'a' in principles_summary_html, procedure_section_html, principles_list_html, and validation_html",
-        "Action button #btn_cycle_mode ('Cycle Project Mode') was defined in HTML but unwired in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js",
-        "Observation table recording lacked a lower-bound guard for developer headcount (Math.max(1, ...)) and used inconsistent precision for project size",
-        "Canvas chassis modules lacked 3D elevation shadow and high-contrast silhouette against the dark #090d16 canvas"
-      ]
-    },
-    {
-      "sim_id": "u01753",
-      "status": "PASS",
-      "time": "10:38:36",
-      "issues": []
-    },
     {
       "sim_id": "u01752",
       "status": "PASS",
@@ -356,6 +312,53 @@
       "sim_id": "u01788",
       "status": "PASS",
       "time": "10:47:34",
+      "issues": []
+    },
+    {
+      "sim_id": "u01791",
+      "status": "FIXED",
+      "time": "10:49:08",
+      "issues": [
+        "Corrected malformed MathML unit fraction 'cycle s/i mage' to 'cycles/image' in principles list, live readouts, and observation table header",
+        "Corrected unspaced 'complexintensity' MathML identifier to 'complex intensity' in principles list"
+      ]
+    },
+    {
+      "sim_id": "u01790",
+      "status": "FIXED",
+      "time": "10:49:08",
+      "issues": [
+        "Unwired auto-tune harmonic action buttons (btn_tune_fundamental, btn_tune_third_harmonic, btn_tune_fifth_harmonic).",
+        "Unwired stepper increment and decrement buttons (.stepper-btn).",
+        "Observation table column mismatch: recorded rows had only 8 columns with mismatched data while table header defined 9 columns (harmonic order, fundamental frequency, input peak voltage, cn, vout, experimental ratio cn/c1, theoretical ratio 1/n, relative error)."
+      ]
+    },
+    {
+      "sim_id": "u01787",
+      "status": "FIXED",
+      "time": "10:49:08",
+      "issues": [
+        "Misaligned observation table: canvas_js injected an extra trial number column (obsCount) that created 13 td cells under 12 thead th headers, shifting all physics columns out of alignment",
+        "Unwired action button: #btn_start_transition ('Energize Heater & Run Steady-State') had no event listener wired in canvas_js",
+        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were not hooked to the control_voltage input"
+      ]
+    },
+    {
+      "sim_id": "u01793",
+      "status": "FIXED",
+      "time": "10:49:08",
+      "issues": [
+        "Observation table column mismatch: btnRecord appended 9 table cells into a 7-column header table, shifting data columns out of alignment with the observation table specification",
+        "Unwired action button: #btn_autoscale_timebase lacked an event listener to calibrate and visually isolate trace vertical offsets on the oscilloscope",
+        "Unwired stepper controls: .stepper-btn increment and decrement buttons lacked click event listeners",
+        "Apparatus leader badge numbering mismatch: Badges 2-5 did not match legend pills (Badge 2 pointed to DSO instead of Miller Integrator IC2, Badge 3 pointed to Power Supply instead of Diode Shaping stage, Badge 4 pointed to breadboard capacitor instead of DSO, Badge 5 pointed to diode network instead of Power Supply)",
+        "Low-contrast patch cable strokes: Patch cables used dim tones (#0284c7, #059669) against dark background; updated to vibrant channel-aligned colors (#facc15, #38bdf8, #34d399)"
+      ]
+    },
+    {
+      "sim_id": "u01794",
+      "status": "PASS",
+      "time": "10:49:08",
       "issues": []
     }
   ],
@@ -1771,6 +1774,11 @@
     "u01784",
     "u01785",
     "u01786",
-    "u01788"
+    "u01787",
+    "u01788",
+    "u01790",
+    "u01791",
+    "u01793",
+    "u01794"
   ]
 }
