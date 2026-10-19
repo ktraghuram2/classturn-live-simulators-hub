@@ -1,73 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:25:09",
-  "completed_count": 1722,
-  "fixed_count": 1551,
-  "latest_sim_id": "u02192",
+  "updated_at": "2026-10-19 16:26:23",
+  "completed_count": 1727,
+  "fixed_count": 1554,
+  "latest_sim_id": "u02202",
   "recent_events": [
-    {
-      "sim_id": "u02152",
-      "status": "FIXED",
-      "time": "16:13:38",
-      "issues": [
-        "Observation table columns in canvas_js were misaligned with observation_thead_html (appended 9 columns with misplaced tLoss and protocolStep instead of the 8 defined columns starting with mouseAge)",
-        "Unwired action buttons (#btn_advance_step and #btn_excise_organs) in canvas_js",
-        "Unwired stepper increment/decrement buttons (.stepper-btn) and experiment preset dropdown (#experimentSelect)"
-      ]
-    },
-    {
-      "sim_id": "u02148",
-      "status": "ERROR",
-      "time": "16:13:43",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02157",
-      "status": "FIXED",
-      "time": "16:13:43",
-      "issues": [
-        "Unwired action button #btn_dispatch_event ('Dispatch Event Trigger')",
-        "Unwired stepper up/down buttons (.stepper-btn-up and .stepper-btn-down)",
-        "Observation table columns count and order misaligned with observation_thead_html (8 columns recorded instead of the defined 6 columns)"
-      ]
-    },
-    {
-      "sim_id": "u02155",
-      "status": "PASS",
-      "time": "16:13:50",
-      "issues": []
-    },
-    {
-      "sim_id": "u02154",
-      "status": "FIXED",
-      "time": "16:13:58",
-      "issues": [
-        "canvas_js was truncated at line 100 with incomplete updateTelemetry function",
-        "Missing action button event listeners for btn_mate_cross and btn_tetrad_dissect",
-        "Missing stepper up/down button event listeners for control_p1_dose, control_p2_dose, and control_sample_size",
-        "Missing observation table row recording handler for btnRecord",
-        "Missing complete 2D/3D canvas rendering engine for Strains Box, Mating Site, and Punnett Square Tool with Style 2 leader lines"
-      ]
-    },
-    {
-      "sim_id": "u02156",
-      "status": "PASS",
-      "time": "16:14:02",
-      "issues": []
-    },
-    {
-      "sim_id": "u02159",
-      "status": "FIXED",
-      "time": "16:14:25",
-      "issues": [
-        "Unwired action button: canvas_js searched for 'btnRecord' instead of the slot button ID 'btn_evaluate_stability'.",
-        "Misaligned observation table columns: canvas_js generated 8 columns including trial count, mismatching the 7-column schema in observation_thead_html.",
-        "Inverted badge pointers: Badge 3 pointed to intermediate pinned support fixture while Legend Pill 3 is Internal Release Hinge Coupler; Badge 5 pointed to hinge coupler while Legend Pill 5 is Pinned Support Fixture.",
-        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn) had no click listeners attached in canvas_js."
-      ]
-    },
     {
       "sim_id": "u02158",
       "status": "PASS",
@@ -354,6 +291,68 @@
         "Canvas leader line badge numbering was out of sync with Section 2 legend pills (e.g. scale was badge 7 instead of 1, flask was badge 1 instead of 3)",
         "Observation table record function inserted 10 columns including an extraneous catalyst drops cell, misaligning rows with the 9-column header",
         "Action buttons (btn_mix_reactants, btn_start_reflux, btn_quench_column) and stepper up/down controls were unwired"
+      ]
+    },
+    {
+      "sim_id": "u02201",
+      "status": "FIXED",
+      "time": "16:25:18",
+      "issues": [
+        "Unwired action buttons: btn_toggle_conduction and btn_single_step_commutation lacked click event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were not wired to update input values.",
+        "Observation table column mismatch: btnRecord generated 9 table columns while observation_thead_html specifies 6 columns."
+      ]
+    },
+    {
+      "sim_id": "u02191",
+      "status": "PASS",
+      "time": "16:25:21",
+      "issues": []
+    },
+    {
+      "sim_id": "u02199",
+      "status": "FIXED",
+      "time": "16:25:33",
+      "issues": [
+        "Action buttons #btn_add_solute and #btn_toggle_stirrer, as well as stepper up/down controls, were unwired in canvas_js.",
+        "Observation table rows inserted 8 td cells (including rowCount) against 7 thead th headers, misaligning columns.",
+        "Simulation state started at final equilibrium temperature instead of initial baseline temperature prior to solute addition.",
+        "Procedure Step 7 used lowercase delta_T and Step 8 used raw text q_cal and delta_H_soln instead of MathML symbols.",
+        "Malformed MathML unit kJ/mol in readouts_html and observation_thead_html rendered as k*(J/m)*o*l.",
+        "Validation limitation contained malformed lowercase delta_V notation instead of uppercase Delta V."
+      ]
+    },
+    {
+      "sim_id": "u02195",
+      "status": "ERROR",
+      "time": "16:25:55",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02203",
+      "status": "PASS",
+      "time": "16:26:10",
+      "issues": []
+    },
+    {
+      "sim_id": "u02194",
+      "status": "ERROR",
+      "time": "16:26:20",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02202",
+      "status": "FIXED",
+      "time": "16:26:22",
+      "issues": [
+        "Fixed broken MathML formatting for 'van 't Hoff' in aim_html and principles_summary_html",
+        "Corrected malformed MathML unit fractions and spelled-out 'dimensionless' in principles_list_html",
+        "Cleaned up data-unit attributes in readouts_html containing nested HTML span tags and unrendered MathML",
+        "Corrected observation table header units in observation_thead_html for solubility and dimensionless terms"
       ]
     }
   ],
@@ -2078,7 +2077,12 @@
     "u02188",
     "u02189",
     "u02190",
+    "u02191",
     "u02192",
-    "u02200"
+    "u02199",
+    "u02200",
+    "u02201",
+    "u02202",
+    "u02203"
   ]
 }
