@@ -1,62 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:12:52",
-  "completed_count": 997,
-  "fixed_count": 978,
-  "latest_sim_id": "u01204",
+  "updated_at": "2026-10-19 08:13:52",
+  "completed_count": 1002,
+  "fixed_count": 983,
+  "latest_sim_id": "u01216",
   "recent_events": [
-    {
-      "sim_id": "u01158",
-      "status": "FIXED",
-      "time": "08:04:53",
-      "issues": [
-        "Inaccurate dynamic balancing physics: Plane A balancing mass calculation erroneously used couple moments about the origin (plane 2) instead of moments about Plane B, and Plane B mass calculation contained an erroneous 0.5 attenuation factor.",
-        "Unwired readout DOM updates: computePhysics() targeted non-existent element IDs ('rd_*') rather than actual readout value elements ('val_rd_*'), failing to update telemetry on user interaction.",
-        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners and did not modify input values.",
-        "Unwired action buttons: 'btn_auto_balance' and 'btn_toggle_rotation' had no event listeners to toggle counterweight balancing or engage/disengage motor rotation.",
-        "Discrepancy in readouts_html default values: Initial static display showed buggy mass values (12.50 kg and 17.50 kg) rather than true equilibrium counterweights (45.00 kg and 35.00 kg)."
-      ]
-    },
-    {
-      "sim_id": "u01165",
-      "status": "FIXED",
-      "time": "08:05:32",
-      "issues": [
-        "Observation table record logic injected 9 columns instead of aligning with the 7 canonical columns defined in observation_thead_html",
-        "Action button #btn_generate_channel ('Generate New Channel Realization') was unwired in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01167",
-      "status": "PASS",
-      "time": "08:05:32",
-      "issues": []
-    },
-    {
-      "sim_id": "u01162",
-      "status": "FIXED",
-      "time": "08:05:32",
-      "issues": [
-        "Observation table record button (btnRecord) generated 9 misordered columns that did not match the 8 defined observation_thead headers (Simulation Time was placed 4th instead of 1st, and an extra 9th routed channel column was appended).",
-        "Unwired action buttons (#btn_run_testbench and #btn_toggle_select) with missing click handlers.",
-        "Unwired stepper controls (.stepper-btn-up, .stepper-btn-down) lacking click listeners to increment/decrement targeted numerical inputs."
-      ]
-    },
-    {
-      "sim_id": "u01155",
-      "status": "FIXED",
-      "time": "08:05:32",
-      "issues": [
-        "Fixed raw LaTeX 't_\\exp' in Elapsed Discharge Time live readout to valid MathML",
-        "Fixed raw LaTeX '\\exp' and unit formatting in observation table column header",
-        "Corrected observation table row cell count from 9 mismatched cells to 8 cells matching observation_thead_html",
-        "Wired action control buttons ('btn_open_orifice', 'btn_fill_tank', 'btn_pause_discharge') to simulation logic",
-        "Wired stepper increment and decrement buttons ('.stepper-btn-up', '.stepper-btn-down') to numeric inputs",
-        "Wired experiment dropdown ('select_experiment') to switch active tank geometry",
-        "Added automatic observation recording when fluid head reaches target level H2"
-      ]
-    },
     {
       "sim_id": "u01168",
       "status": "FIXED",
@@ -380,6 +328,57 @@
         "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) had data-target attributes but were not wired up to any click handlers in canvas_js.",
         "Activity selection dropdown (System 1, System 2, System 3) was not wired up to the governing equations f(x, y, z) and g(x, y, z).",
         "Live telemetry readouts were statically pinned to node 1 instead of dynamically updating to reflect the currentNode swept by the playhead."
+      ]
+    },
+    {
+      "sim_id": "u01180",
+      "status": "FIXED",
+      "time": "08:12:56",
+      "issues": [
+        "Misaligned observation table row insertion in canvas_js: btnRecord inserted a serial number and unformatted columns that did not match the 5 table header columns (Elapsed Time, Sample Temperature, Temperature Excess, Physical Phase, Instantaneous Cooling Rate).",
+        "Unwired interactive controls in canvas_js: stepper buttons (.stepper-btn-up and .stepper-btn-down) and action buttons (btn_stir_sample and btn_toggle_air_jacket) had no event listeners attached.",
+        "Missing visual rendering and physics response for the outer air jacket action in canvas_js.",
+        "Malformed derivative MathML expression in principles_summary_html: rendered as d(T/d)t instead of dT/dt."
+      ]
+    },
+    {
+      "sim_id": "u01205",
+      "status": "FIXED",
+      "time": "08:12:58",
+      "issues": [
+        "Observation table row generation produced only 5 columns instead of matching the 6-column thead schema (missing Step Index and separating Euler vs RK4 approximations).",
+        "Action buttons 'btn_toggle_method' and 'btn_overlay_exact' were declared in actions_html but left unwired in canvas_js.",
+        "Stepper arrow buttons (.stepper-btn-up / .stepper-btn-down) lacked interactive click handlers in canvas_js.",
+        "ODE solver only supported RK4 without capability to toggle to Euler's method or toggle the analytical curve overlay."
+      ]
+    },
+    {
+      "sim_id": "u01215",
+      "status": "FIXED",
+      "time": "08:13:48",
+      "issues": [
+        "Wired unwired action button #btn_invert_test to execute dual XOR decryption loopback and log verified state",
+        "Added event handling for stepper up/down buttons (.stepper-btn) to increment and decrement inputs smoothly",
+        "Wired experiment mode selection dropdown (#experimentSelect) to toggle between single-step verification and key cyclicity analysis",
+        "Enhanced XOR logic gate symbol outline stroke contrast within 74HC86 DIP packages for crisp visibility on dark PCB background"
+      ]
+    },
+    {
+      "sim_id": "u01214",
+      "status": "FIXED",
+      "time": "08:13:49",
+      "issues": [
+        "Unwired action buttons (#btn_generate_random_key and #btn_verify_perfect_secrecy)",
+        "Unwired stepper increment/decrement buttons (.stepper-btn)"
+      ]
+    },
+    {
+      "sim_id": "u01216",
+      "status": "FIXED",
+      "time": "08:13:51",
+      "issues": [
+        "Unwired action buttons: connected btn_scan_all_frames (automated frame & coordinate scanner) and btn_focus_longest_orf (direct focus on canonical Frame +2, 36 bp ORF starting at bp 26)",
+        "Observation table column mismatch: removed spurious scan cursor position column from observation row to correctly match the 6 columns in observation_thead_html (Reading Frame, Start Position, Stop Position, Modular Check, ORF Length, Peptide Length)"
       ]
     }
   ],
@@ -1360,6 +1359,7 @@
     "u01176",
     "u01177",
     "u01179",
+    "u01180",
     "u01181",
     "u01182",
     "u01183",
@@ -1380,6 +1380,10 @@
     "u01202",
     "u01203",
     "u01204",
-    "u01206"
+    "u01205",
+    "u01206",
+    "u01214",
+    "u01215",
+    "u01216"
   ]
 }
