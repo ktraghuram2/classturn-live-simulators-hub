@@ -1,84 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 19:02:41",
-  "completed_count": 2068,
-  "fixed_count": 1854,
-  "latest_sim_id": "u01166",
+  "updated_at": "2026-10-19 19:04:22",
+  "completed_count": 2073,
+  "fixed_count": 1858,
+  "latest_sim_id": "u01749",
   "recent_events": [
-    {
-      "sim_id": "u02253",
-      "status": "FIXED",
-      "time": "18:42:04",
-      "issues": [
-        "Telemetry readout elements targeted non-existent IDs instead of the value spans (val_read_peak_temp, val_read_cooling_time, val_read_grain_size, val_read_vickers_hardness)",
-        "Unwired action buttons: Automated Transverse Zone Traverse (#btn_auto_scan) and Toggle Fe-C Phase Diagram (#btn_toggle_fec) lacked click event listeners",
-        "Stepper increment/decrement buttons (.stepper-btn) were not wired to update numeric inputs and trigger sync events",
-        "Observation table record generation wrote 7 mismatched columns including heat input and carbon equivalent instead of the 6 columns defined in observation_thead_html (Transverse Distance, Peak Temperature, Identified Weld Zone, Cooling Time, Grain Diameter, Microhardness)"
-      ]
-    },
-    {
-      "sim_id": "u02241",
-      "status": "FIXED",
-      "time": "18:42:09",
-      "issues": [
-        "Fixed target comparison index equation in principles summary, principles list, procedure step 4, and observation thead from off-by-one (i - 1 - n) to correct relation (i - n).",
-        "Converted unformatted text index expression '(i - 1 - n)' in procedure Step 4 to proper MathML.",
-        "Wired external control panel action buttons (btn_start_session, btn_match_yes, btn_match_no) to active simulation event handlers with visual tactile press feedback.",
-        "Wired stepper up/down buttons to synchronize with control_n value and dispatch change events.",
-        "Added live observation table logging to dynamically record trial number, presented stimulus, target stimulus, participant decision, outcome classification, cumulative score, and accuracy percentage upon each trial completion.",
-        "Reset observation table rows upon task reset."
-      ]
-    },
-    {
-      "sim_id": "u02249",
-      "status": "FIXED",
-      "time": "18:42:14",
-      "issues": [
-        "Observation table columns in canvas_js were misaligned (7 generic telemetry values versus 6 designated columns in observation_thead_html).",
-        "Action button 'btn_outflow_disturbance' was unwired in canvas_js.",
-        "Experiment select dropdown and stepper up/down buttons lacked explicit event listeners in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u02263",
-      "status": "FIXED",
-      "time": "18:42:23",
-      "issues": [
-        "Raw LaTeX strings |G_{h0}(jω)|_{dB} and |G_{h1}(jω)|_{dB} in readouts_html converted to valid inline MathML equations",
-        "Action buttons (Switch Reconstruction Display and Overlay Padé [1/1] Approximation) and stepper step buttons were unwired in canvas_js",
-        "Added live Padé [1/1] approximation overlay curve rendering on the real-time Bode analyzer display"
-      ]
-    },
-    {
-      "sim_id": "u02282",
-      "status": "FIXED",
-      "time": "18:42:34",
-      "issues": [
-        "Observation table tr data row had 9 td elements inserting wire diameter, coil diameter, and turns count, misaligning with the 6 thead columns (Trial, Applied Mass, Applied Compressive Load, Axial Deflection, Spring Stiffness, Elastic Strain Energy).",
-        "Action buttons #btn_tare_zero (Tare Load Cell & Zero Dial Gauge) and #btn_cycle_load (Automated Loading-Unloading Cycle) were unwired.",
-        "Stepper control increment and decrement buttons (.stepper-btn) were not wired to update inputs and trigger simulation updates."
-      ]
-    },
-    {
-      "sim_id": "u02286",
-      "status": "FIXED",
-      "time": "18:42:56",
-      "issues": [
-        "Misaligned observation table columns: observation logging appended 9 columns (including raw index and extra velocity/pinch parameters) whereas observation_thead_html defines exactly 6 columns: Rotation Speed, Outer Step Angle, Inner Step Angle, Elevation Angle, Teleport Range, and Index of Difficulty.",
-        "Unwired action buttons: 'btn_trigger_teleport' (Trigger Instant Teleportation Jump) and 'btn_toggle_hand_mesh' (Toggle Hand Skeleton Wireframe) had no click listeners attached in canvas_js.",
-        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners in canvas_js to adjust stepper values."
-      ]
-    },
-    {
-      "sim_id": "u02283",
-      "status": "FIXED",
-      "time": "18:43:05",
-      "issues": [
-        "Misaligned observation table columns: table header expects [Algorithm Name, Input Size, Complexity Class, Operation Count, Execution Time, Growth Ratio], but the row generator in canvas_js omitted Algorithm Name and placed throughput into the execution time column.",
-        "Unwired action buttons: 'btn_run_benchmark' and 'btn_toggle_log_scale' in actions_html were not wired to event handlers.",
-        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' buttons were not connected to increment/decrement input values."
-      ]
-    },
     {
       "sim_id": "u02285",
       "status": "FIXED",
@@ -392,6 +318,74 @@
         "Telemetry DOM lookups queried container data-ids instead of val_reading_* span IDs, causing live readout text updates to fail silently",
         "Observation table columns were misaligned with observation_thead_html (7 columns vs 8 required columns, missing pattern index and pass verification flag)",
         "Action buttons (btn_run_testbench, btn_synthesize_gates) and interactive stepper up/down buttons (.stepper-btn) were unwired"
+      ]
+    },
+    {
+      "sim_id": "u01395",
+      "status": "FIXED",
+      "time": "19:03:01",
+      "issues": [
+        "Raw LaTeX symbol E_{\\exp} in reading_observer_exposure heading converted to standard MathML",
+        "Malformed MathML fraction bit s/b yte in unit display for Shannon entropy rectified to bits/byte in readouts_html and observation_thead_html",
+        "Raw LaTeX escape \\exp in observation_thead_html column header cleaned to exp",
+        "Observation table column mismatch: 8 data cells generated in tbody vs 6 column headers in thead with misaligned columns corrected",
+        "Unwired action buttons (btn_send_query, btn_next_stage, btn_inspect_packet) and stepper up/down controls wired to active simulation state",
+        "Live telemetry readouts dynamically bound to control input events"
+      ]
+    },
+    {
+      "sim_id": "u01587",
+      "status": "FIXED",
+      "time": "19:03:06",
+      "issues": [
+        "Raw LaTeX/plain text chemical notations in principles_summary_html converted to semantic HTML subscripts/superscripts",
+        "Observation table columns were misaligned: Applied Potential and Deposition Current were swapped in dynamically appended rows",
+        "Stepper increment/decrement buttons (.stepper-btn) were unwired and did not update deposition time",
+        "Action buttons (btn_start_amperometry and btn_interrogate_photocurrent) were unwired in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01458",
+      "status": "ERROR",
+      "time": "19:03:07",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01636",
+      "status": "ERROR",
+      "time": "19:03:37",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01685",
+      "status": "PASS",
+      "time": "19:04:05",
+      "issues": []
+    },
+    {
+      "sim_id": "u01718",
+      "status": "FIXED",
+      "time": "19:04:11",
+      "issues": [
+        "Numbered leader badges mismatched with apparatus legend pills (Petri plates was labeled 1 instead of 3, Spreader was 2 instead of 4, Water bath was 3 instead of 1, and Micropipette was 4 instead of 2)",
+        "Telemetry readout DOM selectors queried container item IDs rather than value IDs (val_reading_*), failing to update displayed readout values",
+        "Observation table record button inserted 7 columns with extra time and lawn columns into a 5-column table, causing header-data misalignment",
+        "Action buttons (Pour Agar Wedges & Diffuse, Spread Inoculum & Incubate) and stepper increment/decrement buttons were unhandled in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01749",
+      "status": "FIXED",
+      "time": "19:04:22",
+      "issues": [
+        "Observation table row generation was missing the 'Transaction Type' column, producing 5 cells for a 6-column table and causing column misalignment",
+        "Primary action button 'btn_execute_transaction' ('Sign & Confirm Transaction') was not wired to executeTransaction",
+        "Action buttons 'btn_generate_seed' and 'btn_verify_seed' were unhandled",
+        "Stepper control buttons (.stepper-btn) and input change listeners were not wired to update transaction parameters"
       ]
     }
   ],
@@ -1561,6 +1555,7 @@
     "u01389",
     "u01393",
     "u01394",
+    "u01395",
     "u01396",
     "u01397",
     "u01398",
@@ -1736,6 +1731,7 @@
     "u01584",
     "u01585",
     "u01586",
+    "u01587",
     "u01588",
     "u01589",
     "u01590",
@@ -1827,6 +1823,7 @@
     "u01682",
     "u01683",
     "u01684",
+    "u01685",
     "u01686",
     "u01688",
     "u01690",
@@ -1855,6 +1852,7 @@
     "u01715",
     "u01716",
     "u01717",
+    "u01718",
     "u01719",
     "u01720",
     "u01721",
@@ -1885,6 +1883,7 @@
     "u01746",
     "u01747",
     "u01748",
+    "u01749",
     "u01750",
     "u01751",
     "u01752",
