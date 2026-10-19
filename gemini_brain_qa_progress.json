@@ -1,52 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:46:16",
-  "completed_count": 1557,
-  "fixed_count": 1423,
-  "latest_sim_id": "u01974",
+  "updated_at": "2026-10-19 14:47:44",
+  "completed_count": 1562,
+  "fixed_count": 1427,
+  "latest_sim_id": "u01980",
   "recent_events": [
-    {
-      "sim_id": "u01925",
-      "status": "FIXED",
-      "time": "14:33:19",
-      "issues": [
-        "Unwired action button id='btn_run_scratch' and missing event handlers for stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down)",
-        "Observation table column mismatch: table header has 6 columns (Fn, L, Ft, μ, dp, CPR) but observation recording inserted 9 misaligned columns with extraneous fields and swapped column order",
-        "Malformed unit MathML in steppers_html rendering scratching velocity as m(m/m)in instead of mm/min"
-      ]
-    },
-    {
-      "sim_id": "u01923",
-      "status": "ERROR",
-      "time": "14:33:35",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01931",
-      "status": "PASS",
-      "time": "14:33:45",
-      "issues": []
-    },
-    {
-      "sim_id": "u01936",
-      "status": "FIXED",
-      "time": "14:34:17",
-      "issues": [
-        "Observation table columns in canvas_js (9 td cells including unindexed count and collision rate) were misaligned with the 7 table headers defined in observation_thead_html",
-        "Action button #btn_thermalize ('Equilibrate Kinetic Velocities') was unwired in canvas_js",
-        "Stepper control increment/decrement buttons (.stepper-btn) were unwired for temperature, particle count, molecular mass, and chamber width"
-      ]
-    },
-    {
-      "sim_id": "u01933",
-      "status": "FIXED",
-      "time": "14:34:19",
-      "issues": [
-        "Raw unformatted LaTeX tokens (z_t^* and z_{max}) present in principles overview prose replaced with valid semantic MathML elements."
-      ]
-    },
     {
       "sim_id": "u01932",
       "status": "ERROR",
@@ -377,6 +335,54 @@
       "status": "PASS",
       "time": "14:46:16",
       "issues": []
+    },
+    {
+      "sim_id": "u01973",
+      "status": "FIXED",
+      "time": "14:46:20",
+      "issues": [
+        "Fixed misaligned observation table columns: btnRecord injected 12 <td> values into a 9-column table, displacing readings and omitting critical F-value.",
+        "Wired up the 'Generate Sample Realization' action button (btn_resample_groups) to draw fresh random Gaussian sample realizations via Box-Muller transform.",
+        "Wired up stepper up/down buttons (.stepper-btn) so parameter inputs update smoothly upon user interaction.",
+        "Rectified garbled MathML equation in principles_summary_html where variance ratio was rendered as MS*(B/M)*SW instead of MSB/MSW."
+      ]
+    },
+    {
+      "sim_id": "u01970",
+      "status": "FIXED",
+      "time": "14:46:29",
+      "issues": [
+        "Unwired action buttons: Wired 'Validate Domain Model' (btn_validate_model) to trigger domain model recomputation and 'Auto-Sequence Timeline' (btn_align_timeline) to reset timeline sequence blocks to default chronological order and update controls.",
+        "Unwired stepper buttons: Wired '.stepper-btn' (▲/▼) click listeners to increment and decrement target inputs (control_step, control_filter, control_cohesion) respecting min/max bounds and dispatching input events."
+      ]
+    },
+    {
+      "sim_id": "u01975",
+      "status": "FIXED",
+      "time": "14:46:51",
+      "issues": [
+        "Action buttons ('Tap Lower', 'Tap Raise', 'Auto-Regulate') in actions_html were completely unhandled in canvas_js.",
+        "Stepper buttons (▲/▼) were unwired for adjusting the incomer primary voltage input.",
+        "Observation table record handler injected 6 table cells including an undeclared trial index, misaligning with the 5 columns declared in observation_thead_html.",
+        "Incomer voltage input listener automatically adjusted the OLTC target tap position, preventing manual tap adjustment as described in the lab procedure.",
+        "Experiment scenario options dropdown ('Under-Voltage Correction' and 'Over-Voltage Correction') was not wired to update preset values."
+      ]
+    },
+    {
+      "sim_id": "u01978",
+      "status": "PASS",
+      "time": "14:47:15",
+      "issues": []
+    },
+    {
+      "sim_id": "u01980",
+      "status": "FIXED",
+      "time": "14:47:44",
+      "issues": [
+        "Raw unescaped LaTeX 'dB\\_{Loss}' found in readouts_html and observation_thead_html MathML instead of clean formatted MathML",
+        "Action button 'btn_toggle_laser' was present in actions_html but not wired to toggle laser state in canvas_js",
+        "Stepper increment and decrement buttons were not wired to update target input values and trigger input events in canvas_js"
+      ]
     }
   ],
   "completed_ids": [
@@ -1935,7 +1941,12 @@
     "u01966",
     "u01968",
     "u01969",
+    "u01970",
     "u01972",
-    "u01974"
+    "u01973",
+    "u01974",
+    "u01975",
+    "u01978",
+    "u01980"
   ]
 }
