@@ -1,105 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:38:34",
-  "completed_count": 1262,
-  "fixed_count": 1196,
-  "latest_sim_id": "u01578",
+  "updated_at": "2026-10-19 09:43:17",
+  "completed_count": 1267,
+  "fixed_count": 1200,
+  "latest_sim_id": "u01585",
   "recent_events": [
-    {
-      "sim_id": "u01538",
-      "status": "ERROR",
-      "time": "09:23:50",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01539",
-      "status": "ERROR",
-      "time": "09:23:57",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01541",
-      "status": "FIXED",
-      "time": "09:24:20",
-      "issues": [
-        "Misaligned observation table columns: btnRecord emitted 10 columns while observation_thead_html defines 6 columns (Applied Dead Weight, Spring Balance Reading, Net Brake Load, Shaft Speed, Braking Torque, Brake Power).",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons lacked click event listeners to increment/decrement parameter inputs.",
-        "Unwired action button: #btn_circulate_cooling_water had no event listener to toggle cooling water status."
-      ]
-    },
-    {
-      "sim_id": "u01543",
-      "status": "FIXED",
-      "time": "09:24:38",
-      "issues": [
-        "Unwired action buttons: 'btn_request_cs' (Broadcast CS Request) and 'btn_release_cs' (Release Critical Section) lacked event listeners in canvas_js.",
-        "Unwired stepper buttons: '.stepper-btn' controls for participant count, speed, and candidate node had no click handlers.",
-        "Misaligned observation table columns: 'btnRecord' logged totalMessages into the Theoretical Messages column and omitted the theoretical invariant M = 3K, shifting and misaligning all remaining columns.",
-        "Missing candidate quorum visualization: Grid nodes did not visually highlight the row-column quorum belonging to candidate process P_req as specified in Procedure Step 2."
-      ]
-    },
-    {
-      "sim_id": "u01544",
-      "status": "FIXED",
-      "time": "09:24:58",
-      "issues": [
-        "Unwired stepper buttons: Stepper up/down buttons had no click event handlers to increment or decrement inputs.",
-        "Unwired action buttons: 'Toggle Radiation Optical Shutter' (btn_toggle_shutter) and 'Auto-Tune Thermal Equilibrium' (btn_autotune_pid) had no event listeners.",
-        "Telemetry target mismatch: canvas_js looked for reading_emissive_flux, etc. instead of the actual value spans val_reading_emissive_flux, etc., causing live readouts not to update.",
-        "Misaligned observation table columns: tr.innerHTML generated 7 columns with an unaligned index column and peak wavelength, conflicting with the 6 header columns in observation_thead_html (T, T^4, epsilon, E, P, P_net)."
-      ]
-    },
-    {
-      "sim_id": "u01542",
-      "status": "ERROR",
-      "time": "09:25:23",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01545",
-      "status": "FIXED",
-      "time": "09:25:56",
-      "issues": [
-        "Observation table record button logged 7 misaligned columns instead of the 8 columns defined in the table header, prepending an unheaded trial index and omitting the peak antinodal amplitude column.",
-        "Unwired action buttons: 'btn_excite_resonance' and 'btn_scatter_powder' lacked event listeners in canvas_js.",
-        "Unwired stepper buttons: '.stepper-btn' increment and decrement buttons lacked click event listeners in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01546",
-      "status": "PASS",
-      "time": "09:26:02",
-      "issues": []
-    },
-    {
-      "sim_id": "u01549",
-      "status": "PASS",
-      "time": "09:27:33",
-      "issues": []
-    },
-    {
-      "sim_id": "u01554",
-      "status": "PASS",
-      "time": "09:27:33",
-      "issues": []
-    },
-    {
-      "sim_id": "u01550",
-      "status": "FIXED",
-      "time": "09:27:33",
-      "issues": [
-        "Observation table column mismatch: table body row prepended an unheaded recordIndex counter, causing all 9 columns to shift out of alignment with the header, and omitted the final Compensating Current (Theoretical) ΔIcalc column.",
-        "Unwired stepper up/down buttons: .stepper-btn click handlers were missing in canvas_js, preventing parameter adjustments via stepper arrows.",
-        "Unwired interactive action buttons: #toggle_compensation_circuit and #apply_resistance_perturbation buttons were not wired to listeners.",
-        "Circuit state and visuals did not reflect the deactivated supply and compensating source current when switching to Compensated Network mode."
-      ]
-    },
     {
       "sim_id": "u01552",
       "status": "FIXED",
@@ -382,6 +287,103 @@
         "Corrected observation table row formatting in canvas_js to match the 6 columns in observation_thead_html (Aging Time, Applied Load, Diagonal d1, Diagonal d2, Mean Diagonal d, Vickers Hardness HV) instead of misaligned columns with an extraneous index column.",
         "Calibrated peak aging hardness kinetics model in canvas_js from 139 HV to 177 HV to match the peak hardness stated in the principles summary."
       ]
+    },
+    {
+      "sim_id": "u01579",
+      "status": "ERROR",
+      "time": "09:39:45",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01581",
+      "status": "FIXED",
+      "time": "09:39:58",
+      "issues": [
+        "Unwired action button btn_snap_optimum: clicking it did not reset temperature, pH, and inhibitor to the optimum catalytic conditions of the active enzyme.",
+        "Unwired action button btn_toggle_compare: clicking it did not toggle comparative multi-enzyme profile overlay.",
+        "Unwired stepper up/down buttons: clicking stepper buttons failed to increment or decrement numeric input controls.",
+        "Misaligned observation table data rows: btnRecord inserted 9 cells including a row index that shifted all values into the wrong column of the 8-column header.",
+        "Unwired experimentSelect dropdown: switching activities did not configure corresponding study parameters.",
+        "Leader line 1 was a degenerate straight vertical line rather than a canonical Style 2 curvy Bezier S-curve."
+      ]
+    },
+    {
+      "sim_id": "u01583",
+      "status": "ERROR",
+      "time": "09:40:47",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01582",
+      "status": "FIXED",
+      "time": "09:41:15",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01587",
+      "status": "ERROR",
+      "time": "09:41:49",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01588",
+      "status": "FIXED",
+      "time": "09:42:04",
+      "issues": [
+        "Observation table recorded row columns were completely misaligned with the 6 observation table headers (inserted non-existent trial count and volume columns while omitting flow property classification)",
+        "Action button 'btn_discharge_powder' was unwired in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn) were not wired to input controls in canvas_js",
+        "Experiment select dropdown (#experimentSelect) was not synchronized with the powder formulation stepper"
+      ]
+    },
+    {
+      "sim_id": "u01584",
+      "status": "ERROR",
+      "time": "09:42:10",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01586",
+      "status": "ERROR",
+      "time": "09:42:22",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01589",
+      "status": "ERROR",
+      "time": "09:42:43",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01590",
+      "status": "FIXED",
+      "time": "09:43:10",
+      "issues": [
+        "Raw unrendered LaTeX string 'AN_{round}' in readouts_html replaced with clean MathML syntax",
+        "Mismatched badge numbers in canvas_js vs legend_pills_html (Badge 1 was Cylinder instead of Digital Balance, Badge 2 was Rod instead of Cylinder, Badge 3 was Balance instead of Rod)",
+        "Observation table columns in canvas_js misaligned with observation_thead_html (extra unheaded trial # cell and swapped Ga/C columns)",
+        "Action buttons (btn_tamp_compact, btn_sieve_shake) and stepper increment/decrement buttons (.stepper-btn) were unwired in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01585",
+      "status": "PASS",
+      "time": "09:43:17",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1646,6 +1648,11 @@
     "u01576",
     "u01577",
     "u01578",
-    "u01580"
+    "u01580",
+    "u01581",
+    "u01582",
+    "u01585",
+    "u01588",
+    "u01590"
   ]
 }
