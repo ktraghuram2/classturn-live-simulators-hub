@@ -1,78 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:23:36",
-  "completed_count": 1232,
-  "fixed_count": 1172,
-  "latest_sim_id": "u01540",
+  "updated_at": "2026-10-19 09:26:02",
+  "completed_count": 1237,
+  "fixed_count": 1176,
+  "latest_sim_id": "u01546",
   "recent_events": [
-    {
-      "sim_id": "u01500",
-      "status": "FIXED",
-      "time": "09:14:11",
-      "issues": [
-        "Readout DOM IDs in canvas_js (val_gas_ratio, etc.) did not target the actual slot elements (val_rd_gas_ratio, etc.), preventing live telemetry updates.",
-        "Observation table record button (btnRecord) generated 10 mismatched columns while the observation thead defined 8 columns in a different order.",
-        "Action buttons (btn_ignite_torch, btn_auto_neutral_flame, btn_trigger_cutting_jet) and input stepper buttons were unhandled in canvas_js.",
-        "Leader line badges 3, 4, 5 in canvas_js were misaligned with the apparatus legend pills (badge 3 pointed to regulator instead of hoses, badge 5 pointed to torch instead of combustion flame).",
-        "Erroneous Greek letter psi (ψ) MathML entity was used instead of engineering unit 'psi' in apparatus specifications and boundary limitations."
-      ]
-    },
-    {
-      "sim_id": "u01503",
-      "status": "FIXED",
-      "time": "09:14:17",
-      "issues": [
-        "Raw unformatted math formula '= mgp' outside MathML in principles_summary_html enclosed in inline MathML <math><mrow><mi>M</mi><mo>=</mo><mi>m</mi><mi>g</mi><mi>p</mi></mrow></math>",
-        "Apparatus specification unit notation for slotted weight hanger masses changed from italic variable <mi>g</mi> to upright roman unit <mi mathvariant=\"normal\">g</mi>",
-        "Leader line anchor for Badge 4 (Scale) re-targeted to point to the graduated metric scale on the bench rather than the knife-edge support stand"
-      ]
-    },
-    {
-      "sim_id": "u01505",
-      "status": "FIXED",
-      "time": "09:14:26",
-      "issues": [
-        "Unwired stepper up/down adjustment buttons: Button elements with .stepper-btn class lacked click event handlers in canvas_js.",
-        "Misaligned observation table row schema: btnRecord appended 7 cells into observationTbody, while observation_thead_html defines 11 distinct columns (Start X1, Start Y1, End X2, End Y2, Outcode P1, Outcode P2, Slope m, Clipped X1, Clipped Y1, Clipped X2, Clipped Y2)."
-      ]
-    },
-    {
-      "sim_id": "u01506",
-      "status": "FIXED",
-      "time": "09:14:49",
-      "issues": [
-        "Unwired action button: 'btn_run_all_clip' ('Complete All 4 Stages') was present in controls slots but lacked a click event listener in canvas_js.",
-        "Observation table column misalignment: btnRecord appended 7 columns with Trial # and Window bounds that did not match the 6 columns defined in observation_thead_html (Clipping Stage, Input Vertices, Output Vertices, Intersections Formed, Clipped Area, Area Retention)."
-      ]
-    },
-    {
-      "sim_id": "u01497",
-      "status": "PASS",
-      "time": "09:14:52",
-      "issues": []
-    },
-    {
-      "sim_id": "u01501",
-      "status": "ERROR",
-      "time": "09:14:57",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01507",
-      "status": "PASS",
-      "time": "09:15:14",
-      "issues": []
-    },
-    {
-      "sim_id": "u01498",
-      "status": "ERROR",
-      "time": "09:15:21",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01502",
       "status": "ERROR",
@@ -374,6 +306,78 @@
         "Removed erroneous MathML formatting wrapping the leading English prose article 'A' in principles_summary_html",
         "Corrected travel displacement variable subscript from X_1 to X in principles_summary_html force equilibrium formula"
       ]
+    },
+    {
+      "sim_id": "u01538",
+      "status": "ERROR",
+      "time": "09:23:50",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01539",
+      "status": "ERROR",
+      "time": "09:23:57",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01541",
+      "status": "FIXED",
+      "time": "09:24:20",
+      "issues": [
+        "Misaligned observation table columns: btnRecord emitted 10 columns while observation_thead_html defines 6 columns (Applied Dead Weight, Spring Balance Reading, Net Brake Load, Shaft Speed, Braking Torque, Brake Power).",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons lacked click event listeners to increment/decrement parameter inputs.",
+        "Unwired action button: #btn_circulate_cooling_water had no event listener to toggle cooling water status."
+      ]
+    },
+    {
+      "sim_id": "u01543",
+      "status": "FIXED",
+      "time": "09:24:38",
+      "issues": [
+        "Unwired action buttons: 'btn_request_cs' (Broadcast CS Request) and 'btn_release_cs' (Release Critical Section) lacked event listeners in canvas_js.",
+        "Unwired stepper buttons: '.stepper-btn' controls for participant count, speed, and candidate node had no click handlers.",
+        "Misaligned observation table columns: 'btnRecord' logged totalMessages into the Theoretical Messages column and omitted the theoretical invariant M = 3K, shifting and misaligning all remaining columns.",
+        "Missing candidate quorum visualization: Grid nodes did not visually highlight the row-column quorum belonging to candidate process P_req as specified in Procedure Step 2."
+      ]
+    },
+    {
+      "sim_id": "u01544",
+      "status": "FIXED",
+      "time": "09:24:58",
+      "issues": [
+        "Unwired stepper buttons: Stepper up/down buttons had no click event handlers to increment or decrement inputs.",
+        "Unwired action buttons: 'Toggle Radiation Optical Shutter' (btn_toggle_shutter) and 'Auto-Tune Thermal Equilibrium' (btn_autotune_pid) had no event listeners.",
+        "Telemetry target mismatch: canvas_js looked for reading_emissive_flux, etc. instead of the actual value spans val_reading_emissive_flux, etc., causing live readouts not to update.",
+        "Misaligned observation table columns: tr.innerHTML generated 7 columns with an unaligned index column and peak wavelength, conflicting with the 6 header columns in observation_thead_html (T, T^4, epsilon, E, P, P_net)."
+      ]
+    },
+    {
+      "sim_id": "u01542",
+      "status": "ERROR",
+      "time": "09:25:23",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01545",
+      "status": "FIXED",
+      "time": "09:25:56",
+      "issues": [
+        "Observation table record button logged 7 misaligned columns instead of the 8 columns defined in the table header, prepending an unheaded trial index and omitting the peak antinodal amplitude column.",
+        "Unwired action buttons: 'btn_excite_resonance' and 'btn_scatter_powder' lacked event listeners in canvas_js.",
+        "Unwired stepper buttons: '.stepper-btn' increment and decrement buttons lacked click event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01546",
+      "status": "PASS",
+      "time": "09:26:02",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1608,6 +1612,11 @@
     "u01534",
     "u01536",
     "u01537",
-    "u01540"
+    "u01540",
+    "u01541",
+    "u01543",
+    "u01544",
+    "u01545",
+    "u01546"
   ]
 }
