@@ -1,53 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:28:42",
-  "completed_count": 1988,
-  "fixed_count": 1782,
-  "latest_sim_id": "u01946",
+  "updated_at": "2026-10-19 18:29:49",
+  "completed_count": 1993,
+  "fixed_count": 1786,
+  "latest_sim_id": "u01880",
   "recent_events": [
-    {
-      "sim_id": "u01737",
-      "status": "FIXED",
-      "time": "18:20:09",
-      "issues": [
-        "Unwired Section 05 action buttons: Hooked #btn_rotate_cw, #btn_reflect_axis, #btn_check_equivalence, and #btn_randomize_necklace to dihedral transformations, target generation, and real-time equivalence verification.",
-        "Unwired stepper buttons: Added click handlers for .stepper-btn (.stepper-btn-up and .stepper-btn-down) to properly increment/decrement parameters and trigger change dispatchers.",
-        "Malformed data-unit attributes in readouts_html: Replaced nested unescaped HTML spans within data-unit attributes of reading_color_dist and reading_orbit_size with clean unit strings."
-      ]
-    },
-    {
-      "sim_id": "u01750",
-      "status": "PASS",
-      "time": "18:20:20",
-      "issues": []
-    },
-    {
-      "sim_id": "u01755",
-      "status": "FIXED",
-      "time": "18:20:28",
-      "issues": [
-        "Unwired action button id='btn_execute_quantum_circuit' in canvas_js (script referenced non-existent 'btnRecord').",
-        "Misaligned observation table row insertion (6 <td> cells created for 5 <th> table headers, pushing values out of alignment).",
-        "Unwired stepper buttons (.stepper-btn) and experiment preset dropdown (experimentSelect) in canvas_js.",
-        "Corrupted possessive suffix in header_title_html where 's was erroneously converted into a MathML variable."
-      ]
-    },
-    {
-      "sim_id": "u01749",
-      "status": "ERROR",
-      "time": "18:21:12",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01718",
-      "status": "ERROR",
-      "time": "18:21:17",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01765",
       "status": "FIXED",
@@ -364,6 +321,51 @@
         "Unwired action button: canvas_js looked for element 'btnRecord' while the action button defined in actions_html has id 'btn_dispense_anesthetic'.",
         "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js to increment or decrement the chamber volume input.",
         "Observation table column mismatch: canvas_js inserted 6 <td> elements (including an extra serial number column) while the table header defines exactly 5 <th> columns, causing severe column offset."
+      ]
+    },
+    {
+      "sim_id": "u01952",
+      "status": "FIXED",
+      "time": "18:28:45",
+      "issues": [
+        "Unwired action buttons: 'btn_cycle_grid' (cycle active grid overlay) and 'btn_trigger_note' (synthesize tone burst) lacked event listeners in canvas_js.",
+        "Unwired stepper controls: ▲ and ▼ stepper buttons (.stepper-btn) lacked event listeners in canvas_js to increment and decrement parameter inputs.",
+        "Low contrast bench floor hatch lines (#1e293b on #1e293b-#0f172a gradient) enhanced to #334155 for clear contrast on dark canvas."
+      ]
+    },
+    {
+      "sim_id": "u01956",
+      "status": "FIXED",
+      "time": "18:29:19",
+      "issues": [
+        "Corrupted raw LaTeX with misplaced MathML fraction in SYN-to-ACK Asymmetry Index symbol within readouts_html",
+        "DOM element ID mismatch in updateTelemetryDOM preventing live readouts from updating on user interaction",
+        "Observation table columns in btnRecord (9 columns) misaligned with observation_thead_html (6 columns)",
+        "Unwired compile & apply filter action button (btn_apply_filter) and stepper up/down buttons in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01943",
+      "status": "PASS",
+      "time": "18:29:34",
+      "issues": []
+    },
+    {
+      "sim_id": "u01964",
+      "status": "FIXED",
+      "time": "18:29:34",
+      "issues": [
+        "Misaligned observation table rows: btnRecord generated 10 table cells for an observation table with only 6 column headers, causing significant table column shift and visual overflow.",
+        "Unwired action buttons: 'btn_auto_align' (Auto-Align Space Charge Profile) and 'btn_toggle_profile' (Cycle Doping Profile Model) were present in the controls layout but lacked click event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to alter input values."
+      ]
+    },
+    {
+      "sim_id": "u01880",
+      "status": "FIXED",
+      "time": "18:29:49",
+      "issues": [
+        "Updated in Gemini brain"
       ]
     }
   ],
@@ -1970,6 +1972,7 @@
     "u01877",
     "u01878",
     "u01879",
+    "u01880",
     "u01881",
     "u01883",
     "u01884",
@@ -2025,21 +2028,25 @@
     "u01939",
     "u01940",
     "u01942",
+    "u01943",
     "u01944",
     "u01945",
     "u01946",
     "u01948",
     "u01949",
     "u01951",
+    "u01952",
     "u01953",
     "u01954",
     "u01955",
+    "u01956",
     "u01958",
     "u01959",
     "u01960",
     "u01961",
     "u01962",
     "u01963",
+    "u01964",
     "u01965",
     "u01966",
     "u01968",
