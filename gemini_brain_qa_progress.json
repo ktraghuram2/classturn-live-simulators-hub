@@ -1,95 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:54:38",
-  "completed_count": 1627,
-  "fixed_count": 1478,
-  "latest_sim_id": "u02062",
+  "updated_at": "2026-10-19 15:56:42",
+  "completed_count": 1632,
+  "fixed_count": 1483,
+  "latest_sim_id": "u02071",
   "recent_events": [
-    {
-      "sim_id": "u02021",
-      "status": "FIXED",
-      "time": "15:47:44",
-      "issues": [
-        "Unwired stepper buttons (▲/▼) in control panel preventing incremental parameter adjustments",
-        "Unwired action buttons ('btn_homogenize_lyse' and 'btn_centrifuge_elute')",
-        "Observation table column mismatch where 8-column table without Trial column caused trial count to shift all values and drop Specific Yield"
-      ]
-    },
-    {
-      "sim_id": "u02020",
-      "status": "PASS",
-      "time": "15:47:44",
-      "issues": []
-    },
-    {
-      "sim_id": "u02028",
-      "status": "PASS",
-      "time": "15:48:39",
-      "issues": []
-    },
-    {
-      "sim_id": "u02022",
-      "status": "PASS",
-      "time": "15:49:01",
-      "issues": []
-    },
-    {
-      "sim_id": "u02029",
-      "status": "PASS",
-      "time": "15:49:05",
-      "issues": []
-    },
-    {
-      "sim_id": "u02025",
-      "status": "FIXED",
-      "time": "15:49:07",
-      "issues": [
-        "Duplicate word 'certified certified' in apparatus specification for Methylene Blue Thiocyanate Reagent",
-        "Misaligned legend pills numbering and apparatus element names relative to canvas Style 2 numbered leader badges",
-        "Observation table record button generated 8 misordered columns instead of exactly matching the 6 defined observation table header columns",
-        "Unwired action buttons ('btn_invert_tube', 'btn_accelerate_clock') and stepper increment/decrement buttons ('.stepper-btn')"
-      ]
-    },
-    {
-      "sim_id": "u02023",
-      "status": "FIXED",
-      "time": "15:49:10",
-      "issues": [
-        "Unwired action buttons ('btn_dispense_discs' and 'btn_measure_zones') and unhandled experimentSelect dropdown",
-        "Unwired stepper up/down buttons (.stepper-btn) preventing arrow stepping",
-        "Misaligned observation table columns where N_sensitive was omitted and curing efficiency and viability were shifted into wrong headers",
-        "setReadout was overriding entire element textContent causing child MathML unit elements to be destroyed",
-        "Added inhibition zone measurement caliper dimension lines with diameter readouts toggled by Measure Inhibition Zones button"
-      ]
-    },
-    {
-      "sim_id": "u02030",
-      "status": "FIXED",
-      "time": "15:49:29",
-      "issues": [
-        "Wired up the action button btn_toggle_rotation so clicking Toggle Continuous 360° Rotation starts/pauses link rotation.",
-        "Wired up the action button btn_clear_locus to toggle and clear the rendered elliptical locus trajectory.",
-        "Added event listener wiring for all stepper ▲/▼ buttons (.stepper-btn) to increment/decrement link lengths and angle smoothly.",
-        "Corrected observation table row alignment in btnRecord so recorded columns strictly match the 9 headers (Link Angle θ, Link AB Length l, Link AC Length lC, Slider A Position xA, Slider B Position yB, Point C xC, Point C yC, Semi-Horizontal Axis a, Semi-Vertical Axis b) instead of 10 misaligned columns.",
-        "Added missing mathematical symbol a in Semi-Horizontal Axis header within observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u02024",
-      "status": "ERROR",
-      "time": "15:49:56",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02031",
-      "status": "ERROR",
-      "time": "15:50:11",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u02027",
       "status": "ERROR",
@@ -362,6 +277,98 @@
         "Observation table columns mismatched: 7 data cells rendered into 5-column thead, causing data offset",
         "Action buttons (btn_fire_wavepacket, btn_preset_resonance) and stepper up/down buttons were unwired in canvas_js",
         "Time-dependent Schrödinger leapfrog integrator had reversed signs, propagating wavepacket backwards in time"
+      ]
+    },
+    {
+      "sim_id": "u02064",
+      "status": "FIXED",
+      "time": "15:55:08",
+      "issues": [
+        "Observation table columns mismatch: tr.innerHTML generated 10 <td> elements with extra rIn and rOut columns, misaligning with the 8 columns defined in observation_thead_html.",
+        "Unwired action button: #btn_flush_and_step ('Trigger Markov State Transition') had no event listener wired in canvas_js.",
+        "Unwired stepper controls: .stepper-btn up and down buttons were not wired to update target inputs."
+      ]
+    },
+    {
+      "sim_id": "u02066",
+      "status": "FIXED",
+      "time": "15:55:36",
+      "issues": [
+        "Unwired action buttons: 'btn_start_sort' and 'btn_randomize_array' had no event listeners in canvas_js.",
+        "Unwired stepper up/down buttons (.stepper-btn) in controls section.",
+        "Observation table column misalignment: logged rows had only 5 <td> cells for 6 <th> header columns, omitting Array Size N."
+      ]
+    },
+    {
+      "sim_id": "u02060",
+      "status": "ERROR",
+      "time": "15:55:45",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02061",
+      "status": "FIXED",
+      "time": "15:55:46",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u02058",
+      "status": "ERROR",
+      "time": "15:55:51",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02067",
+      "status": "FIXED",
+      "time": "15:55:58",
+      "issues": [
+        "Replaced erroneous degree symbol '°⁺(u)' in principles formula MathML and symbol list with standard notation 'deg⁺(u)'.",
+        "Corrected readout heading MathML for Current Node Out-Degree to use 'deg⁺(u)' instead of '°⁺(u)'.",
+        "Wired action buttons 'btn_run_random_search' and 'btn_regenerate_graph' to trigger search traversal and graph regeneration.",
+        "Added event listeners for '.stepper-btn-up' and '.stepper-btn-down' buttons to enable functional stepper arrow adjustment.",
+        "Aligned observation table recorded columns with the 6 observation thead headers (Trial #, Node Count, Link Count, Steps Taken, Result Status, Path Traversed).",
+        "Updated canvas gauge meter label from 'OUT-DEGREE °+(u)' to 'OUT-DEGREE deg⁺(u)'."
+      ]
+    },
+    {
+      "sim_id": "u02069",
+      "status": "ERROR",
+      "time": "15:56:00",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02070",
+      "status": "ERROR",
+      "time": "15:56:16",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02065",
+      "status": "ERROR",
+      "time": "15:56:37",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02071",
+      "status": "FIXED",
+      "time": "15:56:42",
+      "issues": [
+        "Fixed pt.zy typo to pt.ny in canvas_js which caused ensemble particle cloud coordinates to evaluate to NaN and fail to render",
+        "Wired action button #btn_generate_endpoints to regenerate ensemble particle endpoints",
+        "Wired action button #btn_single_walk_toggle to pause and resume single-particle stochastic walk",
+        "Wired stepper up/down buttons to increment and decrement input parameters properly"
       ]
     }
   ],
@@ -1991,7 +1998,12 @@
     "u02056",
     "u02057",
     "u02059",
+    "u02061",
     "u02062",
-    "u02063"
+    "u02063",
+    "u02064",
+    "u02066",
+    "u02067",
+    "u02071"
   ]
 }
