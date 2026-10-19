@@ -1,58 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:56:20",
-  "completed_count": 2058,
-  "fixed_count": 1846,
-  "latest_sim_id": "u02372",
+  "updated_at": "2026-10-19 18:58:40",
+  "completed_count": 2063,
+  "fixed_count": 1850,
+  "latest_sim_id": "u02367",
   "recent_events": [
-    {
-      "sim_id": "u02174",
-      "status": "PASS",
-      "time": "18:40:47",
-      "issues": []
-    },
-    {
-      "sim_id": "u02194",
-      "status": "FIXED",
-      "time": "18:40:49",
-      "issues": [
-        "Unwired action buttons: 'btn_start_tapping' and 'btn_pour_sample' from actions_html were not wired in canvas_js",
-        "Unwired stepper up/down buttons: '.stepper-btn' buttons had no click handlers to adjust sample_mass and tap_count",
-        "Misaligned observation table columns: row generated 9 cells with an unheaded serial number and inverted V0/taps order relative to the 8 header columns in observation_thead_html",
-        "Badge numbering mismatch: Badge 2 was anchored to Analytical Balance and Badge 3 to Graduated Measuring Cylinder, conflicting with legend_pills_html (Pill 2: Cylinder, Pill 3: Balance)",
-        "Telemetry update wiping unit markup: textContent assignment in updateTelemetry removed measurement unit labels from live readouts"
-      ]
-    },
-    {
-      "sim_id": "u02196",
-      "status": "FIXED",
-      "time": "18:41:00",
-      "issues": [
-        "Raw MathML tags for variable 'a' were erroneously used in place of the English indefinite article 'a' in aim_html and principles_summary_html.",
-        "Unwired action button btn_snap_midpoint and stepper up/down buttons (.stepper-btn) in canvas_js.",
-        "Observation table record button generated 6 columns including an unlisted index column (${idx}), causing misalignment with the 5 headers in observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u02148",
-      "status": "FIXED",
-      "time": "18:41:06",
-      "issues": [
-        "Observation table row generation in btnRecord had 8 columns with mismatched units and order, conflicting with the 6 columns in observation_thead_html",
-        "Telemetry display updates in canvas_js called setTxt with raw readout IDs ('reading_*') whereas span IDs in readouts_html use the 'val_' prefix ('val_reading_*')",
-        "Action buttons ('btn_toggle_pump', 'btn_lower_sounding_tape') and stepper increment/decrement buttons had no event listeners wired up in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u02195",
-      "status": "FIXED",
-      "time": "18:41:15",
-      "issues": [
-        "Reichert-Meissl formula in principles equation lacked the 1.1x multiplier accounting for the 100 mL aliquot titrated from the 110 mL total distillate (RM = 1.1 * (T1 - T2)).",
-        "Action buttons (btn_auto_titrate and btn_flush_condenser) in actions_html were unwired in canvas_js.",
-        "Interactive stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js."
-      ]
-    },
     {
       "sim_id": "u02223",
       "status": "FIXED",
@@ -398,6 +350,53 @@
         "Stepper increment and decrement buttons (.stepper-btn) were not wired to input controls in canvas_js.",
         "Action buttons (strike_fork_action and tune_resonance_action) were defined in HTML but had no event listeners attached in canvas_js."
       ]
+    },
+    {
+      "sim_id": "u02364",
+      "status": "FIXED",
+      "time": "18:56:34",
+      "issues": [
+        "Observation table header was missing the serial number column (#), causing a column count mismatch with the 6-cell recorded data rows.",
+        "Detector BNC cable to VSWR meter was rendered in #0f172a, making it nearly invisible against the dark #090d16 canvas background.",
+        "Action buttons (Auto-Tune Bias to Threshold Point and Dip Wavemeter to Microwave Resonance) and stepper up/down buttons were unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02386",
+      "status": "FIXED",
+      "time": "18:56:45",
+      "issues": [
+        "Action buttons (btn_pour_and_cure and btn_demold_and_measure) had no event listeners in canvas_js",
+        "Custom stepper up/down buttons (.stepper-btn) had no click event listeners to update numeric inputs",
+        "Mold cavity lacked state-driven visual feedback for pouring, curing exotherm, and demolding extraction"
+      ]
+    },
+    {
+      "sim_id": "u02374",
+      "status": "FIXED",
+      "time": "18:56:45",
+      "issues": [
+        "Replaced raw LaTeX N_{\\exp} in readouts_html and escaped \\exp in observation_thead_html with valid MathML presentation markup",
+        "Resolved observation table misalignment where record button inserted 6 columns into a 5-column thead table",
+        "Wired btn_run_search, btn_randomize_graph, and stepper increment/decrement button listeners into canvas_js",
+        "Aligned canvas leader line badges strictly to the 2 apparatus elements (Badge 1: Graph Canvas, Badge 2: Tree Canvas) and removed extraneous badges"
+      ]
+    },
+    {
+      "sim_id": "u02366",
+      "status": "FIXED",
+      "time": "18:56:52",
+      "issues": [
+        "Misaligned observation table columns in btnRecord: the recorder generated 6 table cells with swapped attributes (round, hashHigh, hashLow, hammingDist) instead of aligning with the 7 headers defined in observation_thead_html. Rectified to record all 7 columns in exact header sequence (c_1, L_c, M_b, t, A_t, Full Digest, d_H).",
+        "Unwired action button btn_toggle_avalanche_flip: wired click listener with state toggling, interactive visual highlight, and passed toggle state into computeSHA1 to demonstrate the Strict Avalanche Criterion bit flip dynamically.",
+        "Unwired stepper controls: bound click listeners across all .stepper-btn elements to increment and decrement inputs (Leading Character ASCII, Plaintext Length, and Compression Round) respecting bounds and dispatching input/change events."
+      ]
+    },
+    {
+      "sim_id": "u02367",
+      "status": "PASS",
+      "time": "18:58:40",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -2442,12 +2441,16 @@
     "u02360",
     "u02361",
     "u02362",
+    "u02364",
     "u02365",
+    "u02366",
+    "u02367",
     "u02368",
     "u02370",
     "u02371",
     "u02372",
     "u02373",
+    "u02374",
     "u02375",
     "u02376",
     "u02377",
@@ -2458,6 +2461,7 @@
     "u02382",
     "u02383",
     "u02384",
-    "u02385"
+    "u02385",
+    "u02386"
   ]
 }
