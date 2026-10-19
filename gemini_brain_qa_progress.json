@@ -1,66 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:30:01",
-  "completed_count": 1362,
-  "fixed_count": 1272,
-  "latest_sim_id": "u01719",
+  "updated_at": "2026-10-19 10:31:25",
+  "completed_count": 1367,
+  "fixed_count": 1275,
+  "latest_sim_id": "u01722",
   "recent_events": [
-    {
-      "sim_id": "u01666",
-      "status": "ERROR",
-      "time": "10:10:41",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01678",
-      "status": "FIXED",
-      "time": "10:10:57",
-      "issues": [
-        "Observation table columns logged by btnRecord were misaligned (8 columns with row count and sensitivity logged instead of matching the 7 columns in observation_thead_html)",
-        "Action buttons btn_insert_dielectric (toggle dielectric insertion) and btn_zero_tare_bridge (zero-tare bridge) were unwired",
-        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) were unwired",
-        "Experiment mode selector was unwired to configure experiment presets"
-      ]
-    },
-    {
-      "sim_id": "u01677",
-      "status": "FIXED",
-      "time": "10:11:14",
-      "issues": [
-        "Unwired action buttons: 'btn_run_auto' had no click listener and the simulation auto-advanced uncontrollably on load without user intervention.",
-        "Missing action controls: Procedure Step 5 specifies clicking 'Execute Single DFS Step', but 'actions_html' only provided an auto-traverse button.",
-        "Unwired stepper controls: Custom '.stepper-btn' up/down buttons had no click handlers to adjust numeric input values.",
-        "Misaligned observation table columns: Observation table swapped Visited Vertices (column 2) and Stack Depth (column 3) relative to the live telemetry readout list order.",
-        "Inappropriate unit in Exploration Priority stepper: Priority order was assigned degrees (°), corrected to order sequence notation."
-      ]
-    },
-    {
-      "sim_id": "u01682",
-      "status": "FIXED",
-      "time": "10:12:01",
-      "issues": [
-        "Observation table column mismatch: canvas_js inserted 12 columns into observation table but observation_thead_html defines only 6 columns (Effective Span, Riser Height, Tread Width, Total Service Load, Factored Load, Factored Design Moment).",
-        "Telemetry element ID mismatch: canvas_js targeted 'reading_output', 'reading_2'...'reading_6' instead of the actual value span IDs 'val_reading_output', 'val_reading_2'...'val_reading_6', preventing live readouts from updating.",
-        "Unwired action button: 'btn_specific_action' (Apply Full Design Factored Load) was present in actions_html but had no click event listener wired in canvas_js.",
-        "Unwired stepper controls: stepper up/down buttons (.stepper-btn) lacked click event listeners in canvas_js to increment/decrement input values."
-      ]
-    },
-    {
-      "sim_id": "u01679",
-      "status": "ERROR",
-      "time": "10:15:07",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01688",
-      "status": "PASS",
-      "time": "10:15:07",
-      "issues": []
-    },
     {
       "sim_id": "u01683",
       "status": "FIXED",
@@ -360,6 +304,58 @@
       "status": "PASS",
       "time": "10:30:01",
       "issues": []
+    },
+    {
+      "sim_id": "u01710",
+      "status": "FIXED",
+      "time": "10:31:05",
+      "issues": [
+        "Unwired action buttons: btn_toggle_dt, btn_highlight_iso, and btn_trace_path lacked click event listeners to toggle rendering states",
+        "Unwired stepper buttons: .stepper-btn up and down buttons were not wired to update target input values and trigger input/change events",
+        "Misaligned observation table columns: btnRecord injected 10 table cells into observationTbody, while observation_thead_html defined exactly 7 columns"
+      ]
+    },
+    {
+      "sim_id": "u01718",
+      "status": "ERROR",
+      "time": "10:31:05",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01726",
+      "status": "PASS",
+      "time": "10:31:05",
+      "issues": []
+    },
+    {
+      "sim_id": "u01725",
+      "status": "PASS",
+      "time": "10:31:05",
+      "issues": []
+    },
+    {
+      "sim_id": "u01723",
+      "status": "FIXED",
+      "time": "10:31:08",
+      "issues": [
+        "Observation table record button logged 10 columns out of order with extra attributes, misaligned with the 7 columns defined in observation_thead_html",
+        "Action buttons 'btn_toggle_modulation' and 'btn_transmit_burst' were unhandled in canvas_js",
+        "Stepper buttons (stepper-btn-up and stepper-btn-down) lacked click event listeners in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01722",
+      "status": "FIXED",
+      "time": "10:31:24",
+      "issues": [
+        "Unwired regime switcher and action buttons: btn_cycle_regime, btn_toggle_ppc, and btn_toggle_oc were not implemented in canvas_js",
+        "Single regime hardcoded in physics equations: constant and decreasing returns regimes were missing from getFish(), getOpportunityCost(), and scheduleData",
+        "Unwired stepper buttons: stepper-btn-up and stepper-btn-down were missing click event listeners in canvas_js",
+        "Observation table column count mismatch: header defined 5 columns while row insertion generated 6 columns by prepending trialCount",
+        "Mangled MathML fraction artifact in unit labels: fish/rabbit was rendered as 'fis h/r abbit' across HTML slots"
+      ]
     }
   ],
   "completed_ids": [
@@ -1719,11 +1715,16 @@
     "u01707",
     "u01708",
     "u01709",
+    "u01710",
     "u01712",
     "u01713",
     "u01715",
     "u01716",
     "u01717",
-    "u01719"
+    "u01719",
+    "u01722",
+    "u01723",
+    "u01725",
+    "u01726"
   ]
 }
