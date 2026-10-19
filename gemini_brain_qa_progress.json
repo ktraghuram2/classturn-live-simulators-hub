@@ -1,59 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 19:29:49",
-  "completed_count": 2097,
-  "fixed_count": 1880,
+  "updated_at": "2026-10-19 19:31:40",
+  "completed_count": 2102,
+  "fixed_count": 1885,
   "latest_sim_id": "u01458",
   "recent_events": [
-    {
-      "sim_id": "u01749",
-      "status": "FIXED",
-      "time": "19:04:22",
-      "issues": [
-        "Observation table row generation was missing the 'Transaction Type' column, producing 5 cells for a 6-column table and causing column misalignment",
-        "Primary action button 'btn_execute_transaction' ('Sign & Confirm Transaction') was not wired to executeTransaction",
-        "Action buttons 'btn_generate_seed' and 'btn_verify_seed' were unhandled",
-        "Stepper control buttons (.stepper-btn) and input change listeners were not wired to update transaction parameters"
-      ]
-    },
-    {
-      "sim_id": "u01758",
-      "status": "FIXED",
-      "time": "19:04:25",
-      "issues": [
-        "Telemetry update IDs in canvas_js (reading_feature_size, reading_calibration_factor, etc.) did not match readout span IDs (val_reading_feature_size, val_reading_calibration_factor, etc.), preventing live telemetry display",
-        "Action buttons #btn_calibrate_scale ('Snap Caliper to Scale Bar') and #btn_auto_focus ('Auto-Focus Beam Stigmatator') declared in actions_html were not wired to event listeners in canvas_js",
-        "Stepper up/down buttons (.stepper-btn) lacked click handlers to increment and decrement control inputs",
-        "Observation table row generation in recordBtn had 6 columns including an undeclared serial number, misaligning all columns against the 5 observation_thead_html headers"
-      ]
-    },
-    {
-      "sim_id": "u01399",
-      "status": "FIXED",
-      "time": "19:04:52",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01522",
-      "status": "ERROR",
-      "time": "19:05:03",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01772",
-      "status": "FIXED",
-      "time": "19:05:08",
-      "issues": [
-        "Unwired action buttons: 'Initiate Spinodal Decomposition' (btn_quench_phase_separation) and 'Relax to Capillary Equilibrium' (btn_equilibrate_interface) had no event listeners in canvas_js.",
-        "Unwired stepper controls: Stepper up and down buttons (.stepper-btn) had no click listeners attached to dynamically increment and decrement input values.",
-        "Misaligned observation table columns: 8 data cells were being appended to a 7-column table, swapping CFL into the liquid density column, shifting all densities, and omitting the interface width column entirely.",
-        "Missing interface width calculation and dynamic phase quench relaxation state variables in simulation logic."
-      ]
-    },
     {
       "sim_id": "u01583",
       "status": "FIXED",
@@ -370,6 +321,63 @@
         "Unwired stepper controls: Stepper buttons (.stepper-btn) lacked click listeners to increment/decrement the corresponding input controls.",
         "Misaligned observation table columns: The record button in canvas_js added 7 columns (including trial number), causing misalignment with the 6 columns defined in observation_thead_html.",
         "Synchronous readout updating: Telemetry values were not immediately updated upon changing stepper input controls."
+      ]
+    },
+    {
+      "sim_id": "u01646",
+      "status": "FIXED",
+      "time": "19:31:03",
+      "issues": [
+        "Observation table column mismatch: table header defines 7 columns (Test Method, Bacterial Isolate, H2O2 Concentration, Culture Age, Gas Evolution Rate, Effervescence Score, Catalase Reaction Result), but btnRecord logged only 6 misaligned cells, omitting Test Method and Bacterial Isolate while incorrectly placing reagent drops in the isolate slot.",
+        "Unwired stepper up/down buttons (▲/▼) in canvas_js, preventing users from incrementing and decrementing parameter steppers via button clicks.",
+        "Unwired procedural action buttons (btn_flame_loop, btn_transfer_colony, btn_dispense_peroxide) and experimentSelect dropdown in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01522",
+      "status": "FIXED",
+      "time": "19:31:18",
+      "issues": [
+        "Unwired stepper ▲/▼ buttons in canvas_js prevented incrementing and decrementing control values via UI buttons",
+        "Unwired action button btn_harmonic_sweep in canvas_js prevented executing the harmonic frequency sweep",
+        "Misaligned observation table columns where a phantom serial number column shifted and swapped spring constant and displacement data relative to observation_thead_html",
+        "setElementText destroyed inner MathML unit elements when updating readout values"
+      ]
+    },
+    {
+      "sim_id": "u01896",
+      "status": "FIXED",
+      "time": "19:31:30",
+      "issues": [
+        "Fixed malformed MathML in principles_list_html where LaTeX syntax 'attr\\_{hdr}' and unmatched braces were present in S_{attr_hdr}.",
+        "Cleaned corrupt data-unit attributes in readouts_html where raw HTML spans were embedded into data-unit values.",
+        "Replaced irrelevant generic mechanical bench canvas with authentic NTFS MFT and Alternate Data Streams multi-pane forensics workspace illustrating the four apparatuses (Outlook Client, Word Viewer, PowerShell Console, MFT/Hex Browser).",
+        "Wired up all action buttons (Outlook, Download, application.doc, Execute, Show MFT, Toggle MFT View, Search) and stepper up/down buttons.",
+        "Corrected live readouts to dynamically calculate NTFS record residency, ADS injection status, and hex cursor offsets."
+      ]
+    },
+    {
+      "sim_id": "u01767",
+      "status": "FIXED",
+      "time": "19:31:35",
+      "issues": [
+        "Action button btn_process_all_steps ('Run Full Find-S Convergence') was unwired in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired for step_index and dataset_id",
+        "Readout DOM ID mismatch: canvas_js queried reading_step, reading_positive_count, reading_wildcards, and reading_specificity_score instead of val_reading_* IDs",
+        "Observation table column mismatch: btnRecord generated 6 misaligned columns for a 5-column table header (Step Index, Training Instance, Target Label, Hypothesis State, Wildcard Count)",
+        "Dataset alignment: aligned canvas_js DATASETS with Poisonous Fungus and Library Book presets specified in procedure and options",
+        "Telemetry unit mismatch: changed 'pts' to 'points' in specificity readout to match data-unit specification"
+      ]
+    },
+    {
+      "sim_id": "u01458",
+      "status": "FIXED",
+      "time": "19:31:39",
+      "issues": [
+        "Observation table columns in canvas_js (9 numeric columns) did not match observation_thead_html (7 pedagogical columns: Mode, Pathway, t0, Process Param, Residual Thickness, Transmittance, TEM Feasibility)",
+        "DOM Telemetry readout IDs in canvas_js (val_residual_thickness) did not match HTML slot IDs (val_reading_residual_thickness), preventing live value updates",
+        "Action buttons (ultrasonication, punch disc, dimple grind, jet polish, ion mill) and stepper up/down buttons were not wired with event listeners in canvas_js",
+        "Malformed MathML in readouts_html for sputter rate unit (fraction m/m instead of nm/min) and observation_thead_html process parameter unit"
       ]
     }
   ],
@@ -1596,6 +1604,7 @@
     "u01455",
     "u01456",
     "u01457",
+    "u01458",
     "u01459",
     "u01460",
     "u01461",
@@ -1655,6 +1664,7 @@
     "u01519",
     "u01520",
     "u01521",
+    "u01522",
     "u01523",
     "u01524",
     "u01525",
@@ -1773,6 +1783,7 @@
     "u01643",
     "u01644",
     "u01645",
+    "u01646",
     "u01647",
     "u01648",
     "u01649",
@@ -1887,6 +1898,7 @@
     "u01764",
     "u01765",
     "u01766",
+    "u01767",
     "u01768",
     "u01769",
     "u01770",
@@ -2009,6 +2021,7 @@
     "u01892",
     "u01894",
     "u01895",
+    "u01896",
     "u01897",
     "u01898",
     "u01899",
