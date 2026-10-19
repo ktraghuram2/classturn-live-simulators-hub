@@ -1,110 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 19:10:06",
-  "completed_count": 2088,
-  "fixed_count": 1871,
-  "latest_sim_id": "u02068",
+  "updated_at": "2026-10-19 19:28:02",
+  "completed_count": 2093,
+  "fixed_count": 1876,
+  "latest_sim_id": "u02104",
   "recent_events": [
-    {
-      "sim_id": "u02374",
-      "status": "FIXED",
-      "time": "18:56:45",
-      "issues": [
-        "Replaced raw LaTeX N_{\\exp} in readouts_html and escaped \\exp in observation_thead_html with valid MathML presentation markup",
-        "Resolved observation table misalignment where record button inserted 6 columns into a 5-column thead table",
-        "Wired btn_run_search, btn_randomize_graph, and stepper increment/decrement button listeners into canvas_js",
-        "Aligned canvas leader line badges strictly to the 2 apparatus elements (Badge 1: Graph Canvas, Badge 2: Tree Canvas) and removed extraneous badges"
-      ]
-    },
-    {
-      "sim_id": "u02366",
-      "status": "FIXED",
-      "time": "18:56:52",
-      "issues": [
-        "Misaligned observation table columns in btnRecord: the recorder generated 6 table cells with swapped attributes (round, hashHigh, hashLow, hammingDist) instead of aligning with the 7 headers defined in observation_thead_html. Rectified to record all 7 columns in exact header sequence (c_1, L_c, M_b, t, A_t, Full Digest, d_H).",
-        "Unwired action button btn_toggle_avalanche_flip: wired click listener with state toggling, interactive visual highlight, and passed toggle state into computeSHA1 to demonstrate the Strict Avalanche Criterion bit flip dynamically.",
-        "Unwired stepper controls: bound click listeners across all .stepper-btn elements to increment and decrement inputs (Leading Character ASCII, Plaintext Length, and Compression Round) respecting bounds and dispatching input/change events."
-      ]
-    },
-    {
-      "sim_id": "u02367",
-      "status": "PASS",
-      "time": "18:58:40",
-      "issues": []
-    },
-    {
-      "sim_id": "u01286",
-      "status": "FIXED",
-      "time": "19:02:34",
-      "issues": [
-        "Fixed corrupted MathML rendering in apparatus_html where '0-10 V / 4-20 mA' was malformed as a fraction (V/4 - 20 mA)",
-        "Corrected observation table row columns to match the 7 thead columns (Grid Voltage, Bus Voltage, Feeder Load, Power Factor, Line Current, GOS Status, CB Status)",
-        "Swapped Badge 1 and Badge 2 in canvas_js so Badge 1 links to Group Operated Switches and Badge 2 links to 33 kV / 11 kV Power Transformer, matching Legend Pills 1 and 2",
-        "Wired up Section 5 action buttons (#toggle_gos_isolator, #toggle_circuit_breaker, #toggle_load_feeder) with PLC sequential interlocking logic",
-        "Wired up Section 5 stepper up/down buttons for feeder load power, power factor, and primary grid voltage"
-      ]
-    },
-    {
-      "sim_id": "u01593",
-      "status": "FIXED",
-      "time": "19:02:36",
-      "issues": [
-        "Mismatched badge numbers in canvas vs legend pills: Badge 1 was pointing to Thermistor, Badge 2 to Heater, Badge 3 to USB, and Badge 4 to Heat sink; updated badges to match legend pills (Badge 1 = Transistor heater, Badge 2 = Thermistor sensor, Badge 3 = Heat sink with fins, Badge 4 = USB interface).",
-        "Observation table column mismatch: script recorded 8 data cells into a 6-column table; aligned row cells to match the 6 observation columns (Elapsed Time, Heater Output, Sensor Temperature, Absolute Temperature, Heater Power Dissipation, Rate of Change).",
-        "Unwired action button btn_pulse_heater ('Apply 60s Heat Pulse') and stepper buttons (▲/▼); added event listener with 60-second pulse countdown logic and wired stepper button clicks.",
-        "Malformed MathML fraction rendering in procedure step 1 (23.0 °C / 296.15 K was rendered as a fraction 23.0 °C/296.15 K)."
-      ]
-    },
-    {
-      "sim_id": "u01603",
-      "status": "PASS",
-      "time": "19:02:36",
-      "issues": []
-    },
-    {
-      "sim_id": "u01471",
-      "status": "FIXED",
-      "time": "19:02:37",
-      "issues": [
-        "Wired missing action button click handlers for 'Release Plunger / Needle' (btn_release_rod), 'Raise & Lock to Top Datum' (btn_raise_rod), and 'Mix Cement & Fill Mould' (btn_mix_paste)",
-        "Added missing stepper button click handlers for incrementing/decrementing controls (.stepper-btn)",
-        "Corrected observation recording table row alignment and cell count: resolved mismatch between the 7 observation_thead_html columns and the 8 improperly ordered table row cells"
-      ]
-    },
-    {
-      "sim_id": "u01166",
-      "status": "FIXED",
-      "time": "19:02:39",
-      "issues": [
-        "Telemetry DOM lookups queried container data-ids instead of val_reading_* span IDs, causing live readout text updates to fail silently",
-        "Observation table columns were misaligned with observation_thead_html (7 columns vs 8 required columns, missing pattern index and pass verification flag)",
-        "Action buttons (btn_run_testbench, btn_synthesize_gates) and interactive stepper up/down buttons (.stepper-btn) were unwired"
-      ]
-    },
-    {
-      "sim_id": "u01395",
-      "status": "FIXED",
-      "time": "19:03:01",
-      "issues": [
-        "Raw LaTeX symbol E_{\\exp} in reading_observer_exposure heading converted to standard MathML",
-        "Malformed MathML fraction bit s/b yte in unit display for Shannon entropy rectified to bits/byte in readouts_html and observation_thead_html",
-        "Raw LaTeX escape \\exp in observation_thead_html column header cleaned to exp",
-        "Observation table column mismatch: 8 data cells generated in tbody vs 6 column headers in thead with misaligned columns corrected",
-        "Unwired action buttons (btn_send_query, btn_next_stage, btn_inspect_packet) and stepper up/down controls wired to active simulation state",
-        "Live telemetry readouts dynamically bound to control input events"
-      ]
-    },
-    {
-      "sim_id": "u01587",
-      "status": "FIXED",
-      "time": "19:03:06",
-      "issues": [
-        "Raw LaTeX/plain text chemical notations in principles_summary_html converted to semantic HTML subscripts/superscripts",
-        "Observation table columns were misaligned: Applied Potential and Deposition Current were swapped in dynamically appended rows",
-        "Stepper increment/decrement buttons (.stepper-btn) were unwired and did not update deposition time",
-        "Action buttons (btn_start_amperometry and btn_interrogate_photocurrent) were unwired in canvas_js"
-      ]
-    },
     {
       "sim_id": "u01458",
       "status": "ERROR",
@@ -371,6 +271,100 @@
         "Action buttons #btn_set_central ('Align Center to Mean') and #btn_quadrature_sweep ('Execute Trapezoidal Quadrature Sweep') lacked click event listeners in canvas_js.",
         "Stepper increment and decrement buttons (.stepper-btn) lacked click event listeners to modify stepper inputs.",
         "Experiment options dropdown (#experimentSelect) was unwired to switch between raw moments (k=0) and central moments (k=μ)."
+      ]
+    },
+    {
+      "sim_id": "u02007",
+      "status": "ERROR",
+      "time": "19:28:02",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01989",
+      "status": "FIXED",
+      "time": "19:28:02",
+      "issues": [
+        "Fixed raw ASCII chemical formulas/exponents (MnO4^-, Mn2+, KMnO4) in validation_html and procedure_section_html using proper MathML/subscripts.",
+        "Wired unwired action buttons #btn_mix_reactants ('Mix Reactants & Start Timer') and #btn_thermal_equilibrate ('Equilibrate Solution Temperatures') in canvas_js.",
+        "Fixed observation table column misalignment in #btnRecord handler where only 5 cells were appended for a 6-column table (missing Inverse Temperature 1/T column)."
+      ]
+    },
+    {
+      "sim_id": "u01990",
+      "status": "ERROR",
+      "time": "19:28:02",
+      "issues": [
+        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--model', 'gemini-4-argon-medium', '--disable-slash-commands"
+      ]
+    },
+    {
+      "sim_id": "u02044",
+      "status": "ERROR",
+      "time": "19:28:02",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02079",
+      "status": "FIXED",
+      "time": "19:28:02",
+      "issues": [
+        "Unwired action button 'btn_auto_solve_all' in controls: added recursive divide-and-conquer solver with animated step transitions and stop toggle.",
+        "Unwired stepper controls: added event delegation to '.stepper-btn-up' and '.stepper-btn-down' to step stepper_disk_count and dispatch input/change events.",
+        "Misaligned observation table row: btnRecord was producing 5 columns instead of the 4 defined in thead (Disk Count, Theoretical Minimum Moves, Actual Moves Executed, Solution Status).",
+        "Canvas interaction during auto-solve: guarded pointerdown event to prevent state corruption while the automated recursive solver is running."
+      ]
+    },
+    {
+      "sim_id": "u02126",
+      "status": "FIXED",
+      "time": "19:28:02",
+      "issues": [
+        "Fixed live readout telemetry targeting by adding support for 'val_reading_*' DOM element IDs in setVal so metrics update in real-time.",
+        "Realigned observation table rows in canvas_js to match the 7 thead columns (Laser Power, Speed, Linear Energy, Roller Temp, Thickness, Cutting Rate, Heat Flow) and removed the orphaned 8th column.",
+        "Wired up interactive stepper buttons (▲/▼) and direct numerical input listeners to synchronize simulation parameters with live telemetry.",
+        "Wired up control action buttons (btn_material_feed, btn_roller_traverse, btn_laser_contour, btn_start_full_cycle, btn_stop_process) to trigger corresponding simulation phases."
+      ]
+    },
+    {
+      "sim_id": "u02170",
+      "status": "FIXED",
+      "time": "19:28:02",
+      "issues": [
+        "Live readout DOM elements in HTML slots have id 'val_reading_*' while canvas_js queried 'reading_*', resulting in null references and unrendered telemetry values.",
+        "Observation table in handleRecord inserted 7 <td> columns (including unlisted cooling time) into a 6-column table, misaligning observations with table headers.",
+        "Action buttons (btn_flame_loop, btn_dip_culture, btn_streak_sector, btn_incubate_plate) and stepper increment/decrement buttons were unhandled in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02026",
+      "status": "ERROR",
+      "time": "19:28:02",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02084",
+      "status": "ERROR",
+      "time": "19:28:02",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02104",
+      "status": "FIXED",
+      "time": "19:28:02",
+      "issues": [
+        "Raw LaTeX symbol 'P_{\\exp}' found in empirical probability readout item heading.",
+        "Escaped LaTeX command '\\exp' inside MathML text element in observation table header.",
+        "Unwired launch action button: script listened to 'btnLaunch', whereas HTML defined id='btn_launch_particles'.",
+        "Missing event listeners for stepper increment/decrement buttons (▲ / ▼).",
+        "Observation table columns were misaligned: omitted Table Aperture Width (j) and shifted count/probability columns."
       ]
     }
   ],
@@ -2096,6 +2090,7 @@
     "u01986",
     "u01987",
     "u01988",
+    "u01989",
     "u01992",
     "u01993",
     "u01994",
@@ -2178,6 +2173,7 @@
     "u02076",
     "u02077",
     "u02078",
+    "u02079",
     "u02080",
     "u02081",
     "u02082",
@@ -2201,6 +2197,7 @@
     "u02101",
     "u02102",
     "u02103",
+    "u02104",
     "u02105",
     "u02106",
     "u02107",
@@ -2221,6 +2218,7 @@
     "u02123",
     "u02124",
     "u02125",
+    "u02126",
     "u02127",
     "u02128",
     "u02129",
@@ -2260,6 +2258,7 @@
     "u02166",
     "u02167",
     "u02168",
+    "u02170",
     "u02171",
     "u02172",
     "u02173",
