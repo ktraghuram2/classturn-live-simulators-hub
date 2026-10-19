@@ -1,52 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:34:42",
-  "completed_count": 1532,
-  "fixed_count": 1401,
-  "latest_sim_id": "u01938",
+  "updated_at": "2026-10-19 14:35:48",
+  "completed_count": 1537,
+  "fixed_count": 1406,
+  "latest_sim_id": "u01944",
   "recent_events": [
-    {
-      "sim_id": "u01868",
-      "status": "ERROR",
-      "time": "14:26:53",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01899",
-      "status": "PASS",
-      "time": "14:27:05",
-      "issues": []
-    },
-    {
-      "sim_id": "u01898",
-      "status": "FIXED",
-      "time": "14:27:26",
-      "issues": [
-        "Observation table recorded row had 9 misaligned columns mismatching the 6 table headers; reordered and aligned row to Applied Stress, Temperature, Elapsed Time, Cumulative Strain, Transient Strain Rate, and Slipped Site Fraction.",
-        "Unwired stepper up/down buttons: attached event listeners to all .stepper-btn elements to increment/decrement target inputs within min/max bounds and fire sync events.",
-        "Added missing 'Trigger Micro-Slip Avalanche Step' action button referenced in Procedure Step 4 into actions_html and wired click handler to trigger discrete dislocation avalanche cascade."
-      ]
-    },
-    {
-      "sim_id": "u01900",
-      "status": "FIXED",
-      "time": "14:27:35",
-      "issues": [
-        "Misaligned observation table columns: btnRecord injected 8 table cells with an unheaded '#recordCounter' and extra 'area' while omitting 'tubeRadius', misaligning curvature into the tube radius header.",
-        "Unwired stepper controls: up and down stepper buttons (.stepper-btn) had no click event listeners bound in canvas_js.",
-        "Unwired action buttons: 'btn_toggle_trihedron', 'btn_cycle_color_mode', and 'btn_animate_sweep' had no event listeners or interactive state logic attached."
-      ]
-    },
-    {
-      "sim_id": "u01896",
-      "status": "ERROR",
-      "time": "14:27:54",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01904",
       "status": "FIXED",
@@ -375,6 +333,61 @@
       "status": "PASS",
       "time": "14:34:42",
       "issues": []
+    },
+    {
+      "sim_id": "u01940",
+      "status": "FIXED",
+      "time": "14:35:04",
+      "issues": [
+        "Unwired action buttons: 'btn_toggle_3d_mode' and 'btn_saturate_hydrogens' lacked event listeners and execution logic",
+        "Missing 3D stereochemical representation modes: balls, stick, VDW space-filling, and wireframe switching was not implemented in canvas_js",
+        "Unwired stepper controls: stepper buttons (.stepper-btn) were not bound to input adjustments",
+        "Observation table column mismatch: btnRecord appended 6 columns including an unsynchronized trial index with permuted columns against the 5 thead headers"
+      ]
+    },
+    {
+      "sim_id": "u01934",
+      "status": "FIXED",
+      "time": "14:35:04",
+      "issues": [
+        "DOM telemetry readout IDs (val_validity_score, val_throughput, val_balance_ratio, val_violation_count) in renderLoop did not match the HTML element IDs (val_reading_*)",
+        "Observation table recording row was misaligned with 8 columns instead of 7, swapping packet rate and data stores count and erroneously injecting throughput",
+        "Action buttons (btn_validate_dfd, btn_cycle_flow_path) and stepper increment/decrement buttons (.stepper-btn) lacked event listener wiring",
+        "Conduits and animated particle tokens connected to sub-process p2 and data store d1 remained rendered even when process_count < 2 or data_store_count < 1"
+      ]
+    },
+    {
+      "sim_id": "u01939",
+      "status": "FIXED",
+      "time": "14:35:17",
+      "issues": [
+        "Simulator title was erroneously labeled 'Magnetic Tweezers' despite entire experiment, apparatus, and physics modeling Optical Tweezers",
+        "Action buttons (Recenter Bead and Test Trap Release) and stepper increment/decrement buttons were unhandled in canvas_js",
+        "Observation table columns were misaligned (6 columns logged including particle diameter and max reflection force, while thead has 5 columns: Displacement, Laser Power, Restoring Force, Trap Stiffness, Potential Energy)",
+        "Canvas badges 3 and 4 were mismatched with legend pills (Badge 3 pointed to bead and Badge 4 pointed to piezo stage, whereas Legend Pill 3 is Microfluidic Flow Chamber and Pill 4 is Dielectric Microparticle)"
+      ]
+    },
+    {
+      "sim_id": "u01942",
+      "status": "FIXED",
+      "time": "14:35:37",
+      "issues": [
+        "Observation table columns were misaligned due to an extraneous rowIdx cell causing an 8-to-7 column mismatch with the header.",
+        "Section 6 live readings failed to update because telemetry selectors queried missing element IDs ('reading_m1', etc.) instead of value span IDs ('val_reading_m1', etc.).",
+        "Section 5 Stepper buttons (▲/▼) and 'Acknowledge DCS Alarm' action button were unwired in canvas_js.",
+        "Legend pills 3, 4, and 5 were misordered relative to apparatus elements and canvas positions (Feeders F1/F2 at pos 3, CB6 at pos 4, Meters at pos 5)."
+      ]
+    },
+    {
+      "sim_id": "u01944",
+      "status": "FIXED",
+      "time": "14:35:46",
+      "issues": [
+        "Telemetry readout elements (val_reading_*) were not matched by updateTelemetryUI id selector",
+        "Observation table columns were misaligned (7 cells recorded vs 6 header columns; columns swapped and missing Mean Hardness)",
+        "Action buttons (Execute Rammer Drop Blow and Engage Indenter into Core) were unwired",
+        "Stepper increment and decrement buttons were unwired"
+      ]
     }
   ],
   "completed_ids": [
@@ -1907,8 +1920,13 @@
     "u01930",
     "u01931",
     "u01933",
+    "u01934",
     "u01935",
     "u01936",
-    "u01938"
+    "u01938",
+    "u01939",
+    "u01940",
+    "u01942",
+    "u01944"
   ]
 }
