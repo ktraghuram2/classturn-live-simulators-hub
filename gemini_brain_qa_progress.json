@@ -1,82 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:49:37",
-  "completed_count": 1817,
-  "fixed_count": 1628,
-  "latest_sim_id": "u02314",
+  "updated_at": "2026-10-19 16:51:27",
+  "completed_count": 1822,
+  "fixed_count": 1632,
+  "latest_sim_id": "u02322",
   "recent_events": [
-    {
-      "sim_id": "u02273",
-      "status": "FIXED",
-      "time": "16:41:46",
-      "issues": [
-        "Action button `btn_execute_stroke` was unwired in canvas_js, preventing execution of forging strokes and recording of passes.",
-        "Stepper increment and decrement buttons (`.stepper-btn-up`, `.stepper-btn-down`) lacked click event listeners in canvas_js.",
-        "Observation table recorder inserted 7 data cells including an unmapped billet height cell, misaligning values against the 6-column header.",
-        "Experiment mode select dropdown was not wired to automatically toggle rotation angle between 90° (Square) and 60° (Hexagonal).",
-        "Callout Badge 3 for the high-temperature billet was located at (420, 395) inside the lower anvil bed; repositioned to (620, 240) in clear space with an authentic S-curve."
-      ]
-    },
-    {
-      "sim_id": "u02277",
-      "status": "PASS",
-      "time": "16:42:00",
-      "issues": []
-    },
-    {
-      "sim_id": "u02271",
-      "status": "PASS",
-      "time": "16:42:31",
-      "issues": []
-    },
-    {
-      "sim_id": "u02279",
-      "status": "PASS",
-      "time": "16:42:42",
-      "issues": []
-    },
-    {
-      "sim_id": "u02278",
-      "status": "FIXED",
-      "time": "16:42:43",
-      "issues": [
-        "Misaligned observation table columns: row innerHTML had 7 mismatched columns including timestamp and column length instead of 6 columns matching observation_thead_html (Trial #, Boundary Condition K, Applied Load P, Critical Buckling Load Pcr, Lateral Deflection delta, Effective Length Le).",
-        "Unwired action button id='btn_trace_deflection': clicking 'Trace Lateral Deflection Profile on Graph Paper' had no event listener or trace persistence logic.",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked event listeners to increment/decrement input values.",
-        "Missing experiment mode switch listener: experimentSelect lacked change listener to toggle boundary conditions."
-      ]
-    },
-    {
-      "sim_id": "u02281",
-      "status": "FIXED",
-      "time": "16:43:03",
-      "issues": [
-        "Observation table columns were misaligned: 7 table data cells were inserted for 6 table header columns due to a redundant percentage strain column.",
-        "Apparatus badges 1 and 2 in canvas_js were swapped relative to legend pills: Badge 1 was placed on the Chamber and Badge 2 on the Plunger Pump, whereas Legend Pill 1 is the Plunger Pump and Pill 2 is the Chamber.",
-        "The primary action button 'btn_pressurize_step' ('Advance Hydraulic Plunger') and the stepper up/down arrow buttons were unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u02280",
-      "status": "FIXED",
-      "time": "16:43:07",
-      "issues": [
-        "Wired unwired stepper buttons (.stepper-btn-up and .stepper-btn-down) to dynamically increment/decrement input values and dispatch change events",
-        "Wired action button (btn_lock_coriolis) to null-balance the torque arm and record observation data",
-        "Fixed observation table column misalignment by removing extraneous torque column in row data to match the 7 table header columns",
-        "Implemented null-balance behavior restoring motor stator tilt to zero datum upon balancing"
-      ]
-    },
-    {
-      "sim_id": "u02276",
-      "status": "FIXED",
-      "time": "16:43:11",
-      "issues": [
-        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) for slope_m, offset_c, and clip_limit.",
-        "Unwired action buttons (#btn_convert_color_space and #btn_apply_equalization) for color space switching and histogram equalization toggle.",
-        "Misaligned observation table columns: btnRecord injected 8 misordered columns including trial counter and variance, while observation_thead_html defines exactly 7 columns (Selected Color Space, Target Plane, Transformation Slope, Brightness Offset, Mean Intensity, Information Entropy, Reconstructed PSNR)."
-      ]
-    },
     {
       "sim_id": "u02274",
       "status": "ERROR",
@@ -389,6 +317,80 @@
         "Unwired action buttons: Execute Synchronous Round (btn_step_round), Simulate Node Crash (btn_inject_crash), and Auto-Run to Consensus (btn_run_consensus) had no event listeners in canvas_js",
         "Unwired stepper buttons: Stepper up and down buttons (.stepper-btn) had no click event listeners to increment/decrement input values and sync simulator state",
         "Misaligned observation table columns: btnRecord logged 6 <td> elements including an extra total node count column for a 5-column table header"
+      ]
+    },
+    {
+      "sim_id": "u02317",
+      "status": "PASS",
+      "time": "16:49:53",
+      "issues": []
+    },
+    {
+      "sim_id": "u02315",
+      "status": "FIXED",
+      "time": "16:50:08",
+      "issues": [
+        "Raw LaTeX 'pK_{a}' was present without MathML markup in principles_list_html equation symbols",
+        "Observation table rows generated 8 data cells, misaligned with the 6-column header specification in observation_thead_html",
+        "Unwired action buttons ('btn_switch_stress_reagent' and 'btn_dispense_aliquot')",
+        "Unwired stepper controls (stepper-btn-up and stepper-btn-down buttons)",
+        "Burette 3 and calculateChemistry were hardcoded strictly to HCl, lacking dynamic support for NaOH stress testing"
+      ]
+    },
+    {
+      "sim_id": "u02318",
+      "status": "FIXED",
+      "time": "16:50:23",
+      "issues": [
+        "Unwired action buttons: #btn_inject_payload and #btn_fix_code had no click event listeners in canvas_js",
+        "Unwired stepper controls: .stepper-btn ▲/▼ buttons had no click event listeners to modify input values",
+        "Telemetry readout ID mismatch: updateTelemetry queried non-existent elements #reading_* instead of #val_reading_* defined in readouts_html",
+        "Misaligned observation table: record handler generated 5 columns with an unlisted serial number instead of the 4 columns defined in observation_thead_html"
+      ]
+    },
+    {
+      "sim_id": "u02312",
+      "status": "ERROR",
+      "time": "16:50:24",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02313",
+      "status": "ERROR",
+      "time": "16:50:25",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02320",
+      "status": "FIXED",
+      "time": "16:50:46",
+      "issues": [
+        "Observation table recording was writing 8 misaligned columns instead of matching the 6 columns defined in observation_thead_html (Algorithm Name, Message Length, Mutation Bit Index, Hamming Distance, Avalanche Diffusion, and Preimage Match).",
+        "Action buttons (#btn_test_avalanche, #btn_run_preimage_attack, #btn_switch_algorithm) lacked click event listeners in canvas_js.",
+        "Engine state indicator LEDs and output width telemetry were hardcoded and did not update upon toggling the cryptographic hash engine (SHA-256 vs MD5).",
+        "Custom stepper up/down buttons (.stepper-btn) lacked event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02308",
+      "status": "ERROR",
+      "time": "16:50:57",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02322",
+      "status": "FIXED",
+      "time": "16:51:27",
+      "issues": [
+        "Section 5 HTML action buttons (Sense Channel CCA, Wait IFS, Transmit RTS, Transmit Data, Trigger Exponential Backoff, Toggle Contending Bot) were not attached to event listeners in canvas_js.",
+        "Section 5 stepper buttons (▲/▼) and manual input events for collision counter (k) and base backoff time were not wired to update the simulation parameters in real time.",
+        "Section 8 observation table was not populated with trial results when contention backoff delays or transmission events occurred."
       ]
     }
   ],
@@ -2209,6 +2211,11 @@
     "u02309",
     "u02310",
     "u02311",
-    "u02314"
+    "u02314",
+    "u02315",
+    "u02317",
+    "u02318",
+    "u02320",
+    "u02322"
   ]
 }
