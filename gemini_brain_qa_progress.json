@@ -1,55 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:03:02",
-  "completed_count": 1903,
-  "fixed_count": 1706,
-  "latest_sim_id": "u01335",
+  "updated_at": "2026-10-19 18:04:41",
+  "completed_count": 1908,
+  "fixed_count": 1711,
+  "latest_sim_id": "u01439",
   "recent_events": [
-    {
-      "sim_id": "u01223",
-      "status": "FIXED",
-      "time": "17:19:23",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01166",
-      "status": "ERROR",
-      "time": "17:19:57",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01254",
-      "status": "ERROR",
-      "time": "17:20:01",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01257",
-      "status": "FIXED",
-      "time": "17:20:06",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01258",
-      "status": "FIXED",
-      "time": "17:20:20",
-      "issues": [
-        "Simulator title incorrectly stated 'BJT Phase Shift Oscillator' instead of 'RC Phase Shift Oscillator' despite an op-amp circuit design across all slots and canvas visuals",
-        "Observation table record button appended 8 cells into a 6-column header causing column misalignment",
-        "Action button 'btn_auto_tune_barkhausen' was unwired in canvas_js",
-        "Stepper up/down buttons (.stepper-btn) had no click event listeners wired in canvas_js",
-        "Barkhausen oscillation criterion in calculatePhysics allowed sustained oscillations below unity loop gain (threshold was 0.95 instead of 1.0)",
-        "PCB silkscreen text used low-contrast dark green (#065f46) on a dark PCB background"
-      ]
-    },
     {
       "sim_id": "u01248",
       "status": "ERROR",
@@ -377,6 +332,60 @@
       "issues": [
         "Unwired action buttons: 'btn_run_uniprot_query' and 'btn_locate_hydrophobic_core' defined in actions_html lacked event listener bindings in canvas_js.",
         "Observation table column mismatch: btnRecord inserted 8 cells with an unindexed row count and swapped column order, whereas observation_thead_html defines exactly 7 columns (Accession Index, Polypeptide Length, Molecular Mass, CDS Length, Scan Window Size, Scan Start Position, Window GRAVY Score)."
+      ]
+    },
+    {
+      "sim_id": "u01137",
+      "status": "FIXED",
+      "time": "18:03:12",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted an unrepresented row number index, shifting Vertex Count, Density, Algorithm, Selected Edges, and Weight columns.",
+        "Unwired action buttons: 'btn_solve_mst' (Auto-Solve Minimum Spanning Tree) and 'btn_toggle_algorithm' (Switch Kruskal / Prim Mode) were present in HTML but had no click handlers.",
+        "Unwired stepper buttons: '.stepper-btn' up/down buttons lacked click handlers in canvas_js.",
+        "Missing Prim's algorithm implementation: Prim mode toggle was present in experiment options and action buttons, but simulation only executed Kruskal's algorithm."
+      ]
+    },
+    {
+      "sim_id": "u01291",
+      "status": "FIXED",
+      "time": "18:03:12",
+      "issues": [
+        "Unwired action button 'btn_inject_reactant' (Inject Reactant Charge) in canvas_js",
+        "Unwired stepper up/down buttons for reactor temperature regulation (trxr_control)",
+        "Observation table had 5 columns including elapsed time, but recording was misaligned without elapsed time tracking"
+      ]
+    },
+    {
+      "sim_id": "u01302",
+      "status": "FIXED",
+      "time": "18:03:16",
+      "issues": [
+        "Unwired action button btn_run_scan: Added click handler to automate theta-2theta goniometer scan from 20 deg to 90 deg and log detected Bragg peaks into the observation table.",
+        "Misaligned observation table columns: Corrected tr generation from 5 mismatched cells to all 6 columns matching observation_thead_html (Diffraction Angle 2theta, Bragg Angle theta, Diffracted Intensity, Interplanar Spacing d, Miller Indices (hkl), and Cubic Lattice Parameter a).",
+        "Unwired stepper buttons: Added event listeners to handle stepper-btn-up and stepper-btn-down clicks across all control inputs.",
+        "Erroneous MathML tags for English prose: Replaced misleading MathML tags encoding the English article 'a' as a variable in aim_html, apparatus_html, principles_summary_html, and procedure_section_html."
+      ]
+    },
+    {
+      "sim_id": "u01350",
+      "status": "FIXED",
+      "time": "18:04:15",
+      "issues": [
+        "Corrected typographical spacing error in Section 2 Apparatus description ('cross-correlationdot' to 'cross-correlation dot').",
+        "Wired Advance Receptive Field Scan action button (#btn_step_kernel) to advance the convolution scan position state.",
+        "Wired interactive stepper increment and decrement buttons (.stepper-btn) to update input controls.",
+        "Added live synchronization of simulation mathematical state to Section 6 DOM readout elements."
+      ]
+    },
+    {
+      "sim_id": "u01439",
+      "status": "FIXED",
+      "time": "18:04:41",
+      "issues": [
+        "HTML action buttons (act_enqueue, act_dequeue, act_peek) were unwired in canvas_js due to ID mismatch",
+        "HTML stepper increment and decrement buttons (▲/▼) lacked event listeners in canvas_js",
+        "Observation table columns were misaligned with respect to observation_thead_html (Operand Data, Queue Length, Front/Rear Addresses, and Heap Memory columns out of order)",
+        "Missing operational state telemetry tracking (lastOperation, lastOperand) for logged observation entries"
       ]
     }
   ],
@@ -1329,6 +1338,7 @@
     "u01134",
     "u01135",
     "u01136",
+    "u01137",
     "u01138",
     "u01139",
     "u01140",
@@ -1453,6 +1463,7 @@
     "u01288",
     "u01289",
     "u01290",
+    "u01291",
     "u01292",
     "u01293",
     "u01294",
@@ -1463,6 +1474,7 @@
     "u01299",
     "u01300",
     "u01301",
+    "u01302",
     "u01303",
     "u01304",
     "u01305",
@@ -1499,6 +1511,7 @@
     "u01346",
     "u01347",
     "u01348",
+    "u01350",
     "u01351",
     "u01352",
     "u01353",
@@ -1576,6 +1589,7 @@
     "u01436",
     "u01437",
     "u01438",
+    "u01439",
     "u01440",
     "u01442",
     "u01443",
