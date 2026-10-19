@@ -1,53 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:51:36",
-  "completed_count": 1147,
-  "fixed_count": 1102,
-  "latest_sim_id": "u01420",
+  "updated_at": "2026-10-19 08:53:14",
+  "completed_count": 1152,
+  "fixed_count": 1106,
+  "latest_sim_id": "u01422",
   "recent_events": [
-    {
-      "sim_id": "u01380",
-      "status": "PASS",
-      "time": "08:43:22",
-      "issues": []
-    },
-    {
-      "sim_id": "u01381",
-      "status": "FIXED",
-      "time": "08:43:37",
-      "issues": [
-        "Observation table columns in canvas_js btnRecord handler were misaligned with observation_thead_html (8 td cells inserted into 6 th columns)",
-        "Action buttons act_snap_nyquist and act_set_oversample in Section 05 Controls were unwired",
-        "Stepper adjustment buttons (.stepper-btn) were unwired",
-        "Telemetry apparent frequency calculation and oscilloscope aliased envelope lacked multi-order spectral folding and phase alignment"
-      ]
-    },
-    {
-      "sim_id": "u01382",
-      "status": "FIXED",
-      "time": "08:43:47",
-      "issues": [
-        "Cleaned malformed HTML tags embedded inside data-unit attributes of readout-val elements",
-        "Corrected malformed MathML unit fractions representing g/cm³ in readouts_html"
-      ]
-    },
-    {
-      "sim_id": "u01383",
-      "status": "FIXED",
-      "time": "08:44:39",
-      "issues": [
-        "Telemetry DOM element selectors targeted IDs like 'reading_w1'/'val_w1' instead of 'val_reading_w1', preventing live readout updates.",
-        "Action buttons ('btn_drop_rammer', 'btn_trim_collar', 'btn_dry_sample') were declared in HTML slots but unwired in canvas_js.",
-        "Stepper stepper-btn up and down controls were unwired in canvas_js.",
-        "Observation table recorder created 9 misaligned columns with mismatched attributes instead of the 10 columns specified by observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u01389",
-      "status": "PASS",
-      "time": "08:44:46",
-      "issues": []
-    },
     {
       "sim_id": "u01385",
       "status": "FIXED",
@@ -389,6 +346,53 @@
         "Fixed observation table column mismatch: removed unmapped 8th column from observation tbody row in canvas_js to align with the 7 headers defined in observation_thead_html.",
         "Wired interactive stepper buttons (▲/▼) and input change listeners in canvas_js so laser power, scan speed, layer thickness, and hatch spacing can be adjusted interactively.",
         "Wired phase action buttons (Dispense Powder, Spread Layer, Execute Laser Sintering Cycle, Lower Fabrication Platform) to control simulation phases."
+      ]
+    },
+    {
+      "sim_id": "u01423",
+      "status": "FIXED",
+      "time": "08:53:10",
+      "issues": [
+        "Corrupted MathML fraction markup in apparatus_html for the rheostat specification (50 Ω / 100 Ω)",
+        "Cleaned up malformed inline math and raw LaTeX symbols in principles_summary_html and validation_html",
+        "Added wiring and event listeners for stepper-btn increment/decrement buttons (.stepper-btn)",
+        "Added wiring for action buttons btn_toggle_pulses and btn_align_critical_angle",
+        "Ensured input and change event listeners propagate interactive updates to computePhysics and syncInputs"
+      ]
+    },
+    {
+      "sim_id": "u01426",
+      "status": "PASS",
+      "time": "08:53:13",
+      "issues": []
+    },
+    {
+      "sim_id": "u01424",
+      "status": "FIXED",
+      "time": "08:53:13",
+      "issues": [
+        "Fixed errant MathML tags wrapping the English indefinite article 'a' in principles_summary_html ('is a classical', 'a system', 'For a continuous') and procedure_section_html ('mounting a continuous')."
+      ]
+    },
+    {
+      "sim_id": "u01421",
+      "status": "FIXED",
+      "time": "08:53:13",
+      "issues": [
+        "Corrupted units for volumetric flow rate (m/m³s) and traverse speed (m mm/s) in readouts and observation header HTML.",
+        "Unwired action buttons ('btn_start_print' and 'btn_pause_print') and stepper up/down controls in canvas_js.",
+        "Observation table column mismatch: canvas_js generated 9 data cells (including unmapped Sl. No and layer number) against 7 table headers."
+      ]
+    },
+    {
+      "sim_id": "u01422",
+      "status": "FIXED",
+      "time": "08:53:13",
+      "issues": [
+        "Corrected MathML formatting in principles_summary_html where the indefinite article 'A' was incorrectly formatted as a math variable",
+        "Corrected broken unit expressions (m(m/s) to mm/s and (m/m³)s to mm³/s) across steppers_html, readouts_html, and observation_thead_html",
+        "Wired up interactive action buttons (btn_build_platform, btn_material_reservoir, btn_print_heads, btn_milling_head, btn_start_process, btn_stop_process) and stepper increment/decrement buttons in canvas_js",
+        "Aligned observation table recorded columns in canvas_js with observation_thead_html (Thickness, Speed, Droplet Vol, Packing Density, Saturation, Porosity, Build Rate)"
       ]
     }
   ],
@@ -1539,6 +1543,11 @@
     "u01417",
     "u01418",
     "u01419",
-    "u01420"
+    "u01420",
+    "u01421",
+    "u01422",
+    "u01423",
+    "u01424",
+    "u01426"
   ]
 }
