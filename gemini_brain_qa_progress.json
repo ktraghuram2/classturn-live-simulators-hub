@@ -1,51 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:20:30",
-  "completed_count": 1027,
-  "fixed_count": 1004,
-  "latest_sim_id": "u01255",
+  "updated_at": "2026-10-19 08:21:42",
+  "completed_count": 1032,
+  "fixed_count": 1008,
+  "latest_sim_id": "u01261",
   "recent_events": [
-    {
-      "sim_id": "u01199",
-      "status": "FIXED",
-      "time": "08:12:14",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01191",
-      "status": "ERROR",
-      "time": "08:12:16",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01200",
-      "status": "FIXED",
-      "time": "08:12:37",
-      "issues": [
-        "Raw LaTeX '*_{i+1}' in principles_summary_html replaced with proper MathML notation",
-        "Observation table column mismatch: btnRecord generated 9 columns against the 6-column header (fixed to align with Step Index, Abscissa, Numerical Solution, Euler Slope, Corrector Slope, and Mean Slope)",
-        "Unwired stepper up/down buttons: connected event listeners to step controls by input step size and bounds",
-        "Unwired action button #btn_cycle_equation: implemented differential equation cycling across test equations (f1, f2, f3)"
-      ]
-    },
-    {
-      "sim_id": "u01206",
-      "status": "FIXED",
-      "time": "08:12:48",
-      "issues": [
-        "Observation table recorder row generated 8 <td> elements, causing column misalignment with the 7 observation table headers; removed the extraneous aN column."
-      ]
-    },
-    {
-      "sim_id": "u01203",
-      "status": "PASS",
-      "time": "08:12:50",
-      "issues": []
-    },
     {
       "sim_id": "u01204",
       "status": "FIXED",
@@ -384,6 +343,53 @@
         "Observation table recording hook emitted 8 mismatched columns instead of the 7 columns defined in observation_thead_html",
         "Stepper increment and decrement buttons (▲/▼) lacked click event listeners in canvas_js",
         "Action buttons 'btn_calibrate_meter' and 'btn_equilibrate_mixture' were completely unwired in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01256",
+      "status": "FIXED",
+      "time": "08:20:58",
+      "issues": [
+        "Raw LaTeX 'pK_{a}' in readouts_html replaced with proper MathML notation",
+        "Malformed temperature fraction MathML in validation_html corrected to '(25 °C / 298.15 K)'",
+        "Telemetry readouts in canvas_js targeted 'reading_*' instead of matching slot span IDs 'val_reading_*'",
+        "Action buttons (Dispense 2.0 mL NaOH, Interpolate Half-Neutralization Point) and stepper buttons lacked click handlers in canvas_js",
+        "Observation table tbody rows rendered 6 columns while observation_thead_html defined 4 columns (Volume, pH, First Derivative, Conjugate Base Fraction)"
+      ]
+    },
+    {
+      "sim_id": "u01260",
+      "status": "PASS",
+      "time": "08:21:01",
+      "issues": []
+    },
+    {
+      "sim_id": "u01259",
+      "status": "FIXED",
+      "time": "08:21:27",
+      "issues": [
+        "Observation table columns mismatched: table header defined 5 columns (Bridge Resistance, Theoretical Frequency, Observed Period, Measured Frequency, Peak-to-Peak Voltage), but record button created 6 columns starting with a row index, misaligning all data rows.",
+        "Unwired control actions: 'btn_toggle_power' and 'btn_autoscale_oscilloscope' had no event listeners or simulation state bindings.",
+        "Stepper buttons not wired: script queried '[data-stepper]' instead of the actual '.stepper-btn' elements with 'data-target'.",
+        "Numbered badges inverted relative to legend pills: Badge 1 pointed to IC741 and Badge 2 to Wien Bridge Network, while Legend Pill 1 is Wien Bridge Network and Pill 2 is Operational Amplifier (IC741)."
+      ]
+    },
+    {
+      "sim_id": "u01262",
+      "status": "FIXED",
+      "time": "08:21:28",
+      "issues": [
+        "Observation table record button logged columns out of order: Transmitted Intensity I(x) (column 6), Quantum Efficiency η (column 7), and Generation Rate G (column 8) were transposed relative to the observation table headers."
+      ]
+    },
+    {
+      "sim_id": "u01261",
+      "status": "FIXED",
+      "time": "08:21:41",
+      "issues": [
+        "Unwired action buttons: 'btn_tune_bandgap' (Tune Photon Energy to Bandgap Threshold) and 'btn_toggle_bandgap_type' (Toggle Direct / Indirect Specimen) were not hooked up to any event listeners.",
+        "Unwired stepper buttons: clicking .stepper-btn-up and .stepper-btn-down had no event handlers to increment or decrement inputs.",
+        "Misaligned observation table columns: row creation inverted columns (placed Photon Energy and Temperature ahead of Specimen Material), omitted Crystal Quality entirely, and left Carrier Generation Rate column empty."
       ]
     }
   ],
@@ -1414,6 +1420,11 @@
     "u01251",
     "u01252",
     "u01253",
-    "u01255"
+    "u01255",
+    "u01256",
+    "u01259",
+    "u01260",
+    "u01261",
+    "u01262"
   ]
 }
