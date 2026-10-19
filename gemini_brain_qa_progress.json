@@ -1,57 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:26:02",
-  "completed_count": 1237,
-  "fixed_count": 1176,
-  "latest_sim_id": "u01546",
+  "updated_at": "2026-10-19 09:28:21",
+  "completed_count": 1242,
+  "fixed_count": 1179,
+  "latest_sim_id": "u01551",
   "recent_events": [
-    {
-      "sim_id": "u01502",
-      "status": "ERROR",
-      "time": "09:15:29",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01504",
-      "status": "ERROR",
-      "time": "09:15:30",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01508",
-      "status": "FIXED",
-      "time": "09:15:59",
-      "issues": [
-        "Raw LaTeX symbols (RT_{base} and Δ RT_{conflict}) in principles_list_html replaced with proper inline MathML",
-        "Unwired HTML action buttons (btn_present_stimulus, btn_press_on, btn_press_off) and experiment mode selector wired in canvas_js",
-        "Missing observation table row population on user trial completion wired to observation tbody in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01509",
-      "status": "FIXED",
-      "time": "09:16:12",
-      "issues": [
-        "Misaligned observation table columns: btnRecord recorded 9 values into a 7-column table by inserting extraneous clock rate and error rate values into state, codeword, and metric columns.",
-        "Unwired action buttons: Clock Pulse (btn_clock_step), Inject Inversion (btn_inject_error), and Traceback (btn_traceback_decode) had no click event listeners.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) and input change/input events were not wired to update simulation parameters.",
-        "Unwired experiment mode selection: Changing experiment modes did not adjust channel error rate or update control states."
-      ]
-    },
-    {
-      "sim_id": "u01513",
-      "status": "FIXED",
-      "time": "09:16:34",
-      "issues": [
-        "Unwired action buttons: btn_highlight_flux and btn_sync_lock lacked click event listeners in canvas_js",
-        "Unwired stepper controls: up/down stepper buttons (.stepper-btn) had no click event listeners to modify input values",
-        "Observation table columns mismatch: 7 data cells were appended per row for a 5-column table header, misaligning speed, field current, flux, frequency, and EMF readings"
-      ]
-    },
     {
       "sim_id": "u01510",
       "status": "FIXED",
@@ -378,6 +331,52 @@
       "status": "PASS",
       "time": "09:26:02",
       "issues": []
+    },
+    {
+      "sim_id": "u01549",
+      "status": "PASS",
+      "time": "09:27:33",
+      "issues": []
+    },
+    {
+      "sim_id": "u01554",
+      "status": "PASS",
+      "time": "09:27:33",
+      "issues": []
+    },
+    {
+      "sim_id": "u01550",
+      "status": "FIXED",
+      "time": "09:27:33",
+      "issues": [
+        "Observation table column mismatch: table body row prepended an unheaded recordIndex counter, causing all 9 columns to shift out of alignment with the header, and omitted the final Compensating Current (Theoretical) ΔIcalc column.",
+        "Unwired stepper up/down buttons: .stepper-btn click handlers were missing in canvas_js, preventing parameter adjustments via stepper arrows.",
+        "Unwired interactive action buttons: #toggle_compensation_circuit and #apply_resistance_perturbation buttons were not wired to listeners.",
+        "Circuit state and visuals did not reflect the deactivated supply and compensating source current when switching to Compensated Network mode."
+      ]
+    },
+    {
+      "sim_id": "u01552",
+      "status": "FIXED",
+      "time": "09:27:52",
+      "issues": [
+        "Unwired primary action button #btn_detect_jnd ('Mark Just Noticeable Difference')",
+        "Telemetry readouts looked up non-existent element IDs #reading_* instead of #val_reading_*",
+        "Observation table columns were misaligned with headers: included extra expansion rate column and omitted differential threshold ΔI",
+        "Stepper increment and decrement buttons were not wired to update inputs",
+        "Raw LaTeX escape artifacts in MathML in readouts_html and observation_thead_html for percentage difference symbol"
+      ]
+    },
+    {
+      "sim_id": "u01551",
+      "status": "FIXED",
+      "time": "09:28:21",
+      "issues": [
+        "Unwired action buttons: 'btn_clamp_specimen' and 'btn_zero_calibrate' were not wired in canvas_js to clamp the specimen or calibrate to zero.",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' were not bound to adjust input values.",
+        "Observation table column mismatch: btnRecord appended 6 columns instead of the 7 columns declared in observation_thead_html, omitting the Vernier Scale Value (n·LC) column and shifting subsequent data.",
+        "Telemetry element selectors: Readout updates targeted 'reading_*' container IDs rather than the value elements 'val_reading_*'."
+      ]
     }
   ],
   "completed_ids": [
@@ -1617,6 +1616,11 @@
     "u01543",
     "u01544",
     "u01545",
-    "u01546"
+    "u01546",
+    "u01549",
+    "u01550",
+    "u01551",
+    "u01552",
+    "u01554"
   ]
 }
