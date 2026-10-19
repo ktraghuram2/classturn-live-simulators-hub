@@ -1,60 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:26:23",
-  "completed_count": 1727,
-  "fixed_count": 1554,
-  "latest_sim_id": "u02202",
+  "updated_at": "2026-10-19 16:27:08",
+  "completed_count": 1732,
+  "fixed_count": 1558,
+  "latest_sim_id": "u02207",
   "recent_events": [
-    {
-      "sim_id": "u02158",
-      "status": "PASS",
-      "time": "16:14:27",
-      "issues": []
-    },
-    {
-      "sim_id": "u02163",
-      "status": "FIXED",
-      "time": "16:14:52",
-      "issues": [
-        "Fixed misaligned observation table columns: removed extraneous specimen radius R column from observation table rows to match the 6-column thead specification (z, θ, As, rs, Pp, Mc)."
-      ]
-    },
-    {
-      "sim_id": "u02160",
-      "status": "FIXED",
-      "time": "16:14:56",
-      "issues": [
-        "Observation table columns in btnRecord were misaligned (5 columns instead of the 6 headers in observation_thead_html; missing dedicated Source Node, Destination Node, and Active Route Path columns)",
-        "Stepper increment/decrement buttons (.stepper-btn) lacked click event listeners in canvas_js",
-        "Action buttons btn_transmit_packet and btn_commit_routing_table lacked click event listeners in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u02162",
-      "status": "PASS",
-      "time": "16:15:01",
-      "issues": []
-    },
-    {
-      "sim_id": "u02164",
-      "status": "PASS",
-      "time": "16:15:04",
-      "issues": []
-    },
-    {
-      "sim_id": "u02165",
-      "status": "FIXED",
-      "time": "16:15:07",
-      "issues": [
-        "Apparatus numbered badges 4 and 5 in canvas_js were inverted relative to apparatus item ordering (Badge 4 represents Lyapunov Energy Function Meter & Landscape Display, Badge 5 represents State Vector LED Array & Activation Galvanometer)."
-      ]
-    },
-    {
-      "sim_id": "u02166",
-      "status": "PASS",
-      "time": "16:15:19",
-      "issues": []
-    },
     {
       "sim_id": "u02167",
       "status": "FIXED",
@@ -354,6 +304,71 @@
         "Cleaned up data-unit attributes in readouts_html containing nested HTML span tags and unrendered MathML",
         "Corrected observation table header units in observation_thead_html for solubility and dimensionless terms"
       ]
+    },
+    {
+      "sim_id": "u02197",
+      "status": "FIXED",
+      "time": "16:26:28",
+      "issues": [
+        "Misaligned observation table: JS recorded 8 columns (including extra trial count and inclination angle) whereas HTML observation table header has exactly 6 columns (Interpolation Factor, Surface U, Surface V, Blended Color Value, U-Tangent Magnitude, Normal Z Component).",
+        "Unwired action buttons: 'btn_evaluate_normal' (Orthogonalize Normal Vector) and 'btn_toggle_surface_warp' (Toggle Dynamic Wave Distortion) lacked event listeners and interactive visual state handling.",
+        "Unwired stepper arrow buttons: '.stepper-btn-up' and '.stepper-btn-down' buttons were not listening to click events.",
+        "Low contrast mesh grid lines: grid line stroke 'rgba(15, 23, 42, 0.45)' had poor visibility on dark #090d16 canvas and manifold surface."
+      ]
+    },
+    {
+      "sim_id": "u02205",
+      "status": "FIXED",
+      "time": "16:26:32",
+      "issues": [
+        "Wired action buttons: btn_level_tribrach (auto-leveling tribrach tilt to 0), btn_fire_edm (triggering wave packet animation), and btn_toggle_view (toggling reticle view)",
+        "Wired stepper buttons (.stepper-btn-up and .stepper-btn-down) to correctly increment/decrement stepper input values within min/max bounds and fire update events",
+        "Wired observation table record button (btnRecord) to append all 6 telemetry readings matching the 6 observation table header columns"
+      ]
+    },
+    {
+      "sim_id": "u02196",
+      "status": "ERROR",
+      "time": "16:26:32",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02204",
+      "status": "FIXED",
+      "time": "16:26:38",
+      "issues": [
+        "Live telemetry readout labels failed to update because setTxt looked for element IDs matching 'reading_*' instead of 'val_reading_*'",
+        "Observation table columns were misaligned and out of order compared to observation_thead_html, with 9 row cells logged against 8 table headers",
+        "Action buttons btn_apply_seismic_pulse and btn_symmetrize_frame were unwired and unhandled in canvas_js",
+        "Stepper control increment and decrement buttons (.stepper-btn) were unwired in canvas_js",
+        "Duplicate MathML symbol tag present in observation_thead_html for eccentricity column"
+      ]
+    },
+    {
+      "sim_id": "u02198",
+      "status": "ERROR",
+      "time": "16:26:42",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02206",
+      "status": "FIXED",
+      "time": "16:26:53",
+      "issues": [
+        "Unwired action buttons: btn_lanzar_movil (Iniciar Desplazamiento Uniforme) and btn_invertir_sentido (Invertir Signo de Velocidad) had no event listeners attached in canvas_js",
+        "Unwired stepper up/down buttons: .stepper-btn-up and .stepper-btn-down buttons were missing click event listeners to increment and decrement stepper_v and stepper_e0",
+        "Misaligned observation table columns: btnRecord injected an extra count cell (${recordCount}) as the first column, displacing time, initial position, velocity, and displacement relative to the 5 header columns in observation_thead_html"
+      ]
+    },
+    {
+      "sim_id": "u02207",
+      "status": "PASS",
+      "time": "16:27:07",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -2079,10 +2094,15 @@
     "u02190",
     "u02191",
     "u02192",
+    "u02197",
     "u02199",
     "u02200",
     "u02201",
     "u02202",
-    "u02203"
+    "u02203",
+    "u02204",
+    "u02205",
+    "u02206",
+    "u02207"
   ]
 }
