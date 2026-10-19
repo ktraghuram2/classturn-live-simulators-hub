@@ -1,60 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:42:00",
-  "completed_count": 1787,
-  "fixed_count": 1603,
-  "latest_sim_id": "u02277",
+  "updated_at": "2026-10-19 16:43:07",
+  "completed_count": 1792,
+  "fixed_count": 1606,
+  "latest_sim_id": "u02280",
   "recent_events": [
-    {
-      "sim_id": "u02237",
-      "status": "FIXED",
-      "time": "16:32:23",
-      "issues": [
-        "Unwired Action Buttons: btn_switch_policy ('Toggle Policy') and btn_run_full_sequence ('Run Complete Trace') lacked event listeners in canvas_js.",
-        "Hardcoded Policy: Page replacement controller was hardcoded to LRU without support for FIFO or Belady's Optimal (OPT) policies and lacked visual canvas active status sync.",
-        "EMAT Formula Discrepancy: EMAT calculation in canvas_js omitted the TLB miss latency term ((1 - h_TLB) * (t_TLB + 2 * t_RAM)) defined in Section 3 principles.",
-        "Observation Table Column Mismatch: Observation table header declared 8 columns while btnRecord inserted only 6 mismatched columns omitting Active Policy and Resident Frame state.",
-        "Unwired Stepper Buttons: Stepper input controls lacked click handling for stepper-btn-up and stepper-btn-down buttons."
-      ]
-    },
-    {
-      "sim_id": "u02236",
-      "status": "FIXED",
-      "time": "16:32:29",
-      "issues": [
-        "Raw unrendered LaTeX symbols (BMC_{vessel}, BMC_{trays}, BMC_{reb}, BMC_{cond}, BMC_{total}) in section 06 live readouts headings.",
-        "Observation table record row in canvas_js omitted the Tray Stack Bare Module Cost cell, creating an 8-column row under a 9-column thead.",
-        "Action buttons 'btn_auto_balance_hydraulics' and 'btn_optimize_cost' had no event listeners wired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) lacked click event listeners in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u02234",
-      "status": "PASS",
-      "time": "16:32:34",
-      "issues": []
-    },
-    {
-      "sim_id": "u02238",
-      "status": "FIXED",
-      "time": "16:32:56",
-      "issues": [
-        "Unwired action button #btn_inject_pulse for injecting/re-triggering the Gaussian wave packet",
-        "Unwired stepper increment/decrement buttons (.stepper-btn) for numerical parameter controls",
-        "Observation table column misalignment: header defines 6 columns (f₀, Γ, Ez, λg, SWR, v) but canvas_js was populating 10 misaligned columns missing numerical phase velocity"
-      ]
-    },
-    {
-      "sim_id": "u02240",
-      "status": "FIXED",
-      "time": "16:33:01",
-      "issues": [
-        "Readout element IDs in canvas_js used 'reading_*' instead of 'val_reading_*', preventing live telemetry readouts from updating.",
-        "Observation table columns were severely misaligned: 11 <td> cells logged for 7 <th> header columns, and Centerline Velocity U_max was missing.",
-        "Action buttons #btn_traverse_probe and #btn_purge_air were completely unwired.",
-        "Stepper ▲/▼ up/down buttons had no click listeners attached to increment/decrement input values."
-      ]
-    },
     {
       "sim_id": "u02242",
       "status": "PASS",
@@ -381,6 +331,50 @@
       "status": "PASS",
       "time": "16:42:00",
       "issues": []
+    },
+    {
+      "sim_id": "u02271",
+      "status": "PASS",
+      "time": "16:42:31",
+      "issues": []
+    },
+    {
+      "sim_id": "u02279",
+      "status": "PASS",
+      "time": "16:42:42",
+      "issues": []
+    },
+    {
+      "sim_id": "u02278",
+      "status": "FIXED",
+      "time": "16:42:43",
+      "issues": [
+        "Misaligned observation table columns: row innerHTML had 7 mismatched columns including timestamp and column length instead of 6 columns matching observation_thead_html (Trial #, Boundary Condition K, Applied Load P, Critical Buckling Load Pcr, Lateral Deflection delta, Effective Length Le).",
+        "Unwired action button id='btn_trace_deflection': clicking 'Trace Lateral Deflection Profile on Graph Paper' had no event listener or trace persistence logic.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked event listeners to increment/decrement input values.",
+        "Missing experiment mode switch listener: experimentSelect lacked change listener to toggle boundary conditions."
+      ]
+    },
+    {
+      "sim_id": "u02281",
+      "status": "FIXED",
+      "time": "16:43:03",
+      "issues": [
+        "Observation table columns were misaligned: 7 table data cells were inserted for 6 table header columns due to a redundant percentage strain column.",
+        "Apparatus badges 1 and 2 in canvas_js were swapped relative to legend pills: Badge 1 was placed on the Chamber and Badge 2 on the Plunger Pump, whereas Legend Pill 1 is the Plunger Pump and Pill 2 is the Chamber.",
+        "The primary action button 'btn_pressurize_step' ('Advance Hydraulic Plunger') and the stepper up/down arrow buttons were unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02280",
+      "status": "FIXED",
+      "time": "16:43:07",
+      "issues": [
+        "Wired unwired stepper buttons (.stepper-btn-up and .stepper-btn-down) to dynamically increment/decrement input values and dispatch change events",
+        "Wired action button (btn_lock_coriolis) to null-balance the torque arm and record observation data",
+        "Fixed observation table column misalignment by removing extraneous torque column in row data to match the 7 table header columns",
+        "Implemented null-balance behavior restoring motor stator tilt to zero datum upon balancing"
+      ]
     }
   ],
   "completed_ids": [
@@ -2168,8 +2162,13 @@
     "u02268",
     "u02269",
     "u02270",
+    "u02271",
     "u02272",
     "u02273",
-    "u02277"
+    "u02277",
+    "u02278",
+    "u02279",
+    "u02280",
+    "u02281"
   ]
 }
