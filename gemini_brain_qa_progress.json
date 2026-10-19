@@ -1,58 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:25:37",
-  "completed_count": 1978,
-  "fixed_count": 1775,
-  "latest_sim_id": "u01865",
+  "updated_at": "2026-10-19 18:26:32",
+  "completed_count": 1983,
+  "fixed_count": 1777,
+  "latest_sim_id": "u01825",
   "recent_events": [
-    {
-      "sim_id": "u01640",
-      "status": "FIXED",
-      "time": "18:17:31",
-      "issues": [
-        "Observation table columns misaligned: observation_thead_html defines 5 columns (Moisture Content, Initial Volume, Saturated Volume, Volume Reduction, Percentage Bulking), but btnRecord inserted 8 td cells with unmatched headers.",
-        "Unwired action and stepper buttons: stepper controls (.stepper-btn-up, .stepper-btn-down) and procedural action buttons (#btn_level_sand, #btn_inundate_and_rod) lacked event listeners in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01679",
-      "status": "FIXED",
-      "time": "18:17:31",
-      "issues": [
-        "Corrupted MathML fraction in pulse rate units (rendered as 'pulse s/m in' instead of 'pulses/min') across readouts and observation table headers",
-        "Missing trial '#' column header in observation_thead_html causing header/row column misalignment (6 th elements vs 7 td elements)",
-        "Telemetry DOM element lookup IDs in canvas_js did not match 'val_reading_*' IDs in readouts_html, preventing live readout updates",
-        "Action button 'btn_gate_pulse' and stepper increment/decrement buttons (▲/▼) were not wired to event listeners in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01691",
-      "status": "FIXED",
-      "time": "18:17:31",
-      "issues": [
-        "Interactive action buttons (#btn_broadcast_prompt, #btn_evaluate_responses) were unhandled and lacked event listeners in canvas_js.",
-        "Stepper increment and decrement controls (.stepper-btn-up, .stepper-btn-down) were not wired to update target inputs or dispatch input events.",
-        "Experiment mode select dropdown (#experimentSelect) was unwired to configure simulation parameters for the extended jitter stress test."
-      ]
-    },
-    {
-      "sim_id": "u01685",
-      "status": "ERROR",
-      "time": "18:18:01",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01696",
-      "status": "FIXED",
-      "time": "18:18:01",
-      "issues": [
-        "Unwired primary action buttons: 'btn_start_ramp' ('Apply High Voltage Ramp') and 'btn_stir_oil' ('Stir Oil Sample') defined in actions_html were not bound in canvas_js.",
-        "Observation table column mismatch: canvas_js appended 6 td elements into a 5-column observation table, adding an extra leakage current column absent from the table header.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn) and dynamic gap adjustments in IDLE state lacked event listeners to update controls and telemetry."
-      ]
-    },
     {
       "sim_id": "u01703",
       "status": "FIXED",
@@ -387,6 +339,44 @@
         "Observation table columns were misaligned: check node degree and variable node degree were conflated, code rate was placed out of order, and the variable node degree column was omitted.",
         "Live telemetry readouts were not dynamically refreshed on stepper change."
       ]
+    },
+    {
+      "sim_id": "u01854",
+      "status": "FIXED",
+      "time": "18:25:41",
+      "issues": [
+        "Corrupted MathML formatting in units: 'Abs/s' rendered as fraction s/s, 'mg/mL' split as m(g/m)L, 's/Abs' split as (s/A)bs, and 'mL/mg' split as m(L/m)g across observation table header and readouts.",
+        "Orphan leader badge #5 drawn in canvas JS without a corresponding apparatus entry in legend pills (legend only defines badges 1 to 4).",
+        "Missing 'reaction_time' definition in CONTROL_DEFS and initial state in canvas JS preventing stepper event binding."
+      ]
+    },
+    {
+      "sim_id": "u01745",
+      "status": "FIXED",
+      "time": "18:25:55",
+      "issues": [
+        "Live telemetry DOM updates in calculatePhysics() overwrote #val_reading_* textContent without preserving measurement units (AU, mg/mL, %).",
+        "When the simulation was paused, changing stepper controls or clicking action buttons updated internal variables without refreshing the canvas scene.",
+        "All five Style 2 leader lines in drawScene() had identical badge and anchor X coordinates (bx === tx), degenerating cubic Bezier S-curves into vertical straight lines."
+      ]
+    },
+    {
+      "sim_id": "u01866",
+      "status": "PASS",
+      "time": "18:26:07",
+      "issues": []
+    },
+    {
+      "sim_id": "u01871",
+      "status": "PASS",
+      "time": "18:26:31",
+      "issues": []
+    },
+    {
+      "sim_id": "u01825",
+      "status": "PASS",
+      "time": "18:26:32",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1870,6 +1860,7 @@
     "u01742",
     "u01743",
     "u01744",
+    "u01745",
     "u01746",
     "u01747",
     "u01748",
@@ -1942,6 +1933,7 @@
     "u01822",
     "u01823",
     "u01824",
+    "u01825",
     "u01826",
     "u01827",
     "u01828",
@@ -1964,6 +1956,7 @@
     "u01851",
     "u01852",
     "u01853",
+    "u01854",
     "u01855",
     "u01856",
     "u01857",
@@ -1975,8 +1968,10 @@
     "u01863",
     "u01864",
     "u01865",
+    "u01866",
     "u01867",
     "u01869",
+    "u01871",
     "u01872",
     "u01873",
     "u01874",
