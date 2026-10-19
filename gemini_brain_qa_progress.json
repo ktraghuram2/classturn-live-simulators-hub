@@ -1,62 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:16:49",
-  "completed_count": 1212,
-  "fixed_count": 1156,
-  "latest_sim_id": "u01510",
+  "updated_at": "2026-10-19 09:18:15",
+  "completed_count": 1217,
+  "fixed_count": 1160,
+  "latest_sim_id": "u01515",
   "recent_events": [
-    {
-      "sim_id": "u01469",
-      "status": "FIXED",
-      "time": "09:06:55",
-      "issues": [
-        "Misaligned observation table columns: btnRecord logged 8 columns including stroke speed, whereas observation_thead defines 7 columns in the order of Blank Diameter, Penetration Depth, Flow Stress, Die Rolling Force, Contact Pressure, Peak Equivalent Strain, and Rolled Major Diameter.",
-        "Unwired stepper buttons: stepper-btn elements (▲ and ▼) lacked click listeners to increment/decrement input values and dispatch change events.",
-        "Unwired control action buttons: btn_cycle_stroke and btn_toggle_fea_overlay lacked click event listeners.",
-        "Missing visual FEA mode toggle: the workpiece blank lacked dynamic gradient switching between equivalent plastic strain and interfacial contact pressure distribution."
-      ]
-    },
-    {
-      "sim_id": "u01452",
-      "status": "FIXED",
-      "time": "09:07:35",
-      "issues": [
-        "Unwired action buttons: btn_toggle_light and btn_cycle_surface were declared in HTML slots but not attached to event listeners in canvas_js.",
-        "Unwired stepper buttons: .stepper-btn increment/decrement buttons were missing click event listeners in canvas_js.",
-        "Observation table column misalignment: btnRecord appended row data without the test surface profile column, shifting all columns and placing theta into the height difference column.",
-        "Physics formula unit error: Wedge angle theta was computed as dh / L (0.12) instead of (dh / L) * 1000 (117.80 μrad) as expected by the readout telemetry and principles spec.",
-        "Observation thead duplicated symbols: Cleaned up duplicated MathML symbols in observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u01464",
-      "status": "FIXED",
-      "time": "09:08:16",
-      "issues": [
-        "Misaligned observation table columns: btnRecord in canvas_js injected an extraneous recordCounter trial number cell, shifting all 8 measured values out of alignment with the 8 table headers.",
-        "Unwired stepper buttons: Stepper up and down buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners in canvas_js to adjust input values.",
-        "Unwired action button: The action button (#btn_traverse_probe) lacked an event listener in canvas_js to traverse probe position x.",
-        "Missing observation table reset wiring: Added click listener for #btnReset to allow clearing recorded table rows."
-      ]
-    },
-    {
-      "sim_id": "u01474",
-      "status": "FIXED",
-      "time": "09:08:19",
-      "issues": [
-        "Wired up unwired action buttons 'btn_apply_increment' (Advance Handwheel Increment) and 'btn_unload_specimen' (Gradual Unload to Zero) to dynamically update applied torque and sync canvas state.",
-        "Wired up stepper buttons (.stepper-btn-up, .stepper-btn-down) for applied_torque, shaft_diameter, and gauge_length with step incrementing and boundary clamping.",
-        "Fixed telemetry readout synchronizer to target the inner value span and preserve MathML unit notation within val_reading_* elements."
-      ]
-    },
-    {
-      "sim_id": "u01473",
-      "status": "ERROR",
-      "time": "09:08:22",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01476",
       "status": "FIXED",
@@ -376,6 +324,59 @@
         "Wired missing action button #btn_auto_encode_decode to autonomously step through clock shift cycles 0 to 14.",
         "Added click handlers for all stepper up/down buttons (.stepper-btn) to increment/decrement parameter inputs.",
         "Realigined observation table record columns 1:1 with observation_thead_html (Message u, Parity b, Codeword v, Error Index, Received Vector r, Syndrome Vector S, Corrected Codeword, Status)."
+      ]
+    },
+    {
+      "sim_id": "u01514",
+      "status": "FIXED",
+      "time": "09:18:15",
+      "issues": [
+        "Misaligned observation table columns: btnRecord populated rotorSpeed, cutAngle, fieldCurrent, Bg, E, Te which did not match the 6 defined observation_thead headers (Component Badge, Component Name, Rotor Speed, Excitation Current, Generated EMF, Developed Torque).",
+        "Unwired action buttons: Action buttons #btn_cycle_component, #btn_toggle_rotation, and #btn_toggle_flux_lines lacked click event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) had no click listeners attached to increment/decrement input values and update simulation telemetry.",
+        "Mismatched legend pill index: Legend pill for Cast-Iron Bedplate and Shaft Mounting had badge number '0' instead of '8' in legend_pills_html.",
+        "Missing magnetic flux loops visualization: Added drawFluxLoops() rendering 4-pole magnetic loops linked to #btn_toggle_flux_lines."
+      ]
+    },
+    {
+      "sim_id": "u01518",
+      "status": "FIXED",
+      "time": "09:18:15",
+      "issues": [
+        "Apparatus badges #2 and #3 in canvas were swapped relative to legend pills (#2 was die and #3 was container)",
+        "Action buttons #btn_cycle_stroke and #btn_toggle_strain were unhandled in canvas_js",
+        "Stepper increment/decrement buttons (.stepper-btn) were not wired to input controls",
+        "Observation table columns were misaligned: thead defined 5 columns while tbody injected 8 columns with mismatched labels",
+        "Spurious MathML tags (<math><mi>a</mi></math> and <math><mi>s</mi></math>) occurred in English prose words across aim, apparatus, principles, procedure, and validation slots"
+      ]
+    },
+    {
+      "sim_id": "u01519",
+      "status": "FIXED",
+      "time": "09:18:15",
+      "issues": [
+        "Misaligned observation table columns: btnRecord logged 8 columns with mismatched parameters instead of the 5 columns defined in observation_thead_html (Stroke, Force, Pilot Height, Equivalent Strain, Flow Stress).",
+        "Unwired action buttons: btn_play_setup, btn_play_strain, and btn_play_curve lacked event listeners, state updates, and mode visualizations in canvas_js.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down arrow buttons lacked click handlers in canvas_js.",
+        "Telemetry DOM element ID mismatch: updateTelemetry targeted non-existent IDs (reading_punch_force, val_punch_force) instead of the actual rendered IDs (val_reading_punch_force, val_reading_pilot_height, val_reading_effective_strain, val_reading_deformation_work).",
+        "Apparatus legend badge mismatch: Canvas badge 1 pointed to Extrusion Die and badge 4 pointed to Hydraulic Ram, whereas Legend Pill 1 is Hydraulic Ram and Load Cell Column and Pill 4 is Extrusion Die. Swapped badges 1 and 4 to ensure exact correspondence."
+      ]
+    },
+    {
+      "sim_id": "u01517",
+      "status": "PASS",
+      "time": "09:18:15",
+      "issues": []
+    },
+    {
+      "sim_id": "u01515",
+      "status": "FIXED",
+      "time": "09:18:15",
+      "issues": [
+        "Unwired action buttons (#btn_impute_missing, #btn_remove_outliers, #btn_normalize_features) preventing users from toggling pipeline stages from the control interface",
+        "Unwired stepper buttons (.stepper-btn) leaving parameters unadjustable via standard click controls",
+        "Observation table column mismatch: 7 td values were inserted into a 6-column thead, causing s_max to displace and misalign subsequent telemetry columns",
+        "Missing Value Threshold stepper parameter (control_1 / tau_null) was not connected to missing cell generation in the feature matrix"
       ]
     }
   ],
@@ -1591,6 +1592,11 @@
     "u01508",
     "u01509",
     "u01510",
-    "u01513"
+    "u01513",
+    "u01514",
+    "u01515",
+    "u01517",
+    "u01518",
+    "u01519"
   ]
 }
