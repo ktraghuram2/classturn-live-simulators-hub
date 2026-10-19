@@ -1,70 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:57:10",
-  "completed_count": 1437,
-  "fixed_count": 1331,
-  "latest_sim_id": "u01818",
+  "updated_at": "2026-10-19 11:00:21",
+  "completed_count": 1442,
+  "fixed_count": 1335,
+  "latest_sim_id": "u01820",
   "recent_events": [
-    {
-      "sim_id": "u01779",
-      "status": "FIXED",
-      "time": "10:45:30",
-      "issues": [
-        "Observation table columns were misaligned: canvas_js inserted 6 columns with an extra trial number and stirrer speed instead of the 5 columns defined in observation_thead_html (Standard Volume Added, Electrode Potential, Logarithm of Fluoride Conc., Fluoride Concentration, and Solution pH).",
-        "Action buttons btn_immerse_electrodes ('Immerse Electrodes into Solution') and btn_calibrate_meter ('Calibrate ISE Meter') were declared in controls but completely unwired in canvas_js.",
-        "Custom stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) targeting v_std and stirrer_speed lacked click event handlers in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01775",
-      "status": "ERROR",
-      "time": "10:45:37",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01780",
-      "status": "FIXED",
-      "time": "10:46:20",
-      "issues": [
-        "Corrected malformed LaTeX/MathML in reading 5 ('CD4 to CD8 Ratio') inside readouts_html where raw 'R_{CD<math><mfrac><mn>4</mn><mi>C</mi></mfrac></math>D8}' was embedded.",
-        "Corrected malformed LaTeX symbol in observation table column 8 ('CD4:CD8 Ratio') inside observation_thead_html.",
-        "Fixed column misalignment in observation table logging: table header defined 9 columns while btnRecord was appending 10 columns including unaligned coreWidth and rcf; corrected to align with FSC Gain Voltage and header layout.",
-        "Completed truncated canvas_js render loop and missing physics calculations (sscSignal, pCd4, pCd8, ratio, rcf, and full telemetry synchronization).",
-        "Wired stepper up/down stepper buttons and simulator action buttons (sheath flush, sample injection toggle, and lymphocyte R1 gate toggle).",
-        "Implemented complete 60 FPS visual simulation rendering on dark #090d16 canvas with 3D radial cell shading, laser excitation fluorescence flashes, hydrodynamic core stream calculation, and Style 2 cubic Bezier leader lines with anchor touch beads for all 8 apparatus items."
-      ]
-    },
-    {
-      "sim_id": "u01781",
-      "status": "FIXED",
-      "time": "10:46:21",
-      "issues": [
-        "Observation table row data cells had 9 columns with extraneous Sl. No, L, and L1 columns, which misaligned with the 6 header columns (d, h2, h1, v_B, Q_ls, p_C) and inverted the h1/h2 column order.",
-        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) had no click listeners attached to update the target numeric inputs.",
-        "Action buttons 'btn_prime_syphon' and 'btn_flush_system' were unwired without event handlers."
-      ]
-    },
-    {
-      "sim_id": "u01783",
-      "status": "FIXED",
-      "time": "10:46:28",
-      "issues": [
-        "Unwired action buttons: btn_toggle_model, btn_toggle_glass, and btn_purge_dye were missing DOM event listeners in canvas_js",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down were missing click handlers to increment and decrement input values",
-        "Misaligned observation table columns: tr generation in btnRecord had an unlisted runCount column, missing glass cover status column, dye rate instead of Re_b, and missing shoulder streamline spacing column relative to observation_thead_html",
-        "Missing glassCover state and visual behavior: toggling the glass cover did not update state or render diffusion breakdown when unsealed"
-      ]
-    },
-    {
-      "sim_id": "u01782",
-      "status": "ERROR",
-      "time": "10:46:45",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01784",
       "status": "FIXED",
@@ -381,6 +321,66 @@
       "time": "10:57:09",
       "issues": [
         "Replaced erroneous MathML tags (<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mrow><mi>a</mi></mrow></math>) representing the English indefinite article 'a' in narrative prose with plain text 'a' in aim_html, principles_summary_html, and procedure_section_html."
+      ]
+    },
+    {
+      "sim_id": "u01821",
+      "status": "FIXED",
+      "time": "11:00:21",
+      "issues": [
+        "Leader badge numbers 4, 7, and 8 were misaligned with legend pills (PC was badge 7 instead of 4, V3-V6 was badge 4 instead of 8, LSL was badge 8 instead of 7).",
+        "Action buttons (btn_toggle_inlet, btn_discharge_run) and stepper up/down buttons were completely unwired.",
+        "Observation table recording function outputted 8 columns with mismatched ordering against the 7 columns in observation_thead_html.",
+        "Live telemetry updateDomText calls targeted missing element IDs (missing val_ prefix).",
+        "Water level was statically bound without dynamic tank draining, filling, or LSL safety interlock cutoff."
+      ]
+    },
+    {
+      "sim_id": "u01806",
+      "status": "FIXED",
+      "time": "11:00:21",
+      "issues": [
+        "Wired up inactive action buttons (btn_auto_encode, btn_inject_flip, btn_correct_error) to perform automatic modulo-2 parity calculation, single-bit channel error injection, and error correction.",
+        "Wired up all stepper up/down buttons (.stepper-btn) to increment and decrement input values respecting defined step, min, and max limits.",
+        "Corrected observation table recording to generate all 8 columns defined in the table header, including Transmitted Codeword and Decoded Message, resolving column misalignment."
+      ]
+    },
+    {
+      "sim_id": "u01815",
+      "status": "ERROR",
+      "time": "11:00:21",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01819",
+      "status": "PASS",
+      "time": "11:00:21",
+      "issues": []
+    },
+    {
+      "sim_id": "u01822",
+      "status": "FIXED",
+      "time": "11:00:21",
+      "issues": [
+        "Unwired action button #btn_inject_impulse preventing unit impulse sequence injection upon click",
+        "Unwired stepper buttons ▲/▼ in stepper controls preventing interactive value modification",
+        "Missing change event listener on experiment dropdown (#experimentSelect / #expSelect) to switch operating kernels",
+        "Annotation badge 3 leader line length violated minLeader constraint (38.3px < 48px)",
+        "Observation table recording button lacked fallback row insertion when framework auto-record is inactive"
+      ]
+    },
+    {
+      "sim_id": "u01820",
+      "status": "FIXED",
+      "time": "11:00:21",
+      "issues": [
+        "Replaced corrupted MathML tags rendering the English indefinite article 'a' as an italic math variable in Aim, Principles, Procedure, Apparatus, and Validation slots.",
+        "Corrected 'Protein A/G' notation which was erroneously formatted as a mathematical fraction 'A over G' in text prose.",
+        "Fixed '13,000 × g' centrifugation speed rendering where '000 × g' was placed inside a MathML construct.",
+        "Corrected typographical error 'transferirng' to 'transferring' in Step 8 of Procedure.",
+        "Cleaned malformed nested HTML span tags and unescaped quote collisions inside data-unit attributes in the Live Readouts slot."
       ]
     }
   ],
@@ -1813,6 +1813,7 @@
     "u01802",
     "u01804",
     "u01805",
+    "u01806",
     "u01807",
     "u01809",
     "u01810",
@@ -1821,6 +1822,10 @@
     "u01813",
     "u01814",
     "u01816",
-    "u01818"
+    "u01818",
+    "u01819",
+    "u01820",
+    "u01821",
+    "u01822"
   ]
 }
