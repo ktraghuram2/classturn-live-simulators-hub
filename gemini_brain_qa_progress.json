@@ -1,58 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:37:53",
-  "completed_count": 1767,
-  "fixed_count": 1587,
-  "latest_sim_id": "u02248",
+  "updated_at": "2026-10-19 16:39:06",
+  "completed_count": 1772,
+  "fixed_count": 1590,
+  "latest_sim_id": "u02258",
   "recent_events": [
-    {
-      "sim_id": "u02210",
-      "status": "FIXED",
-      "time": "16:27:59",
-      "issues": [
-        "Unwired action buttons: 'btn_toggle_model' (switching MobileNetV2 and VGG19 backbones) and 'btn_train_epoch' (stepping epoch optimization) had no event listeners wired in canvas_js",
-        "Misaligned observation table: recorded rows contained 9 columns with shifted data, placing learning rate and accuracy into loss columns and omitting the model architecture column defined in the 8 thead columns",
-        "Principles summary typo: state of gradient update multiplier during layer freezing was incorrectly written as m_l = 1 instead of m_l = 0",
-        "Missing visual indicator on canvas when switching backbone architecture between MobileNetV2 and VGG19"
-      ]
-    },
-    {
-      "sim_id": "u02213",
-      "status": "PASS",
-      "time": "16:28:01",
-      "issues": []
-    },
-    {
-      "sim_id": "u02216",
-      "status": "FIXED",
-      "time": "16:28:24",
-      "issues": [
-        "Telemetry readouts in updateTelemetry() queried non-existent element IDs ('reading_' and 'val_') instead of 'val_reading_', preventing DOM readout values from updating.",
-        "Action buttons from actions_html ('btn_turn_turtle', 'btn_trace_polygon', 'btn_toggle_pen') were not included in the selector fallback chains in bindUI().",
-        "Observation table recorder populated 10 misaligned columns instead of the 7 columns specified in observation_thead_html, and omitted the closure discrepancy calculation."
-      ]
-    },
-    {
-      "sim_id": "u02214",
-      "status": "FIXED",
-      "time": "16:28:24",
-      "issues": [
-        "Observation table columns were misaligned with the table headers (mismatched data fields for population count, selection quota, turns, and strategy distributions).",
-        "Action buttons 'btn_step_generation' and 'btn_run_tournament' had no event listeners wired in canvas_js.",
-        "Stepper up and down buttons (.stepper-btn) were unwired, preventing numerical adjustment of parameters."
-      ]
-    },
-    {
-      "sim_id": "u02209",
-      "status": "FIXED",
-      "time": "16:28:25",
-      "issues": [
-        "Unwired action buttons: 'btn_induce_perturbation' and 'btn_equilibrate_spacing' had no event listeners in canvas_js.",
-        "Misaligned observation table columns: observation_thead specified 7 columns (Reaction Time Delay, Sensitivity Factor, Lane Count, Average Platoon Velocity, Minimum Headway, Driver Impatience, Traffic Flow Rate), but btnRecord recorded 6 mismatched columns (simTime, leadS, avgV, hMin, avgI, q).",
-        "Missing stepper button listeners: stepper buttons (.stepper-btn) were not wired to update target inputs and trigger change events.",
-        "Missing experiment mode switch listener: '#experimentSelect' was not wired to switch track lane configurations."
-      ]
-    },
     {
       "sim_id": "u02218",
       "status": "FIXED",
@@ -390,6 +342,45 @@
         "Truncated principles list slot: principles_list_html had unclosed tags and was missing Boolean equations for the Heater and Drive Motor actuators.",
         "Raw apostrophe primes in principles summary: Replaced trailing ASCII prime marks with proper overbar MathML negation syntax for inverted sensor inputs."
       ]
+    },
+    {
+      "sim_id": "u02231",
+      "status": "FIXED",
+      "time": "16:37:56",
+      "issues": [
+        "Observation table header for Pulsation Period was missing its mathematical symbol P",
+        "Canvas leader line badges 3 and 4 were inverted relative to legend pills (badge 3 pointed to comparison arc and badge 4 to grating chamber, whereas legend pill 3 is Reflective Blazed Diffraction Grating Chamber and pill 4 is Comparison Arc Calibration Source)"
+      ]
+    },
+    {
+      "sim_id": "u02252",
+      "status": "FIXED",
+      "time": "16:37:56",
+      "issues": [
+        "Unwired tactical intervention action buttons (btn_needle_decompression, btn_apply_tourniquet, btn_infuse_bolus)",
+        "Unwired stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down)",
+        "Misaligned observation recording table columns: btnRecord inserted 9 columns containing control input rates instead of matching the 7 designated observation columns (Simulation Time, Blood Volume, Pleural Pressure, MAP, HR, SpO2, Cardiac Output)"
+      ]
+    },
+    {
+      "sim_id": "u02245",
+      "status": "FIXED",
+      "time": "16:37:59",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u02255",
+      "status": "PASS",
+      "time": "16:38:36",
+      "issues": []
+    },
+    {
+      "sim_id": "u02258",
+      "status": "PASS",
+      "time": "16:39:06",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -2142,6 +2133,7 @@
     "u02226",
     "u02227",
     "u02230",
+    "u02231",
     "u02232",
     "u02233",
     "u02234",
@@ -2154,11 +2146,15 @@
     "u02242",
     "u02243",
     "u02244",
+    "u02245",
     "u02246",
     "u02247",
     "u02248",
     "u02250",
     "u02251",
-    "u02254"
+    "u02252",
+    "u02254",
+    "u02255",
+    "u02258"
   ]
 }
