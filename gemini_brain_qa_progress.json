@@ -1,62 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:54:24",
-  "completed_count": 1157,
-  "fixed_count": 1111,
-  "latest_sim_id": "u01432",
+  "updated_at": "2026-10-19 08:55:57",
+  "completed_count": 1162,
+  "fixed_count": 1116,
+  "latest_sim_id": "u01443",
   "recent_events": [
-    {
-      "sim_id": "u01372",
-      "status": "ERROR",
-      "time": "08:45:48",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01397",
-      "status": "PASS",
-      "time": "08:46:05",
-      "issues": []
-    },
-    {
-      "sim_id": "u01396",
-      "status": "FIXED",
-      "time": "08:46:07",
-      "issues": [
-        "Unwired interactive action buttons (btn_execute_step, btn_auto_handshake, btn_transmit_secure_ping) and stepper increment/decrement buttons (.stepper-btn) in canvas_js",
-        "Erroneous MathML fraction tags in apparatus_html where '1.2/1.3' and '128/256-bit' were formatted as math fractions",
-        "Erroneous MathML single-letter math formatting for 'e.g.' in principles_summary_html",
-        "Erroneous MathML fraction tag in validation_html where socket 'I/O' was formatted as a math fraction"
-      ]
-    },
-    {
-      "sim_id": "u01386",
-      "status": "FIXED",
-      "time": "08:46:12",
-      "issues": [
-        "Observation table columns in canvas_js were misaligned with the 7 thead columns and prepended an unaligned trial index",
-        "Readout DOM element references in canvas_js targeted parent list items instead of val_reading_* value spans",
-        "Action buttons (btn_construct_grid, btn_align_divider) and stepper increment/decrement controls were unwired in canvas_js",
-        "Legend pills HTML (6 items) did not match the 5 apparatus components and leader badges in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01384",
-      "status": "ERROR",
-      "time": "08:46:42",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01395",
-      "status": "ERROR",
-      "time": "08:47:08",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01403",
       "status": "PASS",
@@ -398,6 +346,64 @@
         "Observation table record button injected 8 mismatched columns (with trial serial number and load torque) which were misaligned with the 7 columns in observation_thead_html.",
         "Action buttons (#btn_toggle_mcb and #btn_set_rated_voltage) lacked click event listeners in canvas_js.",
         "Stepper adjustment buttons (.stepper-btn-up and .stepper-btn-down) lacked click event handlers in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01433",
+      "status": "FIXED",
+      "time": "08:54:34",
+      "issues": [
+        "Raw broken MathML in principles_summary_html for Lenz's law (Lenz&#x27;<math>s</math>)",
+        "Live telemetry DOM readout lookups used 'reading_*' instead of 'val_reading_*' causing UI readings not to update",
+        "Action buttons (toggle_phase_reversal, toggle_mcb_power) and stepper up/down buttons were unhandled in canvas_js",
+        "Physics calculation did not account for MCB power state, leaving motor running when supply is turned off"
+      ]
+    },
+    {
+      "sim_id": "u01436",
+      "status": "FIXED",
+      "time": "08:54:47",
+      "issues": [
+        "Unwired action buttons: 'btn_run_invasion_wave' and 'btn_jump_threshold_front' were present in actions_html but lacked event listeners in canvas_js",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' controls were not bound to increment/decrement their respective input fields",
+        "Misaligned observation table columns: 8 table header columns were populated with 10 data items starting with trialCount, displacing metric values across headers"
+      ]
+    },
+    {
+      "sim_id": "u01434",
+      "status": "FIXED",
+      "time": "08:54:55",
+      "issues": [
+        "Observation table rows were misaligned with the 8 columns in observation_thead_html (contained extraneous trial number and length columns, while omitting shear drag and pressure drag forces)",
+        "Live telemetry readout IDs in updateTelemetry() did not match the DOM span IDs (DOM uses val_reading_* prefix), preventing telemetry values from updating in the interface",
+        "Action button 'btn_tare_balance' ('Tare Aerodynamic Force Balance') was present in HTML controls but was not wired to any event listener in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn) were not wired to input control update events in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01435",
+      "status": "ERROR",
+      "time": "08:55:42",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01442",
+      "status": "FIXED",
+      "time": "08:55:56",
+      "issues": [
+        "Fixed raw LaTeX notation lim_{...} in principles_summary_html by formatting as proper MathML limit expressions",
+        "Fixed English indefinite article 'a' mistakenly encoded as MathML identifier <mi>a</mi> in principles_summary_html prose"
+      ]
+    },
+    {
+      "sim_id": "u01443",
+      "status": "FIXED",
+      "time": "08:55:57",
+      "issues": [
+        "Action buttons #btn_compile_instantiate and #btn_validate_singleton were unwired and lacked interactive feedback and console telemetry updates.",
+        "Stepper increment and decrement buttons (.stepper-btn) lacked DOM click handlers for targeting inputs."
       ]
     }
   ],
@@ -1558,6 +1564,11 @@
     "u01427",
     "u01428",
     "u01429",
-    "u01432"
+    "u01432",
+    "u01433",
+    "u01434",
+    "u01436",
+    "u01442",
+    "u01443"
   ]
 }
