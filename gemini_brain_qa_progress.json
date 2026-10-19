@@ -1,55 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:41:37",
-  "completed_count": 2033,
-  "fixed_count": 1822,
-  "latest_sim_id": "u02198",
+  "updated_at": "2026-10-19 18:42:23",
+  "completed_count": 2038,
+  "fixed_count": 1827,
+  "latest_sim_id": "u02263",
   "recent_events": [
-    {
-      "sim_id": "u02068",
-      "status": "ERROR",
-      "time": "18:35:11",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01979",
-      "status": "ERROR",
-      "time": "18:35:47",
-      "issues": [
-        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--model', 'gemini-4-argon-medium', '--disable-slash-commands"
-      ]
-    },
-    {
-      "sim_id": "u02058",
-      "status": "ERROR",
-      "time": "18:35:56",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02099",
-      "status": "FIXED",
-      "time": "18:36:04",
-      "issues": [
-        "Telemetry DOM IDs in canvas_js queried reading_fc, reading_vunbal, and reading_error instead of the actual slot element IDs val_reading_fc, val_reading_vunbal, and val_reading_error.",
-        "Action button #btn_autobalance defined in actions_html was not wired up to an event listener in canvas_js.",
-        "Stepper buttons (.stepper-btn-up, .stepper-btn-down) defined in steppers_html lacked click handlers in canvas_js.",
-        "Observation table tr template contained 7 <td> cells with an extra unmapped recordCount column, misaligning values against the 6 <th> columns in observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u02065",
-      "status": "FIXED",
-      "time": "18:36:10",
-      "issues": [
-        "Wired unhandled action buttons: btn_distribute_centers ('Auto-Distribute Centers Uniformly') and btn_fit_weights ('Compute Least-Squares Optimal Weights')",
-        "Added interactive click handlers to stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) for kernel spread, center count, and weight gain",
-        "Corrected off-by-one observation table column misalignment where an unheaded trial index pushed values into incorrect table columns"
-      ]
-    },
     {
       "sim_id": "u02085",
       "status": "FIXED",
@@ -389,6 +344,60 @@
         "Unwired stepper controls: .stepper-btn ▲/▼ stepper buttons and input event listeners were not connected to update simulator physics",
         "Observation table column misalignment: Record Observation inserted 7 td cells with an untracked row index against a 6-column thead header",
         "Apparatus badge numbering mismatch: Vacuum Manifold was labelled badge 4 instead of 2, Wheatstone Bridge was badge 2 instead of 3, and Meter was badge 3 instead of 4 relative to legend pills"
+      ]
+    },
+    {
+      "sim_id": "u02229",
+      "status": "FIXED",
+      "time": "18:41:40",
+      "issues": [
+        "Wired interactive action buttons 'Align Calibration Arc Lamp Lines' (btn_calibrate_lamp) and 'Snap Reticle to Nearest Line Core' (btn_snap_nearest_line) in canvas_js",
+        "Connected input and change event listeners to control inputs (star_select, reticle_x, slit_width) and stepper arrow buttons (.stepper-btn) for real-time telemetry updates",
+        "Added reset event listener for btnReset to clear the observation table body"
+      ]
+    },
+    {
+      "sim_id": "u02253",
+      "status": "FIXED",
+      "time": "18:42:04",
+      "issues": [
+        "Telemetry readout elements targeted non-existent IDs instead of the value spans (val_read_peak_temp, val_read_cooling_time, val_read_grain_size, val_read_vickers_hardness)",
+        "Unwired action buttons: Automated Transverse Zone Traverse (#btn_auto_scan) and Toggle Fe-C Phase Diagram (#btn_toggle_fec) lacked click event listeners",
+        "Stepper increment/decrement buttons (.stepper-btn) were not wired to update numeric inputs and trigger sync events",
+        "Observation table record generation wrote 7 mismatched columns including heat input and carbon equivalent instead of the 6 columns defined in observation_thead_html (Transverse Distance, Peak Temperature, Identified Weld Zone, Cooling Time, Grain Diameter, Microhardness)"
+      ]
+    },
+    {
+      "sim_id": "u02241",
+      "status": "FIXED",
+      "time": "18:42:09",
+      "issues": [
+        "Fixed target comparison index equation in principles summary, principles list, procedure step 4, and observation thead from off-by-one (i - 1 - n) to correct relation (i - n).",
+        "Converted unformatted text index expression '(i - 1 - n)' in procedure Step 4 to proper MathML.",
+        "Wired external control panel action buttons (btn_start_session, btn_match_yes, btn_match_no) to active simulation event handlers with visual tactile press feedback.",
+        "Wired stepper up/down buttons to synchronize with control_n value and dispatch change events.",
+        "Added live observation table logging to dynamically record trial number, presented stimulus, target stimulus, participant decision, outcome classification, cumulative score, and accuracy percentage upon each trial completion.",
+        "Reset observation table rows upon task reset."
+      ]
+    },
+    {
+      "sim_id": "u02249",
+      "status": "FIXED",
+      "time": "18:42:14",
+      "issues": [
+        "Observation table columns in canvas_js were misaligned (7 generic telemetry values versus 6 designated columns in observation_thead_html).",
+        "Action button 'btn_outflow_disturbance' was unwired in canvas_js.",
+        "Experiment select dropdown and stepper up/down buttons lacked explicit event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02263",
+      "status": "FIXED",
+      "time": "18:42:23",
+      "issues": [
+        "Raw LaTeX strings |G_{h0}(jω)|_{dB} and |G_{h1}(jω)|_{dB} in readouts_html converted to valid inline MathML equations",
+        "Action buttons (Switch Reconstruction Display and Overlay Padé [1/1] Approximation) and stepper step buttons were unwired in canvas_js",
+        "Added live Padé [1/1] approximation overlay curve rendering on the real-time Bode analyzer display"
       ]
     }
   ],
@@ -2307,6 +2316,7 @@
     "u02226",
     "u02227",
     "u02228",
+    "u02229",
     "u02230",
     "u02231",
     "u02232",
@@ -2318,6 +2328,7 @@
     "u02238",
     "u02239",
     "u02240",
+    "u02241",
     "u02242",
     "u02243",
     "u02244",
@@ -2325,9 +2336,11 @@
     "u02246",
     "u02247",
     "u02248",
+    "u02249",
     "u02250",
     "u02251",
     "u02252",
+    "u02253",
     "u02254",
     "u02255",
     "u02256",
@@ -2336,6 +2349,7 @@
     "u02259",
     "u02260",
     "u02262",
+    "u02263",
     "u02264",
     "u02265",
     "u02266",
