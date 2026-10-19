@@ -1,63 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:23:40",
-  "completed_count": 1717,
-  "fixed_count": 1547,
-  "latest_sim_id": "u02181",
+  "updated_at": "2026-10-19 16:25:09",
+  "completed_count": 1722,
+  "fixed_count": 1551,
+  "latest_sim_id": "u02192",
   "recent_events": [
-    {
-      "sim_id": "u02149",
-      "status": "FIXED",
-      "time": "16:12:39",
-      "issues": [
-        "Misaligned observation table columns: btnRecord injected 7 columns (including un-headed S.No, Span, and LRV while omitting theoretical current) instead of matching the 5 defined observation columns (Applied Pressure, Ideal Current, Measured Current, Percentage Span, Calibration Error).",
-        "Unwired Digital Zero Trim action button: #btn_zero_trim lacked an event listener to adjust and trim sensor zero calibration offset.",
-        "Unwired stepper controls: .stepper-btn up/down controls lacked click listeners to increment and decrement inputs within min/max bounds.",
-        "Unwired experiment mode selection: #experimentSelect lacked change handling to apply span verification and zero elevation presets."
-      ]
-    },
-    {
-      "sim_id": "u02145",
-      "status": "FIXED",
-      "time": "16:12:40",
-      "issues": [
-        "Observation table columns in canvas_js were misaligned with the 5 thead columns and emitted 8 mismatched tds",
-        "Viscous drag coefficient gamma calculation in canvas_js caused terminal velocity drift reading to mismatch the 1.57 um/s telemetry spec by 1000x",
-        "Action buttons (Auto-Focus Bead Tracking, Relax Magnetic Field) and stepper increment/decrement buttons were unwired in canvas_js",
-        "principles_list_html had unclosed HTML tags at the end of the symbol list"
-      ]
-    },
-    {
-      "sim_id": "u02140",
-      "status": "FIXED",
-      "time": "16:12:48",
-      "issues": [
-        "Live readouts were not updating because elements in readouts_html have id 'val_reading_*' while canvas_js targeted 'reading_*'",
-        "Observation table record button generated 7 columns with mismatched headers instead of the 6 columns defined in observation_thead_html",
-        "Action buttons (btn_trigger_fault and btn_find_cct) and stepper buttons (.stepper-btn-up and .stepper-btn-down) had no event listeners wired in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u02150",
-      "status": "FIXED",
-      "time": "16:13:06",
-      "issues": [
-        "Observation table columns were misaligned: 1H NMR shift and mass spectrometry m/z columns were swapped, and the 7th column (Elucidated Compound) was missing.",
-        "Action buttons 'btn_start_scan' and 'btn_purge_chamber' lacked event listeners in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update input values in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u02151",
-      "status": "FIXED",
-      "time": "16:13:27",
-      "issues": [
-        "Unwired action button #btn_release_gravity for triggering gravitational load application",
-        "Unwired stepper buttons (.stepper-btn-up and .stepper-btn-down) for solid particle spacing dp",
-        "Misaligned observation table data rows lacking centered column alignment with thead headers",
-        "Low-contrast discretization lattice lines on the solid cube against dark blue gradient"
-      ]
-    },
     {
       "sim_id": "u02152",
       "status": "FIXED",
@@ -359,6 +306,54 @@
         "Replaced spurious MathML fraction markup formatting 'I/O' as 'I over O' in apparatus specification with clean prose 'I/O'",
         "Corrected observation table row recording in canvas_js to match all 6 table columns (Stage, Reference Type, Runtime Class, Dispatched Method, VTable Offset, Validation Status) instead of 5 misaligned cells",
         "Wired unwired action button btn_compile_run ('Compile and Execute TestDriver') to trigger the execution routine and update telemetry"
+      ]
+    },
+    {
+      "sim_id": "u02186",
+      "status": "FIXED",
+      "time": "16:23:50",
+      "issues": [
+        "Unwired action buttons: 'btn_toggle_dataset' and 'btn_recompute_hyperplane' lacked click event listeners in canvas_js",
+        "Missing dataset topology state: simulation lacked dynamic switching between Moons and XOR cluster distributions",
+        "Misaligned observation table columns: btnRecord logged 8 columns starting with sample size instead of dataset topology, causing mismatch with the 8 table headers",
+        "Unwired stepper buttons: stepper-btn up and down buttons were not wired to increment/decrement input values"
+      ]
+    },
+    {
+      "sim_id": "u02188",
+      "status": "FIXED",
+      "time": "16:23:50",
+      "issues": [
+        "Unwired action buttons: 'btn_auto_synchronize' and 'btn_close_breaker' were missing event listeners in canvas_js",
+        "Unwired stepper controls: Stepper buttons ('.stepper-btn-up' and '.stepper-btn-down') lacked click handlers in canvas_js",
+        "Observation table column misalignment: Recorded rows contained an extraneous index cell that shifted data against the 6 observation table header columns",
+        "Static knife switch: The TPST synchronizing switch in drawBusBarAndSwitch was static and did not reflect breaker closed/open state"
+      ]
+    },
+    {
+      "sim_id": "u02190",
+      "status": "FIXED",
+      "time": "16:23:50",
+      "issues": [
+        "Observation table recording script appended 7 data columns when the observation header only defined 5 columns, resulting in severe column misalignment and misplaced metric values.",
+        "Action buttons (Apply Selected Inference Rule, Generate New Problem, Request Proof Hint, Clear Current Selection) and stepper up/down buttons had no event listeners wired in canvas_js.",
+        "Live telemetry displays for active step count and unresolved subgoals omitted unit suffix strings present in the specification."
+      ]
+    },
+    {
+      "sim_id": "u02200",
+      "status": "PASS",
+      "time": "16:24:53",
+      "issues": []
+    },
+    {
+      "sim_id": "u02192",
+      "status": "FIXED",
+      "time": "16:25:09",
+      "issues": [
+        "Canvas leader line badge numbering was out of sync with Section 2 legend pills (e.g. scale was badge 7 instead of 1, flask was badge 1 instead of 3)",
+        "Observation table record function inserted 10 columns including an extraneous catalyst drops cell, misaligning rows with the 9-column header",
+        "Action buttons (btn_mix_reactants, btn_start_reflux, btn_quench_column) and stepper up/down controls were unwired"
       ]
     }
   ],
@@ -2078,7 +2073,12 @@
     "u02181",
     "u02182",
     "u02185",
+    "u02186",
     "u02187",
-    "u02189"
+    "u02188",
+    "u02189",
+    "u02190",
+    "u02192",
+    "u02200"
   ]
 }
