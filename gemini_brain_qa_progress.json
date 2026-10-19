@@ -1,76 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:27:49",
-  "completed_count": 1057,
-  "fixed_count": 1027,
-  "latest_sim_id": "u01290",
+  "updated_at": "2026-10-19 08:28:58",
+  "completed_count": 1062,
+  "fixed_count": 1032,
+  "latest_sim_id": "u01297",
   "recent_events": [
-    {
-      "sim_id": "u01247",
-      "status": "FIXED",
-      "time": "08:19:54",
-      "issues": [
-        "Unwired action button #btn_release_gate ('Release Sluice Gate'): canvas_js only listened to #btnGate / #btn_gate.",
-        "Missing action button handler for #btn_rebalance_particles ('Re-normalize Kernel Density').",
-        "Unwired interactive steppers: .stepper-btn buttons lacked click listeners to step ctrl_pref and ctrl_nu.",
-        "Misaligned observation table columns in btnRecord: columns 5 and 6 recorded raw density (kg/m³) and Re instead of Density Compression Ratio (ρ/ρ₀) and Invariant Speed Ratio (u_f/√(2gH))."
-      ]
-    },
-    {
-      "sim_id": "u01250",
-      "status": "FIXED",
-      "time": "08:19:59",
-      "issues": [
-        "Misaligned observation table columns between observation_thead_html (6 columns without trial index) and canvas_js logger (7 columns with mismatched column order)",
-        "Unwired action buttons: btn_calibrate_buffer (Auto-Calibrate to Buffer pH 7.00) and btn_rinse_sensor (Rinse Electrode with Deionized Water) lacked event listeners",
-        "Unwired stepper increment/decrement buttons (.stepper-btn) for solution pH and temperature controls"
-      ]
-    },
-    {
-      "sim_id": "u01251",
-      "status": "FIXED",
-      "time": "08:20:02",
-      "issues": [
-        "Action buttons 'btn_start_flow' and 'btn_refill_standpipe' from actions_html were not wired in canvas_js",
-        "Stepper up/down buttons (.stepper-btn) were missing click event listeners",
-        "Live readout elements with IDs 'val_reading_*' were mismatched in updateTelemetry calls",
-        "Observation table columns were misaligned (tTotal, a, and L swapped) and included an extraneous 8th volume column not defined in the table header"
-      ]
-    },
-    {
-      "sim_id": "u01253",
-      "status": "FIXED",
-      "time": "08:20:14",
-      "issues": [
-        "Unwired action buttons (#btn_ram_specimen and #btn_start_permeability_test) and unwired stepper buttons (.stepper-btn).",
-        "Misaligned observation table rows in canvas_js (8 columns inserted into a 10-column observation_thead_html table header).",
-        "Swapped leader badge targets (Badge 2 was drawn on the Permeability Meter and Badge 3 on the Specimen Tube, inverted relative to legend pills).",
-        "Missing tactile drop weight animation response when operating the sand rammer."
-      ]
-    },
-    {
-      "sim_id": "u01255",
-      "status": "FIXED",
-      "time": "08:20:29",
-      "issues": [
-        "Raw LaTeX syntax 'pK_{a}' in steppers_html label replaced with standard notation 'pKa'",
-        "Observation table recording hook emitted 8 mismatched columns instead of the 7 columns defined in observation_thead_html",
-        "Stepper increment and decrement buttons (▲/▼) lacked click event listeners in canvas_js",
-        "Action buttons 'btn_calibrate_meter' and 'btn_equilibrate_mixture' were completely unwired in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01256",
-      "status": "FIXED",
-      "time": "08:20:58",
-      "issues": [
-        "Raw LaTeX 'pK_{a}' in readouts_html replaced with proper MathML notation",
-        "Malformed temperature fraction MathML in validation_html corrected to '(25 °C / 298.15 K)'",
-        "Telemetry readouts in canvas_js targeted 'reading_*' instead of matching slot span IDs 'val_reading_*'",
-        "Action buttons (Dispense 2.0 mL NaOH, Interpolate Half-Neutralization Point) and stepper buttons lacked click handlers in canvas_js",
-        "Observation table tbody rows rendered 6 columns while observation_thead_html defined 4 columns (Volume, pH, First Derivative, Conjugate Base Fraction)"
-      ]
-    },
     {
       "sim_id": "u01260",
       "status": "PASS",
@@ -386,6 +320,70 @@
         "Misaligned observation table columns: row.innerHTML generated 10 td cells for 7 observation table headers, causing data to shift and overflow. Corrected to exactly 7 matching td cells.",
         "Unwired action buttons: added event listeners for #btn_auto_stabilize (optimizes coolant flow to setpoint) and #btn_inject_inhibitor (quenches radical concentration and accelerates cooling).",
         "Unwired stepper buttons: added event listener for all .stepper-btn controls to increment and decrement targets within bounds and dispatch input/change events."
+      ]
+    },
+    {
+      "sim_id": "u01296",
+      "status": "FIXED",
+      "time": "08:28:06",
+      "issues": [
+        "Observation table record button injected an extraneous serial number column and misordered the data cells relative to the 6 defined columns in observation_thead_html.",
+        "Action button 'btn_settle_equilibrium' ('Align to Mean Operating Speed') was unhandled and lacked a click event listener.",
+        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01294",
+      "status": "FIXED",
+      "time": "08:28:14",
+      "issues": [
+        "Observation table column mismatch: tbody generated 7 columns with an unrepresented row count cell and disordered metrics (Speed, Mass, Height, Omega, Fc, x) relative to the 6 thead columns (Speed, Mass, Angular Velocity, Height, Sleeve Lift, Centrifugal Force).",
+        "Unwired control action button: 'Engage Spindle Drive Motor' action button lacked a click event listener in canvas_js.",
+        "Unwired stepper controls: .stepper-btn increment and decrement buttons lacked click event listeners in canvas_js.",
+        "Apparatus specification contradiction: upper arms and lower links were specified as L = 150 mm in apparatus_html, which violates geometric feasibility since governor height h = 170.558 mm exceeds 150 mm (effective length is 200 mm)."
+      ]
+    },
+    {
+      "sim_id": "u01293",
+      "status": "FIXED",
+      "time": "08:28:18",
+      "issues": [
+        "Unwired stepper ▲ / ▼ buttons: stepper-btn elements lacked event listeners to increment/decrement input values.",
+        "Unwired action and dropdown controls: btn_compute_all, btn_toggle_operation, and experimentSelect had no event listeners.",
+        "Missing polynomial multiplication logic: buildExecutionSteps only supported addition, lacking mode awareness and multiplication consolidation.",
+        "Misaligned observation table columns: row creation included an unheadered recordCounter and omitted resultant leading coefficient and comparisons columns defined in observation_thead_html.",
+        "ALU display missing multiplication operator: added '*' (×) LED indicator to reflect term multiplication status."
+      ]
+    },
+    {
+      "sim_id": "u01295",
+      "status": "FIXED",
+      "time": "08:28:19",
+      "issues": [
+        "Unwired stepper increment/decrement buttons (.stepper-btn) in canvas simulation JS",
+        "Unwired Start / Pause drive action button (btn_toggle_drive) in canvas simulation JS",
+        "Input elements of type='number' were receiving unit strings ('rpm', 'kg') via updateText, failing HTML5 value validation",
+        "Observation table column mismatch: table header had 5 columns while recorded rows inserted 6 cells (missing index column)",
+        "Procedure step 6 contained corrupt math markup rendering 'e.g.' as 'e.' with a math italic 'g'"
+      ]
+    },
+    {
+      "sim_id": "u01291",
+      "status": "ERROR",
+      "time": "08:28:37",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01297",
+      "status": "FIXED",
+      "time": "08:28:58",
+      "issues": [
+        "Leader line badge numbering mismatch: Badge 1 was assigned to Saturated Calomel Electrode, Badge 2 to Platinum Electrode, and Badge 3 to Potentiometer, which conflicted with the Legend Pills order (1: Potentiometer, 2: Calomel, 3: Platinum). Reordered badges to match legend pills.",
+        "Unwired action buttons: 'btn_dispense_drop', 'btn_toggle_stirrer', and 'btn_find_inflection' lacked click event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper up and down buttons ('.stepper-btn-up', '.stepper-btn-down') were not bound to input adjustments and dispatch events.",
+        "Static stirrer state: Implemented interactive 'stirrerActive' state toggled by the stirrer button, controlling rotation, fluid vortex, crystals swirling, and power LED."
       ]
     }
   ],
@@ -1446,6 +1444,11 @@
     "u01288",
     "u01289",
     "u01290",
-    "u01292"
+    "u01292",
+    "u01293",
+    "u01294",
+    "u01295",
+    "u01296",
+    "u01297"
   ]
 }
