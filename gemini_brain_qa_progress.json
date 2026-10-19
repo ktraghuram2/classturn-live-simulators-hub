@@ -1,76 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:34:23",
-  "completed_count": 1762,
-  "fixed_count": 1582,
-  "latest_sim_id": "u02246",
+  "updated_at": "2026-10-19 16:37:53",
+  "completed_count": 1767,
+  "fixed_count": 1587,
+  "latest_sim_id": "u02248",
   "recent_events": [
-    {
-      "sim_id": "u02204",
-      "status": "FIXED",
-      "time": "16:26:38",
-      "issues": [
-        "Live telemetry readout labels failed to update because setTxt looked for element IDs matching 'reading_*' instead of 'val_reading_*'",
-        "Observation table columns were misaligned and out of order compared to observation_thead_html, with 9 row cells logged against 8 table headers",
-        "Action buttons btn_apply_seismic_pulse and btn_symmetrize_frame were unwired and unhandled in canvas_js",
-        "Stepper control increment and decrement buttons (.stepper-btn) were unwired in canvas_js",
-        "Duplicate MathML symbol tag present in observation_thead_html for eccentricity column"
-      ]
-    },
-    {
-      "sim_id": "u02198",
-      "status": "ERROR",
-      "time": "16:26:42",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02206",
-      "status": "FIXED",
-      "time": "16:26:53",
-      "issues": [
-        "Unwired action buttons: btn_lanzar_movil (Iniciar Desplazamiento Uniforme) and btn_invertir_sentido (Invertir Signo de Velocidad) had no event listeners attached in canvas_js",
-        "Unwired stepper up/down buttons: .stepper-btn-up and .stepper-btn-down buttons were missing click event listeners to increment and decrement stepper_v and stepper_e0",
-        "Misaligned observation table columns: btnRecord injected an extra count cell (${recordCount}) as the first column, displacing time, initial position, velocity, and displacement relative to the 5 header columns in observation_thead_html"
-      ]
-    },
-    {
-      "sim_id": "u02207",
-      "status": "PASS",
-      "time": "16:27:07",
-      "issues": []
-    },
-    {
-      "sim_id": "u02211",
-      "status": "FIXED",
-      "time": "16:27:37",
-      "issues": [
-        "Added live readout DOM synchronization for 'val_reading_*' element IDs used in Section 6 live readings."
-      ]
-    },
-    {
-      "sim_id": "u02208",
-      "status": "FIXED",
-      "time": "16:27:41",
-      "issues": [
-        "Corrupted unit MathML ('unit s/s tep') in principles_list_html, readouts_html, and observation_thead_html caused by LaTeX fraction parsing of 'units/step'",
-        "Misaligned observation table rows caused by inserting 7 <td> cells into 6 <th> columns due to prepended recordCount",
-        "Unwired action button btn_cycle_signal_phase ('Force Immediate Signal Phase Switch') in canvas_js",
-        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) for vehicle counts and simulation clock frequency"
-      ]
-    },
-    {
-      "sim_id": "u02215",
-      "status": "FIXED",
-      "time": "16:27:58",
-      "issues": [
-        "Observation table columns in btnRecord (11 columns) were completely misaligned with the 8 columns defined in observation_thead_html",
-        "Missing wiring for Action button #btn_drain_tank2 (Drain Weighing Tank to Reservoir)",
-        "Missing event listeners for stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down)",
-        "Turbine flow rate Q_turb calculation in render() evaluated to +0.80% error instead of matching the documented baseline +0.40% error"
-      ]
-    },
     {
       "sim_id": "u02210",
       "status": "FIXED",
@@ -386,6 +320,75 @@
       "time": "16:34:23",
       "issues": [
         "Apparatus badges and leader lines in canvas_js had mismatched numbering with legend_pills_html: Badge 1 pointed to Transparent Cylindrical Tank instead of Variable Speed Motor & Turntable Base, Badge 2 pointed to Motor instead of Tank, Badge 3 pointed to Vernier Depth Gauge instead of Forced Vortex Liquid Paraboloid, Badge 4 pointed to Digital Tachometer instead of Vernier Depth Gauge, Badge 5 pointed to Annular Spillway instead of Digital Tachometer, and Badge 6 for Annular Spillway & Overflow Basin was missing entirely. Realigned all 6 leader badges and touch anchors to strictly match the 6 legend pills."
+      ]
+    },
+    {
+      "sim_id": "u02250",
+      "status": "FIXED",
+      "time": "16:37:53",
+      "issues": [
+        "Misaligned observation table columns: Linear mass density and wave speed data cells were transposed in the observation row creation relative to the table column headers",
+        "Unwired control action buttons: 'btn_strike_hammer' and 'btn_cycle_boundary' were defined in HTML but had no active event listeners in canvas_js",
+        "Missing stepper button handlers: Stepper arrow buttons (.stepper-btn-up, .stepper-btn-down) lacked dynamic stepping logic",
+        "Prose and notation anomalies in principles_summary_html: English words ('d', 'A') were erroneously wrapped in math tags and partial derivative notation was malformed as '∂ w / ∂ x'"
+      ]
+    },
+    {
+      "sim_id": "u02249",
+      "status": "ERROR",
+      "time": "16:37:53",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02233",
+      "status": "FIXED",
+      "time": "16:37:53",
+      "issues": [
+        "Unwired action button btn_auto_stabilize and stepper buttons (.stepper-btn-up, .stepper-btn-down)",
+        "Misaligned observation table columns: row innerHTML had 8 columns (including trial count and cone angle) while table header defines 6 columns",
+        "Inverted apparatus badges: Badge 1 pointed to burner tube and Badge 2 pointed to stand, mismatching Legend Pills 1 and 2"
+      ]
+    },
+    {
+      "sim_id": "u02251",
+      "status": "FIXED",
+      "time": "16:37:53",
+      "issues": [
+        "Wired up unwired action button #btn_run_zeror ('Execute ZeroR Classification')",
+        "Wired up all stepper increment/decrement buttons (.stepper-btn)",
+        "Corrected live telemetry element selectors to target val_reading_* IDs",
+        "Fixed observation table record row column count and alignment to match all 6 thead columns (Total Instances N, Selected Attribute k, Majority Ratio p_maj, Majority Count n_maj, Accuracy, Error Rate)"
+      ]
+    },
+    {
+      "sim_id": "u02253",
+      "status": "ERROR",
+      "time": "16:37:53",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02254",
+      "status": "FIXED",
+      "time": "16:37:53",
+      "issues": [
+        "Removed erroneous MathML tagging of the English indefinite article 'a' across aim, apparatus, principles, and procedure slots",
+        "Corrected incomplete unit '1/' to '%⁻¹' (<math><msup><mo>%</mo><mrow><mo>−</mo><mn>1</mn></mrow></msup></math>) for the Ferguson retardation coefficient in principles list"
+      ]
+    },
+    {
+      "sim_id": "u02248",
+      "status": "FIXED",
+      "time": "16:37:53",
+      "issues": [
+        "Misaligned observation table columns: Canvas script was prepending a row index counter that shifted binary sensor and actuator states into mismatched columns.",
+        "Unwired action buttons: Automated Wash Cycle Sequence and Emergency Door Open Trip buttons lacked event listener handlers in canvas_js.",
+        "Unwired stepper controls: Stepper increment and decrement arrow buttons had no click listeners attached to manipulate sensor input values.",
+        "Truncated principles list slot: principles_list_html had unclosed tags and was missing Boolean equations for the Heater and Drive Motor actuators.",
+        "Raw apostrophe primes in principles summary: Replaced trailing ASCII prime marks with proper overbar MathML negation syntax for inverted sensor inputs."
       ]
     }
   ],
@@ -2140,6 +2143,7 @@
     "u02227",
     "u02230",
     "u02232",
+    "u02233",
     "u02234",
     "u02235",
     "u02236",
@@ -2151,6 +2155,10 @@
     "u02243",
     "u02244",
     "u02246",
-    "u02247"
+    "u02247",
+    "u02248",
+    "u02250",
+    "u02251",
+    "u02254"
   ]
 }
