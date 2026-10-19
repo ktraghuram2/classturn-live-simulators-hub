@@ -1,55 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:29:49",
-  "completed_count": 1993,
-  "fixed_count": 1786,
-  "latest_sim_id": "u01880",
+  "updated_at": "2026-10-19 18:31:31",
+  "completed_count": 1998,
+  "fixed_count": 1790,
+  "latest_sim_id": "u02010",
   "recent_events": [
-    {
-      "sim_id": "u01765",
-      "status": "FIXED",
-      "time": "18:21:18",
-      "issues": [
-        "Unwired action buttons: 'btn_restore_signature' and 'btn_inject_corruption' were not wired to restore magic bytes or inject corruption",
-        "Unwired stepper controls: Stepper up/down arrow buttons (.stepper-btn) had no click event handlers and were ignored by the sync loop"
-      ]
-    },
-    {
-      "sim_id": "u01735",
-      "status": "PASS",
-      "time": "18:21:54",
-      "issues": []
-    },
-    {
-      "sim_id": "u01761",
-      "status": "FIXED",
-      "time": "18:22:03",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01773",
-      "status": "FIXED",
-      "time": "18:22:18",
-      "issues": [
-        "Unwired 'Resample Stochastic Data Points' action button (btn_resample_dataset) and static dataset generation lacking stateful stochastic resampling",
-        "Unwired stepper up/down buttons and experiment activity select dropdown in canvas_js",
-        "Missing text labels, telemetry readouts, axis labels, and high-contrast hardware instrument titles on canvas units",
-        "Malformed MathML identifier 'epsilon' in apparatus_html replaced with proper greek epsilon symbol ε"
-      ]
-    },
-    {
-      "sim_id": "u01775",
-      "status": "FIXED",
-      "time": "18:22:49",
-      "issues": [
-        "Observation table columns were misaligned: row output swapped analyte element and sample name, and inserted emission wavelength instead of dilution factor.",
-        "Action buttons 'btn_aspirate_sample' and 'btn_zero_calibrate' were present in controls but unwired in canvas_js.",
-        "Stepper buttons (.stepper-btn) lacked click event listeners in canvas_js, preventing up/down stepper adjustments.",
-        "Experiment mode selector ('experimentSelect') was not connected, preventing switching between Standard Calibration and Fruit Juice Sample Analysis."
-      ]
-    },
     {
       "sim_id": "u01782",
       "status": "FIXED",
@@ -366,6 +321,54 @@
       "time": "18:29:49",
       "issues": [
         "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01932",
+      "status": "PASS",
+      "time": "18:29:53",
+      "issues": []
+    },
+    {
+      "sim_id": "u01957",
+      "status": "FIXED",
+      "time": "18:30:03",
+      "issues": [
+        "Corrected inappropriate MathML fraction tags in apparatus_html for network speed ('10/100 Mbps') and CIDR host IP notation ('/24')",
+        "Replaced italicized math variable <math><mi>C</mi></math> with plain text 'Node C' across apparatus, procedure, controls, and legend pills",
+        "Fixed DOM element ID lookups for live telemetry readouts in canvas_js (val_reading_* instead of reading_*) so numeric readouts update live",
+        "Wired event listeners for 'btn_transmit_packet' (trigger packet traversal) and 'btn_clear_mac_table' (flush bridge MAC cache)",
+        "Added event listeners for stepper up/down buttons to ensure interactive parameter stepping",
+        "Corrected observation table row column mismatch in btnRecord where 8 misaligned values were being appended into a 7-column header table, correctly computing and tabulating the Forwarding Decision column"
+      ]
+    },
+    {
+      "sim_id": "u01984",
+      "status": "FIXED",
+      "time": "18:30:15",
+      "issues": [
+        "Unwired action button btn_execute_cycle in canvas_js",
+        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
+        "Misaligned observation table row columns (7 columns emitted in JS vs 5 columns defined in observation_thead_html)"
+      ]
+    },
+    {
+      "sim_id": "u01971",
+      "status": "FIXED",
+      "time": "18:30:19",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u02010",
+      "status": "FIXED",
+      "time": "18:31:31",
+      "issues": [
+        "Unwired action buttons: 'btn_scramble_puzzle' and 'btn_verify_parity' were not wired to startScramble or parity audit in canvas_js",
+        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners",
+        "Observation table column mismatch: recordObservation rendered 6 columns instead of the 7 declared in observation_thead_html (Move Number, Transposed Tile k, Inversion Count N_inv, Empty Void Row r_empty, Parity Invariant, Manhattan Distance d_M, Estimated Moves M_est)",
+        "Telemetry unit preservation: setTelemetryValue wiped out inner MathML unit elements when updating readout values"
       ]
     }
   ],
@@ -2019,6 +2022,7 @@
     "u01929",
     "u01930",
     "u01931",
+    "u01932",
     "u01933",
     "u01934",
     "u01935",
@@ -2040,6 +2044,7 @@
     "u01954",
     "u01955",
     "u01956",
+    "u01957",
     "u01958",
     "u01959",
     "u01960",
@@ -2052,6 +2057,7 @@
     "u01968",
     "u01969",
     "u01970",
+    "u01971",
     "u01972",
     "u01973",
     "u01974",
@@ -2062,6 +2068,7 @@
     "u01980",
     "u01981",
     "u01982",
+    "u01984",
     "u01986",
     "u01987",
     "u01988",
@@ -2081,6 +2088,7 @@
     "u02006",
     "u02008",
     "u02009",
+    "u02010",
     "u02011",
     "u02012",
     "u02014",
