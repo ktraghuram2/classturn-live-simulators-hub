@@ -1,72 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:45:07",
-  "completed_count": 1552,
-  "fixed_count": 1419,
-  "latest_sim_id": "u01969",
+  "updated_at": "2026-10-19 14:46:16",
+  "completed_count": 1557,
+  "fixed_count": 1423,
+  "latest_sim_id": "u01974",
   "recent_events": [
-    {
-      "sim_id": "u01924",
-      "status": "FIXED",
-      "time": "14:32:39",
-      "issues": [
-        "Observation table record button generated 8 data columns misaligned with the 6-column observation header.",
-        "Stepper up/down buttons (.stepper-btn) lacked click event listeners in canvas_js.",
-        "Action buttons 'btn_auto_pipette_dilution' and 'btn_read_microplate' lacked click handlers."
-      ]
-    },
-    {
-      "sim_id": "u01929",
-      "status": "PASS",
-      "time": "14:32:43",
-      "issues": []
-    },
-    {
-      "sim_id": "u01927",
-      "status": "FIXED",
-      "time": "14:32:45",
-      "issues": [
-        "Observation table record button logged 6 mismatched columns instead of the 7 declared columns, causing heat treatment state, magnifications, resolution, constituents, and phase area fraction to be omitted or misaligned.",
-        "Action buttons #btn_auto_focus and #btn_center_diaphragm in Section 5 controls were not wired with click handlers in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01926",
-      "status": "FIXED",
-      "time": "14:32:50",
-      "issues": [
-        "Realigned legend_pills_html with the 6 apparatus items and canvas badges, resolving mismatch between ocular/objective order and badge numbering.",
-        "Corrected ctrl_obj_mag stepper in steppers_html from static step=0.0 and max=10.0 to functional step=10.0 and range [10.0 - 100.0] to permit objective lens interchangeability.",
-        "Cleaned up qualitative readout unit in readouts_html to eliminate awkward MathML 'state' symbol rendering for Optical Acuity Quality Status."
-      ]
-    },
-    {
-      "sim_id": "u01928",
-      "status": "PASS",
-      "time": "14:32:50",
-      "issues": []
-    },
-    {
-      "sim_id": "u01912",
-      "status": "FIXED",
-      "time": "14:32:53",
-      "issues": [
-        "Unwired action buttons: #btn_traverse_scan, #btn_auto_null_balance, and #btn_wring_gauges had no event listeners in canvas_js",
-        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down buttons were not bound to stepper inputs or simulation state",
-        "Misaligned observation table columns: Recorded rows inserted slip gauge height into workpiece column and mismatched indicator readings with the 7 observation thead columns",
-        "Calculated taper readout: Live telemetry calculated taper angle was statically bound to nominal theta0 rather than dynamically reflecting dial indicator deflection"
-      ]
-    },
-    {
-      "sim_id": "u01930",
-      "status": "FIXED",
-      "time": "14:33:12",
-      "issues": [
-        "Observation table header (observation_thead_html) had only 6 column headers while record button (btnRecord) generated 7 row columns, omitting Surface Elevation Displacement η and causing column misalignment.",
-        "Surface specific humidity unit in steppers_html and observation_thead_html used malformed MathML dividing by k with g outside ((g/k)g) instead of g/kg.",
-        "Stepper increment and decrement buttons (.stepper-btn) had no click event listeners in canvas_js, leaving user stepper adjustments non-functional."
-      ]
-    },
     {
       "sim_id": "u01925",
       "status": "FIXED",
@@ -374,6 +312,71 @@
         "Unwired stepper up/down buttons: .stepper-btn controls were not wired to increment/decrement input values and dispatch change events.",
         "Missing dynamic 3D specular highlight and action pulse feedback on memory buffer cells and reduction meter."
       ]
+    },
+    {
+      "sim_id": "u01966",
+      "status": "FIXED",
+      "time": "14:45:16",
+      "issues": [
+        "Observation table columns in canvas_js were misaligned with observation_thead_html (active number system column was omitted, shifting decimal, binary, and carry results into mismatched table headers).",
+        "Action buttons (btn_step_arithmetic and btn_instant_compute) and stepper up/down buttons were unwired in canvas_js.",
+        "Experiment selection dropdown (experimentSelect) was unwired in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01963",
+      "status": "FIXED",
+      "time": "14:45:30",
+      "issues": [
+        "Observation table record button generated 10 columns while observation_thead_html defines only 8 columns.",
+        "Telemetry sync in canvas_js queried 'reading_*' element IDs instead of the actual rendered 'val_reading_*' span IDs.",
+        "Stepper increment/decrement buttons (.stepper-btn) were not wired to update inputs and dispatch events.",
+        "Action buttons #btn_run_centrifuge and #btn_measure_absorbance were completely unwired.",
+        "Legend pills 7 and 8 were inverted with respect to spatial layout and leader badges 7 and 8.",
+        "Badge 8 anchor pointed to empty bench space instead of the quartz cuvette."
+      ]
+    },
+    {
+      "sim_id": "u01967",
+      "status": "ERROR",
+      "time": "14:46:01",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01972",
+      "status": "FIXED",
+      "time": "14:46:02",
+      "issues": [
+        "Telemetry DOM element selectors targeted the parent li items ('reading_*') instead of value spans ('val_reading_*'), causing textContent assignment to wipe out the headings and units",
+        "Action buttons ('btn_strike_hammer', 'btn_toggle_harmonic', 'btn_center_nodes') were not wired up to any event listeners in canvas_js",
+        "Stepper increment and decrement buttons ('.stepper-btn') were unwired in canvas_js, preventing manual stepping",
+        "Experiment mode dropdown ('experimentSelect') was not wired in canvas_js",
+        "Boundary node was permanently driven harmonically without allowing the user to pause or observe unperturbed impulse propagation from hammer strikes"
+      ]
+    },
+    {
+      "sim_id": "u01968",
+      "status": "FIXED",
+      "time": "14:46:08",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01964",
+      "status": "ERROR",
+      "time": "14:46:14",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01974",
+      "status": "PASS",
+      "time": "14:46:16",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1927,7 +1930,12 @@
     "u01960",
     "u01961",
     "u01962",
+    "u01963",
     "u01965",
-    "u01969"
+    "u01966",
+    "u01968",
+    "u01969",
+    "u01972",
+    "u01974"
   ]
 }
