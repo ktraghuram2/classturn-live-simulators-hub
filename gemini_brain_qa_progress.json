@@ -1,66 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:47:45",
-  "completed_count": 1807,
-  "fixed_count": 1620,
-  "latest_sim_id": "u02303",
+  "updated_at": "2026-10-19 16:48:17",
+  "completed_count": 1812,
+  "fixed_count": 1624,
+  "latest_sim_id": "u02306",
   "recent_events": [
-    {
-      "sim_id": "u02264",
-      "status": "FIXED",
-      "time": "16:39:52",
-      "issues": [
-        "Wired missing stepper buttons (.stepper-btn-up, .stepper-btn-down) to allow users to increment and decrement initial sand weight and NaOH volume inputs.",
-        "Wired unwired action buttons (btn_agitate_wash, btn_siphon_clay, btn_dry_sample) with click listeners and visual active feedback to guide users through the multi-stage AFS clay determination process.",
-        "Aligned observation table recorded sand weight precision to 2 decimal places to match the analytical balance precision specification."
-      ]
-    },
-    {
-      "sim_id": "u02265",
-      "status": "FIXED",
-      "time": "16:40:03",
-      "issues": [
-        "Corrected spurious MathML fraction rendering for TCP port numbers (80/8080) in apparatus specifications.",
-        "Added missing variable symbol B to Bandwidth column header in observation table.",
-        "Wired dispatch and response action buttons and connected stepper increment/decrement buttons in canvas_js for complete user control."
-      ]
-    },
-    {
-      "sim_id": "u02262",
-      "status": "FIXED",
-      "time": "16:40:07",
-      "issues": [
-        "Misaligned observation table columns in canvas_js: observation_thead_html expects 7 columns (Current, Magnetic Field, Da, Db, Db^2-Da^2, Wavenumber Shift, Bohr Magneton), but canvas_js populated 6 columns including theta which had no header, misaligning all recorded data.",
-        "Unwired action buttons ('btn_insert_hall_probe' and 'btn_align_etalon') in canvas_js.",
-        "Unwired stepper up/down buttons (▲/▼) in canvas_js preventing interactive increments/decrements.",
-        "Malformed math markup in procedure_section_html: unrendered raw notation 'D_(k+1)' in Step 5 and raw unicode combining character 'Δν̃' in Step 8.",
-        "Malformed math markup in validation_html: 'cos θ ≈ 1 - θ²/2' split across raw text and partial MathML.",
-        "Broken exponent notation in readouts_html and observation_thead_html: '10⁻²4' and '<msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup>4' instead of '10⁻²⁴'."
-      ]
-    },
-    {
-      "sim_id": "u02268",
-      "status": "FIXED",
-      "time": "16:40:30",
-      "issues": [
-        "Unwired action button id 'btn_inject_pulse' (canvas_js was querying 'btnPulse' and 'btnInject')",
-        "Missing action handler for button id 'btn_reverse_flow' (Invert Flow Direction)",
-        "Unwired stepper-btn buttons in canvas_js",
-        "Misaligned observation table columns: thead defines 7 columns (Time, U, K, Peak Conc, Diff Flux, Adv Flux, Pe) but tbody emitted 9 columns inserting pulse width and flux convergence, displacing and misaligning all remaining data cells"
-      ]
-    },
-    {
-      "sim_id": "u02269",
-      "status": "FIXED",
-      "time": "16:40:58",
-      "issues": [
-        "Unwired action buttons: 'Inject Localized Thermal Pulse' (btn_inject_pulse) and 'Invert Flow Direction' (btn_invert_flow) had no event listeners in canvas_js.",
-        "Unwired stepper controls: stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to increment/decrement inputs.",
-        "Frozen live telemetry readouts: setReadingVal queried getElementById(id) instead of checking id='val_' + id, causing readout elements to never update dynamically.",
-        "Observation table column mismatch: btnRecord appended 9 <td> columns (including dt) while the table header had only 8 columns, causing severe column misalignment.",
-        "Malformed MathML in observation_thead_html: flux convergence derivative was improperly structured as -\\partial (F/\\partial) x instead of -(\\partial F / \\partial x)."
-      ]
-    },
     {
       "sim_id": "u02263",
       "status": "ERROR",
@@ -395,6 +339,60 @@
         "Unwired action buttons: 'btn_cycle_primitive' and 'btn_snap_isometric' had no click event listeners attached in canvas_js.",
         "Unwired stepper buttons: '.stepper-btn' up and down arrow buttons had no click event listeners attached in canvas_js."
       ]
+    },
+    {
+      "sim_id": "u02298",
+      "status": "FIXED",
+      "time": "16:48:05",
+      "issues": [
+        "Observation table column mismatch: btnRecord row.innerHTML had 9 columns (including an extraneous plant pole cell) for 8 table headers, shifting all subsequent observation readings.",
+        "Telemetry readouts disconnected: canvas_js looked for element IDs 'reading_*' instead of 'val_reading_*', causing getElementById to return null and leaving all live readouts un-updated.",
+        "Preservation of MathML units in readouts: updateTelemetry overwrote full element textContent instead of targeting the numeric text span, stripping unit symbols.",
+        "Unwired stepper buttons: .stepper-btn buttons had no click listeners attached to increment/decrement inputs.",
+        "Unwired action button: 'Synthesize Lead Compensator' (#btn_compute_lead_compensator) had no event listener wired.",
+        "Method 2 (Pole-Zero Cancellation) support: computePhysics only supported Method 1 and ignored cancelPole and experiment selection.",
+        "Missing symbol in observation header: Compensator Pole column was missing the 'p' symbol."
+      ]
+    },
+    {
+      "sim_id": "u02305",
+      "status": "FIXED",
+      "time": "16:48:11",
+      "issues": [
+        "Corrupt LaTeX division by zero in apparatus_html item 4 (0-30 V/0-2 A rendered as V/0 - 2)",
+        "Raw LaTeX/plain text notation G_i¹ in principles_summary_html and procedure_section_html rather than standard MathML",
+        "Misaligned observation table: canvas_js generated 7 columns with swapped columns 4 and 5 (rmsd before deltaM plus extraneous deltaFr), conflicting with the 6 headers in observation_thead_html",
+        "Apparatus leader badges 1, 3, 4, 5, 6 were scrambled across LCR meter, cathode, rebar, PZT patches, and workbench",
+        "Unwired interactive stepper buttons (.stepper-btn-up, .stepper-btn-down) and action buttons (btn_sweep_impedance, btn_toggle_specimen) in canvas_js",
+        "Specimen toggle state was not supported in rendering bare rebar vs concrete specimen"
+      ]
+    },
+    {
+      "sim_id": "u02301",
+      "status": "FIXED",
+      "time": "16:48:13",
+      "issues": [
+        "Observation table column mismatch: btnRecord inserted 7 table cells instead of matching all 9 observation header columns (Interval Start, Interval End, Window Width, Sample Point, Realization, and Probability).",
+        "Unwired action buttons: btn_step_next, btn_jump_next_block, and btn_run_sweep were not wired to control sequence index progression.",
+        "Unwired stepper controls: up and down stepper buttons (.stepper-btn) were not wired to update numerical inputs."
+      ]
+    },
+    {
+      "sim_id": "u02304",
+      "status": "FIXED",
+      "time": "16:48:13",
+      "issues": [
+        "Observation table columns were misaligned between thead and tbody (swapped Gas Flow Rate and Scratch Hardness, plus an extraneous 8th column not in the thead)",
+        "Malformed MathML units in live readouts and observation header: fractional syntax error \\frac{c}{m^3}s for cm³/s and \\frac{g}{c}m^3 for g/cm³",
+        "Missing symbol 't' in the Gassing Duration observation table header",
+        "Action buttons (btn_ram_sand, btn_pierce_vent, btn_inject_co2, btn_strip_corebox) and stepper buttons (▲/▼) had no event listeners wired in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u02306",
+      "status": "PASS",
+      "time": "16:48:16",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -2202,8 +2200,13 @@
     "u02295",
     "u02296",
     "u02297",
+    "u02298",
     "u02299",
     "u02300",
-    "u02303"
+    "u02301",
+    "u02303",
+    "u02304",
+    "u02305",
+    "u02306"
   ]
 }
