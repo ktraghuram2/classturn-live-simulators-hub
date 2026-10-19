@@ -1,50 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:04:54",
-  "completed_count": 962,
-  "fixed_count": 952,
-  "latest_sim_id": "u01158",
+  "updated_at": "2026-10-19 08:05:32",
+  "completed_count": 967,
+  "fixed_count": 956,
+  "latest_sim_id": "u01168",
   "recent_events": [
-    {
-      "sim_id": "u01111",
-      "status": "PASS",
-      "time": "07:56:03",
-      "issues": []
-    },
-    {
-      "sim_id": "u01124",
-      "status": "PASS",
-      "time": "07:56:30",
-      "issues": []
-    },
-    {
-      "sim_id": "u01125",
-      "status": "PASS",
-      "time": "07:56:41",
-      "issues": []
-    },
-    {
-      "sim_id": "u01123",
-      "status": "FIXED",
-      "time": "07:56:58",
-      "issues": [
-        "Unwired stepper up/down buttons: .stepper-btn-up and .stepper-btn-down lacked click event listeners to increment/decrement parameter inputs.",
-        "Unwired action buttons: btn_dispense_flux, btn_strike_arc_weld, and btn_chip_slag_inspect were defined in HTML but had no event listeners in canvas_js.",
-        "Observation table column misalignment: Observation row recording inserted 10 <td> elements for an 8-column header (beadWidth and arcPower lacked corresponding table headers).",
-        "Missing visual reaction for slag detachment: Slag layer was rendered statically rather than peeling/revealing the bead when btn_chip_slag_inspect is activated."
-      ]
-    },
-    {
-      "sim_id": "u01122",
-      "status": "FIXED",
-      "time": "07:56:59",
-      "issues": [
-        "Erroneous MathML wrapping English prose article 'a' and broken units (J/mm rendered as J/m*m, mm/s rendered as m*m/s) in aim_html, principles_summary_html, and observation_thead_html",
-        "Mismatched apparatus numbering in legend_pills_html compared to the 7 numbered canvas apparatus badges and section 02 apparatus specifications",
-        "Missing click handlers for stepper up/down buttons and unwired Strike Arc action button in canvas_js",
-        "Misaligned observation table row schema in canvas_js where arcLength was inserted into the Net Heat Input column and Bead Width was missing entirely"
-      ]
-    },
     {
       "sim_id": "u01126",
       "status": "FIXED",
@@ -386,6 +346,56 @@
         "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners and did not modify input values.",
         "Unwired action buttons: 'btn_auto_balance' and 'btn_toggle_rotation' had no event listeners to toggle counterweight balancing or engage/disengage motor rotation.",
         "Discrepancy in readouts_html default values: Initial static display showed buggy mass values (12.50 kg and 17.50 kg) rather than true equilibrium counterweights (45.00 kg and 35.00 kg)."
+      ]
+    },
+    {
+      "sim_id": "u01165",
+      "status": "FIXED",
+      "time": "08:05:32",
+      "issues": [
+        "Observation table record logic injected 9 columns instead of aligning with the 7 canonical columns defined in observation_thead_html",
+        "Action button #btn_generate_channel ('Generate New Channel Realization') was unwired in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01167",
+      "status": "PASS",
+      "time": "08:05:32",
+      "issues": []
+    },
+    {
+      "sim_id": "u01162",
+      "status": "FIXED",
+      "time": "08:05:32",
+      "issues": [
+        "Observation table record button (btnRecord) generated 9 misordered columns that did not match the 8 defined observation_thead headers (Simulation Time was placed 4th instead of 1st, and an extra 9th routed channel column was appended).",
+        "Unwired action buttons (#btn_run_testbench and #btn_toggle_select) with missing click handlers.",
+        "Unwired stepper controls (.stepper-btn-up, .stepper-btn-down) lacking click listeners to increment/decrement targeted numerical inputs."
+      ]
+    },
+    {
+      "sim_id": "u01155",
+      "status": "FIXED",
+      "time": "08:05:32",
+      "issues": [
+        "Fixed raw LaTeX 't_\\exp' in Elapsed Discharge Time live readout to valid MathML",
+        "Fixed raw LaTeX '\\exp' and unit formatting in observation table column header",
+        "Corrected observation table row cell count from 9 mismatched cells to 8 cells matching observation_thead_html",
+        "Wired action control buttons ('btn_open_orifice', 'btn_fill_tank', 'btn_pause_discharge') to simulation logic",
+        "Wired stepper increment and decrement buttons ('.stepper-btn-up', '.stepper-btn-down') to numeric inputs",
+        "Wired experiment dropdown ('select_experiment') to switch active tank geometry",
+        "Added automatic observation recording when fluid head reaches target level H2"
+      ]
+    },
+    {
+      "sim_id": "u01168",
+      "status": "FIXED",
+      "time": "08:05:32",
+      "issues": [
+        "Misaligned observation table row schema in btnRecord handler writing 5 columns into a 6-column table",
+        "Unwired action button btn_propagate_logic and stepper increment/decrement buttons in canvas_js",
+        "Product bit mapping array divergence from true 8-bit multiplier arithmetic"
       ]
     }
   ],
@@ -1345,12 +1355,17 @@
     "u01152",
     "u01153",
     "u01154",
+    "u01155",
     "u01156",
     "u01158",
     "u01159",
     "u01160",
     "u01161",
+    "u01162",
     "u01163",
-    "u01164"
+    "u01164",
+    "u01165",
+    "u01167",
+    "u01168"
   ]
 }
