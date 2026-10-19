@@ -1,63 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 19:00:54",
-  "completed_count": 2063,
-  "fixed_count": 1850,
+  "updated_at": "2026-10-19 19:02:41",
+  "completed_count": 2068,
+  "fixed_count": 1854,
   "latest_sim_id": "u01166",
   "recent_events": [
-    {
-      "sim_id": "u02223",
-      "status": "FIXED",
-      "time": "18:41:26",
-      "issues": [
-        "Unwired action buttons: 'btn_submit_valid_login' and 'btn_submit_invalid_login' had no event listeners attached.",
-        "Unwired stepper up/down buttons: '.stepper-btn-up' and '.stepper-btn-down' were not bound to modify control inputs.",
-        "Misaligned observation table: 'btnRecord' inserted only 5 data cells into a 6-column header table, omitting the trial index and offsetting entropy into the trial column.",
-        "Apparatus badge count mismatch: canvas rendered Badges 3 and 4, whereas apparatus_html and legend_pills define only 2 apparatus elements."
-      ]
-    },
-    {
-      "sim_id": "u02228",
-      "status": "FIXED",
-      "time": "18:41:31",
-      "issues": [
-        "Unwired stepper buttons (.stepper-btn-up, .stepper-btn-down)",
-        "Unwired Action button 'Auto-Tune TMD to Frame Resonance' (btn_autotune_tmd)",
-        "Observation table column mismatch: canvas_js generated 7 <td> cells while observation_thead_html specifies 5 <th> columns",
-        "Telemetry selectors targeted parent <li> elements via [data-id] instead of val_reading_* spans, wiping out labels and headings on update"
-      ]
-    },
-    {
-      "sim_id": "u02219",
-      "status": "FIXED",
-      "time": "18:41:36",
-      "issues": [
-        "Observation table recorded row contained 8 misaligned columns out of sync with the 6 columns defined in observation_thead_html",
-        "Action buttons ('btn_toggle_torch' and 'btn_agitate_suspension') and stepper buttons were unhandled in canvas_js",
-        "Light beam, Tyndall cone, and detector spot remained visible and active regardless of light source toggled state"
-      ]
-    },
-    {
-      "sim_id": "u02198",
-      "status": "FIXED",
-      "time": "18:41:37",
-      "issues": [
-        "Unwired action buttons: #btn_auto_balance and #btn_evacuate_base were missing click event listeners",
-        "Unwired stepper controls: .stepper-btn ▲/▼ stepper buttons and input event listeners were not connected to update simulator physics",
-        "Observation table column misalignment: Record Observation inserted 7 td cells with an untracked row index against a 6-column thead header",
-        "Apparatus badge numbering mismatch: Vacuum Manifold was labelled badge 4 instead of 2, Wheatstone Bridge was badge 2 instead of 3, and Meter was badge 3 instead of 4 relative to legend pills"
-      ]
-    },
-    {
-      "sim_id": "u02229",
-      "status": "FIXED",
-      "time": "18:41:40",
-      "issues": [
-        "Wired interactive action buttons 'Align Calibration Arc Lamp Lines' (btn_calibrate_lamp) and 'Snap Reticle to Nearest Line Core' (btn_snap_nearest_line) in canvas_js",
-        "Connected input and change event listeners to control inputs (star_select, reticle_x, slit_width) and stepper arrow buttons (.stepper-btn) for real-time telemetry updates",
-        "Added reset event listener for btnReset to clear the observation table body"
-      ]
-    },
     {
       "sim_id": "u02253",
       "status": "FIXED",
@@ -397,6 +344,55 @@
       "status": "PASS",
       "time": "18:58:40",
       "issues": []
+    },
+    {
+      "sim_id": "u01286",
+      "status": "FIXED",
+      "time": "19:02:34",
+      "issues": [
+        "Fixed corrupted MathML rendering in apparatus_html where '0-10 V / 4-20 mA' was malformed as a fraction (V/4 - 20 mA)",
+        "Corrected observation table row columns to match the 7 thead columns (Grid Voltage, Bus Voltage, Feeder Load, Power Factor, Line Current, GOS Status, CB Status)",
+        "Swapped Badge 1 and Badge 2 in canvas_js so Badge 1 links to Group Operated Switches and Badge 2 links to 33 kV / 11 kV Power Transformer, matching Legend Pills 1 and 2",
+        "Wired up Section 5 action buttons (#toggle_gos_isolator, #toggle_circuit_breaker, #toggle_load_feeder) with PLC sequential interlocking logic",
+        "Wired up Section 5 stepper up/down buttons for feeder load power, power factor, and primary grid voltage"
+      ]
+    },
+    {
+      "sim_id": "u01593",
+      "status": "FIXED",
+      "time": "19:02:36",
+      "issues": [
+        "Mismatched badge numbers in canvas vs legend pills: Badge 1 was pointing to Thermistor, Badge 2 to Heater, Badge 3 to USB, and Badge 4 to Heat sink; updated badges to match legend pills (Badge 1 = Transistor heater, Badge 2 = Thermistor sensor, Badge 3 = Heat sink with fins, Badge 4 = USB interface).",
+        "Observation table column mismatch: script recorded 8 data cells into a 6-column table; aligned row cells to match the 6 observation columns (Elapsed Time, Heater Output, Sensor Temperature, Absolute Temperature, Heater Power Dissipation, Rate of Change).",
+        "Unwired action button btn_pulse_heater ('Apply 60s Heat Pulse') and stepper buttons (▲/▼); added event listener with 60-second pulse countdown logic and wired stepper button clicks.",
+        "Malformed MathML fraction rendering in procedure step 1 (23.0 °C / 296.15 K was rendered as a fraction 23.0 °C/296.15 K)."
+      ]
+    },
+    {
+      "sim_id": "u01603",
+      "status": "PASS",
+      "time": "19:02:36",
+      "issues": []
+    },
+    {
+      "sim_id": "u01471",
+      "status": "FIXED",
+      "time": "19:02:37",
+      "issues": [
+        "Wired missing action button click handlers for 'Release Plunger / Needle' (btn_release_rod), 'Raise & Lock to Top Datum' (btn_raise_rod), and 'Mix Cement & Fill Mould' (btn_mix_paste)",
+        "Added missing stepper button click handlers for incrementing/decrementing controls (.stepper-btn)",
+        "Corrected observation recording table row alignment and cell count: resolved mismatch between the 7 observation_thead_html columns and the 8 improperly ordered table row cells"
+      ]
+    },
+    {
+      "sim_id": "u01166",
+      "status": "FIXED",
+      "time": "19:02:39",
+      "issues": [
+        "Telemetry DOM lookups queried container data-ids instead of val_reading_* span IDs, causing live readout text updates to fail silently",
+        "Observation table columns were misaligned with observation_thead_html (7 columns vs 8 required columns, missing pattern index and pass verification flag)",
+        "Action buttons (btn_run_testbench, btn_synthesize_gates) and interactive stepper up/down buttons (.stepper-btn) were unwired"
+      ]
     }
   ],
   "completed_ids": [
@@ -1373,6 +1369,7 @@
     "u01163",
     "u01164",
     "u01165",
+    "u01166",
     "u01167",
     "u01168",
     "u01169",
@@ -1471,6 +1468,7 @@
     "u01280",
     "u01284",
     "u01285",
+    "u01286",
     "u01287",
     "u01288",
     "u01289",
@@ -1629,6 +1627,7 @@
     "u01468",
     "u01469",
     "u01470",
+    "u01471",
     "u01472",
     "u01473",
     "u01474",
@@ -1742,6 +1741,7 @@
     "u01590",
     "u01591",
     "u01592",
+    "u01593",
     "u01594",
     "u01595",
     "u01596",
@@ -1750,6 +1750,7 @@
     "u01600",
     "u01601",
     "u01602",
+    "u01603",
     "u01604",
     "u01605",
     "u01606",
