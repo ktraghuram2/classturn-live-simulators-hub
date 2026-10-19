@@ -1,73 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:09:47",
-  "completed_count": 1677,
-  "fixed_count": 1518,
-  "latest_sim_id": "u02129",
+  "updated_at": "2026-10-19 16:10:30",
+  "completed_count": 1682,
+  "fixed_count": 1522,
+  "latest_sim_id": "u02132",
   "recent_events": [
-    {
-      "sim_id": "u02093",
-      "status": "PASS",
-      "time": "16:02:04",
-      "issues": []
-    },
-    {
-      "sim_id": "u02087",
-      "status": "FIXED",
-      "time": "16:02:06",
-      "issues": [
-        "Unwired action buttons: 'btn_toggle_dashboard', 'btn_toggle_alerts', 'btn_clear_alerts', and 'btn_simulate_spike' had no event listeners attached in canvas_js.",
-        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to adjust input values.",
-        "Observation table column misalignment: Record Observation inserted 6 table data cells (including an unheaded timestamp) while observation_thead_html defines only 5 columns (Temperature, Relative Humidity, AQI, Heat Index, Alert State).",
-        "DOM readout ID mismatch: canvas_js updated 'val_temp' and 'reading_temp' rather than the canonical slot IDs defined in readouts_html ('val_reading_temp', 'val_reading_humidity', 'val_reading_aqi', 'val_reading_heat_index', 'val_reading_alert_status')."
-      ]
-    },
-    {
-      "sim_id": "u02088",
-      "status": "FIXED",
-      "time": "16:02:18",
-      "issues": [
-        "Unwired action buttons: Connected btn_toggle_heater to cycle oven temperature and btn_switch_material to toggle between Germanium and Silicon samples.",
-        "Unwired stepper buttons: Added click event listeners for .stepper-btn controls with step sizing, boundary clamping, and input/change event dispatching.",
-        "Misaligned observation table columns: Corrected observation row data cells from 9 mismatched columns to 7 columns matching the observation thead (T, TK, 10³/TK, I, V, ρ, ln(ρ)).",
-        "Telemetry readout ID mismatch: Enhanced setElText to resolve both ID and val_ID prefixes with engineering units so live readings display properly."
-      ]
-    },
-    {
-      "sim_id": "u02091",
-      "status": "FIXED",
-      "time": "16:02:23",
-      "issues": [
-        "Replaced spurious MathML '<math><mrow><mi>a</mi></mrow></math>' elements incorrectly substituting the English indefinite article 'a' across apparatus_html, principles_summary_html, and procedure_section_html.",
-        "Fixed corrupted MathML formatting for 'ng/μL' and 'ratio' units inside readouts_html.",
-        "Corrected observation table row schema mismatch in canvas_js: replaced 10 misordered td cells with the exact 8 defined table columns matching thead headers.",
-        "Wired interactive controls for all stepper up/down buttons (▲/▼) and unhandled action buttons (Advance Workflow Stage, Pulse Centrifuge Spin, Toggle UV Transilluminator).",
-        "Linked UV Transilluminator canvas rendering directly to toggle state, correctly darkening UV excitative fluorescence and band emission when UV is in standby."
-      ]
-    },
-    {
-      "sim_id": "u02092",
-      "status": "FIXED",
-      "time": "16:02:25",
-      "issues": [
-        "Observation table columns were misaligned: observation_thead_html defined 7 columns (p, m0, n, beta, theta_c, r_ring, N_pe), but btnRecord injected 8 columns with mismatched data (#run, species, p, n, beta, theta_c, r_ring, N_pe). Aligned tbody cells to 7 matching columns.",
-        "Action buttons 'btn_inject_pulse' and 'btn_hough_fit' were defined in controls HTML but had no event listeners wired in canvas_js. Added click handlers for pulse injection and circle reconstruction.",
-        "Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners in canvas_js, and species mass required stepped navigation between hadron rest masses (pion 139.6, kaon 493.7, proton 938.3 MeV/c²). Added full stepper event listener support.",
-        "Validation section contained unformatted raw text math equations ('theta_c_max = arccos(1/n)', 'beta', 'dn/dlambda'). Upgraded to proper MathML markup."
-      ]
-    },
-    {
-      "sim_id": "u02086",
-      "status": "FIXED",
-      "time": "16:02:35",
-      "issues": [
-        "Telemetry DOM element lookup IDs in canvas_js used 'reading_*' instead of matching 'val_reading_*' spans, preventing live readout updates.",
-        "Observation table data columns in btnRecord were severely misaligned with observation_thead_html headers (R_L placed at index 1 instead of index 5, shifting V_rect, V_dc, and V_out).",
-        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) were unwired with no click event handlers.",
-        "Action buttons #btn_toggle_channel ('Toggle CRO Channel Display') and #btn_toggle_filter ('Engage / Bypass Filter Capacitor') had no event listeners or state hooks.",
-        "CRO live waveform rendering only rendered DC waveforms and did not respond to channel toggles (CH1 AC / CH2 DC) or filter bypass state."
-      ]
-    },
     {
       "sim_id": "u02094",
       "status": "FIXED",
@@ -389,6 +326,62 @@
       "status": "PASS",
       "time": "16:09:47",
       "issues": []
+    },
+    {
+      "sim_id": "u02116",
+      "status": "ERROR",
+      "time": "16:09:51",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02131",
+      "status": "FIXED",
+      "time": "16:10:03",
+      "issues": [
+        "Unwired action buttons: btn_snap_part and btn_validate_assembly were defined in HTML controls but had no event listeners attached in canvas_js.",
+        "Misaligned observation table rows: btnRecord generated 8 columns with an extraneous index column and scrambled field order compared to the 7-column observation_thead_html specification.",
+        "Low-contrast bone outline on dark #090d16 canvas: drawBoneShape used #292218 which blended into the background; updated to clear #94a3b8 border."
+      ]
+    },
+    {
+      "sim_id": "u02128",
+      "status": "FIXED",
+      "time": "16:10:09",
+      "issues": [
+        "steppers_html: Malformed MathML unit for UV Irradiance / Cavitation Power (rendered as m*(W/c)*m^2 instead of mW/cm^2). Rectified to mW/cm^2.",
+        "observation_thead_html: Missing symbol variable T in 'Operating Temperature' column header. Added MathML symbol T to align with mathematical specification.",
+        "canvas_js: Live readout IDs in updateDOMReadouts queried 'reading_*' and 'val_*' instead of the actual HTML IDs 'val_reading_*' defined in readouts_html, freezing live readouts. Fixed selector mapping.",
+        "canvas_js: Action buttons #btn_execute_sequence_step and #btn_switch_station and stepper up/down buttons were unattached. Wired sequence execution, workstation switching with station parameter presets, stepper controls, and 7-column observation table logging.",
+        "canvas_js: Added interactive visual border highlighting for the currently active workstation."
+      ]
+    },
+    {
+      "sim_id": "u02134",
+      "status": "PASS",
+      "time": "16:10:11",
+      "issues": []
+    },
+    {
+      "sim_id": "u02130",
+      "status": "FIXED",
+      "time": "16:10:28",
+      "issues": [
+        "Fixed raw LaTeX formatting error in MathML equation and symbol definitions where 'rf\\_{read}' and 'rf\\_{setup}' contained unescaped backslashes and stray closing braces in principles_list_html.",
+        "Corrected Write-Back Multiplexer active state control signal in canvas_js from 'cur.regWrite === 1' to 'cur.memToReg === 1'."
+      ]
+    },
+    {
+      "sim_id": "u02132",
+      "status": "FIXED",
+      "time": "16:10:30",
+      "issues": [
+        "Observation table recorded 7 columns instead of 6, inserting an unneeded focal plane (z) column that misaligned Hyphal Spread, Magnification, Sporulation Density, and Humidity against observation_thead_html headers.",
+        "Action buttons ('btn_apply_lpcb' and 'btn_toggle_view') lacked event listeners and interactive state handling in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn) had no click event listeners to update stepper input values.",
+        "Preset selector ('experimentSelect') had no change event listener to switch between incubation kinetics scenarios."
+      ]
     }
   ],
   "completed_ids": [
@@ -2068,6 +2061,11 @@
     "u02123",
     "u02124",
     "u02125",
-    "u02129"
+    "u02128",
+    "u02129",
+    "u02130",
+    "u02131",
+    "u02132",
+    "u02134"
   ]
 }
