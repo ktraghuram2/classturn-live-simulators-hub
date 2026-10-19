@@ -1,72 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:17:57",
-  "completed_count": 1017,
-  "fixed_count": 995,
-  "latest_sim_id": "u01237",
+  "updated_at": "2026-10-19 08:19:49",
+  "completed_count": 1022,
+  "fixed_count": 999,
+  "latest_sim_id": "u01249",
   "recent_events": [
-    {
-      "sim_id": "u01184",
-      "status": "FIXED",
-      "time": "08:08:59",
-      "issues": [
-        "Observation table record button recorded alphabet size and progress percentage into Start State and Accept State columns, causing column misalignment with table header",
-        "Action button btn_trace_epsilon was unwired, lacking click handler and visual feedback for epsilon closures",
-        "Enhanced epsilon transition rendering with glowing visual highlight when closure trace is active"
-      ]
-    },
-    {
-      "sim_id": "u01192",
-      "status": "FIXED",
-      "time": "08:09:43",
-      "issues": [
-        "Rectified principles summary prose: replaced raw and malformed LaTeX formulas (Stoke's shift and proliferation index) with proper semantic MathML representations.",
-        "Corrected observation table header: added missing proliferation index symbol P to column 6 header.",
-        "Fixed truncated canvas_js: completed the broken snrVal formula in computePhysics and returned all required physical metrics.",
-        "Implemented complete 2D epifluorescence microscopy simulation: rendered 3D-shaded inverted microscope frame, mercury vapor arc lamp housing, amber UV shield, and cooled scientific CMOS digital camera on #090d16 canvas.",
-        "Added live Hoechst 33342 cell nuclei fluorescence micrograph viewport with objective zoom scaling, mitotic chromatin condensation, and excitation shutter beam animation.",
-        "Wired interactive controls: connected excitation shutter toggle, micrograph capture with camera flash effect, and bidirectional stepper steppers synced with live readouts."
-      ]
-    },
-    {
-      "sim_id": "u01197",
-      "status": "PASS",
-      "time": "08:09:59",
-      "issues": []
-    },
-    {
-      "sim_id": "u01194",
-      "status": "FIXED",
-      "time": "08:10:07",
-      "issues": [
-        "Misaligned observation table columns: 7 table data cells were being appended to a 6-column header with transposed metric orders (accumulatedStrain was placed in Orowan column, tauOr was placed in Accumulated Strain column, and an extra slipFraction cell overflowed the header). Corrected to exactly match the 6 table columns.",
-        "Unwired action button: 'btn_engage_load' was present in actions_html but lacked an event listener in canvas_js. Wired it to toggle tensile load state and record observation rows.",
-        "Unwired stepper buttons: '.stepper-btn' up/down click handlers and input change/input listeners were missing in canvas_js, preventing parameter adjustments from updating controls.",
-        "Corrected malformed MathML division and unit formatting in principles_list_html for activation energy and universal gas constant."
-      ]
-    },
-    {
-      "sim_id": "u01198",
-      "status": "FIXED",
-      "time": "08:10:25",
-      "issues": [
-        "Observation table column mismatch: recordObservation() generated 9 values while observation_thead_html defines only 5 columns.",
-        "Unwired action buttons: btn_compute_predictor and btn_refine_corrector lacked event listeners in canvas_js.",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked event listeners to increment and decrement inputs."
-      ]
-    },
-    {
-      "sim_id": "u01190",
-      "status": "FIXED",
-      "time": "08:11:19",
-      "issues": [
-        "Cleaned raw LaTeX '\\exp' inside observation table header slot (replaced with 'exp' and standardized unit MathML).",
-        "Aligned observation table row cells with the 9 table headers (V1, V2, R1, R2, VTh, RTh, RL, IL(th), IL(exp)) instead of 11 shifted columns.",
-        "Wired action buttons ('btn_measure_voc', 'btn_measure_isc', 'btn_connect_load') to actuate switch detents and synchronize state.",
-        "Wired stepper buttons ('.stepper-btn') and input change listeners to ensure controls properly update and synchronize parameters.",
-        "Corrected apparatus badge numbering and leader line assignments (Badges 3, 4, 5, 6) to match the legend pills exactly."
-      ]
-    },
     {
       "sim_id": "u01196",
       "status": "ERROR",
@@ -375,6 +313,63 @@
       "issues": [
         "Observation table columns in canvas_js were misaligned with observation_thead_html: the recorded row prepended extra trial index and iteration count columns, shifting all potential values and residual readings into mismatched headers.",
         "Action buttons (btn_iterate_step, btn_solve_equilibrium) and stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01239",
+      "status": "FIXED",
+      "time": "08:18:01",
+      "issues": [
+        "Unwired action button #btn_auto_diffuse for continuous time evolution control",
+        "Unwired stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) preventing parameter adjustment via UI steppers",
+        "Observation table columns in canvas_js misaligned with observation_thead_html (logged 8 columns out of order instead of the defined 6 columns: k, r, t, u1, u2, u3)"
+      ]
+    },
+    {
+      "sim_id": "u01240",
+      "status": "FIXED",
+      "time": "08:18:01",
+      "issues": [
+        "Unwired action buttons: 'Invert and Agitate Suspension' (btn_invert_mix) and 'Gently Lower Hydrometer' (btn_insert_hydrometer) lacked event listeners",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to increment/decrement input values",
+        "Missing dynamic visual feedback for suspension agitation and hydrometer lowering buoyancy animation"
+      ]
+    },
+    {
+      "sim_id": "u01243",
+      "status": "FIXED",
+      "time": "08:18:01",
+      "issues": [
+        "Readout DOM elements use IDs with 'val_' prefix ('val_reading_*'), causing setTxt() calls to fail silently and leaving live readouts static.",
+        "Observation table record button generated 10 columns (including an extra serial number and load capacitance cell), misaligning with the 8 columns defined in the table header.",
+        "Action button #btn_toggle_mode was not wired in JavaScript, preventing toggling between Single-NMOS and Full-CMOS TG modes with threshold degradation.",
+        "Stepper increment and decrement buttons (.stepper-btn) had no click event listeners attached to update input values."
+      ]
+    },
+    {
+      "sim_id": "u01246",
+      "status": "ERROR",
+      "time": "08:18:48",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01252",
+      "status": "PASS",
+      "time": "08:19:30",
+      "issues": []
+    },
+    {
+      "sim_id": "u01249",
+      "status": "FIXED",
+      "time": "08:19:49",
+      "issues": [
+        "Unwired action buttons: btn_autocalibrate_probe and btn_induce_motion_artifact had no event listeners in canvas_js.",
+        "Unwired stepper buttons: .stepper-btn buttons lacked click event listeners in canvas_js.",
+        "Readout DOM ID mismatch: setVal targeted 'reading_spo2' instead of 'val_reading_spo2', leaving live DOM readouts static.",
+        "Observation table misalignment: row innerHTML had 8 columns with transposed values against the 6-column table header.",
+        "Malformed MathML fraction in principles_summary_html: AC/DC ratio of ratios was incorrectly formatted."
       ]
     }
   ],
@@ -1392,9 +1387,14 @@
     "u01235",
     "u01237",
     "u01238",
+    "u01239",
+    "u01240",
     "u01241",
     "u01242",
+    "u01243",
     "u01244",
-    "u01245"
+    "u01245",
+    "u01249",
+    "u01252"
   ]
 }
