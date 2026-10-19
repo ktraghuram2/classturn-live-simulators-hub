@@ -1,74 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:04:54",
-  "completed_count": 1177,
-  "fixed_count": 1127,
-  "latest_sim_id": "u01465",
+  "updated_at": "2026-10-19 09:06:56",
+  "completed_count": 1182,
+  "fixed_count": 1132,
+  "latest_sim_id": "u01469",
   "recent_events": [
-    {
-      "sim_id": "u01418",
-      "status": "FIXED",
-      "time": "08:51:15",
-      "issues": [
-        "Fixed telemetry readout element ID lookup in canvas_js (val_reading_* vs reading_*) which previously prevented live telemetry displays from updating.",
-        "Wired Auto-Home axes button (btn_home_axes) and filament prime/extrude button (btn_extrude_test) in canvas_js.",
-        "Wired stepper up/down buttons (.stepper-btn) to increment/decrement target input fields and trigger reactive changes.",
-        "Realigned observation table columns in btnRecord click handler: removed extra unheaded Trial # column and unheaded current draw, added Print Speed column to match the 8 defined columns in observation_thead_html.",
-        "Corrected volumetric flow rate unit in readouts_html and observation_thead_html from corrupted 'm/m³s' (m/m³ * s) to 'mm³/s'."
-      ]
-    },
-    {
-      "sim_id": "u01417",
-      "status": "FIXED",
-      "time": "08:51:15",
-      "issues": [
-        "Unwired action buttons: btn_home_axes (G28 auto-home) and btn_extrude_test were missing event listeners in canvas_js",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down controls lacked click handlers to increment/decrement input values",
-        "Observation table column mismatch: observationTbody recorded only 6 columns while the table header defined 8 columns, omitting Nx and Nz stepper counts",
-        "Malformed unit in readouts_html: volumetric flow rate displayed corrupted 'm/m³s' with inverted MathML fraction",
-        "Malformed unit in observation_thead_html: flow rate column header contained inverted MathML fraction instead of mm³/s",
-        "Fractional formatting artifact in apparatus_html: 2020/2040 V-slot profile was rendered as an arithmetic fraction"
-      ]
-    },
-    {
-      "sim_id": "u01419",
-      "status": "FIXED",
-      "time": "08:51:24",
-      "issues": [
-        "Unwired Auto-Home (btn_home_axes) and Circular Bed Calibration (btn_circular_toolpath) action buttons",
-        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down)",
-        "Observation table column count mismatch: logged rows contained 8 columns with an extra tilt column while observation headers contain 7 columns"
-      ]
-    },
-    {
-      "sim_id": "u01420",
-      "status": "FIXED",
-      "time": "08:51:36",
-      "issues": [
-        "Fixed corrupt MathML representations for physical units across principles_list_html, steppers_html, readouts_html, and observation_thead_html (corrected J/mm³, mm/s, and dimensionless).",
-        "Fixed observation table column mismatch: removed unmapped 8th column from observation tbody row in canvas_js to align with the 7 headers defined in observation_thead_html.",
-        "Wired interactive stepper buttons (▲/▼) and input change listeners in canvas_js so laser power, scan speed, layer thickness, and hatch spacing can be adjusted interactively.",
-        "Wired phase action buttons (Dispense Powder, Spread Layer, Execute Laser Sintering Cycle, Lower Fabrication Platform) to control simulation phases."
-      ]
-    },
-    {
-      "sim_id": "u01423",
-      "status": "FIXED",
-      "time": "08:53:10",
-      "issues": [
-        "Corrupted MathML fraction markup in apparatus_html for the rheostat specification (50 Ω / 100 Ω)",
-        "Cleaned up malformed inline math and raw LaTeX symbols in principles_summary_html and validation_html",
-        "Added wiring and event listeners for stepper-btn increment/decrement buttons (.stepper-btn)",
-        "Added wiring for action buttons btn_toggle_pulses and btn_align_critical_angle",
-        "Ensured input and change event listeners propagate interactive updates to computePhysics and syncInputs"
-      ]
-    },
-    {
-      "sim_id": "u01426",
-      "status": "PASS",
-      "time": "08:53:13",
-      "issues": []
-    },
     {
       "sim_id": "u01424",
       "status": "FIXED",
@@ -383,6 +319,66 @@
         "Observation table columns in canvas_js were scrambled and had 9 columns instead of the 8 columns specified in observation_thead_html (Thermal Conductivity k, Conduction Area A, Distance dx, Hot Temp TH, Cold Temp TC, Temp Difference ΔT, Heat Transfer Rate dQ/dt, Thermal Resistance R_th)",
         "Preset action buttons (btn_preset_copper, btn_preset_aluminium, btn_preset_glass, btn_preset_foam, and btn_steady_state) were completely unwired in canvas_js",
         "Stepper increment and decrement buttons (.stepper-btn) lacked click event listeners in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01466",
+      "status": "FIXED",
+      "time": "09:05:57",
+      "issues": [
+        "Updated in Gemini brain"
+      ]
+    },
+    {
+      "sim_id": "u01468",
+      "status": "FIXED",
+      "time": "09:06:15",
+      "issues": [
+        "Misaligned observation table columns: row innerHTML appended 9 cells into a 7-column thead, included unlisted index/speed columns, and swapped contact pressure and rolling force order",
+        "Unwired controls: action button (#btn_execute_stroke) and stepper adjustment buttons (.stepper-btn) lacked event listeners",
+        "Inaccurate major diameter physics: formula lacked the characteristic 3:1 blank-to-major diameter expansion sensitivity ratio"
+      ]
+    },
+    {
+      "sim_id": "u01470",
+      "status": "FIXED",
+      "time": "09:06:25",
+      "issues": [
+        "Inaccurate physics in wattmeter equations: Wattmeter readings in the two-wattmeter method are P1 = VL * IL * cos(30° - φ) and P2 = VL * IL * cos(30° + φ). The code incorrectly multiplied by sqrt(3) in both P1 and P2, resulting in an erroneous total active power (1572 W instead of 907.2 W for 9 x 100 W bulbs).",
+        "Unwired action button: The MCB toggle button (#btn_toggle_mcb) had no event listener to energize/de-energize the circuit.",
+        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event handlers to modify input values.",
+        "Misaligned observation table columns: The record button callback inserted 8 cells starting with an unheaded Trial S.No., offsetting all 7 observation table column values against the defined headers.",
+        "Incorrect default readout values: Wattmeter 1 and Wattmeter 2 live readouts displayed 786.0 W instead of the correct 453.8 W, and total active power displayed 1572.0 W instead of 907.6 W."
+      ]
+    },
+    {
+      "sim_id": "u01467",
+      "status": "ERROR",
+      "time": "09:06:39",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01472",
+      "status": "FIXED",
+      "time": "09:06:45",
+      "issues": [
+        "Badge numbering mismatch between legend pills and canvas leader lines (Badge 1 pointed to Mould instead of Thermostatic Water Bath Tank; Badge 2 pointed to Glass Plates instead of Le Chatelier Mould; Badge 3 pointed to Water Bath Tank instead of Glass Plates and Lead Weight).",
+        "Unwired action button #btn_accelerate_boil ('Simulate 3-Hour Boiling Cycle') in canvas_js with no event listener or boiling simulation sequence.",
+        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacking click handlers.",
+        "Static animGap parameter: indicator tip separation was hardcoded to 12.00 mm and never dynamically updated on physics recalculation or animated during boiling."
+      ]
+    },
+    {
+      "sim_id": "u01469",
+      "status": "FIXED",
+      "time": "09:06:55",
+      "issues": [
+        "Misaligned observation table columns: btnRecord logged 8 columns including stroke speed, whereas observation_thead defines 7 columns in the order of Blank Diameter, Penetration Depth, Flow Stress, Die Rolling Force, Contact Pressure, Peak Equivalent Strain, and Rolled Major Diameter.",
+        "Unwired stepper buttons: stepper-btn elements (▲ and ▼) lacked click listeners to increment/decrement input values and dispatch change events.",
+        "Unwired control action buttons: btn_cycle_stroke and btn_toggle_fea_overlay lacked click event listeners.",
+        "Missing visual FEA mode toggle: the workpiece blank lacked dynamic gradient switching between equivalent plastic strain and interfacial contact pressure distribution."
       ]
     }
   ],
@@ -1563,6 +1559,11 @@
     "u01460",
     "u01461",
     "u01463",
-    "u01465"
+    "u01465",
+    "u01466",
+    "u01468",
+    "u01469",
+    "u01470",
+    "u01472"
   ]
 }
