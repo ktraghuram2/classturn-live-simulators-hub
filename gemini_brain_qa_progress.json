@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:23:28",
-  "completed_count": 1567,
-  "fixed_count": 1431,
-  "latest_sim_id": "u01986",
+  "updated_at": "2026-10-19 15:25:08",
+  "completed_count": 1572,
+  "fixed_count": 1435,
+  "latest_sim_id": "u01988",
   "recent_events": [
-    {
-      "sim_id": "u01949",
-      "status": "FIXED",
-      "time": "14:36:25",
-      "issues": [
-        "Swapped curvy leader callout badges 3 and 5 in canvas_js relative to legend pills (Badge 3 was pointing to PIR motion sensor instead of MQ-135 gas sensor, and Badge 5 was pointing to MQ-135 instead of PIR)"
-      ]
-    },
-    {
-      "sim_id": "u01951",
-      "status": "FIXED",
-      "time": "14:36:53",
-      "issues": [
-        "Observation table columns were misaligned: Crop Canopy Vigor and Batteries were inserted into GSD/Time/Images columns, while Survey Area and Mean GNDVI were missing.",
-        "Action buttons 'btn_start_survey' and 'btn_toggle_map_view' were unwired in canvas_js.",
-        "Stepper increment and decrement buttons (▲/▼) lacked click event listeners to update flight height and crop health inputs."
-      ]
-    },
-    {
-      "sim_id": "u01953",
-      "status": "FIXED",
-      "time": "14:37:21",
-      "issues": [
-        "Unwired action button btn_run_until_fixation in canvas_js preventing users from executing the fast-forward fixation simulation",
-        "Observation table column mismatch: btnRecord appended 8 columns whereas the observation table header defines 5 columns",
-        "Telemetry readout update replaced entire container HTML, wiping out unit elements"
-      ]
-    },
-    {
-      "sim_id": "u01948",
-      "status": "FIXED",
-      "time": "14:37:22",
-      "issues": [
-        "Observation table columns were misaligned: logged 6 cells with an unheaded row index whereas the table header defined 5 columns (Pulse Frequency, Angular Position, and Duration were transposed).",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired in canvas_js.",
-        "Action button 'Execute Step Sequence' referenced in procedure step 5 was missing from actions_html.",
-        "Legend pills only listed 3 apparatus items while canvas leader lines rendered 4 numbered badges (Badge 4: Circular Degree Protractor Dial & Pointer was omitted)."
-      ]
-    },
-    {
-      "sim_id": "u01958",
-      "status": "FIXED",
-      "time": "14:43:33",
-      "issues": [
-        "Unwired action buttons: 'btn_verify_topology', 'btn_inject_ping', and 'btn_simulate_link_fault' were missing event listeners in canvas_js",
-        "Unwired stepper controls: Stepper ▲/▼ buttons (.stepper-btn) were not wired to increment/decrement input values in canvas_js",
-        "Misaligned observation table: Row template generated 7 mismatched columns whereas observation_thead_html expects 6 columns (Topology Architecture, Active Node Count, Operational Links, Average Degree, Mean Latency, Structural Verification)",
-        "Mangled MathML in apparatus_html: Ethernet interface specification had nested fraction MathML ((10/100)/1000) instead of 10/100/1000 Mbps",
-        "Mangled units with slashes in steppers_html, readouts_html, and observation_thead_html: 'packets/s' and 'links/node' were broken into malformed MathML fractions"
-      ]
-    },
-    {
-      "sim_id": "u01957",
-      "status": "ERROR",
-      "time": "14:43:33",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01943",
       "status": "ERROR",
@@ -381,6 +322,63 @@
       "status": "PASS",
       "time": "15:23:28",
       "issues": []
+    },
+    {
+      "sim_id": "u01971",
+      "status": "ERROR",
+      "time": "15:23:31",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01993",
+      "status": "FIXED",
+      "time": "15:24:50",
+      "issues": [
+        "Unwired action button: #btn_initiate_switching ('Initiate 3-Phase Transmission') had no click event listener in canvas_js.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click handlers to increment and decrement inputs.",
+        "Misaligned observation table columns: #btnRecord appended 8 columns whereas observation_thead_html defines 6 columns (Packet Index, Payload Size, Ingress Port, Egress Port, Hop Transmission Delay, Cumulative Transit Latency)."
+      ]
+    },
+    {
+      "sim_id": "u01992",
+      "status": "FIXED",
+      "time": "15:24:51",
+      "issues": [
+        "Observation table recorded 8 columns instead of matching the 6 defined header columns (removed extraneous trial count and cycle interval, aligned peak current and delivered energy columns with header)",
+        "Action button #btn_toggle_waveform ('Switch Monophasic / Biphasic Waveform') had no event listener wired in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unwired",
+        "Experiment select element (#experimentSelect) was unwired to the pulse waveform mode control"
+      ]
+    },
+    {
+      "sim_id": "u01996",
+      "status": "FIXED",
+      "time": "15:24:58",
+      "issues": [
+        "Unwired action buttons: 'btn_run_relaxation' and 'btn_clamp_preset' lacked click event listeners in canvas_js",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to increment/decrement parameter inputs",
+        "Observation table column misalignment: Recording listener inserted 6 mismatched columns into a 5-column table, omitting clamped unit count and recognized schema prototype classification"
+      ]
+    },
+    {
+      "sim_id": "u01995",
+      "status": "PASS",
+      "time": "15:24:59",
+      "issues": []
+    },
+    {
+      "sim_id": "u01988",
+      "status": "FIXED",
+      "time": "15:25:08",
+      "issues": [
+        "Unwired action button: 'btn_dispatch_command' (Dispatch Shell Command) was declared in controls but lacked click event handling in canvas_js",
+        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' controls had no click event listeners to increment or decrement inputs",
+        "Broken readout DOM element lookups: canvas_js queried 'reading_exec_time' etc. instead of the value spans 'val_reading_exec_time' etc., preventing telemetry readout updates",
+        "Misaligned observation ledger table columns: tr rendered 8 misordered table cells (including extraneous trial counter and orphaned CVSS column) against a 6-column table header [Preset, Injected Delay, Execution Latency, Stream Output Size, Process Exit Status, Process User ID]",
+        "Raw mathematical fraction LaTeX artifact in validation HTML: standard I/O was rendered as a vertical fraction I over O"
+      ]
     }
   ],
   "completed_ids": [
@@ -1950,6 +1948,11 @@
     "u01980",
     "u01981",
     "u01982",
-    "u01986"
+    "u01986",
+    "u01988",
+    "u01992",
+    "u01993",
+    "u01995",
+    "u01996"
   ]
 }
