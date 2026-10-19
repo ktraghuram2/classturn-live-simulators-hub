@@ -1,53 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:42:23",
-  "completed_count": 2038,
-  "fixed_count": 1827,
-  "latest_sim_id": "u02263",
+  "updated_at": "2026-10-19 18:43:36",
+  "completed_count": 2043,
+  "fixed_count": 1832,
+  "latest_sim_id": "u02312",
   "recent_events": [
-    {
-      "sim_id": "u02085",
-      "status": "FIXED",
-      "time": "18:36:11",
-      "issues": [
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) were unhandled and non-functional in canvas_js.",
-        "Action buttons ('btn_tune_mode_peak' and 'btn_toggle_modulation') lacked event listener bindings in canvas_js.",
-        "Observation table header lacked a serial number (#) column and had columns misaligned with the recorded data sequence in btnRecord.",
-        "Readout HTML data-unit attributes contained nested raw HTML span markup instead of clean plain text units."
-      ]
-    },
-    {
-      "sim_id": "u02079",
-      "status": "ERROR",
-      "time": "18:36:28",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02060",
-      "status": "ERROR",
-      "time": "18:36:48",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02070",
-      "status": "PASS",
-      "time": "18:36:56",
-      "issues": []
-    },
-    {
-      "sim_id": "u02112",
-      "status": "FIXED",
-      "time": "18:37:08",
-      "issues": [
-        "Wired missing action button btn_excite_resonance to trigger resonant excitation cycle and reset modal phase.",
-        "Wired stepper buttons (.stepper-btn-up, .stepper-btn-down) for mode order and deformation amplitude gain.",
-        "Fixed misaligned observation table columns by aligning recorded row data (5 columns) with observation table header structure (5 columns)."
-      ]
-    },
     {
       "sim_id": "u02114",
       "status": "FIXED",
@@ -398,6 +355,58 @@
         "Raw LaTeX strings |G_{h0}(jω)|_{dB} and |G_{h1}(jω)|_{dB} in readouts_html converted to valid inline MathML equations",
         "Action buttons (Switch Reconstruction Display and Overlay Padé [1/1] Approximation) and stepper step buttons were unwired in canvas_js",
         "Added live Padé [1/1] approximation overlay curve rendering on the real-time Bode analyzer display"
+      ]
+    },
+    {
+      "sim_id": "u02282",
+      "status": "FIXED",
+      "time": "18:42:34",
+      "issues": [
+        "Observation table tr data row had 9 td elements inserting wire diameter, coil diameter, and turns count, misaligning with the 6 thead columns (Trial, Applied Mass, Applied Compressive Load, Axial Deflection, Spring Stiffness, Elastic Strain Energy).",
+        "Action buttons #btn_tare_zero (Tare Load Cell & Zero Dial Gauge) and #btn_cycle_load (Automated Loading-Unloading Cycle) were unwired.",
+        "Stepper control increment and decrement buttons (.stepper-btn) were not wired to update inputs and trigger simulation updates."
+      ]
+    },
+    {
+      "sim_id": "u02286",
+      "status": "FIXED",
+      "time": "18:42:56",
+      "issues": [
+        "Misaligned observation table columns: observation logging appended 9 columns (including raw index and extra velocity/pinch parameters) whereas observation_thead_html defines exactly 6 columns: Rotation Speed, Outer Step Angle, Inner Step Angle, Elevation Angle, Teleport Range, and Index of Difficulty.",
+        "Unwired action buttons: 'btn_trigger_teleport' (Trigger Instant Teleportation Jump) and 'btn_toggle_hand_mesh' (Toggle Hand Skeleton Wireframe) had no click listeners attached in canvas_js.",
+        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners in canvas_js to adjust stepper values."
+      ]
+    },
+    {
+      "sim_id": "u02283",
+      "status": "FIXED",
+      "time": "18:43:05",
+      "issues": [
+        "Misaligned observation table columns: table header expects [Algorithm Name, Input Size, Complexity Class, Operation Count, Execution Time, Growth Ratio], but the row generator in canvas_js omitted Algorithm Name and placed throughput into the execution time column.",
+        "Unwired action buttons: 'btn_run_benchmark' and 'btn_toggle_log_scale' in actions_html were not wired to event handlers.",
+        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' buttons were not connected to increment/decrement input values."
+      ]
+    },
+    {
+      "sim_id": "u02285",
+      "status": "FIXED",
+      "time": "18:43:09",
+      "issues": [
+        "Misaligned observation table columns: btnRecord generated 7 columns including an extraneous Temperature column, shifting and mismatching the 6-column observation table header (Run Number, C1, C2, Ratio, Discharge Time, EMF)",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down buttons lacked click handlers to adjust concentration and temperature inputs",
+        "Unwired action buttons: btn_insert_salt_bridge, btn_connect_voltmeter, and btn_add_na2s had no event listeners or interactive state bindings in canvas_js",
+        "Inaccurate physics & lack of equilibrium decay: cell potential remained static over time instead of decaying toward dynamic equilibrium (0.00 V) during spontaneous discharge as specified in the Aim and Step 7",
+        "Missing chemical perturbation and open-circuit behavior: disconnecting leads or salt bridge failed to drop EMF to 0 V, and adding Na2S lacked black CuS precipitation and sharp potential shifts"
+      ]
+    },
+    {
+      "sim_id": "u02312",
+      "status": "FIXED",
+      "time": "18:43:36",
+      "issues": [
+        "Unwired action button btn_run_instruction in canvas_js",
+        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js",
+        "Misaligned observation table row schema (6 columns instead of 7, missing Step/Cycle and PC columns)"
       ]
     }
   ],
@@ -2366,7 +2375,11 @@
     "u02279",
     "u02280",
     "u02281",
+    "u02282",
+    "u02283",
     "u02284",
+    "u02285",
+    "u02286",
     "u02287",
     "u02288",
     "u02289",
@@ -2390,6 +2403,7 @@
     "u02309",
     "u02310",
     "u02311",
+    "u02312",
     "u02314",
     "u02315",
     "u02317",
