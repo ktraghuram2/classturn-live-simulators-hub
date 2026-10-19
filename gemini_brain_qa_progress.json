@@ -1,58 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:53:00",
-  "completed_count": 1617,
-  "fixed_count": 1470,
-  "latest_sim_id": "u02051",
+  "updated_at": "2026-10-19 15:53:46",
+  "completed_count": 1622,
+  "fixed_count": 1474,
+  "latest_sim_id": "u02054",
   "recent_events": [
-    {
-      "sim_id": "u02006",
-      "status": "FIXED",
-      "time": "15:28:24",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u02012",
-      "status": "FIXED",
-      "time": "15:28:25",
-      "issues": [
-        "Action button #btn_inject_geodesic_pulse was unhandled in canvas_js; wired it to inject a stream of test particle geodesics",
-        "Stepper increment/decrement buttons (.stepper-btn) had no click handlers bound in canvas_js; added handler to step mass, charge, and radius inputs",
-        "Fragmented spacetime interval equation and raw ASCII/LaTeX horizon notation (r_+, r_-) in principles_summary_html and procedure_section_html replaced with clean inline MathML"
-      ]
-    },
-    {
-      "sim_id": "u02016",
-      "status": "FIXED",
-      "time": "15:47:41",
-      "issues": [
-        "Wired missing click event listeners for action buttons 'btn_trigger_sync' (Initiate Two-Way Sync Burst) and 'btn_toggle_continuous_sync' (Toggle Periodic Auto-Sync).",
-        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) to dynamically adjust target inputs.",
-        "Fixed observation table row generation to output all 8 columns in exact alignment with observation_thead_html (Index, T0, T1, T2, T3, Measured RTT, Offset, Residual Clock Time).",
-        "Implemented clock slewing discipline algorithm so that measured offset dynamically and smoothly converges Peer 2 clock to Peer 1 as specified in the principles."
-      ]
-    },
-    {
-      "sim_id": "u02015",
-      "status": "FIXED",
-      "time": "15:47:41",
-      "issues": [
-        "Observation table columns in record button handler were misaligned (12 values pushed into a 6-column table, causing column misalignment).",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners and were non-functional.",
-        "Action buttons (btn_condense_peptide and btn_scan_uv280) lacked interactive animation triggers.",
-        "Non-chromophoric residue count was vulnerable to becoming negative if total aromatic/sulfur residues exceeded sequence length."
-      ]
-    },
-    {
-      "sim_id": "u02010",
-      "status": "ERROR",
-      "time": "15:47:41",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u02014",
       "status": "FIXED",
@@ -366,6 +318,54 @@
         "Observation table column mismatch: btnRecord inserted 8 <td> elements into a 5-column table header; corrected to match the 5 header columns (Path Length, Transit Time, Pulse Velocity, Dynamic Elastic Modulus, Concrete Quality).",
         "Leader line badge number misalignment: Concrete Specimen was assigned badge 6 instead of 3, and Receiving Transducer was assigned badge 3 instead of 4, conflicting with legend_pills_html. Corrected badge order to strictly match legend pills.",
         "Unwired action and stepper buttons: btn_calibrate_zero, btn_toggle_arrangement, btn_toggle_moisture, and stepper up/down buttons (.stepper-btn) lacked event listeners in canvas_js. Added interactive event handlers and physics state toggles."
+      ]
+    },
+    {
+      "sim_id": "u02052",
+      "status": "PASS",
+      "time": "15:53:03",
+      "issues": []
+    },
+    {
+      "sim_id": "u02047",
+      "status": "FIXED",
+      "time": "15:53:18",
+      "issues": [
+        "Raw LaTeX symbols (Addr_{proxy}, Addr_{logic}) in readouts_html converted to semantic MathML",
+        "Numbered canvas badges reordered (Badge 1: Proxy, Badge 2: Logic, Badge 3: Caller) to match legend pills and apparatus list, and phantom unlisted Badge 4 removed",
+        "Observation table columns in recordObservation() realigned from 5 mismatched cells to all 6 table columns (Sequence, Active Logic, Selected Op, Step Value, Storage Counter, Gas Consumed)",
+        "Wired unwired controls panel action buttons (btn_trigger_fallback, btn_upgrade_implementation) and stepper adjustment buttons (.stepper-btn-up, .stepper-btn-down)",
+        "Updated telemetry DOM selectors from reading_* to val_reading_* to avoid overwriting heading elements and preserve unit display"
+      ]
+    },
+    {
+      "sim_id": "u02049",
+      "status": "FIXED",
+      "time": "15:53:20",
+      "issues": [
+        "Telemetry element IDs in canvas_js targeted parent container IDs (reading_snr) instead of the actual value span IDs (val_reading_snr, val_reading_bits, etc.), preventing live telemetry updates",
+        "Action buttons (btn_cycle_modulation_mode and btn_auto_align_filter) and stepper buttons lacked event listeners in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u02053",
+      "status": "FIXED",
+      "time": "15:53:28",
+      "issues": [
+        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) in canvas_js",
+        "Unwired action button (#btn_map_streamlines: Inject Test Current & Map Streamlines) in canvas_js",
+        "Unwired experiment options selector (#experimentSelect) in canvas_js",
+        "Unclosed HTML tags (missing </ul></div></li>) in principles_list_html"
+      ]
+    },
+    {
+      "sim_id": "u02054",
+      "status": "FIXED",
+      "time": "15:53:46",
+      "issues": [
+        "Observation table record button appended 11 columns with mismatched fields instead of the 7 columns defined in the table header (Elapsed Time, Position, Speed, Spring Restoring Force, Viscous Damping Force, Net Dynamic Force, Total Mechanical Energy).",
+        "Action buttons #btn_release_from_rest and #btn_set_critical_damping defined in actions_html were not wired with event listeners in canvas_js.",
+        "Stepper increment/decrement buttons (.stepper-btn) were not wired to adjust control inputs in canvas_js."
       ]
     }
   ],
@@ -1984,8 +1984,13 @@
     "u02043",
     "u02045",
     "u02046",
+    "u02047",
     "u02048",
+    "u02049",
     "u02050",
-    "u02051"
+    "u02051",
+    "u02052",
+    "u02053",
+    "u02054"
   ]
 }
