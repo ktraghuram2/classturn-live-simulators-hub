@@ -1,61 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:01:30",
-  "completed_count": 947,
-  "fixed_count": 939,
-  "latest_sim_id": "u01148",
+  "updated_at": "2026-10-19 08:02:30",
+  "completed_count": 952,
+  "fixed_count": 944,
+  "latest_sim_id": "u01152",
   "recent_events": [
-    {
-      "sim_id": "u01101",
-      "status": "FIXED",
-      "time": "07:53:15",
-      "issues": [
-        "Unwired action buttons: 'btn_launch_ignition' and 'btn_stage_separation' had no event listeners in canvas_js",
-        "Unwired stepper buttons: '.stepper-btn-up' and '.stepper-btn-down' had no click handlers to adjust input steppers",
-        "Misaligned observation table: first column logged observation counter instead of flight time (s) matching the observation_thead_html header"
-      ]
-    },
-    {
-      "sim_id": "u01108",
-      "status": "PASS",
-      "time": "07:53:18",
-      "issues": []
-    },
-    {
-      "sim_id": "u01054",
-      "status": "FIXED",
-      "time": "07:53:23",
-      "issues": [
-        "Fixed spurious MathML fractions in apparatus_html: replaced broken fraction in Type A/B immersion oil and 6 V / 20 W illuminator specification with clean, standard notation.",
-        "Synchronized controlDefs IDs and step parameters with steppers_html: bound objective_magnification, coarse_focus (mm), fine_focus (μm), rheostat_brightness (%), iris_diaphragm (%), stage_x (mm), and stage_y (mm) while retaining alias support.",
-        "Corrected live reading DOM IDs in syncFromDOM to match readouts_html: mapped reading_focus_clarity, reading_numerical_aperture, reading_fov_diameter, and reading_field_brightness with matching engineering units.",
-        "Wired interactive action buttons: btn_toggle_light, btn_apply_oil, btn_auto_focus, and btn_rotate_nosepiece with optical stage state updates.",
-        "Aligned observation table recorded row data to precisely match the 8 headers in observation_thead_html: Objective Lens, Ocular Lens, Total Magnification, Numerical Aperture, Aperture Diaphragm, Focus Position, Image Clarity, and Resolving Limit."
-      ]
-    },
-    {
-      "sim_id": "u01094",
-      "status": "FIXED",
-      "time": "07:53:36",
-      "issues": [
-        "Fixed telemetry readout element IDs in canvas_js (val_reading_vs1, val_reading_vs2, val_reading_vout, val_reading_sensitivity, val_reading_phase) so DOM telemetry values update dynamically.",
-        "Wired Auto-Balance action button (btn_null_balance) to reset displacement to null (0.0 mm).",
-        "Wired stepper buttons (.stepper-btn-up, .stepper-btn-down) to increment and decrement input values according to step, min, and max attributes.",
-        "Aligned observation table columns in canvas_js to match observation_thead_html exactly (removed extra S.No column and corrected column order with Phase Angle before Sensitivity)."
-      ]
-    },
-    {
-      "sim_id": "u01109",
-      "status": "FIXED",
-      "time": "07:53:46",
-      "issues": [
-        "Unwired action button btn_generate_sample for generating fresh random sample deviates",
-        "Unwired action button btn_toggle_tails for switching between two-tailed and one-tailed t-test",
-        "Unwired stepper buttons (.stepper-btn-up and .stepper-btn-down) preventing parameter adjustment via UI buttons",
-        "Unwired experiment options preset dropdown selector",
-        "Observation table columns misaligned (row generated 9 columns with combined n1/n2 and trial number against an 8-column table header)"
-      ]
-    },
     {
       "sim_id": "u01103",
       "status": "FIXED",
@@ -386,6 +335,59 @@
         "Action buttons #btn_auto_sweep and #btn_toggle_ac_frequency lacked click event listener implementations",
         "Stepper buttons (.stepper-btn) were not wired to increment or decrement control inputs",
         "Strong inversion regime did not support quasi-static low-frequency capacitance recovery when toggling AC frequency mode"
+      ]
+    },
+    {
+      "sim_id": "u01146",
+      "status": "FIXED",
+      "time": "08:01:40",
+      "issues": [
+        "Unwired action button btn_cycle_image was not cycling input test patterns or updating channel indicator LEDs",
+        "Unwired action button btn_toggle_se_kernel_view was not toggling discrete kernel matrix inspection overlay",
+        "Observation table row generation appended 8 columns to a 6-column header causing table misalignment",
+        "Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click event listeners in simulation script"
+      ]
+    },
+    {
+      "sim_id": "u01151",
+      "status": "FIXED",
+      "time": "08:01:45",
+      "issues": [
+        "Apparatus badges mismatched legend pills: Badge 6 targeted microscopic field of view instead of Bunsen burner, and coverslips (Pill 3) lacked an assigned badge.",
+        "Unwired live telemetry readouts: DOM element lookups queried 'reading_*' instead of 'val_reading_*' spans, causing telemetry readouts to remain static.",
+        "Unwired action buttons and steppers: 'btn_toggle_organism' and 'btn_sterilize_loop' action buttons had no event listeners, and stepper increment/decrement buttons were unhandled.",
+        "Misaligned observation table data: Inserted columns did not align with table header definition (inoculum volume was inserted into displacement path column, swapping velocity and MSD values)."
+      ]
+    },
+    {
+      "sim_id": "u01147",
+      "status": "FIXED",
+      "time": "08:01:49",
+      "issues": [
+        "Unwired action button: 'btn_apply_filter' ('Execute Spatial Neighborhood Convolution') was missing an event listener to trigger the 2D convolution pipeline.",
+        "Observation table column misalignment: recorded rows merged filter type and kernel dimension into column 1, shifting mean intensity, variance, and detail energy out of alignment with the 6 table headers."
+      ]
+    },
+    {
+      "sim_id": "u01153",
+      "status": "FIXED",
+      "time": "08:02:14",
+      "issues": [
+        "Unwired action buttons ('btn_divert_flow' and 'btn_drain_measuring_tank') and stepper ▲/▼ buttons in canvas_js",
+        "Telemetry updateTelemetry referenced nonexistent element IDs ('reading_*') instead of the actual span IDs ('val_reading_*')",
+        "Observation table recordObservation appended 8 columns (including trial count and theoretical velocity) while observation_thead_html only defines 6 columns",
+        "Malformed discharge units formatted as '/m³s' instead of 'm³/s' in readouts_html and observation_thead_html",
+        "Missing legend pill for item 6 (Digital Stopwatch) in legend_pills_html to match canvas badge 6"
+      ]
+    },
+    {
+      "sim_id": "u01152",
+      "status": "FIXED",
+      "time": "08:02:30",
+      "issues": [
+        "Observation table row generation pushed 7 numerical columns instead of the 6 standardized columns defined in observation_thead_html (Bacterial Strain, Incubation Time, Slant Reaction, Butt Reaction, Gas Production, H2S Production)",
+        "Action buttons (btn_sterilize_and_inoculate, btn_run_incubation) and stepper increment/decrement buttons (.stepper-btn) were unhandled and not wired to event listeners",
+        "Numbered apparatus badges in canvas_js inverted Badge 3 and Badge 4 relative to legend_pills_html (Legend Pill 3 is TSB broth and Pill 4 is TSI slants, but canvas rendered Badge 4 on broth and Badge 3 on slants)"
       ]
     }
   ],
@@ -1336,6 +1338,11 @@
     "u01139",
     "u01140",
     "u01143",
-    "u01148"
+    "u01146",
+    "u01147",
+    "u01148",
+    "u01151",
+    "u01152",
+    "u01153"
   ]
 }
