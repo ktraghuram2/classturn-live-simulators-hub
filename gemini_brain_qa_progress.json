@@ -1,61 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:22:50",
-  "completed_count": 1968,
-  "fixed_count": 1765,
-  "latest_sim_id": "u01775",
+  "updated_at": "2026-10-19 18:23:50",
+  "completed_count": 1973,
+  "fixed_count": 1770,
+  "latest_sim_id": "u01808",
   "recent_events": [
-    {
-      "sim_id": "u01618",
-      "status": "PASS",
-      "time": "18:14:06",
-      "issues": []
-    },
-    {
-      "sim_id": "u01603",
-      "status": "ERROR",
-      "time": "18:14:14",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01548",
-      "status": "FIXED",
-      "time": "18:14:20",
-      "issues": [
-        "Fixed unclosed HTML tags and verbose MathML character-by-character 'dimensionless' unit rendering in principles_list_html, and restored the complete second electrical equation for lamp voltage and current.",
-        "Fixed broken nested quote attributes in data-unit inside readouts_html.",
-        "Wired #btn_invert_switches and #btn_walk_staircase action buttons as well as stepper up/down buttons and reset button in canvas_js.",
-        "Fixed observation table column misalignment in canvas_js by outputting 5 <td> cells matching the 5 <th> columns in observation_thead_html."
-      ]
-    },
-    {
-      "sim_id": "u01586",
-      "status": "PASS",
-      "time": "18:14:43",
-      "issues": []
-    },
-    {
-      "sim_id": "u01626",
-      "status": "FIXED",
-      "time": "18:15:07",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01628",
-      "status": "FIXED",
-      "time": "18:15:18",
-      "issues": [
-        "Raw LaTeX (I_%) and (G_%) in procedure_section_html Step 5 rectified with proper MathML notation.",
-        "Missing mathematical symbols W and E in observation_thead_html columns for Word Size and Expect Value added.",
-        "Observation table column data in btnRecord event listener was misaligned with the 9 thead columns due to an unindexed trialCount offset and surplus columns.",
-        "Unwired stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) wired to respective input elements with reactive event dispatching.",
-        "Unwired primary action button #btn_run_blast wired to trigger the BLAST alignment animation and physics refresh."
-      ]
-    },
     {
       "sim_id": "u01579",
       "status": "FIXED",
@@ -379,6 +328,68 @@
         "Action buttons 'btn_aspirate_sample' and 'btn_zero_calibrate' were present in controls but unwired in canvas_js.",
         "Stepper buttons (.stepper-btn) lacked click event listeners in canvas_js, preventing up/down stepper adjustments.",
         "Experiment mode selector ('experimentSelect') was not connected, preventing switching between Standard Calibration and Fruit Juice Sample Analysis."
+      ]
+    },
+    {
+      "sim_id": "u01782",
+      "status": "FIXED",
+      "time": "18:22:58",
+      "issues": [
+        "Inverted leader line badges: Badge 1 was drawn pointing to Rotameter and Badge 6 to Sump Tank, directly conflicting with legend pill numbering where 1 is Water Sump Tank and 6 is Tapered Glass Tube Rotameter.",
+        "Unwired action buttons: 'btn_toggle_solenoid' and 'btn_purge_air' had no event listeners or physics state representation.",
+        "Unwired stepper buttons: '.stepper-btn' (up/down arrows) were unhandled in JavaScript, preventing user interaction with steppers.",
+        "Observation table column misalignment: inserted table row prepended a trial counter and omitted Conduit Pipe Diameter, shifting all values out of alignment with the 6 thead headers."
+      ]
+    },
+    {
+      "sim_id": "u01690",
+      "status": "FIXED",
+      "time": "18:23:11",
+      "issues": [
+        "Fixed raw underscore identifier 'q_rej' and unformatted state labels in apparatus_html using proper inline MathML subscripts.",
+        "Fixed broken unescaped HTML quotes inside data-unit attributes in readouts_html and matched readout DOM IDs ('val_reading_*') in canvas_js updateTelemetry().",
+        "Wired the unwired '#btn_run_to_halt' ('Execute to Halting State') action button, '#experimentSelect' mode selector (Balanced Parentheses Grammar vs Equal Binary Symbols), and stepper ▲/▼ buttons in canvas_js.",
+        "Fixed observation table column misalignment in btnRecord click handler so recorded rows match observation_thead_html (Execution Step, Current State q, Scanned Symbol γ, Written Symbol γ′, Head Direction, Head Cell Index x_t)."
+      ]
+    },
+    {
+      "sim_id": "u01803",
+      "status": "FIXED",
+      "time": "18:23:31",
+      "issues": [
+        "Observation table row appended 7 cells while the observation table header defined exactly 6 columns, causing column misalignment",
+        "Stepper increment and decrement buttons (.stepper-btn) lacked click event listeners",
+        "Action buttons btn_mix_solution (Homogenize & Mix Solution) and btn_zero_sensor (Tare / Calibrate Optical Sensor) were unwired"
+      ]
+    },
+    {
+      "sim_id": "u01789",
+      "status": "ERROR",
+      "time": "18:23:33",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01795",
+      "status": "FIXED",
+      "time": "18:23:36",
+      "issues": [
+        "Unwired action buttons: 'btn_auto_encode' and 'btn_evaluate_syndrome' in controls were not wired to click handlers in canvas_js.",
+        "Unwired stepper buttons: .stepper-btn increment and decrement buttons lacked click event listeners in canvas_js.",
+        "Misaligned observation table: btnRecord generated 8 <td> elements while observation_thead_html defines exactly 5 <th> columns.",
+        "Telemetry DOM element ID mismatch: live readout selectors used 'reading_*' instead of 'val_reading_*', preventing real-time telemetry updates."
+      ]
+    },
+    {
+      "sim_id": "u01808",
+      "status": "FIXED",
+      "time": "18:23:50",
+      "issues": [
+        "Unwired action buttons: 'btn_insert_key' and 'btn_extract_max' had no event listeners in canvas_js.",
+        "Unwired stepper controls: up/down buttons for 'insert_key' had no click handlers to adjust key values.",
+        "Observation table column misalignment: record button inserted only 5 <td> cells for a 7-column observation table header, misaligning Heap Size under Operation Type.",
+        "Algorithmic sift-down bug in executeSiftStep: used bottom-up loop which could violate max-heapify by not comparing both children during extraction sift-down."
       ]
     }
   ],
@@ -1811,6 +1822,7 @@
     "u01684",
     "u01686",
     "u01688",
+    "u01690",
     "u01691",
     "u01692",
     "u01693",
@@ -1892,6 +1904,7 @@
     "u01779",
     "u01780",
     "u01781",
+    "u01782",
     "u01783",
     "u01784",
     "u01785",
@@ -1903,6 +1916,7 @@
     "u01792",
     "u01793",
     "u01794",
+    "u01795",
     "u01796",
     "u01797",
     "u01798",
@@ -1910,10 +1924,12 @@
     "u01800",
     "u01801",
     "u01802",
+    "u01803",
     "u01804",
     "u01805",
     "u01806",
     "u01807",
+    "u01808",
     "u01809",
     "u01810",
     "u01811",
