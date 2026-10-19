@@ -1,77 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 07:54:09",
-  "completed_count": 922,
-  "fixed_count": 917,
-  "latest_sim_id": "u01110",
+  "updated_at": "2026-10-19 07:55:28",
+  "completed_count": 927,
+  "fixed_count": 922,
+  "latest_sim_id": "u01116",
   "recent_events": [
-    {
-      "sim_id": "u01070",
-      "status": "FIXED",
-      "time": "07:16:19",
-      "issues": [
-        "Unwired primary action button: canvas_js checked for 'btnAuto' and 'btn_auto' but the controls action button has id 'btn_auto_train', preventing convergence loop triggering.",
-        "Unwired stepper buttons: up/down buttons (.stepper-btn) had no click event listeners bound for incrementing/decrementing controls.",
-        "Misaligned and truncated observation table recordings: btnRecord wrote 4 misaligned values instead of matching all 6 defined observation columns (Iteration, Learning Rate η, Weight w0, Weight w1, Bias b, Errors).",
-        "Reset state incomplete: resetPerceptron failed to reset currentEta or restore the convergence button label state."
-      ]
-    },
-    {
-      "sim_id": "u01051",
-      "status": "FIXED",
-      "time": "07:16:19",
-      "issues": [
-        "Observation table column misalignment: observation_thead_html defined 6 columns (Lower Sensor A, Upper Sensor B, Inverted Signal B', Motor Status M, Relay Voltage V_relay, Pump Flow Rate Q), but btnRecord recorded 7 columns with an unheaded row counter column (${recordIndex++}), shifting all digital sensor states and telemetry values into the wrong column headers.",
-        "Unwired action button: '#btn_cycle_simulation' (Simulate Automated Pumping Cycle) was defined in actions_html but completely unhandled in canvas_js.",
-        "Unwired stepper controls: Precision stepper buttons ('.stepper-btn-up', '.stepper-btn-down') lacked click handlers in canvas_js to increment and decrement lower tank sensor A and upper tank sensor B digital logic states.",
-        "Unwired top-level controls and reset: Simulation control buttons ('#btnToggle', '#btnStep', '#btnReset') and '#experimentSelect' had no event listeners in canvas_js to pause, step through logic states, reset simulation parameters and observation logs, or switch experiment modes.",
-        "Missing canvas pointer lock: Canvas element lacked pointerEvents = 'none' to enforce the locked layout rule preventing direct unhandled pointer interaction on the canvas.",
-        "Nested span tags in data-unit attributes: All readout items in readouts_html had raw '<span data-source-paths=...>' markup inside data-unit attributes rather than clean plain-text unit strings.",
-        "Corrupted fraction LaTeX in apparatus_html: Sensor A and Sensor B TTL binary output specifications were formatted with a corrupted fraction bar as '0 V / 5 V' ('0 \\frac{V}{5} V') instead of clean '0 V / 5 V'.",
-        "Mangled pump flow rate unit in readouts_html and observation_thead_html: Flow rate unit was parsed into a corrupted MathML fraction '\\frac{L}{m}in' instead of standard 'L/min'."
-      ]
-    },
-    {
-      "sim_id": "u01072",
-      "status": "FIXED",
-      "time": "07:16:19",
-      "issues": [
-        "Raw LaTeX formatting 'SS_{res}' in procedure step 4 was converted to standard MathML inline markup",
-        "Telemetry readout DOM IDs in canvas_js did not match the 'val_reading_*' element IDs in readouts_html, preventing live data updates",
-        "Observation table recording script had 7 misaligned columns instead of all 9 header columns (missing S_XX, S_XY, and intercept, with trial slope displacing calculated statistics)",
-        "Action buttons #btn_auto_fit and #btn_generate_sample and all stepper +/- buttons lacked event listeners in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01063",
-      "status": "FIXED",
-      "time": "07:16:19",
-      "issues": [
-        "Misaligned observation table columns: Defect distance and Consistency status cells were swapped in btnRecord row innerHTML relative to observation_thead_html headers.",
-        "Unwired Section 05 action buttons: '#btn_project_to_range' (Project Target Vector to Range) and '#btn_test_orthogonality' (Evaluate Orthogonal Decomposition) lacked event listeners in canvas_js.",
-        "Unwired stepper controls: Stepper precision increment/decrement buttons ('.stepper-btn-up', '.stepper-btn-down') lacked click handlers in canvas_js.",
-        "Unwired top-level and playback controls: '#btnToggle' (Pause/Run), '#btnStep', '#experimentSelect', and '#btnReset' lacked event handlers in canvas_js to control playback, reset apparatus, and clear observation logs.",
-        "Direct mouse/touch dragging on canvas: Canvas probe dragging event handlers violated Q22 canvas pointer lock immutability requirement.",
-        "Destructive telemetry updates: updateTelemetry wiped out nested MathML unit elements when updating val_reading_* elements.",
-        "Malformed data-unit attributes in readouts_html: Readout items contained nested HTML <span> tags inside data-unit attributes.",
-        "Unclosed HTML tags in principles_list_html: The equation symbols block was missing closing </ul>, </div>, and </li> tags."
-      ]
-    },
-    {
-      "sim_id": "u01061",
-      "status": "FIXED",
-      "time": "07:17:07",
-      "issues": [
-        "Observation table column misalignment: observation_thead_html defines 5 columns (Quantum Number n, Box Width L, Energy Eigenvalue En, de Broglie Wavelength λn, Internal Nodes Nnodes), but canvas_js logged 6 columns with an extraneous leading trial count that shifted and misaligned all physical telemetry data.",
-        "Unwired Section 05 action button: '#btn_toggle_probability' ('Toggle Probability Density (|Ψ|²)') was defined in actions_html but completely unhandled in canvas_js.",
-        "Unwired stepper controls: Custom stepper buttons ('.stepper-btn-up', '.stepper-btn-down') lacked click event listeners in canvas_js to adjust quantum number, box length, wave amplitude, and animation speed.",
-        "Unwired top-level and playback controls: '#btnToggle' (Pause/Run), '#btnStep' (Single Step), '#experimentSelect' (Mode Switch), and '#btnReset' lacked event listeners in canvas_js to pause oscillations, single-step phase evolution, switch experimental modes, or reset parameters and observations.",
-        "Missing canvas pointer lock: simCanvas lacked pointerEvents = 'none' to enforce the ClassTurn locked layout immutability rule disabling direct canvas mouse drag interactions.",
-        "Malformed data-unit attributes in readouts_html: Live readout elements contained raw nested <span> tags with data-source-paths inside their data-unit HTML attributes instead of clean unit strings ('eV', 'nm', 'dimensionless', 'frames').",
-        "Unclosed HTML container in principles_list_html: Equation 0 symbols list was truncated without closing </ul>, </div>, and </li> tags.",
-        "Telemetry readout formatting: updateTelemetry set textContent directly on telemetry elements wiping out nested MathML unit elements; replaced with safe span updates preserving MathML unit markup."
-      ]
-    },
     {
       "sim_id": "u01081",
       "status": "FIXED",
@@ -499,6 +432,61 @@
       "status": "PASS",
       "time": "07:54:09",
       "issues": []
+    },
+    {
+      "sim_id": "u01114",
+      "status": "FIXED",
+      "time": "07:54:49",
+      "issues": [
+        "Unwired action buttons 'btn_align_slip_gauge' (4 mm slip gauge calibration) and 'btn_auto_seat_caliper' (seat caliper on pitch circle).",
+        "Unwired stepper up/down buttons (.stepper-btn) across all 4 stepper input controls.",
+        "Observation recording table generated only 7 misaligned columns instead of matching the 9 columns specified in observation_thead_html.",
+        "Live telemetry updater failed to update readout elements whose DOM element IDs use the 'val_' prefix ('val_reading_*')."
+      ]
+    },
+    {
+      "sim_id": "u01113",
+      "status": "FIXED",
+      "time": "07:54:59",
+      "issues": [
+        "Observation table columns in recordObservationRow were misaligned (generating 12 mismatched fields instead of the 9 defined in the observation header).",
+        "Action button btn_resample ('Generate New Independent Random Samples') was completely unwired.",
+        "Action button btn_toggle_tails ('Toggle Significance Level alpha') was completely unwired, with critical Z thresholds and acceptance regions hardcoded to alpha=0.05 (Z=+-1.96).",
+        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js.",
+        "Experiment options select dropdown lacked change event wiring for baseline and disparity modes."
+      ]
+    },
+    {
+      "sim_id": "u01118",
+      "status": "FIXED",
+      "time": "07:55:02",
+      "issues": [
+        "Observation table columns misaligned: 6 data cells generated for 5-column thead by improperly including Stirrer RPM.",
+        "Live telemetry readout IDs mismatched: DOM IDs in readouts_html use 'val_reading_*' while updateTelemetry targeted 'reading_*' and 'val_*'.",
+        "Unwired stepper buttons: .stepper-btn elements lacked click event listeners for incrementing/decrementing controls.",
+        "Unwired action button: 'btn_calibrate_buffer' had no click listener to perform standard buffer calibration to pH 7.0."
+      ]
+    },
+    {
+      "sim_id": "u01117",
+      "status": "FIXED",
+      "time": "07:55:15",
+      "issues": [
+        "Observation table column misalignment: setupObservationRecorder generated 6 table columns including an extraneous serial count column, causing data values to shift out of alignment with the 5-column header (Concentration Index, SDS Concentration, Measured Conductance, Specific Conductance, Micellar Regime).",
+        "Unwired interactive controls: The 'Mix and Equilibrate Solution' action button (btn_stir_and_equilibrate) and stepper increment/decrement buttons (.stepper-btn) had no click event listeners bound in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01116",
+      "status": "FIXED",
+      "time": "07:55:28",
+      "issues": [
+        "Observation table columns were misaligned: row innerHTML had 9 columns with an unrepresented temperature value and shifted conductance/cell constant positions, differing from the 8 columns defined in thead.",
+        "Action buttons #btn_calibrate_cell and #btn_toggle_mode as well as stepper increment/decrement buttons (.stepper-btn) were unhandled in canvas_js.",
+        "Canvas leader badges 4 and 6 were misaligned with legend pills: Badge 4 pointed to the magnetic stirrer instead of the coaxial cable, and Badge 6 pointed to the platinum electrodes instead of the workstation bench.",
+        "Dynamic conductometer mode display was hardcoded to 'MHOS' instead of reflecting active mode toggling between MHOS and CELL-CONST.",
+        "Raw LaTeX/plain-text notation 'Λ_∞' in Step 11 of procedure_section_html was updated to proper MathML."
+      ]
     }
   ],
   "completed_ids": [
@@ -1423,6 +1411,11 @@
     "u01108",
     "u01109",
     "u01110",
-    "u01112"
+    "u01112",
+    "u01113",
+    "u01114",
+    "u01116",
+    "u01117",
+    "u01118"
   ]
 }
