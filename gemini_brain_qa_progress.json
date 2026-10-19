@@ -1,62 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:08:50",
-  "completed_count": 982,
-  "fixed_count": 967,
-  "latest_sim_id": "u01188",
+  "updated_at": "2026-10-19 08:10:25",
+  "completed_count": 987,
+  "fixed_count": 971,
+  "latest_sim_id": "u01198",
   "recent_events": [
-    {
-      "sim_id": "u01143",
-      "status": "FIXED",
-      "time": "08:01:00",
-      "issues": [
-        "Synchronized default stepper values in canvas_js (growth_rate 0.05, ignition_prob 0.8) to match the HTML stepper controls",
-        "Aligned canvas leader line badges with apparatus specifications and legend pills (reduced from 5 badges to 4, remapping badge 2 to the Lightning Strike Igniter, badge 3 to the Seed Dispersal Feeder, and badge 4 to the Telemetry Detector)"
-      ]
-    },
-    {
-      "sim_id": "u01148",
-      "status": "FIXED",
-      "time": "08:01:30",
-      "issues": [
-        "Telemetry output elements were cached by container id ('reading_*') instead of the value span id ('val_reading_*'), causing live DOM telemetry readouts to never update",
-        "Observation table recording row contained 8 columns with mismatched variables (including logNa and temp) instead of matching the 6 thead columns (Vg, Vb, phiS, Wdep, Ctot, Ctot/Cox)",
-        "Action buttons #btn_auto_sweep and #btn_toggle_ac_frequency lacked click event listener implementations",
-        "Stepper buttons (.stepper-btn) were not wired to increment or decrement control inputs",
-        "Strong inversion regime did not support quasi-static low-frequency capacitance recovery when toggling AC frequency mode"
-      ]
-    },
-    {
-      "sim_id": "u01146",
-      "status": "FIXED",
-      "time": "08:01:40",
-      "issues": [
-        "Unwired action button btn_cycle_image was not cycling input test patterns or updating channel indicator LEDs",
-        "Unwired action button btn_toggle_se_kernel_view was not toggling discrete kernel matrix inspection overlay",
-        "Observation table row generation appended 8 columns to a 6-column header causing table misalignment",
-        "Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click event listeners in simulation script"
-      ]
-    },
-    {
-      "sim_id": "u01151",
-      "status": "FIXED",
-      "time": "08:01:45",
-      "issues": [
-        "Apparatus badges mismatched legend pills: Badge 6 targeted microscopic field of view instead of Bunsen burner, and coverslips (Pill 3) lacked an assigned badge.",
-        "Unwired live telemetry readouts: DOM element lookups queried 'reading_*' instead of 'val_reading_*' spans, causing telemetry readouts to remain static.",
-        "Unwired action buttons and steppers: 'btn_toggle_organism' and 'btn_sterilize_loop' action buttons had no event listeners, and stepper increment/decrement buttons were unhandled.",
-        "Misaligned observation table data: Inserted columns did not align with table header definition (inoculum volume was inserted into displacement path column, swapping velocity and MSD values)."
-      ]
-    },
-    {
-      "sim_id": "u01147",
-      "status": "FIXED",
-      "time": "08:01:49",
-      "issues": [
-        "Unwired action button: 'btn_apply_filter' ('Execute Spatial Neighborhood Convolution') was missing an event listener to trigger the 2D convolution pipeline.",
-        "Observation table column misalignment: recorded rows merged filter type and kernel dimension into column 1, shifting mean intensity, variance, and detail energy out of alignment with the 6 table headers."
-      ]
-    },
     {
       "sim_id": "u01153",
       "status": "FIXED",
@@ -394,6 +342,56 @@
         "Unwired action button: Added click event listener for #btn_apply_set_pulse to deliver a 100 ms active-HIGH pulse to input_s.",
         "Misaligned observation table columns: Corrected btnRecord row creation to match the 5 columns in the observation header (Set Input, Reset Input, Output Voltage Q, Complementary Voltage Q', Total Supply Current ICC) instead of 6 mismatched columns with extra VCC.",
         "Unwired stepper controls: Added event listeners to .stepper-btn buttons to increment and decrement target inputs respecting min, max, and step."
+      ]
+    },
+    {
+      "sim_id": "u01184",
+      "status": "FIXED",
+      "time": "08:08:59",
+      "issues": [
+        "Observation table record button recorded alphabet size and progress percentage into Start State and Accept State columns, causing column misalignment with table header",
+        "Action button btn_trace_epsilon was unwired, lacking click handler and visual feedback for epsilon closures",
+        "Enhanced epsilon transition rendering with glowing visual highlight when closure trace is active"
+      ]
+    },
+    {
+      "sim_id": "u01192",
+      "status": "FIXED",
+      "time": "08:09:43",
+      "issues": [
+        "Rectified principles summary prose: replaced raw and malformed LaTeX formulas (Stoke's shift and proliferation index) with proper semantic MathML representations.",
+        "Corrected observation table header: added missing proliferation index symbol P to column 6 header.",
+        "Fixed truncated canvas_js: completed the broken snrVal formula in computePhysics and returned all required physical metrics.",
+        "Implemented complete 2D epifluorescence microscopy simulation: rendered 3D-shaded inverted microscope frame, mercury vapor arc lamp housing, amber UV shield, and cooled scientific CMOS digital camera on #090d16 canvas.",
+        "Added live Hoechst 33342 cell nuclei fluorescence micrograph viewport with objective zoom scaling, mitotic chromatin condensation, and excitation shutter beam animation.",
+        "Wired interactive controls: connected excitation shutter toggle, micrograph capture with camera flash effect, and bidirectional stepper steppers synced with live readouts."
+      ]
+    },
+    {
+      "sim_id": "u01197",
+      "status": "PASS",
+      "time": "08:09:59",
+      "issues": []
+    },
+    {
+      "sim_id": "u01194",
+      "status": "FIXED",
+      "time": "08:10:07",
+      "issues": [
+        "Misaligned observation table columns: 7 table data cells were being appended to a 6-column header with transposed metric orders (accumulatedStrain was placed in Orowan column, tauOr was placed in Accumulated Strain column, and an extra slipFraction cell overflowed the header). Corrected to exactly match the 6 table columns.",
+        "Unwired action button: 'btn_engage_load' was present in actions_html but lacked an event listener in canvas_js. Wired it to toggle tensile load state and record observation rows.",
+        "Unwired stepper buttons: '.stepper-btn' up/down click handlers and input change/input listeners were missing in canvas_js, preventing parameter adjustments from updating controls.",
+        "Corrected malformed MathML division and unit formatting in principles_list_html for activation energy and universal gas constant."
+      ]
+    },
+    {
+      "sim_id": "u01198",
+      "status": "FIXED",
+      "time": "08:10:25",
+      "issues": [
+        "Observation table column mismatch: recordObservation() generated 9 values while observation_thead_html defines only 5 columns.",
+        "Unwired action buttons: btn_compute_predictor and btn_refine_corrector lacked event listeners in canvas_js.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked event listeners to increment and decrement inputs."
       ]
     }
   ],
@@ -1377,8 +1375,13 @@
     "u01181",
     "u01182",
     "u01183",
+    "u01184",
     "u01186",
     "u01187",
-    "u01188"
+    "u01188",
+    "u01192",
+    "u01194",
+    "u01197",
+    "u01198"
   ]
 }
