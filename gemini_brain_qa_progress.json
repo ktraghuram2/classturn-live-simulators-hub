@@ -1,62 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:39:34",
-  "completed_count": 2018,
-  "fixed_count": 1808,
-  "latest_sim_id": "u02171",
+  "updated_at": "2026-10-19 18:40:09",
+  "completed_count": 2023,
+  "fixed_count": 1813,
+  "latest_sim_id": "u02175",
   "recent_events": [
-    {
-      "sim_id": "u02010",
-      "status": "FIXED",
-      "time": "18:31:31",
-      "issues": [
-        "Unwired action buttons: 'btn_scramble_puzzle' and 'btn_verify_parity' were not wired to startScramble or parity audit in canvas_js",
-        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners",
-        "Observation table column mismatch: recordObservation rendered 6 columns instead of the 7 declared in observation_thead_html (Move Number, Transposed Tile k, Inversion Count N_inv, Empty Void Row r_empty, Parity Invariant, Manhattan Distance d_M, Estimated Moves M_est)",
-        "Telemetry unit preservation: setTelemetryValue wiped out inner MathML unit elements when updating readout values"
-      ]
-    },
-    {
-      "sim_id": "u02024",
-      "status": "FIXED",
-      "time": "18:32:02",
-      "issues": [
-        "Unwired action buttons: 'btn_switch_colony' and 'btn_run_thermal_cycle' were present in HTML but lacked event listeners in canvas_js.",
-        "Unwired stepper controls: Stepper buttons (▲/▼) and manual input change events were not wired to trigger updatePhysics.",
-        "Unwired experiment presets: 'experimentSelect' dropdown changes did not update the primer strategy mode stepper.",
-        "Misaligned observation table: 'btnRecord' inserted 9 columns containing raw voltage, amplicon copy yield, and block temperature instead of aligning with the 7 declared thead columns (Colony Sample ID, Primer Strategy, Thermocycle Count, Insert Length, Resolved Band Size, Gel Migration Distance, Recombinant Status)."
-      ]
-    },
-    {
-      "sim_id": "u01989",
-      "status": "ERROR",
-      "time": "18:32:02",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01990",
-      "status": "ERROR",
-      "time": "18:32:03",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01999",
-      "status": "ERROR",
-      "time": "18:32:08",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01983",
-      "status": "PASS",
-      "time": "18:32:19",
-      "issues": []
-    },
     {
       "sim_id": "u02027",
       "status": "FIXED",
@@ -368,6 +316,66 @@
         "Fixed erroneous MathML fraction formatting converting 'C/C++' and 'I/O' into mathematical fractions in principles and procedure slots",
         "Wired up unwired stepper buttons (.stepper-btn-up, .stepper-btn-down) and action buttons (btn_inject_payload, btn_verify_specifier_match)",
         "Realigned observation table rows to 6 columns matching observation_thead_html headers (swapped emitted bytes and leaked word into correct columns and removed untracked 7th CVSS column)"
+      ]
+    },
+    {
+      "sim_id": "u02116",
+      "status": "FIXED",
+      "time": "18:39:47",
+      "issues": [
+        "Unwired action buttons: btn_toggle_truth_value, btn_generate_new_formula, and btn_check_satisfiability lacked click event listeners in canvas_js",
+        "Unwired stepper buttons: .stepper-btn elements for complexity and active row lacked click handlers in canvas_js",
+        "Observation table column data mismatch: btnRecord inserted activeRow instead of total row permutations, shifted satisfying count, and omitted formula classification status"
+      ]
+    },
+    {
+      "sim_id": "u02173",
+      "status": "FIXED",
+      "time": "18:39:49",
+      "issues": [
+        "Observation table column mismatch: table body row appended 10 td cells while observation_thead_html defines only 6 columns",
+        "Unwired action buttons: btn_step_iterator [next()] and btn_wrap_decorators had no click event listeners",
+        "Unwired stepper controls: stepper up/down buttons had no click handlers to increment or decrement inputs",
+        "Single-decorated telemetry calculations used hardcoded multipliers instead of live stepper modifier variables (kw, kp, ka)"
+      ]
+    },
+    {
+      "sim_id": "u02170",
+      "status": "ERROR",
+      "time": "18:40:00",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02183",
+      "status": "FIXED",
+      "time": "18:40:03",
+      "issues": [
+        "Unwired stepper up/down buttons: .stepper-btn elements lacked click event listeners to increment and decrement standard sulphate volume.",
+        "Unwired action buttons: btn_add_barium_chloride ('Add Barium Chloride & Stir') and btn_measure_absorbance ('Transfer to Cuvette & Measure') were rendered in controls but had no interactive event handlers.",
+        "Observation table column misalignment: btnRecord appended rows with 5 cells (including trial number) while observation_thead_html only defines 4 columns (Volume, Concentration, Absorbance, Transmittance), causing shifted alignment."
+      ]
+    },
+    {
+      "sim_id": "u02172",
+      "status": "FIXED",
+      "time": "18:40:04",
+      "issues": [
+        "Replaced spurious MathML conversion of the English indefinite article 'a' in aim_html, principles_summary_html, and validation_html.",
+        "Added 'Execute Next Instruction' action button to actions_html to satisfy Step 3 of the practical procedure.",
+        "Wired interactive handlers for stepper up/down buttons in canvas_js.",
+        "Wired 'Execute Next Instruction' button to advance the execution pipeline program counter currentPC.",
+        "Corrected observation table row in canvas_js to output 6 columns matching observation_thead_html instead of 7 misaligned columns."
+      ]
+    },
+    {
+      "sim_id": "u02175",
+      "status": "FIXED",
+      "time": "18:40:09",
+      "issues": [
+        "Fixed misaligned observation table columns by removing unheadered timestamp <td> in btnRecord so that data cells align 1:1 with the 6 header columns.",
+        "Wired interactive action button 'btn_compile_execute' (Compile and Evaluate AST) to trigger AST verification state and telemetry terminal output."
       ]
     }
   ],
@@ -2184,6 +2192,7 @@
     "u02113",
     "u02114",
     "u02115",
+    "u02116",
     "u02117",
     "u02119",
     "u02120",
@@ -2231,12 +2240,16 @@
     "u02167",
     "u02168",
     "u02171",
+    "u02172",
+    "u02173",
+    "u02175",
     "u02176",
     "u02178",
     "u02179",
     "u02180",
     "u02181",
     "u02182",
+    "u02183",
     "u02185",
     "u02186",
     "u02187",
