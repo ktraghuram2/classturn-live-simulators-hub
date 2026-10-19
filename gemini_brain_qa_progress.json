@@ -1,65 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:06:53",
-  "completed_count": 972,
-  "fixed_count": 959,
-  "latest_sim_id": "u01174",
+  "updated_at": "2026-10-19 08:08:05",
+  "completed_count": 977,
+  "fixed_count": 963,
+  "latest_sim_id": "u01183",
   "recent_events": [
-    {
-      "sim_id": "u01133",
-      "status": "FIXED",
-      "time": "07:58:18",
-      "issues": [
-        "Observation table columns were misaligned with header definitions (Burst time, turnaround, wait time, CPU utilization, and PC offset were assigned to mismatched columns).",
-        "Interactive lifecycle action buttons (btn_dispatch, btn_io_request, btn_io_complete, btn_timer_preempt) were completely unwired in canvas_js.",
-        "Stepper spin buttons (.stepper-btn) were not wired to increment/decrement input values in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01136",
-      "status": "FIXED",
-      "time": "07:59:00",
-      "issues": [
-        "Unwired action button #btn_play_optimal_move ('Commit Optimal Move') in controls panel.",
-        "Unwired stepper up/down buttons (.stepper-btn) for search depth limit parameter.",
-        "Misaligned observation table columns: recorded currentSearchDepth and nodesExploredCount into columns meant for Evaluated Nodes and Selected Action, omitting action cell data.",
-        "Added tracking of last chosen AI move to populate the Selected Action column in observation logs."
-      ]
-    },
-    {
-      "sim_id": "u01135",
-      "status": "FIXED",
-      "time": "07:59:09",
-      "issues": [
-        "Misaligned observation table columns: recorder was generating 7 cells for a 5-column table, misaligning columns and omitting the optimal first move branch",
-        "Unwired action buttons: 'btn_run_auto_minimax' (Run Full Minimax Search) and 'btn_toggle_player' (Toggle Starting Player) had no event listeners attached",
-        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' buttons were not updating their target input fields or dispatching change events"
-      ]
-    },
-    {
-      "sim_id": "u01132",
-      "status": "ERROR",
-      "time": "07:59:40",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01128",
-      "status": "ERROR",
-      "time": "07:59:41",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01130",
-      "status": "ERROR",
-      "time": "07:59:43",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01140",
       "status": "FIXED",
@@ -388,6 +333,62 @@
       "issues": [
         "Unwired stepper increment and decrement buttons (stepper-btn-up and stepper-btn-down) in controls panel",
         "Unwired action button btn_sweep_trace (Auto-Sweep Drain Voltage Trace)"
+      ]
+    },
+    {
+      "sim_id": "u01175",
+      "status": "FIXED",
+      "time": "08:06:59",
+      "issues": [
+        "Observation table columns were misaligned: tr.innerHTML grouped prefix and successor tokens into a single cell and appended sequence joint probability, causing counts and calculated probability to misalign with the 6 columns defined in observation_thead_html.",
+        "Unwired action buttons: btn_validate_probability and btn_compute_mle_matrix were present in actions_html but lacked event listeners in canvas_js.",
+        "Unwired stepper arrow controls: stepper-btn elements lacked click event listeners to increment/decrement input values and dispatch change events."
+      ]
+    },
+    {
+      "sim_id": "u01169",
+      "status": "ERROR",
+      "time": "08:07:01",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01176",
+      "status": "FIXED",
+      "time": "08:07:07",
+      "issues": [
+        "Observation table columns in btnRecord were misaligned (recorded 7 values including delta and perplexity, but thead specified 9 columns: Corpus ID, Conditioning Word, Candidate Word, Bigram Count, Unigram Count, Vocab Size, MLE Prob, Laplace Prob, Sentence Likelihood)",
+        "Action buttons (btn_validate_table and btn_evaluate_quiz_sentence) and stepper buttons were not wired to event listeners",
+        "Style 2 leader line badges used collinear anchor coordinates resulting in degenerate straight lines instead of true cubic Bezier S-curves"
+      ]
+    },
+    {
+      "sim_id": "u01171",
+      "status": "FIXED",
+      "time": "08:07:24",
+      "issues": [
+        "Unwired action buttons: 'btn_release_from_rest' and 'btn_set_critical_damping' lacked event listeners in canvas_js.",
+        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' buttons were not wired to step input values.",
+        "Observation table column mismatch: 'btnRecord' inserted 10 columns (including m, k, b and record index) while 'observation_thead_html' defined 7 columns (Time Elapsed, Displacement, Velocity, Acceleration, Spring Force, Damping Force, Total Energy).",
+        "Missing simulation elapsed time tracking: 'simTime' was not accumulated during physics steps for telemetry and table logging.",
+        "Unwired experiment mode selection: '#experimentSelect' had no change handler to toggle between underdamped and critical/overdamped modes.",
+        "Telemetry DOM unit stripping: 'updateTelemetryDOM' overwrote entire 'textContent', discarding MathML unit formatting stored in 'data-unit'."
+      ]
+    },
+    {
+      "sim_id": "u01182",
+      "status": "PASS",
+      "time": "08:07:55",
+      "issues": []
+    },
+    {
+      "sim_id": "u01183",
+      "status": "FIXED",
+      "time": "08:08:05",
+      "issues": [
+        "Observation table record handler generated 7 table cells while observation table header defines only 5 columns",
+        "Action buttons btn_start_conversion and btn_eliminate_state lacked interactive click event listeners in canvas_js"
       ]
     }
   ],
@@ -1360,9 +1361,14 @@
     "u01167",
     "u01168",
     "u01170",
+    "u01171",
     "u01172",
     "u01173",
     "u01174",
-    "u01177"
+    "u01175",
+    "u01176",
+    "u01177",
+    "u01182",
+    "u01183"
   ]
 }
