@@ -1,76 +1,10 @@
 {
   "runner_state": "ACTIVE (6 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 19:44:28",
-  "completed_count": 2122,
-  "fixed_count": 1892,
-  "latest_sim_id": "classturn-prism-pipeline",
+  "updated_at": "2026-10-19 22:33:18",
+  "completed_count": 2123,
+  "fixed_count": 1893,
+  "latest_sim_id": "potentiometer",
   "recent_events": [
-    {
-      "sim_id": "u02007",
-      "status": "ERROR",
-      "time": "19:28:02",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01989",
-      "status": "FIXED",
-      "time": "19:28:02",
-      "issues": [
-        "Fixed raw ASCII chemical formulas/exponents (MnO4^-, Mn2+, KMnO4) in validation_html and procedure_section_html using proper MathML/subscripts.",
-        "Wired unwired action buttons #btn_mix_reactants ('Mix Reactants & Start Timer') and #btn_thermal_equilibrate ('Equilibrate Solution Temperatures') in canvas_js.",
-        "Fixed observation table column misalignment in #btnRecord handler where only 5 cells were appended for a 6-column table (missing Inverse Temperature 1/T column)."
-      ]
-    },
-    {
-      "sim_id": "u01990",
-      "status": "ERROR",
-      "time": "19:28:02",
-      "issues": [
-        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--model', 'gemini-4-argon-medium', '--disable-slash-commands"
-      ]
-    },
-    {
-      "sim_id": "u02044",
-      "status": "ERROR",
-      "time": "19:28:02",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02079",
-      "status": "FIXED",
-      "time": "19:28:02",
-      "issues": [
-        "Unwired action button 'btn_auto_solve_all' in controls: added recursive divide-and-conquer solver with animated step transitions and stop toggle.",
-        "Unwired stepper controls: added event delegation to '.stepper-btn-up' and '.stepper-btn-down' to step stepper_disk_count and dispatch input/change events.",
-        "Misaligned observation table row: btnRecord was producing 5 columns instead of the 4 defined in thead (Disk Count, Theoretical Minimum Moves, Actual Moves Executed, Solution Status).",
-        "Canvas interaction during auto-solve: guarded pointerdown event to prevent state corruption while the automated recursive solver is running."
-      ]
-    },
-    {
-      "sim_id": "u02126",
-      "status": "FIXED",
-      "time": "19:28:02",
-      "issues": [
-        "Fixed live readout telemetry targeting by adding support for 'val_reading_*' DOM element IDs in setVal so metrics update in real-time.",
-        "Realigned observation table rows in canvas_js to match the 7 thead columns (Laser Power, Speed, Linear Energy, Roller Temp, Thickness, Cutting Rate, Heat Flow) and removed the orphaned 8th column.",
-        "Wired up interactive stepper buttons (▲/▼) and direct numerical input listeners to synchronize simulation parameters with live telemetry.",
-        "Wired up control action buttons (btn_material_feed, btn_roller_traverse, btn_laser_contour, btn_start_full_cycle, btn_stop_process) to trigger corresponding simulation phases."
-      ]
-    },
-    {
-      "sim_id": "u02170",
-      "status": "FIXED",
-      "time": "19:28:02",
-      "issues": [
-        "Live readout DOM elements in HTML slots have id 'val_reading_*' while canvas_js queried 'reading_*', resulting in null references and unrendered telemetry values.",
-        "Observation table in handleRecord inserted 7 <td> columns (including unlisted cooling time) into a 6-column table, misaligning observations with table headers.",
-        "Action buttons (btn_flame_loop, btn_dip_culture, btn_streak_sector, btn_incubate_plate) and stepper increment/decrement buttons were unhandled in canvas_js."
-      ]
-    },
     {
       "sim_id": "u02026",
       "status": "ERROR",
@@ -352,6 +286,66 @@
       "status": "PASS",
       "time": "19:44:28",
       "issues": []
+    },
+    {
+      "sim_id": "potentiometer",
+      "status": "ERROR",
+      "time": "20:08:27",
+      "issues": [
+        "agy.exe busy/rate-limited (code 1): error: invalid model selection (--model \"gemini-4-argon-medium\" --effort \"\"): model gemini-4-argon-medium is not recognized "
+      ]
+    },
+    {
+      "sim_id": "potentiometer",
+      "status": "ERROR",
+      "time": "20:08:59",
+      "issues": [
+        "agy.exe busy/rate-limited (code 1): error: invalid model selection (--model \"gemini-4-argon-medium\" --effort \"\"): model gemini-4-argon-medium is not recognized "
+      ]
+    },
+    {
+      "sim_id": "potentiometer",
+      "status": "ERROR",
+      "time": "20:30:55",
+      "issues": [
+        "agy.exe busy/rate-limited (code 1): Authentication required. Please visit the URL to log in:\n  https://accounts.google.com/o/oauth2/auth?access_type=offline&cli"
+      ]
+    },
+    {
+      "sim_id": "potentiometer",
+      "status": "ERROR",
+      "time": "21:20:59",
+      "issues": [
+        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--model', 'gemini-4-argon-medium', '--disable-slash-commands"
+      ]
+    },
+    {
+      "sim_id": "potentiometer",
+      "status": "ERROR",
+      "time": "21:44:10",
+      "issues": [
+        "agy.exe busy/rate-limited (code 1): Authentication required. Please visit the URL to log in:\n  https://accounts.google.com/o/oauth2/auth?access_type=offline&cli"
+      ]
+    },
+    {
+      "sim_id": "potentiometer",
+      "status": "ERROR",
+      "time": "22:27:16",
+      "issues": [
+        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--model', 'gemini-4-argon-medium', '--disable-slash-commands"
+      ]
+    },
+    {
+      "sim_id": "potentiometer",
+      "status": "FIXED",
+      "time": "22:33:18",
+      "issues": [
+        "Activity selector dropdown (#experimentSelect) was not wired to switch between Activity 1 (open-circuit EMF comparison, shunt disconnected) and Activity 2 (internal resistance determination with shunt R connected across Cell 1).",
+        "In Activity 1, the shunt resistance R was always connected across Cell 1 (Leclanché), causing the potentiometer to measure loaded terminal voltage instead of open-circuit EMF E1.",
+        "Action button listener targeted '.extra-actions-row .atlas-action-btn' instead of '#btn_find_null', risking unwired Auto-Balance button.",
+        "Observation table reset button (#btnReset) did not clear recorded rows in #observationTbody.",
+        "Leader line 5 anchor point (375, c1y + c1h) landed in the empty gap between Cell 1 and Cell 2 instead of touching a physical component."
+      ]
     }
   ],
   "completed_ids": [
@@ -360,6 +354,7 @@
     "classturn-ohms-law-pipeline",
     "classturn-pendulum-pipeline",
     "classturn-prism-pipeline",
+    "potentiometer",
     "u00002",
     "u00003",
     "u00004",
