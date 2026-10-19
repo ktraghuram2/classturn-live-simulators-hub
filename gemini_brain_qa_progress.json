@@ -1,61 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:31:25",
-  "completed_count": 1367,
-  "fixed_count": 1275,
-  "latest_sim_id": "u01722",
+  "updated_at": "2026-10-19 10:32:51",
+  "completed_count": 1372,
+  "fixed_count": 1279,
+  "latest_sim_id": "u01729",
   "recent_events": [
-    {
-      "sim_id": "u01683",
-      "status": "FIXED",
-      "time": "10:15:07",
-      "issues": [
-        "Raw LaTeX equation symbol y_{\\exp,i} in principles_list_html without MathML markup",
-        "Malformed MathML TS\\_{ID} with escaped underscore in observation_thead_html",
-        "Misaligned observation table row columns relative to header definitions in record button handler",
-        "Unwired action buttons btn_run_suite, btn_toggle_edge_fault and stepper buttons in canvas_js",
-        "Compliance metric reading formatted with integer precision instead of 3-decimal precision"
-      ]
-    },
-    {
-      "sim_id": "u01680",
-      "status": "FIXED",
-      "time": "10:15:07",
-      "issues": [
-        "Fixed erroneous division-by-zero MathML fraction in apparatus_html for the electrometer specification",
-        "Aligned observation table columns by separating Crystal Length and Width into distinct cells matching table header",
-        "Synchronized Barium Titanate piezoelectric charge sensitivity constant to 140.0 pC/N across theory and simulation",
-        "Wired stepper up/down buttons so users can increment and decrement parameter inputs",
-        "Wired action buttons for toggling crystal material and applying dynamic compressive force"
-      ]
-    },
-    {
-      "sim_id": "u01681",
-      "status": "PASS",
-      "time": "10:15:07",
-      "issues": []
-    },
-    {
-      "sim_id": "u01684",
-      "status": "FIXED",
-      "time": "10:15:37",
-      "issues": [
-        "Fixed corrupted boundary limit in validation_html where 'Windows 10/11' was erroneously parsed into a mathematical fraction (10 over 11)",
-        "Corrected malformed unit fraction in readouts_html and observation_thead_html where 'conn/s' was rendered as 'con n/s' fraction",
-        "Resolved table column misalignment in canvas_js by removing the unmapped trial index cell to match the 5 header columns",
-        "Wired interactive action buttons (btn_launch_tor, btn_elevate_uac, btn_execute_pecmd, btn_audit_netstat) and stepper buttons in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01686",
-      "status": "FIXED",
-      "time": "10:15:52",
-      "issues": [
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down were missing click handlers to increment and decrement input values.",
-        "Unwired action button: #btn_auto_balance ('Auto-Balance Pontoon to Equilibrium Tilt') was missing a click event listener to compute and set theoretical equilibrium heel angle.",
-        "Observation table column mismatch: tr row in btnRecord handler appended 9 <td> columns (including rowCount, Mt, draft, Mr) while observation_thead_html specifies exactly 5 columns (x, w, W, theta, GM)."
-      ]
-    },
     {
       "sim_id": "u01694",
       "status": "PASS",
@@ -355,6 +304,54 @@
         "Unwired stepper buttons: stepper-btn-up and stepper-btn-down were missing click event listeners in canvas_js",
         "Observation table column count mismatch: header defined 5 columns while row insertion generated 6 columns by prepending trialCount",
         "Mangled MathML fraction artifact in unit labels: fish/rabbit was rendered as 'fis h/r abbit' across HTML slots"
+      ]
+    },
+    {
+      "sim_id": "u01721",
+      "status": "FIXED",
+      "time": "10:31:40",
+      "issues": [
+        "Corrected malformed MathML unit representation in steppers_html and observation_thead_html where 'cm/min' was incorrectly parsed as 'c(m/m)in'."
+      ]
+    },
+    {
+      "sim_id": "u01727",
+      "status": "FIXED",
+      "time": "10:31:43",
+      "issues": [
+        "Observation table record hook inserted 9 columns in mismatched order instead of the 7 columns defined in observation_thead_html (Excitation Frequency, Bond Thickness, Bond Shear Modulus, Shear Lag Parameter, Strain Transfer Ratio, Conductance, Susceptance).",
+        "Action buttons #btn_sweep_admittance and #btn_optimize_bond_line were unhandled in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) lacked event listeners in canvas_js.",
+        "Legend pills 2 and 3 were transposed relative to apparatus item order and canvas badge numbering."
+      ]
+    },
+    {
+      "sim_id": "u01720",
+      "status": "FIXED",
+      "time": "10:32:10",
+      "issues": [
+        "Fixed raw LaTeX '\\left[CO_{2}\\right]' in steppers_html by converting it into inline MathML.",
+        "Corrected typo 'M/J/m²day' to 'MJ/m²/day' in steppers_html and observation_thead_html.",
+        "Fixed malformed fraction MathML rendering for 'tillers/m²' and 'leaves/stalk' in readouts_html and observation_thead_html.",
+        "Corrected base physiological temperature threshold tbase from 10.0 °C to 9.0 °C in canvas_js in accordance with SAMUCA principles and validation criteria.",
+        "Wired up interactive click handlers for .stepper-btn controls (▲ and ▼) in canvas_js to allow adjusting microclimatic inputs.",
+        "Fixed column misalignment in observation table row generation (aligned SRAD, CO2, Tmax, Tmin, CANHT, XLAI, atln to match observation_thead_html)."
+      ]
+    },
+    {
+      "sim_id": "u01730",
+      "status": "PASS",
+      "time": "10:32:41",
+      "issues": []
+    },
+    {
+      "sim_id": "u01729",
+      "status": "FIXED",
+      "time": "10:32:51",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted 9 columns (including trialCount, gel, and dcor) while observation_thead_html only defines 6 columns.",
+        "Unwired action buttons: 'btn_verify_connections' and 'btn_auto_align_landmarks' were declared in actions_html but had no event listeners in canvas_js.",
+        "Unwired stepper controls: '.stepper-btn-up' and '.stepper-btn-down' stepper buttons were not wired to update input values."
       ]
     }
   ],
@@ -1722,9 +1719,14 @@
     "u01716",
     "u01717",
     "u01719",
+    "u01720",
+    "u01721",
     "u01722",
     "u01723",
     "u01725",
-    "u01726"
+    "u01726",
+    "u01727",
+    "u01729",
+    "u01730"
   ]
 }
