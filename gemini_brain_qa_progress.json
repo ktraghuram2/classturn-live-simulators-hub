@@ -1,24 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 03:36:22",
-  "completed_count": 830,
-  "fixed_count": 830,
-  "latest_sim_id": "u01009",
+  "updated_at": "2026-10-19 06:46:45",
+  "completed_count": 831,
+  "fixed_count": 831,
+  "latest_sim_id": "u00153",
   "recent_events": [
-    {
-      "sim_id": "u00960",
-      "status": "FIXED",
-      "time": "03:17:54",
-      "issues": [
-        "Misaligned observation table columns: btnRecord inserted 7 <td> values (including upperLimit and omega) into a 5-column table structure, shifting numerical values into incorrect header columns.",
-        "Unwired action button: #btn_fit_cubics ('Fit Cubic Spline Segments') had no event listener or visual toggling state wired in canvas_js.",
-        "Unwired stepper controls: Stepper up/down buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners, preventing incrementing or decrementing parameters via the UI.",
-        "Badge 2 leader line length (24px) violated minLeader config (48px) and was a straight vertical line instead of an S-curve.",
-        "Truncated/corrupted plain text titles: 'title_plain' and 'experiment_options_html' displayed '38' instead of '3/8' due to unescaped fraction extraction.",
-        "Prose MathML artifact: English indefinite article 'a' was mistakenly formatted as math variable '<math><mrow><mi>a</mi></mrow></math>' in principles_summary_html, procedure_section_html, and principles_list_html.",
-        "Unclosed HTML tags in principles_list_html missing closing </ul>, </div>, and </li>."
-      ]
-    },
     {
       "sim_id": "u00959",
       "status": "FIXED",
@@ -539,6 +525,16 @@
         "Unwired action buttons: btn_unfold_planes (Unfold Reference Planes to 2D Sheet) and btn_trace_all_rays (Pulse Collimated Projector Rays) lacked click listeners.",
         "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked event listeners to increment/decrement input values.",
         "Premature dihedral plane unfolding: Reference planes rotated open at construction step 5 instead of step 6 as specified in the procedure."
+      ]
+    },
+    {
+      "sim_id": "u01008",
+      "status": "FIXED",
+      "time": "03:36:35",
+      "issues": [
+        "Observation table columns were misaligned: btnRecord pushed 10 columns including unlisted obsCount and temp while displacing RCF, whereas observation_thead_html defines exactly 8 columns (Rotor Speed, Rotor Radius, Centrifugal Force, Spin Time, Blood Volume, RBC Sed. Velocity, PBMC Yield, Interface Purity).",
+        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js.",
+        "Interactive action buttons (btn_layer_blood, btn_spin_centrifuge, btn_harvest_cryo) and experimentSelect lacked event listeners in canvas_js."
       ]
     }
   ],
@@ -1372,6 +1368,7 @@
     "u01003",
     "u01004",
     "u01005",
+    "u01008",
     "u01009"
   ]
 }
