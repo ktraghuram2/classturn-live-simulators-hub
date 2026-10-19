@@ -1,60 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:53:46",
-  "completed_count": 1622,
-  "fixed_count": 1474,
-  "latest_sim_id": "u02054",
+  "updated_at": "2026-10-19 15:54:38",
+  "completed_count": 1627,
+  "fixed_count": 1478,
+  "latest_sim_id": "u02062",
   "recent_events": [
-    {
-      "sim_id": "u02014",
-      "status": "FIXED",
-      "time": "15:47:41",
-      "issues": [
-        "Badge numbers 1, 2, and 3 in canvas_js were misaligned with legend pills (Pill 1 is Left support block, 2 is Right support block, 3 is Aluminium beam, whereas canvas_js drew Badge 1 on beam, 2 on left support, 3 on right support).",
-        "Observation table column 1 in btnRecord handler recorded beam span length L (mm) instead of baseline AB pixel distance d_AB (pixels) specified in the table header.",
-        "Action buttons #btn_capture_frame and #btn_toggle_grid were unwired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update inputs and fire change events."
-      ]
-    },
-    {
-      "sim_id": "u02019",
-      "status": "FIXED",
-      "time": "15:47:41",
-      "issues": [
-        "Observation table columns were misaligned: an unrequested row index column and fan speed reading were inserted, which displaced temperature and flow values and created an 8th column without a matching table header.",
-        "Action buttons (btn_start_pilot_cycle, btn_purge_chamber) and stepper increment/decrement buttons lacked event listeners in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u02007",
-      "status": "ERROR",
-      "time": "15:47:41",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02017",
-      "status": "FIXED",
-      "time": "15:47:41",
-      "issues": [
-        "Mismatched legend_pills_html: listed 8 items in an incorrect order instead of the 6 canonical apparatus items matching the canvas leader line badges.",
-        "Unwired action button btn_cycle_packaging: packaging trigger was unhandled in canvas_js.",
-        "Unwired stepper up/down buttons: .stepper-btn buttons lacked click event listeners in canvas_js.",
-        "Misaligned observation table columns in btnRecord click handler: recorded 6 columns with timestamp and steam pressure instead of the 7 matching observation table headers.",
-        "Misinterpreted Greek letter psi in procedure Step 1 where pneumatic supply pressure unit was written as \\psi instead of psi."
-      ]
-    },
-    {
-      "sim_id": "u02018",
-      "status": "FIXED",
-      "time": "15:47:44",
-      "issues": [
-        "Mismatched numbered badges in canvas_js: Leader lines 1 to 14 did not correspond to legend_pills_html (Heavy Bench and Distillate Receiver Tank were omitted, shifting all component badge numbers).",
-        "Observation table column mismatch: btnRecord generated 11 columns with out-of-order parameters while observation_thead_html specifies 8 columns (Elapsed Time, TT3, TT1, TT2, FT3, FT2, LT, PT).",
-        "Interactive control wiring: Stepper up/down buttons and action buttons (Toggle SCR Reboiler Heating, Toggle Total Reflux / Distillate Split) lacked event listeners in canvas_js."
-      ]
-    },
     {
       "sim_id": "u02021",
       "status": "FIXED",
@@ -366,6 +316,52 @@
         "Observation table record button appended 11 columns with mismatched fields instead of the 7 columns defined in the table header (Elapsed Time, Position, Speed, Spring Restoring Force, Viscous Damping Force, Net Dynamic Force, Total Mechanical Energy).",
         "Action buttons #btn_release_from_rest and #btn_set_critical_damping defined in actions_html were not wired with event listeners in canvas_js.",
         "Stepper increment/decrement buttons (.stepper-btn) were not wired to adjust control inputs in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02057",
+      "status": "FIXED",
+      "time": "15:53:53",
+      "issues": [
+        "Observation table recording generated 8 table columns whereas observation_thead_html only defines 4 columns (Azimuth Angle, Receiving Voltage, Relative Power, Antenna Gain).",
+        "Action buttons (btn_angle_inc, btn_angle_dec, btn_boresight_align) and stepper arrow buttons (.stepper-btn) were not wired to user event listeners in canvas_js.",
+        "setReadout pushed strings with non-numeric units (e.g., '0.0°', '300.0 V') to input[type=number] elements, causing browser rejection and clearing stepper values on each render frame."
+      ]
+    },
+    {
+      "sim_id": "u02056",
+      "status": "FIXED",
+      "time": "15:54:10",
+      "issues": [
+        "Observation table columns in recordBtn were misaligned with observation_thead_html (7 columns inserted vs 6 defined headers, including extraneous trial counter and missing Kepler invariant column r³/T²)",
+        "Action buttons (btn_deploy_cluster, btn_toggle_batch_drawing, btn_invert_orbit_direction) were completely unwired in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners",
+        "Orbital velocity vector direction and orbit path rendering did not respond to orbit direction inversion or batched path rendering toggle"
+      ]
+    },
+    {
+      "sim_id": "u02059",
+      "status": "FIXED",
+      "time": "15:54:11",
+      "issues": [
+        "Unwired action buttons (#btn_auto_hover and #btn_pitch_pulse) and stepper increment/decrement controls in canvas_js",
+        "Misaligned observation table row: had an unlisted index column (#recordIndex) and transposed column order (x, y, theta instead of theta, x, y) compared to observation thead headers"
+      ]
+    },
+    {
+      "sim_id": "u02063",
+      "status": "PASS",
+      "time": "15:54:19",
+      "issues": []
+    },
+    {
+      "sim_id": "u02062",
+      "status": "FIXED",
+      "time": "15:54:38",
+      "issues": [
+        "Observation table columns mismatched: 7 data cells rendered into 5-column thead, causing data offset",
+        "Action buttons (btn_fire_wavepacket, btn_preset_resonance) and stepper up/down buttons were unwired in canvas_js",
+        "Time-dependent Schrödinger leapfrog integrator had reversed signs, propagating wavepacket backwards in time"
       ]
     }
   ],
@@ -1991,6 +1987,11 @@
     "u02051",
     "u02052",
     "u02053",
-    "u02054"
+    "u02054",
+    "u02056",
+    "u02057",
+    "u02059",
+    "u02062",
+    "u02063"
   ]
 }
