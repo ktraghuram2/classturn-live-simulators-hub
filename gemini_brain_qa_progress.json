@@ -1,21 +1,10 @@
 {
   "runner_state": "ACTIVE (6 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 19:44:12",
-  "completed_count": 2121,
+  "updated_at": "2026-10-19 19:44:28",
+  "completed_count": 2122,
   "fixed_count": 1892,
-  "latest_sim_id": "classturn-ohms-law-pipeline",
+  "latest_sim_id": "classturn-prism-pipeline",
   "recent_events": [
-    {
-      "sim_id": "u02068",
-      "status": "FIXED",
-      "time": "19:10:05",
-      "issues": [
-        "Live telemetry readout updater in canvas_js queried elements by id without checking the 'val_' prefix (id='val_reading_*'), causing live DOM values to remain static.",
-        "Action buttons #btn_set_central ('Align Center to Mean') and #btn_quadrature_sweep ('Execute Trapezoidal Quadrature Sweep') lacked click event listeners in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) lacked click event listeners to modify stepper inputs.",
-        "Experiment options dropdown (#experimentSelect) was unwired to switch between raw moments (k=0) and central moments (k=μ)."
-      ]
-    },
     {
       "sim_id": "u02007",
       "status": "ERROR",
@@ -357,6 +346,12 @@
       "issues": [
         "Unwired action button: #btn_sweep_vi ('Auto-Sweep V-I Operating Points') was queried from DOM but never wired to any click event listener in canvas_js."
       ]
+    },
+    {
+      "sim_id": "classturn-prism-pipeline",
+      "status": "PASS",
+      "time": "19:44:28",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -364,6 +359,7 @@
     "classturn-hookes-law-pipeline",
     "classturn-ohms-law-pipeline",
     "classturn-pendulum-pipeline",
+    "classturn-prism-pipeline",
     "u00002",
     "u00003",
     "u00004",
