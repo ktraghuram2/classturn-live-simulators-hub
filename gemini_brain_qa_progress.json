@@ -1,67 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:25:08",
-  "completed_count": 1572,
-  "fixed_count": 1435,
-  "latest_sim_id": "u01988",
+  "updated_at": "2026-10-19 15:26:42",
+  "completed_count": 1577,
+  "fixed_count": 1440,
+  "latest_sim_id": "u02004",
   "recent_events": [
-    {
-      "sim_id": "u01943",
-      "status": "ERROR",
-      "time": "14:43:33",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01954",
-      "status": "FIXED",
-      "time": "14:43:33",
-      "issues": [
-        "Observation table columns in record button handler were misaligned with observation_thead_html: the first column (Inspection Case) was missing while unlisted receiver gain was included, and the backwall transit time and echo amplitude columns were swapped.",
-        "Stepper increment and decrement buttons (.stepper-btn) lacked click event listener wiring in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01937",
-      "status": "FIXED",
-      "time": "14:43:33",
-      "issues": [
-        "Unwired action button btn_inject_sequence in canvas_js",
-        "Observation table recording row contained 7 columns mismatched against 6-column thead",
-        "Malformed MathML fraction (V/5) in apparatus specification for 0 V to 5 V TTL"
-      ]
-    },
-    {
-      "sim_id": "u01956",
-      "status": "ERROR",
-      "time": "14:43:33",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01959",
-      "status": "PASS",
-      "time": "14:43:33",
-      "issues": []
-    },
-    {
-      "sim_id": "u01946",
-      "status": "ERROR",
-      "time": "14:43:33",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01952",
-      "status": "ERROR",
-      "time": "14:43:33",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01955",
       "status": "FIXED",
@@ -378,6 +321,77 @@
         "Broken readout DOM element lookups: canvas_js queried 'reading_exec_time' etc. instead of the value spans 'val_reading_exec_time' etc., preventing telemetry readout updates",
         "Misaligned observation ledger table columns: tr rendered 8 misordered table cells (including extraneous trial counter and orphaned CVSS column) against a 6-column table header [Preset, Injected Delay, Execution Latency, Stream Output Size, Process Exit Status, Process User ID]",
         "Raw mathematical fraction LaTeX artifact in validation HTML: standard I/O was rendered as a vertical fraction I over O"
+      ]
+    },
+    {
+      "sim_id": "u01987",
+      "status": "FIXED",
+      "time": "15:25:13",
+      "issues": [
+        "Observation table recorded 11 columns in canvas_js, misaligning with the 6 columns defined in observation_thead_html",
+        "Stepper buttons (.stepper-btn-up and .stepper-btn-down) were not wired to input controls in canvas_js",
+        "Action buttons (btn_start_stirring, btn_inject_reagents, btn_elute_column) lacked event listeners and interactive state",
+        "Badges 1 and 2 in canvas_js were inverted relative to legend_pills_html (Pill 1 is Stirrer, Pill 2 is Flask)"
+      ]
+    },
+    {
+      "sim_id": "u01994",
+      "status": "FIXED",
+      "time": "15:25:13",
+      "issues": [
+        "Unwired interactive action buttons (#btn_run_code and #btn_optimize_dtypes) in canvas_js",
+        "Unwired stepper increment/decrement buttons (.stepper-btn) and experiment select dropdown",
+        "Missing variable symbol C in feature column count header in observation_thead_html",
+        "Wired observation table record button handler to record simulation states"
+      ]
+    },
+    {
+      "sim_id": "u01997",
+      "status": "FIXED",
+      "time": "15:25:16",
+      "issues": [
+        "Replaced erroneous MathML fraction 17/21 in apparatus specification with plain text 'JVM 17/21'",
+        "Wired action buttons (btn_inject_type_mismatch, btn_inject_null_deref, btn_run_wildcard_count) to trigger their corresponding execution steps",
+        "Wired stepper buttons (stepper-btn-up, stepper-btn-down) to increment and decrement inputs",
+        "Fixed observation table record button to emit 5 columns matching the observation thead structure instead of 6 mismatched columns"
+      ]
+    },
+    {
+      "sim_id": "u01989",
+      "status": "ERROR",
+      "time": "15:25:43",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01990",
+      "status": "ERROR",
+      "time": "15:26:38",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02005",
+      "status": "FIXED",
+      "time": "15:26:39",
+      "issues": [
+        "Unwired action button #btn_project_subspace ('Compute Optimal Subspace Projection')",
+        "Unwired stepper buttons (.stepper-btn-up and .stepper-btn-down) for principal component selector",
+        "Stateful PRNG gaussian() call inside 60 FPS animation render loop causing CRT scatter point jitter for k >= 4"
+      ]
+    },
+    {
+      "sim_id": "u02004",
+      "status": "FIXED",
+      "time": "15:26:42",
+      "issues": [
+        "Resample button #btn_resample_data was present in the controls HTML but not wired to regenerate data or reinitialize weights in canvas_js",
+        "Stepper increment and decrement buttons were not wired in canvas_js to adjust stepper values",
+        "Observation table record button logged 8 mismatched columns instead of the 5 columns defined in observation_thead_html",
+        "Experiment activity selector #experimentSelect was not wired to reconfigure data manifold between uniform/clustered and non-convex distributions",
+        "Neighborhood radius telemetry decay schedule had an excessively steep decay exponent (-10.0) causing premature zero-reading during active topological adaptation"
       ]
     }
   ],
@@ -1949,10 +1963,15 @@
     "u01981",
     "u01982",
     "u01986",
+    "u01987",
     "u01988",
     "u01992",
     "u01993",
+    "u01994",
     "u01995",
-    "u01996"
+    "u01996",
+    "u01997",
+    "u02004",
+    "u02005"
   ]
 }
