@@ -1,58 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:12:02",
-  "completed_count": 1337,
-  "fixed_count": 1255,
-  "latest_sim_id": "u01682",
+  "updated_at": "2026-10-19 10:15:37",
+  "completed_count": 1342,
+  "fixed_count": 1258,
+  "latest_sim_id": "u01684",
   "recent_events": [
-    {
-      "sim_id": "u01636",
-      "status": "ERROR",
-      "time": "10:02:53",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01639",
-      "status": "FIXED",
-      "time": "10:03:09",
-      "issues": [
-        "Observation table columns were misaligned: canvas_js generated 9 td elements for a 5-column table header (Standard Torque, Conditioned Voltage, Measured Torque, Measurement Error, Linearity Deviation)",
-        "Action buttons 'Auto-Null Zero Offset' (btn_auto_zero) and 'Auto-Calibrate Full-Scale Span' (btn_auto_span) were unwired in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js"
-      ]
-    },
-    {
-      "sim_id": "u01637",
-      "status": "PASS",
-      "time": "10:03:29",
-      "issues": []
-    },
-    {
-      "sim_id": "u01642",
-      "status": "FIXED",
-      "time": "10:03:35",
-      "issues": [
-        "Misaligned observation table: recording listener inserted 9 columns into a 5-column table",
-        "Swapped Style 2 leader line badges: Badge 4 labeled the Compaction Rammer and Badge 5 labeled the Surcharge Weight, conflicting with Legend Pills 4 (Surcharge Weight) and 5 (Compaction Rammer)",
-        "Unwired interactive controls: 'btn_motor_drive' (motorized platen drive), 'btn_tare_gauges' (zeroing/tare), and stepper buttons lacked event listeners"
-      ]
-    },
-    {
-      "sim_id": "u01645",
-      "status": "PASS",
-      "time": "10:03:36",
-      "issues": []
-    },
-    {
-      "sim_id": "u01640",
-      "status": "ERROR",
-      "time": "10:03:49",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01643",
       "status": "FIXED",
@@ -372,6 +324,61 @@
         "Telemetry element ID mismatch: canvas_js targeted 'reading_output', 'reading_2'...'reading_6' instead of the actual value span IDs 'val_reading_output', 'val_reading_2'...'val_reading_6', preventing live readouts from updating.",
         "Unwired action button: 'btn_specific_action' (Apply Full Design Factored Load) was present in actions_html but had no click event listener wired in canvas_js.",
         "Unwired stepper controls: stepper up/down buttons (.stepper-btn) lacked click event listeners in canvas_js to increment/decrement input values."
+      ]
+    },
+    {
+      "sim_id": "u01679",
+      "status": "ERROR",
+      "time": "10:15:07",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01688",
+      "status": "PASS",
+      "time": "10:15:07",
+      "issues": []
+    },
+    {
+      "sim_id": "u01683",
+      "status": "FIXED",
+      "time": "10:15:07",
+      "issues": [
+        "Raw LaTeX equation symbol y_{\\exp,i} in principles_list_html without MathML markup",
+        "Malformed MathML TS\\_{ID} with escaped underscore in observation_thead_html",
+        "Misaligned observation table row columns relative to header definitions in record button handler",
+        "Unwired action buttons btn_run_suite, btn_toggle_edge_fault and stepper buttons in canvas_js",
+        "Compliance metric reading formatted with integer precision instead of 3-decimal precision"
+      ]
+    },
+    {
+      "sim_id": "u01680",
+      "status": "FIXED",
+      "time": "10:15:07",
+      "issues": [
+        "Fixed erroneous division-by-zero MathML fraction in apparatus_html for the electrometer specification",
+        "Aligned observation table columns by separating Crystal Length and Width into distinct cells matching table header",
+        "Synchronized Barium Titanate piezoelectric charge sensitivity constant to 140.0 pC/N across theory and simulation",
+        "Wired stepper up/down buttons so users can increment and decrement parameter inputs",
+        "Wired action buttons for toggling crystal material and applying dynamic compressive force"
+      ]
+    },
+    {
+      "sim_id": "u01681",
+      "status": "PASS",
+      "time": "10:15:07",
+      "issues": []
+    },
+    {
+      "sim_id": "u01684",
+      "status": "FIXED",
+      "time": "10:15:37",
+      "issues": [
+        "Fixed corrupted boundary limit in validation_html where 'Windows 10/11' was erroneously parsed into a mathematical fraction (10 over 11)",
+        "Corrected malformed unit fraction in readouts_html and observation_thead_html where 'conn/s' was rendered as 'con n/s' fraction",
+        "Resolved table column misalignment in canvas_js by removing the unmapped trial index cell to match the 5 header columns",
+        "Wired interactive action buttons (btn_launch_tor, btn_elevate_uac, btn_execute_pecmd, btn_audit_netstat) and stepper buttons in canvas_js"
       ]
     }
   ],
@@ -1712,6 +1719,11 @@
     "u01675",
     "u01677",
     "u01678",
-    "u01682"
+    "u01680",
+    "u01681",
+    "u01682",
+    "u01683",
+    "u01684",
+    "u01688"
   ]
 }
