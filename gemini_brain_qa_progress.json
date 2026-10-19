@@ -1,49 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:28:05",
-  "completed_count": 1502,
-  "fixed_count": 1378,
-  "latest_sim_id": "u01902",
+  "updated_at": "2026-10-19 14:29:01",
+  "completed_count": 1507,
+  "fixed_count": 1382,
+  "latest_sim_id": "u01910",
   "recent_events": [
-    {
-      "sim_id": "u01871",
-      "status": "ERROR",
-      "time": "13:45:31",
-      "issues": [
-        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--model', 'gemini-3.8-flash-high', '--disable-slash-commands"
-      ]
-    },
-    {
-      "sim_id": "u01870",
-      "status": "ERROR",
-      "time": "14:19:38",
-      "issues": [
-        "Command '['C:\\\\Users\\\\ktrag\\\\AppData\\\\Local\\\\agy\\\\bin\\\\agy.EXE', '--dangerously-skip-permissions', '--model', 'gemini-3.8-flash-high', '--disable-slash-commands"
-      ]
-    },
-    {
-      "sim_id": "u01872",
-      "status": "PASS",
-      "time": "14:20:12",
-      "issues": []
-    },
-    {
-      "sim_id": "u01867",
-      "status": "FIXED",
-      "time": "14:20:15",
-      "issues": [
-        "Observation table columns in canvas_js btnRecord were misaligned and mismatched: pushed 7 numeric columns (including temperature, OD600, and wavelength) into a 6-column thead expecting Sector, Incubation Time, Colony Coloration, Mannitol Acid Status, Opacity Zone Diameter, and Lecithinase Reaction",
-        "Unwired action buttons: 'btn_streak_inoculate' and 'btn_inspect_lighting' had no event listeners in canvas_js",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked fallback click listeners to increment/decrement input values",
-        "Oblique darkfield illumination toggle and flaming animation state were not integrated into the canvas rendering pipeline"
-      ]
-    },
-    {
-      "sim_id": "u01863",
-      "status": "PASS",
-      "time": "14:20:34",
-      "issues": []
-    },
     {
       "sim_id": "u01875",
       "status": "PASS",
@@ -369,6 +330,56 @@
         "Misaligned observation table row columns: canvas_js generated 8 td cells but observation_thead_html specifies 6 columns (removed redundant A_0 and precRate columns)",
         "Unwired action buttons: #btn_inject_pulse and #btn_clear_waves were declared in actions_html but lacked click event listeners in canvas_js",
         "Unwired stepper buttons: .stepper-btn up and down increment controls were missing click handler logic in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01905",
+      "status": "FIXED",
+      "time": "14:28:08",
+      "issues": [
+        "Unwired action buttons: 'Align to Villarceau Torus Slice' (btn_align_villarceau) and 'Cycle 4D Isoclinic Spin' (btn_toggle_ortho_rotation) lacked click listeners",
+        "Unwired stepper controls: Stepper increment (▲) and decrement (▼) buttons lacked event handlers to modify parameter inputs",
+        "Observation table column mismatch: btnRecord inserted 9 <td> columns whereas observation_thead_html defines exactly 6 columns (Primary Angle, Orthogonal Angle, Pole Distance, Conformal Scale, Core Radius, Field Helicity)"
+      ]
+    },
+    {
+      "sim_id": "u01906",
+      "status": "FIXED",
+      "time": "14:28:31",
+      "issues": [
+        "Unwired stepper buttons: stepper-btn-up and stepper-btn-down lacked click listeners to increment/decrement stepper input values.",
+        "Unwired action buttons and mode switching: btn_toggle_circuit_mode, btn_trim_offset, and experimentSelect were not hooked up to toggle between Adder, Subtractor, and Scaler modes or trim offset null.",
+        "Misaligned observation table columns: btnRecord inserted rowCount and R1 into columns designated for Operating Mode and Feedback Resistor, and omitted Percentage Error, resulting in mismatched headers.",
+        "Undeclared global variable bgGrad in drawBreadboard routine.",
+        "Simulation physics and output calculation were hardcoded strictly to inverting summing amplifier without supporting subtraction or scalar multiplier modes."
+      ]
+    },
+    {
+      "sim_id": "u01907",
+      "status": "FIXED",
+      "time": "14:28:48",
+      "issues": [
+        "Telemetry readout DOM element IDs in canvas_js (reading_rows_per_rank, etc.) did not match slot IDs (val_reading_rows_per_rank, etc.), preventing live telemetry readouts from updating",
+        "Action buttons #btn_execute_mpi and #btn_step_phase were rendered in actions_html but unhandled in canvas_js",
+        "Observation table row generation injected an unheaded record counter column producing 8 cells against 7 table headers, causing severe column misalignment",
+        "Missing initial call to updateTelemetry() on page load"
+      ]
+    },
+    {
+      "sim_id": "u01909",
+      "status": "PASS",
+      "time": "14:28:54",
+      "issues": []
+    },
+    {
+      "sim_id": "u01910",
+      "status": "FIXED",
+      "time": "14:29:01",
+      "issues": [
+        "Critical TypeError in drawCurvyLeader: badgeNum parameter was omitted in all render calls, causing badgeNum.toString() to throw an uncaught exception on frame 1.",
+        "Curvy leader badge numbers were swapped and inconsistent with Section 2 Apparatus and Legend pills (Registers is #1, Framing Unit is #2, ALU is #3, Modulo Adder is #4, Output Bus is #5).",
+        "Unwired action button btn_auto_hash ('Run Full Compression Loop') and missing event listeners for stepper up/down buttons (.stepper-btn).",
+        "Misaligned observation table columns: row recording inserted an unmapped numeric index column shifting all 7 telemetry columns out of alignment with the observation table header."
       ]
     }
   ],
@@ -1874,6 +1885,11 @@
     "u01899",
     "u01900",
     "u01902",
-    "u01904"
+    "u01904",
+    "u01905",
+    "u01906",
+    "u01907",
+    "u01909",
+    "u01910"
   ]
 }
