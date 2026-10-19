@@ -1,87 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:38:10",
-  "completed_count": 1097,
-  "fixed_count": 1065,
-  "latest_sim_id": "u01352",
+  "updated_at": "2026-10-19 08:39:49",
+  "completed_count": 1102,
+  "fixed_count": 1067,
+  "latest_sim_id": "u01365",
   "recent_events": [
-    {
-      "sim_id": "u01303",
-      "status": "FIXED",
-      "time": "08:29:45",
-      "issues": [
-        "Observation table columns in canvas_js row builder were misaligned with the 7 headers in observation_thead_html (an extraneous serial number and count rate column were present while the extrapolated lattice parameter a0 column was missing).",
-        "Action buttons btn_peak_search (Auto-Align to Nearest Peak Centroid) and btn_compute_extrapolation (Execute Nelson-Riley Regression Fit) were defined in actions_html but lacked event listeners in canvas_js.",
-        "Stepper input increment/decrement buttons (.stepper-btn) were not wired to update inputs in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01310",
-      "status": "FIXED",
-      "time": "08:30:24",
-      "issues": [
-        "Misaligned observation table columns: btnRecord appended 8 td elements (including an unlisted force column and nFit) into a 7-column observation table, causing data misalignment with headers.",
-        "Unwired action buttons: 'btn_dock_flake' (Snap-Fit Flake into Target Cavity) and 'btn_auto_refit' (Auto-Align Lithic Scars to Core) were declared in controls but lacked event listeners in canvas_js.",
-        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn) lacked click event listeners to modify stepper input values.",
-        "Numeric input value corruption: setVal was setting non-numeric unit strings ('°', ' N') into HTML number inputs (flake_angle, seating_force) every render frame, clearing the inputs."
-      ]
-    },
-    {
-      "sim_id": "u01309",
-      "status": "FIXED",
-      "time": "08:30:39",
-      "issues": [
-        "Wired unwired action button #btn_verify_conjoining to trigger optical verification laser scanning and populate the 8-column observation table with reduction sequence metrics",
-        "Connected stepper buttons (.stepper-btn-up, .stepper-btn-down) with event dispatching to enable step increments for active segment, calliper datum, and specimen azimuth",
-        "Added double-click interaction to quickly toggle lithic flake docking between the staging tray and assembly jig",
-        "Added segment identifier badges (S1 through S8) at polygon centroids for clear flake identification on the dark canvas floor",
-        "Reordered legend_pills_html into numerical order matching apparatus elements 1 through 5"
-      ]
-    },
-    {
-      "sim_id": "u01302",
-      "status": "ERROR",
-      "time": "08:30:42",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01305",
-      "status": "ERROR",
-      "time": "08:30:50",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01312",
-      "status": "FIXED",
-      "time": "08:31:08",
-      "issues": [
-        "Observation table columns in canvas_js (9 columns in mismatched order) did not align with the 7 columns in observation_thead_html",
-        "Missing click event listener wiring for .stepper-btn controls"
-      ]
-    },
-    {
-      "sim_id": "u01311",
-      "status": "FIXED",
-      "time": "08:31:10",
-      "issues": [
-        "Stepper buttons (.stepper-btn-up, .stepper-btn-down) were missing click event listeners to increment/decrement input values",
-        "Action buttons (btn_align_principal, btn_align_max_shear) lacked click handlers to calculate and apply principal and maximum shear rotation angles"
-      ]
-    },
-    {
-      "sim_id": "u01314",
-      "status": "FIXED",
-      "time": "08:31:22",
-      "issues": [
-        "Observation table columns inserted by btnRecord were completely misaligned with observation_thead_html headers (mismatched columns for construction mode, base dimension, compass radius, bisected segment/angle, polygon side count, interior angle, and side length).",
-        "Action button 'btn_auto_construct' was unwired without a click event listener.",
-        "Stepper increment and decrement buttons (.stepper-btn) were unwired without click event listeners to update parameter inputs and dispatch input events for live telemetry updates."
-      ]
-    },
     {
       "sim_id": "u01313",
       "status": "ERROR",
@@ -395,6 +318,70 @@
         "Observation table columns in btnRecord (7 columns) did not match the 9 columns declared in observation_thead_html",
         "Action buttons (btn_run_trace, btn_flush_pipeline) and stepper up/down buttons were unhandled/unwired in canvas_js"
       ]
+    },
+    {
+      "sim_id": "u01356",
+      "status": "ERROR",
+      "time": "08:38:14",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01357",
+      "status": "FIXED",
+      "time": "08:38:32",
+      "issues": [
+        "Unwired action buttons: 'btn_trigger_harmonic' (Trigger Resonant Base Excitation) and 'btn_free_decay' (Release from Initial Modal Offset) were present in HTML but had no event listeners or physics state handling in canvas_js.",
+        "Unwired stepper up/down buttons: clicking the stepper buttons did not increment/decrement values because only input/change on the input fields were monitored.",
+        "Observation table column misalignment: the observation row rendered 12 <td> cells with observation index and 3 stiffness values, misaligning against the 9 columns defined in observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u01359",
+      "status": "PASS",
+      "time": "08:38:44",
+      "issues": []
+    },
+    {
+      "sim_id": "u01350",
+      "status": "ERROR",
+      "time": "08:38:44",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01361",
+      "status": "PASS",
+      "time": "08:39:18",
+      "issues": []
+    },
+    {
+      "sim_id": "u01360",
+      "status": "FIXED",
+      "time": "08:39:21",
+      "issues": [
+        "Observation table logging appended only 8 values which were misaligned against the 11 defined table headers",
+        "Action button 'btn_feed_slab' (Engage Feed Mechanism) was unhandled in canvas_js",
+        "Action button 'btn_toggle_coolant' (Apply Emulsion Lubrication) was unhandled in canvas_js",
+        "Stepper increment and decrement buttons (.stepper-btn) were not wired to input controls in canvas_js",
+        "Animation loop lacked dynamic feed mechanism engagement toggle control"
+      ]
+    },
+    {
+      "sim_id": "u01358",
+      "status": "ERROR",
+      "time": "08:39:42",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01365",
+      "status": "PASS",
+      "time": "08:39:48",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1494,6 +1481,11 @@
     "u01352",
     "u01353",
     "u01354",
-    "u01355"
+    "u01355",
+    "u01357",
+    "u01359",
+    "u01360",
+    "u01361",
+    "u01365"
   ]
 }
