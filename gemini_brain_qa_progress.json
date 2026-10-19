@@ -1,74 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:51:42",
-  "completed_count": 1612,
-  "fixed_count": 1466,
-  "latest_sim_id": "u02032",
+  "updated_at": "2026-10-19 15:53:00",
+  "completed_count": 1617,
+  "fixed_count": 1470,
+  "latest_sim_id": "u02051",
   "recent_events": [
-    {
-      "sim_id": "u02002",
-      "status": "FIXED",
-      "time": "15:27:12",
-      "issues": [
-        "Observation table record button generated an extra Laser Power column (10 columns inserted instead of 9), shifting and misaligning all computed kinematic velocity columns with table header labels",
-        "Action buttons 'btn_capture_frame_pair' (Trigger Dual Laser Pulse) and 'btn_toggle_vector_field' (Compute Cross-Correlation Vector Overlay) were unhandled in canvas_js",
-        "Stepper increment and decrement buttons ('.stepper-btn') were not wired to input controls in canvas_js",
-        "Greek delta symbols in procedure and validation MathML slots were disconnected from variable letters (e.g. Delta t, Delta x, Delta y)"
-      ]
-    },
-    {
-      "sim_id": "u02001",
-      "status": "PASS",
-      "time": "15:27:15",
-      "issues": []
-    },
-    {
-      "sim_id": "u02008",
-      "status": "PASS",
-      "time": "15:27:41",
-      "issues": []
-    },
-    {
-      "sim_id": "u01998",
-      "status": "FIXED",
-      "time": "15:27:47",
-      "issues": [
-        "Unwired action buttons: btn_cycle_model and btn_seed_equilibrium lacked click logic to cycle ecological regimes and seed analytical equilibrium coordinates.",
-        "Unwired precision stepper buttons: clicking up/down stepper buttons (.stepper-btn-up, .stepper-btn-down) did not increment or decrement input values.",
-        "Misaligned observation table columns: btnRecord prepended rowCount into an 8-column header with no row number, omitted conversion factor c, and shifted data entries.",
-        "Missing Negative Binomial parasitoid calculation: P1_NB and state.p_nb were absent from recursion equations.",
-        "Low contrast insect outlines: host insects used dark #1e293b outlines against dark microcosm chamber background."
-      ]
-    },
-    {
-      "sim_id": "u02011",
-      "status": "FIXED",
-      "time": "15:28:08",
-      "issues": [
-        "Wired action buttons btn_add_peroxide_and_start and btn_stir_mixture to control reaction playback and stirring animation",
-        "Wired stepper up/down buttons (.stepper-btn) to increment/decrement input values and trigger input events",
-        "Aligned observation table recorded row columns to match the 6 columns in the observation table header"
-      ]
-    },
-    {
-      "sim_id": "u02009",
-      "status": "FIXED",
-      "time": "15:28:13",
-      "issues": [
-        "Observation table record button in canvas_js generated 7 columns instead of 8, omitting the Trial Number and misaligning parameter values with table headers",
-        "Action buttons btn_auto_estimate_period and btn_toggle_gibbs_marker were present in HTML but unhandled and unwired in canvas_js",
-        "Stepper increment and decrement buttons (stepper-btn-up and stepper-btn-down) lacked event listeners in canvas_js, preventing arrow adjustment of simulation controls",
-        "Missing visual overlays on oscilloscope for Gibbs phenomenon overshoot measurement and autocorrelation fundamental period detection"
-      ]
-    },
-    {
-      "sim_id": "u01999",
-      "status": "ERROR",
-      "time": "15:28:23",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u02006",
       "status": "FIXED",
@@ -369,6 +305,67 @@
         "Unwired action buttons: '#btn_snap_concentric' and '#btn_reconstruct_vessel' were declared in HTML but never referenced or wired up in canvas_js.",
         "Unwired stepper controls: '.stepper-btn' up and down buttons lacked event listeners in canvas_js.",
         "Observation table column mismatch: observation_thead_html has 5 columns (Arc Length, Diameter, Circumference, Rim Completeness, Wall Thickness), but canvas_js inserted 7 columns in an incompatible order."
+      ]
+    },
+    {
+      "sim_id": "u02045",
+      "status": "PASS",
+      "time": "15:52:05",
+      "issues": []
+    },
+    {
+      "sim_id": "u02034",
+      "status": "ERROR",
+      "time": "15:52:15",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02046",
+      "status": "FIXED",
+      "time": "15:52:19",
+      "issues": [
+        "Observation table rows had misaligned columns (missing Trial # and Supply Voltage Vs, and included extraneous detection state S, causing a column mismatch with observation_thead_html)"
+      ]
+    },
+    {
+      "sim_id": "u02048",
+      "status": "FIXED",
+      "time": "15:52:39",
+      "issues": [
+        "Observation table columns were misaligned: observation_thead_html has 7 columns (Plug Setting, TMS, Injected Current, PSM, Theoretical Trip Time, Measured Trip Time, Percentage Error), but observation recorder prepended runCount and omitted percentage error, causing severe column shift.",
+        "Action button #btn_inject_fault ('Trigger Fault Current Injection') was present in DOM controls but unwired in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js, preventing UI adjustment of Plug Setting, TMS, and Fault Current."
+      ]
+    },
+    {
+      "sim_id": "u02050",
+      "status": "FIXED",
+      "time": "15:52:40",
+      "issues": [
+        "Fixed corrupted raw LaTeX fraction syntax in principles_list_html with valid MathML rendering",
+        "Converted unformatted text symbol Δt_RR in procedure_section_html Step 8 to standardized MathML",
+        "Aligned observation recording table row columns in canvas_js to match the 6 columns defined in observation_thead_html",
+        "Wired action button btn_inject_missing_pulse in canvas_js for manual dropped beat triggering"
+      ]
+    },
+    {
+      "sim_id": "u02044",
+      "status": "ERROR",
+      "time": "15:52:58",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02051",
+      "status": "FIXED",
+      "time": "15:53:00",
+      "issues": [
+        "Observation table column mismatch: btnRecord inserted 8 <td> elements into a 5-column table header; corrected to match the 5 header columns (Path Length, Transit Time, Pulse Velocity, Dynamic Elastic Modulus, Concrete Quality).",
+        "Leader line badge number misalignment: Concrete Specimen was assigned badge 6 instead of 3, and Receiving Transducer was assigned badge 3 instead of 4, conflicting with legend_pills_html. Corrected badge order to strictly match legend pills.",
+        "Unwired action and stepper buttons: btn_calibrate_zero, btn_toggle_arrangement, btn_toggle_moisture, and stepper up/down buttons (.stepper-btn) lacked event listeners in canvas_js. Added interactive event handlers and physics state toggles."
       ]
     }
   ],
@@ -1984,6 +1981,11 @@
     "u02040",
     "u02041",
     "u02042",
-    "u02043"
+    "u02043",
+    "u02045",
+    "u02046",
+    "u02048",
+    "u02050",
+    "u02051"
   ]
 }
