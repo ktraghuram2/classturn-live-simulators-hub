@@ -1,55 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 19:33:24",
-  "completed_count": 2107,
-  "fixed_count": 1888,
-  "latest_sim_id": "u02044",
+  "updated_at": "2026-10-19 19:34:20",
+  "completed_count": 2112,
+  "fixed_count": 1889,
+  "latest_sim_id": "u01985",
   "recent_events": [
-    {
-      "sim_id": "u01833",
-      "status": "FIXED",
-      "time": "19:06:13",
-      "issues": [
-        "Observation table recorded only 5 columns, omitting Battery Voltage V_batt and causing column misalignment against the 6-column thead.",
-        "Unwired action buttons: 'btn_toggle_relay' and 'btn_reverse_polarity' had no event listeners attached.",
-        "Unwired stepper buttons: '.stepper-btn' (up/down) buttons lacked click handlers to increment/decrement input values."
-      ]
-    },
-    {
-      "sim_id": "u01870",
-      "status": "FIXED",
-      "time": "19:06:35",
-      "issues": [
-        "Misaligned observation table: record button handler generated 8 mismatched data cells instead of the 6 columns defined in observation_thead_html (Character Identifier, Nominal Height, Tolerance Radius, Mean Deviation, Accuracy Score, Completion Status).",
-        "Unwired action buttons: 'btn_clear_trace' (Clear Current Stroke Path) and 'btn_toggle_guidelines' (Toggle BIS Reference Grid) lacked click event listeners in canvas_js.",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) and input/change event listeners were not connected in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01889",
-      "status": "FIXED",
-      "time": "19:06:46",
-      "issues": [
-        "Fixed corrupted nested fraction MathML in apparatus_html Ethernet specification",
-        "Corrected corrupted stepper unit pkts/s in steppers_html",
-        "Wired stepper up/down buttons and action trigger button btn_run_snort_inspection in canvas_js",
-        "Aligned observation table row generation to exactly match the 5 columns of observation_thead_html"
-      ]
-    },
-    {
-      "sim_id": "u01655",
-      "status": "ERROR",
-      "time": "19:06:53",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01705",
-      "status": "PASS",
-      "time": "19:07:19",
-      "issues": []
-    },
     {
       "sim_id": "u01646",
       "status": "ERROR",
@@ -387,6 +342,40 @@
         "Malformed MathML units in steppers_html and observation_thead_html: mL/min and mg/mL rendered as broken fractions with separate letters",
         "Spurious MathML single letter 'a' in aim_html and principles_summary_html"
       ]
+    },
+    {
+      "sim_id": "u01789",
+      "status": "PASS",
+      "time": "19:33:27",
+      "issues": []
+    },
+    {
+      "sim_id": "u02323",
+      "status": "FIXED",
+      "time": "19:33:47",
+      "issues": [
+        "Fixed malformed MathML entity in principles_summary_html where &gt; was rendered as <mi>&</mi><mi>g</mi><mi>t</mi><mi>;</mi> instead of <mo>&gt;</mo>",
+        "Wired interactive action buttons (btn_transmit_user, btn_trigger_bot, btn_jam_and_backoff) and stepper buttons in canvas_js",
+        "Aligned observation table recorded columns in btnRecord click handler to match all 6 observation header columns (k, L, V_bus, C_flag, Backoff Window, Backoff Delay)"
+      ]
+    },
+    {
+      "sim_id": "u01655",
+      "status": "PASS",
+      "time": "19:33:48",
+      "issues": []
+    },
+    {
+      "sim_id": "u02007",
+      "status": "PASS",
+      "time": "19:34:19",
+      "issues": []
+    },
+    {
+      "sim_id": "u01985",
+      "status": "PASS",
+      "time": "19:34:20",
+      "issues": []
     }
   ],
   "completed_ids": [
@@ -1801,6 +1790,7 @@
     "u01652",
     "u01653",
     "u01654",
+    "u01655",
     "u01656",
     "u01657",
     "u01658",
@@ -1929,6 +1919,7 @@
     "u01786",
     "u01787",
     "u01788",
+    "u01789",
     "u01790",
     "u01791",
     "u01792",
@@ -2116,6 +2107,7 @@
     "u01982",
     "u01983",
     "u01984",
+    "u01985",
     "u01986",
     "u01987",
     "u01988",
@@ -2135,6 +2127,7 @@
     "u02004",
     "u02005",
     "u02006",
+    "u02007",
     "u02008",
     "u02009",
     "u02010",
@@ -2438,6 +2431,7 @@
     "u02320",
     "u02321",
     "u02322",
+    "u02323",
     "u02324",
     "u02325",
     "u02326",
