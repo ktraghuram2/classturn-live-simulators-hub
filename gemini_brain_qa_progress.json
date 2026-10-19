@@ -1,61 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:00:42",
-  "completed_count": 1642,
-  "fixed_count": 1491,
-  "latest_sim_id": "u02082",
+  "updated_at": "2026-10-19 16:02:18",
+  "completed_count": 1647,
+  "fixed_count": 1494,
+  "latest_sim_id": "u02088",
   "recent_events": [
-    {
-      "sim_id": "u02045",
-      "status": "PASS",
-      "time": "15:52:05",
-      "issues": []
-    },
-    {
-      "sim_id": "u02034",
-      "status": "ERROR",
-      "time": "15:52:15",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02046",
-      "status": "FIXED",
-      "time": "15:52:19",
-      "issues": [
-        "Observation table rows had misaligned columns (missing Trial # and Supply Voltage Vs, and included extraneous detection state S, causing a column mismatch with observation_thead_html)"
-      ]
-    },
-    {
-      "sim_id": "u02048",
-      "status": "FIXED",
-      "time": "15:52:39",
-      "issues": [
-        "Observation table columns were misaligned: observation_thead_html has 7 columns (Plug Setting, TMS, Injected Current, PSM, Theoretical Trip Time, Measured Trip Time, Percentage Error), but observation recorder prepended runCount and omitted percentage error, causing severe column shift.",
-        "Action button #btn_inject_fault ('Trigger Fault Current Injection') was present in DOM controls but unwired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) were unwired in canvas_js, preventing UI adjustment of Plug Setting, TMS, and Fault Current."
-      ]
-    },
-    {
-      "sim_id": "u02050",
-      "status": "FIXED",
-      "time": "15:52:40",
-      "issues": [
-        "Fixed corrupted raw LaTeX fraction syntax in principles_list_html with valid MathML rendering",
-        "Converted unformatted text symbol Δt_RR in procedure_section_html Step 8 to standardized MathML",
-        "Aligned observation recording table row columns in canvas_js to match the 6 columns defined in observation_thead_html",
-        "Wired action button btn_inject_missing_pulse in canvas_js for manual dropped beat triggering"
-      ]
-    },
-    {
-      "sim_id": "u02044",
-      "status": "ERROR",
-      "time": "15:52:58",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u02051",
       "status": "FIXED",
@@ -375,6 +324,60 @@
         "Action button btn_verify_orthogonality was unwired and lacked interactive visual pulse feedback",
         "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) were missing click event listeners",
         "Synthesizer canvas panel did not dynamically display the dual parity matrix basis rows when in dual mode"
+      ]
+    },
+    {
+      "sim_id": "u02083",
+      "status": "FIXED",
+      "time": "16:00:45",
+      "issues": [
+        "Wired action button 'btn_eval_rank' ('Compute Submatrix Rank & Independence') to evaluate current subset and record observation.",
+        "Wired action button 'btn_test_all_subsets' ('Scan All k-Column Combinations') to exhaustively scan and record all 10 column combinations.",
+        "Corrected observation table row alignment to match the 6 columns in the observation table header (Matrix Preset, Selected Columns, Rank, Determinant, Independence Status, MDS Verified).",
+        "Wired stepper up/down buttons for Matrix Preset and Column Subset inputs.",
+        "Added interactive canvas click listener on generator matrix columns for direct column subset navigation."
+      ]
+    },
+    {
+      "sim_id": "u02084",
+      "status": "ERROR",
+      "time": "16:01:34",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02089",
+      "status": "PASS",
+      "time": "16:02:02",
+      "issues": []
+    },
+    {
+      "sim_id": "u02093",
+      "status": "PASS",
+      "time": "16:02:04",
+      "issues": []
+    },
+    {
+      "sim_id": "u02087",
+      "status": "FIXED",
+      "time": "16:02:06",
+      "issues": [
+        "Unwired action buttons: 'btn_toggle_dashboard', 'btn_toggle_alerts', 'btn_clear_alerts', and 'btn_simulate_spike' had no event listeners attached in canvas_js.",
+        "Unwired stepper controls: Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click listeners to adjust input values.",
+        "Observation table column misalignment: Record Observation inserted 6 table data cells (including an unheaded timestamp) while observation_thead_html defines only 5 columns (Temperature, Relative Humidity, AQI, Heat Index, Alert State).",
+        "DOM readout ID mismatch: canvas_js updated 'val_temp' and 'reading_temp' rather than the canonical slot IDs defined in readouts_html ('val_reading_temp', 'val_reading_humidity', 'val_reading_aqi', 'val_reading_heat_index', 'val_reading_alert_status')."
+      ]
+    },
+    {
+      "sim_id": "u02088",
+      "status": "FIXED",
+      "time": "16:02:18",
+      "issues": [
+        "Unwired action buttons: Connected btn_toggle_heater to cycle oven temperature and btn_switch_material to toggle between Germanium and Silicon samples.",
+        "Unwired stepper buttons: Added click event listeners for .stepper-btn controls with step sizing, boundary clamping, and input/change event dispatching.",
+        "Misaligned observation table columns: Corrected observation row data cells from 9 mismatched columns to 7 columns matching the observation thead (T, TK, 10³/TK, I, V, ρ, ln(ρ)).",
+        "Telemetry readout ID mismatch: Enhanced setElText to resolve both ID and val_ID prefixes with engineering units so live readings display properly."
       ]
     }
   ],
@@ -2020,6 +2023,11 @@
     "u02078",
     "u02080",
     "u02081",
-    "u02082"
+    "u02082",
+    "u02083",
+    "u02087",
+    "u02088",
+    "u02089",
+    "u02093"
   ]
 }
