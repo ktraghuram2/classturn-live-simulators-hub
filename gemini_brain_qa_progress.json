@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:36:31",
-  "completed_count": 1257,
-  "fixed_count": 1193,
-  "latest_sim_id": "u01572",
+  "updated_at": "2026-10-19 09:38:34",
+  "completed_count": 1262,
+  "fixed_count": 1196,
+  "latest_sim_id": "u01578",
   "recent_events": [
-    {
-      "sim_id": "u01534",
-      "status": "FIXED",
-      "time": "09:22:14",
-      "issues": [
-        "Observation table record button handler was missing Linear Displacement x (mm) column, rendering only 5 cells for 6 header columns and causing misalignment.",
-        "Action buttons (Coincide Graticules, Advance Reflector by 110 mm Base, Toggle Light Source) were unwired in canvas_js.",
-        "Stepper control increment/decrement buttons (.stepper-btn) had no click handlers to adjust target input values.",
-        "Badges 4 and 5 were swapped relative to legend pills (Pill 4 is Objective Lens Cell and Pill 5 is Reflector Carriage), and Badge 7 (Machine Guideway Surface Bed) was missing from the canvas.",
-        "Optical ray tracing and reticle crosshair did not respect the monochromatic light source on/off state."
-      ]
-    },
-    {
-      "sim_id": "u01535",
-      "status": "ERROR",
-      "time": "09:22:28",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01533",
-      "status": "ERROR",
-      "time": "09:22:38",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01537",
-      "status": "FIXED",
-      "time": "09:22:38",
-      "issues": [
-        "Live readout DOM elements use 'val_reading_*' IDs while setEl targeted 'reading_*', preventing readings from updating on input change.",
-        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners to modify input values.",
-        "Action buttons ('btn_transfer_sample' and 'btn_inspect_microbial') were not wired to event listeners.",
-        "Observation table record button had misaligned columns (elapsed days instead of water activity, shifted positions) inconsistent with the 8-column header specification."
-      ]
-    },
-    {
-      "sim_id": "u01531",
-      "status": "FIXED",
-      "time": "09:23:31",
-      "issues": [
-        "Unwired 'Execute Λ Pipeline' action button (btn_execute_lambda) wired to launch carrier transit across the track",
-        "Unwired stepper increment/decrement buttons (stepper-btn-up, stepper-btn-down) wired to mutate inputs and dispatch change events",
-        "Telemetry readout ID selector mismatch (reading_output vs val_reading_output) patched so digital indicators update live",
-        "Observation table column mismatch corrected to match the 5 thead columns (Trial #, Selected Operation, Input Operand, Evaluated Result, Execution Status)"
-      ]
-    },
-    {
-      "sim_id": "u01540",
-      "status": "FIXED",
-      "time": "09:23:35",
-      "issues": [
-        "Removed erroneous MathML formatting wrapping the leading English prose article 'A' in principles_summary_html",
-        "Corrected travel displacement variable subscript from X_1 to X in principles_summary_html force equilibrium formula"
-      ]
-    },
     {
       "sim_id": "u01538",
       "status": "ERROR",
@@ -387,6 +328,59 @@
         "Observation table columns were misaligned (7 thead columns vs 6 row cells, missing the Trial # column)",
         "Stepper up/down buttons were not wired in canvas_js",
         "Reset button did not clear observation table rows or reset trial counter"
+      ]
+    },
+    {
+      "sim_id": "u01577",
+      "status": "PASS",
+      "time": "09:36:59",
+      "issues": []
+    },
+    {
+      "sim_id": "u01574",
+      "status": "FIXED",
+      "time": "09:37:15",
+      "issues": [
+        "Unwired action button: 'Collect Effluent Aliquot' (btn_collect_breakthrough_sample) was not targeted by the observation recording listener, which was searching only for 'btnRecord'.",
+        "Unwired action button: 'Toggle Feed Inflow' (btn_toggle_feed_flow) was not wired, allowing pump rotation and fluid animations to run unconditionally.",
+        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners to update numeric inputs.",
+        "Misaligned observation table columns: Canvas script generated 9 columns with inverted ordering, missing the 'Solute Adsorbed Mass x' column and inserting unheadered columns (row index, valve opening, superficial velocity) that clashed with the 7 defined header columns."
+      ]
+    },
+    {
+      "sim_id": "u01575",
+      "status": "ERROR",
+      "time": "09:37:38",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01576",
+      "status": "PASS",
+      "time": "09:37:48",
+      "issues": []
+    },
+    {
+      "sim_id": "u01580",
+      "status": "FIXED",
+      "time": "09:38:04",
+      "issues": [
+        "Unwired action buttons ('btn_step_wall' and 'btn_auto_generate') and unwired stepper increment/decrement buttons in canvas_js",
+        "Misaligned observation table data columns in btnRecord event listener (injected time and combined dimensions instead of matching the 6 specific table columns)",
+        "Missing column variable symbol m in observation_thead_html"
+      ]
+    },
+    {
+      "sim_id": "u01578",
+      "status": "FIXED",
+      "time": "09:38:34",
+      "issues": [
+        "Fixed telemetry readout element IDs in canvas_js which did not match canonical val_reading_* IDs in readouts_html, preventing live UI telemetry updates.",
+        "Wired up stepper up/down buttons (▲/▼) in canvas_js so clicking them increments/decrements control inputs.",
+        "Wired action buttons (btn_apply_indentation and btn_align_reticle) to actuate indentation cycles and synchronize telemetry.",
+        "Corrected observation table row formatting in canvas_js to match the 6 columns in observation_thead_html (Aging Time, Applied Load, Diagonal d1, Diagonal d2, Mean Diagonal d, Vickers Hardness HV) instead of misaligned columns with an extraneous index column.",
+        "Calibrated peak aging hardness kinetics model in canvas_js from 139 HV to 177 HV to match the peak hardness stated in the principles summary."
       ]
     }
   ],
@@ -1647,6 +1641,11 @@
     "u01569",
     "u01571",
     "u01572",
-    "u01573"
+    "u01573",
+    "u01574",
+    "u01576",
+    "u01577",
+    "u01578",
+    "u01580"
   ]
 }
