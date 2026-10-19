@@ -1,50 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:19:49",
-  "completed_count": 1022,
-  "fixed_count": 999,
-  "latest_sim_id": "u01249",
+  "updated_at": "2026-10-19 08:20:30",
+  "completed_count": 1027,
+  "fixed_count": 1004,
+  "latest_sim_id": "u01255",
   "recent_events": [
-    {
-      "sim_id": "u01196",
-      "status": "ERROR",
-      "time": "08:11:19",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01195",
-      "status": "FIXED",
-      "time": "08:11:19",
-      "issues": [
-        "Unwired action buttons ('btn_apply_load' and 'btn_hold_pause') and unwired stepper buttons for simulation speed multiplier.",
-        "Misaligned observation table columns where btnRecord injected 5 table cells into an observation table whose header defines exactly 4 columns."
-      ]
-    },
-    {
-      "sim_id": "u01201",
-      "status": "PASS",
-      "time": "08:11:22",
-      "issues": []
-    },
-    {
-      "sim_id": "u01202",
-      "status": "PASS",
-      "time": "08:11:42",
-      "issues": []
-    },
-    {
-      "sim_id": "u01185",
-      "status": "FIXED",
-      "time": "08:12:09",
-      "issues": [
-        "Unwired action buttons: 'Set Unity Gain Configuration' and 'Invert Input Voltage Polarity' lacked click event listeners in canvas_js",
-        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked click event listeners in canvas_js",
-        "Misaligned observation table columns: row.innerHTML contained an extraneous count/serial number cell and had Output Voltage and Closed-Loop Gain transposed relative to observation_thead_html",
-        "Missing operational amplifier output voltage clipping at ±14.0 V saturation rails in readInputs()"
-      ]
-    },
     {
       "sim_id": "u01199",
       "status": "FIXED",
@@ -370,6 +330,60 @@
         "Readout DOM ID mismatch: setVal targeted 'reading_spo2' instead of 'val_reading_spo2', leaving live DOM readouts static.",
         "Observation table misalignment: row innerHTML had 8 columns with transposed values against the 6-column table header.",
         "Malformed MathML fraction in principles_summary_html: AC/DC ratio of ratios was incorrectly formatted."
+      ]
+    },
+    {
+      "sim_id": "u01247",
+      "status": "FIXED",
+      "time": "08:19:54",
+      "issues": [
+        "Unwired action button #btn_release_gate ('Release Sluice Gate'): canvas_js only listened to #btnGate / #btn_gate.",
+        "Missing action button handler for #btn_rebalance_particles ('Re-normalize Kernel Density').",
+        "Unwired interactive steppers: .stepper-btn buttons lacked click listeners to step ctrl_pref and ctrl_nu.",
+        "Misaligned observation table columns in btnRecord: columns 5 and 6 recorded raw density (kg/m³) and Re instead of Density Compression Ratio (ρ/ρ₀) and Invariant Speed Ratio (u_f/√(2gH))."
+      ]
+    },
+    {
+      "sim_id": "u01250",
+      "status": "FIXED",
+      "time": "08:19:59",
+      "issues": [
+        "Misaligned observation table columns between observation_thead_html (6 columns without trial index) and canvas_js logger (7 columns with mismatched column order)",
+        "Unwired action buttons: btn_calibrate_buffer (Auto-Calibrate to Buffer pH 7.00) and btn_rinse_sensor (Rinse Electrode with Deionized Water) lacked event listeners",
+        "Unwired stepper increment/decrement buttons (.stepper-btn) for solution pH and temperature controls"
+      ]
+    },
+    {
+      "sim_id": "u01251",
+      "status": "FIXED",
+      "time": "08:20:02",
+      "issues": [
+        "Action buttons 'btn_start_flow' and 'btn_refill_standpipe' from actions_html were not wired in canvas_js",
+        "Stepper up/down buttons (.stepper-btn) were missing click event listeners",
+        "Live readout elements with IDs 'val_reading_*' were mismatched in updateTelemetry calls",
+        "Observation table columns were misaligned (tTotal, a, and L swapped) and included an extraneous 8th volume column not defined in the table header"
+      ]
+    },
+    {
+      "sim_id": "u01253",
+      "status": "FIXED",
+      "time": "08:20:14",
+      "issues": [
+        "Unwired action buttons (#btn_ram_specimen and #btn_start_permeability_test) and unwired stepper buttons (.stepper-btn).",
+        "Misaligned observation table rows in canvas_js (8 columns inserted into a 10-column observation_thead_html table header).",
+        "Swapped leader badge targets (Badge 2 was drawn on the Permeability Meter and Badge 3 on the Specimen Tube, inverted relative to legend pills).",
+        "Missing tactile drop weight animation response when operating the sand rammer."
+      ]
+    },
+    {
+      "sim_id": "u01255",
+      "status": "FIXED",
+      "time": "08:20:29",
+      "issues": [
+        "Raw LaTeX syntax 'pK_{a}' in steppers_html label replaced with standard notation 'pKa'",
+        "Observation table recording hook emitted 8 mismatched columns instead of the 7 columns defined in observation_thead_html",
+        "Stepper increment and decrement buttons (▲/▼) lacked click event listeners in canvas_js",
+        "Action buttons 'btn_calibrate_meter' and 'btn_equilibrate_mixture' were completely unwired in canvas_js"
       ]
     }
   ],
@@ -1394,7 +1408,12 @@
     "u01243",
     "u01244",
     "u01245",
+    "u01247",
     "u01249",
-    "u01252"
+    "u01250",
+    "u01251",
+    "u01252",
+    "u01253",
+    "u01255"
   ]
 }
