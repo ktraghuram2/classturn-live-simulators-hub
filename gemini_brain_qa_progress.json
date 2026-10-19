@@ -1,56 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:59:33",
-  "completed_count": 1167,
-  "fixed_count": 1120,
-  "latest_sim_id": "u01445",
+  "updated_at": "2026-10-19 09:02:04",
+  "completed_count": 1172,
+  "fixed_count": 1124,
+  "latest_sim_id": "u01453",
   "recent_events": [
-    {
-      "sim_id": "u01407",
-      "status": "FIXED",
-      "time": "08:48:51",
-      "issues": [
-        "Fixed malformed MathML partial derivative fractions in principles_summary_html",
-        "Corrected velocity potential unit representation in principles_list_html from (/m^2 s) to (m^2/s)"
-      ]
-    },
-    {
-      "sim_id": "u01394",
-      "status": "ERROR",
-      "time": "08:49:00",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01408",
-      "status": "FIXED",
-      "time": "08:49:01",
-      "issues": [
-        "Swapped leader line badges 3 and 4 in canvas_js: badge 3 pointed to the V-die block while legend pill 3 is Sheet Metal Workpiece Specimen, and badge 4 pointed to the sheet workpiece while legend pill 4 is Rectangular V-Die Block.",
-        "Observation table columns in canvas_js btnRecord were misaligned and contained 11 td cells (including unlisted trial count and outer fiber strain) instead of matching the 9 exact columns in observation_thead_html.",
-        "Unwired interactive control action buttons btn_cycle_stroke ('Execute Press Stroke') and btn_release_springback ('Release Punch & Measure Springback') in canvas_js, and unwired stepper increment/decrement buttons."
-      ]
-    },
-    {
-      "sim_id": "u01398",
-      "status": "FIXED",
-      "time": "08:49:18",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01404",
-      "status": "FIXED",
-      "time": "08:49:21",
-      "issues": [
-        "Badge numbers 1 and 2 in canvas_js were inverted relative to legend_pills_html (Badge 1 was drawn on Transformer and Badge 2 on Control Desk, whereas Pill 1 is HV Control Desk and Pill 2 is Transformer)",
-        "Action button btn_ramp_voltage ('Auto-Ramp Voltage to Breakdown Spark') had no click listener or ramping logic wired in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to input controls in canvas_js",
-        "Observation table row in btnRecord handler rendered 8 <td> elements into an observation table header configured with only 6 columns"
-      ]
-    },
     {
       "sim_id": "u01409",
       "status": "FIXED",
@@ -397,6 +351,56 @@
         "Unwired action buttons 'btn_send_bit_0' and 'btn_send_bit_1': wired both buttons to update input_bit_x and trigger a manual clock pulse.",
         "Misaligned observation table columns: corrected observation recorder from pushing 8 columns with mismatched labels to exactly the 7 columns defined in observation_thead_html (Clock Step n, Input Bit X, QA, QB, QA_next, QB_next, Sequence Output Z).",
         "Unwired stepper controls: added event delegation to stepper up/down buttons to adjust target values and dispatch input/change events."
+      ]
+    },
+    {
+      "sim_id": "u01451",
+      "status": "FIXED",
+      "time": "08:59:40",
+      "issues": [
+        "Observation table record button injected 8 columns (including trial number and redundant path difference) which was misaligned with the 6 columns in the observation table header.",
+        "The 'Toggle Sodium Illumination' action button (btn_toggle_illumination) was not wired to control light beam emission and fringe visibility in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) lacked click event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01454",
+      "status": "PASS",
+      "time": "09:01:18",
+      "issues": []
+    },
+    {
+      "sim_id": "u01447",
+      "status": "FIXED",
+      "time": "09:01:33",
+      "issues": [
+        "Observation table column mismatch: btnRecord generated 13 <td> columns while observation_thead_html defines 8 columns.",
+        "Unwired action buttons: btn_synthesize_wss, btn_toggle_input_type, and btn_compute_autocorr lacked click event listeners in canvas_js.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked click listeners to increment/decrement inputs.",
+        "Malformed MathML in principles_summary_html: rational transfer function H(z) had B*(z/A)*z instead of B(z)/A(z), and output autocorrelation used multiplication dot instead of convolution operator."
+      ]
+    },
+    {
+      "sim_id": "u01455",
+      "status": "FIXED",
+      "time": "09:01:57",
+      "issues": [
+        "Fixed telemetry readout element IDs in canvas_js from reading_* to val_reading_* so live APF, unit cell volume, effective atom count, and theoretical density update dynamically in the DOM during interaction.",
+        "Wired action buttons btn_align_standard_view and btn_close_packed_tangency to support Eulerian alignment to [100] view and analytical calculation of hard-sphere tangency contact.",
+        "Wired stepper buttons (.stepper-btn-up and .stepper-btn-down) with event listeners so that parameter adjustments work reliably.",
+        "Corrected observation table row column structure in btnRecord handler to match exactly the 7 columns in the table header in correct order (System, Bravais Sub-Type, a, r, N_eff, V_cell, APF).",
+        "Removed duplicate Neff math symbol in observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u01453",
+      "status": "FIXED",
+      "time": "09:02:04",
+      "issues": [
+        "Unwired action buttons: 'Toggle Slicing Plane' (btn_toggle_cross_section) and 'Re-center Perspective' (btn_align_axes) lacked click listeners.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn) were not attached to input modification listeners.",
+        "Misaligned observation table columns: btnRecord inserted 6 columns with a row index instead of matching the 5 observation thead headers, and transposed Gradient Magnitude and Surface Residual columns.",
+        "Low contrast coordinate cage wireframe: #1e293b wireframe edges were near-invisible on dark #090d16 canvas void."
       ]
     }
   ],
@@ -1567,6 +1571,11 @@
     "u01443",
     "u01444",
     "u01445",
-    "u01448"
+    "u01447",
+    "u01448",
+    "u01451",
+    "u01453",
+    "u01454",
+    "u01455"
   ]
 }
