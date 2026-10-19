@@ -1,67 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:26:29",
-  "completed_count": 1052,
-  "fixed_count": 1023,
-  "latest_sim_id": "u01287",
+  "updated_at": "2026-10-19 08:27:49",
+  "completed_count": 1057,
+  "fixed_count": 1027,
+  "latest_sim_id": "u01290",
   "recent_events": [
-    {
-      "sim_id": "u01239",
-      "status": "FIXED",
-      "time": "08:18:01",
-      "issues": [
-        "Unwired action button #btn_auto_diffuse for continuous time evolution control",
-        "Unwired stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) preventing parameter adjustment via UI steppers",
-        "Observation table columns in canvas_js misaligned with observation_thead_html (logged 8 columns out of order instead of the defined 6 columns: k, r, t, u1, u2, u3)"
-      ]
-    },
-    {
-      "sim_id": "u01240",
-      "status": "FIXED",
-      "time": "08:18:01",
-      "issues": [
-        "Unwired action buttons: 'Invert and Agitate Suspension' (btn_invert_mix) and 'Gently Lower Hydrometer' (btn_insert_hydrometer) lacked event listeners",
-        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to increment/decrement input values",
-        "Missing dynamic visual feedback for suspension agitation and hydrometer lowering buoyancy animation"
-      ]
-    },
-    {
-      "sim_id": "u01243",
-      "status": "FIXED",
-      "time": "08:18:01",
-      "issues": [
-        "Readout DOM elements use IDs with 'val_' prefix ('val_reading_*'), causing setTxt() calls to fail silently and leaving live readouts static.",
-        "Observation table record button generated 10 columns (including an extra serial number and load capacitance cell), misaligning with the 8 columns defined in the table header.",
-        "Action button #btn_toggle_mode was not wired in JavaScript, preventing toggling between Single-NMOS and Full-CMOS TG modes with threshold degradation.",
-        "Stepper increment and decrement buttons (.stepper-btn) had no click event listeners attached to update input values."
-      ]
-    },
-    {
-      "sim_id": "u01246",
-      "status": "ERROR",
-      "time": "08:18:48",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01252",
-      "status": "PASS",
-      "time": "08:19:30",
-      "issues": []
-    },
-    {
-      "sim_id": "u01249",
-      "status": "FIXED",
-      "time": "08:19:49",
-      "issues": [
-        "Unwired action buttons: btn_autocalibrate_probe and btn_induce_motion_artifact had no event listeners in canvas_js.",
-        "Unwired stepper buttons: .stepper-btn buttons lacked click event listeners in canvas_js.",
-        "Readout DOM ID mismatch: setVal targeted 'reading_spo2' instead of 'val_reading_spo2', leaving live DOM readouts static.",
-        "Observation table misalignment: row innerHTML had 8 columns with transposed values against the 6-column table header.",
-        "Malformed MathML fraction in principles_summary_html: AC/DC ratio of ratios was incorrectly formatted."
-      ]
-    },
     {
       "sim_id": "u01247",
       "status": "FIXED",
@@ -383,6 +326,66 @@
         "Readout synchronization targeted non-existent IDs ('reading_*') instead of the active value element IDs ('val_reading_*')",
         "Prose slots (aim_html, principles_summary_html) contained MathML '<mi>a</mi>' for English indefinite article 'a' and dot operator instead of asterisk superscript for optimal policy and value function",
         "Observation table header for Step Reward was missing its variable symbol R"
+      ]
+    },
+    {
+      "sim_id": "u01289",
+      "status": "FIXED",
+      "time": "08:26:38",
+      "issues": [
+        "Unwired action button btn_run_convergence in canvas_js",
+        "Missing 'Perform Single Value Iteration Step' button (btn_step) referenced in Procedure Step 3",
+        "Unwired stepper up/down buttons for gamma, step reward, and grid dimension",
+        "Missing Optimal Action Policy readout in readouts_html matching observation table column 6",
+        "Observation table header contained incorrect middle dot character instead of asterisk in optimal policy notation"
+      ]
+    },
+    {
+      "sim_id": "u01288",
+      "status": "FIXED",
+      "time": "08:27:13",
+      "issues": [
+        "Fixed spurious MathML encoding of the English indefinite article 'a' in aim_html and procedure_section_html.",
+        "Fixed broken HTML/XML character entities for prime notation (s', a') and removed raw LaTeX '\\arg' command inside MathML in principles_summary_html.",
+        "Fixed mismatched observation table column order in canvas_js to strictly match table header definitions (Iteration, Steps, Learning Rate, Discount Factor, Exploration Rate, TD Error, Terminal Q-Value).",
+        "Wired interactive stepper buttons (.stepper-btn) and action buttons ('btn_run_episode', 'btn_converge_policy') in canvas_js with complete episode execution and multi-episode policy convergence logic."
+      ]
+    },
+    {
+      "sim_id": "u01292",
+      "status": "PASS",
+      "time": "08:27:32",
+      "issues": []
+    },
+    {
+      "sim_id": "u01286",
+      "status": "ERROR",
+      "time": "08:27:41",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01280",
+      "status": "FIXED",
+      "time": "08:27:45",
+      "issues": [
+        "Replaced Greek letter ψ mistranslations with standard pressure unit 'psi' across apparatus, principles, procedure, control steppers, live readouts, and observation table headers",
+        "Aligned observation table columns by adding the missing trial index header (#) and matching column order with recorded data rows",
+        "Wired interactive stepper up/down buttons to dynamically modify control inputs",
+        "Wired action button 'Tare Dial Gauge to Zero' (btn_tare_dial_gauge) to calibrate and offset dial indicator readings",
+        "Wired action button 'Toggle Point / Uniform Load Mechanism' (btn_switch_loading_mode) to switch between point and distributed lateral loading",
+        "Wired experiment activity dropdown (experimentSelect) to configure loading presets"
+      ]
+    },
+    {
+      "sim_id": "u01290",
+      "status": "FIXED",
+      "time": "08:27:49",
+      "issues": [
+        "Misaligned observation table columns: row.innerHTML generated 10 td cells for 7 observation table headers, causing data to shift and overflow. Corrected to exactly 7 matching td cells.",
+        "Unwired action buttons: added event listeners for #btn_auto_stabilize (optimizes coolant flow to setpoint) and #btn_inject_inhibitor (quenches radical concentration and accelerates cooling).",
+        "Unwired stepper buttons: added event listener for all .stepper-btn controls to increment and decrement targets within bounds and dispatch input/change events."
       ]
     }
   ],
@@ -1436,8 +1439,13 @@
     "u01277",
     "u01278",
     "u01279",
+    "u01280",
     "u01284",
     "u01285",
-    "u01287"
+    "u01287",
+    "u01288",
+    "u01289",
+    "u01290",
+    "u01292"
   ]
 }
