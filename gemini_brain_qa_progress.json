@@ -1,60 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 08:24:34",
-  "completed_count": 1047,
-  "fixed_count": 1018,
-  "latest_sim_id": "u01277",
+  "updated_at": "2026-10-19 08:26:29",
+  "completed_count": 1052,
+  "fixed_count": 1023,
+  "latest_sim_id": "u01287",
   "recent_events": [
-    {
-      "sim_id": "u01223",
-      "status": "ERROR",
-      "time": "08:17:57",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01244",
-      "status": "FIXED",
-      "time": "08:17:57",
-      "issues": [
-        "Unwired action buttons: 'btn_generate_topology', 'btn_send_packet', and 'btn_decrypt_payload' lacked click event listeners in canvas_js.",
-        "Unwired stepper controls: Stepper increment/decrement buttons (.stepper-btn) had no click handlers attached to update client and server counts.",
-        "Hardcoded channel encryption state: 'channelEncryptionState' was declared as a constant 0 with no event listener attached to the 'expSelect' dropdown.",
-        "Observation table column mismatch: The HTML header defined 5 columns (Client ID, Server ID, Channel Encryption, Ciphertext Payload, Decrypted Credential), but canvas_js recorded only 4 misaligned columns.",
-        "Lack of encryption visual state: Packets in transit did not visually differentiate between unencrypted cleartext and encrypted ciphertext payloads."
-      ]
-    },
-    {
-      "sim_id": "u01245",
-      "status": "FIXED",
-      "time": "08:17:57",
-      "issues": [
-        "Observation table record row generated 6 columns including packetStateText, which misaligned with the 5-column header (Client Count, Server Count, Captured Token, Replay Count, Server Status).",
-        "Action buttons (btn_start_transmission, btn_intercept_packet, btn_replay_packet, btn_verify_server_state) and stepper buttons (.stepper-btn) were unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01241",
-      "status": "FIXED",
-      "time": "08:17:57",
-      "issues": [
-        "Telemetry readout elements queried 'reading_*' instead of 'val_reading_*', causing live readouts to remain static",
-        "Observation table columns in btnRecord click handler were misaligned with the table header and missing Tare and Gross mass columns",
-        "Custom stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners",
-        "Action buttons (btn_homogenize, btn_withdraw_aliquot, btn_tare_balance, btn_dry_sample) were unwired",
-        "Analytical balance digital display did not respond to Tare action"
-      ]
-    },
-    {
-      "sim_id": "u01237",
-      "status": "FIXED",
-      "time": "08:17:57",
-      "issues": [
-        "Observation table columns in canvas_js were misaligned with observation_thead_html: the recorded row prepended extra trial index and iteration count columns, shifting all potential values and residual readings into mismatched headers.",
-        "Action buttons (btn_iterate_step, btn_solve_equilibrium) and stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js."
-      ]
-    },
     {
       "sim_id": "u01239",
       "status": "FIXED",
@@ -379,6 +329,60 @@
         "Fixed corrupted exponent 10^-34 rendered as 10^-3 4 in readouts_html and observation_thead_html",
         "Removed duplicated MathML tags and improved header labels in observation_thead_html",
         "Added event listener wiring for interactive stepper up/down buttons and sample telemetry action button in canvas_js"
+      ]
+    },
+    {
+      "sim_id": "u01278",
+      "status": "FIXED",
+      "time": "08:25:50",
+      "issues": [
+        "Telemetry readouts targeted 'reading_*' element IDs instead of 'val_reading_*', preventing live values from updating",
+        "Observation table columns were misaligned and included an unheaded row count column while missing log10(P) and log10(T) columns",
+        "Stepper up/down buttons and thermal equilibrium action button were not wired to event listeners"
+      ]
+    },
+    {
+      "sim_id": "u01285",
+      "status": "FIXED",
+      "time": "08:25:53",
+      "issues": [
+        "Corrected erroneous MathML fractions in procedure steps 2 and 3 where PLC input/output addresses I:1/0, O:2/1, and I:1/3 were converted into mathematical division fractions.",
+        "Wired action buttons ('btn_interlock_scan' and 'btn_trigger_interval_loads') in canvas_js to allow interactive execution of the ladder interlock scan and single-shot timer triggers."
+      ]
+    },
+    {
+      "sim_id": "u01279",
+      "status": "FIXED",
+      "time": "08:26:01",
+      "issues": [
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down had no event handlers attached",
+        "Unwired action button: #btn_mobilize_shear_wedge was defined in controls but unhandled in canvas_js",
+        "Misaligned observation table: record button inserted 11 cells into an 8-column observation table, causing severe column misalignment",
+        "Wall displacement tilt direction: positive outward active displacement tilted into the backfill soil instead of outward away from the retained soil mass",
+        "Visual failure wedge feedback: added active failure shear wedge fill highlight when outward active displacement is mobilized"
+      ]
+    },
+    {
+      "sim_id": "u01284",
+      "status": "FIXED",
+      "time": "08:26:05",
+      "issues": [
+        "Observation table recording misaligned: recorded 8 values with row index and power factor instead of the 9 defined thead columns (feeder count, busbar A voltage, total current, total active power, incomer 1 coil status, and load 1 coil status).",
+        "Unwired action buttons: btn_execute_plc_scan and btn_auto_tie_transfer lacked event listeners in canvas_js.",
+        "Stepper increment/decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked click event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01287",
+      "status": "FIXED",
+      "time": "08:26:29",
+      "issues": [
+        "Unwired 'Run to Full Convergence' button (id 'btn_run_full') in canvas_js",
+        "Missing event listeners for stepper increment/decrement buttons (.stepper-btn)",
+        "Misaligned and truncated observation table recordings (only 5 columns written out of 7 table headers)",
+        "Readout synchronization targeted non-existent IDs ('reading_*') instead of the active value element IDs ('val_reading_*')",
+        "Prose slots (aim_html, principles_summary_html) contained MathML '<mi>a</mi>' for English indefinite article 'a' and dot operator instead of asterisk superscript for optimal policy and value function",
+        "Observation table header for Step Reward was missing its variable symbol R"
       ]
     }
   ],
@@ -1429,6 +1433,11 @@
     "u01274",
     "u01275",
     "u01276",
-    "u01277"
+    "u01277",
+    "u01278",
+    "u01279",
+    "u01284",
+    "u01285",
+    "u01287"
   ]
 }
