@@ -1,77 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:43:07",
-  "completed_count": 1792,
-  "fixed_count": 1606,
-  "latest_sim_id": "u02280",
+  "updated_at": "2026-10-19 16:44:41",
+  "completed_count": 1797,
+  "fixed_count": 1611,
+  "latest_sim_id": "u02289",
   "recent_events": [
-    {
-      "sim_id": "u02242",
-      "status": "PASS",
-      "time": "16:33:18",
-      "issues": []
-    },
-    {
-      "sim_id": "u02239",
-      "status": "FIXED",
-      "time": "16:33:35",
-      "issues": [
-        "Swapped leader line badges 2 and 3: Workstation was numbered 2 and Decomposer was numbered 3, misaligned with Legend Pills 2 (Multispectral Band Decomposer) and 3 (Scilab Workstation).",
-        "Unwired action buttons: 'btn_auto_center_vegetation' and 'btn_extract_radiometry' lacked click event listeners in canvas_js.",
-        "Unwired stepper up/down controls: Stepper buttons (.stepper-btn) lacked increment/decrement click handlers in canvas_js.",
-        "Misaligned observation table columns: tr.innerHTML generated 7 columns with Trial rowCount and transposed data that did not match the 7 observation_thead_html columns (Upper-Left Row, Upper-Left Col, Window Dimension, Spectral Band, Window Pixels, Mean Brightness, NDVI Index)."
-      ]
-    },
-    {
-      "sim_id": "u02243",
-      "status": "PASS",
-      "time": "16:33:41",
-      "issues": []
-    },
-    {
-      "sim_id": "u02247",
-      "status": "PASS",
-      "time": "16:33:54",
-      "issues": []
-    },
-    {
-      "sim_id": "u02241",
-      "status": "ERROR",
-      "time": "16:34:03",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02244",
-      "status": "FIXED",
-      "time": "16:34:22",
-      "issues": [
-        "Observation table columns were misaligned with the table header (reagents A and B were combined into one column, reaction time and acetoin were shifted, and hue column rendered percentage instead of visual color band)",
-        "Stepper increment and decrement buttons (.stepper-btn-up and .stepper-btn-down) were unhandled in canvas_js",
-        "Action control buttons (Flame Loop & Inoculate, Dispense Reagents, Gently Aerate & Mix Tube) were missing event listeners",
-        "Preset selection dropdown (expSelect) was not connected to update the bacterial strain parameter"
-      ]
-    },
-    {
-      "sim_id": "u02246",
-      "status": "FIXED",
-      "time": "16:34:23",
-      "issues": [
-        "Apparatus badges and leader lines in canvas_js had mismatched numbering with legend_pills_html: Badge 1 pointed to Transparent Cylindrical Tank instead of Variable Speed Motor & Turntable Base, Badge 2 pointed to Motor instead of Tank, Badge 3 pointed to Vernier Depth Gauge instead of Forced Vortex Liquid Paraboloid, Badge 4 pointed to Digital Tachometer instead of Vernier Depth Gauge, Badge 5 pointed to Annular Spillway instead of Digital Tachometer, and Badge 6 for Annular Spillway & Overflow Basin was missing entirely. Realigned all 6 leader badges and touch anchors to strictly match the 6 legend pills."
-      ]
-    },
-    {
-      "sim_id": "u02250",
-      "status": "FIXED",
-      "time": "16:37:53",
-      "issues": [
-        "Misaligned observation table columns: Linear mass density and wave speed data cells were transposed in the observation row creation relative to the table column headers",
-        "Unwired control action buttons: 'btn_strike_hammer' and 'btn_cycle_boundary' were defined in HTML but had no active event listeners in canvas_js",
-        "Missing stepper button handlers: Stepper arrow buttons (.stepper-btn-up, .stepper-btn-down) lacked dynamic stepping logic",
-        "Prose and notation anomalies in principles_summary_html: English words ('d', 'A') were erroneously wrapped in math tags and partial derivative notation was malformed as '∂ w / ∂ x'"
-      ]
-    },
     {
       "sim_id": "u02249",
       "status": "ERROR",
@@ -374,6 +307,83 @@
         "Wired action button (btn_lock_coriolis) to null-balance the torque arm and record observation data",
         "Fixed observation table column misalignment by removing extraneous torque column in row data to match the 7 table header columns",
         "Implemented null-balance behavior restoring motor stator tilt to zero datum upon balancing"
+      ]
+    },
+    {
+      "sim_id": "u02276",
+      "status": "FIXED",
+      "time": "16:43:11",
+      "issues": [
+        "Unwired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) for slope_m, offset_c, and clip_limit.",
+        "Unwired action buttons (#btn_convert_color_space and #btn_apply_equalization) for color space switching and histogram equalization toggle.",
+        "Misaligned observation table columns: btnRecord injected 8 misordered columns including trial counter and variance, while observation_thead_html defines exactly 7 columns (Selected Color Space, Target Plane, Transformation Slope, Brightness Offset, Mean Intensity, Information Entropy, Reconstructed PSNR)."
+      ]
+    },
+    {
+      "sim_id": "u02274",
+      "status": "ERROR",
+      "time": "16:43:18",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02261",
+      "status": "ERROR",
+      "time": "16:43:37",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02275",
+      "status": "ERROR",
+      "time": "16:43:41",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02287",
+      "status": "FIXED",
+      "time": "16:44:12",
+      "issues": [
+        "Action preset buttons ('btn_pour_cold', 'btn_pour_room', 'btn_pour_hot') were unwired in canvas_js.",
+        "Stepper increment/decrement buttons (.stepper-btn) had no click event handlers.",
+        "Observation table rows generated only 5 <td> elements for a 6-column header, omitting separate Droplets Formed State and Condensation Location columns."
+      ]
+    },
+    {
+      "sim_id": "u02284",
+      "status": "FIXED",
+      "time": "16:44:20",
+      "issues": [
+        "Misaligned observation table columns: columns 5 and 6 (Absorbance and Fluorescence Intensity IF) were inverted in the generated table row compared to the table header definition.",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to increment/decrement input values and dispatch change events.",
+        "Unwired action buttons: 'btn_scan_spectrum' and 'btn_insert_cuvette' lacked click listeners to perform monochromator sweeps and chamber loading interactions.",
+        "Missing input and change listeners on numerical stepper input elements for direct physics synchronization."
+      ]
+    },
+    {
+      "sim_id": "u02288",
+      "status": "FIXED",
+      "time": "16:44:32",
+      "issues": [
+        "Misaligned observation table columns: btnRecord inserted 6 columns with an unmapped trial counter while thead expected 5 columns, and columns for P(B) and P(A|B) were inverted.",
+        "Unwired action button: act_switch_view ('Cycle Representation Mode') had no event listener or logic in canvas_js.",
+        "Unwired stepper buttons: Stepper up and down buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners in canvas_js.",
+        "Unwired experiment options: experimentSelect lacked preset switching logic for the Base Rate Fallacy scenario."
+      ]
+    },
+    {
+      "sim_id": "u02289",
+      "status": "FIXED",
+      "time": "16:44:41",
+      "issues": [
+        "Misaligned observation table columns: row recorded 7 columns including temperature, whereas thead defines 6 columns with conformational state as column 1.",
+        "Telemetry readout DOM IDs mismatched: elements use val_reading_* prefix with nested value spans, preventing live readings from updating.",
+        "Unwired stepper buttons: .stepper-btn-up and .stepper-btn-down lacked click event listeners to increment/decrement angles and temperature.",
+        "Unwired conformer snap and auto-scan action buttons: btn_snap_anti, btn_snap_gauche, btn_snap_syn, and btn_auto_scan had no event handlers."
       ]
     }
   ],
@@ -2165,10 +2175,15 @@
     "u02271",
     "u02272",
     "u02273",
+    "u02276",
     "u02277",
     "u02278",
     "u02279",
     "u02280",
-    "u02281"
+    "u02281",
+    "u02284",
+    "u02287",
+    "u02288",
+    "u02289"
   ]
 }
