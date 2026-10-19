@@ -1,69 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:06:56",
-  "completed_count": 1182,
-  "fixed_count": 1132,
-  "latest_sim_id": "u01469",
+  "updated_at": "2026-10-19 09:09:43",
+  "completed_count": 1187,
+  "fixed_count": 1137,
+  "latest_sim_id": "u01482",
   "recent_events": [
-    {
-      "sim_id": "u01424",
-      "status": "FIXED",
-      "time": "08:53:13",
-      "issues": [
-        "Fixed errant MathML tags wrapping the English indefinite article 'a' in principles_summary_html ('is a classical', 'a system', 'For a continuous') and procedure_section_html ('mounting a continuous')."
-      ]
-    },
-    {
-      "sim_id": "u01421",
-      "status": "FIXED",
-      "time": "08:53:13",
-      "issues": [
-        "Corrupted units for volumetric flow rate (m/m³s) and traverse speed (m mm/s) in readouts and observation header HTML.",
-        "Unwired action buttons ('btn_start_print' and 'btn_pause_print') and stepper up/down controls in canvas_js.",
-        "Observation table column mismatch: canvas_js generated 9 data cells (including unmapped Sl. No and layer number) against 7 table headers."
-      ]
-    },
-    {
-      "sim_id": "u01422",
-      "status": "FIXED",
-      "time": "08:53:13",
-      "issues": [
-        "Corrected MathML formatting in principles_summary_html where the indefinite article 'A' was incorrectly formatted as a math variable",
-        "Corrected broken unit expressions (m(m/s) to mm/s and (m/m³)s to mm³/s) across steppers_html, readouts_html, and observation_thead_html",
-        "Wired up interactive action buttons (btn_build_platform, btn_material_reservoir, btn_print_heads, btn_milling_head, btn_start_process, btn_stop_process) and stepper increment/decrement buttons in canvas_js",
-        "Aligned observation table recorded columns in canvas_js with observation_thead_html (Thickness, Speed, Droplet Vol, Packing Density, Saturation, Porosity, Build Rate)"
-      ]
-    },
-    {
-      "sim_id": "u01429",
-      "status": "FIXED",
-      "time": "08:53:49",
-      "issues": [
-        "Unwired action buttons: btn_auto_roll, btn_step_division, and btn_construct_tangent_normal had no event listeners in canvas_js.",
-        "Unwired stepper controls: Stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) had no click event listeners to modify input values.",
-        "Observation table column mismatch: btnRecord inserted 7 table cells including an undeclared serial number and baseline length, misaligning with the 6-column header (R, theta, x, y, rho, alpha).",
-        "Missing and misassigned Style 2 leader lines: Badge 5 was missing for Tangent & Normal Protractor Ruler, and Badge 4 pointed to the drafter head instead of the tracing pen and cycloid locus."
-      ]
-    },
-    {
-      "sim_id": "u01428",
-      "status": "FIXED",
-      "time": "08:53:59",
-      "issues": [
-        "Unwired action buttons ('Compact & Demould Slump Cone' and 'Start Vibration & Timer') and stepper increment/decrement buttons in canvas_js",
-        "Misaligned observation table columns where recorded rows inserted 8 columns (including trial index and peak acceleration) into a 6-column header",
-        "Unclosed HTML tags (missing closing </ul>, </div>, and </li>) in principles_list_html"
-      ]
-    },
-    {
-      "sim_id": "u01427",
-      "status": "FIXED",
-      "time": "08:54:00",
-      "issues": [
-        "Stepper increment and decrement buttons (.stepper-btn-up / .stepper-btn-down) were unwired in canvas_js, preventing UI parameter adjustments when clicking buttons",
-        "Experiment select dropdown (#experimentSelect) was unwired to simulation reset and mode handling"
-      ]
-    },
     {
       "sim_id": "u01425",
       "status": "FIXED",
@@ -379,6 +320,71 @@
         "Unwired stepper buttons: stepper-btn elements (▲ and ▼) lacked click listeners to increment/decrement input values and dispatch change events.",
         "Unwired control action buttons: btn_cycle_stroke and btn_toggle_fea_overlay lacked click event listeners.",
         "Missing visual FEA mode toggle: the workpiece blank lacked dynamic gradient switching between equivalent plastic strain and interfacial contact pressure distribution."
+      ]
+    },
+    {
+      "sim_id": "u01452",
+      "status": "FIXED",
+      "time": "09:07:35",
+      "issues": [
+        "Unwired action buttons: btn_toggle_light and btn_cycle_surface were declared in HTML slots but not attached to event listeners in canvas_js.",
+        "Unwired stepper buttons: .stepper-btn increment/decrement buttons were missing click event listeners in canvas_js.",
+        "Observation table column misalignment: btnRecord appended row data without the test surface profile column, shifting all columns and placing theta into the height difference column.",
+        "Physics formula unit error: Wedge angle theta was computed as dh / L (0.12) instead of (dh / L) * 1000 (117.80 μrad) as expected by the readout telemetry and principles spec.",
+        "Observation thead duplicated symbols: Cleaned up duplicated MathML symbols in observation_thead_html."
+      ]
+    },
+    {
+      "sim_id": "u01464",
+      "status": "FIXED",
+      "time": "09:08:16",
+      "issues": [
+        "Misaligned observation table columns: btnRecord in canvas_js injected an extraneous recordCounter trial number cell, shifting all 8 measured values out of alignment with the 8 table headers.",
+        "Unwired stepper buttons: Stepper up and down buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners in canvas_js to adjust input values.",
+        "Unwired action button: The action button (#btn_traverse_probe) lacked an event listener in canvas_js to traverse probe position x.",
+        "Missing observation table reset wiring: Added click listener for #btnReset to allow clearing recorded table rows."
+      ]
+    },
+    {
+      "sim_id": "u01474",
+      "status": "FIXED",
+      "time": "09:08:19",
+      "issues": [
+        "Wired up unwired action buttons 'btn_apply_increment' (Advance Handwheel Increment) and 'btn_unload_specimen' (Gradual Unload to Zero) to dynamically update applied torque and sync canvas state.",
+        "Wired up stepper buttons (.stepper-btn-up, .stepper-btn-down) for applied_torque, shaft_diameter, and gauge_length with step incrementing and boundary clamping.",
+        "Fixed telemetry readout synchronizer to target the inner value span and preserve MathML unit notation within val_reading_* elements."
+      ]
+    },
+    {
+      "sim_id": "u01473",
+      "status": "ERROR",
+      "time": "09:08:22",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01476",
+      "status": "FIXED",
+      "time": "09:08:53",
+      "issues": [
+        "Fixed corrupted LaTeX string and broken MathML formatting in principles_list_html equation (Lipofection Reagent-to-DNA Stoichiometric Ratio) and symbol definitions",
+        "Fixed raw LaTeX delimiters and corrupted MathML in readouts_html for Lipofectamine-to-DNA Ratio symbol (R_{L/D}) and μL/μg unit",
+        "Corrected observation table header observation_thead_html symbol for Reagent-to-DNA Ratio and added Protocol Stage symbol S",
+        "Added missing event listeners in canvas_js for stepper increment/decrement buttons (.stepper-btn) and the Auto-Set Optimal Lipofection action button (#btn_auto_optimize)",
+        "Enhanced updateDisplaySpan in canvas_js to target val_reading_${id} and preserve nested unit spans"
+      ]
+    },
+    {
+      "sim_id": "u01482",
+      "status": "FIXED",
+      "time": "09:09:43",
+      "issues": [
+        "Unwired action button: #btn_toggle_power was present in controls but had no event listener or power toggle logic in canvas_js.",
+        "Telemetry readout ID mismatch: canvas_js attempted to update 'reading_*' element IDs instead of 'val_reading_*', preventing live values from updating in the UI.",
+        "Unwired stepper stepper-btn buttons: up and down stepper control buttons had no click handlers attached in canvas_js.",
+        "Observation table column misalignment: btnRecord dynamically appended 7 arbitrary columns, completely misaligning with the 6 defined columns in observation_thead_html.",
+        "Superscript typo in units: corrected '10⁻¹0 m²/N' to '10⁻¹⁰ m²/N' across readouts_html and observation_thead_html."
       ]
     }
   ],
@@ -1552,6 +1558,7 @@
     "u01447",
     "u01448",
     "u01451",
+    "u01452",
     "u01453",
     "u01454",
     "u01455",
@@ -1559,11 +1566,15 @@
     "u01460",
     "u01461",
     "u01463",
+    "u01464",
     "u01465",
     "u01466",
     "u01468",
     "u01469",
     "u01470",
-    "u01472"
+    "u01472",
+    "u01474",
+    "u01476",
+    "u01482"
   ]
 }
