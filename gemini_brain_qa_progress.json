@@ -1,47 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:20:12",
-  "completed_count": 1472,
-  "fixed_count": 1355,
-  "latest_sim_id": "u01872",
+  "updated_at": "2026-10-19 14:21:54",
+  "completed_count": 1477,
+  "fixed_count": 1357,
+  "latest_sim_id": "u01857",
   "recent_events": [
-    {
-      "sim_id": "u01817",
-      "status": "FIXED",
-      "time": "11:00:25",
-      "issues": [
-        "Corrected corrupted MathML fraction formatting in unit 'bit\\frac{s}{p}ixel' to '<mtext>bits/pixel</mtext>' in readouts_html and observation_thead_html"
-      ]
-    },
-    {
-      "sim_id": "u01824",
-      "status": "FIXED",
-      "time": "11:00:55",
-      "issues": [
-        "Unwired interactive stepper increment/decrement buttons (.stepper-btn)",
-        "Unwired action buttons ('btn_inject_bolus' and 'btn_infuse_rescue')",
-        "Misaligned observation table columns in btnRecord: row inserted a timestamp and 6 mismatched fields instead of the 7 specified columns (P0, N0, Anti-Inflammatory, Endotoxin, Cytokine Peak, Barrier TEER, System State)",
-        "Unwired experiment options selector ('experimentSelect') for mapping bifurcation and rescue modes"
-      ]
-    },
-    {
-      "sim_id": "u01827",
-      "status": "PASS",
-      "time": "11:02:03",
-      "issues": []
-    },
-    {
-      "sim_id": "u01826",
-      "status": "PASS",
-      "time": "11:02:30",
-      "issues": []
-    },
-    {
-      "sim_id": "u01830",
-      "status": "PASS",
-      "time": "11:02:32",
-      "issues": []
-    },
     {
       "sim_id": "u01832",
       "status": "FIXED",
@@ -354,6 +317,46 @@
       "status": "PASS",
       "time": "14:20:12",
       "issues": []
+    },
+    {
+      "sim_id": "u01867",
+      "status": "FIXED",
+      "time": "14:20:15",
+      "issues": [
+        "Observation table columns in canvas_js btnRecord were misaligned and mismatched: pushed 7 numeric columns (including temperature, OD600, and wavelength) into a 6-column thead expecting Sector, Incubation Time, Colony Coloration, Mannitol Acid Status, Opacity Zone Diameter, and Lecithinase Reaction",
+        "Unwired action buttons: 'btn_streak_inoculate' and 'btn_inspect_lighting' had no event listeners in canvas_js",
+        "Unwired stepper controls: Stepper buttons (.stepper-btn-up, .stepper-btn-down) lacked fallback click listeners to increment/decrement input values",
+        "Oblique darkfield illumination toggle and flaming animation state were not integrated into the canvas rendering pipeline"
+      ]
+    },
+    {
+      "sim_id": "u01863",
+      "status": "PASS",
+      "time": "14:20:34",
+      "issues": []
+    },
+    {
+      "sim_id": "u01875",
+      "status": "PASS",
+      "time": "14:21:22",
+      "issues": []
+    },
+    {
+      "sim_id": "u01874",
+      "status": "PASS",
+      "time": "14:21:43",
+      "issues": []
+    },
+    {
+      "sim_id": "u01857",
+      "status": "FIXED",
+      "time": "14:21:54",
+      "issues": [
+        "Wired up interactive action buttons: fault trip button (btn_trip_fault) and machine toggle (btn_toggle_machine).",
+        "Added stepper up/down button event listeners for smooth adjustment of voltage, rheostat resistance, and shaft mechanical load.",
+        "Wired up table record button (btnRecord) to append populated 5-column rows to observation table.",
+        "Corrected spurious MathML tags around possessive apostrophes in Ohm's and Lenz's laws and ambient temperature units in slot content."
+      ]
     }
   ],
   "completed_ids": [
@@ -1823,11 +1826,16 @@
     "u01853",
     "u01855",
     "u01856",
+    "u01857",
     "u01858",
     "u01859",
     "u01860",
     "u01861",
     "u01862",
-    "u01872"
+    "u01863",
+    "u01867",
+    "u01872",
+    "u01874",
+    "u01875"
   ]
 }
