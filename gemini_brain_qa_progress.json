@@ -1,63 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 16:39:06",
-  "completed_count": 1772,
-  "fixed_count": 1590,
-  "latest_sim_id": "u02258",
+  "updated_at": "2026-10-19 16:39:52",
+  "completed_count": 1777,
+  "fixed_count": 1594,
+  "latest_sim_id": "u02264",
   "recent_events": [
-    {
-      "sim_id": "u02218",
-      "status": "FIXED",
-      "time": "16:28:34",
-      "issues": [
-        "Observation table row inserted 10 columns instead of 8, causing column misalignment with the 8 headers in observation_thead_html.",
-        "Action buttons (btn_open_circuit_port2, btn_short_circuit_port2, btn_cascade_network) were unwired in canvas_js.",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update control inputs.",
-        "Circuit simulation only computed the open-circuit condition, ignoring short-circuit and cascade network modes.",
-        "Canvas wiring and module header did not visually adapt to port 2 short-circuit or cascade configurations."
-      ]
-    },
-    {
-      "sim_id": "u02222",
-      "status": "FIXED",
-      "time": "16:29:16",
-      "issues": [
-        "Procedure section overview contained mismatched placeholder text referencing industrial tube hydroforming instead of Virtual Reality domain case studies.",
-        "Experiment options dropdown contained mismatched options for hydroforming instead of VR stereoscopic optics, latency, and tracking experiments.",
-        "Control actions contained hydroforming buttons (Auto-Coordinate Pressure & Feed, Toggle Hydraulic Die Clamping) which were unwired in canvas_js.",
-        "Apparatus legend pills listed tube hydroforming die components instead of the 5 VR apparatus elements.",
-        "Validation section listed elastoplastic metal deformation assumptions and burst limits instead of VR optical, tracking, latency, and vergence-accommodation limits.",
-        "Malformed MathML subscript text tokens (ext{Hz} and ext{MTP}) in steppers_html and readouts_html.",
-        "canvas_js setReading looked for 'reading-X' instead of 'val_reading-X', preventing live telemetry readouts from updating.",
-        "Stepper increment/decrement buttons and action buttons were unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u02212",
-      "status": "ERROR",
-      "time": "16:29:38",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u02224",
-      "status": "FIXED",
-      "time": "16:29:48",
-      "issues": [
-        "Observation table had 7 columns in JS vs 5 columns in HTML observation_thead_html, causing table column misalignment.",
-        "Action button 'btn_run_optimization_loop' was unwired in canvas_js.",
-        "Stepper buttons (.stepper-btn) lacked local click listeners to increment/decrement numeric inputs."
-      ]
-    },
-    {
-      "sim_id": "u02219",
-      "status": "ERROR",
-      "time": "16:30:18",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u02221",
       "status": "FIXED",
@@ -381,6 +328,54 @@
       "status": "PASS",
       "time": "16:39:06",
       "issues": []
+    },
+    {
+      "sim_id": "u02260",
+      "status": "PASS",
+      "time": "16:39:12",
+      "issues": []
+    },
+    {
+      "sim_id": "u02256",
+      "status": "FIXED",
+      "time": "16:39:16",
+      "issues": [
+        "Misaligned observation table columns in canvas_js relative to observation_thead_html headers (swapped VCC, angle, RSIG, Vout, ADC count)",
+        "Unwired action buttons in canvas_js: Center Wiper (btn_center_wiper) and Sweep Rotation (btn_sweep_rotation)",
+        "Unwired stepper up/down buttons (.stepper-btn) in canvas_js for potentiometer position and supply voltage",
+        "Apparatus leader line badges 1-4 swapped and misnumbered relative to legend pills 1-4"
+      ]
+    },
+    {
+      "sim_id": "u02259",
+      "status": "FIXED",
+      "time": "16:39:26",
+      "issues": [
+        "Misaligned observation table columns: tr.innerHTML generated 10 columns (including unlisted serial number, load, and elongation %) while thead specified exactly 7 columns (Rolling Reduction, Gauge Length, Crosshead Extension, Tensile Strain, Tensile Stress, Yield Strength, Ultimate Tensile Strength).",
+        "Unwired action and stepper buttons: btn_roll_strip (Perform Cold Rolling Pass) and btn_run_tensile_test (Execute Automated Tensile Test) were declared in controls but lacked event listeners in canvas_js, and .stepper-btn up/down controls were unwired.",
+        "Legend pills mismatch: legend_pills_html contained 6 elements with misaligned names and numbers that did not match the 5 apparatus items and 5 Style 2 canvas badges."
+      ]
+    },
+    {
+      "sim_id": "u02257",
+      "status": "FIXED",
+      "time": "16:39:34",
+      "issues": [
+        "Unwired action buttons: Advance Tooling Stage (#btn_advance_stage) and Engage Turning Tool (#btn_engage_chisel) were not bound to click handlers",
+        "Unwired stepper up/down buttons: Stepper buttons (.stepper-btn) were missing event listeners to increment and decrement input values",
+        "Unwired observation record button: Observation logging button (#btnRecord) was not recording telemetry data rows into #observationTbody",
+        "Malformed MathML unit: Cutting speed unit was structured as a fraction m/m in instead of m/min in readouts_html and observation_thead_html"
+      ]
+    },
+    {
+      "sim_id": "u02264",
+      "status": "FIXED",
+      "time": "16:39:52",
+      "issues": [
+        "Wired missing stepper buttons (.stepper-btn-up, .stepper-btn-down) to allow users to increment and decrement initial sand weight and NaOH volume inputs.",
+        "Wired unwired action buttons (btn_agitate_wash, btn_siphon_clay, btn_dry_sample) with click listeners and visual active feedback to guide users through the multi-stage AFS clay determination process.",
+        "Aligned observation table recorded sand weight precision to 2 decimal places to match the analytical balance precision specification."
+      ]
     }
   ],
   "completed_ids": [
@@ -2155,6 +2150,11 @@
     "u02252",
     "u02254",
     "u02255",
-    "u02258"
+    "u02256",
+    "u02257",
+    "u02258",
+    "u02259",
+    "u02260",
+    "u02264"
   ]
 }
