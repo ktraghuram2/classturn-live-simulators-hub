@@ -1,61 +1,10 @@
 {
   "runner_state": "ACTIVE (12 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 18:19:28",
-  "completed_count": 1958,
-  "fixed_count": 1757,
-  "latest_sim_id": "u01728",
+  "updated_at": "2026-10-19 18:20:28",
+  "completed_count": 1963,
+  "fixed_count": 1761,
+  "latest_sim_id": "u01755",
   "recent_events": [
-    {
-      "sim_id": "u01539",
-      "status": "FIXED",
-      "time": "18:11:40",
-      "issues": [
-        "Station benchmark names in canvas_js (BM-01 Ridge Crest, etc.) contradicted procedure step 7 and default live readouts (Road Points A-C, Tree Points A-D, Field Point)",
-        "Action buttons btn_acquire_lock and btn_next_location defined in controls slot were unwired in canvas_js",
-        "Observation table record logic was missing the 5th column (Satellite Count / effectiveSats), causing transit time and PDOP to shift into incorrect column headers",
-        "Missing fallback click event listeners for stepper-btn controls"
-      ]
-    },
-    {
-      "sim_id": "u01563",
-      "status": "FIXED",
-      "time": "18:11:40",
-      "issues": [
-        "Observation table record button logged only 6 columns instead of 8 corresponding to the thead headers, omitting absolute temperature and log(% drug undecomposed)",
-        "Stepper increment/decrement buttons were unhandled in canvas_js, preventing user adjustment of temperature and incubation time",
-        "Action buttons for quenching aliquot and zeroing spectrophotometer blank lacked event listeners",
-        "Truncated formula 'log(' in principles summary, procedure step 8, and observation column 6 header"
-      ]
-    },
-    {
-      "sim_id": "u01522",
-      "status": "ERROR",
-      "time": "18:11:40",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01535",
-      "status": "FIXED",
-      "time": "18:11:40",
-      "issues": [
-        "Fixed broken fraction conversion in actions_html: '1 m / 5 m' was rendered as '1 m/5 m' with a MathML fraction.",
-        "Fixed duplicate symbol labels and unescaped units in observation_thead_html (Vin, Vout, and alpha were duplicated; dB/m was rendered as d B/m).",
-        "Corrected optical fiber cutback attenuation equation in principles_list_html: denominator was incorrectly (L1 + L2) instead of (L2 - L1), and coefficient adjusted to standard 10 log10(V1/V2)/(L2 - L1).",
-        "Rectified canvas numbered badges and leader lines to 6 apparatus items (1: Function Generator, 2: Transmitter, 3: Optical Fiber Cable, 4: Receiver, 5: AC Amplifier, 6: Oscilloscope) matching legend_pills_html and apparatus_html exactly."
-      ]
-    },
-    {
-      "sim_id": "u01477",
-      "status": "FIXED",
-      "time": "18:11:56",
-      "issues": [
-        "Fixed badge numbering mismatch on canvas where Badges 1, 2, and 3 pointed to PMOS, NMOS, and VDD Power Supply instead of matching legend pills (1: VDD Power Supply, 2: PMOS Transistor, 3: NMOS Transistor, 4: GND).",
-        "Wired unwired action buttons (#btn_toggle_logic and #btn_toggle_topology) and experiment selector dropdown so switching between Complementary CMOS and Pseudo-NMOS Ratioed Inverter topologies dynamically updates PMOS gate biasing (V_SG = V_DD in Pseudo-NMOS vs V_DD - V_in in CMOS), PCB silkscreen/gate trace rendering, VTC curve, and live telemetry.",
-        "Fixed observation table recording in #btnRecord to output the exact 7 columns defined in observation_thead_html (Input Voltage Vin, Input Logic Lin, Output Voltage Vout, Output Logic Lout, PMOS State Sp, NMOS State Sn, Static Current IDD) instead of 8 misaligned columns."
-      ]
-    },
     {
       "sim_id": "u01542",
       "status": "FIXED",
@@ -386,6 +335,56 @@
         "Observation table record hook appended 7 columns with unlisted parameters (E and |Z|) instead of aligning with the 6 columns defined in observation_thead_html (f, V_rms, G, B, f_n, n), causing header misalignment and horizontal overflow.",
         "Action button 'btn_sweep_resonance' (Auto-Tune to Nearest Resonance Peak) was not wired to any click event handler in canvas_js.",
         "Interactive stepper increment/decrement arrow buttons (.stepper-btn-up and .stepper-btn-down) lacked click listeners to alter input values and dispatch change events."
+      ]
+    },
+    {
+      "sim_id": "u01695",
+      "status": "FIXED",
+      "time": "18:19:33",
+      "issues": [
+        "Observation table columns in canvas_js were misaligned with the table header (it logged sample index, temperature, thickness, C0, C, er instead of Material, Temperature, Measured Capacitance, Empty Cell Capacitance, Dielectric Constant, Inverse Dielectric Constant)",
+        "Action buttons (Switch Material Sample and Clamp Vernier Caliper) were not wired to event listeners in canvas_js",
+        "Stepper increment/decrement buttons were unhandled in canvas_js",
+        "Dielectric constant calculation only handled BaTiO3 with no support for PZT sample switching"
+      ]
+    },
+    {
+      "sim_id": "u01732",
+      "status": "FIXED",
+      "time": "18:19:59",
+      "issues": [
+        "Misaligned observation table columns: record button in canvas_js appended 8 <td> elements (index, vin, vref, bits, d, lsb, vout, err) whereas observation_thead_html defines exactly 5 columns (Vin, Digital Binary Word, Decimal Code, Vout, Quantization Error).",
+        "Missing apparatus pill in legend: legend_pills_html defined only 5 pills while canvas drew 6 apparatus badges; Badge 2 (Precision Reference Voltage Source Vref) was omitted from the legend.",
+        "Unwired action buttons: 'Sample & Latch Conversion' (btn_sample_hold) and 'Auto-Sweep Analog Staircase' (btn_ramp_sweep) lacked event listeners in canvas_js.",
+        "Unwired stepper controls: Stepper buttons (▲ and ▼) lacked click event listeners to increment or decrement control inputs.",
+        "Mathematical division rendering in apparatus prose: 'logic 1/0 status display' was encoded as a mathematical fraction 1/0 in apparatus_html."
+      ]
+    },
+    {
+      "sim_id": "u01737",
+      "status": "FIXED",
+      "time": "18:20:09",
+      "issues": [
+        "Unwired Section 05 action buttons: Hooked #btn_rotate_cw, #btn_reflect_axis, #btn_check_equivalence, and #btn_randomize_necklace to dihedral transformations, target generation, and real-time equivalence verification.",
+        "Unwired stepper buttons: Added click handlers for .stepper-btn (.stepper-btn-up and .stepper-btn-down) to properly increment/decrement parameters and trigger change dispatchers.",
+        "Malformed data-unit attributes in readouts_html: Replaced nested unescaped HTML spans within data-unit attributes of reading_color_dist and reading_orbit_size with clean unit strings."
+      ]
+    },
+    {
+      "sim_id": "u01750",
+      "status": "PASS",
+      "time": "18:20:20",
+      "issues": []
+    },
+    {
+      "sim_id": "u01755",
+      "status": "FIXED",
+      "time": "18:20:28",
+      "issues": [
+        "Unwired action button id='btn_execute_quantum_circuit' in canvas_js (script referenced non-existent 'btnRecord').",
+        "Misaligned observation table row insertion (6 <td> cells created for 5 <th> table headers, pushing values out of alignment).",
+        "Unwired stepper buttons (.stepper-btn) and experiment preset dropdown (experimentSelect) in canvas_js.",
+        "Corrupted possessive suffix in header_title_html where 's was erroneously converted into a MathML variable."
       ]
     }
   ],
@@ -1822,6 +1821,7 @@
     "u01692",
     "u01693",
     "u01694",
+    "u01695",
     "u01696",
     "u01697",
     "u01699",
@@ -1854,9 +1854,11 @@
     "u01728",
     "u01729",
     "u01730",
+    "u01732",
     "u01733",
     "u01734",
     "u01736",
+    "u01737",
     "u01738",
     "u01739",
     "u01740",
@@ -1867,10 +1869,12 @@
     "u01746",
     "u01747",
     "u01748",
+    "u01750",
     "u01751",
     "u01752",
     "u01753",
     "u01754",
+    "u01755",
     "u01756",
     "u01757",
     "u01759",
