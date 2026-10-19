@@ -1,70 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:08:21",
-  "completed_count": 1327,
-  "fixed_count": 1245,
-  "latest_sim_id": "u01665",
+  "updated_at": "2026-10-19 10:09:44",
+  "completed_count": 1332,
+  "fixed_count": 1250,
+  "latest_sim_id": "u01674",
   "recent_events": [
-    {
-      "sim_id": "u01608",
-      "status": "PASS",
-      "time": "09:58:26",
-      "issues": []
-    },
-    {
-      "sim_id": "u01628",
-      "status": "ERROR",
-      "time": "09:58:50",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01627",
-      "status": "PASS",
-      "time": "09:58:57",
-      "issues": []
-    },
-    {
-      "sim_id": "u01632",
-      "status": "PASS",
-      "time": "09:59:20",
-      "issues": []
-    },
-    {
-      "sim_id": "u01630",
-      "status": "FIXED",
-      "time": "09:59:32",
-      "issues": [
-        "Unwired action buttons in canvas_js: 'Buy Product (Execute Transaction)', 'Simulate Single Point Failure', and 'Apply Failure Recovery'",
-        "Unwired stepper increment and decrement buttons (stepper-btn-up and stepper-btn-down)",
-        "Observation table column mismatch: recordObservation rendered 9 table data cells across headers configured for only 7 columns",
-        "Missing single point of failure (SPOF) logic: RDBMS availability and processing telemetry remained static during crash simulation without fault-stop behavior"
-      ]
-    },
-    {
-      "sim_id": "u01631",
-      "status": "FIXED",
-      "time": "09:59:38",
-      "issues": [
-        "Unwired action buttons: #btn_advance_stage and #btn_trigger_systole were not connected to simulation state.",
-        "Unwired stepper controls: Stepper up and down buttons (.stepper-btn) had no click listeners attached.",
-        "Misaligned observation table: btnRecord appended 10 td cells with extraneous columns (#trialCount, rRel, etc.) that mismatched the 6 defined thead columns (Atheroma Stage, Lumen Height, Perfusion Pressure, Flow Speed, Pulse Duration, Hemodynamic State).",
-        "Systolic trigger waveform: Dynamic systole simulation lacked manual boost response for the trigger action."
-      ]
-    },
-    {
-      "sim_id": "u01625",
-      "status": "FIXED",
-      "time": "09:59:45",
-      "issues": [
-        "Observation table column mismatch: canvas_js recorded 10 columns including Trial#, fc, and HR, whereas observation_thead_html defines 8 columns (Modality, Gain, fs, Bits, Vin, Vout, Q step, SNR).",
-        "Readout DOM ID mismatch: canvas_js attempted to update 'rd_vin_pp', 'rd_vout_pp', etc., while HTML readout values have IDs 'val_rd_vin_pp', 'val_rd_vout_pp', etc., preventing live readout updates.",
-        "Unwired action and stepper buttons: 'Next Biomedical Modality', 'Previous Biomedical Modality', 'Toggle 50 Hz Powerline Notch Filter', and stepper arrow buttons had no event listeners.",
-        "Missing multi-modality biosignal generation: only ECG was synthesized; EEG (alpha wave) and EMG (motor unit interference) modalities were unimplemented.",
-        "Erroneous MathML fraction markup in prose/units: 50/60 Hz mains and alpha/beta rhythms were incorrectly formatted as fractions (50 over 60, alpha over beta) in apparatus and principles HTML slots."
-      ]
-    },
     {
       "sim_id": "u01629",
       "status": "PASS",
@@ -351,6 +291,75 @@
         "Unwired action buttons: 'btn_strobe_single' and 'btn_toggle_continuous_strobe' in actions_html had no event listeners in canvas_js.",
         "Unwired stepper buttons: .stepper-btn (.stepper-btn-up and .stepper-btn-down) were not connected to increment/decrement rateFactor.",
         "Misaligned observation table columns: canvas_js recorded sampleCount (N_s) into column 1, shifting rate factor into column 2, deltaTheta into column 3, and thetaApparent into column 4, while omitting column 5 (Observed Motion State) entirely."
+      ]
+    },
+    {
+      "sim_id": "u01667",
+      "status": "ERROR",
+      "time": "10:08:24",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01669",
+      "status": "FIXED",
+      "time": "10:08:40",
+      "issues": [
+        "Misaligned observation table: record row generated 7 <td> cells with an undeclared S.No column while observation_thead_html defines only 6 <th> columns, causing severe column shift.",
+        "Unwired stepper controls: .stepper-btn-up and .stepper-btn-down buttons lacked click event listeners in canvas_js, preventing user interaction via stepper buttons."
+      ]
+    },
+    {
+      "sim_id": "u01670",
+      "status": "FIXED",
+      "time": "10:08:48",
+      "issues": [
+        "Unwired action buttons: 'btn_step_kmer_scan' (advance window & add edge) and 'btn_trace_eulerian_walk' (trace Eulerian walk) were missing click event listeners in canvas_js.",
+        "Unwired stepper buttons: stepper-btn-up and stepper-btn-down were not wired to increment/decrement input values in canvas_js.",
+        "Misaligned observation table columns: btnRecord pushed 9 cells (including serial, window index, repeat motif) while observation_thead_html defined only 6 columns (N, k, node size k-1, edge count E_k, unique nodes V_u, compression ratio C_r).",
+        "Activity selection dropdown (Activity 1 vs Activity 2) was unhandled in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01664",
+      "status": "FIXED",
+      "time": "10:09:19",
+      "issues": [
+        "Unwired action buttons: 'btn_validate_chunking' and 'btn_auto_chunk' defined in actions_html were completely unhandled in canvas_js.",
+        "Misaligned observation table columns: 'btnRecord' appended 8 columns with mismatched schema (counter, lang, sentence, cursor, ratio, accuracy, precision, f1) whereas observation_thead_html defines exactly 6 columns (Sentence Index, Total Tokens, Correctly Tagged Tokens, Token Accuracy, Chunk Precision, Harmonic F1 Score).",
+        "Missing stepper button bindings: Custom stepper up/down buttons (.stepper-btn-up, .stepper-btn-down) were unhandled.",
+        "Missing interactive phrase chunk bracket visualization and clickable token tag cycling on the 2D canvas."
+      ]
+    },
+    {
+      "sim_id": "u01673",
+      "status": "FIXED",
+      "time": "10:09:27",
+      "issues": [
+        "Unwired action buttons: Trigger Power-On Cycle (#btn_power_cycle) and Discharge Timing Capacitor (#btn_discharge_cap) had no event listeners attached.",
+        "Unwired stepper controls: Stepper up and down buttons (.stepper-btn) had no click listeners attached to step and fire change events on inputs.",
+        "Misaligned observation table columns: Observation table row generation produced 8 cells (including unheadered S.No, Vc, and Vout) for a 6-column table header; corrected to 6 matching columns."
+      ]
+    },
+    {
+      "sim_id": "u01668",
+      "status": "ERROR",
+      "time": "10:09:31",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01674",
+      "status": "FIXED",
+      "time": "10:09:44",
+      "issues": [
+        "Observation table columns in canvas_js were misaligned with the 7 thead columns and included an extra 8th column (gravity)",
+        "Action buttons (btn_tare_balance, btn_dispense_sample) and stepper up/down buttons were unwired in canvas_js",
+        "Digital balance display lacked tare toggle between gross and net mass",
+        "Dispenser feed nozzle lacked active fluid dispensing stream animation upon trigger",
+        "Hydrometer float bottom was unconstrained and visually protruded through cylinder base during low fluid volume"
       ]
     }
   ],
@@ -1681,6 +1690,11 @@
     "u01661",
     "u01662",
     "u01663",
-    "u01665"
+    "u01664",
+    "u01665",
+    "u01669",
+    "u01670",
+    "u01673",
+    "u01674"
   ]
 }
