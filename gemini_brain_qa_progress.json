@@ -1,58 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 09:31:14",
-  "completed_count": 1247,
-  "fixed_count": 1184,
-  "latest_sim_id": "u01559",
+  "updated_at": "2026-10-19 09:34:15",
+  "completed_count": 1252,
+  "fixed_count": 1188,
+  "latest_sim_id": "u01565",
   "recent_events": [
-    {
-      "sim_id": "u01516",
-      "status": "PASS",
-      "time": "09:18:19",
-      "issues": []
-    },
-    {
-      "sim_id": "u01520",
-      "status": "FIXED",
-      "time": "09:18:19",
-      "issues": [
-        "Observation table columns were misaligned with the header: the row created on recording lacked the Crystal Habit column (only 7 cells for 8 table headers), causing streak, hardness, luster, and weight values to shift into incorrect column headers."
-      ]
-    },
-    {
-      "sim_id": "u01512",
-      "status": "FIXED",
-      "time": "09:18:19",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01521",
-      "status": "FIXED",
-      "time": "09:18:42",
-      "issues": [
-        "Unwired action buttons: 'btn_auto_balance' and 'btn_toggle_cell' in actions_html lacked click event listeners in canvas_js.",
-        "Unwired stepper controls: stepper buttons with data-target were not wired to increment/decrement the respective inputs.",
-        "Misaligned observation table: canvas_js generated 7 table columns whereas observation_thead_html defined 5 columns (Active Cell, Balancing Length, Potential Gradient, Galvanometer Current, Measured Electromotive Force)."
-      ]
-    },
-    {
-      "sim_id": "u01524",
-      "status": "PASS",
-      "time": "09:19:33",
-      "issues": []
-    },
-    {
-      "sim_id": "u01526",
-      "status": "FIXED",
-      "time": "09:20:09",
-      "issues": [
-        "Live readout DOM element ID mismatch: canvas_js queried 'reading_*' instead of 'val_reading_*', preventing real-time telemetry updates.",
-        "Observation table column mismatch: canvas_js generated 8 columns including unheaded trial count and strike azimuth, misaligning with the 6-column header.",
-        "Unwired stepper controls and action buttons: stepper increment/decrement buttons and action buttons ('Auto-Align Strike Lines', 'Project Geological Profile') lacked event listeners."
-      ]
-    },
     {
       "sim_id": "u01528",
       "status": "FIXED",
@@ -370,6 +322,63 @@
         "Unwired stepper buttons: .stepper-btn up and down increment controls were not bound to stepper input values.",
         "Unwired experiment options: experimentSelect change listener was not attached to configure presets.",
         "Raw mathematical text formatting: '1 - p' in apparatus_html and '(1 - p)^(4 - k)' in principles_summary_html were rendered as raw plain text instead of formatted MathML expressions."
+      ]
+    },
+    {
+      "sim_id": "u01561",
+      "status": "FIXED",
+      "time": "09:31:22",
+      "issues": [
+        "Observation table logged 7 columns including an extraneous clock delay entry, causing data cells to misalign with the 6 thead column headers.",
+        "Action button #btn_compile_execute ('Compile Bytecode & Dispatch Method') was unwired in canvas_js.",
+        "Stepper control increment/decrement buttons (.stepper-btn) lacked click event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u01548",
+      "status": "ERROR",
+      "time": "09:31:22",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01562",
+      "status": "FIXED",
+      "time": "09:33:16",
+      "issues": [
+        "DOM Telemetry IDs in canvas_js queried 'reading_*' instead of 'val_reading_*', causing null element references and preventing live readouts from updating.",
+        "Action button '#btn_toggle_brake_cal' ('Calibrate Dynamometer Zero-Load') was unwired in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn) had no click listeners attached to adjust control inputs.",
+        "Observation table column misalignment: btnRecord inserted 8 cells (including tau_m), whereas observation_thead_html only defines 7 columns.",
+        "Rotor rotation occurred for any vc > 0.5 V, omitting the physical stiction breakaway deadband threshold of 14.5 V specified in the validation limitations and procedure."
+      ]
+    },
+    {
+      "sim_id": "u01566",
+      "status": "PASS",
+      "time": "09:33:42",
+      "issues": []
+    },
+    {
+      "sim_id": "u01569",
+      "status": "FIXED",
+      "time": "09:33:57",
+      "issues": [
+        "Unwired action buttons: 'btn_validate_schedule' and 'btn_auto_sequence' were defined in HTML but had no event listeners in canvas_js.",
+        "Misaligned observation table logging: btnRecord logged project duration and critical task count under Earliest Start (ES) and Earliest Finish (EF) column headers.",
+        "Badge count mismatch: canvas rendered 6 badges while apparatus specification and legend pills only define 3 apparatus elements.",
+        "Unwired experiment selector: experimentSelect dropdown lacked change listener to alternate parameters between Spray Dryer and Flow Meter scenarios.",
+        "Missing stepper button bindings: stepper-btn up and down buttons lacked explicit click handlers."
+      ]
+    },
+    {
+      "sim_id": "u01565",
+      "status": "FIXED",
+      "time": "09:34:15",
+      "issues": [
+        "Unwired action button btn_advance_period ('Advance Simulation Period') leaving the simulation unable to step discrete simulation intervals",
+        "Misaligned observation table row generated 8 cells with swapped telemetry parameters instead of 6 cells strictly matching the observation table header"
       ]
     }
   ],
@@ -1620,6 +1629,11 @@
     "u01555",
     "u01556",
     "u01557",
-    "u01559"
+    "u01559",
+    "u01561",
+    "u01562",
+    "u01565",
+    "u01566",
+    "u01569"
   ]
 }
