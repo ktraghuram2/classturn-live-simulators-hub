@@ -1,18 +1,10 @@
 {
   "runner_state": "ACTIVE (6 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 19:43:44",
-  "completed_count": 2118,
-  "fixed_count": 1890,
-  "latest_sim_id": "classturn-double-slit-pipeline",
+  "updated_at": "2026-10-19 19:43:55",
+  "completed_count": 2119,
+  "fixed_count": 1891,
+  "latest_sim_id": "classturn-hookes-law-pipeline",
   "recent_events": [
-    {
-      "sim_id": "u01967",
-      "status": "ERROR",
-      "time": "19:09:38",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u02031",
       "status": "ERROR",
@@ -359,10 +351,22 @@
       "status": "PASS",
       "time": "19:43:44",
       "issues": []
+    },
+    {
+      "sim_id": "classturn-hookes-law-pipeline",
+      "status": "FIXED",
+      "time": "19:43:55",
+      "issues": [
+        "Apparatus slot had empty <strong></strong> tags with all equipment item names omitted.",
+        "Actions slot only contained the oscillate button while Record Observation and Reset buttons were missing despite being wired in JavaScript.",
+        "Stepper up/down buttons (.stepper-btn) lacked click event listeners in canvas_js, preventing values from changing via arrow controls.",
+        "Millimeter scale graduations were misaligned with the physical pointer tip, causing a ~4.75 cm discrepancy between the visual pointer position and the telemetry readouts."
+      ]
     }
   ],
   "completed_ids": [
     "classturn-double-slit-pipeline",
+    "classturn-hookes-law-pipeline",
     "u00002",
     "u00003",
     "u00004",
