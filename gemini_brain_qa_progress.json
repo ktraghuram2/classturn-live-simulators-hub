@@ -1,74 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 14:21:54",
-  "completed_count": 1477,
-  "fixed_count": 1357,
-  "latest_sim_id": "u01857",
+  "updated_at": "2026-10-19 14:23:22",
+  "completed_count": 1482,
+  "fixed_count": 1362,
+  "latest_sim_id": "u01873",
   "recent_events": [
-    {
-      "sim_id": "u01832",
-      "status": "FIXED",
-      "time": "11:02:50",
-      "issues": [
-        "Observation table columns misaligned: btnRecord appended 7 table cells while the observation header defines 5 columns (Step Index, Port 1 Value, DAC Current, Output Voltage, Elapsed Time).",
-        "Live telemetry readouts failed to update because updateTelemetry targeted 'reading_*' and 'val_*' instead of the actual element IDs 'val_reading_*'.",
-        "Unwired action button 'btn_toggle_smoothing' in canvas_js.",
-        "Unwired stepper increment/decrement buttons (.stepper-btn) in canvas_js.",
-        "Improper fraction rendering of 'I/O' as MathML fraction <mfrac><mi>I</mi><mi>O</mi></mfrac> in apparatus and principles slots."
-      ]
-    },
-    {
-      "sim_id": "u01825",
-      "status": "ERROR",
-      "time": "11:02:51",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01829",
-      "status": "FIXED",
-      "time": "11:02:51",
-      "issues": [
-        "Style 2 leader line badge numbering in canvas_js (badges 1, 2, 3, 4) did not match legend pills (1: Hot Plate, 2: Flask, 3: Ice/Water sample, 4: Thermometer probe)",
-        "Action button btn_start_heating was unhandled and unlinked in canvas_js",
-        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update inputs and simulation state",
-        "Observation table record button populated mismatched columns (record count, current temperature, phase, cumulative heat, simulated time) instead of matching observation_thead_html (Amount of Ice, Thermal Energy Rate, Size of Beaker, Melting Point, Boiling Point, Melting Time, Boiling Onset Time)",
-        "Malformed MathML fraction syntax for specific heat capacity unit in principles_list_html"
-      ]
-    },
-    {
-      "sim_id": "u01823",
-      "status": "ERROR",
-      "time": "11:02:59",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01831",
-      "status": "ERROR",
-      "time": "11:03:00",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01828",
-      "status": "FIXED",
-      "time": "11:03:33",
-      "issues": [
-        "Updated in Gemini brain"
-      ]
-    },
-    {
-      "sim_id": "u01835",
-      "status": "ERROR",
-      "time": "11:04:32",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01841",
       "status": "PASS",
@@ -356,6 +292,77 @@
         "Added stepper up/down button event listeners for smooth adjustment of voltage, rheostat resistance, and shaft mechanical load.",
         "Wired up table record button (btnRecord) to append populated 5-column rows to observation table.",
         "Corrected spurious MathML tags around possessive apostrophes in Ohm's and Lenz's laws and ambient temperature units in slot content."
+      ]
+    },
+    {
+      "sim_id": "u01866",
+      "status": "ERROR",
+      "time": "14:22:22",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01865",
+      "status": "ERROR",
+      "time": "14:22:30",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u01869",
+      "status": "FIXED",
+      "time": "14:22:44",
+      "issues": [
+        "Fixed raw LaTeX delimiters (\\left( ... \\right)_T_1) and malformed nested HTML tags inside the data-unit attributes of readouts_html, converting them to standard MathML and plain unit strings.",
+        "Wired Atlas action buttons (action_steam_flow, action_fast_steady, action_start_cooling) and stepper buttons (.stepper-btn) in canvas_js to allow interactive control of simulation parameters and states.",
+        "Rectified observation table row structure in recordObservation() to exactly match the 6 columns defined in observation_thead_html (t, T1, T2, T2-T1, dT/dt, k), eliminating the extra mismatched columns.",
+        "Aligned canvas Style 2 numbered leader line badges (1 to 8) to match the exact order of elements in legend_pills_html and apparatus_html."
+      ]
+    },
+    {
+      "sim_id": "u01877",
+      "status": "FIXED",
+      "time": "14:22:46",
+      "issues": [
+        "Unwired action buttons in canvas_js: Event listeners were attached to non-existent IDs (btn_insert, btn_delete, btn_traverse, btn_reset) instead of the actual action button IDs defined in actions_html (btn_insert_head, btn_insert_tail, btn_insert_pos, btn_delete_val).",
+        "Missing dedicated routines for Head Insertion (O(1) time complexity), Tail Insertion, and Positional Insertion corresponding to the experiment controls.",
+        "Unwired stepper controls: .stepper-btn up/down controls lacked click event handlers to adjust input values for node_val, target_idx, and target_val.",
+        "Misaligned observation table columns: btnRecord injected 4 data cells into the table row, whereas observation_thead_html defines 6 columns (Operation Performed, Node Count, Target Index, Payload Value, Pointer Traversal Steps, Heap Memory Consumed)."
+      ]
+    },
+    {
+      "sim_id": "u01876",
+      "status": "FIXED",
+      "time": "14:22:50",
+      "issues": [
+        "Rectified raw LaTeX subscript/superscript '_{B_1}^{B_2}' and English indefinite article math tag in aim_html to clean MathML",
+        "Fixed observation table misalignment where row recording emitted 10 columns with an unheaded row index instead of the 8 defined column headers",
+        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) to mutate values and dispatch sync events",
+        "Wired action buttons btn_verify_linearity to demonstrate vector linearity and btn_invert_transformation to compute and apply the matrix inverse"
+      ]
+    },
+    {
+      "sim_id": "u01864",
+      "status": "FIXED",
+      "time": "14:22:56",
+      "issues": [
+        "Unwired action buttons: btn_run_drc and btn_auto_correct_drc had no event listeners in canvas_js",
+        "Unwired stepper buttons: stepper-btn up and down controls were not wired to update inputs and dispatch change events",
+        "Hitbox misalignment: Mask palette click boundaries (i * 36) did not match drawn button positions (104 + i * 40)",
+        "Knurled dial center offset: mousedown checked (692, 355, r=28) instead of the rendered dial center (693, 358, r=32)"
+      ]
+    },
+    {
+      "sim_id": "u01873",
+      "status": "FIXED",
+      "time": "14:23:22",
+      "issues": [
+        "Scheme 1 was labeled and simulated as Unipolar NRZ instead of Unipolar RZ as specified in Aim and Procedure Step 3",
+        "Telemetry readout elements targeted non-existent IDs 'reading_*' instead of 'val_reading_*', preventing live telemetry updates",
+        "Action buttons (btn_cycle_encoding, btn_invert_data, btn_toggle_clock_overlay) and stepper up/down controls were completely unhandled",
+        "Observation table record generator was misaligned with table headers (Peak Voltage was swapped with Bit Pattern) and included an unmapped 8th column"
       ]
     }
   ],
@@ -1833,9 +1840,14 @@
     "u01861",
     "u01862",
     "u01863",
+    "u01864",
     "u01867",
+    "u01869",
     "u01872",
+    "u01873",
     "u01874",
-    "u01875"
+    "u01875",
+    "u01876",
+    "u01877"
   ]
 }
