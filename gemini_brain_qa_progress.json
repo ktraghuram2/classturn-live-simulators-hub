@@ -1,60 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 10:05:16",
-  "completed_count": 1317,
-  "fixed_count": 1237,
-  "latest_sim_id": "u01647",
+  "updated_at": "2026-10-19 10:06:52",
+  "completed_count": 1322,
+  "fixed_count": 1240,
+  "latest_sim_id": "u01660",
   "recent_events": [
-    {
-      "sim_id": "u01611",
-      "status": "FIXED",
-      "time": "09:52:36",
-      "issues": [
-        "Live readout element IDs in canvas_js were targeting 'reading_*' instead of 'val_reading_*', preventing real-time telemetry updates in Section 6.",
-        "Observation table data row appended 9 td columns while observation_thead_html only has 7 columns, causing column misalignment.",
-        "Stepper buttons (.stepper-btn-up and .stepper-btn-down) were unwired in canvas_js.",
-        "Automated Shearing Cycle action button (#btn_auto_shearing_cycle) was unwired in canvas_js."
-      ]
-    },
-    {
-      "sim_id": "u01613",
-      "status": "FIXED",
-      "time": "09:52:39",
-      "issues": [
-        "Observation table rows in canvas_js rendered 7 td columns against a 5 th header, misaligning trial count, coordinates, and day dispatch results; aligned to exactly 5 columns matching observation_thead_html.",
-        "Action button listener in canvas_js was searching for non-existent 'btnRecord'; updated to bind 'btn_eval_full' (Execute Complete Evaluation) and wired stepper up/down controls."
-      ]
-    },
-    {
-      "sim_id": "u01614",
-      "status": "FIXED",
-      "time": "09:52:56",
-      "issues": [
-        "Unwired action buttons: 'btn_start_stop' (Start/Stop Simulation) and 'btn_clear_screen' (Send Display Clear 0x01) had no event listeners.",
-        "Unwired stepper buttons: Up/Down buttons with class '.stepper-btn' were not wired to update target numeric inputs.",
-        "Observation table column mismatch: btnRecord wrote 6 columns (timestamp, alpha, v0, contrast, current, interval) instead of matching the 5 defined observation table headers (Phase N_msg, Bias Voltage V0, Contrast Ratio Cr, Row 0 String, Row 1 String).",
-        "Telemetry updates stalled: Live readouts only refreshed on message phase cycle transitions instead of updating immediately when adjusting the potentiometer wiper ratio."
-      ]
-    },
-    {
-      "sim_id": "u01615",
-      "status": "FIXED",
-      "time": "09:53:26",
-      "issues": [
-        "Observation table columns in canvas_js recorded 9 columns but observation_thead_html defined only 6 columns, causing misaligned table data cells",
-        "Badges 2 and 4 in canvas_js were swapped relative to legend_pills_html (Badge 2 pointed to Buzzer instead of Breadboard, and Badge 4 pointed to Breadboard instead of Buzzer)",
-        "Action buttons #btn_press_button and #btn_pulse_alert and stepper up/down buttons were missing explicit event handlers in canvas_js",
-        "Readouts HTML contained malformed nested HTML tag and quotes inside data-unit attributes"
-      ]
-    },
-    {
-      "sim_id": "u01618",
-      "status": "ERROR",
-      "time": "09:56:15",
-      "issues": [
-        "Unknown error"
-      ]
-    },
     {
       "sim_id": "u01624",
       "status": "FIXED",
@@ -361,6 +311,47 @@
         "Fixed observation table column count mismatch: removed extra 8th result column so recorded rows align with the 7-column observation_thead_html structure.",
         "Wired interactive action buttons: attached click handlers for 'btn_flame_loop' (Flame Sterilize Loop) and 'btn_dispense_reagent' (Dispense 3% H2O2 Reagent).",
         "Wired stepper controls: attached click handlers for all .stepper-btn up and down buttons to correctly increment and decrement their target input values within min/max bounds."
+      ]
+    },
+    {
+      "sim_id": "u01652",
+      "status": "FIXED",
+      "time": "10:05:20",
+      "issues": [
+        "Unwired action button: btn_pulse_inducer had no click listener to inject an inducer pulse into the diffusion field.",
+        "Misaligned observation table columns: Total Cell Count column was missing from recorded row, causing length, signal, GFP, and force values to shift into incorrect table cells."
+      ]
+    },
+    {
+      "sim_id": "u01653",
+      "status": "PASS",
+      "time": "10:05:25",
+      "issues": []
+    },
+    {
+      "sim_id": "u01654",
+      "status": "FIXED",
+      "time": "10:06:29",
+      "issues": [
+        "Misaligned observation table columns: removed extra doorway vent width (ventW) entry and reordered interface height (z_int) and upper layer temperature (T_u) to match table thead column order exactly.",
+        "Unwired action and stepper buttons: added event listeners for btn_ignite_burner, btn_integrate_profile, and .stepper-btn controls to ensure interactive reactivity."
+      ]
+    },
+    {
+      "sim_id": "u01661",
+      "status": "PASS",
+      "time": "10:06:37",
+      "issues": []
+    },
+    {
+      "sim_id": "u01660",
+      "status": "FIXED",
+      "time": "10:06:52",
+      "issues": [
+        "Observation table column mismatch: observation_thead_html defined 5 columns while canvas_js appended 7 columns including unrepresented trial count and Al2O3 columns, causing table misalignment.",
+        "Unwired live telemetry readouts: canvas_js searched for 'reading_*' container IDs rather than 'val_reading_*' value span IDs, blocking live readout updates.",
+        "Unwired action button: 'Weigh Precipitate on Analytical Balance' (btn_weigh_precipitate) was defined in HTML but had no event listener to toggle precipitate weighing on the analytical balance.",
+        "Unwired stepper controls: Stepper up and down buttons lacked event listeners, rendering manual increment/decrement clicks unresponsive."
       ]
     }
   ],
@@ -1681,6 +1672,11 @@
     "u01648",
     "u01649",
     "u01650",
-    "u01651"
+    "u01651",
+    "u01652",
+    "u01653",
+    "u01654",
+    "u01660",
+    "u01661"
   ]
 }
