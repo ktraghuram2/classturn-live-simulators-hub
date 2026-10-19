@@ -1,72 +1,10 @@
 {
   "runner_state": "ACTIVE (10 GEMINI 3.8 FLASH HIGH AGENTS RUNNING)",
-  "updated_at": "2026-10-19 15:28:25",
-  "completed_count": 1587,
-  "fixed_count": 1448,
-  "latest_sim_id": "u02012",
+  "updated_at": "2026-10-19 15:47:42",
+  "completed_count": 1592,
+  "fixed_count": 1453,
+  "latest_sim_id": "u02017",
   "recent_events": [
-    {
-      "sim_id": "u01964",
-      "status": "ERROR",
-      "time": "14:46:14",
-      "issues": [
-        "Unknown error"
-      ]
-    },
-    {
-      "sim_id": "u01974",
-      "status": "PASS",
-      "time": "14:46:16",
-      "issues": []
-    },
-    {
-      "sim_id": "u01973",
-      "status": "FIXED",
-      "time": "14:46:20",
-      "issues": [
-        "Fixed misaligned observation table columns: btnRecord injected 12 <td> values into a 9-column table, displacing readings and omitting critical F-value.",
-        "Wired up the 'Generate Sample Realization' action button (btn_resample_groups) to draw fresh random Gaussian sample realizations via Box-Muller transform.",
-        "Wired up stepper up/down buttons (.stepper-btn) so parameter inputs update smoothly upon user interaction.",
-        "Rectified garbled MathML equation in principles_summary_html where variance ratio was rendered as MS*(B/M)*SW instead of MSB/MSW."
-      ]
-    },
-    {
-      "sim_id": "u01970",
-      "status": "FIXED",
-      "time": "14:46:29",
-      "issues": [
-        "Unwired action buttons: Wired 'Validate Domain Model' (btn_validate_model) to trigger domain model recomputation and 'Auto-Sequence Timeline' (btn_align_timeline) to reset timeline sequence blocks to default chronological order and update controls.",
-        "Unwired stepper buttons: Wired '.stepper-btn' (▲/▼) click listeners to increment and decrement target inputs (control_step, control_filter, control_cohesion) respecting min/max bounds and dispatching input events."
-      ]
-    },
-    {
-      "sim_id": "u01975",
-      "status": "FIXED",
-      "time": "14:46:51",
-      "issues": [
-        "Action buttons ('Tap Lower', 'Tap Raise', 'Auto-Regulate') in actions_html were completely unhandled in canvas_js.",
-        "Stepper buttons (▲/▼) were unwired for adjusting the incomer primary voltage input.",
-        "Observation table record handler injected 6 table cells including an undeclared trial index, misaligning with the 5 columns declared in observation_thead_html.",
-        "Incomer voltage input listener automatically adjusted the OLTC target tap position, preventing manual tap adjustment as described in the lab procedure.",
-        "Experiment scenario options dropdown ('Under-Voltage Correction' and 'Over-Voltage Correction') was not wired to update preset values."
-      ]
-    },
-    {
-      "sim_id": "u01978",
-      "status": "PASS",
-      "time": "14:47:15",
-      "issues": []
-    },
-    {
-      "sim_id": "u01980",
-      "status": "FIXED",
-      "time": "14:47:44",
-      "issues": [
-        "Raw unescaped LaTeX 'dB\\_{Loss}' found in readouts_html and observation_thead_html MathML instead of clean formatted MathML",
-        "Action button 'btn_toggle_laser' was present in actions_html but not wired to toggle laser state in canvas_js",
-        "Stepper increment and decrement buttons were not wired to update target input values and trigger input events in canvas_js"
-      ]
-    },
     {
       "sim_id": "u01981",
       "status": "FIXED",
@@ -388,6 +326,76 @@
         "Action button #btn_inject_geodesic_pulse was unhandled in canvas_js; wired it to inject a stream of test particle geodesics",
         "Stepper increment/decrement buttons (.stepper-btn) had no click handlers bound in canvas_js; added handler to step mass, charge, and radius inputs",
         "Fragmented spacetime interval equation and raw ASCII/LaTeX horizon notation (r_+, r_-) in principles_summary_html and procedure_section_html replaced with clean inline MathML"
+      ]
+    },
+    {
+      "sim_id": "u02016",
+      "status": "FIXED",
+      "time": "15:47:41",
+      "issues": [
+        "Wired missing click event listeners for action buttons 'btn_trigger_sync' (Initiate Two-Way Sync Burst) and 'btn_toggle_continuous_sync' (Toggle Periodic Auto-Sync).",
+        "Wired stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) to dynamically adjust target inputs.",
+        "Fixed observation table row generation to output all 8 columns in exact alignment with observation_thead_html (Index, T0, T1, T2, T3, Measured RTT, Offset, Residual Clock Time).",
+        "Implemented clock slewing discipline algorithm so that measured offset dynamically and smoothly converges Peer 2 clock to Peer 1 as specified in the principles."
+      ]
+    },
+    {
+      "sim_id": "u02015",
+      "status": "FIXED",
+      "time": "15:47:41",
+      "issues": [
+        "Observation table columns in record button handler were misaligned (12 values pushed into a 6-column table, causing column misalignment).",
+        "Stepper increment and decrement buttons (.stepper-btn-up, .stepper-btn-down) lacked event listeners and were non-functional.",
+        "Action buttons (btn_condense_peptide and btn_scan_uv280) lacked interactive animation triggers.",
+        "Non-chromophoric residue count was vulnerable to becoming negative if total aromatic/sulfur residues exceeded sequence length."
+      ]
+    },
+    {
+      "sim_id": "u02010",
+      "status": "ERROR",
+      "time": "15:47:41",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02014",
+      "status": "FIXED",
+      "time": "15:47:41",
+      "issues": [
+        "Badge numbers 1, 2, and 3 in canvas_js were misaligned with legend pills (Pill 1 is Left support block, 2 is Right support block, 3 is Aluminium beam, whereas canvas_js drew Badge 1 on beam, 2 on left support, 3 on right support).",
+        "Observation table column 1 in btnRecord handler recorded beam span length L (mm) instead of baseline AB pixel distance d_AB (pixels) specified in the table header.",
+        "Action buttons #btn_capture_frame and #btn_toggle_grid were unwired in canvas_js.",
+        "Stepper increment and decrement buttons (.stepper-btn) were not wired to update inputs and fire change events."
+      ]
+    },
+    {
+      "sim_id": "u02019",
+      "status": "FIXED",
+      "time": "15:47:41",
+      "issues": [
+        "Observation table columns were misaligned: an unrequested row index column and fan speed reading were inserted, which displaced temperature and flow values and created an 8th column without a matching table header.",
+        "Action buttons (btn_start_pilot_cycle, btn_purge_chamber) and stepper increment/decrement buttons lacked event listeners in canvas_js."
+      ]
+    },
+    {
+      "sim_id": "u02007",
+      "status": "ERROR",
+      "time": "15:47:41",
+      "issues": [
+        "Unknown error"
+      ]
+    },
+    {
+      "sim_id": "u02017",
+      "status": "FIXED",
+      "time": "15:47:41",
+      "issues": [
+        "Mismatched legend_pills_html: listed 8 items in an incorrect order instead of the 6 canonical apparatus items matching the canvas leader line badges.",
+        "Unwired action button btn_cycle_packaging: packaging trigger was unhandled in canvas_js.",
+        "Unwired stepper up/down buttons: .stepper-btn buttons lacked click event listeners in canvas_js.",
+        "Misaligned observation table columns in btnRecord click handler: recorded 6 columns with timestamp and steam pressure instead of the 7 matching observation table headers.",
+        "Misinterpreted Greek letter psi in procedure Step 1 where pneumatic supply pressure unit was written as \\psi instead of psi."
       ]
     }
   ],
@@ -1978,6 +1986,11 @@
     "u02008",
     "u02009",
     "u02011",
-    "u02012"
+    "u02012",
+    "u02014",
+    "u02015",
+    "u02016",
+    "u02017",
+    "u02019"
   ]
 }
