@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClassTurn · Canonical Skeletal Legacy Layout</title>
+  <style>
+/* ==========================================================================
+   CLASSTURN CANONICAL SKELETAL LEGACY LAYOUT (UNPOPULATED TEMPLATE)
+   STRICTLY LOCKED: Zero AI data loaded. Only structural slots & tokens.
+   ========================================================================== */
+
+:root {
+  --primary: #176c5f;
+  --primary-hover: #10564b;
+  --bg-page: #edf6f2;
+  --surface: #ffffff;
+  --surface-border: #8eaea1;
+  --text: #193f3a;
+  --text-muted: #526e66;
+  --canvas-bg: #090d16;
+  --font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --header-height: 64px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: var(--font);
+  background: var(--bg-page);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 1. TOP HEADER (64px, FIXED LOCKED) */
+header {
+  height: var(--header-height);
+  background: var(--surface);
+  border-bottom: 2px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.eyebrow {
+  margin: 0 0 2px 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 750;
+  color: #173c35;
+  letter-spacing: -0.01em;
+}
+
+.badge-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge.verified {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #f59e0b;
+}
+
+.badge.benchmarked {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+/* 2. MAIN SPLIT-PANE WORKSPACE */
+.workspace-layout {
+  display: flex;
+  width: 100vw;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+  position: relative;
+}
+
+/* LEFT STAGE: CANVAS & OBSERVATION NOTEBOOK */
+.stage-fixed {
+  flex: 1 1 0;
+  min-width: 320px;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  background: var(--bg-page);
+}
+
+.canvas-wrapper {
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 260px;
+  background: var(--canvas-bg);
+  border: 2px solid var(--surface-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* APPARATUS LEGEND BANNER (LOCKED BELOW CANVAS VIEWPORT, ABOVE NOTEBOOK, HORIZONTALLY SCROLLABLE) */
+.apparatus-legend-banner {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #edf6f2;
+  border: 1.5px solid var(--surface-border);
+  border-radius: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #8eaea1 #e2efe9;
+  margin: 6px 0 10px 0;
+}
+
+.apparatus-legend-banner::-webkit-scrollbar {
+  height: 7px;
+  display: block;
+}
+
+.apparatus-legend-banner::-webkit-scrollbar-track {
+  background: #e2efe9;
+  border-radius: 4px;
+}
+
+.apparatus-legend-banner::-webkit-scrollbar-thumb {
+  background: #8eaea1;
+  border-radius: 4px;
+}
+
+.apparatus-legend-banner::-webkit-scrollbar-thumb:hover {
+  background: #10564b;
+}
+
+.legend-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: #ffffff;
+  border: 1.5px solid #b2ccc2;
+  border-radius: 6px;
+  font: 600 12px var(--font);
+  color: #193f3a;
+  cursor: default;
+  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.legend-pill .pill-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #10564b;
+  color: #ffffff;
+  font: 700 10.5px var(--font);
+  flex-shrink: 0;
+}
+
+.legend-pill .pill-name {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.atlas-notebook-heading {
+  font: 700 13px var(--font);
+  color: #173c35;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.stage-bottom {
+  width: 100%;
+  max-height: 28%;
+  min-height: 52px;
+  overflow-y: auto;
+  border: 2px solid var(--surface-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #ffffff;
+}
+
+.stage-bottom:empty::before {
+  content: "No observations recorded yet. Click 'Record Observation' in Section 08 to capture data.";
+  font-size: 12px;
+  color: #526e66;
+  font-style: italic;
+}
+
+table.atlas-table {
+  width: 100%;
+  border-collapse: collapse;
+  font: 500 12px var(--font);
+  color: var(--text);
+}
+
+table.atlas-table th {
+  text-align: left;
+  padding: 8px 10px;
+  color: #173c35;
+  background: #e5eee8;
+  font-weight: 700;
+  border-bottom: 1.5px solid var(--surface-border);
+  white-space: nowrap;
+}
+
+table.atlas-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #c9dfd7;
+  color: #304e44;
+  white-space: nowrap;
+}
+
+/* 3. RESIZER GUTTER (DRAGGABLE TO LEFT/RIGHT) */
+.resizer-gutter {
+  width: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: col-resize;
+  touch-action: none;
+  background: #f4f7f7;
+  user-select: none;
+}
+
+.resizer-handle {
+  width: 4px;
+  height: 56px;
+  border-radius: 4px;
+  background: #6b8e7d;
+  transition: background 0.15s;
+}
+
+.resizer-gutter:hover .resizer-handle,
+.resizer-gutter:active .resizer-handle {
+  background: var(--primary);
+}
+
+/* 4. SCROLLABLE CONTROL PANEL (RIGHT) */
+.panel-right {
+  width: 430px;
+  min-width: 240px;
+  max-width: 75vw;
+  flex-shrink: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-left: 2px solid var(--surface-border);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.panel-right::-webkit-scrollbar, .stage-bottom::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.panel-right::-webkit-scrollbar-thumb, .stage-bottom::-webkit-scrollbar-thumb {
+  background: #b2ccc2;
+  border-radius: 8px;
+}
+
+/* TOP CONTROLS & DROPDOWN (RUN/PAUSE & STEP FROZEN AT TOP WHILE SCROLLING) */
+.panel-top-controls {
+  display: contents;
+}
+
+.panel-top-row {
+  position: sticky;
+  top: -16px;
+  z-index: 60;
+  display: flex;
+  gap: 8px;
+  width: calc(100% + 40px);
+  margin: -16px -20px -4px -20px;
+  padding: 14px 20px 10px 20px;
+  background: #ffffff;
+  border-bottom: 1.5px solid #c0d2c9;
+  box-shadow: 0 2px 6px rgba(16, 86, 75, 0.06);
+}
+
+.panel-top-row button {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.experiment-selector-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #c0d2c9;
+}
+
+.experiment-selector-box label {
+  font: 700 12px var(--font);
+  color: var(--text);
+  letter-spacing: 0.03em;
+}
+
+.experiment-selector-box select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid var(--surface-border);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--text);
+  font: 600 12px var(--font);
+  cursor: pointer;
+  outline: none;
+}
+
+.experiment-selector-box select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(23, 108, 95, 0.15);
+}
+
+/* 5. LOCKED 8-SECTION PEDAGOGICAL STRUCTURE */
+.atlas-section {
+  padding-bottom: 14px;
+  border-bottom: 2px solid #c0d2c9;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.atlas-section > h2 {
+  font: 750 13px var(--font);
+  letter-spacing: 0.05em;
+  color: #10564b;
+  margin: 0;
+}
+
+.atlas-section p, .atlas-section li, .atlas-section label, .atlas-section span {
+  font: 500 13px/1.5 var(--font);
+  color: #304e44;
+  margin: 0;
+}
+
+.atlas-section ol, .atlas-section ul {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.principles-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.principles-list li {
+  color: #304e44;
+  font: 500 13px/1.5 var(--font);
+}
+
+.principles-list strong {
+  color: #173c35;
+  display: block;
+  font-size: 12.5px;
+  margin-bottom: 2px;
+}
+
+.atlas-equation {
+  overflow-x: auto;
+  padding: 2px 0 4px 0;
+  background: transparent;
+  border: none;
+  font-family: "Cambria Math", "STIX Two Math", math, monospace;
+  font-size: 13.5px;
+  color: #10564b;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* SECTION 05: PRESETS & STEPPERS (WHITE INPUTS, DARK TEXT) */
+.preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.preset-chip {
+  position: relative;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #edf6f2;
+  color: #193f3a;
+  border: 1.5px solid var(--surface-border);
+  cursor: pointer;
+  transition: all 0.12s;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preset-chip:hover {
+  background: #e2efe9;
+  border-color: #759a8c;
+}
+
+.preset-chip.active, .preset-chip:active {
+  background: #edf6f2;
+  color: #10564b;
+  border-color: #10564b;
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.preset-chip.active::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1.5px dotted #10564b !important;
+  border-radius: 4px !important;
+  pointer-events: none;
+}
+
+.stepper-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stepper-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stepper-field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #173c35;
+}
+
+.stepper-box {
+  display: flex;
+  align-items: stretch;
+  height: 36px;
+  border: 2px solid var(--surface-border);
+  border-radius: 8px;
+  background: #ffffff !important;
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.stepper-box:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(23, 108, 95, 0.15);
+}
+
+.stepper-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  font: 700 14px var(--font);
+  background: #ffffff !important;
+  color: #173c35 !important;
+  -moz-appearance: textfield;
+}
+
+.stepper-input::-webkit-outer-spin-button,
+.stepper-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.stepper-arrows {
+  display: flex;
+  flex-direction: column;
+  width: 24px;
+  border-left: 1px solid #c9dfd7;
+  border-right: 1px solid #c9dfd7;
+}
+
+.stepper-btn {
+  flex: 1;
+  min-height: 16px;
+  height: 16px;
+  padding: 0;
+  border: none !important;
+  border-radius: 0 !important;
+  background: #edf6f2 !important;
+  color: var(--primary) !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  line-height: 1;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.stepper-btn:hover {
+  background: #d8ece4 !important;
+  color: #10564b !important;
+}
+
+.stepper-btn::after {
+  display: none !important;
+}
+
+.stepper-unit {
+  width: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f7f7;
+  font: 700 11px var(--font);
+  color: var(--text-muted);
+  user-select: none;
+  border-left: 1px solid #c9dfd7;
+}
+
+.stepper-range-hint {
+  font-size: 11px;
+  color: #526e66;
+  font-style: italic;
+}
+
+/* SECTION 06: LIVE READINGS (UNIFORM BULLETED LIST ON PLAIN BACKGROUND) */
+.readouts-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.readout-item {
+  color: #304e44;
+  font: 500 13px/1.4 var(--font);
+}
+
+.readout-heading {
+  display: block;
+  font-weight: 700;
+  color: #173c35;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+}
+
+.readout-val {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #10564b;
+  font-family: Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  margin-top: 2px;
+}
+
+/* 8. UNIVERSAL TACTILE BUTTONS & SECTION 08 PLAYBACK */
+button {
+  position: relative !important;
+  background: #edf6f2 !important;
+  color: #193f3a !important;
+  border: 1.5px solid var(--surface-border) !important;
+  border-radius: 8px !important;
+  font: 700 12px var(--font) !important;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none !important;
+  box-shadow: 0 2px 0 var(--surface-border), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transform: translateY(0);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, border-color 0.12s ease;
+  min-height: 38px;
+  padding: 8px 14px;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+button:hover {
+  background: #d8ece4 !important;
+  border-color: #759a8c !important;
+  color: #10564b !important;
+}
+
+button:active, button.is-clicked {
+  transform: translateY(2px) scale(0.99) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.18) !important;
+}
+
+button.is-clicked::after, button:focus-visible::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 3px !important;
+  left: 3px !important;
+  right: 3px !important;
+  bottom: 3px !important;
+  border: 1.5px dotted #10564b !important;
+  border-radius: 5px !important;
+  pointer-events: none !important;
+  box-sizing: border-box !important;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn-row button {
+  flex: 1 1 0;
+}
+
+/* FEEDBACK DIALOG (WHITE INPUTS & UNIFIED BUTTONS) */
+.feedback-dialog {
+  width: min(520px, 92vw);
+  border: 2px solid var(--surface-border);
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.feedback-dialog::backdrop {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.feedback-dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feedback-dialog label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #173c35;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.feedback-dialog select,
+.feedback-dialog textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--surface-border) !important;
+  border-radius: 8px;
+  font: 500 13px var(--font);
+  color: #173c35 !important;
+  background: #ffffff !important;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.feedback-dialog select:focus,
+.feedback-dialog textarea:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(23, 108, 95, 0.15);
+}
+
+.slot-placeholder {
+  color: #8fa89e;
+  font-style: italic;
+}
+  </style>
+
+    <style id="classturn-mathml-textbook">
+      .atlas-equation {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding: 6px 0 !important;
+        white-space: nowrap !important;
+      }
+      math {
+        font-family: "Cambria Math", "STIX Two Math", math, serif;
+        font-size: 1em;
+      }
+      math[display="inline"] { display: inline math; }
+      .equation-symbols li, .equation-symbols [data-retained] { white-space: nowrap !important; }
+      .equation-symbols strong { display: inline; margin-bottom: 0; }
+      .equation-symbols math { display: inline math; }
+      .atlas-equation math {
+        display: inline-block !important;
+        white-space: nowrap !important;
+        font-family: "Cambria Math", "STIX Two Math", "Segoe UI Symbol", serif !important;
+        font-size: 15.5px !important;
+        color: #10564b !important;
+        vertical-align: middle;
+      }
+      .canvas-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #090d16 !important;
+        position: relative !important;
+        overflow: hidden !important;
+      }
+      .canvas-wrapper > canvas {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        aspect-ratio: auto !important;
+        object-fit: fill !important;
+        display: block !important;
+        margin: auto !important;
+        touch-action: none !important;
+      }
+    </style>
+    <style id="classturn-no-canvas-mouse">#simCanvas, .canvas-wrapper > canvas { pointer-events: none !important; cursor: default !important; user-select: none !important; } #apparatusLegendBanner { pointer-events: auto !important; overflow-x: auto !important; overflow-y: hidden !important; }</style>
+</head>
+<body>
+
+  <!-- ==================== TOP HEADER (64px LOCKED) ==================== -->
+  <header>
+    <div>
+      <p class="eyebrow" id="headerEyebrow">[ Curriculum Eyebrow · Subject & Grade ]</p>
+      <h1 id="headerTitle">[ Experiment Title & Phenomenon ]</h1>
+    </div>
+    <div class="badge-bar">
+      <button type="button" id="btnReportProblem">Report a problem</button>
+      <span class="badge verified" id="reviewBadge">Science not verified</span>
+      <span class="badge benchmarked" id="benchmarkBadge">✓ Benchmarked (±0.5%)</span>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN WORKSPACE ==================== -->
+  <main class="workspace-layout" id="workspaceLayout">
+
+    <!-- LEFT STAGE: CANVAS APPARATUS VIEWPORT & OBSERVATION NOTEBOOK -->
+    <section class="stage-fixed" id="stageContainer">
+      <div class="canvas-wrapper">
+        <canvas id="simCanvas" width="800" height="500"></canvas>
+      </div>
+
+      <!-- APPARATUS LEGEND BANNER (LOCKED BELOW CANVAS VIEWPORT, ABOVE NOTEBOOK) -->
+      <div class="apparatus-legend-banner" id="apparatusLegendBanner">
+        <div class="legend-pill"><span class="pill-num">1</span> <span class="pill-name">[ Apparatus Component 1 ]</span></div>
+        <div class="legend-pill"><span class="pill-num">2</span> <span class="pill-name">[ Apparatus Component 2 ]</span></div>
+        <div class="legend-pill"><span class="pill-num">3</span> <span class="pill-name">[ Apparatus Component 3 ]</span></div>
+        <div class="legend-pill"><span class="pill-num">4</span> <span class="pill-name">[ Apparatus Component 4 ]</span></div>
+      </div>
+
+      <h2 class="atlas-notebook-heading" id="notebookHeading">Observation notebook</h2>
+      <div id="stageBottom" class="stage-bottom">
+        <table class="atlas-table" id="observationTable">
+          <thead id="observationThead">
+            <tr>
+              <th>Trial #</th>
+              <th>[ Parameter A (unit) ]</th>
+              <th>[ Parameter B (unit) ]</th>
+              <th>[ Measured Output ]</th>
+              <th>[ Calculated Invariant ]</th>
+            </tr>
+          </thead>
+          <tbody id="observationTbody">
+            <!-- Blank until user clicks 'Record Observation' -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SPLIT-PANE RESIZER GUTTER (DRAGGABLE TO LEFT/RIGHT) -->
+    <div class="resizer-gutter" id="resizerGutter" title="Drag to adjust panel width">
+      <div class="resizer-handle"></div>
+    </div>
+
+    <!-- RIGHT PANEL: TOP CONTROLS & LOCKED 8-SECTION PEDAGOGICAL STRUCTURE -->
+    <aside class="panel-right" id="controlsPanel">
+
+      <!-- TOP CONTROLS: PAUSE/RUN & STEP -->
+      <div class="panel-top-controls">
+        <div class="panel-top-row">
+          <button type="button" id="btnToggle">Pause</button>
+          <button type="button" id="btnStep">Step</button>
+        </div>
+
+        <!-- EXPERIMENT SELECTOR (DIRECTLY ABOVE 01/AIM) -->
+        <div class="experiment-selector-box">
+          <label for="experimentSelect">Choose experiment</label>
+          <select id="experimentSelect" class="atlas-select">
+            <option value="">-- Choose experiment from syllabus --</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 01 / Aim -->
+      <section class="atlas-section" data-section="aim" id="sec-01-aim">
+        <h2>01 / Aim</h2>
+        <p id="aimText" class="slot-placeholder">[ Aim statement will populate here from chosen experiment. ]</p>
+      </section>
+
+      <!-- 02 / Apparatus -->
+      <section class="atlas-section" data-section="apparatus" id="sec-02-apparatus">
+        <h2>02 / Apparatus</h2>
+        <ul id="apparatusList">
+          <li><span class="slot-placeholder">[ Apparatus bullet items will populate here from JSON data slot ]</span></li>
+        </ul>
+      </section>
+
+      <!-- 03 / Principles -->
+      <section class="atlas-section" data-section="principles" id="sec-03-principles">
+        <h2>03 / Principles</h2>
+        <p id="principlesSummary" class="slot-placeholder">[ Scientific principles and governing theory will populate here. ]</p>
+        <ul id="principlesList" class="principles-list" style="margin-top:4px;">
+          <li><span class="slot-placeholder">[ Governing MathML formulas will populate here from JSON data slot ]</span></li>
+        </ul>
+      </section>
+
+      <!-- 04 / Procedure -->
+      <section class="atlas-section" data-section="procedure" id="sec-04-procedure">
+        <h2>04 / Procedure</h2>
+        <ol id="procedureList">
+          <li><span class="slot-placeholder">[ Step-by-step procedure steps will populate here from chosen experiment ]</span></li>
+        </ol>
+      </section>
+
+      <!-- 05 / Controls -->
+      <section class="atlas-section" data-section="controls" id="sec-05-controls">
+        <h2>05 / Controls</h2>
+        <div class="preset-row" id="presetContainer">
+          <span class="preset-chip slot-placeholder">[ Presets populate here ]</span>
+        </div>
+        <div class="extra-actions-row" id="extraActionsContainer" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <!-- Optional action buttons slot -->
+        </div>
+        <div class="stepper-container" id="steppersContainer">
+          <p class="slot-placeholder" style="margin: 8px 0;">[ Precision stepper inputs will populate here with white boxes and 16px arrows ]</p>
+        </div>
+      </section>
+
+      <!-- 06 / Live readings -->
+      <section class="atlas-section" data-section="readings" id="sec-06-readings">
+        <h2>06 / Live readings</h2>
+        <ul class="readouts-list" id="readoutsList">
+          <li><span class="slot-placeholder">[ Live telemetry readings will populate here in clean bullet format ]</span></li>
+        </ul>
+      </section>
+
+      <!-- 07 / Validation and limits -->
+      <section class="atlas-section" data-section="validation" id="sec-07-validation">
+        <h2>07 / Validation and limits</h2>
+        <ul id="validationList">
+          <li><span class="slot-placeholder">[ Modeling assumptions and physical boundary limits will populate here ]</span></li>
+        </ul>
+      </section>
+
+      <!-- 08 / Playback & recording (AT THE BOTTOM) -->
+      <section class="atlas-section" data-section="runner" id="sec-08-playback">
+        <h2>08 / Playback & recording</h2>
+        <div class="btn-row" id="playbackButtons">
+          <button type="button" id="btnRecord">Record Observation</button>
+          <button type="button" id="btnReset">Reset to Defaults</button>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <!-- ==================== FEEDBACK DIALOG MODAL ==================== -->
+  <dialog class="feedback-dialog" id="feedbackDialog">
+    <form method="dialog" id="feedbackForm">
+      <h2 style="font-size:18px; margin:0 0 10px 0; color:#173c35;">Report a Problem / Give Feedback</h2>
+      <label>Issue Type
+        <select name="category" required>
+          <option value="physics">Scientific or Math Calculation Issue</option>
+          <option value="visual">Visual / Label / Canvas Overlap</option>
+          <option value="controls">Controls / Responsiveness</option>
+          <option value="pedagogy">Pedagogical / Curriculum Suggestion</option>
+        </select>
+      </label>
+      <label>Description of Issue
+        <textarea name="description" rows="3" placeholder="Describe the issue observed..." required></textarea>
+      </label>
+      <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:10px;">
+        <button type="button" id="btnCancelFeedback">Cancel</button>
+        <button type="submit" id="btnSubmitFeedback">Submit Feedback</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ==================== DRAGGABLE RESIZER & CANVAS SKELETON ==================== -->
+  <script id="classturn-layout-script">
+  // 1. DRAGGABLE RESIZER GUTTER
+  const gutter = document.getElementById('resizerGutter');
+  const panel = document.getElementById('controlsPanel');
+  let isDragging = false;
+
+  gutter.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const newWidth = window.innerWidth - e.clientX - 6;
+    if (newWidth >= 240 && newWidth <= window.innerWidth * 0.75) {
+      panel.style.width = `${newWidth}px`;
+    }
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    }
+  });
+
+  gutter.addEventListener('touchstart', () => { isDragging = true; }, { passive: true });
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging || !e.touches[0]) return;
+    const newWidth = window.innerWidth - e.touches[0].clientX - 6;
+    if (newWidth >= 240 && newWidth <= window.innerWidth * 0.75) {
+      panel.style.width = `${newWidth}px`;
+    }
+  }, { passive: true });
+  window.addEventListener('touchend', () => { isDragging = false; });
+
+  // 2. TACTILE BUTTON CLICKS
+  document.querySelectorAll('button, .preset-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.add('is-clicked');
+      setTimeout(() => btn.classList.remove('is-clicked'), 160);
+    });
+  });
+
+  // 3. REPORT PROBLEM DIALOG
+  const btnReportProblem = document.getElementById('btnReportProblem');
+  const feedbackDialog = document.getElementById('feedbackDialog');
+  const btnCancelFeedback = document.getElementById('btnCancelFeedback');
+  btnReportProblem.addEventListener('click', () => feedbackDialog.showModal());
+  btnCancelFeedback.addEventListener('click', () => feedbackDialog.close());
+
+  // 4. RESET BUTTON (CLEARS OBSERVATIONS TABLE)
+  const btnReset = document.getElementById('btnReset');
+  btnReset.addEventListener('click', () => {
+    const tbody = document.getElementById('observationTbody');
+    if (tbody) tbody.innerHTML = '';
+  });
+
+  </script>
+  <script id="classturnZoomConfig">window.CLASSTURN_ZOOM_CONFIG = {"scale": 1.0, "cx": 400.0, "cy": 250.0, "minLeader": 48, "maxLeader": 80, "minBadgeDist": 40};</script>
+  <script src="classturn-lab-kit.js?v=btn8"></script>
+  <script id="classturn-stage-script">
+  /* Populated from classturn_simulators.db */
+  </script>
+
+<script id="vault-universal-step-bridge">
+/**
+ * CLASSTURN UNIVERSAL STEP-BUTTON [➔], LEGO PORT SNAP & OBSERVATION BRIDGE
+ * =========================================================================
+ * Enforces the exact Student Experience & Lego Vault Assembly Pipeline:
+ * 1. On Initial Load: Renders Full Apparatus Preview (`previewMode = true`) with Style 2 curvy leaders & numbered badges.
+ * 2. Procedure Step `[➔]` Buttons (Section 04):
+ *    - Injects a glowing `[➔ Step N]` button next to every step in `#procedureList`.
+ *    - Clicking Step 1 `[➔]` clears the preview and immediately animates Step 1's element + badge (`0 -> 1`).
+ *    - Clicking Step 2 `[➔]`, Step 3 `[➔]`... in strict order reveals & animates each step's brick + badge into its port.
+ *    - Clicking out of order displays a prominent centered alert right in the middle of the Canvas overlapping all elements.
+ * 3. Numeric Control Boxes Lock/Unlock (Section 05):
+ *    - Locked until all `[➔]` steps are completed; unlocks automatically after the final `[➔]` step.
+ *    - Every numeric change immediately updates the Canvas & Section 06 Live Readings without ever pausing.
+ * 4. Deliberate Observation Recording (`#btnRecord` in Section 08 ONLY):
+ *    - Readings are NEVER auto-logged on input change.
+ *    - Clicking `Record Observation` (`#btnRecord`) appends the current trial row to `#observationTbody`.
+ */
+(function () {
+  window.ClassTurnUniversalBridge = {
+    previewMode: true,
+    completedStep: 0,
+    totalSteps: 0,
+    animatingStep: 0,
+    animStartTime: 0,
+    animDurationMs: 550,
+    warningBannerText: "",
+    warningTimeout: null,
+    trialCounter: 0,
+    onStepChangeCallback: null,
+
+    init(config = {}) {
+      this.previewMode = true;
+      this.completedStep = 0;
+      this.animatingStep = 0;
+      this.animStartTime = 0;
+      this.trialCounter = 0;
+      this.onStepChangeCallback = config.onStepChange || null;
+
+      this.injectStepButtonsStyle();
+      this.bindProcedureStepButtons();
+      this.updateControlsLockState();
+    },
+
+    injectStepButtonsStyle() {
+      if (document.querySelector("#classturn-step-bridge-css")) return;
+      const st = document.createElement("style");
+      st.id = "classturn-step-bridge-css";
+      st.textContent = `
+        .ct-step-arrow-btn {
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          min-height: 24px !important;
+          height: 24px !important;
+          padding: 0 9px !important;
+          margin-right: 8px !important;
+          border-radius: 6px !important;
+          font: 700 12px var(--font, sans-serif) !important;
+          background: #edf6f2 !important;
+          color: #10564b !important;
+          border: 1.5px solid #8eaea1 !important;
+          cursor: pointer !important;
+          vertical-align: middle !important;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.08) !important;
+          transition: all 0.18s ease !important;
+        }
+        .ct-step-arrow-btn.ct-next-glow {
+          background: #10564b !important;
+          color: #ffffff !important;
+          border-color: #0d473e !important;
+          box-shadow: 0 0 0 3px rgba(16, 86, 75, 0.25) !important;
+          animation: ctPulseGlow 1.4s infinite ease-in-out !important;
+        }
+        .ct-step-arrow-btn.ct-done {
+          background: #d8ece4 !important;
+          color: #0d473e !important;
+          border-color: #10564b !important;
+        }
+        .ct-controls-locked-banner {
+          padding: 7px 10px;
+          margin-bottom: 8px;
+          border-radius: 7px;
+          background: #fff8e6;
+          border: 1px solid #f59e0b;
+          color: #92400e;
+          font: 600 11.5px var(--font, sans-serif);
+          cursor: pointer;
+        }
+        .ct-center-canvas-alert {
+          position: absolute !important;
+          top: 50% !important;
+          left: 50% !important;
+          transform: translate(-50%, -50%) !important;
+          z-index: 99999 !important;
+          min-width: 340px !important;
+          max-width: 85% !important;
+          padding: 16px 24px !important;
+          border-radius: 12px !important;
+          background: rgba(180, 83, 9, 0.98) !important;
+          border: 2.5px solid #fde68a !important;
+          color: #ffffff !important;
+          font: 700 14.5px 'Segoe UI', system-ui, sans-serif !important;
+          text-align: center !important;
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75) !important;
+          pointer-events: none !important;
+          display: none;
+        }
+        @keyframes ctPulseGlow {
+          0%, 100% { box-shadow: 0 0 0 2px rgba(16, 86, 75, 0.22); }
+          50% { box-shadow: 0 0 0 5px rgba(16, 86, 75, 0.42); }
+        }
+      `;
+      document.head.appendChild(st);
+    },
+
+    bindProcedureStepButtons() {
+      const procList = document.querySelector("#procedureList");
+      if (!procList) return;
+      const items = Array.from(procList.querySelectorAll("li"));
+      this.totalSteps = items.length;
+
+      items.forEach((li, idx) => {
+        const stepNum = idx + 1;
+        if (li.querySelector(".ct-step-arrow-btn")) return;
+        li.style.cursor = "pointer";
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "ct-step-arrow-btn" + (stepNum === 1 ? " ct-next-glow" : "");
+        btn.dataset.step = String(stepNum);
+        btn.innerHTML = `➔ Step ${stepNum}`;
+        btn.title = `Execute Step ${stepNum} on Canvas`;
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          this.handleStepClick(stepNum);
+        });
+        li.addEventListener("click", (e) => {
+          if (e.target === btn || btn.contains(e.target)) return;
+          this.handleStepClick(stepNum);
+        });
+        li.prepend(btn);
+      });
+    },
+
+    handleStepClick(clickedStep) {
+      const expectedStep = this.completedStep + 1;
+      if (clickedStep > expectedStep) {
+        this.triggerWarning(`Out of sequence! Please click [➔ Step ${expectedStep}] first.`);
+        return;
+      }
+      if (clickedStep <= this.completedStep) {
+        this.animateStepTransition(clickedStep);
+        return;
+      }
+      this.clearWarning();
+      this.previewMode = false;
+      this.completedStep = clickedStep;
+      this.updateStepButtonStyles();
+      this.updateControlsLockState();
+      this.animateStepTransition(clickedStep);
+    },
+
+    animateStepTransition(stepNum) {
+      this.animatingStep = stepNum;
+      this.animStartTime = performance.now();
+      if (typeof this.onStepChangeCallback === "function") {
+        this.onStepChangeCallback(this.completedStep, 0.15, this.previewMode);
+      }
+    },
+
+    updateStepButtonStyles() {
+      const procList = document.querySelector("#procedureList");
+      if (!procList) return;
+      const btns = procList.querySelectorAll(".ct-step-arrow-btn");
+      btns.forEach((btn) => {
+        const s = parseInt(btn.dataset.step, 10);
+        btn.classList.remove("ct-next-glow", "ct-done");
+        if (s <= this.completedStep) {
+          btn.classList.add("ct-done");
+          btn.innerHTML = `✓ Step ${s}`;
+        } else if (s === this.completedStep + 1) {
+          btn.classList.add("ct-next-glow");
+          btn.innerHTML = `➔ Step ${s}`;
+        } else {
+          btn.innerHTML = `➔ Step ${s}`;
+        }
+      });
+    },
+
+    updateControlsLockState() {
+      const secControls = document.querySelector("#sec-05-controls");
+      if (!secControls) return;
+      let banner = document.querySelector("#ctControlsLockBanner");
+      const unlocked = this.totalSteps === 0 || this.completedStep >= this.totalSteps;
+
+      if (!unlocked) {
+        if (!banner) {
+          banner = document.createElement("div");
+          banner.id = "ctControlsLockBanner";
+          banner.className = "ct-controls-locked-banner";
+          banner.addEventListener("click", () => {
+            this.triggerWarning(`Out of sequence! Click [➔ Step ${this.completedStep + 1}] first.`);
+          });
+          const h2 = secControls.querySelector("h2");
+          if (h2 && h2.nextSibling) {
+            secControls.insertBefore(banner, h2.nextSibling);
+          } else {
+            secControls.prepend(banner);
+          }
+        }
+        banner.textContent = `Click [➔ Step ${this.completedStep + 1}] in 04 / Procedure (${this.completedStep}/${this.totalSteps} completed) to assemble the apparatus and unlock controls.`;
+      } else if (banner) {
+        banner.remove();
+      }
+
+      const inputs = secControls.querySelectorAll("input, button.stepper-btn, .preset-chip");
+      inputs.forEach((el) => {
+        el.disabled = !unlocked;
+        el.style.opacity = unlocked ? "1" : "0.55";
+        el.style.pointerEvents = unlocked ? "auto" : "none";
+      });
+    },
+
+    clearWarning() {
+      this.warningBannerText = "";
+      if (this.warningTimeout) {
+        clearTimeout(this.warningTimeout);
+        this.warningTimeout = null;
+      }
+      const alertEl = document.querySelector("#ctCenterCanvasAlert");
+      if (alertEl) {
+        alertEl.style.display = "none";
+      }
+    },
+
+    triggerWarning(msg) {
+      this.warningBannerText = msg;
+      const wrapper = document.querySelector(".canvas-wrapper") || document.querySelector("#stageContainer");
+      if (wrapper) {
+        let alertEl = document.querySelector("#ctCenterCanvasAlert");
+        if (!alertEl) {
+          alertEl = document.createElement("div");
+          alertEl.id = "ctCenterCanvasAlert";
+          alertEl.className = "ct-center-canvas-alert";
+          wrapper.appendChild(alertEl);
+        }
+        alertEl.textContent = msg;
+        alertEl.style.display = "block";
+      }
+      if (this.warningTimeout) clearTimeout(this.warningTimeout);
+      this.warningTimeout = setTimeout(() => {
+        this.clearWarning();
+      }, 2800);
+    },
+
+    isStepVisible(stepNumber) {
+      if (this.previewMode) return true;
+      return this.completedStep >= stepNumber;
+    },
+
+    getStepProgress(stepNumber) {
+      if (this.previewMode) return 1.0;
+      if (stepNumber > this.completedStep) return 0.0;
+      if (stepNumber === this.animatingStep && this.animStartTime > 0) {
+        const elapsed = Math.max(0, performance.now() - this.animStartTime);
+        const t = Math.min(1.0, elapsed / this.animDurationMs);
+        return 0.15 + 0.85 * (1 - Math.pow(1 - t, 3));
+      }
+      return 1.0;
+    },
+
+    drawCanvasStepHUD(ctx, canvasW = 800, canvasH = 500) {
+      // Handled by #ctCenterCanvasAlert centered inside .canvas-wrapper so canvas zoom/aspect transform is never altered
+    },
+
+    resetSteps() {
+      this.previewMode = true;
+      this.completedStep = 0;
+      this.animatingStep = 0;
+      this.animStartTime = 0;
+      this.clearWarning();
+      this.updateStepButtonStyles();
+      this.updateControlsLockState();
+    }
+  };
+})();
+
+</script>
+<script id="vault-port-snapped-simulator-runtime">
+(function() {
+  const SIM_SPEC = {"filename": "vault_crit_01_venturi_meter.html", "id": "vault_crit_01_venturi_meter", "source_id": "u00282", "subject": "Engineering", "branch": "Fluid Mechanics & Hydraulics", "icon": "🌊", "eyebrow": "Fluid Mechanics & Hydraulics · Bernoulli's Theorem & Flow Measurement (u00282)", "title": "Flow Through Venturi Meter & Differential U-Tube Manometer (Discharge Coefficient C_d)", "aim": "To measure the volume flow rate (Q) and discharge coefficient (C_d) of water flowing through a horizontal converging-diverging Venturi meter by recording the differential mercury manometer head (Δh) across the inlet and throat piezometer ports.", "vault_queries": [["Horizontal Venturi Pipe Section", "05_Mechanical"], ["Piezometer Pressure Taps", "03_Meters"], ["Differential U-Tube Mercury Manometer", "03_Meters"], ["Centrifugal Supply Pump & Valve", "05_Mechanical"], ["Streamline Flow Tracer & Collector", "01_Vessels"]], "apparatus": ["Horizontal Converging-Diverging Acrylic Venturi Tube (Inlet D₁, Throat D₂, Diffuser)", "Inlet & Throat Piezometer Static Pressure Tap Ports (P₁ & P₂)", "Differential Mercury U-Tube Manometer Connected Across Ports P₁ and P₂", "Variable-Head Centrifugal Water Supply Pump & Inlet Regulating Valve", "Laminar Streamline Velocity Tracer & Volumetric Discharge Collector"], "principles_summary": "By Continuity (A₁v₁ = A₂v₂) and Bernoulli's equation along the horizontal centerline, constriction from inlet diameter D₁ to throat diameter D₂ accelerates the fluid (v₂ > v₁) and drops static pressure (P₂ < P₁). The differential mercury U-tube manometer measures Δh, yielding theoretical discharge Q_th and actual discharge Q_act = C_d · Q_th.", "principles_equations": ["<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>A</mi><mn>1</mn></msub><msub><mi>v</mi><mn>1</mn></msub><mo>=</mo><msub><mi>A</mi><mn>2</mn></msub><msub><mi>v</mi><mn>2</mn></msub><mo>=</mo><msub><mi>Q</mi><mtext>act</mtext></msub><mo>,</mo><mspace width='1em'/><msub><mi>h</mi><mi>w</mi></msub><mo>=</mo><mi>&#x0394;</mi><mi>h</mi><mrow><mo>(</mo><mfrac><msub><mi>&#x03C1;</mi><mtext>Hg</mtext></msub><msub><mi>&#x03C1;</mi><mi>w</mi></msub></mfrac><mo>-</mo><mn>1</mn><mo>)</mo></mrow><mo>=</mo><mn>12.6</mn><mspace width='0.2em'/><mi>&#x0394;</mi><mi>h</mi></mrow></math>", "<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>Q</mi><mtext>th</mtext></msub><mo>=</mo><mfrac><mrow><msub><mi>A</mi><mn>1</mn></msub><msub><mi>A</mi><mn>2</mn></msub><msqrt><mrow><mn>2</mn><mi>g</mi><msub><mi>h</mi><mi>w</mi></msub></mrow></msqrt></mrow><msqrt><mrow><msubsup><mi>A</mi><mn>1</mn><mn>2</mn></msubsup><mo>-</mo><msubsup><mi>A</mi><mn>2</mn><mn>2</mn></msubsup></mrow></msqrt></mfrac><mo>,</mo><mspace width='1em'/><msub><mi>Q</mi><mtext>act</mtext></msub><mo>=</mo><msub><mi>C</mi><mi>d</mi></msub><mo>&#x00B7;</mo><msub><mi>Q</mi><mtext>th</mtext></msub></mrow></math>"], "procedure": ["Mount the Horizontal Converging-Diverging Venturi Tube onto the hydraulic test bench.", "Snap the Upstream Inlet (P₁) and Constricted Throat (P₂) Piezometer Tap Ports onto the Venturi wall.", "Connect the Differential Mercury U-Tube Manometer legs across Piezometer Ports P₁ and P₂.", "Couple the Centrifugal Water Supply Pump and Regulating Valve to the upstream inlet flange.", "Activate the Laminar Streamline Velocity Tracer to unlock Numeric Controls and 'Record Observation'."], "controls": [{"id": "d1", "label": "Inlet Pipe Diameter D₁", "min": 40, "max": 60, "step": 2, "value": 50, "unit": "mm"}, {"id": "d2", "label": "Venturi Throat Diameter D₂", "min": 18, "max": 32, "step": 2, "value": 25, "unit": "mm"}, {"id": "dh", "label": "Manometer Mercury Deflection Δh", "min": 20, "max": 240, "step": 10, "value": 90, "unit": "mm Hg"}, {"id": "cd", "label": "Discharge Coefficient C_d", "min": 0.9, "max": 0.99, "step": 0.01, "value": 0.96, "unit": ""}], "presets": [{"label": "Low Flow (Δh = 40 mm)", "d1": 50, "d2": 25, "dh": 40, "cd": 0.96}, {"label": "Medium Flow (Δh = 110 mm)", "d1": 50, "d2": 25, "dh": 110, "cd": 0.96}, {"label": "High Constriction (D₂ = 20 mm, Δh = 180 mm)", "d1": 50, "d2": 20, "dh": 180, "cd": 0.95}], "validation": ["Mercury specific gravity S_Hg = 13.6; piezometric water head h_w = 12.6 × Δh.", "Throat diameter D₂ is bounded strictly below D₁ (D₂/D₁ ≤ 0.8) to maintain Venturi acceleration.", "Discharge coefficient C_d stays within 0.90–0.99 for smooth machined converging cones (21°)."], "observation_columns": ["Trial #", "D₁ / D₂ (mm)", "Manometer Δh (mm Hg)", "Water Head h_w (m)", "Throat Velocity v₂ (m/s)", "Actual Flow Q_act (L/s)"], "readout_specs": [["rv_hw", "Equivalent Water Head (h_w = 12.6 Δh)"], ["rv_v1", "Inlet Flow Velocity (v₁)"], ["rv_v2", "Throat Flow Velocity (v₂)"], ["rv_qth", "Theoretical Discharge (Q_th)"], ["rv_qact", "Actual Measured Discharge (Q_act)"]]};
+  const VAULT_MATCHES = [{"query": "Horizontal Venturi Pipe Section", "unique_element_id": "vault_06_drawpipesandventuri", "canonical_function_name": "drawPipesAndVenturi", "subfolder": "06_Thermal_And_Fluid_Apparatus", "ports": {"top_suspension_or_inlet": [0.5, 0.06], "center_pivot_or_chamber": [0.5, 0.5], "bottom_load_hook_or_outlet": [0.5, 0.94], "left_flange_port": [0.04, 0.5], "right_flange_port": [0.96, 0.5], "style2_leader_anchor": [0.5, 0.48]}}, {"query": "Piezometer Pressure Taps", "unique_element_id": "vault_03_drawpressuregauge", "canonical_function_name": "drawPressureGauge", "subfolder": "03_Meters_And_Instruments", "ports": {"terminal_pos_red": [0.22, 0.86], "terminal_neg_black": [0.78, 0.86], "bnc_signal_out": [0.85, 0.65], "dial_or_display_center": [0.5, 0.42], "bottom_chassis_feet": [0.5, 0.98], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Differential U-Tube Mercury Manometer", "unique_element_id": "vault_03_drawmanometer", "canonical_function_name": "drawManometer", "subfolder": "03_Meters_And_Instruments", "ports": {"terminal_pos_red": [0.22, 0.86], "terminal_neg_black": [0.78, 0.86], "bnc_signal_out": [0.85, 0.65], "dial_or_display_center": [0.5, 0.42], "bottom_chassis_feet": [0.5, 0.98], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Centrifugal Supply Pump & Valve", "unique_element_id": "vault_05_drawcentrifugalpump", "canonical_function_name": "drawCentrifugalPump", "subfolder": "05_Mechanical_And_Kinematics", "ports": {"top_suspension_or_inlet": [0.5, 0.06], "center_pivot_or_chamber": [0.5, 0.5], "bottom_load_hook_or_outlet": [0.5, 0.94], "left_flange_port": [0.04, 0.5], "right_flange_port": [0.96, 0.5], "style2_leader_anchor": [0.5, 0.48]}}, {"query": "Streamline Flow Tracer & Collector", "unique_element_id": "vault_09_drawlaminarairflowstreamlines", "canonical_function_name": "drawLaminarAirflowStreamlines", "subfolder": "09_Specialized_Domain_Apparatus", "ports": {"port_in": [0.12, 0.5], "center_anchor": [0.5, 0.5], "port_out": [0.88, 0.5], "bottom_base": [0.5, 0.95], "style2_leader_anchor": [0.5, 0.45]}}];
+
+  document.getElementById("headerEyebrow").textContent = SIM_SPEC.eyebrow;
+  document.getElementById("headerTitle").textContent = SIM_SPEC.title;
+  document.getElementById("reviewBadge").textContent = "Science verified";
+  document.getElementById("aimText").textContent = SIM_SPEC.aim;
+
+  const selBox = document.querySelector(".experiment-selector-box");
+  if (selBox) selBox.style.display = "none";
+
+  const appList = document.getElementById("apparatusList");
+  const banner = document.getElementById("apparatusLegendBanner");
+  appList.innerHTML = "";
+  banner.innerHTML = "";
+  SIM_SPEC.apparatus.forEach((cleanName, idx) => {
+    const li = document.createElement("li");
+    li.textContent = cleanName;
+    appList.appendChild(li);
+
+    const pill = document.createElement("div");
+    pill.className = "legend-pill";
+    pill.innerHTML = `<span class="pill-num">${idx + 1}</span> <span class="pill-name">${cleanName}</span>`;
+    banner.appendChild(pill);
+  });
+
+  document.getElementById("principlesSummary").textContent = SIM_SPEC.principles_summary;
+  const pList = document.getElementById("principlesList");
+  pList.innerHTML = "";
+  SIM_SPEC.principles_equations.forEach((eqHtml) => {
+    const li = document.createElement("li");
+    li.className = "atlas-equation";
+    li.innerHTML = eqHtml;
+    pList.appendChild(li);
+  });
+
+  const procList = document.getElementById("procedureList");
+  procList.innerHTML = "";
+  SIM_SPEC.procedure.forEach((stepTxt) => {
+    const li = document.createElement("li");
+    li.textContent = stepTxt;
+    procList.appendChild(li);
+  });
+
+  const valList = document.getElementById("validationList");
+  valList.innerHTML = "";
+  SIM_SPEC.validation.forEach((vTxt) => {
+    const li = document.createElement("li");
+    li.textContent = vTxt;
+    valList.appendChild(li);
+  });
+
+  const thead = document.getElementById("observationThead");
+  thead.innerHTML = "<tr>" + SIM_SPEC.observation_columns.map(c => `<th>${c}</th>`).join("") + "</tr>";
+  const tbody = document.getElementById("observationTbody");
+  tbody.innerHTML = "";
+
+  const rList = document.getElementById("readoutsList");
+  rList.innerHTML = `
+    <li class="readout-item"><span class="readout-heading">Equivalent Water Head (h_w = 12.6 Δh)</span><span class="readout-val" id="rv_hw">--</span></li>
+    <li class="readout-item"><span class="readout-heading">Inlet Flow Velocity (v₁)</span><span class="readout-val" id="rv_v1">--</span></li>
+    <li class="readout-item"><span class="readout-heading">Throat Flow Velocity (v₂)</span><span class="readout-val" id="rv_v2">--</span></li>
+    <li class="readout-item"><span class="readout-heading">Theoretical Discharge (Q_th)</span><span class="readout-val" id="rv_qth">--</span></li>
+    <li class="readout-item"><span class="readout-heading">Actual Measured Discharge (Q_act)</span><span class="readout-val" id="rv_qact">--</span></li>
+  `;
+  const setR = (id, txt) => {
+    const el = document.querySelector("#" + id);
+    if (el) {
+      el._ctOverrideText = null;
+      el.textContent = txt;
+    }
+  };
+
+  const state = {};
+  SIM_SPEC.controls.forEach(c => { state[c.id] = c.value; });
+
+  const presetContainer = document.getElementById("presetContainer");
+  presetContainer.innerHTML = "";
+  SIM_SPEC.presets.forEach(preset => {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "preset-chip";
+    chip.dataset.ctWired = "1";
+    chip.textContent = preset.label;
+    chip.addEventListener("click", () => {
+      Object.keys(state).forEach(k => {
+        if (preset[k] !== undefined) {
+          state[k] = preset[k];
+          const inp = document.querySelector("#ctrl_" + k);
+          if (inp) inp.value = preset[k];
+        }
+      });
+      updateLiveReadingsOnly();
+    });
+    presetContainer.appendChild(chip);
+  });
+
+  const steppersContainer = document.getElementById("steppersContainer");
+  steppersContainer.innerHTML = "";
+  SIM_SPEC.controls.forEach(c => {
+    const row = document.createElement("div");
+    row.className = "stepper-row";
+    row.innerHTML = `
+      <div class="stepper-header">
+        <label class="control-label" for="ctrl_${c.id}">${c.label}</label>
+        <span class="stepper-range-hint">Range: ${c.min} – ${c.max} ${c.unit}</span>
+      </div>
+      <div class="stepper-box">
+        <input type="number" id="ctrl_${c.id}" class="stepper-input" min="${c.min}" max="${c.max}" step="${c.step}" value="${c.value}">
+        <div class="stepper-arrows">
+          <button type="button" class="stepper-btn" data-dir="1" data-id="${c.id}">▲</button>
+          <button type="button" class="stepper-btn" data-dir="-1" data-id="${c.id}">▼</button>
+        </div>
+        <div class="stepper-unit">${c.unit}</div>
+      </div>
+    `;
+    steppersContainer.appendChild(row);
+
+    const inp = row.querySelector("input");
+    inp.dataset.ctWired = "1";
+    const syncInputVal = (clampToBounds) => {
+      const raw = parseFloat(inp.value);
+      if (isNaN(raw)) return;
+      const v = clampToBounds ? Math.max(c.min, Math.min(c.max, raw)) : raw;
+      if (clampToBounds) inp.value = v;
+      state[c.id] = Math.max(c.min, Math.min(c.max, v));
+      updateLiveReadingsOnly();
+    };
+    inp.addEventListener("input", () => syncInputVal(false));
+    inp.addEventListener("change", () => syncInputVal(true));
+
+    row.querySelectorAll(".stepper-btn").forEach(b => {
+      b.dataset.ctWired = "1";
+      b.addEventListener("click", () => {
+        const dir = parseFloat(b.dataset.dir);
+        const nextV = Math.round((state[c.id] + dir * c.step) * 100) / 100;
+        const clamped = Math.max(c.min, Math.min(c.max, nextV));
+        state[c.id] = clamped;
+        inp.value = clamped;
+        updateLiveReadingsOnly();
+      });
+    });
+  });
+
+  let trialNum = 0;
+
+  // Canonical Style 2 Curvy Leader + Circular Numbered Badge ONLY (Zero extra blue badges or text labels!)
+  function drawCanonicalBadgeOnly(ctx, badgeNum, anchorXY, badgeXY) {
+    ctx.save();
+    const ax = anchorXY.x, ay = anchorXY.y;
+    const bx = badgeXY.x, by = badgeXY.y;
+    const midX = (ax + bx) / 2;
+
+    ctx.beginPath();
+    ctx.moveTo(bx, by);
+    ctx.bezierCurveTo(midX, by, midX, ay, ax, ay);
+    ctx.strokeStyle = "#022c22";
+    ctx.lineWidth = 3.8;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(bx, by);
+    ctx.bezierCurveTo(midX, by, midX, ay, ax, ay);
+    ctx.strokeStyle = "#34d399";
+    ctx.lineWidth = 2.0;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(ax, ay, 3.8, 0, Math.PI * 2);
+    ctx.fillStyle = "#34d399";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(bx, by, 11.0, 0, Math.PI * 2);
+    ctx.fillStyle = "#10564b";
+    ctx.fill();
+    ctx.strokeStyle = "#34d399";
+    ctx.lineWidth = 2.0;
+    ctx.stroke();
+
+    ctx.fillStyle = "#ffffff";
+    ctx.font = "bold 11px system-ui, -apple-system, Segoe UI, sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(String(badgeNum), bx, by);
+    ctx.restore();
+  }
+
+
+  function solveSim() {
+    const d1m = state.d1 / 1000.0;
+    const d2m = Math.min(d1m * 0.85, state.d2 / 1000.0);
+    const a1 = Math.PI * d1m * d1m * 0.25;
+    const a2 = Math.PI * d2m * d2m * 0.25;
+    const hw = (state.dh / 1000.0) * (13.6 - 1.0); // meters of water
+    const denom = Math.sqrt(Math.max(1e-12, a1 * a1 - a2 * a2));
+    const qTh = (a1 * a2 * Math.sqrt(2 * 9.81 * hw)) / denom; // m^3/s
+    const qAct = state.cd * qTh;
+    const v1 = qAct / a1;
+    const v2 = qAct / a2;
+    return {
+      hw, v1, v2, qThLps: qTh * 1000.0, qActLps: qAct * 1000.0,
+      d1Ratio: state.d1 / 50.0, d2Ratio: state.d2 / 50.0
+    };
+  }
+
+  function updateLiveReadingsOnly() {
+    const res = solveSim();
+    setR("rv_hw", `${res.hw.toFixed(3)} m H₂O`);
+    setR("rv_v1", `${res.v1.toFixed(2)} m/s`);
+    setR("rv_v2", `${res.v2.toFixed(2)} m/s`);
+    setR("rv_qth", `${res.qThLps.toFixed(2)} L/s`);
+    setR("rv_qact", `${res.qActLps.toFixed(2)} L/s`);
+  }
+
+  function buildObservationRow() {
+    const res = solveSim();
+    return [
+      `#${trialNum}`,
+      `${state.d1.toFixed(0)} / ${state.d2.toFixed(0)}`,
+      `${state.dh.toFixed(0)}`,
+      `${res.hw.toFixed(3)}`,
+      `${res.v2.toFixed(2)}`,
+      `<strong>${res.qActLps.toFixed(2)} L/s</strong>`
+    ];
+  }
+
+  function renderFrameElements(ctx, B, tSec) {
+    const res = solveSim();
+    const cy = 165;
+    const rIn = Math.round(36 * res.d1Ratio);
+    const rTh = Math.round(36 * res.d2Ratio);
+
+    // Ports exposed by Step 1 (Venturi Tube)
+    const venturiPorts = {
+      inletX: 165, throatX: 390, outletX: 640, cy: cy,
+      rIn: rIn, rTh: rTh,
+      tap1X: 235, tap1Y: cy + rIn,
+      tap2X: 390, tap2Y: cy + rTh
+    };
+
+    // STEP 1: Horizontal Converging-Diverging Venturi Pipe Section + Badge 1
+    if (B.isStepVisible(1)) {
+      const p1 = B.getStepProgress(1);
+      ctx.save();
+      ctx.globalAlpha = p1;
+      ctx.translate(0, (1 - p1) * -25);
+
+      ctx.beginPath();
+      ctx.moveTo(165, cy - rIn);
+      ctx.lineTo(295, cy - rIn);
+      ctx.bezierCurveTo(335, cy - rIn, 345, cy - rTh, 370, cy - rTh);
+      ctx.lineTo(410, cy - rTh);
+      ctx.bezierCurveTo(455, cy - rTh, 515, cy - rIn, 575, cy - rIn);
+      ctx.lineTo(640, cy - rIn);
+      ctx.lineTo(640, cy + rIn);
+      ctx.lineTo(575, cy + rIn);
+      ctx.bezierCurveTo(515, cy + rIn, 455, cy + rTh, 410, cy + rTh);
+      ctx.lineTo(370, cy + rTh);
+      ctx.bezierCurveTo(345, cy + rTh, 335, cy + rIn, 295, cy + rIn);
+      ctx.lineTo(165, cy + rIn);
+      ctx.closePath();
+
+      const wGrad = ctx.createLinearGradient(0, cy - rIn, 0, cy + rIn);
+      wGrad.addColorStop(0, "rgba(14, 165, 233, 0.42)");
+      wGrad.addColorStop(0.5, "rgba(56, 189, 248, 0.72)");
+      wGrad.addColorStop(1, "rgba(2, 132, 199, 0.48)");
+      ctx.fillStyle = wGrad;
+      ctx.fill();
+      ctx.strokeStyle = "#cbd5e1";
+      ctx.lineWidth = 2.4;
+      ctx.stroke();
+      ctx.restore();
+
+      drawCanonicalBadgeOnly(ctx, 1, { x: 485, y: cy - rIn + 4 }, { x: 525, y: 85 });
+    }
+
+    // STEP 2: Piezometer Static Pressure Tap Ports P1 (Inlet) & P2 (Throat) + Badge 2
+    if (B.isStepVisible(2)) {
+      const p2 = B.getStepProgress(2);
+      ctx.save();
+      ctx.globalAlpha = p2;
+      ctx.fillStyle = "#64748b";
+      ctx.strokeStyle = "#e2e8f0";
+      ctx.lineWidth = 1.6;
+      // Tap 1 at x=235
+      ctx.fillRect(venturiPorts.tap1X - 6, venturiPorts.tap1Y, 12, 34);
+      ctx.strokeRect(venturiPorts.tap1X - 6, venturiPorts.tap1Y, 12, 34);
+      // Tap 2 at x=390 (throat)
+      ctx.fillRect(venturiPorts.tap2X - 6, venturiPorts.tap2Y, 12, 34 + (rIn - rTh));
+      ctx.strokeRect(venturiPorts.tap2X - 6, venturiPorts.tap2Y, 12, 34 + (rIn - rTh));
+      ctx.restore();
+
+      drawCanonicalBadgeOnly(ctx, 2, { x: venturiPorts.tap2X + 6, y: venturiPorts.tap2Y + 18 }, { x: 465, y: 225 });
+    }
+
+    // STEP 3: Differential Mercury U-Tube Manometer Snapped to Tap Ports P1 & P2 + Badge 3
+    if (B.isStepVisible(3)) {
+      const p3 = B.getStepProgress(3);
+      ctx.save();
+      ctx.globalAlpha = p3;
+      ctx.translate(0, (1 - p3) * 28);
+
+      const xL = venturiPorts.tap1X;
+      const xR = venturiPorts.tap2X;
+      const topTubeY = cy + rIn + 34;
+      const bottomBendY = 415;
+      const midU = (xL + xR) / 2;
+      const halfSpan = (xR - xL) / 2;
+
+      // Glass U-Tube Casing
+      ctx.strokeStyle = "rgba(203, 213, 225, 0.85)";
+      ctx.lineWidth = 14;
+      ctx.lineCap = "butt";
+      ctx.beginPath();
+      ctx.moveTo(xL, topTubeY);
+      ctx.lineTo(xL, bottomBendY - 35);
+      ctx.arc(midU, bottomBendY - 35, halfSpan, Math.PI, 0, true);
+      ctx.lineTo(xR, topTubeY);
+      ctx.stroke();
+
+      // Inner Water Fill in U-tube legs
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.45)";
+      ctx.lineWidth = 9;
+      ctx.beginPath();
+      ctx.moveTo(xL, topTubeY);
+      ctx.lineTo(xL, bottomBendY - 35);
+      ctx.arc(midU, bottomBendY - 35, halfSpan, Math.PI, 0, true);
+      ctx.lineTo(xR, topTubeY);
+      ctx.stroke();
+
+      // Differential Mercury Column (Δh pushes Left Leg down, Right Leg up!)
+      const dhPx = Math.min(58, (state.dh / 240.0) * 56);
+      const eqY = 335;
+      const hgLeftY = eqY + dhPx * 0.5;
+      const hgRightY = eqY - dhPx * 0.5;
+
+      ctx.strokeStyle = "#fbbf24"; // High-contrast metallic mercury column
+      ctx.lineWidth = 9;
+      ctx.beginPath();
+      ctx.moveTo(xL, hgLeftY);
+      ctx.lineTo(xL, bottomBendY - 35);
+      ctx.arc(midU, bottomBendY - 35, halfSpan, Math.PI, 0, true);
+      ctx.lineTo(xR, hgRightY);
+      ctx.stroke();
+
+      // Dashed Δh reference lines between left and right mercury menisci
+      ctx.setLineDash([4, 4]);
+      ctx.strokeStyle = "#fde68a";
+      ctx.lineWidth = 1.3;
+      ctx.beginPath();
+      ctx.moveTo(xL + 8, hgLeftY);
+      ctx.lineTo(xR - 8, hgLeftY);
+      ctx.moveTo(xL + 8, hgRightY);
+      ctx.lineTo(xR - 8, hgRightY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.restore();
+
+      drawCanonicalBadgeOnly(ctx, 3, { x: xL - 7, y: 345 }, { x: 165, y: 345 });
+    }
+
+    // STEP 4: Centrifugal Supply Pump & Inlet Flange Valve + Badge 4
+    if (B.isStepVisible(4)) {
+      const p4 = B.getStepProgress(4);
+      ctx.save();
+      ctx.globalAlpha = p4;
+      ctx.translate((1 - p4) * -30, 0);
+
+      // Pump Volute Casing connected to x=165
+      ctx.fillStyle = "#334155";
+      ctx.strokeStyle = "#94a3b8";
+      ctx.lineWidth = 2;
+      ctx.fillRect(115, cy - 16, 50, 32);
+      ctx.strokeRect(115, cy - 16, 50, 32);
+
+      ctx.beginPath();
+      ctx.arc(105, cy, 32, 0, Math.PI * 2);
+      ctx.fillStyle = "#1e293b";
+      ctx.fill();
+      ctx.stroke();
+
+      // Rotating Pump Impeller Blades
+      ctx.save();
+      ctx.translate(105, cy);
+      ctx.rotate(tSec * (2.5 + res.v1 * 1.2));
+      ctx.strokeStyle = "#38bdf8";
+      ctx.lineWidth = 2.5;
+      for (let b = 0; b < 4; b++) {
+        ctx.rotate(Math.PI / 2);
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(22, 0);
+        ctx.stroke();
+      }
+      ctx.restore();
+      ctx.restore();
+
+      drawCanonicalBadgeOnly(ctx, 4, { x: 105, y: cy - 32 }, { x: 105, y: 78 });
+    }
+
+    // STEP 5: Laminar Streamline Velocity Particles & Discharge Collector + Badge 5
+    if (B.isStepVisible(5)) {
+      const p5 = B.getStepProgress(5);
+      ctx.save();
+      ctx.globalAlpha = p5;
+
+      // Animated velocity tracer particles accelerating through the Venturi throat!
+      const speedScale = Math.max(0.4, res.v2 * 0.18);
+      for (let lane = -1; lane <= 1; lane++) {
+        for (let k = 0; k < 6; k++) {
+          const prog = ((tSec * speedScale + k / 6.0 + (lane + 1) * 0.07) % 1.0);
+          const px = 175 + prog * 455;
+          let localR = rIn;
+          if (px > 295 && px < 370) {
+            const f = (px - 295) / 75.0;
+            localR = rIn + (rTh - rIn) * f;
+          } else if (px >= 370 && px <= 410) {
+            localR = rTh;
+          } else if (px > 410 && px < 575) {
+            const f = (px - 410) / 165.0;
+            localR = rTh + (rIn - rTh) * f;
+          }
+          const py = cy + lane * (localR * 0.52);
+          ctx.beginPath();
+          ctx.arc(px, py, 3.2, 0, Math.PI * 2);
+          ctx.fillStyle = (px >= 355 && px <= 425) ? "#fde047" : "#e0f2fe";
+          ctx.fill();
+        }
+      }
+
+      // Downstream Discharge Collector Tank at x=640..715
+      ctx.fillStyle = "rgba(30, 41, 59, 0.75)";
+      ctx.strokeStyle = "#94a3b8";
+      ctx.lineWidth = 2;
+      ctx.fillRect(640, cy - 28, 68, 120);
+      ctx.strokeRect(640, cy - 28, 68, 120);
+      ctx.fillStyle = "rgba(56, 189, 248, 0.55)";
+      ctx.fillRect(642, cy + 25, 64, 65);
+      ctx.restore();
+
+      drawCanonicalBadgeOnly(ctx, 5, { x: 674, y: cy + 55 }, { x: 674, y: 315 });
+    }
+  }
+
+
+  const btnRecordEl = document.querySelector("#btnRecord");
+  if (btnRecordEl) {
+    btnRecordEl.dataset.ctWired = "1";
+    btnRecordEl.addEventListener("click", () => {
+      if (window.ClassTurnUniversalBridge.completedStep < window.ClassTurnUniversalBridge.totalSteps) {
+        window.ClassTurnUniversalBridge.triggerWarning(`Out of sequence! Please complete [➔ Step ${window.ClassTurnUniversalBridge.completedStep + 1}] first before recording.`);
+        return;
+      }
+      trialNum += 1;
+      const cols = buildObservationRow();
+      const tr = document.createElement("tr");
+      tr.innerHTML = cols.map(c => `<td>${c}</td>`).join("");
+      tbody.appendChild(tr);
+    });
+  }
+
+  const btnResetEl = document.querySelector("#btnReset");
+  if (btnResetEl) {
+    btnResetEl.addEventListener("click", () => {
+      SIM_SPEC.controls.forEach(c => {
+        state[c.id] = c.value;
+        const inp = document.querySelector("#ctrl_" + c.id);
+        if (inp) inp.value = c.value;
+      });
+      tbody.innerHTML = "";
+      trialNum = 0;
+      window.ClassTurnUniversalBridge.resetSteps();
+      updateLiveReadingsOnly();
+    });
+  }
+
+  const btnStepEl = document.querySelector("#btnStep");
+  if (btnStepEl) {
+    btnStepEl.addEventListener("click", () => {
+      const nextStep = Math.min(window.ClassTurnUniversalBridge.totalSteps, window.ClassTurnUniversalBridge.completedStep + 1);
+      window.ClassTurnUniversalBridge.handleStepClick(nextStep);
+    });
+  }
+
+  const canvas = document.querySelector("#simCanvas");
+  const ctx = canvas.getContext("2d");
+  let paused = false;
+
+  const btnToggleEl = document.querySelector("#btnToggle");
+  if (btnToggleEl) {
+    btnToggleEl.addEventListener("click", (e) => {
+      paused = !paused;
+      e.target.textContent = paused ? "Run" : "Pause";
+    });
+  }
+
+  function renderScene(nowMs) {
+    const tSec = (nowMs || 0) / 1000.0;
+    const B = window.ClassTurnUniversalBridge;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Dark radial studio background + bench strip
+    const bg = ctx.createRadialGradient(400, 250, 40, 400, 250, 460);
+    bg.addColorStop(0, "#131c2e");
+    bg.addColorStop(1, "#090d16");
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#1e293b";
+    ctx.fillRect(40, 435, 720, 55);
+    ctx.strokeStyle = "#475569";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(40, 435);
+    ctx.lineTo(760, 435);
+    ctx.stroke();
+
+    renderFrameElements(ctx, B, paused ? 0 : tSec);
+
+    requestAnimationFrame(renderScene);
+  }
+
+  window.ClassTurnUniversalBridge.init();
+  updateLiveReadingsOnly();
+  requestAnimationFrame(renderScene);
+})();
+</script>
+
+</body>
+</html>

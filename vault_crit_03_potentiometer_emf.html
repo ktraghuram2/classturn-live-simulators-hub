@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClassTurn · Canonical Skeletal Legacy Layout</title>
+  <style>
+/* ==========================================================================
+   CLASSTURN CANONICAL SKELETAL LEGACY LAYOUT (UNPOPULATED TEMPLATE)
+   STRICTLY LOCKED: Zero AI data loaded. Only structural slots & tokens.
+   ========================================================================== */
+
+:root {
+  --primary: #176c5f;
+  --primary-hover: #10564b;
+  --bg-page: #edf6f2;
+  --surface: #ffffff;
+  --surface-border: #8eaea1;
+  --text: #193f3a;
+  --text-muted: #526e66;
+  --canvas-bg: #090d16;
+  --font: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --header-height: 64px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: var(--font);
+  background: var(--bg-page);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 1. TOP HEADER (64px, FIXED LOCKED) */
+header {
+  height: var(--header-height);
+  background: var(--surface);
+  border-bottom: 2px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.eyebrow {
+  margin: 0 0 2px 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 750;
+  color: #173c35;
+  letter-spacing: -0.01em;
+}
+
+.badge-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge.verified {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #f59e0b;
+}
+
+.badge.benchmarked {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+/* 2. MAIN SPLIT-PANE WORKSPACE */
+.workspace-layout {
+  display: flex;
+  width: 100vw;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+  position: relative;
+}
+
+/* LEFT STAGE: CANVAS & OBSERVATION NOTEBOOK */
+.stage-fixed {
+  flex: 1 1 0;
+  min-width: 320px;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  background: var(--bg-page);
+}
+
+.canvas-wrapper {
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 260px;
+  background: var(--canvas-bg);
+  border: 2px solid var(--surface-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* APPARATUS LEGEND BANNER (LOCKED BELOW CANVAS VIEWPORT, ABOVE NOTEBOOK, HORIZONTALLY SCROLLABLE) */
+.apparatus-legend-banner {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #edf6f2;
+  border: 1.5px solid var(--surface-border);
+  border-radius: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #8eaea1 #e2efe9;
+  margin: 6px 0 10px 0;
+}
+
+.apparatus-legend-banner::-webkit-scrollbar {
+  height: 7px;
+  display: block;
+}
+
+.apparatus-legend-banner::-webkit-scrollbar-track {
+  background: #e2efe9;
+  border-radius: 4px;
+}
+
+.apparatus-legend-banner::-webkit-scrollbar-thumb {
+  background: #8eaea1;
+  border-radius: 4px;
+}
+
+.apparatus-legend-banner::-webkit-scrollbar-thumb:hover {
+  background: #10564b;
+}
+
+.legend-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: #ffffff;
+  border: 1.5px solid #b2ccc2;
+  border-radius: 6px;
+  font: 600 12px var(--font);
+  color: #193f3a;
+  cursor: default;
+  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.legend-pill .pill-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #10564b;
+  color: #ffffff;
+  font: 700 10.5px var(--font);
+  flex-shrink: 0;
+}
+
+.legend-pill .pill-name {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.atlas-notebook-heading {
+  font: 700 13px var(--font);
+  color: #173c35;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.stage-bottom {
+  width: 100%;
+  max-height: 28%;
+  min-height: 52px;
+  overflow-y: auto;
+  border: 2px solid var(--surface-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #ffffff;
+}
+
+.stage-bottom:empty::before {
+  content: "No observations recorded yet. Click 'Record Observation' in Section 08 to capture data.";
+  font-size: 12px;
+  color: #526e66;
+  font-style: italic;
+}
+
+table.atlas-table {
+  width: 100%;
+  border-collapse: collapse;
+  font: 500 12px var(--font);
+  color: var(--text);
+}
+
+table.atlas-table th {
+  text-align: left;
+  padding: 8px 10px;
+  color: #173c35;
+  background: #e5eee8;
+  font-weight: 700;
+  border-bottom: 1.5px solid var(--surface-border);
+  white-space: nowrap;
+}
+
+table.atlas-table td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #c9dfd7;
+  color: #304e44;
+  white-space: nowrap;
+}
+
+/* 3. RESIZER GUTTER (DRAGGABLE TO LEFT/RIGHT) */
+.resizer-gutter {
+  width: 12px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: col-resize;
+  touch-action: none;
+  background: #f4f7f7;
+  user-select: none;
+}
+
+.resizer-handle {
+  width: 4px;
+  height: 56px;
+  border-radius: 4px;
+  background: #6b8e7d;
+  transition: background 0.15s;
+}
+
+.resizer-gutter:hover .resizer-handle,
+.resizer-gutter:active .resizer-handle {
+  background: var(--primary);
+}
+
+/* 4. SCROLLABLE CONTROL PANEL (RIGHT) */
+.panel-right {
+  width: 430px;
+  min-width: 240px;
+  max-width: 75vw;
+  flex-shrink: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-left: 2px solid var(--surface-border);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.panel-right::-webkit-scrollbar, .stage-bottom::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.panel-right::-webkit-scrollbar-thumb, .stage-bottom::-webkit-scrollbar-thumb {
+  background: #b2ccc2;
+  border-radius: 8px;
+}
+
+/* TOP CONTROLS & DROPDOWN (RUN/PAUSE & STEP FROZEN AT TOP WHILE SCROLLING) */
+.panel-top-controls {
+  display: contents;
+}
+
+.panel-top-row {
+  position: sticky;
+  top: -16px;
+  z-index: 60;
+  display: flex;
+  gap: 8px;
+  width: calc(100% + 40px);
+  margin: -16px -20px -4px -20px;
+  padding: 14px 20px 10px 20px;
+  background: #ffffff;
+  border-bottom: 1.5px solid #c0d2c9;
+  box-shadow: 0 2px 6px rgba(16, 86, 75, 0.06);
+}
+
+.panel-top-row button {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.experiment-selector-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #c0d2c9;
+}
+
+.experiment-selector-box label {
+  font: 700 12px var(--font);
+  color: var(--text);
+  letter-spacing: 0.03em;
+}
+
+.experiment-selector-box select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid var(--surface-border);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--text);
+  font: 600 12px var(--font);
+  cursor: pointer;
+  outline: none;
+}
+
+.experiment-selector-box select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(23, 108, 95, 0.15);
+}
+
+/* 5. LOCKED 8-SECTION PEDAGOGICAL STRUCTURE */
+.atlas-section {
+  padding-bottom: 14px;
+  border-bottom: 2px solid #c0d2c9;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.atlas-section > h2 {
+  font: 750 13px var(--font);
+  letter-spacing: 0.05em;
+  color: #10564b;
+  margin: 0;
+}
+
+.atlas-section p, .atlas-section li, .atlas-section label, .atlas-section span {
+  font: 500 13px/1.5 var(--font);
+  color: #304e44;
+  margin: 0;
+}
+
+.atlas-section ol, .atlas-section ul {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.principles-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.principles-list li {
+  color: #304e44;
+  font: 500 13px/1.5 var(--font);
+}
+
+.principles-list strong {
+  color: #173c35;
+  display: block;
+  font-size: 12.5px;
+  margin-bottom: 2px;
+}
+
+.atlas-equation {
+  overflow-x: auto;
+  padding: 2px 0 4px 0;
+  background: transparent;
+  border: none;
+  font-family: "Cambria Math", "STIX Two Math", math, monospace;
+  font-size: 13.5px;
+  color: #10564b;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* SECTION 05: PRESETS & STEPPERS (WHITE INPUTS, DARK TEXT) */
+.preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.preset-chip {
+  position: relative;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #edf6f2;
+  color: #193f3a;
+  border: 1.5px solid var(--surface-border);
+  cursor: pointer;
+  transition: all 0.12s;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preset-chip:hover {
+  background: #e2efe9;
+  border-color: #759a8c;
+}
+
+.preset-chip.active, .preset-chip:active {
+  background: #edf6f2;
+  color: #10564b;
+  border-color: #10564b;
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.preset-chip.active::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1.5px dotted #10564b !important;
+  border-radius: 4px !important;
+  pointer-events: none;
+}
+
+.stepper-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stepper-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stepper-field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #173c35;
+}
+
+.stepper-box {
+  display: flex;
+  align-items: stretch;
+  height: 36px;
+  border: 2px solid var(--surface-border);
+  border-radius: 8px;
+  background: #ffffff !important;
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.stepper-box:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(23, 108, 95, 0.15);
+}
+
+.stepper-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  font: 700 14px var(--font);
+  background: #ffffff !important;
+  color: #173c35 !important;
+  -moz-appearance: textfield;
+}
+
+.stepper-input::-webkit-outer-spin-button,
+.stepper-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.stepper-arrows {
+  display: flex;
+  flex-direction: column;
+  width: 24px;
+  border-left: 1px solid #c9dfd7;
+  border-right: 1px solid #c9dfd7;
+}
+
+.stepper-btn {
+  flex: 1;
+  min-height: 16px;
+  height: 16px;
+  padding: 0;
+  border: none !important;
+  border-radius: 0 !important;
+  background: #edf6f2 !important;
+  color: var(--primary) !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  line-height: 1;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.stepper-btn:hover {
+  background: #d8ece4 !important;
+  color: #10564b !important;
+}
+
+.stepper-btn::after {
+  display: none !important;
+}
+
+.stepper-unit {
+  width: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f7f7;
+  font: 700 11px var(--font);
+  color: var(--text-muted);
+  user-select: none;
+  border-left: 1px solid #c9dfd7;
+}
+
+.stepper-range-hint {
+  font-size: 11px;
+  color: #526e66;
+  font-style: italic;
+}
+
+/* SECTION 06: LIVE READINGS (UNIFORM BULLETED LIST ON PLAIN BACKGROUND) */
+.readouts-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.readout-item {
+  color: #304e44;
+  font: 500 13px/1.4 var(--font);
+}
+
+.readout-heading {
+  display: block;
+  font-weight: 700;
+  color: #173c35;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+}
+
+.readout-val {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #10564b;
+  font-family: Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  margin-top: 2px;
+}
+
+/* 8. UNIVERSAL TACTILE BUTTONS & SECTION 08 PLAYBACK */
+button {
+  position: relative !important;
+  background: #edf6f2 !important;
+  color: #193f3a !important;
+  border: 1.5px solid var(--surface-border) !important;
+  border-radius: 8px !important;
+  font: 700 12px var(--font) !important;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none !important;
+  box-shadow: 0 2px 0 var(--surface-border), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transform: translateY(0);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, border-color 0.12s ease;
+  min-height: 38px;
+  padding: 8px 14px;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+button:hover {
+  background: #d8ece4 !important;
+  border-color: #759a8c !important;
+  color: #10564b !important;
+}
+
+button:active, button.is-clicked {
+  transform: translateY(2px) scale(0.99) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.18) !important;
+}
+
+button.is-clicked::after, button:focus-visible::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 3px !important;
+  left: 3px !important;
+  right: 3px !important;
+  bottom: 3px !important;
+  border: 1.5px dotted #10564b !important;
+  border-radius: 5px !important;
+  pointer-events: none !important;
+  box-sizing: border-box !important;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.btn-row button {
+  flex: 1 1 0;
+}
+
+/* FEEDBACK DIALOG (WHITE INPUTS & UNIFIED BUTTONS) */
+.feedback-dialog {
+  width: min(520px, 92vw);
+  border: 2px solid var(--surface-border);
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.feedback-dialog::backdrop {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.feedback-dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feedback-dialog label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #173c35;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.feedback-dialog select,
+.feedback-dialog textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--surface-border) !important;
+  border-radius: 8px;
+  font: 500 13px var(--font);
+  color: #173c35 !important;
+  background: #ffffff !important;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.feedback-dialog select:focus,
+.feedback-dialog textarea:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(23, 108, 95, 0.15);
+}
+
+.slot-placeholder {
+  color: #8fa89e;
+  font-style: italic;
+}
+  </style>
+
+    <style id="classturn-mathml-textbook">
+      .atlas-equation {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding: 6px 0 !important;
+        white-space: nowrap !important;
+      }
+      math {
+        font-family: "Cambria Math", "STIX Two Math", math, serif;
+        font-size: 1em;
+      }
+      math[display="inline"] { display: inline math; }
+      .equation-symbols li, .equation-symbols [data-retained] { white-space: nowrap !important; }
+      .equation-symbols strong { display: inline; margin-bottom: 0; }
+      .equation-symbols math { display: inline math; }
+      .atlas-equation math {
+        display: inline-block !important;
+        white-space: nowrap !important;
+        font-family: "Cambria Math", "STIX Two Math", "Segoe UI Symbol", serif !important;
+        font-size: 15.5px !important;
+        color: #10564b !important;
+        vertical-align: middle;
+      }
+      .canvas-wrapper {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #090d16 !important;
+        position: relative !important;
+        overflow: hidden !important;
+      }
+      .canvas-wrapper > canvas {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        aspect-ratio: auto !important;
+        object-fit: fill !important;
+        display: block !important;
+        margin: auto !important;
+        touch-action: none !important;
+      }
+    </style>
+    <style id="classturn-no-canvas-mouse">#simCanvas, .canvas-wrapper > canvas { pointer-events: none !important; cursor: default !important; user-select: none !important; } #apparatusLegendBanner { pointer-events: auto !important; overflow-x: auto !important; overflow-y: hidden !important; }</style>
+</head>
+<body>
+
+  <!-- ==================== TOP HEADER (64px LOCKED) ==================== -->
+  <header>
+    <div>
+      <p class="eyebrow" id="headerEyebrow">[ Curriculum Eyebrow · Subject & Grade ]</p>
+      <h1 id="headerTitle">[ Experiment Title & Phenomenon ]</h1>
+    </div>
+    <div class="badge-bar">
+      <button type="button" id="btnReportProblem">Report a problem</button>
+      <span class="badge verified" id="reviewBadge">Science not verified</span>
+      <span class="badge benchmarked" id="benchmarkBadge">✓ Benchmarked (±0.5%)</span>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN WORKSPACE ==================== -->
+  <main class="workspace-layout" id="workspaceLayout">
+
+    <!-- LEFT STAGE: CANVAS APPARATUS VIEWPORT & OBSERVATION NOTEBOOK -->
+    <section class="stage-fixed" id="stageContainer">
+      <div class="canvas-wrapper">
+        <canvas id="simCanvas" width="800" height="500"></canvas>
+      </div>
+
+      <!-- APPARATUS LEGEND BANNER (LOCKED BELOW CANVAS VIEWPORT, ABOVE NOTEBOOK) -->
+      <div class="apparatus-legend-banner" id="apparatusLegendBanner">
+        <div class="legend-pill"><span class="pill-num">1</span> <span class="pill-name">[ Apparatus Component 1 ]</span></div>
+        <div class="legend-pill"><span class="pill-num">2</span> <span class="pill-name">[ Apparatus Component 2 ]</span></div>
+        <div class="legend-pill"><span class="pill-num">3</span> <span class="pill-name">[ Apparatus Component 3 ]</span></div>
+        <div class="legend-pill"><span class="pill-num">4</span> <span class="pill-name">[ Apparatus Component 4 ]</span></div>
+      </div>
+
+      <h2 class="atlas-notebook-heading" id="notebookHeading">Observation notebook</h2>
+      <div id="stageBottom" class="stage-bottom">
+        <table class="atlas-table" id="observationTable">
+          <thead id="observationThead">
+            <tr>
+              <th>Trial #</th>
+              <th>[ Parameter A (unit) ]</th>
+              <th>[ Parameter B (unit) ]</th>
+              <th>[ Measured Output ]</th>
+              <th>[ Calculated Invariant ]</th>
+            </tr>
+          </thead>
+          <tbody id="observationTbody">
+            <!-- Blank until user clicks 'Record Observation' -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SPLIT-PANE RESIZER GUTTER (DRAGGABLE TO LEFT/RIGHT) -->
+    <div class="resizer-gutter" id="resizerGutter" title="Drag to adjust panel width">
+      <div class="resizer-handle"></div>
+    </div>
+
+    <!-- RIGHT PANEL: TOP CONTROLS & LOCKED 8-SECTION PEDAGOGICAL STRUCTURE -->
+    <aside class="panel-right" id="controlsPanel">
+
+      <!-- TOP CONTROLS: PAUSE/RUN & STEP -->
+      <div class="panel-top-controls">
+        <div class="panel-top-row">
+          <button type="button" id="btnToggle">Pause</button>
+          <button type="button" id="btnStep">Step</button>
+        </div>
+
+        <!-- EXPERIMENT SELECTOR (DIRECTLY ABOVE 01/AIM) -->
+        <div class="experiment-selector-box">
+          <label for="experimentSelect">Choose experiment</label>
+          <select id="experimentSelect" class="atlas-select">
+            <option value="">-- Choose experiment from syllabus --</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 01 / Aim -->
+      <section class="atlas-section" data-section="aim" id="sec-01-aim">
+        <h2>01 / Aim</h2>
+        <p id="aimText" class="slot-placeholder">[ Aim statement will populate here from chosen experiment. ]</p>
+      </section>
+
+      <!-- 02 / Apparatus -->
+      <section class="atlas-section" data-section="apparatus" id="sec-02-apparatus">
+        <h2>02 / Apparatus</h2>
+        <ul id="apparatusList">
+          <li><span class="slot-placeholder">[ Apparatus bullet items will populate here from JSON data slot ]</span></li>
+        </ul>
+      </section>
+
+      <!-- 03 / Principles -->
+      <section class="atlas-section" data-section="principles" id="sec-03-principles">
+        <h2>03 / Principles</h2>
+        <p id="principlesSummary" class="slot-placeholder">[ Scientific principles and governing theory will populate here. ]</p>
+        <ul id="principlesList" class="principles-list" style="margin-top:4px;">
+          <li><span class="slot-placeholder">[ Governing MathML formulas will populate here from JSON data slot ]</span></li>
+        </ul>
+      </section>
+
+      <!-- 04 / Procedure -->
+      <section class="atlas-section" data-section="procedure" id="sec-04-procedure">
+        <h2>04 / Procedure</h2>
+        <ol id="procedureList">
+          <li><span class="slot-placeholder">[ Step-by-step procedure steps will populate here from chosen experiment ]</span></li>
+        </ol>
+      </section>
+
+      <!-- 05 / Controls -->
+      <section class="atlas-section" data-section="controls" id="sec-05-controls">
+        <h2>05 / Controls</h2>
+        <div class="preset-row" id="presetContainer">
+          <span class="preset-chip slot-placeholder">[ Presets populate here ]</span>
+        </div>
+        <div class="extra-actions-row" id="extraActionsContainer" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <!-- Optional action buttons slot -->
+        </div>
+        <div class="stepper-container" id="steppersContainer">
+          <p class="slot-placeholder" style="margin: 8px 0;">[ Precision stepper inputs will populate here with white boxes and 16px arrows ]</p>
+        </div>
+      </section>
+
+      <!-- 06 / Live readings -->
+      <section class="atlas-section" data-section="readings" id="sec-06-readings">
+        <h2>06 / Live readings</h2>
+        <ul class="readouts-list" id="readoutsList">
+          <li><span class="slot-placeholder">[ Live telemetry readings will populate here in clean bullet format ]</span></li>
+        </ul>
+      </section>
+
+      <!-- 07 / Validation and limits -->
+      <section class="atlas-section" data-section="validation" id="sec-07-validation">
+        <h2>07 / Validation and limits</h2>
+        <ul id="validationList">
+          <li><span class="slot-placeholder">[ Modeling assumptions and physical boundary limits will populate here ]</span></li>
+        </ul>
+      </section>
+
+      <!-- 08 / Playback & recording (AT THE BOTTOM) -->
+      <section class="atlas-section" data-section="runner" id="sec-08-playback">
+        <h2>08 / Playback & recording</h2>
+        <div class="btn-row" id="playbackButtons">
+          <button type="button" id="btnRecord">Record Observation</button>
+          <button type="button" id="btnReset">Reset to Defaults</button>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <!-- ==================== FEEDBACK DIALOG MODAL ==================== -->
+  <dialog class="feedback-dialog" id="feedbackDialog">
+    <form method="dialog" id="feedbackForm">
+      <h2 style="font-size:18px; margin:0 0 10px 0; color:#173c35;">Report a Problem / Give Feedback</h2>
+      <label>Issue Type
+        <select name="category" required>
+          <option value="physics">Scientific or Math Calculation Issue</option>
+          <option value="visual">Visual / Label / Canvas Overlap</option>
+          <option value="controls">Controls / Responsiveness</option>
+          <option value="pedagogy">Pedagogical / Curriculum Suggestion</option>
+        </select>
+      </label>
+      <label>Description of Issue
+        <textarea name="description" rows="3" placeholder="Describe the issue observed..." required></textarea>
+      </label>
+      <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:10px;">
+        <button type="button" id="btnCancelFeedback">Cancel</button>
+        <button type="submit" id="btnSubmitFeedback">Submit Feedback</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ==================== DRAGGABLE RESIZER & CANVAS SKELETON ==================== -->
+  <script id="classturn-layout-script">
+  // 1. DRAGGABLE RESIZER GUTTER
+  const gutter = document.getElementById('resizerGutter');
+  const panel = document.getElementById('controlsPanel');
+  let isDragging = false;
+
+  gutter.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+    e.preventDefault();
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const newWidth = window.innerWidth - e.clientX - 6;
+    if (newWidth >= 240 && newWidth <= window.innerWidth * 0.75) {
+      panel.style.width = `${newWidth}px`;
+    }
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    }
+  });
+
+  gutter.addEventListener('touchstart', () => { isDragging = true; }, { passive: true });
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging || !e.touches[0]) return;
+    const newWidth = window.innerWidth - e.touches[0].clientX - 6;
+    if (newWidth >= 240 && newWidth <= window.innerWidth * 0.75) {
+      panel.style.width = `${newWidth}px`;
+    }
+  }, { passive: true });
+  window.addEventListener('touchend', () => { isDragging = false; });
+
+  // 2. TACTILE BUTTON CLICKS
+  document.querySelectorAll('button, .preset-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.add('is-clicked');
+      setTimeout(() => btn.classList.remove('is-clicked'), 160);
+    });
+  });
+
+  // 3. REPORT PROBLEM DIALOG
+  const btnReportProblem = document.getElementById('btnReportProblem');
+  const feedbackDialog = document.getElementById('feedbackDialog');
+  const btnCancelFeedback = document.getElementById('btnCancelFeedback');
+  btnReportProblem.addEventListener('click', () => feedbackDialog.showModal());
+  btnCancelFeedback.addEventListener('click', () => feedbackDialog.close());
+
+  // 4. RESET BUTTON (CLEARS OBSERVATIONS TABLE)
+  const btnReset = document.getElementById('btnReset');
+  btnReset.addEventListener('click', () => {
+    const tbody = document.getElementById('observationTbody');
+    if (tbody) tbody.innerHTML = '';
+  });
+
+  </script>
+  <script id="classturnZoomConfig">window.CLASSTURN_ZOOM_CONFIG = {"scale": 1.0, "cx": 400.0, "cy": 250.0, "minLeader": 48, "maxLeader": 80, "minBadgeDist": 40};</script>
+  <script src="classturn-lab-kit.js?v=btn8"></script>
+  <script id="classturn-stage-script">
+  /* Populated from classturn_simulators.db */
+  </script>
+
+<script id="vault-universal-step-bridge">
+/**
+ * CLASSTURN UNIVERSAL STEP-BUTTON [➔], LEGO PORT SNAP & OBSERVATION BRIDGE
+ * =========================================================================
+ * Enforces the exact Student Experience & Lego Vault Assembly Pipeline:
+ * 1. On Initial Load: Renders Full Apparatus Preview (`previewMode = true`) with Style 2 curvy leaders & numbered badges.
+ * 2. Procedure Step `[➔]` Buttons (Section 04):
+ *    - Injects a glowing `[➔ Step N]` button next to every step in `#procedureList`.
+ *    - Clicking Step 1 `[➔]` clears the preview and immediately animates Step 1's element + badge (`0 -> 1`).
+ *    - Clicking Step 2 `[➔]`, Step 3 `[➔]`... in strict order reveals & animates each step's brick + badge into its port.
+ *    - Clicking out of order displays a prominent centered alert right in the middle of the Canvas overlapping all elements.
+ * 3. Numeric Control Boxes Lock/Unlock (Section 05):
+ *    - Locked until all `[➔]` steps are completed; unlocks automatically after the final `[➔]` step.
+ *    - Every numeric change immediately updates the Canvas & Section 06 Live Readings without ever pausing.
+ * 4. Deliberate Observation Recording (`#btnRecord` in Section 08 ONLY):
+ *    - Readings are NEVER auto-logged on input change.
+ *    - Clicking `Record Observation` (`#btnRecord`) appends the current trial row to `#observationTbody`.
+ */
+(function () {
+  window.ClassTurnUniversalBridge = {
+    previewMode: true,
+    completedStep: 0,
+    totalSteps: 0,
+    animatingStep: 0,
+    animStartTime: 0,
+    animDurationMs: 550,
+    warningBannerText: "",
+    warningTimeout: null,
+    trialCounter: 0,
+    onStepChangeCallback: null,
+
+    init(config = {}) {
+      this.previewMode = true;
+      this.completedStep = 0;
+      this.animatingStep = 0;
+      this.animStartTime = 0;
+      this.trialCounter = 0;
+      this.onStepChangeCallback = config.onStepChange || null;
+
+      this.injectStepButtonsStyle();
+      this.bindProcedureStepButtons();
+      this.updateControlsLockState();
+    },
+
+    injectStepButtonsStyle() {
+      if (document.querySelector("#classturn-step-bridge-css")) return;
+      const st = document.createElement("style");
+      st.id = "classturn-step-bridge-css";
+      st.textContent = `
+        .ct-step-arrow-btn {
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          min-height: 24px !important;
+          height: 24px !important;
+          padding: 0 9px !important;
+          margin-right: 8px !important;
+          border-radius: 6px !important;
+          font: 700 12px var(--font, sans-serif) !important;
+          background: #edf6f2 !important;
+          color: #10564b !important;
+          border: 1.5px solid #8eaea1 !important;
+          cursor: pointer !important;
+          vertical-align: middle !important;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.08) !important;
+          transition: all 0.18s ease !important;
+        }
+        .ct-step-arrow-btn.ct-next-glow {
+          background: #10564b !important;
+          color: #ffffff !important;
+          border-color: #0d473e !important;
+          box-shadow: 0 0 0 3px rgba(16, 86, 75, 0.25) !important;
+          animation: ctPulseGlow 1.4s infinite ease-in-out !important;
+        }
+        .ct-step-arrow-btn.ct-done {
+          background: #d8ece4 !important;
+          color: #0d473e !important;
+          border-color: #10564b !important;
+        }
+        .ct-controls-locked-banner {
+          padding: 7px 10px;
+          margin-bottom: 8px;
+          border-radius: 7px;
+          background: #fff8e6;
+          border: 1px solid #f59e0b;
+          color: #92400e;
+          font: 600 11.5px var(--font, sans-serif);
+          cursor: pointer;
+        }
+        .ct-center-canvas-alert {
+          position: absolute !important;
+          top: 50% !important;
+          left: 50% !important;
+          transform: translate(-50%, -50%) !important;
+          z-index: 99999 !important;
+          min-width: 340px !important;
+          max-width: 85% !important;
+          padding: 16px 24px !important;
+          border-radius: 12px !important;
+          background: rgba(180, 83, 9, 0.98) !important;
+          border: 2.5px solid #fde68a !important;
+          color: #ffffff !important;
+          font: 700 14.5px 'Segoe UI', system-ui, sans-serif !important;
+          text-align: center !important;
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75) !important;
+          pointer-events: none !important;
+          display: none;
+        }
+        @keyframes ctPulseGlow {
+          0%, 100% { box-shadow: 0 0 0 2px rgba(16, 86, 75, 0.22); }
+          50% { box-shadow: 0 0 0 5px rgba(16, 86, 75, 0.42); }
+        }
+      `;
+      document.head.appendChild(st);
+    },
+
+    bindProcedureStepButtons() {
+      const procList = document.querySelector("#procedureList");
+      if (!procList) return;
+      const items = Array.from(procList.querySelectorAll("li"));
+      this.totalSteps = items.length;
+
+      items.forEach((li, idx) => {
+        const stepNum = idx + 1;
+        if (li.querySelector(".ct-step-arrow-btn")) return;
+        li.style.cursor = "pointer";
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "ct-step-arrow-btn" + (stepNum === 1 ? " ct-next-glow" : "");
+        btn.dataset.step = String(stepNum);
+        btn.innerHTML = `➔ Step ${stepNum}`;
+        btn.title = `Execute Step ${stepNum} on Canvas`;
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          this.handleStepClick(stepNum);
+        });
+        li.addEventListener("click", (e) => {
+          if (e.target === btn || btn.contains(e.target)) return;
+          this.handleStepClick(stepNum);
+        });
+        li.prepend(btn);
+      });
+    },
+
+    handleStepClick(clickedStep) {
+      const expectedStep = this.completedStep + 1;
+      if (clickedStep > expectedStep) {
+        this.triggerWarning(`Out of sequence! Please click [➔ Step ${expectedStep}] first.`);
+        return;
+      }
+      if (clickedStep <= this.completedStep) {
+        this.animateStepTransition(clickedStep);
+        return;
+      }
+      this.clearWarning();
+      this.previewMode = false;
+      this.completedStep = clickedStep;
+      this.updateStepButtonStyles();
+      this.updateControlsLockState();
+      this.animateStepTransition(clickedStep);
+    },
+
+    animateStepTransition(stepNum) {
+      this.animatingStep = stepNum;
+      this.animStartTime = performance.now();
+      if (typeof this.onStepChangeCallback === "function") {
+        this.onStepChangeCallback(this.completedStep, 0.15, this.previewMode);
+      }
+    },
+
+    updateStepButtonStyles() {
+      const procList = document.querySelector("#procedureList");
+      if (!procList) return;
+      const btns = procList.querySelectorAll(".ct-step-arrow-btn");
+      btns.forEach((btn) => {
+        const s = parseInt(btn.dataset.step, 10);
+        btn.classList.remove("ct-next-glow", "ct-done");
+        if (s <= this.completedStep) {
+          btn.classList.add("ct-done");
+          btn.innerHTML = `✓ Step ${s}`;
+        } else if (s === this.completedStep + 1) {
+          btn.classList.add("ct-next-glow");
+          btn.innerHTML = `➔ Step ${s}`;
+        } else {
+          btn.innerHTML = `➔ Step ${s}`;
+        }
+      });
+    },
+
+    updateControlsLockState() {
+      const secControls = document.querySelector("#sec-05-controls");
+      if (!secControls) return;
+      let banner = document.querySelector("#ctControlsLockBanner");
+      const unlocked = this.totalSteps === 0 || this.completedStep >= this.totalSteps;
+
+      if (!unlocked) {
+        if (!banner) {
+          banner = document.createElement("div");
+          banner.id = "ctControlsLockBanner";
+          banner.className = "ct-controls-locked-banner";
+          banner.addEventListener("click", () => {
+            this.triggerWarning(`Out of sequence! Click [➔ Step ${this.completedStep + 1}] first.`);
+          });
+          const h2 = secControls.querySelector("h2");
+          if (h2 && h2.nextSibling) {
+            secControls.insertBefore(banner, h2.nextSibling);
+          } else {
+            secControls.prepend(banner);
+          }
+        }
+        banner.textContent = `Click [➔ Step ${this.completedStep + 1}] in 04 / Procedure (${this.completedStep}/${this.totalSteps} completed) to assemble the apparatus and unlock controls.`;
+      } else if (banner) {
+        banner.remove();
+      }
+
+      const inputs = secControls.querySelectorAll("input, button.stepper-btn, .preset-chip");
+      inputs.forEach((el) => {
+        el.disabled = !unlocked;
+        el.style.opacity = unlocked ? "1" : "0.55";
+        el.style.pointerEvents = unlocked ? "auto" : "none";
+      });
+    },
+
+    clearWarning() {
+      this.warningBannerText = "";
+      if (this.warningTimeout) {
+        clearTimeout(this.warningTimeout);
+        this.warningTimeout = null;
+      }
+      const alertEl = document.querySelector("#ctCenterCanvasAlert");
+      if (alertEl) {
+        alertEl.style.display = "none";
+      }
+    },
+
+    triggerWarning(msg) {
+      this.warningBannerText = msg;
+      const wrapper = document.querySelector(".canvas-wrapper") || document.querySelector("#stageContainer");
+      if (wrapper) {
+        let alertEl = document.querySelector("#ctCenterCanvasAlert");
+        if (!alertEl) {
+          alertEl = document.createElement("div");
+          alertEl.id = "ctCenterCanvasAlert";
+          alertEl.className = "ct-center-canvas-alert";
+          wrapper.appendChild(alertEl);
+        }
+        alertEl.textContent = msg;
+        alertEl.style.display = "block";
+      }
+      if (this.warningTimeout) clearTimeout(this.warningTimeout);
+      this.warningTimeout = setTimeout(() => {
+        this.clearWarning();
+      }, 2800);
+    },
+
+    isStepVisible(stepNumber) {
+      if (this.previewMode) return true;
+      return this.completedStep >= stepNumber;
+    },
+
+    getStepProgress(stepNumber) {
+      if (this.previewMode) return 1.0;
+      if (stepNumber > this.completedStep) return 0.0;
+      if (stepNumber === this.animatingStep && this.animStartTime > 0) {
+        const elapsed = Math.max(0, performance.now() - this.animStartTime);
+        const t = Math.min(1.0, elapsed / this.animDurationMs);
+        return 0.15 + 0.85 * (1 - Math.pow(1 - t, 3));
+      }
+      return 1.0;
+    },
+
+    drawCanvasStepHUD(ctx, canvasW = 800, canvasH = 500) {
+      // Handled by #ctCenterCanvasAlert centered inside .canvas-wrapper so canvas zoom/aspect transform is never altered
+    },
+
+    resetSteps() {
+      this.previewMode = true;
+      this.completedStep = 0;
+      this.animatingStep = 0;
+      this.animStartTime = 0;
+      this.clearWarning();
+      this.updateStepButtonStyles();
+      this.updateControlsLockState();
+    }
+  };
+})();
+
+</script>
+<script id="vault-port-snapped-simulator-runtime">
+(function() {
+  const SIM_SPEC = {"filename": "vault_crit_03_potentiometer_emf.html", "id": "vault_crit_03_potentiometer_emf", "source_id": "potentiometer", "subject": "Physics", "branch": "Electricity & Circuits", "icon": "🎛️", "eyebrow": "NCERT Class XII Physics · Current Electricity & Null-Point Potentiometry", "title": "Potentiometer: Comparison of Cell EMFs (E₁/E₂) & Internal Resistance (r)", "aim": "To compare the electromotive forces (E₁/E₂ = l₁/l₂) of two primary cells and determine the internal resistance r = R(l₁/l₂ - 1) of a primary cell using a 400 cm constantan wire potentiometer and center-zero galvanometer.", "vault_queries": [["400cm Constantan Wire Potentiometer Board", "04_Electrical"], ["Driver Battery & Rheostat Auxiliary Circuit", "04_Electrical"], ["Primary Cells & Shunt Resistance Box", "04_Electrical"], ["Center-Zero Sensitive Galvanometer", "03_Meters"], ["Sliding Contact Jockey on Wire", "04_Electrical"]], "apparatus": ["400 cm (4-Segment) Constantan Wire Potentiometer Board with Meter Scale", "Auxiliary Driver Accumulator (E₀), Rheostat (R_h), and Primary Key across Terminals A–B", "Test Cell (E₁) with Parallel Shunt Resistance Box (R) Connected to Terminal A", "Center-Zero Moving-Coil Galvanometer (G) for Null-Deflection Detection", "Precision Knife-Edge Sliding Jockey (J) Snapped onto the Potentiometer Wire"], "principles_summary": "A constant driver current I = E₀ / (R_wire + R_h) establishes a uniform potential gradient k = V_AB / L along the 400 cm wire. At the null point l₀ where galvanometer deflection I_G = 0, the cell EMF balances V(l₀) = k·l₀. When shunted by resistance R, the terminal voltage balances at l < l₀, giving internal resistance r = R(l₀/l - 1).", "principles_equations": ["<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>k</mi><mo>=</mo><mfrac><msub><mi>V</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub><mi>L</mi></mfrac><mo>=</mo><mfrac><mrow><msub><mi>E</mi><mn>0</mn></msub><msub><mi>R</mi><mtext>wire</mtext></msub></mrow><mrow><mo>(</mo><msub><mi>R</mi><mtext>wire</mtext></msub><mo>+</mo><msub><mi>R</mi><mi>h</mi></msub><mo>)</mo><mi>L</mi></mrow></mfrac><mo>,</mo><mspace width='1em'/><msub><mi>E</mi><mn>1</mn></msub><mo>=</mo><mi>k</mi><mo>&#x00B7;</mo><msub><mi>l</mi><mn>0</mn></msub></mrow></math>", "<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>r</mi><mo>=</mo><mi>R</mi><mrow><mo>(</mo><mfrac><msub><mi>l</mi><mn>0</mn></msub><mi>l</mi></mfrac><mo>-</mo><mn>1</mn><mo>)</mo></mrow></mrow></math>"], "procedure": ["Mount the 400 cm (4-Segment) Constantan Wire Potentiometer Board onto the wooden base.", "Wire the Driver Accumulator (E₀) and Rheostat (R_h) across end terminals A and B.", "Connect the Test Cell (E₁) and parallel Shunt Resistance Box (R) to terminal A.", "Wire the Center-Zero Galvanometer (G) in series with the cell and shunt circuit.", "Mount the Sliding Contact Jockey (J) onto the potentiometer wire to unlock Numeric Controls and 'Record Observation'."], "controls": [{"id": "jpos", "label": "Sliding Jockey Position l", "min": 20, "max": 390, "step": 5, "value": 240, "unit": "cm"}, {"id": "e0", "label": "Driver Cell EMF E₀", "min": 2.0, "max": 4.0, "step": 0.2, "value": 3.0, "unit": "V"}, {"id": "rh", "label": "Rheostat Resistance R_h", "min": 2.0, "max": 20.0, "step": 1.0, "value": 6.0, "unit": "Ω"}, {"id": "rshunt", "label": "Shunt Box Resistance R (1000 = Open)", "min": 2.0, "max": 50.0, "step": 2.0, "value": 10.0, "unit": "Ω"}], "presets": [{"label": "Exact Null Point (R = 10 Ω, l = 225 cm)", "jpos": 225, "e0": 3.0, "rh": 6.0, "rshunt": 10.0}, {"label": "High Shunt Balance (R = 30 Ω, l = 270 cm)", "jpos": 270, "e0": 3.0, "rh": 6.0, "rshunt": 30.0}, {"label": "Off-Balance Left Deflection (l = 140 cm)", "jpos": 140, "e0": 3.0, "rh": 6.0, "rshunt": 10.0}], "validation": ["Total potentiometer wire length L = 400 cm with total wire resistance R_wire = 12.0 Ω.", "Test cell true EMF E₁ = 1.35 V and true internal resistance r = 2.0 Ω.", "Driver terminal voltage V_AB must exceed E₁ for a valid balance length l < 400 cm."], "observation_columns": ["Trial #", "Jockey Pos l (cm)", "Shunt R (Ω)", "Wire Potential V(l) (V)", "Galvanometer I_G (μA)", "Balance Length l_null (cm)"], "readout_specs": [["rv_k", "Potential Gradient (k = V_AB / L)"], ["rv_vl", "Potentiometer Wire Voltage at Jockey V(l)"], ["rv_vcell", "Shunted Cell Terminal Voltage (V_cell)"], ["rv_ig", "Galvanometer Deflection Current (I_G)"], ["rv_lnull", "Exact Null Balance Length (l_null)"]]};
+  const VAULT_MATCHES = [{"query": "400cm Constantan Wire Potentiometer Board", "unique_element_id": "vault_08_drawwire", "canonical_function_name": "drawWire", "subfolder": "08_Scales_Wires_And_Overlays", "ports": {"port_in": [0.12, 0.5], "center_anchor": [0.5, 0.5], "port_out": [0.88, 0.5], "bottom_base": [0.5, 0.95], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Driver Battery & Rheostat Auxiliary Circuit", "unique_element_id": "vault_02_drawrheostat", "canonical_function_name": "drawRheostat", "subfolder": "02_Electrical_And_Circuits", "ports": {"terminal_pos_red": [0.22, 0.86], "terminal_neg_black": [0.78, 0.86], "bnc_signal_out": [0.85, 0.65], "dial_or_display_center": [0.5, 0.42], "bottom_chassis_feet": [0.5, 0.98], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Primary Cells & Shunt Resistance Box", "unique_element_id": "vault_09_drawresistancebox", "canonical_function_name": "drawResistanceBox", "subfolder": "09_Specialized_Domain_Apparatus", "ports": {"port_in": [0.12, 0.5], "center_anchor": [0.5, 0.5], "port_out": [0.88, 0.5], "bottom_base": [0.5, 0.95], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Center-Zero Sensitive Galvanometer", "unique_element_id": "vault_03_drawgalvanometer", "canonical_function_name": "drawGalvanometer", "subfolder": "03_Meters_And_Instruments", "ports": {"terminal_pos_red": [0.22, 0.86], "terminal_neg_black": [0.78, 0.86], "bnc_signal_out": [0.85, 0.65], "dial_or_display_center": [0.5, 0.42], "bottom_chassis_feet": [0.5, 0.98], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Sliding Contact Jockey on Wire", "unique_element_id": "vault_08_drawwire", "canonical_function_name": "drawWire", "subfolder": "08_Scales_Wires_And_Overlays", "ports": {"port_in": [0.12, 0.5], "center_anchor": [0.5, 0.5], "port_out": [0.88, 0.5], "bottom_base": [0.5, 0.95], "style2_leader_anchor": [0.5, 0.45]}}];
+
+  document.getElementById("headerEyebrow").textContent = SIM_SPEC.eyebrow;
+  document.getElementById("headerTitle").textContent = SIM_SPEC.title;
+  document.getElementById("reviewBadge").textContent = "Science verified";
+  document.getElementById("aimText").textContent = SIM_SPEC.aim;
+
+  const selBox = document.querySelector(".experiment-selector-box");
+  if (selBox) selBox.style.display = "none";
+
+  const appList = document.getElementById("apparatusList");
+  const banner = document.getElementById("apparatusLegendBanner");
+  appList.innerHTML = "";
+  banner.innerHTML = "";
+  SIM_SPEC.apparatus.forEach((cleanName, idx) => {
+    const li = document.createElement("li");
+    li.textContent = cleanName;
+    appList.appendChild(li);
+
+    const pill = document.createElement("div");
+    pill.className = "legend-pill";
+    pill.innerHTML = `<span class="pill-num">${idx + 1}</span> <span class="pill-name">${cleanName}</span>`;
+    banner.appendChild(pill);
+  });
+
+  document.getElementById("principlesSummary").textContent = SIM_SPEC.principles_summary;
+  const pList = document.getElementById("principlesList");
+  pList.innerHTML = "";
+  SIM_SPEC.principles_equations.forEach((eqHtml) => {
+    const li = document.createElement("li");
+    li.className = "atlas-equation";
+    li.innerHTML = eqHtml;
+    pList.appendChild(li);
+  });
+
+  const procList = document.getElementById("procedureList");
+  procList.innerHTML = "";
+  SIM_SPEC.procedure.forEach((stepTxt) => {
+    const li = document.createElement("li");
+    li.textContent = stepTxt;
+    procList.appendChild(li);
+  });
+
+  const valList = document.getElementById("validationList");
+  valList.innerHTML = "";
+  SIM_SPEC.validation.forEach((vTxt) => {
+    const li = document.createElement("li");
+    li.textContent = vTxt;
+    valList.appendChild(li);
+  });
+
+  const thead = document.getElementById("observationThead");
+  thead.innerHTML = "<tr>" + SIM_SPEC.observation_columns.map(c => `<th>${c}</th>`).join("") + "</tr>";
+  const tbody = document.getElementById("observationTbody");
+  tbody.innerHTML = "";
+
+  const rList = document.getElementById("readoutsList");
+  rList.innerHTML = `
+    <li class="readout-item"><span class="readout-heading">Potential Gradient (k = V_AB / L)</span><span class="readout-val" id="rv_k">--</span></li>
+    <li class="readout-item"><span class="readout-heading">Potentiometer Wire Voltage at Jockey V(l)</span><span class="readout-val" id="rv_vl">--</span></li>
+    <li class="readout-item"><span class="readout-heading">Shunted Cell Terminal Voltage (V_cell)</span><span class="readout-val" id="rv_vcell">--</span></li>
+    <li class="readout-item"><span class="readout-heading">Galvanometer Deflection Current (I_G)</span><span class="readout-val" id="rv_ig">--</span></li>
+    <li class="readout-item"><span class="readout-heading">Exact Null Balance Length (l_null)</span><span class="readout-val" id="rv_lnull">--</span></li>
+  `;
+  const setR = (id, txt) => {
+    const el = document.querySelector("#" + id);
+    if (el) {
+      el._ctOverrideText = null;
+      el.textContent = txt;
+    }
+  };
+
+  const state = {};
+  SIM_SPEC.controls.forEach(c => { state[c.id] = c.value; });
+
+  const presetContainer = document.getElementById("presetContainer");
+  presetContainer.innerHTML = "";
+  SIM_SPEC.presets.forEach(preset => {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "preset-chip";
+    chip.dataset.ctWired = "1";
+    chip.textContent = preset.label;
+    chip.addEventListener("click", () => {
+      Object.keys(state).forEach(k => {
+        if (preset[k] !== undefined) {
+          state[k] = preset[k];
+          const inp = document.querySelector("#ctrl_" + k);
+          if (inp) inp.value = preset[k];
+        }
+      });
+      updateLiveReadingsOnly();
+    });
+    presetContainer.appendChild(chip);
+  });
+
+  const steppersContainer = document.getElementById("steppersContainer");
+  steppersContainer.innerHTML = "";
+  SIM_SPEC.controls.forEach(c => {
+    const row = document.createElement("div");
+    row.className = "stepper-row";
+    row.innerHTML = `
+      <div class="stepper-header">
+        <label class="control-label" for="ctrl_${c.id}">${c.label}</label>
+        <span class="stepper-range-hint">Range: ${c.min} – ${c.max} ${c.unit}</span>
+      </div>
+      <div class="stepper-box">
+        <input type="number" id="ctrl_${c.id}" class="stepper-input" min="${c.min}" max="${c.max}" step="${c.step}" value="${c.value}">
+        <div class="stepper-arrows">
+          <button type="button" class="stepper-btn" data-dir="1" data-id="${c.id}">▲</button>
+          <button type="button" class="stepper-btn" data-dir="-1" data-id="${c.id}">▼</button>
+        </div>
+        <div class="stepper-unit">${c.unit}</div>
+      </div>
+    `;
+    steppersContainer.appendChild(row);
+
+    const inp = row.querySelector("input");
+    inp.dataset.ctWired = "1";
+    const syncInputVal = (clampToBounds) => {
+      const raw = parseFloat(inp.value);
+      if (isNaN(raw)) return;
+      const v = clampToBounds ? Math.max(c.min, Math.min(c.max, raw)) : raw;
+      if (clampToBounds) inp.value = v;
+      state[c.id] = Math.max(c.min, Math.min(c.max, v));
+      updateLiveReadingsOnly();
+    };
+    inp.addEventListener("input", () => syncInputVal(false));
+    inp.addEventListener("change", () => syncInputVal(true));
+
+    row.querySelectorAll(".stepper-btn").forEach(b => {
+      b.dataset.ctWired = "1";
+      b.addEventListener("click", () => {
+        const dir = parseFloat(b.dataset.dir);
+        const nextV = Math.round((state[c.id] + dir * c.step) * 100) / 100;
+        const clamped = Math.max(c.min, Math.min(c.max, nextV));
+        state[c.id] = clamped;
+        inp.value = clamped;
+        updateLiveReadingsOnly();
+      });
+    });
+  });
+
+  let trialNum = 0;
+
+  // Canonical Style 2 Curvy Leader + Circular Numbered Badge ONLY (Zero extra blue badges or text labels!)
+  function drawCanonicalBadgeOnly(ctx, badgeNum, anchorXY, badgeXY) {
+    ctx.save();
+    const ax = anchorXY.x, ay = anchorXY.y;
+    const bx = badgeXY.x, by = badgeXY.y;
+    const midX = (ax + bx) / 2;
+
+    ctx.beginPath();
+    ctx.moveTo(bx, by);
+    ctx.bezierCurveTo(midX, by, midX, ay, ax, ay);
+    ctx.strokeStyle = "#022c22";
+    ctx.lineWidth = 3.8;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(bx, by);
+    ctx.bezierCurveTo(midX, by, midX, ay, ax, ay);
+    ctx.strokeStyle = "#34d399";
+    ctx.lineWidth = 2.0;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(ax, ay, 3.8, 0, Math.PI * 2);
+    ctx.fillStyle = "#34d399";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(bx, by, 11.0, 0, Math.PI * 2);
+    ctx.fillStyle = "#10564b";
+    ctx.fill();
+    ctx.strokeStyle = "#34d399";
+    ctx.lineWidth = 2.0;
+    ctx.stroke();
+
+    ctx.fillStyle = "#ffffff";
+    ctx.font = "bold 11px system-ui, -apple-system, Segoe UI, sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(String(badgeNum), bx, by);
+    ctx.restore();
+  }
+
+
+  function solveSim() {
+    const rWire = 12.0; // Ohms across 400 cm
+    const e1 = 1.35;    // Volts
+    const rInt = 2.0;   // Ohms internal resistance
+    const vAB = state.e0 * (rWire / (rWire + state.rh));
+    const kGrad = vAB / 400.0; // V/cm
+    const vJockey = kGrad * state.jpos;
+    const vCell = e1 * (state.rshunt / (state.rshunt + rInt));
+    const lNull = vCell / kGrad;
+    const iGalv = (vJockey - vCell) * 180.0; // micro-Amps
+    return { vAB, kGrad, vJockey, vCell, lNull, iGalv };
+  }
+
+  function updateLiveReadingsOnly() {
+    const res = solveSim();
+    setR("rv_k", `${(res.kGrad * 100).toFixed(3)} V/m`);
+    setR("rv_vl", `${res.vJockey.toFixed(3)} V`);
+    setR("rv_vcell", `${res.vCell.toFixed(3)} V`);
+    setR("rv_ig", `${res.iGalv >= 0 ? "+" : ""}${res.iGalv.toFixed(1)} μA`);
+    setR("rv_lnull", `${res.lNull.toFixed(1)} cm`);
+  }
+
+  function buildObservationRow() {
+    const res = solveSim();
+    return [
+      `#${trialNum}`,
+      `${state.jpos.toFixed(0)} cm`,
+      `${state.rshunt.toFixed(1)} Ω`,
+      `${res.vJockey.toFixed(3)} V`,
+      `${res.iGalv.toFixed(1)} μA`,
+      `<strong>${res.lNull.toFixed(1)} cm</strong>`
+    ];
+  }
+
+  function mapLengthToWireXY(cm) {
+    const seg = Math.min(3, Math.floor(cm / 100.0));
+    const rem = (cm - seg * 100.0) / 100.0;
+    const xL = 185, xR = 595;
+    const y0 = 215, dy = 28;
+    const wy = y0 + seg * dy;
+    const wx = (seg % 2 === 0) ? (xL + rem * (xR - xL)) : (xR - rem * (xR - xL));
+    return { x: wx, y: wy };
+  }
+
+  function renderFrameElements(ctx, B, tSec) {
+    const res = solveSim();
+    const xL = 185, xR = 595, y0 = 215, dy = 28;
+
+    // STEP 1: 400 cm 4-Segment Potentiometer Board & Resistance Wires + Badge 1
+    if (B.isStepVisible(1)) {
+      const p1 = B.getStepProgress(1);
+      ctx.save();
+      ctx.globalAlpha = p1;
+      ctx.translate(0, (1 - p1) * 20);
+
+      // Teakwood Potentiometer Baseboard
+      ctx.fillStyle = "#1e293b";
+      ctx.strokeStyle = "#64748b";
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      ctx.roundRect(150, 190, 480, 138, 8);
+      ctx.fill();
+      ctx.stroke();
+
+      // 4 Constantan Wire Segments + Copper End Strips
+      for (let s = 0; s < 4; s++) {
+        const wy = y0 + s * dy;
+        ctx.strokeStyle = "#f59e0b";
+        ctx.lineWidth = 2.4;
+        ctx.beginPath();
+        ctx.moveTo(xL, wy);
+        ctx.lineTo(xR, wy);
+        ctx.stroke();
+
+        // Copper turn-around bus bars
+        ctx.fillStyle = "#cbd5e1";
+        ctx.fillRect(xL - 10, wy - 5, 10, 10);
+        ctx.fillRect(xR, wy - 5, 10, 10);
+      }
+      ctx.restore();
+
+      drawCanonicalBadgeOnly(ctx, 1, { x: 150, y: 255 }, { x: 105, y: 255 });
+    }
+
+    // STEP 2: Auxiliary Driver Battery (E0) & Rheostat (Rh) at Top Loop + Badge 2
+    if (B.isStepVisible(2)) {
+      const p2 = B.getStepProgress(2);
+      ctx.save();
+      ctx.globalAlpha = p2;
+      ctx.translate(0, (1 - p2) * -25);
+
+      ctx.strokeStyle = "#94a3b8";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(xL, y0);
+      ctx.lineTo(xL, 110);
+      ctx.lineTo(xR, 110);
+      ctx.lineTo(xR, y0 + 3 * dy);
+      ctx.stroke();
+
+      // Driver Battery Box (x=250..330, y=90..130)
+      ctx.fillStyle = "#0f172a";
+      ctx.strokeStyle = "#38bdf8";
+      ctx.lineWidth = 2;
+      ctx.fillRect(250, 90, 82, 38);
+      ctx.strokeRect(250, 90, 82, 38);
+
+      // Rheostat Coil Cylinder (x=420..520, y=92..128)
+      ctx.fillStyle = "#334155";
+      ctx.strokeStyle = "#cbd5e1";
+      ctx.fillRect(420, 92, 98, 34);
+      ctx.strokeRect(420, 92, 98, 34);
+      ctx.restore();
+
+      drawCanonicalBadgeOnly(ctx, 2, { x: 291, y: 90 }, { x: 225, y: 62 });
+    }
+
+    // STEP 3: Test Cell (E1) & Shunt Resistance Box (R) at Bottom Left + Badge 3
+    if (B.isStepVisible(3)) {
+      const p3 = B.getStepProgress(3);
+      ctx.save();
+      ctx.globalAlpha = p3;
+      ctx.translate(0, (1 - p3) * 25);
+
+      ctx.strokeStyle = "#94a3b8";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(xL, y0);
+      ctx.lineTo(xL, 385);
+      ctx.lineTo(395, 385);
+      ctx.stroke();
+
+      // Test Cell + Shunt Box Unit (x=235..345, y=362..412)
+      ctx.fillStyle = "#0f172a";
+      ctx.strokeStyle = "#f59e0b";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(235, 362, 110, 48, 6);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      drawCanonicalBadgeOnly(ctx, 3, { x: 290, y: 410 }, { x: 205, y: 410 });
+    }
+
+    // STEP 4: Center-Zero Sensitive Galvanometer (G) at Bottom Right + Badge 4
+    if (B.isStepVisible(4)) {
+      const p4 = B.getStepProgress(4);
+      ctx.save();
+      ctx.globalAlpha = p4;
+
+      const gx = 455, gy = 385;
+      ctx.beginPath();
+      ctx.arc(gx, gy, 28, 0, Math.PI * 2);
+      ctx.fillStyle = "#0f172a";
+      ctx.fill();
+      ctx.strokeStyle = Math.abs(res.iGalv) < 3.0 ? "#34d399" : "#f59e0b";
+      ctx.lineWidth = 2.4;
+      ctx.stroke();
+
+      // Galvanometer Needle deflecting left/right with I_G
+      const angle = Math.max(-0.85, Math.min(0.85, res.iGalv / 45.0));
+      ctx.strokeStyle = "#ef4444";
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      ctx.moveTo(gx, gy + 8);
+      ctx.lineTo(gx + Math.sin(angle) * 22, gy + 8 - Math.cos(angle) * 22);
+      ctx.stroke();
+      ctx.restore();
+
+      drawCanonicalBadgeOnly(ctx, 4, { x: 483, y: 385 }, { x: 555, y: 385 });
+    }
+
+    // STEP 5: Sliding Contact Jockey (J) Snapped onto Wire at l = state.jpos + Badge 5
+    if (B.isStepVisible(5)) {
+      const p5 = B.getStepProgress(5);
+      const jpt = mapLengthToWireXY(state.jpos);
+      ctx.save();
+      ctx.globalAlpha = p5;
+
+      // Flexible Lead from Galvanometer (455, 357) to Jockey (jpt.x, jpt.y)
+      ctx.strokeStyle = "#38bdf8";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(455, 357);
+      ctx.quadraticCurveTo(495, 315, jpt.x, jpt.y);
+      ctx.stroke();
+
+      // Brass/Ebonite Jockey Handle & Knife Contact Point
+      ctx.fillStyle = "#38bdf8";
+      ctx.beginPath();
+      ctx.arc(jpt.x, jpt.y, 5.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#e2e8f0";
+      ctx.fillRect(jpt.x - 4, jpt.y - 24, 8, 18);
+      ctx.restore();
+
+      drawCanonicalBadgeOnly(ctx, 5, { x: jpt.x, y: jpt.y - 24 }, { x: 545, y: 155 });
+    }
+  }
+
+
+  const btnRecordEl = document.querySelector("#btnRecord");
+  if (btnRecordEl) {
+    btnRecordEl.dataset.ctWired = "1";
+    btnRecordEl.addEventListener("click", () => {
+      if (window.ClassTurnUniversalBridge.completedStep < window.ClassTurnUniversalBridge.totalSteps) {
+        window.ClassTurnUniversalBridge.triggerWarning(`Out of sequence! Please complete [➔ Step ${window.ClassTurnUniversalBridge.completedStep + 1}] first before recording.`);
+        return;
+      }
+      trialNum += 1;
+      const cols = buildObservationRow();
+      const tr = document.createElement("tr");
+      tr.innerHTML = cols.map(c => `<td>${c}</td>`).join("");
+      tbody.appendChild(tr);
+    });
+  }
+
+  const btnResetEl = document.querySelector("#btnReset");
+  if (btnResetEl) {
+    btnResetEl.addEventListener("click", () => {
+      SIM_SPEC.controls.forEach(c => {
+        state[c.id] = c.value;
+        const inp = document.querySelector("#ctrl_" + c.id);
+        if (inp) inp.value = c.value;
+      });
+      tbody.innerHTML = "";
+      trialNum = 0;
+      window.ClassTurnUniversalBridge.resetSteps();
+      updateLiveReadingsOnly();
+    });
+  }
+
+  const btnStepEl = document.querySelector("#btnStep");
+  if (btnStepEl) {
+    btnStepEl.addEventListener("click", () => {
+      const nextStep = Math.min(window.ClassTurnUniversalBridge.totalSteps, window.ClassTurnUniversalBridge.completedStep + 1);
+      window.ClassTurnUniversalBridge.handleStepClick(nextStep);
+    });
+  }
+
+  const canvas = document.querySelector("#simCanvas");
+  const ctx = canvas.getContext("2d");
+  let paused = false;
+
+  const btnToggleEl = document.querySelector("#btnToggle");
+  if (btnToggleEl) {
+    btnToggleEl.addEventListener("click", (e) => {
+      paused = !paused;
+      e.target.textContent = paused ? "Run" : "Pause";
+    });
+  }
+
+  function renderScene(nowMs) {
+    const tSec = (nowMs || 0) / 1000.0;
+    const B = window.ClassTurnUniversalBridge;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Dark radial studio background + bench strip
+    const bg = ctx.createRadialGradient(400, 250, 40, 400, 250, 460);
+    bg.addColorStop(0, "#131c2e");
+    bg.addColorStop(1, "#090d16");
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#1e293b";
+    ctx.fillRect(40, 435, 720, 55);
+    ctx.strokeStyle = "#475569";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(40, 435);
+    ctx.lineTo(760, 435);
+    ctx.stroke();
+
+    renderFrameElements(ctx, B, paused ? 0 : tSec);
+
+    requestAnimationFrame(renderScene);
+  }
+
+  window.ClassTurnUniversalBridge.init();
+  updateLiveReadingsOnly();
+  requestAnimationFrame(renderScene);
+})();
+</script>
+
+</body>
+</html>
