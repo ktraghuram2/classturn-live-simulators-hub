@@ -1060,7 +1060,7 @@ button.is-clicked::after, button:focus-visible::after {
     },
 
     injectStepButtonsStyle() {
-      if (document.getElementById("classturn-step-bridge-css")) return;
+      if (document.querySelector("#classturn-step-bridge-css")) return;
       const st = document.createElement("style");
       st.id = "classturn-step-bridge-css";
       st.textContent = `
@@ -1110,7 +1110,7 @@ button.is-clicked::after, button:focus-visible::after {
           left: 50% !important;
           transform: translate(-50%, -50%) !important;
           z-index: 99999 !important;
-          min-width: 320px !important;
+          min-width: 340px !important;
           max-width: 85% !important;
           padding: 16px 24px !important;
           border-radius: 12px !important;
@@ -1124,15 +1124,15 @@ button.is-clicked::after, button:focus-visible::after {
           display: none;
         }
         @keyframes ctPulseGlow {
-          0%, 100% { transform: scale(1); box-shadow: 0 0 0 2px rgba(16, 86, 75, 0.22); }
-          50% { transform: scale(1.06); box-shadow: 0 0 0 5px rgba(16, 86, 75, 0.38); }
+          0%, 100% { box-shadow: 0 0 0 2px rgba(16, 86, 75, 0.22); }
+          50% { box-shadow: 0 0 0 5px rgba(16, 86, 75, 0.42); }
         }
       `;
       document.head.appendChild(st);
     },
 
     bindProcedureStepButtons() {
-      const procList = document.getElementById("procedureList");
+      const procList = document.querySelector("#procedureList");
       if (!procList) return;
       const items = Array.from(procList.querySelectorAll("li"));
       this.totalSteps = items.length;
@@ -1152,7 +1152,6 @@ button.is-clicked::after, button:focus-visible::after {
           e.stopPropagation();
           this.handleStepClick(stepNum);
         });
-        // Also allow clicking anywhere on the step <li> item
         li.addEventListener("click", (e) => {
           if (e.target === btn || btn.contains(e.target)) return;
           this.handleStepClick(stepNum);
@@ -1164,15 +1163,13 @@ button.is-clicked::after, button:focus-visible::after {
     handleStepClick(clickedStep) {
       const expectedStep = this.completedStep + 1;
       if (clickedStep > expectedStep) {
-        this.triggerWarning(`Please follow the sequence! Click [➔ Step ${expectedStep}] first.`);
+        this.triggerWarning(`Out of sequence! Please click [➔ Step ${expectedStep}] first.`);
         return;
       }
       if (clickedStep <= this.completedStep) {
-        // Replay this step's smooth animation
         this.animateStepTransition(clickedStep);
         return;
       }
-      // Valid next step in sequence! Clear any warning and immediately show & animate this step
       this.clearWarning();
       this.previewMode = false;
       this.completedStep = clickedStep;
@@ -1190,7 +1187,7 @@ button.is-clicked::after, button:focus-visible::after {
     },
 
     updateStepButtonStyles() {
-      const procList = document.getElementById("procedureList");
+      const procList = document.querySelector("#procedureList");
       if (!procList) return;
       const btns = procList.querySelectorAll(".ct-step-arrow-btn");
       btns.forEach((btn) => {
@@ -1209,9 +1206,9 @@ button.is-clicked::after, button:focus-visible::after {
     },
 
     updateControlsLockState() {
-      const secControls = document.getElementById("sec-05-controls");
+      const secControls = document.querySelector("#sec-05-controls");
       if (!secControls) return;
-      let banner = document.getElementById("ctControlsLockBanner");
+      let banner = document.querySelector("#ctControlsLockBanner");
       const unlocked = this.totalSteps === 0 || this.completedStep >= this.totalSteps;
 
       if (!unlocked) {
@@ -1220,7 +1217,7 @@ button.is-clicked::after, button:focus-visible::after {
           banner.id = "ctControlsLockBanner";
           banner.className = "ct-controls-locked-banner";
           banner.addEventListener("click", () => {
-            this.triggerWarning(`Complete Procedure steps in sequence! Click [➔ Step ${this.completedStep + 1}] first.`);
+            this.triggerWarning(`Out of sequence! Click [➔ Step ${this.completedStep + 1}] first.`);
           });
           const h2 = secControls.querySelector("h2");
           if (h2 && h2.nextSibling) {
@@ -1248,7 +1245,7 @@ button.is-clicked::after, button:focus-visible::after {
         clearTimeout(this.warningTimeout);
         this.warningTimeout = null;
       }
-      const alertEl = document.getElementById("ctCenterCanvasAlert");
+      const alertEl = document.querySelector("#ctCenterCanvasAlert");
       if (alertEl) {
         alertEl.style.display = "none";
       }
@@ -1256,9 +1253,9 @@ button.is-clicked::after, button:focus-visible::after {
 
     triggerWarning(msg) {
       this.warningBannerText = msg;
-      const wrapper = document.querySelector(".canvas-wrapper") || document.getElementById("stageContainer");
+      const wrapper = document.querySelector(".canvas-wrapper") || document.querySelector("#stageContainer");
       if (wrapper) {
-        let alertEl = document.getElementById("ctCenterCanvasAlert");
+        let alertEl = document.querySelector("#ctCenterCanvasAlert");
         if (!alertEl) {
           alertEl = document.createElement("div");
           alertEl.id = "ctCenterCanvasAlert";
