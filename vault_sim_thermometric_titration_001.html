@@ -1010,7 +1010,7 @@ button.is-clicked::after, button:focus-visible::after {
 
   </script>
   <script id="classturnZoomConfig">window.CLASSTURN_ZOOM_CONFIG = {"scale": 1.0, "cx": 400.0, "cy": 250.0, "minLeader": 48, "maxLeader": 80, "minBadgeDist": 40};</script>
-  
+  <script src="classturn-lab-kit.js?v=btn8"></script>
   <script id="classturn-stage-script">
   /* Populated from classturn_simulators.db */
   </script>
@@ -1291,38 +1291,7 @@ button.is-clicked::after, button:focus-visible::after {
     },
 
     drawCanvasStepHUD(ctx, canvasW = 800, canvasH = 500) {
-      // Also draw directly in the exact center of the 2D Canvas overlapping all apparatus elements
-      if (!this.warningBannerText) return;
-      ctx.save();
-      if (ctx.setTransform) {
-        ctx.setTransform(1, 0, 0, 1, 0, 0);
-      }
-      ctx.font = "700 14px 'Segoe UI', system-ui, sans-serif";
-      const padX = 24;
-      const boxW = Math.min(canvasW - 40, Math.max(340, ctx.measureText(this.warningBannerText).width + padX * 2));
-      const boxH = 48;
-      const bx = (canvasW - boxW) / 2;
-      const by = (canvasH - boxH) / 2;
-
-      // Dark backdrop shadow + high-contrast amber alert box dead-center on canvas
-      ctx.fillStyle = "rgba(9, 13, 22, 0.55)";
-      ctx.beginPath();
-      ctx.roundRect(bx - 4, by - 4, boxW + 8, boxH + 8, 12);
-      ctx.fill();
-
-      ctx.fillStyle = "rgba(180, 83, 9, 0.98)";
-      ctx.strokeStyle = "#fde68a";
-      ctx.lineWidth = 2.2;
-      ctx.beginPath();
-      ctx.roundRect(bx, by, boxW, boxH, 10);
-      ctx.fill();
-      ctx.stroke();
-
-      ctx.fillStyle = "#ffffff";
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillText(this.warningBannerText, canvasW / 2, canvasH / 2);
-      ctx.restore();
+      // Handled by #ctCenterCanvasAlert centered inside .canvas-wrapper so canvas zoom/aspect transform is never altered
     },
 
     resetSteps() {
@@ -1454,6 +1423,7 @@ button.is-clicked::after, button:focus-visible::after {
     steppersContainer.appendChild(row);
 
     const inp = row.querySelector("input");
+    inp.dataset.ctWired = "1";
     const syncInputVal = (clampToBounds) => {
       const raw = parseFloat(inp.value);
       if (isNaN(raw)) return;
@@ -1466,6 +1436,7 @@ button.is-clicked::after, button:focus-visible::after {
     inp.addEventListener("change", () => syncInputVal(true));
 
     row.querySelectorAll(".stepper-btn").forEach(b => {
+      b.dataset.ctWired = "1";
       b.addEventListener("click", () => {
         const dir = parseFloat(b.dataset.dir);
         const nextV = Math.round((state[c.id] + dir * c.step) * 100) / 100;
@@ -1494,17 +1465,29 @@ button.is-clicked::after, button:focus-visible::after {
     };
   }
 
-  // 3. Update Live Readings (Section 06) — NEVER auto-records to Observation Table!
+  // 3. Update Live Readings (Section 06) in-place — NEVER auto-records to Observation Table!
+  const rList = document.getElementById("readoutsList");
+  rList.innerHTML = `
+    <li class="readout-item"><span class="readout-heading">Total Solution Volume (Vₐ + V_b)</span><span class="readout-val" id="rv_vol">75.0 mL</span></li>
+    <li class="readout-item"><span class="readout-heading">Moles Neutralized (n_reacted)</span><span class="readout-val" id="rv_mol">0.0250 mol</span></li>
+    <li class="readout-item"><span class="readout-heading">Heat Released (Q)</span><span class="readout-val" id="rv_q">1432.5 J</span></li>
+    <li class="readout-item"><span class="readout-heading">Temperature Rise (ΔT)</span><span class="readout-val" id="rv_dt">+4.56 °C</span></li>
+    <li class="readout-item"><span class="readout-heading">Submerged Thermometer Reading (T_final)</span><span class="readout-val" id="rv_tf">29.56 °C</span></li>
+  `;
   function updateLiveReadingsOnly() {
     const res = solveThermometricTitration();
-    const rList = document.getElementById("readoutsList");
-    rList.innerHTML = `
-      <li class="readout-item"><span class="readout-heading">Total Solution Volume (Vₐ + V_b)</span><span class="readout-val">${res.totalVol.toFixed(1)} mL</span></li>
-      <li class="readout-item"><span class="readout-heading">Moles Neutralized (n_reacted)</span><span class="readout-val">${res.nReacted.toFixed(4)} mol</span></li>
-      <li class="readout-item"><span class="readout-heading">Heat Released (Q)</span><span class="readout-val">${res.qReleased.toFixed(1)} J</span></li>
-      <li class="readout-item"><span class="readout-heading">Temperature Rise (ΔT)</span><span class="readout-val">+${res.deltaT.toFixed(2)} °C</span></li>
-      <li class="readout-item"><span class="readout-heading">Submerged Thermometer Reading (T_final)</span><span class="readout-val">${res.tFinal.toFixed(2)} °C</span></li>
-    `;
+    const setR = (id, txt) => {
+      const el = document.getElementById(id);
+      if (el) {
+        el._ctOverrideText = null;
+        el.textContent = txt;
+      }
+    };
+    setR("rv_vol", `${res.totalVol.toFixed(1)} mL`);
+    setR("rv_mol", `${res.nReacted.toFixed(4)} mol`);
+    setR("rv_q", `${res.qReleased.toFixed(1)} J`);
+    setR("rv_dt", `+${res.deltaT.toFixed(2)} °C`);
+    setR("rv_tf", `${res.tFinal.toFixed(2)} °C`);
   }
 
   // 4. Record Observation Button (#btnRecord in Section 08) — ONLY records on click!
