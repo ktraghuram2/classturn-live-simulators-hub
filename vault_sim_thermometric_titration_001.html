@@ -1020,15 +1020,15 @@ button.is-clicked::after, button:focus-visible::after {
  * CLASSTURN UNIVERSAL STEP-BUTTON [➔], LEGO PORT SNAP & OBSERVATION BRIDGE
  * =========================================================================
  * Enforces the exact Student Experience & Lego Vault Assembly Pipeline:
- * 1. On Initial Load: Renders Full Apparatus Preview (`previewMode = true`) with Style 2 curvy leaders.
+ * 1. On Initial Load: Renders Full Apparatus Preview (`previewMode = true`) with Style 2 curvy leaders & numbered badges.
  * 2. Procedure Step `[➔]` Buttons (Section 04):
- *    - Injects a glowing `[➔]` button next to every step in `#procedureList`.
- *    - Clicking Step 1 `[➔]` clears the preview and animates ONLY Step 1's element (`stepProgress: 0 -> 1`).
- *    - Clicking Step 2 `[➔]`, Step 3 `[➔]`... in strict order reveals & animates each step's brick into its port.
+ *    - Injects a glowing `[➔ Step N]` button next to every step in `#procedureList`.
+ *    - Clicking Step 1 `[➔]` clears the preview and immediately animates Step 1's element + badge (`0 -> 1`).
+ *    - Clicking Step 2 `[➔]`, Step 3 `[➔]`... in strict order reveals & animates each step's brick + badge into its port.
  *    - Clicking out of order displays a clear Canvas warning banner ("Please follow the steps in order!").
  * 3. Numeric Control Boxes Lock/Unlock (Section 05):
  *    - Locked until all `[➔]` steps are completed; unlocks automatically after the final `[➔]` step.
- *    - Every numeric change immediately updates the 3D Canvas & Section 06 Live Readings.
+ *    - Every numeric change immediately updates the Canvas & Section 06 Live Readings.
  * 4. Deliberate Observation Recording (`#btnRecord` in Section 08 ONLY):
  *    - Readings are NEVER auto-logged on input change.
  *    - Clicking `Record Observation` (`#btnRecord`) appends the current trial row to `#observationTbody`.
@@ -1039,7 +1039,8 @@ button.is-clicked::after, button:focus-visible::after {
     completedStep: 0,
     totalSteps: 0,
     animatingStep: 0,
-    stepProgress: 1.0,
+    animStartTime: 0,
+    animDurationMs: 550,
     warningBannerText: "",
     warningTimeout: null,
     trialCounter: 0,
@@ -1048,7 +1049,8 @@ button.is-clicked::after, button:focus-visible::after {
     init(config = {}) {
       this.previewMode = true;
       this.completedStep = 0;
-      this.stepProgress = 1.0;
+      this.animatingStep = 0;
+      this.animStartTime = 0;
       this.trialCounter = 0;
       this.onStepChangeCallback = config.onStepChange || null;
 
@@ -1122,7 +1124,7 @@ button.is-clicked::after, button:focus-visible::after {
         btn.type = "button";
         btn.className = "ct-step-arrow-btn" + (stepNum === 1 ? " ct-next-glow" : "");
         btn.dataset.step = String(stepNum);
-        btn.innerHTML = stepNum === 1 ? "➔ Step 1" : `➔ Step ${stepNum}`;
+        btn.innerHTML = `➔ Step ${stepNum}`;
         btn.title = `Execute Step ${stepNum} on Canvas`;
         btn.addEventListener("click", (e) => {
           e.preventDefault();
@@ -1144,7 +1146,7 @@ button.is-clicked::after, button:focus-visible::after {
         this.animateStepTransition(clickedStep);
         return;
       }
-      // Valid next step in sequence!
+      // Valid next step in sequence! Immediately show & animate this step
       this.previewMode = false;
       this.completedStep = clickedStep;
       this.updateStepButtonStyles();
@@ -1153,22 +1155,12 @@ button.is-clicked::after, button:focus-visible::after {
     },
 
     animateStepTransition(stepNum) {
+      // Driven directly by performance.now() inside the main render loop so classturn-lab-kit's single-RAF hook never drops it!
       this.animatingStep = stepNum;
-      this.stepProgress = 0.0;
-      const startTime = performance.now();
-      const durationMs = 680;
-      const tick = (now) => {
-        const t = Math.min(1.0, (now - startTime) / durationMs);
-        // Smooth cubic ease-out
-        this.stepProgress = 1 - Math.pow(1 - t, 3);
-        if (typeof this.onStepChangeCallback === "function") {
-          this.onStepChangeCallback(this.completedStep, this.stepProgress, this.previewMode);
-        }
-        if (t < 1.0) {
-          requestAnimationFrame(tick);
-        }
-      };
-      requestAnimationFrame(tick);
+      this.animStartTime = performance.now();
+      if (typeof this.onStepChangeCallback === "function") {
+        this.onStepChangeCallback(this.completedStep, 0.05, this.previewMode);
+      }
     },
 
     updateStepButtonStyles() {
@@ -1226,13 +1218,7 @@ button.is-clicked::after, button:focus-visible::after {
       if (this.warningTimeout) clearTimeout(this.warningTimeout);
       this.warningTimeout = setTimeout(() => {
         this.warningBannerText = "";
-        if (typeof this.onStepChangeCallback === "function") {
-          this.onStepChangeCallback(this.completedStep, this.stepProgress, this.previewMode);
-        }
       }, 2600);
-      if (typeof this.onStepChangeCallback === "function") {
-        this.onStepChangeCallback(this.completedStep, this.stepProgress, this.previewMode);
-      }
     },
 
     isStepVisible(stepNumber) {
@@ -1242,60 +1228,42 @@ button.is-clicked::after, button:focus-visible::after {
 
     getStepProgress(stepNumber) {
       if (this.previewMode) return 1.0;
-      if (stepNumber < this.completedStep) return 1.0;
-      if (stepNumber === this.completedStep) return this.stepProgress;
-      return 0.0;
+      if (stepNumber > this.completedStep) return 0.0;
+      if (stepNumber === this.animatingStep && this.animStartTime > 0) {
+        const elapsed = Math.max(0, performance.now() - this.animStartTime);
+        const t = Math.min(1.0, elapsed / this.animDurationMs);
+        // Starts at 0.15 minimum alpha so the element is immediately visible the moment Step 1 is clicked, smoothly easing to 1.0
+        return 0.15 + 0.85 * (1 - Math.pow(1 - t, 3));
+      }
+      return 1.0;
     },
 
     drawCanvasStepHUD(ctx, canvasW = 800, canvasH = 500) {
+      // Only draw the out-of-order warning banner if the student clicks steps out of order (no extra blue HUD pills!)
+      if (!this.warningBannerText) return;
       ctx.save();
-      // Top-left Mode Pill
-      const modeText = this.previewMode
-        ? "FULL SETUP PREVIEW — Click [➔ Step 1] in 04 / Procedure to build step-by-step"
-        : this.completedStep < this.totalSteps
-        ? `STEP-BY-STEP ASSEMBLY: Step ${this.completedStep} / ${this.totalSteps} Active`
-        : `ALL ${this.totalSteps} STEPS ASSEMBLED — Controls & 'Record Observation' Unlocked`;
-
-      ctx.font = "600 11.5px 'Segoe UI', sans-serif";
-      const tw = ctx.measureText(modeText).width + 24;
-      ctx.fillStyle = this.previewMode ? "rgba(15, 23, 42, 0.85)" : "rgba(16, 86, 75, 0.90)";
-      ctx.strokeStyle = "#38bdf8";
-      ctx.lineWidth = 1.2;
+      ctx.font = "700 12.5px 'Segoe UI', sans-serif";
+      const ww = ctx.measureText(this.warningBannerText).width + 32;
+      const wx = (canvasW - ww) / 2;
+      ctx.fillStyle = "rgba(180, 83, 9, 0.96)";
+      ctx.strokeStyle = "#fde68a";
+      ctx.lineWidth = 1.5;
       ctx.beginPath();
-      ctx.roundRect(14, 12, tw, 26, 6);
+      ctx.roundRect(wx, 18, ww, 30, 8);
       ctx.fill();
       ctx.stroke();
-
-      ctx.fillStyle = "#f8fafc";
-      ctx.textAlign = "left";
+      ctx.fillStyle = "#ffffff";
+      ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillText(modeText, 26, 25);
-
-      // Out-of-order Warning Banner
-      if (this.warningBannerText) {
-        ctx.font = "700 13px 'Segoe UI', sans-serif";
-        const ww = Math.min(canvasW - 40, ctx.measureText(this.warningBannerText).width + 36);
-        const wx = (canvasW - ww) / 2;
-        const wy = 48;
-        ctx.fillStyle = "rgba(180, 83, 9, 0.96)";
-        ctx.strokeStyle = "#fde68a";
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.roundRect(wx, wy, ww, 34, 8);
-        ctx.fill();
-        ctx.stroke();
-
-        ctx.fillStyle = "#ffffff";
-        ctx.textAlign = "center";
-        ctx.fillText(this.warningBannerText, canvasW / 2, wy + 17);
-      }
+      ctx.fillText(this.warningBannerText, canvasW / 2, 33);
       ctx.restore();
     },
 
     resetSteps() {
       this.previewMode = true;
       this.completedStep = 0;
-      this.stepProgress = 1.0;
+      this.animatingStep = 0;
+      this.animStartTime = 0;
       this.warningBannerText = "";
       this.updateStepButtonStyles();
       this.updateControlsLockState();
@@ -1501,10 +1469,13 @@ button.is-clicked::after, button:focus-visible::after {
     updateLiveReadingsOnly();
   });
 
-  document.getElementById("btnStep").addEventListener("click", () => {
-    const nextStep = Math.min(window.ClassTurnUniversalBridge.totalSteps, window.ClassTurnUniversalBridge.completedStep + 1);
-    window.ClassTurnUniversalBridge.handleStepClick(nextStep);
-  });
+  const btnStepEl = document.getElementById("btnStep");
+  if (btnStepEl) {
+    btnStepEl.addEventListener("click", () => {
+      const nextStep = Math.min(window.ClassTurnUniversalBridge.totalSteps, window.ClassTurnUniversalBridge.completedStep + 1);
+      window.ClassTurnUniversalBridge.handleStepClick(nextStep);
+    });
+  }
 
   // =========================================================================
   // 5. LEGO PORT-SNAPPED VAULT BRICKS (Each returns its exact live ports!)
@@ -1512,7 +1483,7 @@ button.is-clicked::after, button:focus-visible::after {
 
   // Brick 1: Cast-Iron Tripod Stand & Bench (Returns topSupportY, underArchBay, centerX)
   function drawBrick1_TripodAndBench(ctx, stepProg) {
-    const slideY = (1 - stepProg) * 35;
+    const slideY = (1 - stepProg) * 28;
     ctx.save();
     ctx.globalAlpha = stepProg;
     ctx.translate(0, slideY);
@@ -1567,7 +1538,7 @@ button.is-clicked::after, button:focus-visible::after {
       topSurfaceY: topPlateY - 3,
       benchSurfaceY: benchY,
       underArchWidth: 110,
-      leaderAnchor: { x: cx - plateW * 0.52, y: (topPlateY + benchY) / 2 }
+      leaderAnchor: { x: cx - plateW * 0.50, y: (topPlateY + benchY) / 2 }
     };
   }
 
@@ -1575,7 +1546,7 @@ button.is-clicked::after, button:focus-visible::after {
   function drawBrick2_Burner(ctx, tripodPorts, stepProg, timeSec) {
     const cx = tripodPorts.centerX;
     const baseBottomY = tripodPorts.benchSurfaceY;
-    const slideX = (1 - stepProg) * -45;
+    const slideX = (1 - stepProg) * -35;
 
     ctx.save();
     ctx.globalAlpha = stepProg;
@@ -1635,7 +1606,7 @@ button.is-clicked::after, button:focus-visible::after {
     const liquidSurfaceY = bottomY - 6 - liquidH;
     const bulbSubmergeY = bottomY - 10 - liquidH * 0.42;
 
-    const dropOffset = (1 - stepProg) * -40;
+    const dropOffset = (1 - stepProg) * -32;
     ctx.save();
     ctx.globalAlpha = stepProg;
     ctx.translate(0, dropOffset);
@@ -1735,7 +1706,7 @@ button.is-clicked::after, button:focus-visible::after {
     const finalTopY = flaskPorts.mouthTopY - 58;
 
     // Smoothly slides down through the narrow mouth during Step 4 [➔] animation!
-    const liftY = (1 - stepProg) * -85;
+    const liftY = (1 - stepProg) * -75;
     const bulbY = finalBulbY + liftY;
     const topY = finalTopY + liftY;
 
@@ -1777,19 +1748,6 @@ button.is-clicked::after, button:focus-visible::after {
       ctx.stroke();
     }
 
-    // Live Digital Tag on Thermometer Top Cap
-    ctx.fillStyle = "#0f172a";
-    ctx.strokeStyle = "#ef4444";
-    ctx.lineWidth = 1.4;
-    ctx.beginPath();
-    ctx.roundRect(x + 10, topY - 4, 66, 22, 5);
-    ctx.fill();
-    ctx.stroke();
-    ctx.fillStyle = "#fca5a5";
-    ctx.font = "700 11px Consolas, monospace";
-    ctx.textAlign = "center";
-    ctx.fillText(`${res.tFinal.toFixed(1)} °C`, x + 43, topY + 10);
-
     ctx.restore();
     return {
       leaderAnchor: { x: x + stemW / 2, y: topY + 26 }
@@ -1804,7 +1762,7 @@ button.is-clicked::after, button:focus-visible::after {
     const burW = 14;
     const burH = tipY - burTopY - 16;
 
-    const slideY = (1 - stepProg) * -35;
+    const slideY = (1 - stepProg) * -30;
     ctx.save();
     ctx.globalAlpha = stepProg;
     ctx.translate(0, slideY);
@@ -1879,69 +1837,48 @@ button.is-clicked::after, button:focus-visible::after {
     };
   }
 
-  // Style 2 Curvy Leader Line (Cubic Bezier S-Curve + Anchor Touch Bead + Numbered Badge)
-  function drawStyle2CurvyLeaderBadge(ctx, badgeNum, labelText, anchorXY, badgeXY) {
+  // Canonical Style 2 Curvy Leader + Circular Numbered Badge ONLY (Zero extra blue badges or text labels!)
+  function drawCanonicalBadgeOnly(ctx, badgeNum, anchorXY, badgeXY) {
     ctx.save();
     const ax = anchorXY.x, ay = anchorXY.y;
     const bx = badgeXY.x, by = badgeXY.y;
     const midX = (ax + bx) / 2;
 
-    // Subtle dark halo + bright cyan S-curve
+    // Dark casing + Emerald S-curve (intercepted & managed by classturn-lab-kit.js)
     ctx.beginPath();
-    ctx.moveTo(ax, ay);
-    ctx.bezierCurveTo(midX, ay, midX, by, bx, by);
-    ctx.strokeStyle = "rgba(15, 23, 42, 0.85)";
-    ctx.lineWidth = 3.6;
+    ctx.moveTo(bx, by);
+    ctx.bezierCurveTo(midX, by, midX, ay, ax, ay);
+    ctx.strokeStyle = "#022c22";
+    ctx.lineWidth = 3.8;
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.moveTo(ax, ay);
-    ctx.bezierCurveTo(midX, ay, midX, by, bx, by);
-    ctx.strokeStyle = "#38bdf8";
-    ctx.lineWidth = 1.6;
+    ctx.moveTo(bx, by);
+    ctx.bezierCurveTo(midX, by, midX, ay, ax, ay);
+    ctx.strokeStyle = "#34d399";
+    ctx.lineWidth = 2.0;
     ctx.stroke();
 
     // Anchor touch bead on the apparatus
     ctx.beginPath();
-    ctx.arc(ax, ay, 3.5, 0, Math.PI * 2);
-    ctx.fillStyle = "#38bdf8";
+    ctx.arc(ax, ay, 3.8, 0, Math.PI * 2);
+    ctx.fillStyle = "#34d399";
     ctx.fill();
-    ctx.strokeStyle = "#0f172a";
-    ctx.lineWidth = 1.2;
-    ctx.stroke();
 
-    // Numbered Pill Badge
-    ctx.font = "600 11.5px 'Segoe UI', sans-serif";
-    const textW = ctx.measureText(labelText).width;
-    const pillW = textW + 34;
-    const pillH = 24;
-    const px = bx < ax ? bx - pillW : bx;
-    const py = by - pillH / 2;
-
-    ctx.fillStyle = "rgba(15, 23, 42, 0.92)";
-    ctx.strokeStyle = "#38bdf8";
-    ctx.lineWidth = 1.4;
+    // Circular numbered badge ONLY (no text box!)
     ctx.beginPath();
-    ctx.roundRect(px, py, pillW, pillH, 12);
-    ctx.fill();
-    ctx.stroke();
-
-    // Number circle inside badge
-    ctx.beginPath();
-    ctx.arc(px + 13, by, 8.5, 0, Math.PI * 2);
+    ctx.arc(bx, by, 11.0, 0, Math.PI * 2);
     ctx.fillStyle = "#10564b";
     ctx.fill();
+    ctx.strokeStyle = "#34d399";
+    ctx.lineWidth = 2.0;
+    ctx.stroke();
+
     ctx.fillStyle = "#ffffff";
-    ctx.font = "700 10.5px 'Segoe UI', sans-serif";
+    ctx.font = "bold 11px system-ui, -apple-system, Segoe UI, sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText(String(badgeNum), px + 13, by);
-
-    // Label text
-    ctx.fillStyle = "#f8fafc";
-    ctx.font = "600 11.5px 'Segoe UI', sans-serif";
-    ctx.textAlign = "left";
-    ctx.fillText(labelText, px + 26, by);
+    ctx.fillText(String(badgeNum), bx, by);
     ctx.restore();
   }
 
@@ -1950,10 +1887,13 @@ button.is-clicked::after, button:focus-visible::after {
   const ctx = canvas.getContext("2d");
   let paused = false;
 
-  document.getElementById("btnToggle").addEventListener("click", (e) => {
-    paused = !paused;
-    e.target.textContent = paused ? "Run" : "Pause";
-  });
+  const btnToggleEl = document.getElementById("btnToggle");
+  if (btnToggleEl) {
+    btnToggleEl.addEventListener("click", (e) => {
+      paused = !paused;
+      e.target.textContent = paused ? "Run" : "Pause";
+    });
+  }
 
   function renderScene(nowMs) {
     const tSec = (nowMs || 0) / 1000.0;
@@ -1974,38 +1914,38 @@ button.is-clicked::after, button:focus-visible::after {
     let thermPorts = null;
     let burettePorts = null;
 
-    // STEP 1: Tripod Stand & Lab Bench
+    // STEP 1: Tripod Stand & Lab Bench + Badge 1
     if (B.isStepVisible(1)) {
       tripodPorts = drawBrick1_TripodAndBench(ctx, B.getStepProgress(1));
-      drawStyle2CurvyLeaderBadge(ctx, 1, "Tripod & Wire Gauze", tripodPorts.leaderAnchor, { x: 205, y: 388 });
+      drawCanonicalBadgeOnly(ctx, 1, tripodPorts.leaderAnchor, { x: 265, y: 382 });
     }
 
-    // STEP 2: Bunsen Burner (Snapped inside Tripod Bay)
+    // STEP 2: Bunsen Burner + Badge 2
     if (B.isStepVisible(2)) {
       burnerPorts = drawBrick2_Burner(ctx, tripodPorts, B.getStepProgress(2), paused ? 0 : tSec);
-      drawStyle2CurvyLeaderBadge(ctx, 2, "Thermal Pre-Heater", burnerPorts.leaderAnchor, { x: 555, y: 405 });
+      drawCanonicalBadgeOnly(ctx, 2, burnerPorts.leaderAnchor, { x: 465, y: 400 });
     }
 
-    // STEP 3 & STEP 4: Narrow-Mouth Conical Flask + Submerged Thermometer Inside It!
+    // STEP 3 & STEP 4: Narrow-Mouth Conical Flask (Badge 3) + Submerged Thermometer Inside It (Badge 4)
     if (B.isStepVisible(3)) {
       flaskPorts = drawBrick3_NarrowMouthConicalFlask(ctx, tripodPorts, B.getStepProgress(3), (fPorts) => {
         if (B.isStepVisible(4)) {
           thermPorts = drawBrick4_SubmergedThermometer(ctx, fPorts, B.getStepProgress(4));
         }
       });
-      drawStyle2CurvyLeaderBadge(ctx, 3, "250mL Narrow-Mouth Flask", flaskPorts.leaderAnchor, { x: 205, y: 295 });
+      drawCanonicalBadgeOnly(ctx, 3, flaskPorts.leaderAnchor, { x: 280, y: 290 });
       if (B.isStepVisible(4) && thermPorts) {
-        drawStyle2CurvyLeaderBadge(ctx, 4, "Submerged Thermometer", thermPorts.leaderAnchor, { x: 565, y: 195 });
+        drawCanonicalBadgeOnly(ctx, 4, thermPorts.leaderAnchor, { x: 465, y: 175 });
       }
     }
 
-    // STEP 5: Graduated Burette & Clamp (Snapped directly above Flask Narrow Mouth!)
+    // STEP 5: Graduated Burette & Clamp + Badge 5
     if (B.isStepVisible(5) && flaskPorts) {
       burettePorts = drawBrick5_BuretteAndClamp(ctx, flaskPorts, tripodPorts.benchSurfaceY, B.getStepProgress(5), paused ? 0 : tSec);
-      drawStyle2CurvyLeaderBadge(ctx, 5, "50mL Graduated Burette", burettePorts.leaderAnchor, { x: 205, y: 105 });
+      drawCanonicalBadgeOnly(ctx, 5, burettePorts.leaderAnchor, { x: 315, y: 105 });
     }
 
-    // Draw Top Status HUD & Out-of-Order Step Warning Banner
+    // Only draw out-of-order warning if triggered (zero blue HUD boxes)
     B.drawCanvasStepHUD(ctx, canvas.width, canvas.height);
 
     requestAnimationFrame(renderScene);
