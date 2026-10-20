@@ -1010,7 +1010,7 @@ button.is-clicked::after, button:focus-visible::after {
 
   </script>
   <script id="classturnZoomConfig">window.CLASSTURN_ZOOM_CONFIG = {"scale": 1.0, "cx": 400.0, "cy": 250.0, "minLeader": 48, "maxLeader": 80, "minBadgeDist": 40};</script>
-  <script src="classturn-lab-kit.js?v=btn8"></script>
+  
   <script id="classturn-stage-script">
   /* Populated from classturn_simulators.db */
   </script>
@@ -1025,10 +1025,10 @@ button.is-clicked::after, button:focus-visible::after {
  *    - Injects a glowing `[➔ Step N]` button next to every step in `#procedureList`.
  *    - Clicking Step 1 `[➔]` clears the preview and immediately animates Step 1's element + badge (`0 -> 1`).
  *    - Clicking Step 2 `[➔]`, Step 3 `[➔]`... in strict order reveals & animates each step's brick + badge into its port.
- *    - Clicking out of order displays a centered alert overlay right in the middle of the Canvas overlapping all elements.
+ *    - Clicking out of order displays a prominent centered alert right in the middle of the Canvas overlapping all elements.
  * 3. Numeric Control Boxes Lock/Unlock (Section 05):
  *    - Locked until all `[➔]` steps are completed; unlocks automatically after the final `[➔]` step.
- *    - Every numeric change immediately updates the Canvas & Section 06 Live Readings.
+ *    - Every numeric change immediately updates the Canvas & Section 06 Live Readings without ever pausing.
  * 4. Deliberate Observation Recording (`#btnRecord` in Section 08 ONLY):
  *    - Readings are NEVER auto-logged on input change.
  *    - Clicking `Record Observation` (`#btnRecord`) appends the current trial row to `#observationTbody`.
@@ -1102,24 +1102,26 @@ button.is-clicked::after, button:focus-visible::after {
           border: 1px solid #f59e0b;
           color: #92400e;
           font: 600 11.5px var(--font, sans-serif);
+          cursor: pointer;
         }
         .ct-center-canvas-alert {
           position: absolute !important;
           top: 50% !important;
           left: 50% !important;
           transform: translate(-50%, -50%) !important;
-          z-index: 9999 !important;
-          max-width: 82% !important;
-          padding: 14px 22px !important;
-          border-radius: 10px !important;
-          background: rgba(180, 83, 9, 0.97) !important;
-          border: 2px solid #fde68a !important;
+          z-index: 99999 !important;
+          min-width: 320px !important;
+          max-width: 85% !important;
+          padding: 16px 24px !important;
+          border-radius: 12px !important;
+          background: rgba(180, 83, 9, 0.98) !important;
+          border: 2.5px solid #fde68a !important;
           color: #ffffff !important;
-          font: 700 14px 'Segoe UI', system-ui, sans-serif !important;
+          font: 700 14.5px 'Segoe UI', system-ui, sans-serif !important;
           text-align: center !important;
-          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75) !important;
           pointer-events: none !important;
-          transition: opacity 0.2s ease, transform 0.2s ease !important;
+          display: none;
         }
         @keyframes ctPulseGlow {
           0%, 100% { transform: scale(1); box-shadow: 0 0 0 2px rgba(16, 86, 75, 0.22); }
@@ -1138,6 +1140,7 @@ button.is-clicked::after, button:focus-visible::after {
       items.forEach((li, idx) => {
         const stepNum = idx + 1;
         if (li.querySelector(".ct-step-arrow-btn")) return;
+        li.style.cursor = "pointer";
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = "ct-step-arrow-btn" + (stepNum === 1 ? " ct-next-glow" : "");
@@ -1149,6 +1152,11 @@ button.is-clicked::after, button:focus-visible::after {
           e.stopPropagation();
           this.handleStepClick(stepNum);
         });
+        // Also allow clicking anywhere on the step <li> item
+        li.addEventListener("click", (e) => {
+          if (e.target === btn || btn.contains(e.target)) return;
+          this.handleStepClick(stepNum);
+        });
         li.prepend(btn);
       });
     },
@@ -1156,7 +1164,7 @@ button.is-clicked::after, button:focus-visible::after {
     handleStepClick(clickedStep) {
       const expectedStep = this.completedStep + 1;
       if (clickedStep > expectedStep) {
-        this.triggerWarning(`Follow the steps in order! Please click [➔ Step ${expectedStep}] first.`);
+        this.triggerWarning(`Please follow the sequence! Click [➔ Step ${expectedStep}] first.`);
         return;
       }
       if (clickedStep <= this.completedStep) {
@@ -1164,7 +1172,8 @@ button.is-clicked::after, button:focus-visible::after {
         this.animateStepTransition(clickedStep);
         return;
       }
-      // Valid next step in sequence! Immediately show & animate this step
+      // Valid next step in sequence! Clear any warning and immediately show & animate this step
+      this.clearWarning();
       this.previewMode = false;
       this.completedStep = clickedStep;
       this.updateStepButtonStyles();
@@ -1176,7 +1185,7 @@ button.is-clicked::after, button:focus-visible::after {
       this.animatingStep = stepNum;
       this.animStartTime = performance.now();
       if (typeof this.onStepChangeCallback === "function") {
-        this.onStepChangeCallback(this.completedStep, 0.05, this.previewMode);
+        this.onStepChangeCallback(this.completedStep, 0.15, this.previewMode);
       }
     },
 
@@ -1210,6 +1219,9 @@ button.is-clicked::after, button:focus-visible::after {
           banner = document.createElement("div");
           banner.id = "ctControlsLockBanner";
           banner.className = "ct-controls-locked-banner";
+          banner.addEventListener("click", () => {
+            this.triggerWarning(`Complete Procedure steps in sequence! Click [➔ Step ${this.completedStep + 1}] first.`);
+          });
           const h2 = secControls.querySelector("h2");
           if (h2 && h2.nextSibling) {
             secControls.insertBefore(banner, h2.nextSibling);
@@ -1230,6 +1242,18 @@ button.is-clicked::after, button:focus-visible::after {
       });
     },
 
+    clearWarning() {
+      this.warningBannerText = "";
+      if (this.warningTimeout) {
+        clearTimeout(this.warningTimeout);
+        this.warningTimeout = null;
+      }
+      const alertEl = document.getElementById("ctCenterCanvasAlert");
+      if (alertEl) {
+        alertEl.style.display = "none";
+      }
+    },
+
     triggerWarning(msg) {
       this.warningBannerText = msg;
       const wrapper = document.querySelector(".canvas-wrapper") || document.getElementById("stageContainer");
@@ -1242,14 +1266,12 @@ button.is-clicked::after, button:focus-visible::after {
           wrapper.appendChild(alertEl);
         }
         alertEl.textContent = msg;
-        alertEl.style.opacity = "1";
+        alertEl.style.display = "block";
       }
       if (this.warningTimeout) clearTimeout(this.warningTimeout);
       this.warningTimeout = setTimeout(() => {
-        this.warningBannerText = "";
-        const alertEl = document.getElementById("ctCenterCanvasAlert");
-        if (alertEl) alertEl.style.opacity = "0";
-      }, 2400);
+        this.clearWarning();
+      }, 2800);
     },
 
     isStepVisible(stepNumber) {
@@ -1269,7 +1291,38 @@ button.is-clicked::after, button:focus-visible::after {
     },
 
     drawCanvasStepHUD(ctx, canvasW = 800, canvasH = 500) {
-      // Alert is rendered as a dead-center overlay (#ctCenterCanvasAlert) inside .canvas-wrapper overlapping all elements
+      // Also draw directly in the exact center of the 2D Canvas overlapping all apparatus elements
+      if (!this.warningBannerText) return;
+      ctx.save();
+      if (ctx.setTransform) {
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+      }
+      ctx.font = "700 14px 'Segoe UI', system-ui, sans-serif";
+      const padX = 24;
+      const boxW = Math.min(canvasW - 40, Math.max(340, ctx.measureText(this.warningBannerText).width + padX * 2));
+      const boxH = 48;
+      const bx = (canvasW - boxW) / 2;
+      const by = (canvasH - boxH) / 2;
+
+      // Dark backdrop shadow + high-contrast amber alert box dead-center on canvas
+      ctx.fillStyle = "rgba(9, 13, 22, 0.55)";
+      ctx.beginPath();
+      ctx.roundRect(bx - 4, by - 4, boxW + 8, boxH + 8, 12);
+      ctx.fill();
+
+      ctx.fillStyle = "rgba(180, 83, 9, 0.98)";
+      ctx.strokeStyle = "#fde68a";
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      ctx.roundRect(bx, by, boxW, boxH, 10);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = "#ffffff";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(this.warningBannerText, canvasW / 2, canvasH / 2);
+      ctx.restore();
     },
 
     resetSteps() {
@@ -1277,9 +1330,7 @@ button.is-clicked::after, button:focus-visible::after {
       this.completedStep = 0;
       this.animatingStep = 0;
       this.animStartTime = 0;
-      this.warningBannerText = "";
-      const alertEl = document.getElementById("ctCenterCanvasAlert");
-      if (alertEl) alertEl.style.opacity = "0";
+      this.clearWarning();
       this.updateStepButtonStyles();
       this.updateControlsLockState();
     }
@@ -1403,12 +1454,17 @@ button.is-clicked::after, button:focus-visible::after {
     steppersContainer.appendChild(row);
 
     const inp = row.querySelector("input");
-    inp.addEventListener("change", () => {
-      const v = Math.max(c.min, Math.min(c.max, parseFloat(inp.value) || c.min));
-      inp.value = v;
-      state[c.id] = v;
+    const syncInputVal = (clampToBounds) => {
+      const raw = parseFloat(inp.value);
+      if (isNaN(raw)) return;
+      const v = clampToBounds ? Math.max(c.min, Math.min(c.max, raw)) : raw;
+      if (clampToBounds) inp.value = v;
+      state[c.id] = Math.max(c.min, Math.min(c.max, v));
       updateLiveReadingsOnly();
-    });
+    };
+    inp.addEventListener("input", () => syncInputVal(false));
+    inp.addEventListener("change", () => syncInputVal(true));
+
     row.querySelectorAll(".stepper-btn").forEach(b => {
       b.addEventListener("click", () => {
         const dir = parseFloat(b.dataset.dir);

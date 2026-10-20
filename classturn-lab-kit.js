@@ -1418,12 +1418,7 @@
           sInp._ctTimer = setTimeout(function () {
             if (sInp.value !== userVal) {
               sInp.value = userVal;
-              var tBtn = document.getElementById("btnToggle") || document.getElementById("btnPause") || document.getElementById("btnPlayPause");
-              if (tBtn && !tBtn._ctAutoPausedForAngle) {
-                tBtn._ctAutoPausedForAngle = true;
-                tBtn.click();
-              }
-              wakeCanvasFrames(1, 16);
+              wakeCanvasFrames(2, 32);
             }
             var postSnap = readouts.map(function (r) { return r.textContent; }).join("|");
             if (postSnap === preSnap && readouts.length > 0) {
