@@ -1025,7 +1025,7 @@ button.is-clicked::after, button:focus-visible::after {
  *    - Injects a glowing `[➔ Step N]` button next to every step in `#procedureList`.
  *    - Clicking Step 1 `[➔]` clears the preview and immediately animates Step 1's element + badge (`0 -> 1`).
  *    - Clicking Step 2 `[➔]`, Step 3 `[➔]`... in strict order reveals & animates each step's brick + badge into its port.
- *    - Clicking out of order displays a clear Canvas warning banner ("Please follow the steps in order!").
+ *    - Clicking out of order displays a centered alert overlay right in the middle of the Canvas overlapping all elements.
  * 3. Numeric Control Boxes Lock/Unlock (Section 05):
  *    - Locked until all `[➔]` steps are completed; unlocks automatically after the final `[➔]` step.
  *    - Every numeric change immediately updates the Canvas & Section 06 Live Readings.
@@ -1103,6 +1103,24 @@ button.is-clicked::after, button:focus-visible::after {
           color: #92400e;
           font: 600 11.5px var(--font, sans-serif);
         }
+        .ct-center-canvas-alert {
+          position: absolute !important;
+          top: 50% !important;
+          left: 50% !important;
+          transform: translate(-50%, -50%) !important;
+          z-index: 9999 !important;
+          max-width: 82% !important;
+          padding: 14px 22px !important;
+          border-radius: 10px !important;
+          background: rgba(180, 83, 9, 0.97) !important;
+          border: 2px solid #fde68a !important;
+          color: #ffffff !important;
+          font: 700 14px 'Segoe UI', system-ui, sans-serif !important;
+          text-align: center !important;
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65) !important;
+          pointer-events: none !important;
+          transition: opacity 0.2s ease, transform 0.2s ease !important;
+        }
         @keyframes ctPulseGlow {
           0%, 100% { transform: scale(1); box-shadow: 0 0 0 2px rgba(16, 86, 75, 0.22); }
           50% { transform: scale(1.06); box-shadow: 0 0 0 5px rgba(16, 86, 75, 0.38); }
@@ -1138,7 +1156,7 @@ button.is-clicked::after, button:focus-visible::after {
     handleStepClick(clickedStep) {
       const expectedStep = this.completedStep + 1;
       if (clickedStep > expectedStep) {
-        this.triggerWarning(`⚠️ Follow the steps in order! Please click [➔ Step ${expectedStep}] first.`);
+        this.triggerWarning(`Follow the steps in order! Please click [➔ Step ${expectedStep}] first.`);
         return;
       }
       if (clickedStep <= this.completedStep) {
@@ -1155,7 +1173,6 @@ button.is-clicked::after, button:focus-visible::after {
     },
 
     animateStepTransition(stepNum) {
-      // Driven directly by performance.now() inside the main render loop so classturn-lab-kit's single-RAF hook never drops it!
       this.animatingStep = stepNum;
       this.animStartTime = performance.now();
       if (typeof this.onStepChangeCallback === "function") {
@@ -1200,7 +1217,7 @@ button.is-clicked::after, button:focus-visible::after {
             secControls.prepend(banner);
           }
         }
-        banner.textContent = `🔒 Click [➔ Step ${this.completedStep + 1}] in 04 / Procedure (${this.completedStep}/${this.totalSteps} completed) to assemble the apparatus and unlock controls.`;
+        banner.textContent = `Click [➔ Step ${this.completedStep + 1}] in 04 / Procedure (${this.completedStep}/${this.totalSteps} completed) to assemble the apparatus and unlock controls.`;
       } else if (banner) {
         banner.remove();
       }
@@ -1215,10 +1232,24 @@ button.is-clicked::after, button:focus-visible::after {
 
     triggerWarning(msg) {
       this.warningBannerText = msg;
+      const wrapper = document.querySelector(".canvas-wrapper") || document.getElementById("stageContainer");
+      if (wrapper) {
+        let alertEl = document.getElementById("ctCenterCanvasAlert");
+        if (!alertEl) {
+          alertEl = document.createElement("div");
+          alertEl.id = "ctCenterCanvasAlert";
+          alertEl.className = "ct-center-canvas-alert";
+          wrapper.appendChild(alertEl);
+        }
+        alertEl.textContent = msg;
+        alertEl.style.opacity = "1";
+      }
       if (this.warningTimeout) clearTimeout(this.warningTimeout);
       this.warningTimeout = setTimeout(() => {
         this.warningBannerText = "";
-      }, 2600);
+        const alertEl = document.getElementById("ctCenterCanvasAlert");
+        if (alertEl) alertEl.style.opacity = "0";
+      }, 2400);
     },
 
     isStepVisible(stepNumber) {
@@ -1232,31 +1263,13 @@ button.is-clicked::after, button:focus-visible::after {
       if (stepNumber === this.animatingStep && this.animStartTime > 0) {
         const elapsed = Math.max(0, performance.now() - this.animStartTime);
         const t = Math.min(1.0, elapsed / this.animDurationMs);
-        // Starts at 0.15 minimum alpha so the element is immediately visible the moment Step 1 is clicked, smoothly easing to 1.0
         return 0.15 + 0.85 * (1 - Math.pow(1 - t, 3));
       }
       return 1.0;
     },
 
     drawCanvasStepHUD(ctx, canvasW = 800, canvasH = 500) {
-      // Only draw the out-of-order warning banner if the student clicks steps out of order (no extra blue HUD pills!)
-      if (!this.warningBannerText) return;
-      ctx.save();
-      ctx.font = "700 12.5px 'Segoe UI', sans-serif";
-      const ww = ctx.measureText(this.warningBannerText).width + 32;
-      const wx = (canvasW - ww) / 2;
-      ctx.fillStyle = "rgba(180, 83, 9, 0.96)";
-      ctx.strokeStyle = "#fde68a";
-      ctx.lineWidth = 1.5;
-      ctx.beginPath();
-      ctx.roundRect(wx, 18, ww, 30, 8);
-      ctx.fill();
-      ctx.stroke();
-      ctx.fillStyle = "#ffffff";
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillText(this.warningBannerText, canvasW / 2, 33);
-      ctx.restore();
+      // Alert is rendered as a dead-center overlay (#ctCenterCanvasAlert) inside .canvas-wrapper overlapping all elements
     },
 
     resetSteps() {
@@ -1265,6 +1278,8 @@ button.is-clicked::after, button:focus-visible::after {
       this.animatingStep = 0;
       this.animStartTime = 0;
       this.warningBannerText = "";
+      const alertEl = document.getElementById("ctCenterCanvasAlert");
+      if (alertEl) alertEl.style.opacity = "0";
       this.updateStepButtonStyles();
       this.updateControlsLockState();
     }
