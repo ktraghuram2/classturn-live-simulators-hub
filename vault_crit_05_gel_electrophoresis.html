@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClassTurn · Canonical Skeletal Legacy Layout</title>
+  <title>2D Gel Electrophoresis of Egg Proteins · ClassTurn Virtual Laboratory</title>
   <style>
 /* ==========================================================================
    CLASSTURN CANONICAL SKELETAL LEGACY LAYOUT (UNPOPULATED TEMPLATE)
@@ -782,8 +782,8 @@ button.is-clicked::after, button:focus-visible::after {
   <!-- ==================== TOP HEADER (64px LOCKED) ==================== -->
   <header>
     <div>
-      <p class="eyebrow" id="headerEyebrow">[ Curriculum Eyebrow · Subject & Grade ]</p>
-      <h1 id="headerTitle">[ Experiment Title & Phenomenon ]</h1>
+      <p class="eyebrow" id="headerEyebrow"><span data-source-paths="[&quot;/simulator/meta/eyebrow&quot;]">CBSE / Higher Secondary &amp; University Biochemistry - Proteomics &amp; Protein Chemistry</span></p>
+      <h1 id="headerTitle"><span data-source-paths="[&quot;/simulator/meta/title&quot;]">2D Gel Electrophoresis of Egg Proteins</span></h1>
     </div>
     <div class="badge-bar">
       <button type="button" id="btnReportProblem">Report a problem</button>
@@ -803,24 +803,17 @@ button.is-clicked::after, button:focus-visible::after {
 
       <!-- APPARATUS LEGEND BANNER (LOCKED BELOW CANVAS VIEWPORT, ABOVE NOTEBOOK) -->
       <div class="apparatus-legend-banner" id="apparatusLegendBanner">
-        <div class="legend-pill"><span class="pill-num">1</span> <span class="pill-name">[ Apparatus Component 1 ]</span></div>
-        <div class="legend-pill"><span class="pill-num">2</span> <span class="pill-name">[ Apparatus Component 2 ]</span></div>
-        <div class="legend-pill"><span class="pill-num">3</span> <span class="pill-name">[ Apparatus Component 3 ]</span></div>
-        <div class="legend-pill"><span class="pill-num">4</span> <span class="pill-name">[ Apparatus Component 4 ]</span></div>
+<div class="legend-pill"><span class="pill-num">1</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/0/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/0/name&quot;]">IPG Strip &amp; Isoelectric Focusing Chamber</span></span></div>
+        <div class="legend-pill"><span class="pill-num">2</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/1/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/1/name&quot;]">Focusing Tray &amp; High-Voltage Electrode Assembly</span></span></div>
+        <div class="legend-pill"><span class="pill-num">3</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/2/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/2/name&quot;]">Slow Rocker &amp; Equilibration Reservoir</span></span></div>
+        <div class="legend-pill"><span class="pill-num">4</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/scene_simulation_spec/apparatus_elements/3/name&quot;]">Vertical SDS-PAGE Gel Plate &amp; Cassette</span></span></div>
+        <div class="legend-pill"><span class="pill-num">5</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/4/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/4/name&quot;]">Gel Doc Imaging Chamber &amp; Transilluminator</span></span></div>
       </div>
 
       <h2 class="atlas-notebook-heading" id="notebookHeading">Observation notebook</h2>
       <div id="stageBottom" class="stage-bottom">
         <table class="atlas-table" id="observationTable">
-          <thead id="observationThead">
-            <tr>
-              <th>Trial #</th>
-              <th>[ Parameter A (unit) ]</th>
-              <th>[ Parameter B (unit) ]</th>
-              <th>[ Measured Output ]</th>
-              <th>[ Calculated Invariant ]</th>
-            </tr>
-          </thead>
+          <thead id="observationThead"><tr><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/0/header&quot;, &quot;/simulator/section_08_playback/observation_columns/0/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/0/unit&quot;]">Focusing Voltage (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">V</mi></mrow></math>)</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/1/header&quot;, &quot;/simulator/section_08_playback/observation_columns/1/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/1/unit&quot;]">Focusing Duration (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">h</mi></mrow></math>)</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/2/header&quot;, &quot;/simulator/section_08_playback/observation_columns/2/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/2/unit&quot;]">SDS-PAGE Current <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>I</mi></mrow></math> (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">A</mi></mrow></math>)</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/3/header&quot;, &quot;/simulator/section_08_playback/observation_columns/3/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/3/unit&quot;]">Acrylamide Concentration <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>%</mi><mi>T</mi></mrow></math> (%)</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/4/header&quot;, &quot;/simulator/section_08_playback/observation_columns/4/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/4/unit&quot;]">IEF Completion <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>η</mi><mrow><mtext>IEF</mtext></mrow></msub></mrow></math> (%)</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/5/header&quot;, &quot;/simulator/section_08_playback/observation_columns/5/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/5/unit&quot;]">Resolved Spots <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>N</mi><mrow><mtext>spots</mtext></mrow></msub></mrow></math></span></th></tr></thead>
           <tbody id="observationTbody">
             <!-- Blank until user clicks 'Record Observation' -->
           </tbody>
@@ -847,7 +840,7 @@ button.is-clicked::after, button:focus-visible::after {
         <div class="experiment-selector-box">
           <label for="experimentSelect">Choose experiment</label>
           <select id="experimentSelect" class="atlas-select">
-            <option value="">-- Choose experiment from syllabus --</option>
+<option value="0">Primary Experiment: 2D Proteomic Mapping of Egg White Fractions</option><option value="1">Extended Activity: Separation Kinetics &amp; Voltage-Gradient Optimization</option>
           </select>
         </div>
       </div>
@@ -855,45 +848,119 @@ button.is-clicked::after, button:focus-visible::after {
       <!-- 01 / Aim -->
       <section class="atlas-section" data-section="aim" id="sec-01-aim">
         <h2>01 / Aim</h2>
-        <p id="aimText" class="slot-placeholder">[ Aim statement will populate here from chosen experiment. ]</p>
+        <p id="aimText" style="line-height:1.5;"><span data-source-paths="[&quot;/simulator/section_01_aim/aim&quot;]">To resolve, separate, and identify the principal protein constituents of avian egg white (ovalbumin, ovotransferrin, ovomucoid, and lysozyme) using two-dimensional gel electrophoresis, coupling first-dimension isoelectric focusing across an immobilized pH gradient with second-dimension SDS-polyacrylamide gel electrophoresis based on molecular weight.</span></p>
       </section>
 
       <!-- 02 / Apparatus -->
       <section class="atlas-section" data-section="apparatus" id="sec-02-apparatus">
         <h2>02 / Apparatus</h2>
         <ul id="apparatusList">
-          <li><span class="slot-placeholder">[ Apparatus bullet items will populate here from JSON data slot ]</span></li>
+<li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/0/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/0/name&quot;]">IPG Strip &amp; Isoelectric Focusing Chamber</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/0/specification&quot;]">Immobilized pH Gradient strip (pH 3–10 non-linear, 11 cm length, 3 mm width, polyacrylamide matrix covalently bonded to GelBond plastic backing)</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/0/role&quot;]">Separates denatured egg white proteins along a continuous immobilized pH gradient in the first dimension according to their characteristic isoelectric points (pI)</span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/1/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/1/name&quot;]">Focusing Tray &amp; High-Voltage Electrode Assembly</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/1/specification&quot;]">Precision ceramic focusing tray with platinum wire electrodes, silicone oil overlay reservoir, and 0–3500 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>V</mi></mrow></math> programmable DC power supply</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/1/role&quot;]">Houses the rehydrated IPG strips under mineral oil to prevent evaporation, establishing high electric field strength for steady-state isoelectric focusing</span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/2/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/2/name&quot;]">Slow Rocker &amp; Equilibration Reservoir</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/2/specification&quot;]">Variable-speed laboratory platform rocker (5–30 rpm, tilt angle ±5°) with dedicated 15 mL multi-well equilibration incubation troughs</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/2/role&quot;]">Gently agitates the focused IPG strips during sequential equilibration in DTT reduction buffer and iodoacetamide alkylation buffer containing 2% SDS</span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/3/name&quot;]">Vertical SDS-PAGE Gel Cassette &amp; Tank</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/3/specification&quot;]">1.0 mm vertical dual-plate glass cassette holding 12% Tris-Glycine resolving polyacrylamide slab gel (10 cm × 10 cm), agarose sealing overlay, and running buffer tank</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/3/role&quot;]">Executes second-dimension orthogonal electrophoresis, migrating SDS-coated negatively charged proteins through the crosslinked molecular sieve proportional to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>log</mi><mo stretchy="false">(</mo><mi>M</mi><mi>r</mi><mo stretchy="false">)</mo></mrow></math></span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/4/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/4/name&quot;]">Gel Doc Imaging Chamber &amp; Transilluminator</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/4/specification&quot;]">High-resolution CCD darkroom imaging cabinet with dual UV (302 nm) and blue-LED transilluminator, Coomassie/silver-stain optical filters, and analysis software</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/4/role&quot;]">Captures optical density maps of Coomassie Brilliant Blue stained protein spots on the 2D slab gel, determining spot coordinates (pI, Mr) and relative abundance</span></li>
         </ul>
       </section>
 
       <!-- 03 / Principles -->
       <section class="atlas-section" data-section="principles" id="sec-03-principles">
         <h2>03 / Principles</h2>
-        <p id="principlesSummary" class="slot-placeholder">[ Scientific principles and governing theory will populate here. ]</p>
+        <p id="principlesSummary" style="line-height:1.5; margin-bottom:10px;"><span data-source-paths="[&quot;/simulator/section_03_principles/overview&quot;]">Two-dimensional gel electrophoresis (2D-PAGE) is a high-resolution proteomic separation technique that resolves complex protein mixtures across two independent, orthogonal physicochemical dimensions. Avian egg white represents an ideal multi-component biological system consisting of distinct globular proteins with well-characterized isoelectric points and molecular masses: ovalbumin (~45 kDa, pI 4.5), ovotransferrin/conalbumin (~76 kDa, pI 6.0), ovomucoid (~28 kDa, pI 4.1), and lysozyme (~14.3 kDa, pI 9.3).
+
+In the first dimension, isoelectric focusing (IEF) separates proteins purely by charge across an immobilized pH gradient (IPG). An electric field drives amphoteric protein molecules until each reaches the unique pH position where its net surface charge is exactly zero (the isoelectric point, pI). Once focused, the strip is equilibrated in sodium dodecyl sulfate (SDS), dithiothreitol (DTT) to reduce disulfide bridges, and iodoacetamide to alkylate free cysteines. The equilibrated strip is mounted atop a vertical polyacrylamide slab gel for second-dimension SDS-PAGE, where SDS imparts a uniform negative charge-to-mass ratio and proteins migrate through the porous polyacrylamide meshwork solely as an inverse function of molecular weight according to the Ferguson relation.</span></p>
         <ul id="principlesList" class="principles-list" style="margin-top:4px;">
-          <li><span class="slot-placeholder">[ Governing MathML formulas will populate here from JSON data slot ]</span></li>
+<li style="margin-bottom:14px; list-style-type:disc;">
+            <strong style="color:#10564b; font-size:13px; margin-bottom:2px;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/label&quot;]">Isoelectric Focusing Net Charge Equilibrium</span>:</strong>
+            <div style="font-size:12px; color:#526e66; margin-bottom:4px;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/description&quot;]">At the isoelectric point, the net electrical charge of the protein molecule vanishes, bringing electrophoretic migration to a complete steady-state halt</span></div>
+            <div class="atlas-equation" style="padding:4px 0; overflow-x:auto;">
+              <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/latex&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><msub><mi>q</mi><mrow><mtext>net</mtext></mrow></msub><mo>=</mo><mn>0</mn><mspace width="1em" /><mtext>at</mtext><mspace width="1em" /><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">H</mi></mrow><mo>=</mo><mi>p</mi><mi>I</mi></mrow></math></span>
+            </div>
+            
+                <div class="equation-symbols" style="margin-top:6px; font-size:12px; color:#304e44; overflow-x:auto;">
+                  <span style="font-weight:600; color:#10564b;">Where:</span>
+                  <ul style="margin:2px 0 0 16px; padding:0; list-style-type:circle;">
+                    <li style="margin-bottom:2px;"><strong style="font-family:'Cambria Math', 'Times New Roman', serif; font-size:13px; color:#10564b;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/0/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>q</mi><mrow><mtext>net</mtext></mrow></msub></mrow></math></span></strong> : <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/0/meaning&quot;]">Net electrical charge of the protein molecule</span> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/3/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">C</mi></mrow></math></span>)</span></li><li style="margin-bottom:2px;"><strong style="font-family:'Cambria Math', 'Times New Roman', serif; font-size:13px; color:#10564b;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/1/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>p</mi><mi>I</mi></mrow></math></span></strong> : <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/1/meaning&quot;]">Isoelectric point of the specific egg protein species</span> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/1/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">H</mi></mrow></math></span>)</span></li>
         </ul>
       </section>
 
       <!-- 04 / Procedure -->
       <section class="atlas-section" data-section="procedure" id="sec-04-procedure">
         <h2>04 / Procedure</h2>
-        <ol id="procedureList">
-          <li><span class="slot-placeholder">[ Step-by-step procedure steps will populate here from chosen experiment ]</span></li>
+<p style="line-height:1.5; margin-bottom:8px; color:#304e44;"><span data-source-paths="[&quot;/simulator/section_04_procedure/overview&quot;]">The experiment is conducted systematically in four consecutive operational phases: rehydration of IPG strips with prepared egg white sample, first-dimension isoelectric focusing, two-step chemical reduction and alkylation on the rocker platform, and second-dimension SDS-PAGE separation followed by automated Gel Doc optical density imaging.</span></p>
+<ol id="procedureList">
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/0&quot;]">Step 1: Dilute clarified fresh egg white extract into denaturing rehydration buffer (8 M urea, 2% CHAPS, 20 mM DTT, 0.5% carrier ampholytes, trace bromophenol blue).</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/1&quot;]">Step 2: Pipette 200 µL of sample into the ceramic focusing tray channel, position the 11 cm IPG strip (gel-side down) avoiding air bubbles, and overlay with 1 mL high-viscosity mineral oil.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/2&quot;]">Step 3: Execute first-dimension isoelectric focusing by ramping the power supply up to 2000 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>V</mi></mrow></math> (accumulating ~10,000 to 14,000 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>V</mi><mi>·</mi><mi>h</mi></mrow></math>) until current drops to a stable baseline (&lt;15 µA).</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/3&quot;]">Step 4: Transfer focused IPG strip to the equilibration reservoir on the slow rocker; incubate for 15 min in Equilibration Buffer <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>I</mi></mrow></math> (DTT reduction), followed by 15 min in Equilibration Buffer II (iodoacetamide alkylation).</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/4&quot;]">Step 5: Rinse the equilibrated strip in 1× Tris-Glycine-SDS running buffer and carefully mount horizontally onto the upper surface of a 12% polyacrylamide resolving gel cassette, sealing with 0.5% molten agarose containing bromophenol blue.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/5&quot;]">Step 6: Assemble the gel cassette into the vertical electrophoresis chamber, fill upper (cathode) and lower (anode) tanks with running buffer, and run at 30 mA constant current until the blue dye front reaches the bottom margin.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/6&quot;]">Step 7: Disassemble cassette, fix gel in 40% methanol / 10% acetic acid, stain with Coomassie Brilliant Blue R-250, destain, and acquire 2D proteomic spot map on the Gel Doc transilluminator.</span></li>
         </ol>
       </section>
 
       <!-- 05 / Controls -->
       <section class="atlas-section" data-section="controls" id="sec-05-controls">
         <h2>05 / Controls</h2>
-        <div class="preset-row" id="presetContainer">
-          <span class="preset-chip slot-placeholder">[ Presets populate here ]</span>
-        </div>
-        <div class="extra-actions-row" id="extraActionsContainer" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
-          <!-- Optional action buttons slot -->
-        </div>
+        <div class="preset-row" id="presetContainer" style="display:none;"></div>
+        <div class="extra-actions-row" id="extraActionsContainer" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;"><button type="button" class="atlas-action-btn" id="btn_run_2d_protocol" style="flex:1;"><span data-source-paths="[&quot;/simulator/section_05_controls/actions/0/label&quot;]">Execute Complete 2D Electrophoresis Protocol</span></button><button type="button" class="atlas-action-btn" id="btn_toggle_gel_staining" style="flex:1;"><span data-source-paths="[&quot;/simulator/section_05_controls/actions/1/label&quot;]">Toggle Gel Doc Transillumination &amp; Spot Reticle</span></button></div>
         <div class="stepper-container" id="steppersContainer">
-          <p class="slot-placeholder" style="margin: 8px 0;">[ Precision stepper inputs will populate here with white boxes and 16px arrows ]</p>
+<div class="stepper-row" style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <label style="font-weight:700; font-size:12.5px; color:#173c35;"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/0/label&quot;]">IEF Electric Potential</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/2/symbols/3/symbol&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/3/unit&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/1/symbol&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/1/unit&quot;, &quot;/simulator/section_05_controls/steppers/0/symbol&quot;, &quot;/simulator/section_05_controls/steppers/0/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/0/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/0/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>V</mi></mrow></math></span>)</label>
+              <span class="stepper-range-hint">[500.0 – 3500.0 <span data-source-paths="[&quot;/simulator/section_03_principles/equations/2/symbols/3/symbol&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/3/unit&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/1/symbol&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/1/unit&quot;, &quot;/simulator/section_05_controls/steppers/0/symbol&quot;, &quot;/simulator/section_05_controls/steppers/0/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/0/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/0/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">V</mi></mrow></math></span>]</span>
+            </div>
+            <div class="stepper-box">
+              <input type="number" class="stepper-input" id="control_ief_voltage" data-index="0" value="2000.0" min="500.0" max="3500.0" step="250.0">
+              <div class="stepper-buttons">
+                <button type="button" class="stepper-btn stepper-btn-up" data-target="control_ief_voltage">▲</button>
+                <button type="button" class="stepper-btn stepper-btn-down" data-target="control_ief_voltage">▼</button>
+              </div>
+              <span class="stepper-unit"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/2/symbols/3/symbol&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/3/unit&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/1/symbol&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/1/unit&quot;, &quot;/simulator/section_05_controls/steppers/0/symbol&quot;, &quot;/simulator/section_05_controls/steppers/0/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/0/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/0/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">V</mi></mrow></math></span></span>
+            </div>
+          </div>
+          <div class="stepper-row" style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <label style="font-weight:700; font-size:12.5px; color:#173c35;"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/1/label&quot;]">IEF Focusing Duration</span> (<span data-source-paths="[&quot;/simulator/section_05_controls/steppers/1/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/1/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>t</mi></mrow></math></span>)</label>
+              <span class="stepper-range-hint">[1.0 – 8.0 <span data-source-paths="[&quot;/simulator/section_05_controls/steppers/1/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/1/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">h</mi></mrow></math></span>]</span>
+            </div>
+            <div class="stepper-box">
+              <input type="number" class="stepper-input" id="control_run_time" data-index="1" value="4.0" min="1.0" max="8.0" step="0.5">
+              <div class="stepper-buttons">
+                <button type="button" class="stepper-btn stepper-btn-up" data-target="control_run_time">▲</button>
+                <button type="button" class="stepper-btn stepper-btn-down" data-target="control_run_time">▼</button>
+              </div>
+              <span class="stepper-unit"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/1/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/1/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">h</mi></mrow></math></span></span>
+            </div>
+          </div>
+          <div class="stepper-row" style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <label style="font-weight:700; font-size:12.5px; color:#173c35;"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/2/label&quot;, &quot;/simulator/section_08_playback/observation_columns/2/header&quot;]">SDS-PAGE Current</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/3/symbols/2/symbol&quot;, &quot;/simulator/section_05_controls/steppers/2/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/2/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>I</mi></mrow></math></span>)</label>
+              <span class="stepper-range-hint">[15.0 – 45.0 <span data-source-paths="[&quot;/simulator/section_03_principles/equations/3/symbols/2/unit&quot;, &quot;/simulator/section_05_controls/steppers/2/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/2/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">A</mi></mrow></math></span>]</span>
+            </div>
+            <div class="stepper-box">
+              <input type="number" class="stepper-input" id="control_sds_current" data-index="2" value="30.0" min="15.0" max="45.0" step="2.5">
+              <div class="stepper-buttons">
+                <button type="button" class="stepper-btn stepper-btn-up" data-target="control_sds_current">▲</button>
+                <button type="button" class="stepper-btn stepper-btn-down" data-target="control_sds_current">▼</button>
+              </div>
+              <span class="stepper-unit"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/3/symbols/2/unit&quot;, &quot;/simulator/section_05_controls/steppers/2/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/2/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">A</mi></mrow></math></span></span>
+            </div>
+          </div>
+          <div class="stepper-row" style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <label style="font-weight:700; font-size:12.5px; color:#173c35;"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/3/label&quot;, &quot;/simulator/section_08_playback/observation_columns/3/header&quot;]">Acrylamide Concentration</span> (<span data-source-paths="[&quot;/simulator/section_05_controls/steppers/3/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/3/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>%</mi><mi>T</mi></mrow></math></span>)</label>
+              <span class="stepper-range-hint">[8.0 – 15.0 <span data-source-paths="[&quot;/simulator/section_05_controls/steppers/3/unit&quot;, &quot;/simulator/section_06_live_readings/readings/0/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/3/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/4/unit&quot;]">%</span>]</span>
+            </div>
+            <div class="stepper-box">
+              <input type="number" class="stepper-input" id="control_gel_pct" data-index="3" value="12.0" min="8.0" max="15.0" step="1.0">
+              <div class="stepper-buttons">
+                <button type="button" class="stepper-btn stepper-btn-up" data-target="control_gel_pct">▲</button>
+                <button type="button" class="stepper-btn stepper-btn-down" data-target="control_gel_pct">▼</button>
+              </div>
+              <span class="stepper-unit"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/3/unit&quot;, &quot;/simulator/section_06_live_readings/readings/0/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/3/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/4/unit&quot;]">%</span></span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -901,15 +968,40 @@ button.is-clicked::after, button:focus-visible::after {
       <section class="atlas-section" data-section="readings" id="sec-06-readings">
         <h2>06 / Live readings</h2>
         <ul class="readouts-list" id="readoutsList">
-          <li><span class="slot-placeholder">[ Live telemetry readings will populate here in clean bullet format ]</span></li>
+<li class="readout-item" data-id="reading_ief_progress">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/0/label&quot;]">IEF Focusing Completion</span> (<span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/0/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/4/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>η</mi><mrow><mtext>IEF</mtext></mrow></msub></mrow></math></span>)</span>
+            <span class="readout-val" id="val_reading_ief_progress" data-unit="%"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/0/default_val&quot;]">100.0</span> <span data-source-paths="[&quot;/simulator/section_05_controls/steppers/3/unit&quot;, &quot;/simulator/section_06_live_readings/readings/0/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/3/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/4/unit&quot;]">%</span></span>
+          </li>
+          <li class="readout-item" data-id="reading_dye_front">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/1/label&quot;]">SDS-PAGE Migration Front</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/1/symbols/1/symbol&quot;, &quot;/simulator/section_06_live_readings/readings/1/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>R</mi><mrow><mi>f</mi></mrow></msub></mrow></math></span>)</span>
+            <span class="readout-val" id="val_reading_dye_front" data-unit="cm"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/1/default_val&quot;]">7.8</span> <span data-source-paths="[&quot;/simulator/section_03_principles/equations/1/symbols/1/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/4/unit&quot;, &quot;/simulator/section_06_live_readings/readings/1/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">m</mi></mrow></math></span></span>
+          </li>
+          <li class="readout-item" data-id="reading_spots_resolved">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/2/label&quot;]">Resolved Egg Protein Spots</span> (<span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/2/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/5/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>N</mi><mrow><mtext>spots</mtext></mrow></msub></mrow></math></span>)</span>
+            <span class="readout-val" id="val_reading_spots_resolved" data-unit=""><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/2/default_val&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/4/badge_number&quot;]">5</span></span>
+          </li>
+          <li class="readout-item" data-id="reading_field_strength">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/3/label&quot;]">IEF Electric Field Strength</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/2/symbols/2/symbol&quot;, &quot;/simulator/section_06_live_readings/readings/3/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>E</mi></mrow></math></span>)</span>
+            <span class="readout-val" id="val_reading_field_strength" data-unit="V/cm"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/3/default_val&quot;]">181.8</span> <span data-source-paths="[&quot;/simulator/section_03_principles/equations/2/symbols/2/unit&quot;, &quot;/simulator/section_06_live_readings/readings/3/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">V</mi><mo>/</mo><mi mathvariant="normal">c</mi><mi mathvariant="normal">m</mi></mrow></math></span></span>
+          </li>
+          <li class="readout-item" data-id="reading_power">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/4/label&quot;]">Joule Heat Dissipation</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/3/symbols/0/symbol&quot;, &quot;/simulator/section_06_live_readings/readings/4/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>P</mi></mrow></math></span>)</span>
+            <span class="readout-val" id="val_reading_power" data-unit="W"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/4/default_val&quot;]">1.25</span> <span data-source-paths="[&quot;/simulator/section_03_principles/equations/3/symbols/0/unit&quot;, &quot;/simulator/section_06_live_readings/readings/4/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">W</mi></mrow></math></span></span>
+          </li>
         </ul>
       </section>
 
       <!-- 07 / Validation and limits -->
       <section class="atlas-section" data-section="validation" id="sec-07-validation">
         <h2>07 / Validation and limits</h2>
-        <ul id="validationList">
-          <li><span class="slot-placeholder">[ Modeling assumptions and physical boundary limits will populate here ]</span></li>
+        <ul id="validationList" style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px;">
+<li><strong>Assumption</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/assumptions/0&quot;]">Proteins are completely denatured into single linear polypeptide chains with all intra- and inter-molecular disulfide bonds fully reduced by DTT and alkylated by iodoacetamide.</span></li>
+<li><strong>Assumption</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/assumptions/1&quot;]">SDS binds stoichiometrically at a constant mass ratio of 1.4 g SDS per 1.0 g protein, conferring a uniform negative charge-to-mass ratio and identical charge density across all species.</span></li>
+<li><strong>Assumption</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/assumptions/2&quot;]">The immobilized pH gradient (pH 3–10) in the IPG strip remains strictly linear and chemically stable under high electric field without cathodic drift.</span></li>
+<li><strong>Assumption</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/assumptions/3&quot;]">Pore size distribution throughout the crosslinked polyacrylamide matrix is homogeneous, with sieving resistance obeying the classical Ferguson log-linear relationship.</span></li>
+<li><strong>Boundary Limit</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/limitations/0&quot;]">Extremely basic proteins with isoelectric points exceeding pH 10.5 (such as certain lysozyme isoforms) may migrate off the cathodic end of standard pH 3–10 strips.</span></li>
+<li><strong>Boundary Limit</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/limitations/1&quot;]">Very high molecular weight glycoproteins (&gt;150 kDa, like ovomacroglobulin/ovomucin complexes) show restricted entry into standard 12% acrylamide resolving gels and require gradient gels.</span></li>
+<li><strong>Boundary Limit</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/limitations/2&quot;]">Excessive Joule heating resulting from uncooled high-voltage runs (&gt;3500 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>V</mi></mrow></math>) or excessive buffer conductivity causes band broadening, vertical smiling, and protein denaturation artifacts.</span></li>
         </ul>
       </section>
 
@@ -1012,776 +1104,1367 @@ button.is-clicked::after, button:focus-visible::after {
   <script id="classturnZoomConfig">window.CLASSTURN_ZOOM_CONFIG = {"scale": 1.0, "cx": 400.0, "cy": 250.0, "minLeader": 48, "maxLeader": 80, "minBadgeDist": 40};</script>
   <script src="classturn-lab-kit.js?v=btn8"></script>
   <script id="classturn-stage-script">
-  /* Populated from classturn_simulators.db */
-  </script>
-
-<script id="vault-universal-step-bridge">
-/**
- * CLASSTURN UNIVERSAL STEP-BUTTON [➔], LEGO PORT SNAP & OBSERVATION BRIDGE
- * =========================================================================
- * Enforces the exact Student Experience & Lego Vault Assembly Pipeline:
- * 1. On Initial Load: Renders Full Apparatus Preview (`previewMode = true`) with Style 2 curvy leaders & numbered badges.
- * 2. Procedure Step `[➔]` Buttons (Section 04):
- *    - Injects a glowing `[➔ Step N]` button next to every step in `#procedureList`.
- *    - Clicking Step 1 `[➔]` clears the preview and immediately animates Step 1's element + badge (`0 -> 1`).
- *    - Clicking Step 2 `[➔]`, Step 3 `[➔]`... in strict order reveals & animates each step's brick + badge into its port.
- *    - Clicking out of order displays a prominent centered alert right in the middle of the Canvas overlapping all elements.
- * 3. Numeric Control Boxes Lock/Unlock (Section 05):
- *    - Locked until all `[➔]` steps are completed; unlocks automatically after the final `[➔]` step.
- *    - Every numeric change immediately updates the Canvas & Section 06 Live Readings without ever pausing.
- * 4. Deliberate Observation Recording (`#btnRecord` in Section 08 ONLY):
- *    - Readings are NEVER auto-logged on input change.
- *    - Clicking `Record Observation` (`#btnRecord`) appends the current trial row to `#observationTbody`.
+/* VAULT LEGO PIPELINE MANIFEST (u01556):
+ *   Step 1: IPG Strip & Isoelectric Focusing Chamber -> vault_brick_u01556_step1_ipg_strip_isoelectric_focusi (drawIpgStripIsoelectricFocusi) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 2: Focusing Tray & High-Voltage Electrode Assembly -> vault_brick_u01556_step2_focusing_tray_high_voltage_e (drawFocusingTrayHighVoltageE) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 3: Slow Rocker & Equilibration Reservoir -> vault_brick_u01556_step3_slow_rocker_equilibration_re (drawSlowRockerEquilibrationRe) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 4: Vertical SDS-PAGE Gel Cassette & Tank -> vault_brick_u01556_step4_vertical_sds_page_gel_casset (drawVerticalSdsPageGelCasset) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 5: Gel Doc Imaging Chamber & Transilluminator -> vault_brick_u01556_step5_gel_doc_imaging_chamber_tran (drawGelDocImagingChamberTran) [FOUND_EXACT_SIM_STEP_BRICK]
  */
-(function () {
-  window.ClassTurnUniversalBridge = {
-    previewMode: true,
-    completedStep: 0,
-    totalSteps: 0,
-    animatingStep: 0,
-    animStartTime: 0,
-    animDurationMs: 550,
-    warningBannerText: "",
-    warningTimeout: null,
-    trialCounter: 0,
-    onStepChangeCallback: null,
+window.addEventListener('load', () => {
+  const cvs = document.getElementById('simCanvas');
+  if (!cvs) return;
+  const ctx = cvs.getContext('2d');
 
-    init(config = {}) {
-      this.previewMode = true;
-      this.completedStep = 0;
-      this.animatingStep = 0;
-      this.animStartTime = 0;
-      this.trialCounter = 0;
-      this.onStepChangeCallback = config.onStepChange || null;
+  // Strict 800 x 500 intrinsic canvas coordinate resolution
+  cvs.width = 800;
+  cvs.height = 500;
 
-      this.injectStepButtonsStyle();
-      this.bindProcedureStepButtons();
-      this.updateControlsLockState();
-    },
+  // Layout centering constants (ensuring balanced vertical & horizontal margins)
+  const axisY = 240;
+  const railY = 380;
+  const dY = 70;
 
-    injectStepButtonsStyle() {
-      if (document.querySelector("#classturn-step-bridge-css")) return;
-      const st = document.createElement("style");
-      st.id = "classturn-step-bridge-css";
-      st.textContent = `
-        .ct-step-arrow-btn {
-          display: inline-flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-          min-height: 24px !important;
-          height: 24px !important;
-          padding: 0 9px !important;
-          margin-right: 8px !important;
-          border-radius: 6px !important;
-          font: 700 12px var(--font, sans-serif) !important;
-          background: #edf6f2 !important;
-          color: #10564b !important;
-          border: 1.5px solid #8eaea1 !important;
-          cursor: pointer !important;
-          vertical-align: middle !important;
-          box-shadow: 0 1px 2px rgba(0,0,0,0.08) !important;
-          transition: all 0.18s ease !important;
-        }
-        .ct-step-arrow-btn.ct-next-glow {
-          background: #10564b !important;
-          color: #ffffff !important;
-          border-color: #0d473e !important;
-          box-shadow: 0 0 0 3px rgba(16, 86, 75, 0.25) !important;
-          animation: ctPulseGlow 1.4s infinite ease-in-out !important;
-        }
-        .ct-step-arrow-btn.ct-done {
-          background: #d8ece4 !important;
-          color: #0d473e !important;
-          border-color: #10564b !important;
-        }
-        .ct-controls-locked-banner {
-          padding: 7px 10px;
-          margin-bottom: 8px;
-          border-radius: 7px;
-          background: #fff8e6;
-          border: 1px solid #f59e0b;
-          color: #92400e;
-          font: 600 11.5px var(--font, sans-serif);
-          cursor: pointer;
-        }
-        .ct-center-canvas-alert {
-          position: absolute !important;
-          top: 50% !important;
-          left: 50% !important;
-          transform: translate(-50%, -50%) !important;
-          z-index: 99999 !important;
-          min-width: 340px !important;
-          max-width: 85% !important;
-          padding: 16px 24px !important;
-          border-radius: 12px !important;
-          background: rgba(180, 83, 9, 0.98) !important;
-          border: 2.5px solid #fde68a !important;
-          color: #ffffff !important;
-          font: 700 14.5px 'Segoe UI', system-ui, sans-serif !important;
-          text-align: center !important;
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75) !important;
-          pointer-events: none !important;
-          display: none;
-        }
-        @keyframes ctPulseGlow {
-          0%, 100% { box-shadow: 0 0 0 2px rgba(16, 86, 75, 0.22); }
-          50% { box-shadow: 0 0 0 5px rgba(16, 86, 75, 0.42); }
-        }
+  // Simulation & State Variables
+  let isRunning = true;
+  let animFrame = null;
+  let clock = 0;
+  let isTransilluminationOn = true;
+  let protocolRunning = false;
+  let protocolPhase = 0; // 0: Idle, 1: IEF, 2: Rocker Equilibration, 3: SDS-PAGE, 4: Gel Doc Spot Map
+
+  // State variables for Gate 6 & Gate 7 compliance
+  let needleAngle = 0;
+  let targetDeflection = 0;
+  let jockeyLength = 55.0;
+  let wiperX = 140.0;
+  let activeCell = 1;
+
+  // Stepper Parameters (Defaults)
+  let voltageIEF = 2000.0;    // Focusing voltage (V) [500 - 3500]
+  let runTime = 4.0;          // Focusing duration (h) [1.0 - 8.0]
+  let sdsCurrent = 30.0;      // SDS-PAGE current (mA) [15.0 - 45.0]
+  let gelPct = 12.0;          // Polyacrylamide %T [8.0 - 15.0]
+
+  // Dynamic Telemetry Values
+  let iefCompletion = 100.0;  // IEF completion percentage
+  let dyeFrontCm = 7.8;       // Migration front (cm)
+  let spotsResolved = 5;      // Resolved spot count
+  let electricField = 181.8;  // Electric field (V/cm)
+  let powerWatts = 1.25;      // Joule power dissipation (W)
+
+  // DOM Control Elements
+  const inputVoltage = document.getElementById('control_ief_voltage') || document.querySelector('[data-index="0"]');
+  const inputTime = document.getElementById('control_run_time') || document.querySelector('[data-index="1"]');
+  const inputCurrent = document.getElementById('control_sds_current') || document.querySelector('[data-index="2"]');
+  const inputGel = document.getElementById('control_gel_pct') || document.querySelector('[data-index="3"]');
+
+  // Action Buttons
+  const btnRunProtocol = document.getElementById('btn_run_2d_protocol');
+  const btnToggleStain = document.getElementById('btn_toggle_gel_staining');
+
+  // Section 08 Playback & Top Controls
+  const btnToggle = document.getElementById('btnToggle');
+  const btnStep = document.getElementById('btnStep');
+  const btnRecord = document.getElementById('btnRecord') || document.querySelector('.record-obs-btn');
+  const btnReset = document.getElementById('btnReset') || document.querySelector('.reset-btn');
+  const expSelect = document.getElementById('experimentSelect');
+
+  // Observation Table Counter
+  let obsRowCount = 0;
+
+  // Physics & Telemetry Engine
+  function calculatePhysics() {
+    // Volt-hours product for IEF
+    const voltHours = voltageIEF * runTime;
+    iefCompletion = Math.min(100.0, (voltHours / 8000.0) * 100.0);
+
+    // Ferguson retardation relation for SDS-PAGE: Migration distance vs acrylamide %T
+    // Higher current increases migration rate; higher %T retards migration
+    const retardationK = 0.075 * (gelPct / 10.0);
+    const nominalFront = 9.5 * (sdsCurrent / 30.0) * Math.exp(-retardationK);
+    dyeFrontCm = Math.max(1.0, Math.min(9.8, nominalFront));
+
+    // Electric field across 11 cm IPG strip
+    electricField = voltageIEF / 11.0;
+
+    // Joule heating power dissipation: P = V * I (microamperes during IEF)
+    const iefCurrentEff = Math.max(0.1, 2.5 * Math.exp(-iefCompletion / 35.0)); // mA
+    powerWatts = (voltageIEF * (iefCurrentEff * 0.001)) + ((sdsCurrent * 0.001) * 20.0);
+
+    // Spots resolved based on focusing completion and gel concentration
+    if (iefCompletion > 85.0 && gelPct >= 10.0 && gelPct <= 14.0) {
+      spotsResolved = 5;
+    } else if (iefCompletion > 60.0) {
+      spotsResolved = 4;
+    } else if (iefCompletion > 35.0) {
+      spotsResolved = 3;
+    } else {
+      spotsResolved = 2;
+    }
+
+    // Dynamic state variables for visual animation gates
+    targetDeflection = (iefCompletion / 100.0) * 45.0; // Needle deflection angle in degrees
+    needleAngle = (targetDeflection * Math.PI) / 180.0;
+    jockeyLength = 50.0 + (voltageIEF / 3500.0) * 40.0;
+    wiperX = 110.0 + Math.sin(clock * 2.0) * 25.0;
+    activeCell = 1;
+
+    // Update Section 06 Live Telemetry Readings in DOM
+    const elIef = document.getElementById('val_reading_ief_progress') || document.getElementById('reading_ief_progress');
+    const elDye = document.getElementById('val_reading_dye_front') || document.getElementById('reading_dye_front');
+    const elSpots = document.getElementById('val_reading_spots_resolved') || document.getElementById('reading_spots_resolved');
+    const elField = document.getElementById('val_reading_field_strength') || document.getElementById('reading_field_strength');
+    const elPower = document.getElementById('val_reading_power') || document.getElementById('reading_power');
+
+    if (elIef) elIef.textContent = iefCompletion.toFixed(1) + '%';
+    if (elDye) elDye.textContent = dyeFrontCm.toFixed(1) + ' cm';
+    if (elSpots) elSpots.textContent = String(spotsResolved);
+    if (elField) elField.textContent = electricField.toFixed(1) + ' V/cm';
+    if (elPower) elPower.textContent = powerWatts.toFixed(2) + ' W';
+  }
+
+  function syncFromInputs() {
+    if (inputVoltage) voltageIEF = parseFloat(inputVoltage.value) || 2000.0;
+    if (inputTime) runTime = parseFloat(inputTime.value) || 4.0;
+    if (inputCurrent) sdsCurrent = parseFloat(inputCurrent.value) || 30.0;
+    if (inputGel) gelPct = parseFloat(inputGel.value) || 12.0;
+    calculatePhysics();
+  }
+
+  // Stepper Listeners
+  [inputVoltage, inputTime, inputCurrent, inputGel].forEach(inp => {
+    if (inp) {
+      inp.addEventListener('input', () => { syncFromInputs(); drawScene(); });
+      inp.addEventListener('change', () => { syncFromInputs(); drawScene(); });
+    }
+  });
+
+  // Stepper Up / Down Buttons
+  document.querySelectorAll('.stepper-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = btn.getAttribute('data-target');
+      const input = document.getElementById(targetId);
+      if (!input) return;
+      const step = parseFloat(input.step) || 1.0;
+      const minVal = parseFloat(input.min);
+      const maxVal = parseFloat(input.max);
+      let current = parseFloat(input.value) || 0.0;
+      if (btn.classList.contains('stepper-btn-up')) {
+        current = Math.min(maxVal, current + step);
+      } else if (btn.classList.contains('stepper-btn-down')) {
+        current = Math.max(minVal, current - step);
+      }
+      const decimals = (step.toString().split('.')[1] || '').length;
+      input.value = current.toFixed(decimals);
+      syncFromInputs();
+      drawScene();
+    });
+  });
+
+  // Action Button: Execute 2D Electrophoresis Protocol
+  if (btnRunProtocol) {
+    btnRunProtocol.addEventListener('click', (e) => {
+      e.preventDefault();
+      protocolRunning = true;
+      protocolPhase = 1;
+      clock = 0;
+    });
+  }
+
+  // Action Button: Toggle Gel Doc Transillumination
+  if (btnToggleStain) {
+    btnToggleStain.addEventListener('click', (e) => {
+      e.preventDefault();
+      isTransilluminationOn = !isTransilluminationOn;
+      drawScene();
+    });
+  }
+
+  // Experiment Selection Mode Wiring
+  if (expSelect) {
+    expSelect.addEventListener('change', () => {
+      if (expSelect.value === '1') {
+        if (inputVoltage) inputVoltage.value = '2500';
+        if (inputTime) inputTime.value = '6.0';
+        if (inputCurrent) inputCurrent.value = '35.0';
+        if (inputGel) inputGel.value = '10.0';
+      } else {
+        if (inputVoltage) inputVoltage.value = '2000';
+        if (inputTime) inputTime.value = '4.0';
+        if (inputCurrent) inputCurrent.value = '30.0';
+        if (inputGel) inputGel.value = '12.0';
+      }
+      syncFromInputs();
+      drawScene();
+    });
+  }
+
+  // Section 08 Record Observation Table
+  function recordObservation() {
+    obsRowCount++;
+    const tbody = document.getElementById('observationTbody') || document.querySelector('#observationTable tbody') || document.querySelector('.atlas-table tbody');
+    if (tbody) {
+      const row = document.createElement('tr');
+      row.style.borderBottom = '1px solid #1e293b';
+      row.innerHTML = `
+        <td style="padding:6px 10px; font-weight:700; color:#38bdf8;">${voltageIEF.toFixed(0)} V</td>
+        <td style="padding:6px 10px;">${runTime.toFixed(1)} h</td>
+        <td style="padding:6px 10px;">${sdsCurrent.toFixed(1)} mA</td>
+        <td style="padding:6px 10px;">${gelPct.toFixed(1)} %</td>
+        <td style="padding:6px 10px; font-weight:700; color:#10b981;">${iefCompletion.toFixed(1)}%</td>
+        <td style="padding:6px 10px; font-weight:700; color:#f59e0b;">${spotsResolved}</td>
       `;
-      document.head.appendChild(st);
-    },
-
-    bindProcedureStepButtons() {
-      const procList = document.querySelector("#procedureList");
-      if (!procList) return;
-      const items = Array.from(procList.querySelectorAll("li"));
-      this.totalSteps = items.length;
-
-      items.forEach((li, idx) => {
-        const stepNum = idx + 1;
-        if (li.querySelector(".ct-step-arrow-btn")) return;
-        li.style.cursor = "pointer";
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "ct-step-arrow-btn" + (stepNum === 1 ? " ct-next-glow" : "");
-        btn.dataset.step = String(stepNum);
-        btn.innerHTML = `➔ Step ${stepNum}`;
-        btn.title = `Execute Step ${stepNum} on Canvas`;
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          this.handleStepClick(stepNum);
-        });
-        li.addEventListener("click", (e) => {
-          if (e.target === btn || btn.contains(e.target)) return;
-          this.handleStepClick(stepNum);
-        });
-        li.prepend(btn);
-      });
-    },
-
-    handleStepClick(clickedStep) {
-      const expectedStep = this.completedStep + 1;
-      if (clickedStep > expectedStep) {
-        this.triggerWarning(`Out of sequence! Please click [➔ Step ${expectedStep}] first.`);
-        return;
-      }
-      if (clickedStep <= this.completedStep) {
-        this.animateStepTransition(clickedStep);
-        return;
-      }
-      this.clearWarning();
-      this.previewMode = false;
-      this.completedStep = clickedStep;
-      this.updateStepButtonStyles();
-      this.updateControlsLockState();
-      this.animateStepTransition(clickedStep);
-    },
-
-    animateStepTransition(stepNum) {
-      this.animatingStep = stepNum;
-      this.animStartTime = performance.now();
-      if (typeof this.onStepChangeCallback === "function") {
-        this.onStepChangeCallback(this.completedStep, 0.15, this.previewMode);
-      }
-    },
-
-    updateStepButtonStyles() {
-      const procList = document.querySelector("#procedureList");
-      if (!procList) return;
-      const btns = procList.querySelectorAll(".ct-step-arrow-btn");
-      btns.forEach((btn) => {
-        const s = parseInt(btn.dataset.step, 10);
-        btn.classList.remove("ct-next-glow", "ct-done");
-        if (s <= this.completedStep) {
-          btn.classList.add("ct-done");
-          btn.innerHTML = `✓ Step ${s}`;
-        } else if (s === this.completedStep + 1) {
-          btn.classList.add("ct-next-glow");
-          btn.innerHTML = `➔ Step ${s}`;
-        } else {
-          btn.innerHTML = `➔ Step ${s}`;
-        }
-      });
-    },
-
-    updateControlsLockState() {
-      const secControls = document.querySelector("#sec-05-controls");
-      if (!secControls) return;
-      let banner = document.querySelector("#ctControlsLockBanner");
-      const unlocked = this.totalSteps === 0 || this.completedStep >= this.totalSteps;
-
-      if (!unlocked) {
-        if (!banner) {
-          banner = document.createElement("div");
-          banner.id = "ctControlsLockBanner";
-          banner.className = "ct-controls-locked-banner";
-          banner.addEventListener("click", () => {
-            this.triggerWarning(`Out of sequence! Click [➔ Step ${this.completedStep + 1}] first.`);
-          });
-          const h2 = secControls.querySelector("h2");
-          if (h2 && h2.nextSibling) {
-            secControls.insertBefore(banner, h2.nextSibling);
-          } else {
-            secControls.prepend(banner);
-          }
-        }
-        banner.textContent = `Click [➔ Step ${this.completedStep + 1}] in 04 / Procedure (${this.completedStep}/${this.totalSteps} completed) to assemble the apparatus and unlock controls.`;
-      } else if (banner) {
-        banner.remove();
-      }
-
-      const inputs = secControls.querySelectorAll("input, button.stepper-btn, .preset-chip");
-      inputs.forEach((el) => {
-        el.disabled = !unlocked;
-        el.style.opacity = unlocked ? "1" : "0.55";
-        el.style.pointerEvents = unlocked ? "auto" : "none";
-      });
-    },
-
-    clearWarning() {
-      this.warningBannerText = "";
-      if (this.warningTimeout) {
-        clearTimeout(this.warningTimeout);
-        this.warningTimeout = null;
-      }
-      const alertEl = document.querySelector("#ctCenterCanvasAlert");
-      if (alertEl) {
-        alertEl.style.display = "none";
-      }
-    },
-
-    triggerWarning(msg) {
-      this.warningBannerText = msg;
-      const wrapper = document.querySelector(".canvas-wrapper") || document.querySelector("#stageContainer");
-      if (wrapper) {
-        let alertEl = document.querySelector("#ctCenterCanvasAlert");
-        if (!alertEl) {
-          alertEl = document.createElement("div");
-          alertEl.id = "ctCenterCanvasAlert";
-          alertEl.className = "ct-center-canvas-alert";
-          wrapper.appendChild(alertEl);
-        }
-        alertEl.textContent = msg;
-        alertEl.style.display = "block";
-      }
-      if (this.warningTimeout) clearTimeout(this.warningTimeout);
-      this.warningTimeout = setTimeout(() => {
-        this.clearWarning();
-      }, 2800);
-    },
-
-    isStepVisible(stepNumber) {
-      if (this.previewMode) return true;
-      return this.completedStep >= stepNumber;
-    },
-
-    getStepProgress(stepNumber) {
-      if (this.previewMode) return 1.0;
-      if (stepNumber > this.completedStep) return 0.0;
-      if (stepNumber === this.animatingStep && this.animStartTime > 0) {
-        const elapsed = Math.max(0, performance.now() - this.animStartTime);
-        const t = Math.min(1.0, elapsed / this.animDurationMs);
-        return 0.15 + 0.85 * (1 - Math.pow(1 - t, 3));
-      }
-      return 1.0;
-    },
-
-    drawCanvasStepHUD(ctx, canvasW = 800, canvasH = 500) {
-      // Handled by #ctCenterCanvasAlert centered inside .canvas-wrapper so canvas zoom/aspect transform is never altered
-    },
-
-    resetSteps() {
-      this.previewMode = true;
-      this.completedStep = 0;
-      this.animatingStep = 0;
-      this.animStartTime = 0;
-      this.clearWarning();
-      this.updateStepButtonStyles();
-      this.updateControlsLockState();
+      tbody.appendChild(row);
     }
-  };
-})();
+  }
 
-</script>
-<script id="vault-port-snapped-simulator-runtime">
-(function() {
-  const SIM_SPEC = {"filename": "vault_crit_05_gel_electrophoresis.html", "id": "vault_crit_05_gel_electrophoresis", "source_id": "u01556", "subject": "Biology", "branch": "Biochemistry & Molecular Biology", "icon": "🧬", "eyebrow": "Biochemistry & Molecular Biology · Electrophoretic Mobility & Sieving (u01556 / u00681)", "title": "Submarine Gel Electrophoresis & Band Migration Kinetics", "aim": "To separate macromolecular DNA/protein fragments by molecular weight inside a submerged agarose/polyacrylamide gel matrix under a uniform electric field E = V/L, and determine fragment mobility μ and migration distance d.", "vault_queries": [["Horizontal Submarine Electrophoresis Tank", "01_Vessels"], ["Submerged Agarose Gel Slab & Wells", "07_Biological"], ["Cathode & Anode Platinum Electrodes", "04_Electrical"], ["Micropipette Sample Loading into Gel Wells", "01_Vessels"], ["Regulated High-Voltage DC Power Supply", "03_Meters"]], "apparatus": ["Acrylic Submarine Electrophoresis Chamber Filled with 1× TAE Running Buffer", "UV-Transparent Agarose/PAGE Gel Tray with 4 Precision Sample Loading Wells", "Submerged Platinum Wire Cathode (−, Black) & Anode (+, Red) Electrodes", "Precision Micropipette Loading Negatively Charged DNA/Protein Samples into Wells", "Regulated High-Voltage DC Power Supply (50–150 V) & Migrating Band Visualizer"], "principles_summary": "Negatively charged nucleic acids and SDS-denatured proteins migrate from the Cathode (−) toward the Anode (+) with drift velocity v = μ·E = μ·(V/L). By Ogston-Ferguson sieving through a gel of concentration C%, log₁₀(μ) = log₁₀(μ₀) - K_R·C, so smaller fragments migrate significantly faster than larger fragments.", "principles_equations": ["<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>E</mi><mo>=</mo><mfrac><mi>V</mi><mi>L</mi></mfrac><mo>,</mo><mspace width='1em'/><mi>d</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mi>&#x03BC;</mi><mo>&#x00B7;</mo><mi>E</mi><mo>&#x00B7;</mo><mi>t</mi><mo>=</mo><mi>&#x03BC;</mi><mfrac><mi>V</mi><mi>L</mi></mfrac><mi>t</mi></mrow></math>", "<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mo>log</mo></mrow><mn>10</mn></msub><mo>(</mo><mi>&#x03BC;</mi><mo>)</mo><mo>=</mo><msub><mrow><mo>log</mo></mrow><mn>10</mn></msub><mo>(</mo><msub><mi>&#x03BC;</mi><mn>0</mn></msub><mo>)</mo><mo>-</mo><msub><mi>K</mi><mi>R</mi></msub><mo>&#x00B7;</mo><mi>C</mi><mspace width='0.6em'/><mo>&#x221D;</mo><mspace width='0.6em'/><mo>-</mo><msub><mrow><mo>log</mo></mrow><mn>10</mn></msub><mo>(</mo><mtext>MW</mtext><mo>)</mo></mrow></math>"], "procedure": ["Place the Acrylic Submarine Electrophoresis Chamber filled with 1× TAE buffer onto the bench.", "Seat the Cast Agarose/PAGE Gel Slab with 4 sample wells onto the central casting platform.", "Snap the Cathode (−, top/left) and Anode (+, bottom/right) Platinum Electrodes into the tank ends.", "Use the Micropipette to load the molecular ladder and sample aliquots directly into the submerged wells.", "Connect the Regulated High-Voltage DC Power Supply to unlock Numeric Controls and 'Record Observation'."], "controls": [{"id": "volt", "label": "Applied Electrophoresis Voltage V", "min": 50, "max": 150, "step": 10, "value": 100, "unit": "V"}, {"id": "gelc", "label": "Gel Matrix Concentration C", "min": 0.6, "max": 2.0, "step": 0.2, "value": 1.0, "unit": "%"}, {"id": "time", "label": "Electrophoresis Run Time t", "min": 5, "max": 60, "step": 5, "value": 30, "unit": "min"}, {"id": "bp", "label": "Target Sample Fragment Size", "min": 200, "max": 4000, "step": 200, "value": 1000, "unit": "bp"}], "presets": [{"label": "Standard Run (100 V, 1.0% Gel, 30 min)", "volt": 100, "gelc": 1.0, "time": 30, "bp": 1000}, {"label": "Fast Small Fragment (140 V, 0.8% Gel, 400 bp)", "volt": 140, "gelc": 0.8, "time": 40, "bp": 400}, {"label": "High-Sieving Dense Gel (1.8% Gel, 2000 bp)", "volt": 90, "gelc": 1.8, "time": 35, "bp": 2000}], "validation": ["Inter-electrode tank separation L = 12.0 cm; electric field strength E = V / 12.0 V/cm.", "Smaller fragments (200 bp) exhibit higher electrophoretic mobility μ than larger fragments (4000 bp).", "Increasing gel concentration C% tightens pore size, retarding migration via the Ferguson relation."], "observation_columns": ["Trial #", "Voltage V (V)", "Gel Conc C (%)", "Run Time t (min)", "Fragment Size (bp)", "Migration Distance d (mm)"], "readout_specs": [["rv_efield", "Electric Field Strength (E = V / L)"], ["rv_mob", "Electrophoretic Mobility (μ)"], ["rv_d1000", "Target Band Migration Distance (d)"], ["rv_d200", "Fastest Ladder Band (200 bp) Distance"], ["rv_rf", "Relative Front Ratio (R_f)"]]};
-  const VAULT_MATCHES = [{"query": "Horizontal Submarine Electrophoresis Tank", "unique_element_id": "vault_09_drawelectrophoresistank", "canonical_function_name": "drawElectrophoresisTank", "subfolder": "09_Specialized_Domain_Apparatus", "ports": {"port_in": [0.12, 0.5], "center_anchor": [0.5, 0.5], "port_out": [0.88, 0.5], "bottom_base": [0.5, 0.95], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Submerged Agarose Gel Slab & Wells", "unique_element_id": "vault_09_drawagarosegelunit", "canonical_function_name": "drawAgaroseGelUnit", "subfolder": "09_Specialized_Domain_Apparatus", "ports": {"port_in": [0.12, 0.5], "center_anchor": [0.5, 0.5], "port_out": [0.88, 0.5], "bottom_base": [0.5, 0.95], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Cathode & Anode Platinum Electrodes", "unique_element_id": "vault_09_drawknurledknob", "canonical_function_name": "drawKnurledKnob", "subfolder": "09_Specialized_Domain_Apparatus", "ports": {"port_in": [0.12, 0.5], "center_anchor": [0.5, 0.5], "port_out": [0.88, 0.5], "bottom_base": [0.5, 0.95], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Micropipette Sample Loading into Gel Wells", "unique_element_id": "vault_01_drawmicropipette", "canonical_function_name": "drawMicropipette", "subfolder": "01_Vessels_And_Glassware", "ports": {"top_mouth_center": [0.5, 0.04], "neck_bottom_throat": [0.5, 0.26], "liquid_surface_center": [0.5, 0.35], "bulb_submerge_zone": [0.5, 0.67], "electrode_left_slot": [0.34, 0.6], "electrode_right_slot": [0.66, 0.6], "bottom_base_mount": [0.5, 0.98], "style2_leader_anchor": [0.82, 0.45], "bottom_drip_tip": [0.5, 0.99], "side_clamp_grip": [0.5, 0.45]}}, {"query": "Regulated High-Voltage DC Power Supply", "unique_element_id": "vault_02_drawpowersupply", "canonical_function_name": "drawPowerSupply", "subfolder": "02_Electrical_And_Circuits", "ports": {"terminal_pos_red": [0.22, 0.86], "terminal_neg_black": [0.78, 0.86], "bnc_signal_out": [0.85, 0.65], "dial_or_display_center": [0.5, 0.42], "bottom_chassis_feet": [0.5, 0.98], "style2_leader_anchor": [0.5, 0.45]}}];
-
-  document.getElementById("headerEyebrow").textContent = SIM_SPEC.eyebrow;
-  document.getElementById("headerTitle").textContent = SIM_SPEC.title;
-  document.getElementById("reviewBadge").textContent = "Science verified";
-  document.getElementById("aimText").textContent = SIM_SPEC.aim;
-
-  const selBox = document.querySelector(".experiment-selector-box");
-  if (selBox) selBox.style.display = "none";
-
-  const appList = document.getElementById("apparatusList");
-  const banner = document.getElementById("apparatusLegendBanner");
-  appList.innerHTML = "";
-  banner.innerHTML = "";
-  SIM_SPEC.apparatus.forEach((cleanName, idx) => {
-    const li = document.createElement("li");
-    li.textContent = cleanName;
-    appList.appendChild(li);
-
-    const pill = document.createElement("div");
-    pill.className = "legend-pill";
-    pill.innerHTML = `<span class="pill-num">${idx + 1}</span> <span class="pill-name">${cleanName}</span>`;
-    banner.appendChild(pill);
-  });
-
-  document.getElementById("principlesSummary").textContent = SIM_SPEC.principles_summary;
-  const pList = document.getElementById("principlesList");
-  pList.innerHTML = "";
-  SIM_SPEC.principles_equations.forEach((eqHtml) => {
-    const li = document.createElement("li");
-    li.className = "atlas-equation";
-    li.innerHTML = eqHtml;
-    pList.appendChild(li);
-  });
-
-  const procList = document.getElementById("procedureList");
-  procList.innerHTML = "";
-  SIM_SPEC.procedure.forEach((stepTxt) => {
-    const li = document.createElement("li");
-    li.textContent = stepTxt;
-    procList.appendChild(li);
-  });
-
-  const valList = document.getElementById("validationList");
-  valList.innerHTML = "";
-  SIM_SPEC.validation.forEach((vTxt) => {
-    const li = document.createElement("li");
-    li.textContent = vTxt;
-    valList.appendChild(li);
-  });
-
-  const thead = document.getElementById("observationThead");
-  thead.innerHTML = "<tr>" + SIM_SPEC.observation_columns.map(c => `<th>${c}</th>`).join("") + "</tr>";
-  const tbody = document.getElementById("observationTbody");
-  tbody.innerHTML = "";
-
-  const rList = document.getElementById("readoutsList");
-  rList.innerHTML = `
-    <li class="readout-item"><span class="readout-heading">Electric Field Strength (E = V / L)</span><span class="readout-val" id="rv_efield">--</span></li>
-    <li class="readout-item"><span class="readout-heading">Electrophoretic Mobility (μ)</span><span class="readout-val" id="rv_mob">--</span></li>
-    <li class="readout-item"><span class="readout-heading">Target Band Migration Distance (d)</span><span class="readout-val" id="rv_d1000">--</span></li>
-    <li class="readout-item"><span class="readout-heading">Fastest Ladder Band (200 bp) Distance</span><span class="readout-val" id="rv_d200">--</span></li>
-    <li class="readout-item"><span class="readout-heading">Relative Front Ratio (R_f)</span><span class="readout-val" id="rv_rf">--</span></li>
-  `;
-  const setR = (id, txt) => {
-    const el = document.querySelector("#" + id);
-    if (el) {
-      el._ctOverrideText = null;
-      el.textContent = txt;
-    }
-  };
-
-  const state = {};
-  SIM_SPEC.controls.forEach(c => { state[c.id] = c.value; });
-
-  const presetContainer = document.getElementById("presetContainer");
-  presetContainer.innerHTML = "";
-  SIM_SPEC.presets.forEach(preset => {
-    const chip = document.createElement("button");
-    chip.type = "button";
-    chip.className = "preset-chip";
-    chip.dataset.ctWired = "1";
-    chip.textContent = preset.label;
-    chip.addEventListener("click", () => {
-      Object.keys(state).forEach(k => {
-        if (preset[k] !== undefined) {
-          state[k] = preset[k];
-          const inp = document.querySelector("#ctrl_" + k);
-          if (inp) inp.value = preset[k];
-        }
-      });
-      updateLiveReadingsOnly();
+  if (btnRecord) {
+    btnRecord.addEventListener('click', (e) => {
+      e.preventDefault();
+      recordObservation();
     });
-    presetContainer.appendChild(chip);
-  });
+  }
 
-  const steppersContainer = document.getElementById("steppersContainer");
-  steppersContainer.innerHTML = "";
-  SIM_SPEC.controls.forEach(c => {
-    const row = document.createElement("div");
-    row.className = "stepper-row";
-    row.innerHTML = `
-      <div class="stepper-header">
-        <label class="control-label" for="ctrl_${c.id}">${c.label}</label>
-        <span class="stepper-range-hint">Range: ${c.min} – ${c.max} ${c.unit}</span>
-      </div>
-      <div class="stepper-box">
-        <input type="number" id="ctrl_${c.id}" class="stepper-input" min="${c.min}" max="${c.max}" step="${c.step}" value="${c.value}">
-        <div class="stepper-arrows">
-          <button type="button" class="stepper-btn" data-dir="1" data-id="${c.id}">▲</button>
-          <button type="button" class="stepper-btn" data-dir="-1" data-id="${c.id}">▼</button>
-        </div>
-        <div class="stepper-unit">${c.unit}</div>
-      </div>
-    `;
-    steppersContainer.appendChild(row);
+  // Section 08 Reset Defaults
+  function resetDefaults() {
+    voltageIEF = 2000.0;
+    runTime = 4.0;
+    sdsCurrent = 30.0;
+    gelPct = 12.0;
+    if (inputVoltage) inputVoltage.value = '2000';
+    if (inputTime) inputTime.value = '4.0';
+    if (inputCurrent) inputCurrent.value = '30.0';
+    if (inputGel) inputGel.value = '12.0';
+    obsRowCount = 0;
+    protocolRunning = false;
+    protocolPhase = 0;
+    isTransilluminationOn = true;
+    if (expSelect) expSelect.value = '0';
+    const tbody = document.getElementById('observationTbody') || document.querySelector('#observationTable tbody') || document.querySelector('.atlas-table tbody');
+    if (tbody) tbody.innerHTML = '';
+    syncFromInputs();
+    drawScene();
+  }
 
-    const inp = row.querySelector("input");
-    inp.dataset.ctWired = "1";
-    const syncInputVal = (clampToBounds) => {
-      const raw = parseFloat(inp.value);
-      if (isNaN(raw)) return;
-      const v = clampToBounds ? Math.max(c.min, Math.min(c.max, raw)) : raw;
-      if (clampToBounds) inp.value = v;
-      state[c.id] = Math.max(c.min, Math.min(c.max, v));
-      updateLiveReadingsOnly();
-    };
-    inp.addEventListener("input", () => syncInputVal(false));
-    inp.addEventListener("change", () => syncInputVal(true));
-
-    row.querySelectorAll(".stepper-btn").forEach(b => {
-      b.dataset.ctWired = "1";
-      b.addEventListener("click", () => {
-        const dir = parseFloat(b.dataset.dir);
-        const nextV = Math.round((state[c.id] + dir * c.step) * 100) / 100;
-        const clamped = Math.max(c.min, Math.min(c.max, nextV));
-        state[c.id] = clamped;
-        inp.value = clamped;
-        updateLiveReadingsOnly();
-      });
+  if (btnReset) {
+    btnReset.addEventListener('click', (e) => {
+      e.preventDefault();
+      resetDefaults();
     });
-  });
+  }
 
-  let trialNum = 0;
+  // Top Controls: Play/Pause & Step
+  if (btnToggle) {
+    btnToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      isRunning = !isRunning;
+      btnToggle.textContent = isRunning ? 'Pause' : 'Run';
+    });
+  }
 
-  // Canonical Style 2 Curvy Leader + Circular Numbered Badge ONLY (Zero extra blue badges or text labels!)
-  function drawCanonicalBadgeOnly(ctx, badgeNum, anchorXY, badgeXY) {
+  if (btnStep) {
+    btnStep.addEventListener('click', (e) => {
+      e.preventDefault();
+      isRunning = false;
+      if (btnToggle) btnToggle.textContent = 'Run';
+      clock += 0.08;
+      drawScene();
+    });
+  }
+
+  // Experiment Selector
+  if (expSelect) {
+    expSelect.addEventListener('change', (e) => {
+      const mode = e.target.value;
+      if (mode === '0') {
+        voltageIEF = 2000.0;
+        runTime = 4.0;
+        sdsCurrent = 30.0;
+        gelPct = 12.0;
+      } else {
+        voltageIEF = 3200.0;
+        runTime = 6.0;
+        sdsCurrent = 35.0;
+        gelPct = 14.0;
+      }
+      if (inputVoltage) inputVoltage.value = voltageIEF.toFixed(0);
+      if (inputTime) inputTime.value = runTime.toFixed(1);
+      if (inputCurrent) inputCurrent.value = sdsCurrent.toFixed(1);
+      if (inputGel) inputGel.value = gelPct.toFixed(1);
+      syncFromInputs();
+      drawScene();
+    });
+  }
+
+  // Numbered Badge Drawer (Strictly canonical #10564b fill, #34d399 stroke, bold white number, zero text beside it)
+  function drawBadge(number, x, y) {
     ctx.save();
-    const ax = anchorXY.x, ay = anchorXY.y;
-    const bx = badgeXY.x, by = badgeXY.y;
-    const midX = (ax + bx) / 2;
-
-    ctx.beginPath();
-    ctx.moveTo(bx, by);
-    ctx.bezierCurveTo(midX, by, midX, ay, ax, ay);
-    ctx.strokeStyle = "#022c22";
-    ctx.lineWidth = 3.8;
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(bx, by);
-    ctx.bezierCurveTo(midX, by, midX, ay, ax, ay);
-    ctx.strokeStyle = "#34d399";
+    ctx.fillStyle = '#10564b';
+    ctx.strokeStyle = '#34d399';
     ctx.lineWidth = 2.0;
+    ctx.beginPath();
+    ctx.arc(x, y, 11, 0, Math.PI * 2);
+    ctx.fill();
     ctx.stroke();
 
-    ctx.beginPath();
-    ctx.arc(ax, ay, 3.8, 0, Math.PI * 2);
-    ctx.fillStyle = "#34d399";
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(bx, by, 11.0, 0, Math.PI * 2);
-    ctx.fillStyle = "#10564b";
-    ctx.fill();
-    ctx.strokeStyle = "#34d399";
-    ctx.lineWidth = 2.0;
-    ctx.stroke();
-
-    ctx.fillStyle = "#ffffff";
-    ctx.font = "bold 11px system-ui, -apple-system, Segoe UI, sans-serif";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(String(badgeNum), bx, by);
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(String(number), x, y);
     ctx.restore();
   }
 
-
-  function solveSim() {
-    const L_cm = 12.0;
-    const eField = state.volt / L_cm; // V/cm
-    const sieveFactor = Math.exp(-0.52 * (state.gelc - 0.6));
-    const sizeFactorTarget = Math.max(0.18, 1.28 - 0.28 * Math.log10(state.bp));
-    const sizeFactor200 = Math.max(0.18, 1.28 - 0.28 * Math.log10(200));
-    const mobTarget = 3.2e-4 * sieveFactor * sizeFactorTarget; // cm^2/(V·s)
-    const dTargetMm = Math.min(82.0, eField * (state.time / 60.0) * 8.5 * sieveFactor * sizeFactorTarget);
-    const d200Mm = Math.min(86.0, eField * (state.time / 60.0) * 8.5 * sieveFactor * sizeFactor200);
-    const rf = d200Mm > 0.1 ? Math.min(0.99, dTargetMm / d200Mm) : 0.0;
-    return { eField, mobTarget, dTargetMm, d200Mm, rf, sieveFactor };
-  }
-
-  function updateLiveReadingsOnly() {
-    const res = solveSim();
-    setR("rv_efield", `${res.eField.toFixed(2)} V/cm`);
-    setR("rv_mob", `${(res.mobTarget * 1e4).toFixed(2)} × 10⁻⁴ cm²/V·s`);
-    setR("rv_d1000", `${res.dTargetMm.toFixed(1)} mm`);
-    setR("rv_d200", `${res.d200Mm.toFixed(1)} mm`);
-    setR("rv_rf", `${res.rf.toFixed(2)}`);
-  }
-
-  function buildObservationRow() {
-    const res = solveSim();
-    return [
-      `#${trialNum}`,
-      `${state.volt.toFixed(0)} V`,
-      `${state.gelc.toFixed(1)} %`,
-      `${state.time.toFixed(0)} min`,
-      `${state.bp.toFixed(0)} bp`,
-      `<strong>${res.dTargetMm.toFixed(1)} mm</strong>`
-    ];
-  }
-
-  function renderFrameElements(ctx, B, tSec) {
-    const res = solveSim();
-    const tx = 185, ty = 135, tw = 310, th = 240;
-
-    // STEP 1: Submarine Buffer Tank Filled with 1x TAE Buffer + Badge 1
-    if (B.isStepVisible(1)) {
-      const p1 = B.getStepProgress(1);
-      ctx.save();
-      ctx.globalAlpha = p1;
-      ctx.translate(0, (1 - p1) * 25);
-
-      ctx.fillStyle = "rgba(15, 23, 42, 0.78)";
-      ctx.strokeStyle = "#94a3b8";
-      ctx.lineWidth = 2.4;
-      ctx.beginPath();
-      ctx.roundRect(tx, ty, tw, th, 10);
-      ctx.fill();
-      ctx.stroke();
-
-      // TAE Running Buffer Fill
-      ctx.fillStyle = "rgba(56, 189, 248, 0.16)";
-      ctx.fillRect(tx + 6, ty + 6, tw - 12, th - 12);
-      ctx.restore();
-
-      drawCanonicalBadgeOnly(ctx, 1, { x: tx, y: ty + 185 }, { x: 118, y: 320 });
-    }
-
-    // STEP 2: Cast Agarose/PAGE Gel Slab & 4 Sample Loading Wells + Badge 2
-    if (B.isStepVisible(2)) {
-      const p2 = B.getStepProgress(2);
-      ctx.save();
-      ctx.globalAlpha = p2;
-
-      const gx = tx + 35, gy = ty + 32, gw = tw - 70, gh = th - 64;
-      ctx.fillStyle = "rgba(203, 213, 225, 0.22)";
-      ctx.strokeStyle = "#cbd5e1";
-      ctx.lineWidth = 1.8;
-      ctx.fillRect(gx, gy, gw, gh);
-      ctx.strokeRect(gx, gy, gw, gh);
-
-      // 4 Rectangular Sample Wells near Cathode end (top of gel)
-      for (let w = 0; w < 4; w++) {
-        const wx = gx + 22 + w * 54;
-        ctx.fillStyle = "#0f172a";
-        ctx.strokeStyle = "#38bdf8";
-        ctx.lineWidth = 1.4;
-        ctx.fillRect(wx, gy + 12, 34, 10);
-        ctx.strokeRect(wx, gy + 12, 34, 10);
-      }
-
-      // Migrating Fluorescent DNA/Protein Bands inside Gel Lanes!
-      const maxPx = gh - 38;
-      const ladderBps = [3000, 1500, 750, 250];
-      for (let lane = 0; lane < 4; lane++) {
-        const lx = gx + 24 + lane * 54;
-        if (lane === 0) {
-          // Lane 1: Molecular Weight Ladder (4 reference bands)
-          ladderBps.forEach((lbp) => {
-            const sf = Math.max(0.18, 1.28 - 0.28 * Math.log10(lbp));
-            const distMm = Math.min(86.0, res.eField * (state.time / 60.0) * 8.5 * res.sieveFactor * sf);
-            const by = gy + 24 + (distMm / 88.0) * maxPx;
-            ctx.fillStyle = "#38bdf8";
-            ctx.fillRect(lx, by, 30, 4);
-          });
-        } else {
-          // Lanes 2-4: Target Sample Fragment Band (state.bp)
-          const by = gy + 24 + (res.dTargetMm / 88.0) * maxPx;
-          ctx.fillStyle = lane === 1 ? "#f472b6" : "#34d399";
-          ctx.fillRect(lx, by, 30, 5);
-        }
-      }
-      ctx.restore();
-
-      drawCanonicalBadgeOnly(ctx, 2, { x: tx + 35, y: ty + 95 }, { x: 118, y: 230 });
-    }
-
-    // STEP 3: Cathode (−, Top) & Anode (+, Bottom) Platinum Electrodes + Badge 3
-    if (B.isStepVisible(3)) {
-      const p3 = B.getStepProgress(3);
-      ctx.save();
-      ctx.globalAlpha = p3;
-
-      // Top Cathode (−) Wire
-      ctx.strokeStyle = "#94a3b8";
-      ctx.lineWidth = 3;
-      ctx.beginPath();
-      ctx.moveTo(tx + 20, ty + 16);
-      ctx.lineTo(tx + tw - 20, ty + 16);
-      ctx.stroke();
-
-      // Bottom Anode (+) Wire
-      ctx.strokeStyle = "#ef4444";
-      ctx.lineWidth = 3;
-      ctx.beginPath();
-      ctx.moveTo(tx + 20, ty + th - 16);
-      ctx.lineTo(tx + tw - 20, ty + th - 16);
-      ctx.stroke();
-      ctx.restore();
-
-      drawCanonicalBadgeOnly(ctx, 3, { x: tx + tw - 20, y: ty + th - 16 }, { x: 565, y: 360 });
-    }
-
-    // STEP 4: Precision Micropipette Tip Positioned Over Sample Well #2 + Badge 4
-    if (B.isStepVisible(4)) {
-      const p4 = B.getStepProgress(4);
-      ctx.save();
-      ctx.globalAlpha = p4;
-      ctx.translate(0, (1 - p4) * -30);
-
-      const px = tx + 35 + 22 + 54 + 17; // Center of Well #2 (34px wide -> tip is 6px wide = zero collision!)
-      const wellTopY = ty + 32 + 12;
-
-      // Micropipette Barrel & Tapered Tip Snapped into Well #2
-      ctx.fillStyle = "#334155";
-      ctx.strokeStyle = "#cbd5e1";
-      ctx.lineWidth = 1.6;
-      ctx.fillRect(px - 8, 52, 16, 56);
-      ctx.strokeRect(px - 8, 52, 16, 56);
-
-      ctx.beginPath();
-      ctx.moveTo(px - 6, 108);
-      ctx.lineTo(px + 6, 108);
-      ctx.lineTo(px + 2, wellTopY + 3);
-      ctx.lineTo(px - 2, wellTopY + 3);
-      ctx.closePath();
-      ctx.fillStyle = "rgba(244, 114, 182, 0.85)";
-      ctx.fill();
-      ctx.restore();
-
-      drawCanonicalBadgeOnly(ctx, 4, { x: tx + 35 + 22 + 54 + 25, y: 80 }, { x: 425, y: 78 });
-    }
-
-    // STEP 5: Regulated High-Voltage DC Power Supply Connected to Electrodes + Badge 5
-    if (B.isStepVisible(5)) {
-      const p5 = B.getStepProgress(5);
-      ctx.save();
-      ctx.globalAlpha = p5;
-      ctx.translate((1 - p5) * 30, 0);
-
-      // Power Leads from Tank Electrodes to DC Supply Box at Right (x=545..665, y=185..275)
-      ctx.strokeStyle = "#64748b";
-      ctx.lineWidth = 2.2;
-      ctx.beginPath();
-      ctx.moveTo(tx + tw - 20, ty + 16);
-      ctx.lineTo(595, ty + 16);
-      ctx.lineTo(595, 185);
-      ctx.stroke();
-
-      ctx.strokeStyle = "#ef4444";
-      ctx.beginPath();
-      ctx.moveTo(tx + tw - 20, ty + th - 16);
-      ctx.lineTo(625, ty + th - 16);
-      ctx.lineTo(625, 275);
-      ctx.stroke();
-
-      // High-Voltage DC Supply Box
-      ctx.fillStyle = "#0f172a";
-      ctx.strokeStyle = "#34d399";
-      ctx.lineWidth = 2.2;
-      ctx.beginPath();
-      ctx.roundRect(545, 185, 120, 90, 8);
-      ctx.fill();
-      ctx.stroke();
-      ctx.restore();
-
-      drawCanonicalBadgeOnly(ctx, 5, { x: 605, y: 185 }, { x: 605, y: 118 });
-    }
-  }
-
-
-  const btnRecordEl = document.querySelector("#btnRecord");
-  if (btnRecordEl) {
-    btnRecordEl.dataset.ctWired = "1";
-    btnRecordEl.addEventListener("click", () => {
-      if (window.ClassTurnUniversalBridge.completedStep < window.ClassTurnUniversalBridge.totalSteps) {
-        window.ClassTurnUniversalBridge.triggerWarning(`Out of sequence! Please complete [➔ Step ${window.ClassTurnUniversalBridge.completedStep + 1}] first before recording.`);
-        return;
-      }
-      trialNum += 1;
-      const cols = buildObservationRow();
-      const tr = document.createElement("tr");
-      tr.innerHTML = cols.map(c => `<td>${c}</td>`).join("");
-      tbody.appendChild(tr);
-    });
-  }
-
-  const btnResetEl = document.querySelector("#btnReset");
-  if (btnResetEl) {
-    btnResetEl.addEventListener("click", () => {
-      SIM_SPEC.controls.forEach(c => {
-        state[c.id] = c.value;
-        const inp = document.querySelector("#ctrl_" + c.id);
-        if (inp) inp.value = c.value;
-      });
-      tbody.innerHTML = "";
-      trialNum = 0;
-      window.ClassTurnUniversalBridge.resetSteps();
-      updateLiveReadingsOnly();
-    });
-  }
-
-  const btnStepEl = document.querySelector("#btnStep");
-  if (btnStepEl) {
-    btnStepEl.addEventListener("click", () => {
-      const nextStep = Math.min(window.ClassTurnUniversalBridge.totalSteps, window.ClassTurnUniversalBridge.completedStep + 1);
-      window.ClassTurnUniversalBridge.handleStepClick(nextStep);
-    });
-  }
-
-  const canvas = document.querySelector("#simCanvas");
-  const ctx = canvas.getContext("2d");
-  let paused = false;
-
-  const btnToggleEl = document.querySelector("#btnToggle");
-  if (btnToggleEl) {
-    btnToggleEl.addEventListener("click", (e) => {
-      paused = !paused;
-      e.target.textContent = paused ? "Run" : "Pause";
-    });
-  }
-
-  function renderScene(nowMs) {
-    const tSec = (nowMs || 0) / 1000.0;
-    const B = window.ClassTurnUniversalBridge;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Dark radial studio background + bench strip
-    const bg = ctx.createRadialGradient(400, 250, 40, 400, 250, 460);
-    bg.addColorStop(0, "#131c2e");
-    bg.addColorStop(1, "#090d16");
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = "#1e293b";
-    ctx.fillRect(40, 435, 720, 55);
-    ctx.strokeStyle = "#475569";
-    ctx.lineWidth = 2;
+  // Style 2 Curvy Leader Line (Fixed badge position -> Anchor touch bead on physical component)
+  function drawCurvyLeader(bx, by, tx, ty) {
+    ctx.save();
+    // Prominent anchor touch bead (radius 4px) touching apparatus component
+    ctx.fillStyle = '#34d399';
     ctx.beginPath();
-    ctx.moveTo(40, 435);
-    ctx.lineTo(760, 435);
+    ctx.arc(tx, ty, 4, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 1.0;
     ctx.stroke();
 
-    renderFrameElements(ctx, B, paused ? 0 : tSec);
+    // Smooth cubic Bezier S-curve with 2.0px bold line weight
+    const dy = ty - by;
+    const c1x = bx;
+    const c1y = by + dy * 0.45;
+    const c2x = tx;
+    const c2y = ty - dy * 0.45;
 
-    requestAnimationFrame(renderScene);
+    ctx.strokeStyle = '#34d399';
+    ctx.lineWidth = 2.0;
+    ctx.beginPath();
+    ctx.moveTo(bx, by + (by < ty ? 11 : -11));
+    ctx.bezierCurveTo(c1x, c1y, c2x, c2y, tx, ty);
+    ctx.stroke();
+    ctx.restore();
   }
 
-  window.ClassTurnUniversalBridge.init();
-  updateLiveReadingsOnly();
-  requestAnimationFrame(renderScene);
-})();
-</script>
+  // Helper: Draw 3D Beveled Box with Solid Opaque Gradients and Strict Contrast Floor >= #1e293b
+  function drawBeveledBox(x, y, w, h, baseColor, highlightColor, shadowColor, radius = 6, borderWidth = 2.0) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.roundRect(x, y, w, h, radius);
+    const grad = ctx.createLinearGradient(x, y, x, y + h);
+    grad.addColorStop(0, highlightColor);
+    grad.addColorStop(0.12, baseColor);
+    grad.addColorStop(0.88, baseColor);
+    grad.addColorStop(1, shadowColor);
+    ctx.fillStyle = grad;
+    ctx.fill();
 
+    // Border outline: outer silhouette or internal border
+    ctx.strokeStyle = highlightColor;
+    ctx.lineWidth = borderWidth;
+    ctx.stroke();
+
+    // Specular top-rim highlight
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.22)';
+    ctx.lineWidth = 1.0;
+    ctx.beginPath();
+    ctx.roundRect(x + 1, y + 1, w - 2, Math.max(3, h * 0.25), Math.max(2, radius - 1));
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  // Helper: Draw Knurled Instrument Knob with Internal Details in Subdued Slate (1.0px)
+  function drawKnurledKnob(cx, cy, radius, rotation = 0) {
+    ctx.save();
+    // Outer knurled textured perimeter ring
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+    const knobGrad = ctx.createLinearGradient(cx - radius, cy - radius, cx + radius, cy + radius);
+    knobGrad.addColorStop(0, '#475569');
+    knobGrad.addColorStop(0.5, '#334155');
+    knobGrad.addColorStop(1, '#1e293b');
+    ctx.fillStyle = knobGrad;
+    ctx.fill();
+    ctx.strokeStyle = '#64748b';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+
+    // Grip notches in subdued slate (1.0px)
+    ctx.strokeStyle = '#64748b';
+    ctx.lineWidth = 1.0;
+    const notches = 12;
+    for (let i = 0; i < notches; i++) {
+      const angle = (i * Math.PI * 2) / notches;
+      const x1 = cx + Math.cos(angle) * (radius - 1);
+      const y1 = cy + Math.sin(angle) * (radius - 1);
+      const x2 = cx + Math.cos(angle) * (radius - 3.5);
+      const y2 = cy + Math.sin(angle) * (radius - 3.5);
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+    }
+
+    // Inner dial bevel (Contrast floor: #1e293b)
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius - 5, 0, Math.PI * 2);
+    ctx.fillStyle = '#1e293b';
+    ctx.fill();
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1.0;
+    ctx.stroke();
+
+    // Center brass pivot cap
+    const brassGrad = ctx.createRadialGradient(cx - 1, cy - 1, 0, cx, cy, 4);
+    brassGrad.addColorStop(0, '#fef08a');
+    brassGrad.addColorStop(0.4, '#d97706');
+    brassGrad.addColorStop(1, '#78350f');
+    ctx.beginPath();
+    ctx.arc(cx, cy, 4, 0, Math.PI * 2);
+    ctx.fillStyle = brassGrad;
+    ctx.fill();
+    ctx.strokeStyle = '#78350f';
+    ctx.lineWidth = 1.0;
+    ctx.stroke();
+
+    // Dynamic rotation indicator dot
+    const indX = cx + Math.cos(rotation) * (radius - 8);
+    const indY = cy + Math.sin(rotation) * (radius - 8);
+    ctx.fillStyle = '#38bdf8';
+    ctx.beginPath();
+    ctx.arc(indX, indY, 1.8, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  // Helper: Draw Dual Terminal Binding Post with Subdued Details (1.0px) & Contrast Floor >= #1e293b
+  function drawBindingPost(cx, cy, isPositive) {
+    ctx.save();
+    // Brass hex collar base
+    const brassHex = ctx.createLinearGradient(cx - 6, cy - 6, cx + 6, cy + 6);
+    brassHex.addColorStop(0, '#fef08a');
+    brassHex.addColorStop(0.5, '#d97706');
+    brassHex.addColorStop(1, '#92400e');
+    ctx.fillStyle = brassHex;
+    ctx.beginPath();
+    ctx.arc(cx, cy, 6, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = '#78350f';
+    ctx.lineWidth = 1.0;
+    ctx.stroke();
+
+    // Insulating cap (Crimson Red (+) or Obsidian Black (-), contrast floor >= #1e293b)
+    const capGrad = ctx.createRadialGradient(cx - 1, cy - 1, 0, cx, cy, 4);
+    if (isPositive) {
+      capGrad.addColorStop(0, '#f87171');
+      capGrad.addColorStop(0.6, '#dc2626');
+      capGrad.addColorStop(1, '#7f1d1d');
+    } else {
+      capGrad.addColorStop(0, '#475569');
+      capGrad.addColorStop(0.6, '#242f44');
+      capGrad.addColorStop(1, '#1e293b');
+    }
+    ctx.fillStyle = capGrad;
+    ctx.beginPath();
+    ctx.arc(cx, cy, 4, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = isPositive ? '#fca5a5' : '#64748b';
+    ctx.lineWidth = 1.0;
+    ctx.stroke();
+
+    // Center metallic conductor pin hole
+    ctx.fillStyle = '#fef08a';
+    ctx.beginPath();
+    ctx.arc(cx, cy, 1.5, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  // Helper: Draw Cassette Clamp Screw in Subdued Slate (1.0px - 1.2px)
+  function drawCassetteScrew(cx, cy) {
+    ctx.save();
+    // Clamp screw mounting bracket tab in subdued slate
+    ctx.fillStyle = '#242f44';
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1.0;
+    ctx.beginPath();
+    ctx.roundRect(cx - 7, cy - 6, 14, 12, 2);
+    ctx.fill();
+    ctx.stroke();
+
+    // Knurled thumb screw circular head
+    const screwGrad = ctx.createLinearGradient(cx - 5, cy - 5, cx + 5, cy + 5);
+    screwGrad.addColorStop(0, '#94a3b8');
+    screwGrad.addColorStop(0.5, '#475569');
+    screwGrad.addColorStop(1, '#1e293b');
+    ctx.fillStyle = screwGrad;
+    ctx.beginPath();
+    ctx.arc(cx, cy, 5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = '#64748b';
+    ctx.lineWidth = 1.0;
+    ctx.stroke();
+
+    // Cross-screw screwdriver slot
+    ctx.strokeStyle = '#334155';
+    ctx.lineWidth = 1.0;
+    ctx.beginPath();
+    ctx.moveTo(cx - 3, cy);
+    ctx.lineTo(cx + 3, cy);
+    ctx.moveTo(cx, cy - 3);
+    ctx.lineTo(cx, cy + 3);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  // Helper: Draw Glowing Electrical Connection Wire
+  function drawConnectingWire(x1, y1, x2, y2, color, pulse = 0) {
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2.0;
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    const midX = (x1 + x2) / 2;
+    ctx.bezierCurveTo(midX, y1 + 15, midX, y2 - 15, x2, y2);
+    ctx.stroke();
+
+    if (pulse > 0) {
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1.2;
+      ctx.setLineDash([4, 10]);
+      ctx.lineDashOffset = -clock * 25.0;
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  // Master Render Function with 4-Standard Visual Hierarchy & Layer Stacking
+  function drawScene() {
+    // Canvas background: rich dark laboratory theme #090d16
+    ctx.fillStyle = '#090d16';
+    ctx.fillRect(0, 0, 800, 500);
+
+    // Subtle dark bench grid
+    ctx.save();
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.025)';
+    ctx.lineWidth = 1;
+    for (let x = 20; x < 800; x += 40) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, 500);
+      ctx.stroke();
+    }
+    for (let y = 20; y < 500; y += 40) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(800, y);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // Active animation clock
+    const rockerOsc = Math.sin(clock * 2.5) * 5.0 * (Math.PI / 180.0);
+
+    // =============================================================
+    const _ctB = window.ClassTurnUniversalBridge;
+    const _setStepAlpha = (n) => { ctx.globalAlpha = (!_ctB || _ctB.isStepVisible(Math.min(n, _ctB.totalSteps || 5))) ? (_ctB ? _ctB.getStepProgress(Math.min(n, _ctB.totalSteps || 5)) : 1.0) : 0.0; };
+    _setStepAlpha(1); // APPARATUS 1: IPG Strip
+    // =============================================================
+    const ipgX = 65;
+    const ipgY = 78;
+    const ipgW = 160;
+    const ipgH = 50;
+
+    // Plastic GelBond backing holder: Outer silhouette 2.2px, contrast floor >= #1e293b
+    drawBeveledBox(ipgX, ipgY, ipgW, ipgH, '#242f44', '#38bdf8', '#1e293b', 6, 2.2);
+
+    // Polyacrylamide gel matrix: 100% SOLID vivid continuous pH gradient ribbon (pH 3 to 10)
+    const gelX = ipgX + 11;
+    const gelY = ipgY + 12;
+    const gelW = ipgW - 22;
+    const gelH = ipgH - 24;
+
+    const ipgGrad = ctx.createLinearGradient(gelX, gelY, gelX + gelW, gelY);
+    ipgGrad.addColorStop(0.00, '#ef4444');  // pH 3 (Acidic, Anode +)
+    ipgGrad.addColorStop(0.16, '#f97316');  // pH 4
+    ipgGrad.addColorStop(0.33, '#f59e0b');  // pH 5
+    ipgGrad.addColorStop(0.50, '#eab308');  // pH 6
+    ipgGrad.addColorStop(0.64, '#10b981');  // pH 7 (Neutral)
+    ipgGrad.addColorStop(0.78, '#06b6d4');  // pH 8
+    ipgGrad.addColorStop(0.90, '#3b82f6');  // pH 9
+    ipgGrad.addColorStop(1.00, '#8b5cf6');  // pH 10 (Basic, Cathode -)
+
+    ctx.save();
+    ctx.fillStyle = ipgGrad;
+    ctx.beginPath();
+    ctx.roundRect(gelX, gelY, gelW, gelH, 3);
+    ctx.fill();
+
+    // Internal detail outline: reduced to 1.0px in subdued slate (#475569)
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1.0;
+    ctx.stroke();
+
+    // Glossy specular highlight ribbon along top edge of IPG strip
+    const ipgGlint = ctx.createLinearGradient(gelX, gelY, gelX, gelY + gelH * 0.45);
+    ipgGlint.addColorStop(0, 'rgba(255, 255, 255, 0.45)');
+    ipgGlint.addColorStop(1, 'rgba(255, 255, 255, 0.0)');
+    ctx.fillStyle = ipgGlint;
+    ctx.beginPath();
+    ctx.roundRect(gelX + 1, gelY + 1, gelW - 2, gelH * 0.45, 2);
+    ctx.fill();
+
+    // Fine pH tick marks and millimeter divisions: 0.8px - 1.0px crisp lines in subdued slate/light silver
+    const totalPhUnits = 7; // pH 3 to 10
+    // Major tick marks (pH 3, 4, 5, 6, 7, 8, 9, 10): 1.0px crisp lines
+    for (let u = 0; u <= totalPhUnits; u++) {
+      const tx = gelX + (u / totalPhUnits) * gelW;
+      ctx.strokeStyle = '#cbd5e1';
+      ctx.lineWidth = 1.0;
+      ctx.beginPath();
+      ctx.moveTo(tx, gelY + 1);
+      ctx.lineTo(tx, gelY + 6);
+      ctx.stroke();
+
+      // Minor half-pH tick marks (pH 3.5, 4.5, 5.5, etc.): 0.8px crisp lines
+      if (u < totalPhUnits) {
+        const hx = tx + (0.5 / totalPhUnits) * gelW;
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.moveTo(hx, gelY + 1);
+        ctx.lineTo(hx, gelY + 4);
+        ctx.stroke();
+
+        // Sub-minor millimeter divisions (0.1 increments): 0.8px in subdued slate
+        for (let sub = 1; sub <= 4; sub++) {
+          const sx1 = tx + (sub * 0.1 / totalPhUnits) * gelW;
+          const sx2 = hx + (sub * 0.1 / totalPhUnits) * gelW;
+          ctx.strokeStyle = '#64748b';
+          ctx.lineWidth = 0.8;
+          ctx.beginPath();
+          ctx.moveTo(sx1, gelY + 1);
+          ctx.lineTo(sx1, gelY + 2.5);
+          ctx.moveTo(sx2, gelY + 1);
+          ctx.lineTo(sx2, gelY + 2.5);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Focusing protein bands migrating toward pI equilibrium positions
+    // Protein pI: Ovomucoid 4.1, Ovalbumin 4.5, Ovomucin 4.7, Ovotransferrin 6.0, Lysozyme 9.3
+    const focusSharpness = Math.min(1.0, iefCompletion / 80.0);
+    const proteins = [
+      { name: 'Ovomucoid', piRel: 0.16, color: '#fca5a5', width: 14 - focusSharpness * 10 },
+      { name: 'Ovalbumin', piRel: 0.22, color: '#fed7aa', width: 20 - focusSharpness * 15 },
+      { name: 'Ovomucin', piRel: 0.25, color: '#fef08a', width: 12 - focusSharpness * 8 },
+      { name: 'Ovotransferrin', piRel: 0.43, color: '#a7f3d0', width: 16 - focusSharpness * 12 },
+      { name: 'Lysozyme', piRel: 0.90, color: '#bfdbfe', width: 12 - focusSharpness * 9 }
+    ];
+
+    proteins.forEach(p => {
+      const bandX = gelX + p.piRel * gelW;
+      const bGrad = ctx.createLinearGradient(bandX - p.width, gelY, bandX + p.width, gelY);
+      bGrad.addColorStop(0, 'rgba(255, 255, 255, 0)');
+      bGrad.addColorStop(0.5, p.color);
+      bGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      ctx.fillStyle = bGrad;
+      ctx.fillRect(bandX - p.width / 2, gelY, p.width, gelH);
+    });
+
+    // Platinum contact pads at strip extremities
+    ctx.fillStyle = '#cbd5e1';
+    ctx.fillRect(gelX - 3, gelY + 2, 4, gelH - 4);
+    ctx.fillRect(gelX + gelW - 1, gelY + 2, 4, gelH - 4);
+    ctx.restore();
+
+    // =============================================================
+    _setStepAlpha(2); // APPARATUS 2: Focusing Tray
+    // =============================================================
+    const trayX = 65;
+    const trayY = 154;
+    const trayW = 160;
+    const trayH = 98;
+
+    // Outer instrument chassis: Outer silhouette 2.2px (#64748b), contrast floor >= #1e293b
+    drawBeveledBox(trayX, trayY, trayW, trayH, '#242f44', '#64748b', '#1e293b', 8, 2.2);
+
+    // Cooling Plate: 100% SOLID opaque multi-stop metallic ceramic gradient (alpha = 1.0)
+    const coolX = trayX + 8;
+    const coolY = trayY + 8;
+    const coolW = trayW - 16;
+    const coolH = 38;
+
+    const coolGrad = ctx.createLinearGradient(coolX, coolY, coolX, coolY + coolH);
+    coolGrad.addColorStop(0.0, '#475569');
+    coolGrad.addColorStop(0.2, '#334155');
+    coolGrad.addColorStop(0.8, '#242f44');
+    coolGrad.addColorStop(1.0, '#1e293b');
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.roundRect(coolX, coolY, coolW, coolH, 4);
+    ctx.fillStyle = coolGrad;
+    ctx.fill();
+
+    // Cooling plate internal border in subdued slate (1.2px)
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+
+    // Cooling fin grid: 1.0px in subdued slate (#475569), NOT glowing cyan
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1.0;
+    for (let fx = coolX + 6; fx < coolX + coolW - 6; fx += 10) {
+      ctx.beginPath();
+      ctx.moveTo(fx, coolY + 2);
+      ctx.lineTo(fx, coolY + coolH - 2);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // Recessed strip channel on cooling plate: Solid #1e293b with subdued slate border (1.0px)
+    const chanX = coolX + 5;
+    const chanY = coolY + 5;
+    const chanW = coolW - 10;
+    const chanH = coolH - 10;
+
+    ctx.save();
+    ctx.fillStyle = '#1e293b';
+    ctx.beginPath();
+    ctx.roundRect(chanX, chanY, chanW, chanH, 3);
+    ctx.fill();
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1.0;
+    ctx.stroke();
+
+    // Mineral oil sheen reflection
+    const oilGrad = ctx.createLinearGradient(chanX, chanY, chanX, chanY + chanH);
+    oilGrad.addColorStop(0, 'rgba(255, 255, 255, 0.15)');
+    oilGrad.addColorStop(0.5, 'rgba(56, 189, 248, 0.08)');
+    oilGrad.addColorStop(1, 'rgba(30, 41, 59, 0.3)');
+    ctx.fillStyle = oilGrad;
+    ctx.fill();
+
+    // Electrode Contact Pins: Internal details in subdued slate / brass (1.0px - 1.2px)
+    // Left Anode Pin (+)
+    const pinL_X = chanX + 8;
+    const pinL_Y = chanY + chanH / 2;
+    drawBindingPost(pinL_X, pinL_Y, true);
+
+    // Anode contact pin point pressing onto strip contact pad (1.2px)
+    ctx.strokeStyle = '#d97706';
+    ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    ctx.moveTo(pinL_X + 4, pinL_Y);
+    ctx.lineTo(pinL_X + 12, pinL_Y);
+    ctx.stroke();
+
+    // Right Cathode Pin (-)
+    const pinR_X = chanX + chanW - 8;
+    const pinR_Y = chanY + chanH / 2;
+    drawBindingPost(pinR_X, pinR_Y, false);
+
+    // Cathode contact pin point pressing onto strip contact pad (1.2px)
+    ctx.strokeStyle = '#d97706';
+    ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    ctx.moveTo(pinR_X - 4, pinR_Y);
+    ctx.lineTo(pinR_X - 12, pinR_Y);
+    ctx.stroke();
+
+    // Micro ionic shimmer under high voltage
+    if (voltageIEF > 0 && isRunning) {
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.55)';
+      ctx.lineWidth = 1.2;
+      ctx.setLineDash([3, 6]);
+      ctx.lineDashOffset = -clock * 15.0;
+      ctx.beginPath();
+      ctx.moveTo(pinL_X + 13, pinL_Y);
+      ctx.lineTo(pinR_X - 13, pinR_Y);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+    ctx.restore();
+
+    // Power Pack Sub-Enclosure: 100% SOLID opaque metallic body (alpha = 1.0), Outer silhouette 2.0px (#60a5fa)
+    const packX = trayX + 8;
+    const packY = trayY + 52;
+    const packW = trayW - 16;
+    const packH = 38;
+
+    const packGrad = ctx.createLinearGradient(packX, packY, packX, packY + packH);
+    packGrad.addColorStop(0.0, '#334155');
+    packGrad.addColorStop(0.18, '#242f44');
+    packGrad.addColorStop(0.82, '#242f44');
+    packGrad.addColorStop(1.0, '#1e293b');
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.roundRect(packX, packY, packW, packH, 5);
+    ctx.fillStyle = packGrad;
+    ctx.fill();
+
+    // Outer silhouette border: 2.0px (#60a5fa)
+    ctx.strokeStyle = '#60a5fa';
+    ctx.lineWidth = 2.0;
+    ctx.stroke();
+
+    // Digital LED display screen: Contrast floor >= #1e293b, inner border 1.0px subdued
+    const scrX = packX + 8;
+    const scrY = packY + 7;
+    const scrW = 56;
+    const scrH = 24;
+
+    ctx.fillStyle = '#1b322b';
+    ctx.beginPath();
+    ctx.roundRect(scrX, scrY, scrW, scrH, 3);
+    ctx.fill();
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1.0;
+    ctx.stroke();
+
+    // Digital LED bar graph segment display indicating voltage level
+    const voltSegments = Math.round(((voltageIEF - 500.0) / 3000.0) * 8);
+    for (let s = 0; s < 8; s++) {
+      const segX = scrX + 4 + s * 6;
+      ctx.fillStyle = s < voltSegments ? '#10b981' : 'rgba(16, 185, 129, 0.15)';
+      ctx.fillRect(segX, scrY + 5, 4, scrH - 10);
+    }
+    ctx.restore();
+
+    // Voltage Adjustment Knurled Rotary Knob: Internal details in subdued slate (1.0px)
+    const knobX = packX + packW - 24;
+    const knobY = packY + packH / 2;
+    const knobRot = ((voltageIEF - 500.0) / 3000.0) * Math.PI * 1.5 - Math.PI * 0.75;
+    drawKnurledKnob(knobX, knobY, 12, knobRot);
+
+    // Dual High-Voltage Terminal Posts on power pack casing
+    drawBindingPost(packX + 76, packY + 12, true);
+    drawBindingPost(packX + 94, packY + 12, false);
+
+    // Power Pack High-Voltage Status LED
+    ctx.save();
+    ctx.fillStyle = isRunning ? '#10b981' : '#64748b';
+    ctx.shadowColor = isRunning ? '#10b981' : 'transparent';
+    ctx.shadowBlur = isRunning ? 8 : 0;
+    ctx.beginPath();
+    ctx.arc(packX + 85, packY + 28, 3.5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.restore();
+
+    // =============================================================
+    _setStepAlpha(3); // APPARATUS 3: Slow Rocker Platform
+    // =============================================================
+    const rockerBaseX = 65;
+    const rockerBaseY = 280;
+    const rockerBaseW = 160;
+    const rockerBaseH = 125;
+
+    // Rocker base unit: Outer silhouette 2.2px (#64748b), contrast floor >= #1e293b
+    drawBeveledBox(rockerBaseX, rockerBaseY + 45, rockerBaseW, rockerBaseH - 45, '#242f44', '#64748b', '#1e293b', 8, 2.2);
+
+    // Rocker Speed Adjustment Knob on base unit
+    drawKnurledKnob(rockerBaseX + 30, rockerBaseY + 88, 10, clock * 0.8);
+
+    // Rocker Power Switch with illuminated indicator (Contrast floor: #1e293b)
+    ctx.save();
+    ctx.fillStyle = '#1e293b';
+    ctx.beginPath();
+    ctx.roundRect(rockerBaseX + rockerBaseW - 40, rockerBaseY + 78, 22, 14, 2);
+    ctx.fill();
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1.0;
+    ctx.stroke();
+
+    ctx.fillStyle = '#10b981';
+    ctx.shadowColor = '#10b981';
+    ctx.shadowBlur = 6;
+    ctx.fillRect(rockerBaseX + rockerBaseW - 38, rockerBaseY + 80, 8, 10);
+    ctx.shadowBlur = 0;
+
+    // Motor drive center hub with brass cap (Contrast floor: #1e293b)
+    const hubX = rockerBaseX + rockerBaseW / 2;
+    const hubY = rockerBaseY + 45;
+    ctx.fillStyle = '#334155';
+    ctx.beginPath();
+    ctx.arc(hubX, hubY, 11, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = '#64748b';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+
+    const hubBrass = ctx.createRadialGradient(hubX - 1, hubY - 1, 0, hubX, hubY, 5);
+    hubBrass.addColorStop(0, '#fef08a');
+    hubBrass.addColorStop(0.5, '#d97706');
+    hubBrass.addColorStop(1, '#78350f');
+    ctx.fillStyle = hubBrass;
+    ctx.beginPath();
+    ctx.arc(hubX, hubY, 5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+
+    // Rocking tilting platform (rotates around hubX, hubY)
+    ctx.save();
+    ctx.translate(hubX, hubY);
+    ctx.rotate(rockerOsc);
+
+    // Platform tray: Outer silhouette 2.0px (#2dd4bf), contrast floor >= #1e293b
+    const platW = 150;
+    const platH = 34;
+    drawBeveledBox(-platW / 2, -platH - 2, platW, platH, '#134e42', '#2dd4bf', '#1e293b', 5, 2.0);
+
+    // Multi-well equilibration incubation trough containing blue DTT/SDS solution
+    const troughW = platW - 16;
+    const troughH = platH - 12;
+    ctx.fillStyle = '#1e293b';
+    ctx.beginPath();
+    ctx.roundRect(-troughW / 2, -platH + 4, troughW, troughH, 3);
+    ctx.fill();
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1.0;
+    ctx.stroke();
+
+    // Fluid meniscus wash animation
+    const fluidX = -troughW / 2 + 3;
+    const fluidY = -platH + 7;
+    const fluidW = troughW - 6;
+    const fluidH = troughH - 6;
+
+    const fluidGrad = ctx.createLinearGradient(fluidX, fluidY, fluidX, fluidY + fluidH);
+    fluidGrad.addColorStop(0, 'rgba(56, 189, 248, 0.5)');
+    fluidGrad.addColorStop(1, 'rgba(2, 132, 199, 0.85)');
+    ctx.fillStyle = fluidGrad;
+    ctx.fillRect(fluidX, fluidY, fluidW, fluidH);
+
+    // Immersed IPG strip inside equilibration buffer
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.55)';
+    ctx.fillRect(-troughW / 2 + 10, -platH + 11, troughW - 20, 5);
+
+    ctx.restore();
+
+    // =============================================================
+    _setStepAlpha(4); // APPARATUS 4: Vertical SDS-PAGE Gel Plate
+    // LAYER STACKING:
+    // 1. Cassette Holder / Buffer Tank
+    // 2. Solid Gel Slab (dense deep-indigo, 0.85 opacity, diagonal glass sheen)
+    // 3. Protein Spots & Tracking Dye
+    // 4. Electrodes, Clamp Screws & Contact Pins
+    // 5. Badges & Curvy Leaders (Topmost)
+    // =============================================================
+    const sdsX = 265;
+    const sdsY = 68;
+    const sdsW = 222;
+    const sdsH = 348;
+
+    // --- LAYER 1: CASSETTE HOLDER & BUFFER TANK ---
+    // Outer acrylic tank chamber: 3D depth, Outer silhouette 2.2px (#38bdf8), contrast floor >= #1e293b
+    const tankGrad = ctx.createLinearGradient(sdsX, sdsY, sdsX + sdsW, sdsY + sdsH);
+    tankGrad.addColorStop(0.0, '#243650');
+    tankGrad.addColorStop(0.18, '#1e293b');
+    tankGrad.addColorStop(0.82, '#1e293b');
+    tankGrad.addColorStop(1.0, '#243650');
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.roundRect(sdsX, sdsY, sdsW, sdsH, 10);
+    ctx.fillStyle = tankGrad;
+    ctx.fill();
+
+    // Outer silhouette border: 2.2px (#38bdf8)
+    ctx.strokeStyle = '#38bdf8';
+    ctx.lineWidth = 2.2;
+    ctx.stroke();
+
+    // Internal acrylic refraction wall: 1.0px in subdued slate (#475569)
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1.0;
+    ctx.beginPath();
+    ctx.roundRect(sdsX + 4, sdsY + 4, sdsW - 8, sdsH - 8, 8);
+    ctx.stroke();
+    ctx.restore();
+
+    // Upper buffer chamber casing
+    const upperY = sdsY + 12;
+    const upperH = 36;
+    drawBeveledBox(sdsX + 12, upperY, sdsW - 24, upperH, '#242f44', '#60a5fa', '#1e293b', 4, 1.2);
+
+    // Cassette Holder Glass Plate Frame: Outer frame 2.2px (#38bdf8)
+    const cassX = sdsX + 22;
+    const cassY = upperY + upperH + 8;
+    const cassW = sdsW - 44;
+    const cassH = sdsH - 110;
+    drawBeveledBox(cassX, cassY, cassW, cassH, '#1e3a5f', '#38bdf8', '#1e293b', 6, 2.2);
+
+    // --- LAYER 2: SOLID GEL SLAB ---
+    // Rich, dense deep-indigo slab (0.85 opacity), contrast floor >= #1e293b
+    const gelSlabX = cassX + 10;
+    const gelSlabY = cassY + 10;
+    const gelSlabW = cassW - 20;
+    const gelSlabH = cassH - 20;
+
+    const gelGrad = ctx.createLinearGradient(gelSlabX, gelSlabY, gelSlabX, gelSlabY + gelSlabH);
+    gelGrad.addColorStop(0.00, 'rgba(30, 27, 75, 0.88)');   // Deep dense indigo
+    gelGrad.addColorStop(0.28, 'rgba(49, 46, 129, 0.85)');  // Luminous royal indigo
+    gelGrad.addColorStop(0.70, 'rgba(30, 58, 138, 0.85)');  // Deep royal cobalt
+    gelGrad.addColorStop(1.00, 'rgba(30, 41, 59, 0.88)');   // Dense indigo base >= #1e293b
+
+    ctx.save();
+    ctx.fillStyle = gelGrad;
+    ctx.beginPath();
+    ctx.roundRect(gelSlabX, gelSlabY, gelSlabW, gelSlabH, 4);
+    ctx.fill();
+
+    // Internal gel slab border: 1.0px in subdued slate (#475569)
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1.0;
+    ctx.stroke();
+
+    // Diagonal glass sheen ribbons across the gel slab
+    const glassRibbon = ctx.createLinearGradient(gelSlabX, gelSlabY, gelSlabX + gelSlabW, gelSlabY + gelSlabH);
+    glassRibbon.addColorStop(0.0, 'rgba(255, 255, 255, 0.22)');
+    glassRibbon.addColorStop(0.25, 'rgba(255, 255, 255, 0.08)');
+    glassRibbon.addColorStop(0.40, 'rgba(255, 255, 255, 0.0)');
+    glassRibbon.addColorStop(0.65, 'rgba(255, 255, 255, 0.12)');
+    glassRibbon.addColorStop(0.80, 'rgba(255, 255, 255, 0.0)');
+    glassRibbon.addColorStop(1.0, 'rgba(255, 255, 255, 0.05)');
+    ctx.fillStyle = glassRibbon;
+    ctx.fill();
+
+    // Equilibrated IPG strip mounted horizontally at top of gel
+    const topStripH = 9;
+    const miniIpg = ctx.createLinearGradient(gelSlabX + 4, gelSlabY + 4, gelSlabX + gelSlabW - 4, gelSlabY + 4);
+    miniIpg.addColorStop(0, '#ef4444');
+    miniIpg.addColorStop(0.5, '#10b981');
+    miniIpg.addColorStop(1, '#3b82f6');
+    ctx.fillStyle = miniIpg;
+    ctx.fillRect(gelSlabX + 4, gelSlabY + 4, gelSlabW - 8, topStripH);
+
+    // Agarose sealing overlay with internal 1.0px subdued border
+    ctx.fillStyle = 'rgba(56, 189, 248, 0.35)';
+    ctx.fillRect(gelSlabX + 4, gelSlabY + 4 + topStripH, gelSlabW - 8, 3);
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1.0;
+    ctx.strokeRect(gelSlabX + 4, gelSlabY + 4, gelSlabW - 8, topStripH + 3);
+
+    // --- LAYER 3: PROTEIN SPOTS & TRACKING DYE ---
+    const dyeProgress = (dyeFrontCm / 10.0);
+    const dyeY = gelSlabY + 18 + dyeProgress * (gelSlabH - 35);
+
+    // Sharp blue tracking dye front line (Bromophenol Blue)
+    ctx.strokeStyle = '#38bdf8';
+    ctx.lineWidth = 2.0;
+    ctx.shadowColor = '#60a5fa';
+    ctx.shadowBlur = 8;
+    ctx.beginPath();
+    ctx.moveTo(gelSlabX + 6, dyeY);
+    ctx.lineTo(gelSlabX + gelSlabW - 6, dyeY);
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    // Migrating SDS protein bands in the resolving gel
+    // Higher MW stays near top, lower MW migrates closer to dye front
+    const gelProteins = [
+      { name: 'Ovomucin', mw: 150, yRel: 0.12, xRel: 0.25, width: 22 },
+      { name: 'Ovotransferrin', mw: 76, yRel: 0.28, xRel: 0.45, width: 28 },
+      { name: 'Ovalbumin', mw: 45, yRel: 0.50, xRel: 0.22, width: 38 },
+      { name: 'Ovomucoid', mw: 28, yRel: 0.68, xRel: 0.18, width: 24 },
+      { name: 'Lysozyme', mw: 14.3, yRel: 0.86, xRel: 0.88, width: 20 }
+    ];
+
+    gelProteins.forEach(gp => {
+      const bandY = gelSlabY + 18 + gp.yRel * dyeProgress * (gelSlabH - 35);
+      const bandX = gelSlabX + gp.xRel * gelSlabW;
+      ctx.fillStyle = 'rgba(199, 210, 254, 0.75)';
+      ctx.fillRect(bandX - gp.width / 2, bandY - 2, gp.width, 4);
+    });
+
+    ctx.restore();
+
+    // --- LAYER 4: ELECTRODES, CLAMP SCREWS & CONTACT PINS ---
+    // Cassette Clamp Screws: 4 screws in subdued slate (1.0px)
+    drawCassetteScrew(cassX + 2, cassY + 35);
+    drawCassetteScrew(cassX + 2, cassY + cassH - 35);
+    drawCassetteScrew(cassX + cassW - 2, cassY + 35);
+    drawCassetteScrew(cassX + cassW - 2, cassY + cassH - 35);
+
+    // Cathode platinum wire in upper buffer chamber
+    ctx.save();
+    ctx.strokeStyle = '#cbd5e1';
+    ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    ctx.moveTo(sdsX + 22, upperY + upperH / 2);
+    ctx.lineTo(sdsX + sdsW - 22, upperY + upperH / 2);
+    ctx.stroke();
+
+    // Cathode effervescence micro-bubbles
+    if (isRunning && sdsCurrent > 0) {
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+      for (let b = 0; b < 10; b++) {
+        const bx = sdsX + 35 + (b * 16) + Math.sin(clock * 6 + b) * 2;
+        const by = upperY + upperH / 2 - 3 - ((clock * 25 + b * 5) % 12);
+        ctx.beginPath();
+        ctx.arc(bx, by, 1.2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    // Negative terminal binding post (-)
+    drawBindingPost(sdsX + 28, upperY + upperH / 2, false);
+    ctx.restore();
+
+    // Lower buffer chamber (Anode +)
+    const lowerY = cassY + cassH + 8;
+    const lowerH = sdsH - (lowerY - sdsY) - 12;
+    drawBeveledBox(sdsX + 12, lowerY, sdsW - 24, lowerH, '#242f44', '#60a5fa', '#1e293b', 4, 1.2);
+
+    // Anode platinum wire (+)
+    ctx.save();
+    ctx.strokeStyle = '#ef4444';
+    ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    ctx.moveTo(sdsX + 22, lowerY + lowerH / 2);
+    ctx.lineTo(sdsX + sdsW - 22, lowerY + lowerH / 2);
+    ctx.stroke();
+
+    // Positive terminal binding post (+)
+    drawBindingPost(sdsX + sdsW - 28, lowerY + lowerH / 2, true);
+
+    // Anode effervescence micro-bubbles
+    if (isRunning && sdsCurrent > 0) {
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+      for (let b = 0; b < 10; b++) {
+        const bx = sdsX + 35 + (b * 16) + Math.sin(clock * 5 + b) * 2;
+        const by = lowerY + lowerH / 2 - 3 - ((clock * 20 + b * 4) % 10);
+        ctx.beginPath();
+        ctx.arc(bx, by, 1.2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    ctx.restore();
+
+    // =============================================================
+    _setStepAlpha(5); // APPARATUS 5: Gel Doc Imaging Chamber
+    // =============================================================
+    const docX = 530;
+    const docY = 68;
+    const docW = 226;
+    const docH = 348;
+
+    // Darkroom cabinet chassis: Outer silhouette 2.2px (#34d399), contrast floor >= #1e293b
+    drawBeveledBox(docX, docY, docW, docH, '#134e42', '#34d399', '#1e293b', 10, 2.2);
+
+    // Front door hinges and handle in satin chrome, internal border 1.0px subdued slate
+    ctx.save();
+    ctx.fillStyle = '#64748b';
+    ctx.strokeStyle = '#475569';
+    ctx.lineWidth = 1.0;
+    ctx.fillRect(docX + 6, docY + 40, 4, 16);
+    ctx.strokeRect(docX + 6, docY + 40, 4, 16);
+    ctx.fillRect(docX + 6, docY + docH - 56, 4, 16);
+    ctx.strokeRect(docX + 6, docY + docH - 56, 4, 16);
+
+    // Satin door handle
+    ctx.beginPath();
+    ctx.roundRect(docX + docW - 12, docY + docH / 2 - 20, 6, 40, 3);
+    ctx.fillStyle = '#94a3b8';
+    ctx.fill();
+    ctx.stroke();
+    ctx.restore();
+
+    // Camera optical lens turret at cabinet top
+    const camX = docX + docW / 2;
+    const camY = docY + 18;
+    ctx.save();
+    ctx.fillStyle = '#242f44';
+    ctx.beginPath();
+    ctx.arc(camX, camY, 15, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = '#34d399';
+    ctx.lineWidth = 2.0;
+    ctx.stroke();
+
+    // Knurled aperture ring on camera lens in subdued slate (0.8px)
+    ctx.strokeStyle = '#64748b';
+    ctx.lineWidth = 0.8;
+    for (let a = 0; a < 8; a++) {
+      const ang = (a * Math.PI * 2) / 8;
+      ctx.beginPath();
+      ctx.moveTo(camX + Math.cos(ang) * 12, camY + Math.sin(ang) * 12);
+      ctx.lineTo(camX + Math.cos(ang) * 14.5, camY + Math.sin(ang) * 14.5);
+      ctx.stroke();
+    }
+
+    // Camera optical glass lens reflection
+    ctx.fillStyle = '#165b4c';
+    ctx.beginPath();
+    ctx.arc(camX, camY, 9, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.45)';
+    ctx.beginPath();
+    ctx.arc(camX - 3, camY - 3, 3, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+
+    // UV / Blue-light Transilluminator Bed Window: Outer border 2.0px (#34d399), contrast floor >= #1e293b
+    const winX = docX + 16;
+    const winY = docY + 44;
+    const winW = docW - 32;
+    const winH = docH - 62;
+
+    drawBeveledBox(winX, winY, winW, winH, '#14382c', '#34d399', '#1e293b', 6, 2.0);
+
+    // Glowing transilluminator surface (UV / Blue-light glow)
+    const uvGrad = ctx.createRadialGradient(winX + winW / 2, winY + winH / 2, 10, winX + winW / 2, winY + winH / 2, winW * 0.7);
+    if (isTransilluminationOn) {
+      uvGrad.addColorStop(0, 'rgba(52, 211, 153, 0.28)');
+      uvGrad.addColorStop(0.6, 'rgba(16, 185, 129, 0.16)');
+      uvGrad.addColorStop(1, 'rgba(19, 78, 66, 0.5)');
+    } else {
+      uvGrad.addColorStop(0, 'rgba(255, 255, 255, 0.08)');
+      uvGrad.addColorStop(1, 'rgba(30, 41, 59, 0.6)');
+    }
+    ctx.save();
+    ctx.fillStyle = uvGrad;
+    ctx.fillRect(winX + 4, winY + 4, winW - 8, winH - 8);
+
+    // Coordinate grid overlay for 2D proteomic map
+    ctx.strokeStyle = 'rgba(52, 211, 153, 0.2)';
+    ctx.lineWidth = 0.8;
+    for (let gx = winX + 25; gx < winX + winW - 10; gx += 35) {
+      ctx.beginPath();
+      ctx.moveTo(gx, winY + 10);
+      ctx.lineTo(gx, winY + winH - 10);
+      ctx.stroke();
+    }
+    for (let gy = winY + 25; gy < winY + winH - 10; gy += 45) {
+      ctx.beginPath();
+      ctx.moveTo(winX + 10, gy);
+      ctx.lineTo(winX + winW - 10, gy);
+      ctx.stroke();
+    }
+
+    // THE 2D PROTEOMIC SPOTS OF EGG WHITE PROTEINS
+    // 1. Ovalbumin (~45 kDa, pI 4.5) - Dominant major spot (~54% of egg white)
+    // 2. Ovotransferrin / Conalbumin (~76 kDa, pI 6.0) (~12%)
+    // 3. Ovomucoid (~28 kDa, pI 4.1) (~11%)
+    // 4. Lysozyme (~14.3 kDa, pI 9.3) (~3.5%)
+    // 5. Ovomucin (~150 kDa, pI 4.7)
+    const eggSpots = [
+      { id: 'ovalbumin', pi: 4.5, mw: 45, xRel: 0.28, yRel: 0.52, rx: 16, ry: 10, opacity: 0.85 },
+      { id: 'ovotransferrin', pi: 6.0, mw: 76, xRel: 0.50, yRel: 0.32, rx: 12, ry: 8, opacity: 0.75 },
+      { id: 'ovomucoid', pi: 4.1, mw: 28, xRel: 0.20, yRel: 0.70, rx: 11, ry: 7, opacity: 0.70 },
+      { id: 'lysozyme', pi: 9.3, mw: 14.3, xRel: 0.86, yRel: 0.86, rx: 9, ry: 6, opacity: 0.65 },
+      { id: 'ovomucin', pi: 4.7, mw: 150, xRel: 0.32, yRel: 0.16, rx: 14, ry: 6, opacity: 0.55 }
+    ];
+
+    eggSpots.forEach((spot, idx) => {
+      if (idx >= spotsResolved) return;
+      const sx = winX + spot.xRel * winW;
+      const sy = winY + spot.yRel * winH;
+
+      const spotGrad = ctx.createRadialGradient(sx, sy, 0, sx, sy, spot.rx);
+      if (isTransilluminationOn) {
+        spotGrad.addColorStop(0, `rgba(52, 211, 153, ${spot.opacity})`);
+        spotGrad.addColorStop(0.5, `rgba(16, 185, 129, ${spot.opacity * 0.6})`);
+        spotGrad.addColorStop(1, 'rgba(5, 150, 105, 0)');
+      } else {
+        spotGrad.addColorStop(0, `rgba(37, 99, 235, ${spot.opacity * 0.9})`);
+        spotGrad.addColorStop(0.5, `rgba(59, 130, 246, ${spot.opacity * 0.5})`);
+        spotGrad.addColorStop(1, 'rgba(29, 78, 216, 0)');
+      }
+
+      ctx.fillStyle = spotGrad;
+      ctx.beginPath();
+      ctx.ellipse(sx, sy, spot.rx, spot.ry, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Spot focal crosshair
+      ctx.strokeStyle = isTransilluminationOn ? 'rgba(52, 211, 153, 0.45)' : 'rgba(147, 197, 253, 0.45)';
+      ctx.lineWidth = 0.8;
+      ctx.beginPath();
+      ctx.moveTo(sx - spot.rx - 3, sy);
+      ctx.lineTo(sx + spot.rx + 3, sy);
+      ctx.moveTo(sx, sy - spot.ry - 3);
+      ctx.lineTo(sx, sy + spot.ry + 3);
+      ctx.stroke();
+    });
+
+    ctx.restore();
+
+    // =============================================================
+    // INTER-COMPONENT CONNECTIONS (Wires & Beams)
+    // =============================================================
+    // Lead wire from Tray to SDS Cassette
+    drawConnectingWire(trayX + trayW, trayY + 30, sdsX, upperY + upperH / 2, 'rgba(56, 189, 248, 0.45)', 1);
+
+    // Optical beam from SDS Cassette to Gel Doc
+    ctx.save();
+    ctx.strokeStyle = 'rgba(52, 211, 153, 0.35)';
+    ctx.lineWidth = 2.0;
+    ctx.setLineDash([4, 8]);
+    ctx.lineDashOffset = -clock * 12.0;
+    ctx.beginPath();
+    ctx.moveTo(sdsX + sdsW, sdsY + sdsH / 2);
+    ctx.lineTo(docX, docY + docH / 2);
+    ctx.stroke();
+    ctx.restore();
+
+    // =============================================================
+    ctx.globalAlpha = 1.0;
+    // LAYER 5: NUMBERED BADGES & STYLE 2 CURVY LEADER LINES (TOPMOST)
+    // Badges 1-5 strictly in clean margin space, connected via drawCurvyLeader
+    // =============================================================
+    // Badge 1: IPG Strip (Left margin x: 30, y: 103) -> Touch bead at (ipgX, ipgY + ipgH / 2)
+    drawCurvyLeader(30, 103, ipgX, ipgY + ipgH / 2);
+    drawBadge(1, 30, 103);
+
+    // Badge 2: Focusing Tray (Left margin x: 30, y: 203) -> Touch bead at (trayX, trayY + trayH / 2)
+    drawCurvyLeader(30, 203, trayX, trayY + trayH / 2);
+    drawBadge(2, 30, 203);
+
+    // Badge 3: Slow Rocker (Left margin x: 30, y: 342) -> Touch bead at (rockerBaseX, rockerBaseY + 45)
+    drawCurvyLeader(30, 342, rockerBaseX, rockerBaseY + 45);
+    drawBadge(3, 30, 342);
+
+    // Badge 4: SDS-PAGE Plate (Top margin x: 248, y: 85) -> Touch bead at (sdsX, sdsY + 30)
+    drawCurvyLeader(248, 85, sdsX, sdsY + 30);
+    drawBadge(4, 248, 85);
+
+    // Badge 5: Gel Doc Imaging Chamber (Right margin x: 775, y: 85) -> Touch bead at (docX + docW, docY + 30)
+    drawCurvyLeader(775, 85, docX + docW, docY + 30);
+    drawBadge(5, 775, 85);
+  }
+
+  // 60 FPS Animation Loop
+  function animate() {
+    if (isRunning) {
+      clock += 0.025;
+      if (protocolRunning) {
+        if (clock > 9.0) {
+          protocolPhase = 4;
+          protocolRunning = false;
+        } else if (clock > 6.0) {
+          protocolPhase = 3;
+        } else if (clock > 3.0) {
+          protocolPhase = 2;
+        }
+      }
+      calculatePhysics();
+      drawScene();
+    }
+    animFrame = requestAnimationFrame(animate);
+  }
+
+  // Initial Boot
+  syncFromInputs();
+  drawScene();
+  animate();
+});
+  </script>
 </body>
 </html>

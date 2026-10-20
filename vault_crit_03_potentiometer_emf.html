@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClassTurn · Canonical Skeletal Legacy Layout</title>
+  <title>Potentiometer: Comparison of EMF &amp; Internal Resistance · ClassTurn Virtual Laboratory</title>
   <style>
 /* ==========================================================================
    CLASSTURN CANONICAL SKELETAL LEGACY LAYOUT (UNPOPULATED TEMPLATE)
@@ -782,8 +782,8 @@ button.is-clicked::after, button:focus-visible::after {
   <!-- ==================== TOP HEADER (64px LOCKED) ==================== -->
   <header>
     <div>
-      <p class="eyebrow" id="headerEyebrow">[ Curriculum Eyebrow · Subject & Grade ]</p>
-      <h1 id="headerTitle">[ Experiment Title & Phenomenon ]</h1>
+      <p class="eyebrow" id="headerEyebrow"><span data-source-paths="[&quot;/simulator/meta/eyebrow&quot;]">NCERT Class XII Physics · Current Electricity</span></p>
+      <h1 id="headerTitle"><span data-source-paths="[&quot;/simulator/meta/title&quot;]">Potentiometer: Comparison of EMF &amp; Internal Resistance</span></h1>
     </div>
     <div class="badge-bar">
       <button type="button" id="btnReportProblem">Report a problem</button>
@@ -803,24 +803,17 @@ button.is-clicked::after, button:focus-visible::after {
 
       <!-- APPARATUS LEGEND BANNER (LOCKED BELOW CANVAS VIEWPORT, ABOVE NOTEBOOK) -->
       <div class="apparatus-legend-banner" id="apparatusLegendBanner">
-        <div class="legend-pill"><span class="pill-num">1</span> <span class="pill-name">[ Apparatus Component 1 ]</span></div>
-        <div class="legend-pill"><span class="pill-num">2</span> <span class="pill-name">[ Apparatus Component 2 ]</span></div>
-        <div class="legend-pill"><span class="pill-num">3</span> <span class="pill-name">[ Apparatus Component 3 ]</span></div>
-        <div class="legend-pill"><span class="pill-num">4</span> <span class="pill-name">[ Apparatus Component 4 ]</span></div>
+<div class="legend-pill"><span class="pill-num">1</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/0/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/0/name&quot;]">Four-Wire Potentiometer Board</span></span></div>
+        <div class="legend-pill"><span class="pill-num">2</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/scene_simulation_spec/apparatus_elements/1/name&quot;]">Sliding Knife-Edge Jockey</span></span></div>
+        <div class="legend-pill"><span class="pill-num">3</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/2/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/2/name&quot;]">Centre-Zero Sensitive Galvanometer</span></span></div>
+        <div class="legend-pill"><span class="pill-num">4</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/3/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/3/name&quot;]">Driver Battery &amp; Rheostat</span></span></div>
+        <div class="legend-pill"><span class="pill-num">5</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/4/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/4/name&quot;]">Primary Cells &amp; Two-Way Key</span></span></div>
       </div>
 
       <h2 class="atlas-notebook-heading" id="notebookHeading">Observation notebook</h2>
       <div id="stageBottom" class="stage-bottom">
         <table class="atlas-table" id="observationTable">
-          <thead id="observationThead">
-            <tr>
-              <th>Trial #</th>
-              <th>[ Parameter A (unit) ]</th>
-              <th>[ Parameter B (unit) ]</th>
-              <th>[ Measured Output ]</th>
-              <th>[ Calculated Invariant ]</th>
-            </tr>
-          </thead>
+          <thead id="observationThead"><tr><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/0/header&quot;, &quot;/simulator/section_08_playback/observation_columns/0/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/0/unit&quot;]">Trial # <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>n</mi></mrow></math></span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/1/header&quot;, &quot;/simulator/section_08_playback/observation_columns/1/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/1/unit&quot;]">Cell Selected</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/2/header&quot;, &quot;/simulator/section_08_playback/observation_columns/2/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/2/unit&quot;]">Balancing Length (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">m</mi></mrow></math>)</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/3/header&quot;, &quot;/simulator/section_08_playback/observation_columns/3/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/3/unit&quot;]">Galvanometer Reading <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>θ</mi></mrow></math> (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">v</mi></mrow></math>)</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/4/header&quot;, &quot;/simulator/section_08_playback/observation_columns/4/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/4/unit&quot;]">EMF Ratio <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mfrac><mrow><msub><mi>E</mi><mrow><mn>1</mn></mrow></msub></mrow><mrow><msub><mi>E</mi><mrow><mn>2</mn></mrow></msub></mrow></mfrac></mrow></math></span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/5/header&quot;, &quot;/simulator/section_08_playback/observation_columns/5/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/5/unit&quot;]">Internal Resistance (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">Ω</mi></mrow></math>)</span></th></tr></thead>
           <tbody id="observationTbody">
             <!-- Blank until user clicks 'Record Observation' -->
           </tbody>
@@ -847,7 +840,7 @@ button.is-clicked::after, button:focus-visible::after {
         <div class="experiment-selector-box">
           <label for="experimentSelect">Choose experiment</label>
           <select id="experimentSelect" class="atlas-select">
-            <option value="">-- Choose experiment from syllabus --</option>
+<option value="0">Activity 1: Comparison of EMF of Two Cells (E1 vs E2)</option><option value="1">Activity 2: Determination of Internal Resistance (r)</option>
           </select>
         </div>
       </div>
@@ -855,45 +848,116 @@ button.is-clicked::after, button:focus-visible::after {
       <!-- 01 / Aim -->
       <section class="atlas-section" data-section="aim" id="sec-01-aim">
         <h2>01 / Aim</h2>
-        <p id="aimText" class="slot-placeholder">[ Aim statement will populate here from chosen experiment. ]</p>
+        <p id="aimText" style="line-height:1.5;"><span data-source-paths="[&quot;/simulator/section_01_aim/aim&quot;]">To compare the electromotive forces (EMF) of two primary cells and determine the internal resistance of a primary cell using a potentiometer.</span></p>
       </section>
 
       <!-- 02 / Apparatus -->
       <section class="atlas-section" data-section="apparatus" id="sec-02-apparatus">
         <h2>02 / Apparatus</h2>
         <ul id="apparatusList">
-          <li><span class="slot-placeholder">[ Apparatus bullet items will populate here from JSON data slot ]</span></li>
+<li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/0/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/0/name&quot;]">Four-Wire Potentiometer Board</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/0/specification&quot;]">400 cm uniform constantan wire with brass strip interconnects and 100 cm scale</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/0/role&quot;]">Provides uniform potential gradient along wire</span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/1/name&quot;]">Precision Sliding Jockey</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/1/specification&quot;]">Spring-loaded knife-edge contact with insulated handle</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/1/role&quot;]">Locates null balance position along wire</span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/2/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/2/name&quot;]">Centre-Zero Sensitive Galvanometer</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/2/specification&quot;]">±30 divisions, least count 1 div, high sensitivity (10 μA/div)</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/2/role&quot;]">Detects null condition where no current flows</span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/3/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/3/name&quot;]">Driver Battery &amp; Rheostat</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/3/specification&quot;]">Regulated DC power supply 0–4 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>V</mi></mrow></math>, 50 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>Ω</mi></mrow></math> rheostat</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/3/role&quot;]">Supplies stable primary current through wire</span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/4/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/4/name&quot;]">Primary Cells &amp; Two-Way Key</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/4/specification&quot;]">Leclanché cell (1.45 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>V</mi></mrow></math>), Daniell cell (1.08 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>V</mi></mrow></math>), resistance box 0–100 <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>Ω</mi></mrow></math></span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/4/role&quot;]">Test cells whose EMF and internal resistance are evaluated</span></li>
         </ul>
       </section>
 
       <!-- 03 / Principles -->
       <section class="atlas-section" data-section="principles" id="sec-03-principles">
         <h2>03 / Principles</h2>
-        <p id="principlesSummary" class="slot-placeholder">[ Scientific principles and governing theory will populate here. ]</p>
+        <p id="principlesSummary" style="line-height:1.5; margin-bottom:10px;"><span data-source-paths="[&quot;/simulator/section_03_principles/overview&quot;]">A potentiometer operates on the principle that when a steady current flows through a wire of uniform cross-section and composition, the potential drop across any length is directly proportional to that length: <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>V</mi><mo>=</mo><mi>k</mi><mi>·</mi><mi>l</mi></mrow></math>, where <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>k</mi></mrow></math> is the potential gradient. At the null balance point, no current is drawn from the cell, allowing measurement of the true open-circuit electromotive force without terminal loading error.</span></p>
         <ul id="principlesList" class="principles-list" style="margin-top:4px;">
-          <li><span class="slot-placeholder">[ Governing MathML formulas will populate here from JSON data slot ]</span></li>
+<li style="margin-bottom:14px; list-style-type:disc;">
+            <strong style="color:#10564b; font-size:13px; margin-bottom:2px;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/label&quot;]">Principle of Potentiometer</span>:</strong>
+            <div style="font-size:12px; color:#526e66; margin-bottom:4px;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/description&quot;]">Potential difference along a uniform wire segment is directly proportional to balancing length.</span></div>
+            <div class="atlas-equation" style="padding:4px 0; overflow-x:auto;">
+              <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/latex&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mi>V</mi><mo>=</mo><mi>k</mi><mo>·</mo><mi>l</mi></mrow></math></span>
+            </div>
+            
+                <div class="equation-symbols" style="margin-top:6px; font-size:12px; color:#304e44; overflow-x:auto;">
+                  <span style="font-weight:600; color:#10564b;">Where:</span>
+                  <ul style="margin:2px 0 0 16px; padding:0; list-style-type:circle;">
+                    <li style="margin-bottom:2px;"><strong style="font-family:'Cambria Math', 'Times New Roman', serif; font-size:13px; color:#10564b;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/0/symbol&quot;, &quot;/simulator/section_03_principles/equations/0/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/1/unit&quot;, &quot;/simulator/section_05_controls/steppers/1/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>V</mi></mrow></math></span></strong> : <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/0/meaning&quot;]">Potential difference across wire segment</span> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/0/symbol&quot;, &quot;/simulator/section_03_principles/equations/0/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/1/unit&quot;, &quot;/simulator/section_05_controls/steppers/1/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">V</mi></mrow></math></span>)</span></li><li style="margin-bottom:2px;"><strong style="font-family:'Cambria Math', 'Times New Roman', serif; font-size:13px; color:#10564b;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/1/symbol&quot;, &quot;/simulator/section_06_live_readings/readings/0/symbol&quot;, &quot;/simulator/scene_simulation_spec/physics_model/state_variables/2&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>k</mi></mrow></math></span></strong> : <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/1/meaning&quot;]">Potential gradient along the wire</span> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/1/unit&quot;, &quot;/simulator/section_06_live_readings/readings/0/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mfrac><mrow><mi mathvariant="normal">V</mi></mrow><mrow><mi mathvariant="normal">c</mi></mrow></mfrac><mi mathvariant="normal">m</mi></mrow></math></span>)</span></li><li style="margin-bottom:2px;"><strong style="font-family:'Cambria Math', 'Times New Roman', serif; font-size:13px; color:#10564b;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/2/symbol&quot;, &quot;/simulator/section_05_controls/steppers/0/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/2/symbol&quot;, &quot;/simulator/scene_simulation_spec/physics_model/state_variables/0&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>l</mi></mrow></math></span></strong> : <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/2/meaning&quot;]">Balancing length from zero reference end</span> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/3/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/3/unit&quot;, &quot;/simulator/section_05_controls/steppers/0/unit&quot;, &quot;/simulator/section_06_live_readings/readings/2/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/2/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">m</mi></mrow></math></span>)</span></li>
         </ul>
       </section>
 
       <!-- 04 / Procedure -->
       <section class="atlas-section" data-section="procedure" id="sec-04-procedure">
         <h2>04 / Procedure</h2>
-        <ol id="procedureList">
-          <li><span class="slot-placeholder">[ Step-by-step procedure steps will populate here from chosen experiment ]</span></li>
+<p style="line-height:1.5; margin-bottom:8px; color:#304e44;"><span data-source-paths="[&quot;/simulator/section_04_procedure/overview&quot;]">Set up the driver circuit to pass a steady current through the 400 cm potentiometer wire. Connect the primary cells through the two-way key to the galvanometer and sliding jockey. Locate the balancing length where the galvanometer needle rests exactly at zero.</span></p>
+<ol id="procedureList">
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/0&quot;]">Step 1: Connect the positive terminal of the driver battery to zero-end A of the potentiometer wire.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/1&quot;]">Step 2: Connect the positive terminals of cells <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>E</mi><mrow><mn>1</mn></mrow></msub></mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>E</mi><mrow><mn>2</mn></mrow></msub></mrow></math> to point A, and negative terminals through the two-way key to the galvanometer.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/2&quot;]">Step 3: Press the jockey near end A and then near end B to verify opposite galvanometer deflections.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/3&quot;]">Step 4: Slide the jockey gently along the wires to find the exact null point <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>l</mi><mrow><mn>1</mn></mrow></msub></mrow></math> where galvanometer deflection is zero.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/4&quot;]">Step 5: Switch to cell <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>E</mi><mrow><mn>2</mn></mrow></msub></mrow></math> and locate balancing length <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>l</mi><mrow><mn>2</mn></mrow></msub></mrow></math>; compute ratio <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mfrac><mrow><msub><mi>E</mi><mrow><mn>1</mn></mrow></msub></mrow><mrow><msub><mi>E</mi><mrow><mn>2</mn></mrow></msub></mrow></mfrac></mrow></math>.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/5&quot;]">Step 6: Introduce shunt resistance <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>R</mi></mrow></math> across cell <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>E</mi><mrow><mn>1</mn></mrow></msub></mrow></math>; measure new balancing length <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>l</mi><mrow><mn>2</mn></mrow></msub></mrow></math>&#x27; and determine internal resistance <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>r</mi></mrow></math>.</span></li>
         </ol>
       </section>
 
       <!-- 05 / Controls -->
       <section class="atlas-section" data-section="controls" id="sec-05-controls">
         <h2>05 / Controls</h2>
-        <div class="preset-row" id="presetContainer">
-          <span class="preset-chip slot-placeholder">[ Presets populate here ]</span>
-        </div>
-        <div class="extra-actions-row" id="extraActionsContainer" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
-          <!-- Optional action buttons slot -->
-        </div>
+        <div class="preset-row" id="presetContainer" style="display:none;"></div>
+        <div class="extra-actions-row" id="extraActionsContainer" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;"><button type="button" class="atlas-action-btn" id="btn_find_null" style="flex:1;"><span data-source-paths="[&quot;/simulator/section_05_controls/actions/0/label&quot;]">Auto-Balance to Null Point</span></button></div>
         <div class="stepper-container" id="steppersContainer">
-          <p class="slot-placeholder" style="margin: 8px 0;">[ Precision stepper inputs will populate here with white boxes and 16px arrows ]</p>
+<div class="stepper-row" style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <label style="font-weight:700; font-size:12.5px; color:#173c35;"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/0/label&quot;]">Jockey Position (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>l</mi></mrow></math>)</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/2/symbol&quot;, &quot;/simulator/section_05_controls/steppers/0/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/2/symbol&quot;, &quot;/simulator/scene_simulation_spec/physics_model/state_variables/0&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>l</mi></mrow></math></span>)</label>
+              <span class="stepper-range-hint">[0.0 – 400.0 <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/3/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/3/unit&quot;, &quot;/simulator/section_05_controls/steppers/0/unit&quot;, &quot;/simulator/section_06_live_readings/readings/2/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/2/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">m</mi></mrow></math></span>]</span>
+            </div>
+            <div class="stepper-box">
+              <input type="number" class="stepper-input" id="control_jockey" data-index="0" value="185.0" min="0.0" max="400.0" step="1.0">
+              <div class="stepper-buttons">
+                <button type="button" class="stepper-btn stepper-btn-up" data-target="control_jockey">▲</button>
+                <button type="button" class="stepper-btn stepper-btn-down" data-target="control_jockey">▼</button>
+              </div>
+              <span class="stepper-unit"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/3/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/3/unit&quot;, &quot;/simulator/section_05_controls/steppers/0/unit&quot;, &quot;/simulator/section_06_live_readings/readings/2/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/2/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">m</mi></mrow></math></span></span>
+            </div>
+          </div>
+          <div class="stepper-row" style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <label style="font-weight:700; font-size:12.5px; color:#173c35;"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/1/label&quot;]">Driver Battery Voltage (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>E</mi><mrow><mn>0</mn></mrow></msub></mrow></math>)</span> (<span data-source-paths="[&quot;/simulator/section_05_controls/steppers/1/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>E</mi><mrow><mn>0</mn></mrow></msub></mrow></math></span>)</label>
+              <span class="stepper-range-hint">[2.0 – 5.0 <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/0/symbol&quot;, &quot;/simulator/section_03_principles/equations/0/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/1/unit&quot;, &quot;/simulator/section_05_controls/steppers/1/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">V</mi></mrow></math></span>]</span>
+            </div>
+            <div class="stepper-box">
+              <input type="number" class="stepper-input" id="control_v0" data-index="1" value="3.0" min="2.0" max="5.0" step="0.2">
+              <div class="stepper-buttons">
+                <button type="button" class="stepper-btn stepper-btn-up" data-target="control_v0">▲</button>
+                <button type="button" class="stepper-btn stepper-btn-down" data-target="control_v0">▼</button>
+              </div>
+              <span class="stepper-unit"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/0/symbol&quot;, &quot;/simulator/section_03_principles/equations/0/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/1/unit&quot;, &quot;/simulator/section_05_controls/steppers/1/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">V</mi></mrow></math></span></span>
+            </div>
+          </div>
+          <div class="stepper-row" style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <label style="font-weight:700; font-size:12.5px; color:#173c35;"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/2/label&quot;]">Shunt Resistance (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>R</mi></mrow></math>)</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/2/symbols/1/symbol&quot;, &quot;/simulator/section_05_controls/steppers/2/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>R</mi></mrow></math></span>)</label>
+              <span class="stepper-range-hint">[1.0 – 50.0 <span data-source-paths="[&quot;/simulator/section_03_principles/equations/2/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/1/unit&quot;, &quot;/simulator/section_05_controls/steppers/2/unit&quot;, &quot;/simulator/section_06_live_readings/readings/4/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/5/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">Ω</mi></mrow></math></span>]</span>
+            </div>
+            <div class="stepper-box">
+              <input type="number" class="stepper-input" id="control_shunt" data-index="2" value="10.0" min="1.0" max="50.0" step="1.0">
+              <div class="stepper-buttons">
+                <button type="button" class="stepper-btn stepper-btn-up" data-target="control_shunt">▲</button>
+                <button type="button" class="stepper-btn stepper-btn-down" data-target="control_shunt">▼</button>
+              </div>
+              <span class="stepper-unit"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/2/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/1/unit&quot;, &quot;/simulator/section_05_controls/steppers/2/unit&quot;, &quot;/simulator/section_06_live_readings/readings/4/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/5/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">Ω</mi></mrow></math></span></span>
+            </div>
+          </div>
+          <div class="stepper-row" style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <label style="font-weight:700; font-size:12.5px; color:#173c35;"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/3/label&quot;]">Active Cell (1: Leclanché, 2: Daniell)</span> (<span data-source-paths="[&quot;/simulator/section_05_controls/steppers/3/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/0/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>n</mi></mrow></math></span>)</label>
+              <span class="stepper-range-hint">[1.0 – 2.0 ]</span>
+            </div>
+            <div class="stepper-box">
+              <input type="number" class="stepper-input" id="control_cell" data-index="3" value="1.0" min="1.0" max="2.0" step="1.0">
+              <div class="stepper-buttons">
+                <button type="button" class="stepper-btn stepper-btn-up" data-target="control_cell">▲</button>
+                <button type="button" class="stepper-btn stepper-btn-down" data-target="control_cell">▼</button>
+              </div>
+              <span class="stepper-unit"></span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -901,15 +965,38 @@ button.is-clicked::after, button:focus-visible::after {
       <section class="atlas-section" data-section="readings" id="sec-06-readings">
         <h2>06 / Live readings</h2>
         <ul class="readouts-list" id="readoutsList">
-          <li><span class="slot-placeholder">[ Live telemetry readings will populate here in clean bullet format ]</span></li>
+<li class="readout-item" data-id="reading_k">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/0/label&quot;]">Potential Gradient (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>k</mi></mrow></math>)</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/1/symbol&quot;, &quot;/simulator/section_06_live_readings/readings/0/symbol&quot;, &quot;/simulator/scene_simulation_spec/physics_model/state_variables/2&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>k</mi></mrow></math></span>)</span>
+            <span class="readout-val" id="val_reading_k" data-unit="<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/1/unit&quot;, &quot;/simulator/section_06_live_readings/readings/0/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>V</mi></mrow></math>/cm</span>"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/0/default_val&quot;]">0.0075</span> <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/1/unit&quot;, &quot;/simulator/section_06_live_readings/readings/0/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mfrac><mrow><mi mathvariant="normal">V</mi></mrow><mrow><mi mathvariant="normal">c</mi></mrow></mfrac><mi mathvariant="normal">m</mi></mrow></math></span></span>
+          </li>
+          <li class="readout-item" data-id="reading_defl">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/1/label&quot;]">Galvanometer Deflection</span> (<span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/1/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/3/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>θ</mi></mrow></math></span>)</span>
+            <span class="readout-val" id="val_reading_defl" data-unit="<span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/1/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/3/unit&quot;]">div</span>"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/1/default_val&quot;]">+4.2</span> <span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/1/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/3/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">d</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">v</mi></mrow></math></span></span>
+          </li>
+          <li class="readout-item" data-id="reading_l_bal">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/2/label&quot;]">Null Balancing Length</span> (<span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/2/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>l</mi><mrow><mn>0</mn></mrow></msub></mrow></math></span>)</span>
+            <span class="readout-val" id="val_reading_l_bal" data-unit="<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/3/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/3/unit&quot;, &quot;/simulator/section_05_controls/steppers/0/unit&quot;, &quot;/simulator/section_06_live_readings/readings/2/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/2/unit&quot;]">cm</span>"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/2/default_val&quot;]">193.3</span> <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/3/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/3/unit&quot;, &quot;/simulator/section_05_controls/steppers/0/unit&quot;, &quot;/simulator/section_06_live_readings/readings/2/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/2/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">m</mi></mrow></math></span></span>
+          </li>
+          <li class="readout-item" data-id="reading_ratio">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/3/label&quot;]">EMF Ratio (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mfrac><mrow><msub><mi>E</mi><mrow><mn>1</mn></mrow></msub></mrow><mrow><msub><mi>E</mi><mrow><mn>2</mn></mrow></msub></mrow></mfrac></mrow></math>)</span> (<span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/3/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/4/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mfrac><mrow><msub><mi>E</mi><mrow><mn>1</mn></mrow></msub></mrow><mrow><msub><mi>E</mi><mrow><mn>2</mn></mrow></msub></mrow></mfrac></mrow></math></span>)</span>
+            <span class="readout-val" id="val_reading_ratio" data-unit="<span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/3/unit&quot;]">ratio</span>"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/3/default_val&quot;]">1.343</span> <span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/3/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi></mrow></math></span></span>
+          </li>
+          <li class="readout-item" data-id="reading_r">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/4/label&quot;]">Internal Resistance (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>r</mi></mrow></math>)</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/2/symbols/0/symbol&quot;, &quot;/simulator/section_06_live_readings/readings/4/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/5/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>r</mi></mrow></math></span>)</span>
+            <span class="readout-val" id="val_reading_r" data-unit="<span data-source-paths="[&quot;/simulator/section_03_principles/equations/2/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/1/unit&quot;, &quot;/simulator/section_05_controls/steppers/2/unit&quot;, &quot;/simulator/section_06_live_readings/readings/4/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/5/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>Ω</mi></mrow></math></span>"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/4/default_val&quot;]">2.45</span> <span data-source-paths="[&quot;/simulator/section_03_principles/equations/2/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/1/unit&quot;, &quot;/simulator/section_05_controls/steppers/2/unit&quot;, &quot;/simulator/section_06_live_readings/readings/4/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/5/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">Ω</mi></mrow></math></span></span>
+          </li>
         </ul>
       </section>
 
       <!-- 07 / Validation and limits -->
       <section class="atlas-section" data-section="validation" id="sec-07-validation">
         <h2>07 / Validation and limits</h2>
-        <ul id="validationList">
-          <li><span class="slot-placeholder">[ Modeling assumptions and physical boundary limits will populate here ]</span></li>
+        <ul id="validationList" style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px;">
+<li><strong>Assumption</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/assumptions/0&quot;]">The potentiometer wire has uniform cross-sectional area and specific resistance along its entire 400 cm length.</span></li>
+<li><strong>Assumption</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/assumptions/1&quot;]">The driver battery EMF is strictly greater than the EMF of both primary test cells (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>E</mi><mrow><mn>0</mn></mrow></msub><mo>&gt;</mo><msub><mi>E</mi><mrow><mn>1</mn></mrow></msub></mrow></math>, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>E</mi><mrow><mn>2</mn></mrow></msub></mrow></math>).</span></li>
+<li><strong>Assumption</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/assumptions/2&quot;]">Driver current remains constant and heating effects are negligible during observation.</span></li>
+<li><strong>Boundary Limit</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/limitations/0&quot;]">Jockey must not be scraped along the wire to prevent altering wire cross-section and destroying uniform potential gradient.</span></li>
+<li><strong>Boundary Limit</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/limitations/1&quot;]">Balancing length measurement accuracy is bounded by least count of millimeter scale (±0.1 cm).</span></li>
         </ul>
       </section>
 
@@ -1012,774 +1099,1259 @@ button.is-clicked::after, button:focus-visible::after {
   <script id="classturnZoomConfig">window.CLASSTURN_ZOOM_CONFIG = {"scale": 1.0, "cx": 400.0, "cy": 250.0, "minLeader": 48, "maxLeader": 80, "minBadgeDist": 40};</script>
   <script src="classturn-lab-kit.js?v=btn8"></script>
   <script id="classturn-stage-script">
-  /* Populated from classturn_simulators.db */
-  </script>
-
-<script id="vault-universal-step-bridge">
-/**
- * CLASSTURN UNIVERSAL STEP-BUTTON [➔], LEGO PORT SNAP & OBSERVATION BRIDGE
- * =========================================================================
- * Enforces the exact Student Experience & Lego Vault Assembly Pipeline:
- * 1. On Initial Load: Renders Full Apparatus Preview (`previewMode = true`) with Style 2 curvy leaders & numbered badges.
- * 2. Procedure Step `[➔]` Buttons (Section 04):
- *    - Injects a glowing `[➔ Step N]` button next to every step in `#procedureList`.
- *    - Clicking Step 1 `[➔]` clears the preview and immediately animates Step 1's element + badge (`0 -> 1`).
- *    - Clicking Step 2 `[➔]`, Step 3 `[➔]`... in strict order reveals & animates each step's brick + badge into its port.
- *    - Clicking out of order displays a prominent centered alert right in the middle of the Canvas overlapping all elements.
- * 3. Numeric Control Boxes Lock/Unlock (Section 05):
- *    - Locked until all `[➔]` steps are completed; unlocks automatically after the final `[➔]` step.
- *    - Every numeric change immediately updates the Canvas & Section 06 Live Readings without ever pausing.
- * 4. Deliberate Observation Recording (`#btnRecord` in Section 08 ONLY):
- *    - Readings are NEVER auto-logged on input change.
- *    - Clicking `Record Observation` (`#btnRecord`) appends the current trial row to `#observationTbody`.
+/* VAULT LEGO PIPELINE MANIFEST (potentiometer):
+ *   Step 1: Four-Wire Potentiometer Board -> vault_brick_potentiometer_step1_four_wire_potentiometer_boar (drawFourWirePotentiometerBoar) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 2: Precision Sliding Jockey -> vault_brick_potentiometer_step2_precision_sliding_jockey (drawPrecisionSlidingJockey) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 3: Centre-Zero Sensitive Galvanometer -> vault_brick_potentiometer_step3_centre_zero_sensitive_galvan (drawCentreZeroSensitiveGalvan) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 4: Driver Battery & Rheostat -> vault_brick_potentiometer_step4_driver_battery_rheostat (drawDriverBatteryRheostat) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 5: Primary Cells & Two-Way Key -> vault_brick_potentiometer_step5_primary_cells_two_way_key (drawPrimaryCellsTwoWayKey) [FOUND_EXACT_SIM_STEP_BRICK]
  */
-(function () {
-  window.ClassTurnUniversalBridge = {
-    previewMode: true,
-    completedStep: 0,
-    totalSteps: 0,
-    animatingStep: 0,
-    animStartTime: 0,
-    animDurationMs: 550,
-    warningBannerText: "",
-    warningTimeout: null,
-    trialCounter: 0,
-    onStepChangeCallback: null,
+window.addEventListener('load', () => {
+    const cvs = document.getElementById('simCanvas');
+    if (!cvs) return;
+    const ctx = cvs.getContext('2d');
 
-    init(config = {}) {
-      this.previewMode = true;
-      this.completedStep = 0;
-      this.animatingStep = 0;
-      this.animStartTime = 0;
-      this.trialCounter = 0;
-      this.onStepChangeCallback = config.onStepChange || null;
+    // Strict 800 x 500 intrinsic canvas coordinate resolution
+    cvs.width = 800;
+    cvs.height = 500;
 
-      this.injectStepButtonsStyle();
-      this.bindProcedureStepButtons();
-      this.updateControlsLockState();
-    },
+    // Simulation State
+    let isRunning = true;
+    let animFrame = null;
+    let clock = 0;
 
-    injectStepButtonsStyle() {
-      if (document.querySelector("#classturn-step-bridge-css")) return;
-      const st = document.createElement("style");
-      st.id = "classturn-step-bridge-css";
-      st.textContent = `
-        .ct-step-arrow-btn {
-          display: inline-flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-          min-height: 24px !important;
-          height: 24px !important;
-          padding: 0 9px !important;
-          margin-right: 8px !important;
-          border-radius: 6px !important;
-          font: 700 12px var(--font, sans-serif) !important;
-          background: #edf6f2 !important;
-          color: #10564b !important;
-          border: 1.5px solid #8eaea1 !important;
-          cursor: pointer !important;
-          vertical-align: middle !important;
-          box-shadow: 0 1px 2px rgba(0,0,0,0.08) !important;
-          transition: all 0.18s ease !important;
-        }
-        .ct-step-arrow-btn.ct-next-glow {
-          background: #10564b !important;
-          color: #ffffff !important;
-          border-color: #0d473e !important;
-          box-shadow: 0 0 0 3px rgba(16, 86, 75, 0.25) !important;
-          animation: ctPulseGlow 1.4s infinite ease-in-out !important;
-        }
-        .ct-step-arrow-btn.ct-done {
-          background: #d8ece4 !important;
-          color: #0d473e !important;
-          border-color: #10564b !important;
-        }
-        .ct-controls-locked-banner {
-          padding: 7px 10px;
-          margin-bottom: 8px;
-          border-radius: 7px;
-          background: #fff8e6;
-          border: 1px solid #f59e0b;
-          color: #92400e;
-          font: 600 11.5px var(--font, sans-serif);
-          cursor: pointer;
-        }
-        .ct-center-canvas-alert {
-          position: absolute !important;
-          top: 50% !important;
-          left: 50% !important;
-          transform: translate(-50%, -50%) !important;
-          z-index: 99999 !important;
-          min-width: 340px !important;
-          max-width: 85% !important;
-          padding: 16px 24px !important;
-          border-radius: 12px !important;
-          background: rgba(180, 83, 9, 0.98) !important;
-          border: 2.5px solid #fde68a !important;
-          color: #ffffff !important;
-          font: 700 14.5px 'Segoe UI', system-ui, sans-serif !important;
-          text-align: center !important;
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75) !important;
-          pointer-events: none !important;
-          display: none;
-        }
-        @keyframes ctPulseGlow {
-          0%, 100% { box-shadow: 0 0 0 2px rgba(16, 86, 75, 0.22); }
-          50% { box-shadow: 0 0 0 5px rgba(16, 86, 75, 0.42); }
-        }
-      `;
-      document.head.appendChild(st);
-    },
+    // Stepper Parameters (Defaults)
+    let jockeyLength = 185.0; // cm (0.0 to 400.0)
+    let v0 = 3.0;             // V (2.0 to 5.0)
+    let rShunt = 10.0;        // Ohms (1.0 to 50.0)
+    let activeCell = 1;       // 1: Leclanché (1.45V), 2: Daniell (1.08V)
 
-    bindProcedureStepButtons() {
-      const procList = document.querySelector("#procedureList");
-      if (!procList) return;
-      const items = Array.from(procList.querySelectorAll("li"));
-      this.totalSteps = items.length;
+    // Physical Constants
+    const totalLength = 400.0; // cm
+    const e1 = 1.45;           // V (Leclanché EMF)
+    const e2 = 1.08;           // V (Daniell EMF)
+    const rInternal = 2.45;    // Ohms
 
-      items.forEach((li, idx) => {
-        const stepNum = idx + 1;
-        if (li.querySelector(".ct-step-arrow-btn")) return;
-        li.style.cursor = "pointer";
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "ct-step-arrow-btn" + (stepNum === 1 ? " ct-next-glow" : "");
-        btn.dataset.step = String(stepNum);
-        btn.innerHTML = `➔ Step ${stepNum}`;
-        btn.title = `Execute Step ${stepNum} on Canvas`;
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          this.handleStepClick(stepNum);
-        });
-        li.addEventListener("click", (e) => {
-          if (e.target === btn || btn.contains(e.target)) return;
-          this.handleStepClick(stepNum);
-        });
-        li.prepend(btn);
-      });
-    },
+    // Dynamic Variables
+    let kGrad = v0 / totalLength; // V/cm
+    let currentDeflection = 0.0;  // div
+    let targetDeflection = 0.0;   // div
+    let needleAngle = 0.0;        // degrees
+    let nullBalancingLength = 0.0;// cm
 
-    handleStepClick(clickedStep) {
-      const expectedStep = this.completedStep + 1;
-      if (clickedStep > expectedStep) {
-        this.triggerWarning(`Out of sequence! Please click [➔ Step ${expectedStep}] first.`);
-        return;
+    // DOM Controls
+    const inputJockey = document.getElementById('control_jockey');
+    const inputV0 = document.getElementById('control_v0');
+    const inputShunt = document.getElementById('control_shunt');
+    const inputCell = document.getElementById('control_cell');
+    const expSelect = document.getElementById('experimentSelect');
+    let currentActivity = 0;
+
+    function calculatePhysics() {
+      kGrad = v0 / totalLength;
+      if (expSelect) currentActivity = parseInt(expSelect.value, 10) || 0;
+
+      const eActive = (activeCell === 1) ? e1 : e2;
+      let vCellEffective = eActive;
+      if (currentActivity === 1 && activeCell === 1 && rShunt > 0) {
+        vCellEffective = eActive * (rShunt / (rShunt + rInternal));
       }
-      if (clickedStep <= this.completedStep) {
-        this.animateStepTransition(clickedStep);
-        return;
-      }
-      this.clearWarning();
-      this.previewMode = false;
-      this.completedStep = clickedStep;
-      this.updateStepButtonStyles();
-      this.updateControlsLockState();
-      this.animateStepTransition(clickedStep);
-    },
 
-    animateStepTransition(stepNum) {
-      this.animatingStep = stepNum;
-      this.animStartTime = performance.now();
-      if (typeof this.onStepChangeCallback === "function") {
-        this.onStepChangeCallback(this.completedStep, 0.15, this.previewMode);
-      }
-    },
+      nullBalancingLength = vCellEffective / kGrad;
+      const vWire = kGrad * jockeyLength;
 
-    updateStepButtonStyles() {
-      const procList = document.querySelector("#procedureList");
-      if (!procList) return;
-      const btns = procList.querySelectorAll(".ct-step-arrow-btn");
-      btns.forEach((btn) => {
-        const s = parseInt(btn.dataset.step, 10);
-        btn.classList.remove("ct-next-glow", "ct-done");
-        if (s <= this.completedStep) {
-          btn.classList.add("ct-done");
-          btn.innerHTML = `✓ Step ${s}`;
-        } else if (s === this.completedStep + 1) {
-          btn.classList.add("ct-next-glow");
-          btn.innerHTML = `➔ Step ${s}`;
+      const deltaV = vWire - vCellEffective;
+      const sensitivity = 55.0;
+      targetDeflection = Math.max(-30.0, Math.min(30.0, deltaV * sensitivity));
+
+      // Update Section 06 Live Readings in DOM
+      const valK = document.getElementById('val_reading_k');
+      const valDefl = document.getElementById('val_reading_defl');
+      const valLBal = document.getElementById('val_reading_l_bal');
+      const valRatio = document.getElementById('val_reading_ratio');
+      const valR = document.getElementById('val_reading_r');
+
+      if (valK) valK.textContent = kGrad.toFixed(4) + ' V/cm';
+      if (valDefl) {
+        const sign = targetDeflection > 0.05 ? '+' : (targetDeflection < -0.05 ? '-' : '');
+        valDefl.textContent = sign + Math.abs(targetDeflection).toFixed(1) + ' div';
+      }
+      if (valLBal) valLBal.textContent = nullBalancingLength.toFixed(1) + ' cm';
+      if (valRatio) valRatio.textContent = (e1 / e2).toFixed(3);
+      if (valR) valR.textContent = rInternal.toFixed(2) + ' Ω';
+    }
+
+    function syncFromInputs() {
+      if (inputJockey) jockeyLength = parseFloat(inputJockey.value) || 0.0;
+      if (inputV0) v0 = parseFloat(inputV0.value) || 3.0;
+      if (inputShunt) rShunt = parseFloat(inputShunt.value) || 10.0;
+      if (inputCell) activeCell = Math.round(parseFloat(inputCell.value) || 1);
+      calculatePhysics();
+    }
+
+    // Connect Stepper buttons
+    document.querySelectorAll('.stepper-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const input = document.getElementById(targetId);
+        if (!input) return;
+        const step = parseFloat(input.step) || 1.0;
+        const min = input.min !== '' ? parseFloat(input.min) : -Infinity;
+        const max = input.max !== '' ? parseFloat(input.max) : Infinity;
+        let val = parseFloat(input.value) || 0.0;
+        if (btn.classList.contains('stepper-btn-up')) {
+          val = Math.min(max, Math.round((val + step) * 100) / 100);
         } else {
-          btn.innerHTML = `➔ Step ${s}`;
+          val = Math.max(min, Math.round((val - step) * 100) / 100);
         }
-      });
-    },
-
-    updateControlsLockState() {
-      const secControls = document.querySelector("#sec-05-controls");
-      if (!secControls) return;
-      let banner = document.querySelector("#ctControlsLockBanner");
-      const unlocked = this.totalSteps === 0 || this.completedStep >= this.totalSteps;
-
-      if (!unlocked) {
-        if (!banner) {
-          banner = document.createElement("div");
-          banner.id = "ctControlsLockBanner";
-          banner.className = "ct-controls-locked-banner";
-          banner.addEventListener("click", () => {
-            this.triggerWarning(`Out of sequence! Click [➔ Step ${this.completedStep + 1}] first.`);
-          });
-          const h2 = secControls.querySelector("h2");
-          if (h2 && h2.nextSibling) {
-            secControls.insertBefore(banner, h2.nextSibling);
-          } else {
-            secControls.prepend(banner);
-          }
-        }
-        banner.textContent = `Click [➔ Step ${this.completedStep + 1}] in 04 / Procedure (${this.completedStep}/${this.totalSteps} completed) to assemble the apparatus and unlock controls.`;
-      } else if (banner) {
-        banner.remove();
-      }
-
-      const inputs = secControls.querySelectorAll("input, button.stepper-btn, .preset-chip");
-      inputs.forEach((el) => {
-        el.disabled = !unlocked;
-        el.style.opacity = unlocked ? "1" : "0.55";
-        el.style.pointerEvents = unlocked ? "auto" : "none";
-      });
-    },
-
-    clearWarning() {
-      this.warningBannerText = "";
-      if (this.warningTimeout) {
-        clearTimeout(this.warningTimeout);
-        this.warningTimeout = null;
-      }
-      const alertEl = document.querySelector("#ctCenterCanvasAlert");
-      if (alertEl) {
-        alertEl.style.display = "none";
-      }
-    },
-
-    triggerWarning(msg) {
-      this.warningBannerText = msg;
-      const wrapper = document.querySelector(".canvas-wrapper") || document.querySelector("#stageContainer");
-      if (wrapper) {
-        let alertEl = document.querySelector("#ctCenterCanvasAlert");
-        if (!alertEl) {
-          alertEl = document.createElement("div");
-          alertEl.id = "ctCenterCanvasAlert";
-          alertEl.className = "ct-center-canvas-alert";
-          wrapper.appendChild(alertEl);
-        }
-        alertEl.textContent = msg;
-        alertEl.style.display = "block";
-      }
-      if (this.warningTimeout) clearTimeout(this.warningTimeout);
-      this.warningTimeout = setTimeout(() => {
-        this.clearWarning();
-      }, 2800);
-    },
-
-    isStepVisible(stepNumber) {
-      if (this.previewMode) return true;
-      return this.completedStep >= stepNumber;
-    },
-
-    getStepProgress(stepNumber) {
-      if (this.previewMode) return 1.0;
-      if (stepNumber > this.completedStep) return 0.0;
-      if (stepNumber === this.animatingStep && this.animStartTime > 0) {
-        const elapsed = Math.max(0, performance.now() - this.animStartTime);
-        const t = Math.min(1.0, elapsed / this.animDurationMs);
-        return 0.15 + 0.85 * (1 - Math.pow(1 - t, 3));
-      }
-      return 1.0;
-    },
-
-    drawCanvasStepHUD(ctx, canvasW = 800, canvasH = 500) {
-      // Handled by #ctCenterCanvasAlert centered inside .canvas-wrapper so canvas zoom/aspect transform is never altered
-    },
-
-    resetSteps() {
-      this.previewMode = true;
-      this.completedStep = 0;
-      this.animatingStep = 0;
-      this.animStartTime = 0;
-      this.clearWarning();
-      this.updateStepButtonStyles();
-      this.updateControlsLockState();
-    }
-  };
-})();
-
-</script>
-<script id="vault-port-snapped-simulator-runtime">
-(function() {
-  const SIM_SPEC = {"filename": "vault_crit_03_potentiometer_emf.html", "id": "vault_crit_03_potentiometer_emf", "source_id": "potentiometer", "subject": "Physics", "branch": "Electricity & Circuits", "icon": "🎛️", "eyebrow": "NCERT Class XII Physics · Current Electricity & Null-Point Potentiometry", "title": "Potentiometer: Comparison of Cell EMFs (E₁/E₂) & Internal Resistance (r)", "aim": "To compare the electromotive forces (E₁/E₂ = l₁/l₂) of two primary cells and determine the internal resistance r = R(l₁/l₂ - 1) of a primary cell using a 400 cm constantan wire potentiometer and center-zero galvanometer.", "vault_queries": [["400cm Constantan Wire Potentiometer Board", "04_Electrical"], ["Driver Battery & Rheostat Auxiliary Circuit", "04_Electrical"], ["Primary Cells & Shunt Resistance Box", "04_Electrical"], ["Center-Zero Sensitive Galvanometer", "03_Meters"], ["Sliding Contact Jockey on Wire", "04_Electrical"]], "apparatus": ["400 cm (4-Segment) Constantan Wire Potentiometer Board with Meter Scale", "Auxiliary Driver Accumulator (E₀), Rheostat (R_h), and Primary Key across Terminals A–B", "Test Cell (E₁) with Parallel Shunt Resistance Box (R) Connected to Terminal A", "Center-Zero Moving-Coil Galvanometer (G) for Null-Deflection Detection", "Precision Knife-Edge Sliding Jockey (J) Snapped onto the Potentiometer Wire"], "principles_summary": "A constant driver current I = E₀ / (R_wire + R_h) establishes a uniform potential gradient k = V_AB / L along the 400 cm wire. At the null point l₀ where galvanometer deflection I_G = 0, the cell EMF balances V(l₀) = k·l₀. When shunted by resistance R, the terminal voltage balances at l < l₀, giving internal resistance r = R(l₀/l - 1).", "principles_equations": ["<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>k</mi><mo>=</mo><mfrac><msub><mi>V</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub><mi>L</mi></mfrac><mo>=</mo><mfrac><mrow><msub><mi>E</mi><mn>0</mn></msub><msub><mi>R</mi><mtext>wire</mtext></msub></mrow><mrow><mo>(</mo><msub><mi>R</mi><mtext>wire</mtext></msub><mo>+</mo><msub><mi>R</mi><mi>h</mi></msub><mo>)</mo><mi>L</mi></mrow></mfrac><mo>,</mo><mspace width='1em'/><msub><mi>E</mi><mn>1</mn></msub><mo>=</mo><mi>k</mi><mo>&#x00B7;</mo><msub><mi>l</mi><mn>0</mn></msub></mrow></math>", "<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>r</mi><mo>=</mo><mi>R</mi><mrow><mo>(</mo><mfrac><msub><mi>l</mi><mn>0</mn></msub><mi>l</mi></mfrac><mo>-</mo><mn>1</mn><mo>)</mo></mrow></mrow></math>"], "procedure": ["Mount the 400 cm (4-Segment) Constantan Wire Potentiometer Board onto the wooden base.", "Wire the Driver Accumulator (E₀) and Rheostat (R_h) across end terminals A and B.", "Connect the Test Cell (E₁) and parallel Shunt Resistance Box (R) to terminal A.", "Wire the Center-Zero Galvanometer (G) in series with the cell and shunt circuit.", "Mount the Sliding Contact Jockey (J) onto the potentiometer wire to unlock Numeric Controls and 'Record Observation'."], "controls": [{"id": "jpos", "label": "Sliding Jockey Position l", "min": 20, "max": 390, "step": 5, "value": 240, "unit": "cm"}, {"id": "e0", "label": "Driver Cell EMF E₀", "min": 2.0, "max": 4.0, "step": 0.2, "value": 3.0, "unit": "V"}, {"id": "rh", "label": "Rheostat Resistance R_h", "min": 2.0, "max": 20.0, "step": 1.0, "value": 6.0, "unit": "Ω"}, {"id": "rshunt", "label": "Shunt Box Resistance R (1000 = Open)", "min": 2.0, "max": 50.0, "step": 2.0, "value": 10.0, "unit": "Ω"}], "presets": [{"label": "Exact Null Point (R = 10 Ω, l = 225 cm)", "jpos": 225, "e0": 3.0, "rh": 6.0, "rshunt": 10.0}, {"label": "High Shunt Balance (R = 30 Ω, l = 270 cm)", "jpos": 270, "e0": 3.0, "rh": 6.0, "rshunt": 30.0}, {"label": "Off-Balance Left Deflection (l = 140 cm)", "jpos": 140, "e0": 3.0, "rh": 6.0, "rshunt": 10.0}], "validation": ["Total potentiometer wire length L = 400 cm with total wire resistance R_wire = 12.0 Ω.", "Test cell true EMF E₁ = 1.35 V and true internal resistance r = 2.0 Ω.", "Driver terminal voltage V_AB must exceed E₁ for a valid balance length l < 400 cm."], "observation_columns": ["Trial #", "Jockey Pos l (cm)", "Shunt R (Ω)", "Wire Potential V(l) (V)", "Galvanometer I_G (μA)", "Balance Length l_null (cm)"], "readout_specs": [["rv_k", "Potential Gradient (k = V_AB / L)"], ["rv_vl", "Potentiometer Wire Voltage at Jockey V(l)"], ["rv_vcell", "Shunted Cell Terminal Voltage (V_cell)"], ["rv_ig", "Galvanometer Deflection Current (I_G)"], ["rv_lnull", "Exact Null Balance Length (l_null)"]]};
-  const VAULT_MATCHES = [{"query": "400cm Constantan Wire Potentiometer Board", "unique_element_id": "vault_08_drawwire", "canonical_function_name": "drawWire", "subfolder": "08_Scales_Wires_And_Overlays", "ports": {"port_in": [0.12, 0.5], "center_anchor": [0.5, 0.5], "port_out": [0.88, 0.5], "bottom_base": [0.5, 0.95], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Driver Battery & Rheostat Auxiliary Circuit", "unique_element_id": "vault_02_drawrheostat", "canonical_function_name": "drawRheostat", "subfolder": "02_Electrical_And_Circuits", "ports": {"terminal_pos_red": [0.22, 0.86], "terminal_neg_black": [0.78, 0.86], "bnc_signal_out": [0.85, 0.65], "dial_or_display_center": [0.5, 0.42], "bottom_chassis_feet": [0.5, 0.98], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Primary Cells & Shunt Resistance Box", "unique_element_id": "vault_09_drawresistancebox", "canonical_function_name": "drawResistanceBox", "subfolder": "09_Specialized_Domain_Apparatus", "ports": {"port_in": [0.12, 0.5], "center_anchor": [0.5, 0.5], "port_out": [0.88, 0.5], "bottom_base": [0.5, 0.95], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Center-Zero Sensitive Galvanometer", "unique_element_id": "vault_03_drawgalvanometer", "canonical_function_name": "drawGalvanometer", "subfolder": "03_Meters_And_Instruments", "ports": {"terminal_pos_red": [0.22, 0.86], "terminal_neg_black": [0.78, 0.86], "bnc_signal_out": [0.85, 0.65], "dial_or_display_center": [0.5, 0.42], "bottom_chassis_feet": [0.5, 0.98], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Sliding Contact Jockey on Wire", "unique_element_id": "vault_08_drawwire", "canonical_function_name": "drawWire", "subfolder": "08_Scales_Wires_And_Overlays", "ports": {"port_in": [0.12, 0.5], "center_anchor": [0.5, 0.5], "port_out": [0.88, 0.5], "bottom_base": [0.5, 0.95], "style2_leader_anchor": [0.5, 0.45]}}];
-
-  document.getElementById("headerEyebrow").textContent = SIM_SPEC.eyebrow;
-  document.getElementById("headerTitle").textContent = SIM_SPEC.title;
-  document.getElementById("reviewBadge").textContent = "Science verified";
-  document.getElementById("aimText").textContent = SIM_SPEC.aim;
-
-  const selBox = document.querySelector(".experiment-selector-box");
-  if (selBox) selBox.style.display = "none";
-
-  const appList = document.getElementById("apparatusList");
-  const banner = document.getElementById("apparatusLegendBanner");
-  appList.innerHTML = "";
-  banner.innerHTML = "";
-  SIM_SPEC.apparatus.forEach((cleanName, idx) => {
-    const li = document.createElement("li");
-    li.textContent = cleanName;
-    appList.appendChild(li);
-
-    const pill = document.createElement("div");
-    pill.className = "legend-pill";
-    pill.innerHTML = `<span class="pill-num">${idx + 1}</span> <span class="pill-name">${cleanName}</span>`;
-    banner.appendChild(pill);
-  });
-
-  document.getElementById("principlesSummary").textContent = SIM_SPEC.principles_summary;
-  const pList = document.getElementById("principlesList");
-  pList.innerHTML = "";
-  SIM_SPEC.principles_equations.forEach((eqHtml) => {
-    const li = document.createElement("li");
-    li.className = "atlas-equation";
-    li.innerHTML = eqHtml;
-    pList.appendChild(li);
-  });
-
-  const procList = document.getElementById("procedureList");
-  procList.innerHTML = "";
-  SIM_SPEC.procedure.forEach((stepTxt) => {
-    const li = document.createElement("li");
-    li.textContent = stepTxt;
-    procList.appendChild(li);
-  });
-
-  const valList = document.getElementById("validationList");
-  valList.innerHTML = "";
-  SIM_SPEC.validation.forEach((vTxt) => {
-    const li = document.createElement("li");
-    li.textContent = vTxt;
-    valList.appendChild(li);
-  });
-
-  const thead = document.getElementById("observationThead");
-  thead.innerHTML = "<tr>" + SIM_SPEC.observation_columns.map(c => `<th>${c}</th>`).join("") + "</tr>";
-  const tbody = document.getElementById("observationTbody");
-  tbody.innerHTML = "";
-
-  const rList = document.getElementById("readoutsList");
-  rList.innerHTML = `
-    <li class="readout-item"><span class="readout-heading">Potential Gradient (k = V_AB / L)</span><span class="readout-val" id="rv_k">--</span></li>
-    <li class="readout-item"><span class="readout-heading">Potentiometer Wire Voltage at Jockey V(l)</span><span class="readout-val" id="rv_vl">--</span></li>
-    <li class="readout-item"><span class="readout-heading">Shunted Cell Terminal Voltage (V_cell)</span><span class="readout-val" id="rv_vcell">--</span></li>
-    <li class="readout-item"><span class="readout-heading">Galvanometer Deflection Current (I_G)</span><span class="readout-val" id="rv_ig">--</span></li>
-    <li class="readout-item"><span class="readout-heading">Exact Null Balance Length (l_null)</span><span class="readout-val" id="rv_lnull">--</span></li>
-  `;
-  const setR = (id, txt) => {
-    const el = document.querySelector("#" + id);
-    if (el) {
-      el._ctOverrideText = null;
-      el.textContent = txt;
-    }
-  };
-
-  const state = {};
-  SIM_SPEC.controls.forEach(c => { state[c.id] = c.value; });
-
-  const presetContainer = document.getElementById("presetContainer");
-  presetContainer.innerHTML = "";
-  SIM_SPEC.presets.forEach(preset => {
-    const chip = document.createElement("button");
-    chip.type = "button";
-    chip.className = "preset-chip";
-    chip.dataset.ctWired = "1";
-    chip.textContent = preset.label;
-    chip.addEventListener("click", () => {
-      Object.keys(state).forEach(k => {
-        if (preset[k] !== undefined) {
-          state[k] = preset[k];
-          const inp = document.querySelector("#ctrl_" + k);
-          if (inp) inp.value = preset[k];
-        }
-      });
-      updateLiveReadingsOnly();
-    });
-    presetContainer.appendChild(chip);
-  });
-
-  const steppersContainer = document.getElementById("steppersContainer");
-  steppersContainer.innerHTML = "";
-  SIM_SPEC.controls.forEach(c => {
-    const row = document.createElement("div");
-    row.className = "stepper-row";
-    row.innerHTML = `
-      <div class="stepper-header">
-        <label class="control-label" for="ctrl_${c.id}">${c.label}</label>
-        <span class="stepper-range-hint">Range: ${c.min} – ${c.max} ${c.unit}</span>
-      </div>
-      <div class="stepper-box">
-        <input type="number" id="ctrl_${c.id}" class="stepper-input" min="${c.min}" max="${c.max}" step="${c.step}" value="${c.value}">
-        <div class="stepper-arrows">
-          <button type="button" class="stepper-btn" data-dir="1" data-id="${c.id}">▲</button>
-          <button type="button" class="stepper-btn" data-dir="-1" data-id="${c.id}">▼</button>
-        </div>
-        <div class="stepper-unit">${c.unit}</div>
-      </div>
-    `;
-    steppersContainer.appendChild(row);
-
-    const inp = row.querySelector("input");
-    inp.dataset.ctWired = "1";
-    const syncInputVal = (clampToBounds) => {
-      const raw = parseFloat(inp.value);
-      if (isNaN(raw)) return;
-      const v = clampToBounds ? Math.max(c.min, Math.min(c.max, raw)) : raw;
-      if (clampToBounds) inp.value = v;
-      state[c.id] = Math.max(c.min, Math.min(c.max, v));
-      updateLiveReadingsOnly();
-    };
-    inp.addEventListener("input", () => syncInputVal(false));
-    inp.addEventListener("change", () => syncInputVal(true));
-
-    row.querySelectorAll(".stepper-btn").forEach(b => {
-      b.dataset.ctWired = "1";
-      b.addEventListener("click", () => {
-        const dir = parseFloat(b.dataset.dir);
-        const nextV = Math.round((state[c.id] + dir * c.step) * 100) / 100;
-        const clamped = Math.max(c.min, Math.min(c.max, nextV));
-        state[c.id] = clamped;
-        inp.value = clamped;
-        updateLiveReadingsOnly();
+        input.value = val;
+        syncFromInputs();
       });
     });
-  });
 
-  let trialNum = 0;
+    document.querySelectorAll('.stepper-input').forEach(inp => {
+      inp.addEventListener('input', syncFromInputs);
+    });
 
-  // Canonical Style 2 Curvy Leader + Circular Numbered Badge ONLY (Zero extra blue badges or text labels!)
-  function drawCanonicalBadgeOnly(ctx, badgeNum, anchorXY, badgeXY) {
-    ctx.save();
-    const ax = anchorXY.x, ay = anchorXY.y;
-    const bx = badgeXY.x, by = badgeXY.y;
-    const midX = (ax + bx) / 2;
+    if (expSelect) {
+      expSelect.addEventListener('change', () => {
+        currentActivity = parseInt(expSelect.value, 10) || 0;
+        if (currentActivity === 1 && inputCell) {
+          inputCell.value = '1.0';
+        }
+        syncFromInputs();
+      });
+    }
 
-    ctx.beginPath();
-    ctx.moveTo(bx, by);
-    ctx.bezierCurveTo(midX, by, midX, ay, ax, ay);
-    ctx.strokeStyle = "#022c22";
-    ctx.lineWidth = 3.8;
-    ctx.stroke();
+    // Experiment-Specific Action Button (Section 05: Auto-Balance to Null Point)
+    document.querySelectorAll('#btn_find_null, .extra-actions-row .atlas-action-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetLen = Math.max(0, Math.min(400, Math.round(nullBalancingLength * 10) / 10));
+        const startLen = jockeyLength;
+        const startT = performance.now();
+        const duration = 650;
+        function glide(now) {
+          const p = Math.min(1, (now - startT) / duration);
+          const ease = 0.5 - 0.5 * Math.cos(p * Math.PI);
+          jockeyLength = startLen + (targetLen - startLen) * ease;
+          if (inputJockey) inputJockey.value = jockeyLength.toFixed(1);
+          calculatePhysics();
+          if (p < 1) requestAnimationFrame(glide);
+        }
+        requestAnimationFrame(glide);
+      });
+    });
 
-    ctx.beginPath();
-    ctx.moveTo(bx, by);
-    ctx.bezierCurveTo(midX, by, midX, ay, ax, ay);
-    ctx.strokeStyle = "#34d399";
-    ctx.lineWidth = 2.0;
-    ctx.stroke();
+    // Canonical Section 08 Playback Buttons: Record Observation & Reset
+    function recordObservation() {
+      const tbody = document.getElementById('observationTbody');
+      if (tbody) {
+        const rowNo = tbody.children.length + 1;
+        const cellName = activeCell === 1 ? 'Cell 1 (Leclanché)' : 'Cell 2 (Daniell)';
+        const sign = targetDeflection > 0.05 ? '+' : (targetDeflection < -0.05 ? '-' : '');
+        const deflStr = sign + Math.abs(targetDeflection).toFixed(1) + ' div';
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${rowNo}</td><td>${cellName}</td><td>${jockeyLength.toFixed(1)}</td><td>${deflStr}</td><td>${(e1/e2).toFixed(3)}</td><td>${rInternal.toFixed(2)}</td>`;
+        tbody.appendChild(tr);
+      }
+    }
 
-    ctx.beginPath();
-    ctx.arc(ax, ay, 3.8, 0, Math.PI * 2);
-    ctx.fillStyle = "#34d399";
-    ctx.fill();
+    function resetDefaults() {
+      if (inputJockey) inputJockey.value = '185.0';
+      if (inputV0) inputV0.value = '3.0';
+      if (inputShunt) inputShunt.value = '10.0';
+      if (inputCell) inputCell.value = '1.0';
+      const tbody = document.getElementById('observationTbody');
+      if (tbody) tbody.innerHTML = '';
+      syncFromInputs();
+    }
 
-    ctx.beginPath();
-    ctx.arc(bx, by, 11.0, 0, Math.PI * 2);
-    ctx.fillStyle = "#10564b";
-    ctx.fill();
-    ctx.strokeStyle = "#34d399";
-    ctx.lineWidth = 2.0;
-    ctx.stroke();
+    const btnRecordSec8 = document.getElementById('btnRecord');
+    if (btnRecordSec8) btnRecordSec8.addEventListener('click', recordObservation);
 
-    ctx.fillStyle = "#ffffff";
-    ctx.font = "bold 11px system-ui, -apple-system, Segoe UI, sans-serif";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(String(badgeNum), bx, by);
-    ctx.restore();
-  }
+    const btnResetSec8 = document.getElementById('btnReset');
+    if (btnResetSec8) btnResetSec8.addEventListener('click', resetDefaults);
 
+    // Top Header Control Buttons (Pause/Run & Step)
+    const btnToggle = document.getElementById('btnToggle');
+    const btnStep = document.getElementById('btnStep');
+    if (btnToggle) {
+      btnToggle.addEventListener('click', () => {
+        isRunning = !isRunning;
+        btnToggle.textContent = isRunning ? 'Pause' : 'Run';
+      });
+    }
+    if (btnStep) {
+      btnStep.addEventListener('click', () => {
+        clock += 0.2;
+      });
+    }
 
-  function solveSim() {
-    const rWire = 12.0; // Ohms across 400 cm
-    const e1 = 1.35;    // Volts
-    const rInt = 2.0;   // Ohms internal resistance
-    const vAB = state.e0 * (rWire / (rWire + state.rh));
-    const kGrad = vAB / 400.0; // V/cm
-    const vJockey = kGrad * state.jpos;
-    const vCell = e1 * (state.rshunt / (state.rshunt + rInt));
-    const lNull = vCell / kGrad;
-    const iGalv = (vJockey - vCell) * 180.0; // micro-Amps
-    return { vAB, kGrad, vJockey, vCell, lNull, iGalv };
-  }
-
-  function updateLiveReadingsOnly() {
-    const res = solveSim();
-    setR("rv_k", `${(res.kGrad * 100).toFixed(3)} V/m`);
-    setR("rv_vl", `${res.vJockey.toFixed(3)} V`);
-    setR("rv_vcell", `${res.vCell.toFixed(3)} V`);
-    setR("rv_ig", `${res.iGalv >= 0 ? "+" : ""}${res.iGalv.toFixed(1)} μA`);
-    setR("rv_lnull", `${res.lNull.toFixed(1)} cm`);
-  }
-
-  function buildObservationRow() {
-    const res = solveSim();
-    return [
-      `#${trialNum}`,
-      `${state.jpos.toFixed(0)} cm`,
-      `${state.rshunt.toFixed(1)} Ω`,
-      `${res.vJockey.toFixed(3)} V`,
-      `${res.iGalv.toFixed(1)} μA`,
-      `<strong>${res.lNull.toFixed(1)} cm</strong>`
-    ];
-  }
-
-  function mapLengthToWireXY(cm) {
-    const seg = Math.min(3, Math.floor(cm / 100.0));
-    const rem = (cm - seg * 100.0) / 100.0;
-    const xL = 185, xR = 595;
-    const y0 = 215, dy = 28;
-    const wy = y0 + seg * dy;
-    const wx = (seg % 2 === 0) ? (xL + rem * (xR - xL)) : (xR - rem * (xR - xL));
-    return { x: wx, y: wy };
-  }
-
-  function renderFrameElements(ctx, B, tSec) {
-    const res = solveSim();
-    const xL = 185, xR = 595, y0 = 215, dy = 28;
-
-    // STEP 1: 400 cm 4-Segment Potentiometer Board & Resistance Wires + Badge 1
-    if (B.isStepVisible(1)) {
-      const p1 = B.getStepProgress(1);
+    // Numbered Badge Drawer (Canonical deep-teal circle with mint rim and bold white number, zero text beside it)
+    function drawBadge(number, x, y) {
       ctx.save();
-      ctx.globalAlpha = p1;
-      ctx.translate(0, (1 - p1) * 20);
-
-      // Teakwood Potentiometer Baseboard
-      ctx.fillStyle = "#1e293b";
-      ctx.strokeStyle = "#64748b";
-      ctx.lineWidth = 2.2;
+      ctx.shadowColor = 'rgba(30, 41, 59, 0.6)';
+      ctx.shadowBlur = 6;
+      ctx.shadowOffsetY = 2;
+      ctx.fillStyle = '#10564b';
       ctx.beginPath();
-      ctx.roundRect(150, 190, 480, 138, 8);
+      ctx.arc(x, y, 11, 0, Math.PI * 2);
       ctx.fill();
+      ctx.shadowColor = 'transparent';
+      ctx.strokeStyle = '#34d399';
+      ctx.lineWidth = 2.0;
       ctx.stroke();
 
-      // 4 Constantan Wire Segments + Copper End Strips
-      for (let s = 0; s < 4; s++) {
-        const wy = y0 + s * dy;
-        ctx.strokeStyle = "#f59e0b";
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(String(number), x, y);
+      ctx.restore();
+    }
+
+    // Style 2 Curvy Leader Line (Fixed badge position -> Anchor touch bead on physical component)
+    function drawCurvyLeader(bx, by, tx, ty) {
+      ctx.save();
+      // Anchor touch bead on physical component: prominent solid 4.0px bead with dark border
+      ctx.shadowColor = 'rgba(52, 211, 153, 0.6)';
+      ctx.shadowBlur = 6;
+      ctx.fillStyle = '#34d399';
+      ctx.beginPath();
+      ctx.arc(tx, ty, 4.0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowColor = 'transparent';
+      ctx.strokeStyle = '#1e293b';
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+
+      // Style 2 Curvy cubic Bezier S-curve (2.0px stroke, vibrant emerald)
+      const dy = ty - by;
+      const c1x = bx;
+      const c1y = by + dy * 0.45;
+      const c2x = tx;
+      const c2y = ty - dy * 0.45;
+
+      ctx.strokeStyle = '#34d399';
+      ctx.lineWidth = 2.0;
+      ctx.beginPath();
+      ctx.moveTo(bx, by + (by < ty ? 11 : -11));
+      ctx.bezierCurveTo(c1x, c1y, c2x, c2y, tx, ty);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // 3D Shaded Rounded Rectangle
+    function drawShadedRect(x, y, w, h, r, fillGrad, strokeStyle, shadowBlur = 0, shadowOffset = 0, strokeLineWidth = 2.0) {
+      ctx.save();
+      if (shadowBlur > 0) {
+        ctx.shadowColor = 'rgba(30, 41, 59, 0.65)';
+        ctx.shadowBlur = shadowBlur;
+        ctx.shadowOffsetY = shadowOffset;
+      }
+      ctx.beginPath();
+      ctx.roundRect(x, y, w, h, r);
+      ctx.fillStyle = fillGrad;
+      ctx.fill();
+      if (strokeStyle) {
+        ctx.shadowColor = 'transparent';
+        ctx.strokeStyle = strokeStyle;
+        ctx.lineWidth = strokeLineWidth;
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    // 3D Realistic Laboratory Binding Post
+    // Internal details in subdued slate (#64748b / #475569), 1.0px - 1.2px
+    function drawBindingPost(x, y, capColor = '#f59e0b', baseColor = '#b45309', type = 'brass') {
+      ctx.save();
+      ctx.shadowColor = 'rgba(30, 41, 59, 0.6)';
+      ctx.shadowBlur = 5;
+      ctx.shadowOffsetY = 2;
+
+      // 1. Heavy Stepped Brass Hexagonal Collar Base
+      const collarW = 12;
+      const collarH = 5.5;
+      const gCollar = ctx.createLinearGradient(x - collarW / 2, y, x + collarW / 2, y);
+      gCollar.addColorStop(0, '#78350f');
+      gCollar.addColorStop(0.35, '#fde68a');
+      gCollar.addColorStop(0.65, '#f59e0b');
+      gCollar.addColorStop(1, '#78350f');
+      ctx.fillStyle = gCollar;
+      ctx.beginPath();
+      ctx.roundRect(x - collarW / 2, y - 2, collarW, collarH, 1.5);
+      ctx.fill();
+      ctx.strokeStyle = '#475569';
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+
+      // 2. Threaded Brass Shank / Core
+      const shankW = 8;
+      const shankH = 5;
+      const gShank = ctx.createLinearGradient(x - shankW / 2, y, x + shankW / 2, y);
+      gShank.addColorStop(0, '#92400e');
+      gShank.addColorStop(0.5, '#fbbf24');
+      gShank.addColorStop(1, '#78350f');
+      ctx.fillStyle = gShank;
+      ctx.fillRect(x - shankW / 2, y - 7, shankW, shankH);
+      ctx.strokeStyle = '#64748b';
+      ctx.lineWidth = 0.8;
+      for (let tyR = y - 6; tyR < y - 2; tyR += 1.8) {
+        ctx.beginPath();
+        ctx.moveTo(x - shankW / 2, tyR);
+        ctx.lineTo(x + shankW / 2, tyR);
+        ctx.stroke();
+      }
+
+      // 3. Knurled Insulated Thumb Cap (Contrast floor at #1e293b)
+      const capRadius = 5.5;
+      const capY = y - 9;
+      ctx.beginPath();
+      ctx.arc(x, capY, capRadius, 0, Math.PI * 2);
+
+      let gCap;
+      let strokeCol = '#64748b';
+      if (capColor === '#ef4444' || type === 'red') {
+        gCap = ctx.createRadialGradient(x - 1.8, capY - 1.8, 1, x, capY, capRadius);
+        gCap.addColorStop(0, '#fca5a5');
+        gCap.addColorStop(0.35, '#ef4444');
+        gCap.addColorStop(0.8, '#b91c1c');
+        gCap.addColorStop(1, '#7f1d1d');
+        strokeCol = '#f87171';
+      } else if (capColor === '#1e293b' || capColor === '#334155' || type === 'black') {
+        gCap = ctx.createRadialGradient(x - 1.8, capY - 1.8, 1, x, capY, capRadius);
+        gCap.addColorStop(0, '#64748b');
+        gCap.addColorStop(0.45, '#334155');
+        gCap.addColorStop(1, '#1e293b'); // contrast floor >= #1e293b
+        strokeCol = '#94a3b8';
+      } else {
+        gCap = ctx.createRadialGradient(x - 1.8, capY - 1.8, 1, x, capY, capRadius);
+        gCap.addColorStop(0, '#fef08a');
+        gCap.addColorStop(0.4, '#fbbf24');
+        gCap.addColorStop(0.85, '#d97706');
+        gCap.addColorStop(1, '#78350f');
+        strokeCol = '#d97706';
+      }
+
+      ctx.fillStyle = gCap;
+      ctx.fill();
+      ctx.strokeStyle = strokeCol;
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+
+      // Knurling notches around cap rim in subdued slate (#475569, 0.8px)
+      ctx.strokeStyle = '#475569';
+      ctx.lineWidth = 0.8;
+      for (let a = 0; a < Math.PI * 2; a += Math.PI / 3) {
+        ctx.beginPath();
+        ctx.moveTo(x + Math.cos(a) * (capRadius - 1.8), capY + Math.sin(a) * (capRadius - 1.8));
+        ctx.lineTo(x + Math.cos(a) * capRadius, capY + Math.sin(a) * capRadius);
+        ctx.stroke();
+      }
+
+      // Center Brass Screw Crown
+      ctx.beginPath();
+      ctx.arc(x, capY, 1.8, 0, Math.PI * 2);
+      ctx.fillStyle = '#fde68a';
+      ctx.fill();
+      ctx.strokeStyle = '#78350f';
+      ctx.lineWidth = 0.6;
+      ctx.stroke();
+
+      ctx.restore();
+    }
+
+    // Main Draw Function (Strict 800x500 Resolution)
+    function drawScene() {
+      const W = 800;
+      const H = 500;
+
+      // Obsidian Dark Canvas Background
+      ctx.fillStyle = '#090d16';
+      ctx.fillRect(0, 0, W, H);
+
+      const baseW = 800;
+      const baseH = 500;
+
+      ctx.save();
+
+      // Subtle Blueprint Grid
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.04)';
+      ctx.lineWidth = 1;
+      for (let x = 0; x <= baseW; x += 40) {
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, baseH); ctx.stroke();
+      }
+      for (let y = 0; y <= baseH; y += 40) {
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(baseW, y); ctx.stroke();
+      }
+
+      // Canonical Apparatus Centering Offset (dY = 70)
+      const dY = 70;
+
+      const bx = 195;
+      const by = 38 + dY;
+      const bw = 430;
+      const bh = 152;
+
+      const scaleX = bx + 28;
+      const scaleY = by + 122;
+      const scaleW = 368;
+      const scaleH = 20;
+
+      const wireY = [by + 20, by + 44, by + 68, by + 92];
+
+      const gx = 705;
+      const gy = 120 + dY;
+      const gRadius = 48;
+
+      const batX = 65;
+      const batY = 50 + dY;
+      const batW = 74;
+      const batH = 40;
+
+      const rheoX = batX - 4;
+      const rheoY = batY + 58;
+      const rheoW = 82;
+      const rheoH = 26;
+      const wiperX = rheoX + 16 + ((v0 - 2.0) / 3.0) * (rheoW - 32);
+
+      const c1x = 310;
+      const c1y = 224 + dY;
+      const c1w = 46;
+      const c1h = 56;
+
+      const c2x = 390;
+      const c2y = 224 + dY;
+      const c2w = 48;
+      const c2h = 56;
+
+      const keyX = 465;
+      const keyY = 228 + dY;
+      const keyW = 60;
+      const keyH = 42;
+
+      const boxX = 220;
+      const boxY = 230 + dY;
+      const boxW = 65;
+      const boxH = 40;
+
+      // Jockey strand & position calculation
+      let jStrand = 0;
+      let jX = scaleX;
+      let jY = wireY[0];
+      if (jockeyLength <= 100.0) {
+        jStrand = 0;
+        jX = scaleX + (jockeyLength / 100.0) * scaleW;
+        jY = wireY[0];
+      } else if (jockeyLength <= 200.0) {
+        jStrand = 1;
+        jX = scaleX + scaleW - ((jockeyLength - 100.0) / 100.0) * scaleW;
+        jY = wireY[1];
+      } else if (jockeyLength <= 300.0) {
+        jStrand = 2;
+        jX = scaleX + ((jockeyLength - 200.0) / 100.0) * scaleW;
+        jY = wireY[2];
+      } else {
+        jStrand = 3;
+        jX = scaleX + scaleW - ((jockeyLength - 300.0) / 100.0) * scaleW;
+        jY = wireY[3];
+      }
+
+      const handleW = 12;
+      const handleH = 24;
+      const hx = jX - handleW / 2;
+      const hy = jY - 8 - handleH;
+
+      // =========================================================================
+      // 4-STANDARD LAYER STACKING:
+      // Layer 1: Wooden Board & Base Enclosures
+      // Layer 2: Brass Strips, Hardware & All Wire Leads
+      // Layer 3: Sensitive Instruments & Moving Components (Galvanometer & Jockey)
+      // Layer 4: Badges & Curvy Leaders (Topmost)
+      // =========================================================================
+
+      // =========================================================================
+      // LAYER 1: BASE MOUNTS & ENCLOSURES
+      // =========================================================================
+
+      const _ctB = window.ClassTurnUniversalBridge;
+      const _setStepAlpha = (n) => { ctx.globalAlpha = (!_ctB || _ctB.isStepVisible(Math.min(n, _ctB.totalSteps || 5))) ? (_ctB ? _ctB.getStepProgress(Math.min(n, _ctB.totalSteps || 5)) : 1.0) : 0.0; };
+      _setStepAlpha(1); // 1.1 Wooden Potentiometer Board
+      // Base 3D Depth Under-Shadow & Chamfered Thickness (Contrast floor >= #1e293b)
+      drawShadedRect(bx, by + bh - 3, bw, 6, 4, '#1e293b', null, 0, 0);
+
+      // 100% Solid, Opaque Rich Mahogany Gradient (alpha = 1.0, #451a03 to #853713)
+      const woodGrad = ctx.createLinearGradient(bx, by, bx, by + bh);
+      woodGrad.addColorStop(0.0, '#451a03');
+      woodGrad.addColorStop(0.18, '#6c280e');
+      woodGrad.addColorStop(0.42, '#551f0a');
+      woodGrad.addColorStop(0.70, '#853713');
+      woodGrad.addColorStop(0.88, '#521c07');
+      woodGrad.addColorStop(1.0, '#451a03');
+      // Outer Silhouette ONLY: 2.2px (#94a3b8)
+      drawShadedRect(bx, by, bw, bh, 8, woodGrad, '#94a3b8', 16, 6, 2.2);
+
+      // Internal Wood Grain Details in Subdued Slate / Amber (1.0px)
+      ctx.save();
+      ctx.strokeStyle = 'rgba(100, 116, 139, 0.15)';
+      ctx.lineWidth = 1.0;
+      for (let gyW = by + 12; gyW < by + bh - 10; gyW += 16) {
+        ctx.beginPath();
+        ctx.moveTo(bx + 8, gyW);
+        ctx.bezierCurveTo(bx + bw * 0.35, gyW + 2, bx + bw * 0.65, gyW - 2, bx + bw - 8, gyW);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      // Inner Wood Highlight Bevel (Subdued 1.0px)
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.18)';
+      ctx.lineWidth = 1.0;
+      ctx.strokeRect(bx + 4, by + 4, bw - 8, bh - 8);
+
+      // Polished Brass Corner Brackets with Rivets (Chamfers in Subdued Slate 1.0px)
+      const corners = [
+        [bx + 4, by + 4], [bx + bw - 18, by + 4],
+        [bx + 4, by + bh - 18], [bx + bw - 18, by + bh - 18]
+      ];
+      corners.forEach(([cx, cy]) => {
+        const bg = ctx.createLinearGradient(cx, cy, cx + 14, cy + 14);
+        bg.addColorStop(0, '#fffbeb');
+        bg.addColorStop(0.4, '#fde047');
+        bg.addColorStop(0.7, '#d97706');
+        bg.addColorStop(1, '#78350f');
+        ctx.fillStyle = bg;
+        ctx.fillRect(cx, cy, 14, 14);
+        ctx.strokeStyle = '#475569';
+        ctx.lineWidth = 1.0;
+        ctx.strokeRect(cx, cy, 14, 14);
+        // Brass screw rivet
+        ctx.fillStyle = '#1e293b';
+        ctx.beginPath();
+        ctx.arc(cx + 7, cy + 7, 2.2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = '#fef08a';
+        ctx.beginPath();
+        ctx.arc(cx + 6.2, cy + 6.2, 0.8, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // Wooden / Ivorine Millimeter Meter Scale (100% solid, opaque)
+      const scaleGrad = ctx.createLinearGradient(scaleX, scaleY, scaleX, scaleY + scaleH);
+      scaleGrad.addColorStop(0, '#fffbeb');
+      scaleGrad.addColorStop(0.5, '#fef3c7');
+      scaleGrad.addColorStop(1, '#fde68a');
+      drawShadedRect(scaleX, scaleY, scaleW, scaleH, 2, scaleGrad, '#64748b', 6, 2, 1.2);
+
+      // Millimeter Scale Etched Ticks (Fine 0.8px - 1.0px crisp lines)
+      ctx.save();
+      for (let cm = 0; cm <= 100; cm++) {
+        const tx = scaleX + (cm / 100) * scaleW;
+        if (cm % 10 === 0) {
+          // Major etched tick (1.0px)
+          ctx.strokeStyle = '#451a03';
+          ctx.lineWidth = 1.0;
+          ctx.beginPath();
+          ctx.moveTo(tx, scaleY);
+          ctx.lineTo(tx, scaleY + 9.5);
+          ctx.stroke();
+
+          // Scale Number Etchings
+          ctx.fillStyle = '#451a03';
+          ctx.font = 'bold 7.5px system-ui, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'top';
+          ctx.fillText(String(cm), tx, scaleY + 10.5);
+        } else if (cm % 5 === 0) {
+          // Medium etched tick (0.9px)
+          ctx.strokeStyle = '#64748b';
+          ctx.lineWidth = 0.9;
+          ctx.beginPath();
+          ctx.moveTo(tx, scaleY);
+          ctx.lineTo(tx, scaleY + 6.5);
+          ctx.stroke();
+        } else {
+          // Minor etched tick (0.8px)
+          ctx.strokeStyle = '#64748b';
+          ctx.lineWidth = 0.8;
+          ctx.beginPath();
+          ctx.moveTo(tx, scaleY);
+          ctx.lineTo(tx, scaleY + 3.8);
+          ctx.stroke();
+        }
+      }
+      ctx.restore();
+
+      _setStepAlpha(4); // 1.2 Driver Battery Enclosure
+      const batGrad = ctx.createLinearGradient(batX, batY, batX, batY + batH);
+      batGrad.addColorStop(0.0, '#0284c7');
+      batGrad.addColorStop(0.45, '#0369a1');
+      batGrad.addColorStop(1.0, '#0c4a6e');
+      // Outer Silhouette: 2.0px (#38bdf8)
+      drawShadedRect(batX, batY, batW, batH, 5, batGrad, '#38bdf8', 12, 4, 2.0);
+
+      // Internal Cell Division Ribs (Subdued slate 1.0px)
+      ctx.strokeStyle = '#64748b';
+      ctx.lineWidth = 1.0;
+      ctx.beginPath();
+      ctx.moveTo(batX + batW * 0.33, batY + 4);
+      ctx.lineTo(batX + batW * 0.33, batY + batH - 4);
+      ctx.moveTo(batX + batW * 0.66, batY + 4);
+      ctx.lineTo(batX + batW * 0.66, batY + batH - 4);
+      ctx.stroke();
+
+      // Dynamic Battery Power Pulse LED
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(batX + 12, batY + batH - 10, 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(34, 197, 94, ${0.5 + 0.45 * Math.sin(clock * 4)})`;
+      ctx.shadowColor = '#22c55e';
+      ctx.shadowBlur = 10;
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+      ctx.restore();
+
+      // 1.3 Ceramic Rheostat Tube (Outer Silhouette: 2.0px)
+      const rheoGrad = ctx.createLinearGradient(rheoX, rheoY, rheoX, rheoY + rheoH);
+      rheoGrad.addColorStop(0, '#475569');
+      rheoGrad.addColorStop(0.3, '#cbd5e1');
+      rheoGrad.addColorStop(0.7, '#f1f5f9');
+      rheoGrad.addColorStop(1, '#64748b');
+      // Outer Silhouette: 2.0px (#64748b)
+      drawShadedRect(rheoX, rheoY, rheoW, rheoH, 4, rheoGrad, '#64748b', 10, 4, 2.0);
+
+      // Nichrome Wire Winding Coils (Internal detail: 1.0px)
+      ctx.strokeStyle = '#475569';
+      ctx.lineWidth = 1.0;
+      for (let rx = rheoX + 7; rx < rheoX + rheoW - 7; rx += 3.8) {
+        ctx.beginPath();
+        ctx.moveTo(rx, rheoY + 3);
+        ctx.lineTo(rx, rheoY + rheoH - 3);
+        ctx.stroke();
+      }
+
+      // Brass Slider Guide Rail on Top
+      const railGrad = ctx.createLinearGradient(rheoX, rheoY - 6, rheoX + rheoW, rheoY - 6);
+      railGrad.addColorStop(0, '#fffbeb');
+      railGrad.addColorStop(0.4, '#fde047');
+      railGrad.addColorStop(0.8, '#d97706');
+      railGrad.addColorStop(1, '#78350f');
+      ctx.strokeStyle = railGrad;
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      ctx.moveTo(rheoX, rheoY - 5);
+      ctx.lineTo(rheoX + rheoW, rheoY - 5);
+      ctx.stroke();
+
+      _setStepAlpha(5); // 1.4 Primary Cells & Shunt Box & Key Base
+      // Cell 1: Leclanché (Outer Silhouette: 2.0px)
+      const jarGrad = ctx.createLinearGradient(c1x, c1y, c1x + c1w, c1y + c1h);
+      if (activeCell === 1) {
+        jarGrad.addColorStop(0, '#0284c7');
+        jarGrad.addColorStop(0.5, '#0369a1');
+        jarGrad.addColorStop(1, '#075985');
+      } else {
+        jarGrad.addColorStop(0, '#334155');
+        jarGrad.addColorStop(1, '#1e293b');
+      }
+      drawShadedRect(c1x, c1y, c1w, c1h, 6, jarGrad, activeCell === 1 ? '#38bdf8' : '#64748b', activeCell === 1 ? 14 : 4, 3, 2.0);
+
+      // Liquid Meniscus Reflection (Internal detail: 1.0px)
+      ctx.strokeStyle = activeCell === 1 ? '#bae6fd' : '#64748b';
+      ctx.lineWidth = 1.0;
+      ctx.beginPath();
+      ctx.ellipse(c1x + c1w / 2, c1y + 12, c1w / 2 - 4, 3, 0, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Cell 2: Daniell (100% solid, opaque copper gradient, Outer Silhouette: 2.0px)
+      const danGrad = ctx.createLinearGradient(c2x, c2y, c2x + c2w, c2y + c2h);
+      if (activeCell === 2) {
+        danGrad.addColorStop(0, '#f97316');
+        danGrad.addColorStop(0.5, '#ea580c');
+        danGrad.addColorStop(1, '#9a3412');
+      } else {
+        danGrad.addColorStop(0, '#334155');
+        danGrad.addColorStop(1, '#1e293b');
+      }
+      drawShadedRect(c2x, c2y, c2w, c2h, 6, danGrad, activeCell === 2 ? '#fdba74' : '#64748b', activeCell === 2 ? 14 : 4, 3, 2.0);
+
+      // Copper Vessel Rim (Internal detail: 1.0px)
+      ctx.strokeStyle = activeCell === 2 ? '#fde047' : '#64748b';
+      ctx.lineWidth = 1.0;
+      ctx.strokeRect(c2x + 3, c2y + 3, c2w - 6, 3);
+
+      // Two-Way Key Base Block (Outer Silhouette: 2.0px, Contrast floor >= #1e293b)
+      drawShadedRect(keyX, keyY, keyW, keyH, 4, '#1e293b', '#64748b', 10, 4, 2.0);
+
+      // Shunt Resistance Box Body (100% solid, opaque teak gradient)
+      const teakGrad = ctx.createLinearGradient(boxX, boxY, boxX, boxY + boxH);
+      teakGrad.addColorStop(0, '#451a03');
+      teakGrad.addColorStop(0.5, '#5c220a');
+      teakGrad.addColorStop(1, '#2e0f03');
+      drawShadedRect(boxX, boxY, boxW, boxH, 4, teakGrad, '#d97706', 10, 4, 2.0);
+
+      // Engraved Brass Specification Plate (Chamfers in Subdued Slate: 1.0px)
+      const plateW = 46;
+      const plateH = 14;
+      const plateX = boxX + (boxW - plateW) / 2;
+      const plateY = boxY + 18;
+      const plateGrad = ctx.createLinearGradient(plateX, plateY, plateX, plateY + plateH);
+      plateGrad.addColorStop(0, '#fffbeb');
+      plateGrad.addColorStop(0.4, '#fde047');
+      plateGrad.addColorStop(0.8, '#d97706');
+      plateGrad.addColorStop(1, '#78350f');
+      drawShadedRect(plateX, plateY, plateW, plateH, 2, plateGrad, '#475569', 3, 1, 1.0);
+
+      // Brass Commutator Sockets
+      const plugY = boxY + 7;
+      for (let pi = 0; pi < 3; pi++) {
+        const px = boxX + 16 + pi * 16;
+        ctx.beginPath();
+        ctx.arc(px, plugY, 3.2, 0, Math.PI * 2);
+        ctx.fillStyle = (currentActivity === 1 && activeCell === 1 && rShunt > 0) ? '#f59e0b' : '#334155';
+        ctx.fill();
+        ctx.strokeStyle = '#475569';
+        ctx.lineWidth = 1.0;
+        ctx.stroke();
+      }
+
+      // =========================================================================
+      _setStepAlpha(1); // LAYER 2: BRASS STRIPS, HARDWARE & ALL WIRE LEADS
+      // =========================================================================
+
+      // 2.1 Solid, Opaque Metallic Brass Interconnecting Strips
+      // Right strip: connects wire 1 & 2
+      const stripRight1 = ctx.createLinearGradient(scaleX + scaleW, by + 16, scaleX + scaleW + 18, by + 48);
+      stripRight1.addColorStop(0, '#fffbeb');
+      stripRight1.addColorStop(0.3, '#fde047');
+      stripRight1.addColorStop(0.7, '#d97706');
+      stripRight1.addColorStop(1, '#78350f');
+      // Chamfers & borders in subdued slate (#475569, 1.0px)
+      drawShadedRect(scaleX + scaleW, by + 16, 18, 32, 3, stripRight1, '#475569', 6, 2, 1.0);
+      drawBindingPost(scaleX + scaleW + 9, by + 23, '#fbbf24', '#b45309');
+      drawBindingPost(scaleX + scaleW + 9, by + 41, '#fbbf24', '#b45309');
+
+      // Left strip: connects wire 2 & 3
+      const stripLeft2 = ctx.createLinearGradient(scaleX - 18, by + 40, scaleX, by + 72);
+      stripLeft2.addColorStop(0, '#fffbeb');
+      stripLeft2.addColorStop(0.3, '#fde047');
+      stripLeft2.addColorStop(0.7, '#d97706');
+      stripLeft2.addColorStop(1, '#78350f');
+      drawShadedRect(scaleX - 18, by + 40, 18, 32, 3, stripLeft2, '#475569', 6, 2, 1.0);
+      drawBindingPost(scaleX - 9, by + 47, '#fbbf24', '#b45309');
+      drawBindingPost(scaleX - 9, by + 65, '#fbbf24', '#b45309');
+
+      // Right strip: connects wire 3 & 4
+      const stripRight3 = ctx.createLinearGradient(scaleX + scaleW, by + 64, scaleX + scaleW + 18, by + 96);
+      stripRight3.addColorStop(0, '#fffbeb');
+      stripRight3.addColorStop(0.3, '#fde047');
+      stripRight3.addColorStop(0.7, '#d97706');
+      stripRight3.addColorStop(1, '#78350f');
+      drawShadedRect(scaleX + scaleW, by + 64, 18, 32, 3, stripRight3, '#475569', 6, 2, 1.0);
+      drawBindingPost(scaleX + scaleW + 9, by + 71, '#fbbf24', '#b45309');
+      drawBindingPost(scaleX + scaleW + 9, by + 89, '#fbbf24', '#b45309');
+
+      // Terminals A (+) and B (-)
+      const termAx = scaleX - 9;
+      const termAy = by + 20;
+      const termBx = scaleX - 9;
+      const termBy = by + 92;
+      drawBindingPost(termAx, termAy, '#ef4444', '#b45309', 'red');
+      drawBindingPost(termBx, termBy, '#1e293b', '#64748b', 'black');
+
+      // Battery Binding Posts
+      const batPos = { x: batX + 16, y: batY - 5 };
+      const batNeg = { x: batX + batW - 16, y: batY - 5 };
+      drawBindingPost(batPos.x, batPos.y, '#ef4444', '#991b1b', 'red');
+      drawBindingPost(batNeg.x, batNeg.y, '#1e293b', '#334155', 'black');
+
+      // Rheostat Terminal Post
+      const rheoTerm = { x: rheoX + rheoW - 4, y: rheoY + rheoH / 2 };
+      drawBindingPost(rheoTerm.x, rheoTerm.y, '#fbbf24', '#b45309');
+
+      // Cell Binding Posts
+      const cell1Pos = { x: c1x + 16, y: c1y - 12 };
+      const cell1Neg = { x: c1x + 31, y: c1y - 8 };
+      drawShadedRect(c1x + 12, c1y - 10, 8, 14, 2, '#1e293b', '#64748b', 2, 1, 1.0);
+      drawBindingPost(cell1Pos.x, cell1Pos.y, '#ef4444', '#b45309', 'red');
+      drawShadedRect(c1x + 28, c1y - 6, 6, 11, 1, '#64748b', '#475569', 2, 1, 1.0);
+      drawBindingPost(cell1Neg.x, cell1Neg.y, '#1e293b', '#475569', 'black');
+
+      const cell2Pos = { x: c2x + 13, y: c2y - 8 };
+      const cell2Neg = { x: c2x + 30, y: c2y - 8 };
+      drawBindingPost(cell2Pos.x, cell2Pos.y, '#ef4444', '#b45309', 'red');
+      drawShadedRect(c2x + 27, c2y - 6, 6, 12, 1, '#64748b', '#475569', 2, 1, 1.0);
+      drawBindingPost(cell2Neg.x, cell2Neg.y, '#1e293b', '#475569', 'black');
+
+      // Two-Way Key Sockets
+      const s1 = { x: keyX + 16, y: keyY + 14 };
+      const s2 = { x: keyX + keyW - 16, y: keyY + 14 };
+      const sCommon = { x: keyX + keyW / 2, y: keyY + keyH - 10 };
+      drawBindingPost(s1.x, s1.y, '#fbbf24', '#b45309');
+      drawBindingPost(s2.x, s2.y, '#fbbf24', '#b45309');
+      drawBindingPost(sCommon.x, sCommon.y, '#fbbf24', '#b45309');
+
+      // Shunt Box Terminals
+      const boxTerm1 = { x: boxX + 14, y: boxY - 5 };
+      const boxTerm2 = { x: boxX + boxW - 14, y: boxY - 5 };
+      drawBindingPost(boxTerm1.x, boxTerm1.y, '#ef4444', '#b45309', 'red');
+      drawBindingPost(boxTerm2.x, boxTerm2.y, '#1e293b', '#64748b', 'black');
+
+      // Galvanometer Terminals
+      const gTerm1x = gx - 14;
+      const gTerm1y = gy + gRadius + 6;
+      const gTerm2x = gx + 14;
+      const gTerm2y = gy + gRadius + 6;
+      drawBindingPost(gTerm1x, gTerm1y, '#ef4444', '#b45309', 'red');
+      drawBindingPost(gTerm2x, gTerm2y, '#1e293b', '#64748b', 'black');
+
+      // 2.2 4 Horizontal Constantan Wire Strands
+      for (let i = 0; i < 4; i++) {
+        // Wire Under-Shadow (Contrast floor >= #1e293b)
+        ctx.strokeStyle = '#1e293b';
         ctx.lineWidth = 2.4;
         ctx.beginPath();
-        ctx.moveTo(xL, wy);
-        ctx.lineTo(xR, wy);
+        ctx.moveTo(scaleX, wireY[i] + 1.2);
+        ctx.lineTo(scaleX + scaleW, wireY[i] + 1.2);
         ctx.stroke();
 
-        // Copper turn-around bus bars
-        ctx.fillStyle = "#cbd5e1";
-        ctx.fillRect(xL - 10, wy - 5, 10, 10);
-        ctx.fillRect(xR, wy - 5, 10, 10);
+        // Constantan Metallic Wire
+        const wireGrad = ctx.createLinearGradient(scaleX, wireY[i] - 1.2, scaleX, wireY[i] + 1.2);
+        wireGrad.addColorStop(0, '#cbd5e1');
+        wireGrad.addColorStop(0.5, '#ffffff');
+        wireGrad.addColorStop(1, '#64748b');
+        ctx.strokeStyle = wireGrad;
+        ctx.lineWidth = 1.8;
+        ctx.beginPath();
+        ctx.moveTo(scaleX, wireY[i]);
+        ctx.lineTo(scaleX + scaleW, wireY[i]);
+        ctx.stroke();
+      }
+
+      // Dynamic Wire Current Glow along Active Potential Gradient Path
+      ctx.save();
+      ctx.shadowColor = '#fbbf24';
+      ctx.shadowBlur = 7;
+      ctx.strokeStyle = 'rgba(251, 191, 36, 0.85)';
+      ctx.lineWidth = 2.2;
+      for (let s = 0; s <= jStrand; s++) {
+        ctx.beginPath();
+        if (s < jStrand) {
+          ctx.moveTo(scaleX, wireY[s]);
+          ctx.lineTo(scaleX + scaleW, wireY[s]);
+        } else {
+          if (s % 2 === 0) {
+            ctx.moveTo(scaleX, wireY[s]);
+            ctx.lineTo(jX, wireY[s]);
+          } else {
+            ctx.moveTo(scaleX + scaleW, wireY[s]);
+            ctx.lineTo(jX, wireY[s]);
+          }
+        }
+        ctx.stroke();
       }
       ctx.restore();
 
-      drawCanonicalBadgeOnly(ctx, 1, { x: 150, y: 255 }, { x: 105, y: 255 });
-    }
+      // 2.3 All Connecting Leads (Smooth Curved Wires)
+      function drawWire(p1, p2, ctrlOffset, color = '#ef4444', isDotted = false) {
+        ctx.save();
+        ctx.shadowColor = 'rgba(30, 41, 59, 0.5)';
+        ctx.shadowBlur = 4;
+        ctx.shadowOffsetY = 2;
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 1.8;
+        if (isDotted) ctx.setLineDash([4, 3]);
+        ctx.beginPath();
+        ctx.moveTo(p1.x, p1.y);
+        const cx1 = (p1.x + p2.x) / 2 + (ctrlOffset.x || 0);
+        const cy1 = (p1.y + p2.y) / 2 + (ctrlOffset.y || 0);
+        ctx.quadraticCurveTo(cx1, cy1, p2.x, p2.y);
+        ctx.stroke();
+        ctx.restore();
+      }
 
-    // STEP 2: Auxiliary Driver Battery (E0) & Rheostat (Rh) at Top Loop + Badge 2
-    if (B.isStepVisible(2)) {
-      const p2 = B.getStepProgress(2);
-      ctx.save();
-      ctx.globalAlpha = p2;
-      ctx.translate(0, (1 - p2) * -25);
+      // 1. Driver Battery (+) -> Potentiometer Terminal A (Red)
+      drawWire(batPos, { x: termAx, y: termAy }, { x: -20, y: -20 }, '#ef4444');
 
-      ctx.strokeStyle = "#94a3b8";
-      ctx.lineWidth = 2;
+      // 2. Driver Battery (-) -> Rheostat top slider (Slate)
+      drawWire(batNeg, { x: wiperX, y: rheoY - 11 }, { x: 15, y: 0 }, '#64748b');
+
+      // 3. Rheostat Terminal -> Potentiometer Terminal B (Slate)
+      drawWire(rheoTerm, { x: termBx, y: termBy }, { x: 10, y: 20 }, '#64748b');
+
+      // 4. Potentiometer Terminal A -> Cell 1 (+) & Cell 2 (+) (Red)
+      drawWire({ x: termAx, y: termAy }, cell1Pos, { x: -25, y: 30 }, '#ef4444');
+      drawWire(cell1Pos, cell2Pos, { x: 0, y: -12 }, '#ef4444');
+
+      // 5. Cell 1 (-) -> Two-Way Key Socket 1 (Blue)
+      drawWire(cell1Neg, s1, { x: 10, y: 15 }, '#38bdf8');
+
+      // 6. Cell 2 (-) -> Two-Way Key Socket 2 (Orange)
+      drawWire(cell2Neg, s2, { x: 10, y: 15 }, '#f97316');
+
+      // 7. Shunt Resistance Box -> Cell 1 (Green Shunt Wires - Active glowing in Activity 2 when Cell 1 is selected)
+      const isShuntActive = (currentActivity === 1 && activeCell === 1 && rShunt > 0);
+      const shuntWireColor = isShuntActive ? '#10b981' : '#475569';
+      drawWire(boxTerm1, cell1Pos, { x: 0, y: -15 }, shuntWireColor, true);
+      drawWire(boxTerm2, cell1Neg, { x: 0, y: -8 }, shuntWireColor, true);
+
+      // 8. Two-Way Key Common Socket -> Galvanometer Terminal 1 (Amber)
+      drawWire(sCommon, { x: gTerm1x, y: gTerm1y }, { x: 25, y: 35 }, '#f59e0b');
+
+      // 9. Galvanometer Terminal 2 -> Jockey Handle (Flexible dynamic gold curling wire)
+      const jockeyWireP = { x: jX, y: hy - 2 };
+      drawWire({ x: gTerm2x, y: gTerm2y }, jockeyWireP, { x: 30, y: -25 }, '#eab308');
+
+      // =========================================================================
+      // LAYER 3: SENSITIVE INSTRUMENTS & MOVING COMPONENTS
+      // =========================================================================
+
+      // 3.1 Rheostat Wiper Slider (Moves dynamically with v0)
+      drawShadedRect(wiperX - 6, rheoY - 11, 12, 10, 2, '#1e293b', '#fbbf24', 4, 1, 1.2);
+      ctx.strokeStyle = '#fbbf24';
+      ctx.lineWidth = 1.2;
       ctx.beginPath();
-      ctx.moveTo(xL, y0);
-      ctx.lineTo(xL, 110);
-      ctx.lineTo(xR, 110);
-      ctx.lineTo(xR, y0 + 3 * dy);
+      ctx.moveTo(wiperX, rheoY - 1);
+      ctx.lineTo(wiperX, rheoY + 4);
       ctx.stroke();
 
-      // Driver Battery Box (x=250..330, y=90..130)
-      ctx.fillStyle = "#0f172a";
-      ctx.strokeStyle = "#38bdf8";
-      ctx.lineWidth = 2;
-      ctx.fillRect(250, 90, 82, 38);
-      ctx.strokeRect(250, 90, 82, 38);
-
-      // Rheostat Coil Cylinder (x=420..520, y=92..128)
-      ctx.fillStyle = "#334155";
-      ctx.strokeStyle = "#cbd5e1";
-      ctx.fillRect(420, 92, 98, 34);
-      ctx.strokeRect(420, 92, 98, 34);
+      // 3.2 Two-Way Key Brass Plug (Jumps dynamically between Socket 1 and Socket 2)
+      const plugTarget = (activeCell === 1) ? s1 : s2;
+      ctx.save();
+      ctx.shadowColor = 'rgba(251, 191, 36, 0.9)';
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.arc(plugTarget.x, plugTarget.y - 9, 5.5, 0, Math.PI * 2);
+      ctx.fillStyle = '#1e293b';
+      ctx.fill();
+      ctx.strokeStyle = '#d97706';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(plugTarget.x, plugTarget.y - 9, 2.8, 0, Math.PI * 2);
+      ctx.fillStyle = '#fef08a';
+      ctx.fill();
       ctx.restore();
 
-      drawCanonicalBadgeOnly(ctx, 2, { x: 291, y: 90 }, { x: 225, y: 62 });
-    }
-
-    // STEP 3: Test Cell (E1) & Shunt Resistance Box (R) at Bottom Left + Badge 3
-    if (B.isStepVisible(3)) {
-      const p3 = B.getStepProgress(3);
+      _setStepAlpha(3); // 3.3 Sensitive Centre-Zero Galvanometer
       ctx.save();
-      ctx.globalAlpha = p3;
-      ctx.translate(0, (1 - p3) * 25);
-
-      ctx.strokeStyle = "#94a3b8";
-      ctx.lineWidth = 2;
+      // Outer 3D Metallic Chassis Shadow (Contrast floor >= #1e293b)
+      ctx.shadowColor = 'rgba(30, 41, 59, 0.7)';
+      ctx.shadowBlur = 18;
+      ctx.shadowOffsetY = 8;
       ctx.beginPath();
-      ctx.moveTo(xL, y0);
-      ctx.lineTo(xL, 385);
-      ctx.lineTo(395, 385);
+      ctx.arc(gx, gy, gRadius, 0, Math.PI * 2);
+      // Contrast floor: deepest tone must never drop below #1e293b
+      const housingGrad = ctx.createLinearGradient(gx - gRadius, gy - gRadius, gx + gRadius, gy + gRadius);
+      housingGrad.addColorStop(0, '#1e293b');
+      housingGrad.addColorStop(0.35, '#334155');
+      housingGrad.addColorStop(0.7, '#475569');
+      housingGrad.addColorStop(1, '#1e293b');
+      ctx.fillStyle = housingGrad;
+      ctx.fill();
+
+      // Outer Silhouette ONLY: 2.2px (#38bdf8)
+      ctx.shadowColor = 'transparent';
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2.2;
       ctx.stroke();
 
-      // Test Cell + Shunt Box Unit (x=235..345, y=362..412)
-      ctx.fillStyle = "#0f172a";
-      ctx.strokeStyle = "#f59e0b";
-      ctx.lineWidth = 2;
+      // Heavy 3D Beveled Brass Rim (Subdued 1.2px)
       ctx.beginPath();
-      ctx.roundRect(235, 362, 110, 48, 6);
+      ctx.arc(gx, gy, gRadius - 4, 0, Math.PI * 2);
+      const rimGrad = ctx.createLinearGradient(gx - gRadius, gy, gx + gRadius, gy);
+      rimGrad.addColorStop(0, '#fffbeb');
+      rimGrad.addColorStop(0.3, '#fde047');
+      rimGrad.addColorStop(0.7, '#d97706');
+      rimGrad.addColorStop(1, '#78350f');
+      ctx.strokeStyle = rimGrad;
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+
+      // Inner Dark Bezel Gasket
+      ctx.beginPath();
+      ctx.arc(gx, gy, gRadius - 7, 0, Math.PI * 2);
+      ctx.strokeStyle = '#1e293b';
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+
+      // Pearlescent White Graduated Dial Plate
+      ctx.beginPath();
+      ctx.arc(gx, gy, gRadius - 8.5, 0, Math.PI * 2);
+      const dialGrad = ctx.createRadialGradient(gx, gy - 10, 4, gx, gy, gRadius - 8.5);
+      dialGrad.addColorStop(0, '#ffffff');
+      dialGrad.addColorStop(0.8, '#f8fafc');
+      dialGrad.addColorStop(1, '#e2e8f0');
+      ctx.fillStyle = dialGrad;
       ctx.fill();
+
+      // Graduated Arc and Calibration Ticks (Fine 0.8px - 1.0px crisp lines)
+      const arcRadius = 33;
+      ctx.strokeStyle = '#334155';
+      ctx.lineWidth = 1.0;
+      ctx.beginPath();
+      ctx.arc(gx, gy + 11, arcRadius, -Math.PI * 0.72, -Math.PI * 0.28);
+      ctx.stroke();
+
+      for (let div = -30; div <= 30; div += 5) {
+        const angle = -Math.PI / 2 + (div / 30) * (Math.PI * 0.22);
+        const isMajor = (div === 0 || Math.abs(div) === 30 || Math.abs(div) === 15);
+        const rInner = isMajor ? (arcRadius - 6.5) : (arcRadius - 3.8);
+        const x1 = gx + Math.cos(angle) * rInner;
+        const y1 = (gy + 11) + Math.sin(angle) * rInner;
+        const x2 = gx + Math.cos(angle) * arcRadius;
+        const y2 = (gy + 11) + Math.sin(angle) * arcRadius;
+
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.strokeStyle = (div === 0) ? '#dc2626' : (isMajor ? '#1e293b' : '#64748b');
+        ctx.lineWidth = (div === 0) ? 1.0 : (isMajor ? 1.0 : 0.8);
+        ctx.stroke();
+
+        // Numbers on Dial
+        if (div === 0 || Math.abs(div) === 30) {
+          ctx.fillStyle = (div === 0) ? '#dc2626' : '#1e293b';
+          ctx.font = 'bold 7px system-ui, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          const lx = gx + Math.cos(angle) * (arcRadius - 10.5);
+          const ly = (gy + 11) + Math.sin(angle) * (arcRadius - 10.5);
+          ctx.fillText(String(Math.abs(div)), lx, ly);
+        }
+      }
+
+      // Classic Galvanometer "G" Emblem
+      ctx.fillStyle = '#64748b';
+      ctx.font = 'bold 10px serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('G', gx, gy - 6);
+
+      // Pivoted Damped Needle
+      const targetDeg = (targetDeflection / 30.0) * 38.0;
+      needleAngle += (targetDeg - needleAngle) * 0.12;
+      const nRad = -Math.PI / 2 + (needleAngle * Math.PI / 180.0);
+      const needleLen = 31;
+
+      // Needle Shadow
+      ctx.save();
+      ctx.strokeStyle = 'rgba(30, 41, 59, 0.35)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(gx + 1.2, gy + 12.2);
+      ctx.lineTo(gx + 1.2 + Math.cos(nRad) * needleLen, (gy + 12.2) + Math.sin(nRad) * needleLen);
+      ctx.stroke();
+
+      // Sharp Crimson Needle Pointer
+      ctx.strokeStyle = '#dc2626';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(gx, gy + 11);
+      ctx.lineTo(gx + Math.cos(nRad) * needleLen, (gy + 11) + Math.sin(nRad) * needleLen);
+      ctx.stroke();
+
+      // Needle Rear Counter-Poise Disc
+      ctx.strokeStyle = '#dc2626';
+      ctx.lineWidth = 1.0;
+      ctx.beginPath();
+      ctx.moveTo(gx, gy + 11);
+      ctx.lineTo(gx - Math.cos(nRad) * 7, (gy + 11) - Math.sin(nRad) * 7);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(gx - Math.cos(nRad) * 7, (gy + 11) - Math.sin(nRad) * 7, 2, 0, Math.PI * 2);
+      ctx.fillStyle = '#dc2626';
+      ctx.fill();
+
+      // Realistic Center Brass Pivot Cap with Jewel Indent (Subdued 1.0px)
+      ctx.beginPath();
+      ctx.arc(gx, gy + 11, 4.5, 0, Math.PI * 2);
+      const pivotGrad = ctx.createLinearGradient(gx - 4, gy + 7, gx + 4, gy + 15);
+      pivotGrad.addColorStop(0, '#fffbeb');
+      pivotGrad.addColorStop(0.4, '#fde047');
+      pivotGrad.addColorStop(0.8, '#d97706');
+      pivotGrad.addColorStop(1, '#78350f');
+      ctx.fillStyle = pivotGrad;
+      ctx.fill();
+      ctx.strokeStyle = '#475569';
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+      // Center jewel indent
+      ctx.beginPath();
+      ctx.arc(gx, gy + 11, 1.4, 0, Math.PI * 2);
+      ctx.fillStyle = '#1e293b';
+      ctx.fill();
+      ctx.restore();
+
+      // Dynamic Null Point Indicator LED
+      const isNullPoint = Math.abs(targetDeflection) < 0.2;
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(gx, gy - 21, 4.5, 0, Math.PI * 2);
+      ctx.fillStyle = '#1e293b';
+      ctx.fill();
+      ctx.strokeStyle = '#d97706';
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+
+      // LED Lens
+      ctx.beginPath();
+      ctx.arc(gx, gy - 21, 3.2, 0, Math.PI * 2);
+      if (isNullPoint) {
+        ctx.fillStyle = '#10b981';
+        ctx.shadowColor = '#10b981';
+        ctx.shadowBlur = 12;
+      } else {
+        ctx.fillStyle = '#475569';
+        ctx.shadowColor = 'transparent';
+      }
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 0.8;
       ctx.stroke();
       ctx.restore();
 
-      drawCanonicalBadgeOnly(ctx, 3, { x: 290, y: 410 }, { x: 205, y: 410 });
-    }
-
-    // STEP 4: Center-Zero Sensitive Galvanometer (G) at Bottom Right + Badge 4
-    if (B.isStepVisible(4)) {
-      const p4 = B.getStepProgress(4);
+      // Specular Curved Glass Arc Reflection
       ctx.save();
-      ctx.globalAlpha = p4;
-
-      const gx = 455, gy = 385;
       ctx.beginPath();
-      ctx.arc(gx, gy, 28, 0, Math.PI * 2);
-      ctx.fillStyle = "#0f172a";
-      ctx.fill();
-      ctx.strokeStyle = Math.abs(res.iGalv) < 3.0 ? "#34d399" : "#f59e0b";
+      ctx.arc(gx, gy, gRadius - 10, -Math.PI * 0.85, -Math.PI * 0.15);
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.38)';
       ctx.lineWidth = 2.4;
       ctx.stroke();
-
-      // Galvanometer Needle deflecting left/right with I_G
-      const angle = Math.max(-0.85, Math.min(0.85, res.iGalv / 45.0));
-      ctx.strokeStyle = "#ef4444";
-      ctx.lineWidth = 2.2;
-      ctx.beginPath();
-      ctx.moveTo(gx, gy + 8);
-      ctx.lineTo(gx + Math.sin(angle) * 22, gy + 8 - Math.cos(angle) * 22);
-      ctx.stroke();
+      ctx.restore();
       ctx.restore();
 
-      drawCanonicalBadgeOnly(ctx, 4, { x: 483, y: 385 }, { x: 555, y: 385 });
-    }
-
-    // STEP 5: Sliding Contact Jockey (J) Snapped onto Wire at l = state.jpos + Badge 5
-    if (B.isStepVisible(5)) {
-      const p5 = B.getStepProgress(5);
-      const jpt = mapLengthToWireXY(state.jpos);
+      _setStepAlpha(2); // 3.4 Sliding Knife-Edge Jockey
       ctx.save();
-      ctx.globalAlpha = p5;
-
-      // Flexible Lead from Galvanometer (455, 357) to Jockey (jpt.x, jpt.y)
-      ctx.strokeStyle = "#38bdf8";
-      ctx.lineWidth = 2;
+      // Knife-Edge Contact Blade (Subdued outline 1.0px in #64748b, NOT glowing cyan)
+      ctx.shadowColor = 'rgba(30, 41, 59, 0.7)';
+      ctx.shadowBlur = 8;
       ctx.beginPath();
-      ctx.moveTo(455, 357);
-      ctx.quadraticCurveTo(495, 315, jpt.x, jpt.y);
+      ctx.moveTo(jX - 4.5, jY - 8);
+      ctx.lineTo(jX + 4.5, jY - 8);
+      ctx.lineTo(jX, jY + 1.5);
+      ctx.closePath();
+      const bladeGrad = ctx.createLinearGradient(jX - 5, jY - 8, jX + 5, jY);
+      bladeGrad.addColorStop(0, '#fffbeb');
+      bladeGrad.addColorStop(0.3, '#fde047');
+      bladeGrad.addColorStop(0.7, '#d97706');
+      bladeGrad.addColorStop(1, '#78350f');
+      ctx.fillStyle = bladeGrad;
+      ctx.fill();
+      ctx.strokeStyle = '#64748b'; // Subdued slate, NOT glowing cyan
+      ctx.lineWidth = 1.0;
       ctx.stroke();
 
-      // Brass/Ebonite Jockey Handle & Knife Contact Point
-      ctx.fillStyle = "#38bdf8";
+      // Dynamic Contact Spark Bead (live physical contact on wire)
       ctx.beginPath();
-      ctx.arc(jpt.x, jpt.y, 5.5, 0, Math.PI * 2);
+      ctx.arc(jX, jY, 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = '#ffffff';
+      ctx.shadowColor = '#fde047';
+      ctx.shadowBlur = 8 + Math.sin(clock * 8) * 4;
       ctx.fill();
-      ctx.fillStyle = "#e2e8f0";
-      ctx.fillRect(jpt.x - 4, jpt.y - 24, 8, 18);
+
+      // Ergonomic Heavy Brass Handle (Outline: 1.2px in #64748b, NOT glowing cyan)
+      const handleGrad = ctx.createLinearGradient(hx, hy, hx + handleW, hy);
+      handleGrad.addColorStop(0, '#78350f');
+      handleGrad.addColorStop(0.25, '#fbbf24');
+      handleGrad.addColorStop(0.55, '#fffbeb');
+      handleGrad.addColorStop(0.8, '#d97706');
+      handleGrad.addColorStop(1, '#78350f');
+      drawShadedRect(hx, hy, handleW, handleH, 2, handleGrad, '#64748b', 8, 3, 1.2);
+
+      // Knurled Gripping Grooves: Diamond Knurling in Subdued Slate (#475569, 1.0px)
+      ctx.strokeStyle = '#475569';
+      ctx.lineWidth = 1.0;
+      for (let gyG = hy + 4; gyG < hy + handleH - 4; gyG += 3.5) {
+        ctx.beginPath();
+        ctx.moveTo(hx + 1.5, gyG);
+        ctx.lineTo(hx + handleW - 1.5, gyG + 2);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(hx + 1.5, gyG + 2);
+        ctx.lineTo(hx + handleW - 1.5, gyG);
+        ctx.stroke();
+      }
+
+      // Upper Brass Knurled Collar
+      ctx.fillStyle = '#d97706';
+      ctx.fillRect(hx - 1, hy + 2, handleW + 2, 2.5);
+
+      // Ebonite Top Insulator Knob (Subdued 1.2px in #64748b, Contrast floor >= #1e293b)
+      ctx.beginPath();
+      ctx.arc(jX, hy - 2, 6, 0, Math.PI * 2);
+      const knobGrad = ctx.createRadialGradient(jX - 2, hy - 4, 1, jX, hy - 2, 6);
+      knobGrad.addColorStop(0, '#64748b');
+      knobGrad.addColorStop(0.45, '#334155');
+      knobGrad.addColorStop(1, '#1e293b');
+      ctx.fillStyle = knobGrad;
+      ctx.fill();
+      ctx.strokeStyle = '#64748b';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+
+      // Top Terminal Screw Crown for Galvanometer Lead Attachment
+      ctx.beginPath();
+      ctx.arc(jX, hy - 2, 2.2, 0, Math.PI * 2);
+      ctx.fillStyle = '#fde68a';
+      ctx.fill();
+      ctx.strokeStyle = '#78350f';
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
       ctx.restore();
 
-      drawCanonicalBadgeOnly(ctx, 5, { x: jpt.x, y: jpt.y - 24 }, { x: 545, y: 155 });
+      // =========================================================================
+      ctx.globalAlpha = 1.0;
+      // LAYER 4: BADGES & CURVY LEADERS (TOPMOST)
+      // =========================================================================
+
+      // Leader 1 (Potentiometer Board) -> board top rim at (230, by)
+      drawCurvyLeader(230, 50, 230, by);
+
+      // Leader 2 (Sliding Jockey) -> moving jockey blade/handle at (jX, hy - 4)
+      drawCurvyLeader(400, 50, jX, hy - 4);
+
+      // Leader 3 (Galvanometer) -> meter top at (gx, gy - gRadius)
+      drawCurvyLeader(705, 50, gx, gy - gRadius);
+
+      // Leader 4 (Driver Battery) -> battery top at (batX + batW / 2, batY)
+      drawCurvyLeader(102, 50, batX + batW / 2, batY);
+
+      // Leader 5 (Primary Cells & Two-Way Key) -> Cell 2 bottom edge at (c2x + c2w / 2, c2y + c2h)
+      drawCurvyLeader(375, 410, c2x + c2w / 2, c2y + c2h);
+
+      // Topmost Numbered Badges (1, 2, 3, 4, 5)
+      drawBadge(1, 230, 50);
+      drawBadge(2, 400, 50);
+      drawBadge(3, 705, 50);
+      drawBadge(4, 102, 50);
+      drawBadge(5, 375, 410);
+
+      // Restore logical coordinate transform
+      ctx.restore();
     }
-  }
 
-
-  const btnRecordEl = document.querySelector("#btnRecord");
-  if (btnRecordEl) {
-    btnRecordEl.dataset.ctWired = "1";
-    btnRecordEl.addEventListener("click", () => {
-      if (window.ClassTurnUniversalBridge.completedStep < window.ClassTurnUniversalBridge.totalSteps) {
-        window.ClassTurnUniversalBridge.triggerWarning(`Out of sequence! Please complete [➔ Step ${window.ClassTurnUniversalBridge.completedStep + 1}] first before recording.`);
-        return;
+    // 60 FPS Animation Loop
+    function loop() {
+      if (isRunning) {
+        clock += 0.03;
+        drawScene();
       }
-      trialNum += 1;
-      const cols = buildObservationRow();
-      const tr = document.createElement("tr");
-      tr.innerHTML = cols.map(c => `<td>${c}</td>`).join("");
-      tbody.appendChild(tr);
+      animFrame = requestAnimationFrame(loop);
+    }
+
+    // Window resize handler (strictly preserving 800x500 canvas coordinates)
+    window.addEventListener('resize', () => {
+      drawScene();
     });
-  }
 
-  const btnResetEl = document.querySelector("#btnReset");
-  if (btnResetEl) {
-    btnResetEl.addEventListener("click", () => {
-      SIM_SPEC.controls.forEach(c => {
-        state[c.id] = c.value;
-        const inp = document.querySelector("#ctrl_" + c.id);
-        if (inp) inp.value = c.value;
-      });
-      tbody.innerHTML = "";
-      trialNum = 0;
-      window.ClassTurnUniversalBridge.resetSteps();
-      updateLiveReadingsOnly();
-    });
-  }
-
-  const btnStepEl = document.querySelector("#btnStep");
-  if (btnStepEl) {
-    btnStepEl.addEventListener("click", () => {
-      const nextStep = Math.min(window.ClassTurnUniversalBridge.totalSteps, window.ClassTurnUniversalBridge.completedStep + 1);
-      window.ClassTurnUniversalBridge.handleStepClick(nextStep);
-    });
-  }
-
-  const canvas = document.querySelector("#simCanvas");
-  const ctx = canvas.getContext("2d");
-  let paused = false;
-
-  const btnToggleEl = document.querySelector("#btnToggle");
-  if (btnToggleEl) {
-    btnToggleEl.addEventListener("click", (e) => {
-      paused = !paused;
-      e.target.textContent = paused ? "Run" : "Pause";
-    });
-  }
-
-  function renderScene(nowMs) {
-    const tSec = (nowMs || 0) / 1000.0;
-    const B = window.ClassTurnUniversalBridge;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Dark radial studio background + bench strip
-    const bg = ctx.createRadialGradient(400, 250, 40, 400, 250, 460);
-    bg.addColorStop(0, "#131c2e");
-    bg.addColorStop(1, "#090d16");
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = "#1e293b";
-    ctx.fillRect(40, 435, 720, 55);
-    ctx.strokeStyle = "#475569";
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(40, 435);
-    ctx.lineTo(760, 435);
-    ctx.stroke();
-
-    renderFrameElements(ctx, B, paused ? 0 : tSec);
-
-    requestAnimationFrame(renderScene);
-  }
-
-  window.ClassTurnUniversalBridge.init();
-  updateLiveReadingsOnly();
-  requestAnimationFrame(renderScene);
-})();
-</script>
-
+    // Initialize and Start
+    syncFromInputs();
+    drawScene();
+    loop();
+  });
+  </script>
 </body>
 </html>

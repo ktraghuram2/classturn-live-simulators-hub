@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClassTurn · Canonical Skeletal Legacy Layout</title>
+  <title>Flow through Venturi Meter · ClassTurn Virtual Laboratory</title>
   <style>
 /* ==========================================================================
    CLASSTURN CANONICAL SKELETAL LEGACY LAYOUT (UNPOPULATED TEMPLATE)
@@ -782,8 +782,8 @@ button.is-clicked::after, button:focus-visible::after {
   <!-- ==================== TOP HEADER (64px LOCKED) ==================== -->
   <header>
     <div>
-      <p class="eyebrow" id="headerEyebrow">[ Curriculum Eyebrow · Subject & Grade ]</p>
-      <h1 id="headerTitle">[ Experiment Title & Phenomenon ]</h1>
+      <p class="eyebrow" id="headerEyebrow"><span data-source-paths="[&quot;/simulator/meta/eyebrow&quot;]">Fluid Mechanics &amp; Hydraulic Machinery Lab</span></p>
+      <h1 id="headerTitle"><span data-source-paths="[&quot;/simulator/meta/title&quot;]">Flow through Venturi Meter</span></h1>
     </div>
     <div class="badge-bar">
       <button type="button" id="btnReportProblem">Report a problem</button>
@@ -803,24 +803,19 @@ button.is-clicked::after, button:focus-visible::after {
 
       <!-- APPARATUS LEGEND BANNER (LOCKED BELOW CANVAS VIEWPORT, ABOVE NOTEBOOK) -->
       <div class="apparatus-legend-banner" id="apparatusLegendBanner">
-        <div class="legend-pill"><span class="pill-num">1</span> <span class="pill-name">[ Apparatus Component 1 ]</span></div>
-        <div class="legend-pill"><span class="pill-num">2</span> <span class="pill-name">[ Apparatus Component 2 ]</span></div>
-        <div class="legend-pill"><span class="pill-num">3</span> <span class="pill-name">[ Apparatus Component 3 ]</span></div>
-        <div class="legend-pill"><span class="pill-num">4</span> <span class="pill-name">[ Apparatus Component 4 ]</span></div>
+<div class="legend-pill"><span class="pill-num">1</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/4/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/0/name&quot;]">Centrifugal Pump</span></span></div>
+        <div class="legend-pill"><span class="pill-num">2</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/5/name&quot;, &quot;/simulator/section_08_playback/observation_columns/1/header&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/1/name&quot;]">Bypass Valve</span></span></div>
+        <div class="legend-pill"><span class="pill-num">3</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/6/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/2/name&quot;]">Main Control Valve</span></span></div>
+        <div class="legend-pill"><span class="pill-num">4</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/3/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/3/name&quot;]">Rotameter</span></span></div>
+        <div class="legend-pill"><span class="pill-num">5</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/0/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/4/name&quot;]">Venturimeter</span></span></div>
+        <div class="legend-pill"><span class="pill-num">6</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/1/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/5/name&quot;]">CCl4 Differential Manometer</span></span></div>
+        <div class="legend-pill"><span class="pill-num">7</span> <span class="pill-name"><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/2/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/6/name&quot;]">Hg Differential Manometer</span></span></div>
       </div>
 
       <h2 class="atlas-notebook-heading" id="notebookHeading">Observation notebook</h2>
       <div id="stageBottom" class="stage-bottom">
         <table class="atlas-table" id="observationTable">
-          <thead id="observationThead">
-            <tr>
-              <th>Trial #</th>
-              <th>[ Parameter A (unit) ]</th>
-              <th>[ Parameter B (unit) ]</th>
-              <th>[ Measured Output ]</th>
-              <th>[ Calculated Invariant ]</th>
-            </tr>
-          </thead>
+          <thead id="observationThead"><tr><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/0/header&quot;, &quot;/simulator/section_08_playback/observation_columns/0/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/0/unit&quot;]">Main Valve <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>θ</mi><mrow><mtext>main</mtext></mrow></msub></mrow></math> (%)</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/1/header&quot;, &quot;/simulator/section_08_playback/observation_columns/1/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/1/unit&quot;]">Bypass Valve <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>θ</mi><mrow><mtext>bp</mtext></mrow></msub></mrow></math> (%)</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/2/header&quot;, &quot;/simulator/section_08_playback/observation_columns/2/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/2/unit&quot;]">Actual Discharge <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>Q</mi><mrow><mtext>act</mtext></mrow></msub></mrow></math> (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi mathvariant="normal">m</mi><mrow><mn>3</mn></mrow></msup><mo>/</mo><mi mathvariant="normal">s</mi></mrow></math>)</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/3/header&quot;, &quot;/simulator/section_08_playback/observation_columns/3/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/3/unit&quot;]">Manometer Deflection <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>x</mi></mrow></math> (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">m</mi></mrow></math>)</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/4/header&quot;, &quot;/simulator/section_08_playback/observation_columns/4/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/4/unit&quot;]">Differential Head <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>h</mi></mrow></math> (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">m</mi></mrow></math>)</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/5/header&quot;, &quot;/simulator/section_08_playback/observation_columns/5/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/5/unit&quot;]">Theoretical Discharge <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>Q</mi><mrow><mtext>th</mtext></mrow></msub></mrow></math> (<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi mathvariant="normal">m</mi><mrow><mn>3</mn></mrow></msup><mo>/</mo><mi mathvariant="normal">s</mi></mrow></math>)</span></th><th><span data-source-paths="[&quot;/simulator/section_08_playback/observation_columns/6/header&quot;, &quot;/simulator/section_08_playback/observation_columns/6/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/6/unit&quot;]">Coefficient of Discharge <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>C</mi><mrow><mi>d</mi></mrow></msub></mrow></math></span></th></tr></thead>
           <tbody id="observationTbody">
             <!-- Blank until user clicks 'Record Observation' -->
           </tbody>
@@ -847,7 +842,7 @@ button.is-clicked::after, button:focus-visible::after {
         <div class="experiment-selector-box">
           <label for="experimentSelect">Choose experiment</label>
           <select id="experimentSelect" class="atlas-select">
-            <option value="">-- Choose experiment from syllabus --</option>
+<option value="0">Primary Experiment: Low Flow Calibration with CCl4 Manometer</option><option value="1">Extended Activity: High Flow Analysis with Hg Manometer</option>
           </select>
         </div>
       </div>
@@ -855,45 +850,108 @@ button.is-clicked::after, button:focus-visible::after {
       <!-- 01 / Aim -->
       <section class="atlas-section" data-section="aim" id="sec-01-aim">
         <h2>01 / Aim</h2>
-        <p id="aimText" class="slot-placeholder">[ Aim statement will populate here from chosen experiment. ]</p>
+        <p id="aimText" style="line-height:1.5;"><span data-source-paths="[&quot;/simulator/section_01_aim/aim&quot;]">To determine the coefficient of discharge of a venturimeter by measuring theoretical and actual volumetric flow rates across calibrated differential manometers.</span></p>
       </section>
 
       <!-- 02 / Apparatus -->
       <section class="atlas-section" data-section="apparatus" id="sec-02-apparatus">
         <h2>02 / Apparatus</h2>
         <ul id="apparatusList">
-          <li><span class="slot-placeholder">[ Apparatus bullet items will populate here from JSON data slot ]</span></li>
+<li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/0/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/4/name&quot;]">Venturimeter</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/0/specification&quot;]">Inlet diameter d1 = 25 mm, throat diameter d2 = 12.5 mm, converging angle 21°, diverging angle 7°</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/0/role&quot;]">Constriction device creating a pressure drop across converging and throat sections to determine flow rate</span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/1/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/5/name&quot;]">CCl4 Differential Manometer</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/1/specification&quot;]">U-tube differential manometer with carbon tetrachloride (density 1590 kg/m³), range 0–50 cm</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/1/role&quot;]">High-sensitivity differential head measurement for low to moderate flow rates</span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/2/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/6/name&quot;]">Hg Differential Manometer</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/2/specification&quot;]">U-tube differential manometer with mercury (density 13600 kg/m³), range 0–50 cm</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/2/role&quot;]">Differential head measurement for high flow velocities up to maximum discharge</span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/3/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/3/name&quot;]">Rotameter</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/3/specification&quot;]">Variable-area tapered glass flowmeter, range 0–50 L/min (0–0.000833 m³/s), precision ±1% FS</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/3/role&quot;]">Direct visual measurement of actual volumetric flow rate</span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/4/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/0/name&quot;]">Centrifugal Pump</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/4/specification&quot;]">0.5 HP monobloc pump, 2800 RPM, coupled with stainless steel sump reservoir</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/4/role&quot;]">Provides continuous circulation of water through the closed-loop pipeline circuit</span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/5/name&quot;, &quot;/simulator/section_08_playback/observation_columns/1/header&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/1/name&quot;]">Bypass Valve</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/5/specification&quot;]">Globe valve, 25 mm nominal bore, recirculation return line to sump (0–100%)</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/5/role&quot;]">Modulates line delivery pressure and bypasses excess fluid to protect the pump</span></li>
+          <li><strong><span data-source-paths="[&quot;/simulator/section_02_apparatus/items/6/name&quot;, &quot;/simulator/scene_simulation_spec/apparatus_elements/2/name&quot;]">Main Control Valve</span></strong> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_02_apparatus/items/6/specification&quot;]">Precision globe valve, 25 mm nominal bore, graduated handwheel control (0–100%)</span>)</span> — <span data-source-paths="[&quot;/simulator/section_02_apparatus/items/6/role&quot;]">Throttles and sets the primary flow rate passing through the venturimeter</span></li>
         </ul>
       </section>
 
       <!-- 03 / Principles -->
       <section class="atlas-section" data-section="principles" id="sec-03-principles">
         <h2>03 / Principles</h2>
-        <p id="principlesSummary" class="slot-placeholder">[ Scientific principles and governing theory will populate here. ]</p>
+        <p id="principlesSummary" style="line-height:1.5; margin-bottom:10px;"><span data-source-paths="[&quot;/simulator/section_03_principles/overview&quot;]">A venturimeter is a differential pressure flowmeter operating on the principle of conservation of energy as expressed by Bernoulli&#x27;s theorem and the continuity equation. When an incompressible fluid flows through the converging cone into the constricted throat section, its velocity increases in accordance with the continuity relation. By conservation of mechanical energy, this kinetic energy increase causes a simultaneous drop in static pressure at the throat. Measuring this differential pressure head between the inlet and the throat enables the theoretical volumetric flow rate to be calculated.
+
+In real fluid flow, viscous boundary layer friction and turbulence cause minor energy dissipation, resulting in an actual discharge slightly less than the theoretical discharge. The ratio of the actual volumetric discharge (indicated directly by the rotameter) to the theoretical volumetric discharge yields the coefficient of discharge (Cd). For a standard streamlined venturimeter operating at high Reynolds numbers, Cd typically ranges from 0.95 to 0.98.</span></p>
         <ul id="principlesList" class="principles-list" style="margin-top:4px;">
-          <li><span class="slot-placeholder">[ Governing MathML formulas will populate here from JSON data slot ]</span></li>
+<li style="margin-bottom:14px; list-style-type:disc;">
+            <strong style="color:#10564b; font-size:13px; margin-bottom:2px;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/label&quot;]">Continuity Equation</span>:</strong>
+            <div style="font-size:12px; color:#526e66; margin-bottom:4px;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/description&quot;]">States that the volumetric flow rate remains constant along a steady, incompressible streamline</span></div>
+            <div class="atlas-equation" style="padding:4px 0; overflow-x:auto;">
+              <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/latex&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mi>Q</mi><mo>=</mo><msub><mi>A</mi><mrow><mn>1</mn></mrow></msub><msub><mi>v</mi><mrow><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>A</mi><mrow><mn>2</mn></mrow></msub><msub><mi>v</mi><mrow><mn>2</mn></mrow></msub></mrow></math></span>
+            </div>
+            
+                <div class="equation-symbols" style="margin-top:6px; font-size:12px; color:#304e44; overflow-x:auto;">
+                  <span style="font-weight:600; color:#10564b;">Where:</span>
+                  <ul style="margin:2px 0 0 16px; padding:0; list-style-type:circle;">
+                    <li style="margin-bottom:2px;"><strong style="font-family:'Cambria Math', 'Times New Roman', serif; font-size:13px; color:#10564b;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/0/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>Q</mi></mrow></math></span></strong> : <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/0/meaning&quot;]">Volumetric flow rate</span> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/4/symbols/1/unit&quot;, &quot;/simulator/section_03_principles/equations/4/symbols/2/unit&quot;, &quot;/simulator/section_06_live_readings/readings/0/unit&quot;, &quot;/simulator/section_06_live_readings/readings/3/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/2/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/5/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi mathvariant="normal">m</mi><mrow><mn>3</mn></mrow></msup><mo>/</mo><mi mathvariant="normal">s</mi></mrow></math></span>)</span></li><li style="margin-bottom:2px;"><strong style="font-family:'Cambria Math', 'Times New Roman', serif; font-size:13px; color:#10564b;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/1/symbol&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/1/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>A</mi><mrow><mn>1</mn></mrow></msub></mrow></math></span></strong> : <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/1/meaning&quot;]">Cross-sectional area of inlet pipe</span> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/1/unit&quot;, &quot;/simulator/section_03_principles/equations/0/symbols/3/unit&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/1/unit&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/2/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi mathvariant="normal">m</mi><mrow><mn>2</mn></mrow></msup></mrow></math></span>)</span></li><li style="margin-bottom:2px;"><strong style="font-family:'Cambria Math', 'Times New Roman', serif; font-size:13px; color:#10564b;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/2/symbol&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/4/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>v</mi><mrow><mn>1</mn></mrow></msub></mrow></math></span></strong> : <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/2/meaning&quot;]">Mean fluid velocity at inlet section</span> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/0/symbols/4/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/4/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/5/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mrow></math></span>)</span></li><li style="margin-bottom:2px;"><strong style="font-family:'Cambria Math', 'Times New Roman', serif; font-size:13px; color:#10564b;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/3/symbol&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/2/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>A</mi><mrow><mn>2</mn></mrow></msub></mrow></math></span></strong> : <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/3/meaning&quot;]">Cross-sectional area of throat</span> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/1/unit&quot;, &quot;/simulator/section_03_principles/equations/0/symbols/3/unit&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/1/unit&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/2/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi mathvariant="normal">m</mi><mrow><mn>2</mn></mrow></msup></mrow></math></span>)</span></li><li style="margin-bottom:2px;"><strong style="font-family:'Cambria Math', 'Times New Roman', serif; font-size:13px; color:#10564b;"><span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/4/symbol&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/5/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>v</mi><mrow><mn>2</mn></mrow></msub></mrow></math></span></strong> : <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/4/meaning&quot;]">Mean fluid velocity at throat section</span> <span style='color:#526e66;'>(<span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/2/unit&quot;, &quot;/simulator/section_03_principles/equations/0/symbols/4/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/4/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/5/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mfrac><mrow><mi mathvariant="normal">m</mi></mrow><mrow><mi mathvariant="normal">s</mi></mrow></mfrac></mrow></math></span>)</span></li></ul></div></li>
         </ul>
       </section>
 
       <!-- 04 / Procedure -->
       <section class="atlas-section" data-section="procedure" id="sec-04-procedure">
         <h2>04 / Procedure</h2>
-        <ol id="procedureList">
-          <li><span class="slot-placeholder">[ Step-by-step procedure steps will populate here from chosen experiment ]</span></li>
+<p style="line-height:1.5; margin-bottom:8px; color:#304e44;"><span data-source-paths="[&quot;/simulator/section_04_procedure/overview&quot;]">The experiment is conducted on a closed-circuit hydraulic test rig. Water from the sump tank is circulated by the centrifugal pump through the pipeline test section housing the venturimeter. Downstream discharge is adjusted by manipulating the main control valve and bypass valve, with the actual flow rate indicated continuously by the rotameter. Differential pressure tappings at the inlet and throat connect to either a CCl4 manometer (for low flow sensitivity) or an Hg manometer (for high flow rates). After purging trapped air bubbles, corresponding readings of discharge and manometer deflection are recorded to evaluate Cd.</span></p>
+<ol id="procedureList">
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/0&quot;]">Step 1: Check the pipeline for leaks and ensure the sump reservoir is filled with clean water to the operating level.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/1&quot;]">Step 2: Start the centrifugal pump with the bypass valve fully open and the main control valve completely closed.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/2&quot;]">Step 3: Select the appropriate manometric fluid (CCl4 for low flow sensitivity or Hg for higher flow capacity) and purge air bubbles from the connecting pressure lines.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/3&quot;]">Step 4: Gradually open the main control valve while adjusting the bypass valve to establish the desired flow rate indicated on the rotameter.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/4&quot;]">Step 5: Allow the flow to reach steady state, then record the actual discharge <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>Q</mi><mrow><mi>a</mi><mi>c</mi><mi>t</mi></mrow></msub></mrow></math> from the rotameter and the left and right meniscus levels of the manometer.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/5&quot;]">Step 6: Compute the manometer deflection <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>x</mi></mrow></math> = |h1 - h2|, evaluate differential head <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>h</mi></mrow></math>, and determine theoretical discharge <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>Q</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub></mrow></math>.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/6&quot;]">Step 7: Calculate the coefficient of discharge Cd = <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mfrac><mrow><msub><mi>Q</mi><mrow><mi>a</mi><mi>c</mi><mi>t</mi></mrow></msub></mrow><mrow><msub><mi>Q</mi><mrow><mi>t</mi><mi>h</mi></mrow></msub></mrow></mfrac></mrow></math> for the current flow setting.</span></li>
+          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/7&quot;]">Step 8: Repeat measurements across a series of increasing flow rates, tabulate all values, and plot actual discharge against theoretical discharge to find the average Cd.</span></li>
         </ol>
       </section>
 
       <!-- 05 / Controls -->
       <section class="atlas-section" data-section="controls" id="sec-05-controls">
         <h2>05 / Controls</h2>
-        <div class="preset-row" id="presetContainer">
-          <span class="preset-chip slot-placeholder">[ Presets populate here ]</span>
-        </div>
-        <div class="extra-actions-row" id="extraActionsContainer" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
-          <!-- Optional action buttons slot -->
-        </div>
+        <div class="preset-row" id="presetContainer" style="display:none;"></div>
+        <div class="extra-actions-row" id="extraActionsContainer" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;"><button type="button" class="atlas-action-btn" id="btn_purge_air" style="flex:1;"><span data-source-paths="[&quot;/simulator/section_05_controls/actions/0/label&quot;]">Purge Manometer Air Lines</span></button><button type="button" class="atlas-action-btn" id="btn_auto_flow" style="flex:1;"><span data-source-paths="[&quot;/simulator/section_05_controls/actions/1/label&quot;]">Auto-Align to Standard Operating Flow</span></button></div>
         <div class="stepper-container" id="steppersContainer">
-          <p class="slot-placeholder" style="margin: 8px 0;">[ Precision stepper inputs will populate here with white boxes and 16px arrows ]</p>
+<div class="stepper-row" style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <label style="font-weight:700; font-size:12.5px; color:#173c35;"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/0/label&quot;]">Main Valve Opening</span> (<span data-source-paths="[&quot;/simulator/section_05_controls/steppers/0/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/0/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>θ</mi><mrow><mtext>main</mtext></mrow></msub></mrow></math></span>)</label>
+              <span class="stepper-range-hint">[0.0 – 100.0 <span data-source-paths="[&quot;/simulator/section_05_controls/steppers/0/unit&quot;, &quot;/simulator/section_05_controls/steppers/1/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/0/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/1/unit&quot;]">%</span>]</span>
+            </div>
+            <div class="stepper-box">
+              <input type="number" class="stepper-input" id="main_valve" data-index="0" value="50.0" min="0.0" max="100.0" step="5.0">
+              <div class="stepper-buttons">
+                <button type="button" class="stepper-btn stepper-btn-up" data-target="main_valve">▲</button>
+                <button type="button" class="stepper-btn stepper-btn-down" data-target="main_valve">▼</button>
+              </div>
+              <span class="stepper-unit"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/0/unit&quot;, &quot;/simulator/section_05_controls/steppers/1/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/0/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/1/unit&quot;]">%</span></span>
+            </div>
+          </div>
+          <div class="stepper-row" style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <label style="font-weight:700; font-size:12.5px; color:#173c35;"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/1/label&quot;]">Bypass Valve Opening</span> (<span data-source-paths="[&quot;/simulator/section_05_controls/steppers/1/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/1/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>θ</mi><mrow><mtext>bp</mtext></mrow></msub></mrow></math></span>)</label>
+              <span class="stepper-range-hint">[0.0 – 100.0 <span data-source-paths="[&quot;/simulator/section_05_controls/steppers/0/unit&quot;, &quot;/simulator/section_05_controls/steppers/1/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/0/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/1/unit&quot;]">%</span>]</span>
+            </div>
+            <div class="stepper-box">
+              <input type="number" class="stepper-input" id="bypass_valve" data-index="1" value="20.0" min="0.0" max="100.0" step="5.0">
+              <div class="stepper-buttons">
+                <button type="button" class="stepper-btn stepper-btn-up" data-target="bypass_valve">▲</button>
+                <button type="button" class="stepper-btn stepper-btn-down" data-target="bypass_valve">▼</button>
+              </div>
+              <span class="stepper-unit"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/0/unit&quot;, &quot;/simulator/section_05_controls/steppers/1/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/0/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/1/unit&quot;]">%</span></span>
+            </div>
+          </div>
+          <div class="stepper-row" style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+              <label style="font-weight:700; font-size:12.5px; color:#173c35;"><span data-source-paths="[&quot;/simulator/section_05_controls/steppers/2/label&quot;]">Manometer Fluid Mode (1: CCl4, 2: Hg)</span> (<span data-source-paths="[&quot;/simulator/section_05_controls/steppers/2/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>S</mi><mrow><mi>m</mi></mrow></msub></mrow></math></span>)</label>
+              <span class="stepper-range-hint">[1.0 – 2.0 ]</span>
+            </div>
+            <div class="stepper-box">
+              <input type="number" class="stepper-input" id="fluid_selector" data-index="2" value="1.0" min="1.0" max="2.0" step="1.0">
+              <div class="stepper-buttons">
+                <button type="button" class="stepper-btn stepper-btn-up" data-target="fluid_selector">▲</button>
+                <button type="button" class="stepper-btn stepper-btn-down" data-target="fluid_selector">▼</button>
+              </div>
+              <span class="stepper-unit"></span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -901,15 +959,42 @@ button.is-clicked::after, button:focus-visible::after {
       <section class="atlas-section" data-section="readings" id="sec-06-readings">
         <h2>06 / Live readings</h2>
         <ul class="readouts-list" id="readoutsList">
-          <li><span class="slot-placeholder">[ Live telemetry readings will populate here in clean bullet format ]</span></li>
+<li class="readout-item" data-id="rotameter_flow">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/0/label&quot;]">Actual Flow Rate (Rotameter)</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/4/symbols/1/symbol&quot;, &quot;/simulator/section_06_live_readings/readings/0/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/2/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>Q</mi><mrow><mtext>act</mtext></mrow></msub></mrow></math></span>)</span>
+            <span class="readout-val" id="val_rotameter_flow" data-unit="m³/s"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/0/default_val&quot;]">0.000162</span> <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/4/symbols/1/unit&quot;, &quot;/simulator/section_03_principles/equations/4/symbols/2/unit&quot;, &quot;/simulator/section_06_live_readings/readings/0/unit&quot;, &quot;/simulator/section_06_live_readings/readings/3/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/2/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/5/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi mathvariant="normal">m</mi><mrow><mn>3</mn></mrow></msup><mo>/</mo><mi mathvariant="normal">s</mi></mrow></math></span></span>
+          </li>
+          <li class="readout-item" data-id="manometer_deflection">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/1/label&quot;, &quot;/simulator/section_08_playback/observation_columns/3/header&quot;]">Manometer Deflection</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/2/symbols/1/symbol&quot;, &quot;/simulator/section_06_live_readings/readings/1/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/3/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>x</mi></mrow></math></span>)</span>
+            <span class="readout-val" id="val_manometer_deflection" data-unit="cm"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/1/default_val&quot;]">15.0</span> <span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/1/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/3/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">m</mi></mrow></math></span></span>
+          </li>
+          <li class="readout-item" data-id="diff_head">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/2/label&quot;]">Differential Pressure Head</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/2/symbols/0/symbol&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/4/symbol&quot;, &quot;/simulator/section_06_live_readings/readings/2/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/4/symbol&quot;, &quot;/simulator/scene_simulation_spec/physics_model/state_variables/5&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>h</mi></mrow></math></span>)</span>
+            <span class="readout-val" id="val_diff_head" data-unit="m"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/2/default_val&quot;]">0.089</span> <span data-source-paths="[&quot;/simulator/section_03_principles/equations/1/symbols/6/unit&quot;, &quot;/simulator/section_03_principles/equations/1/symbols/7/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/2/symbols/1/unit&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/4/unit&quot;, &quot;/simulator/section_06_live_readings/readings/2/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/4/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi mathvariant="normal">m</mi></mrow></math></span></span>
+          </li>
+          <li class="readout-item" data-id="theoretical_flow">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/3/label&quot;]">Theoretical Flow Rate</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/3/symbols/0/symbol&quot;, &quot;/simulator/section_03_principles/equations/4/symbols/2/symbol&quot;, &quot;/simulator/section_06_live_readings/readings/3/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/5/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>Q</mi><mrow><mtext>th</mtext></mrow></msub></mrow></math></span>)</span>
+            <span class="readout-val" id="val_theoretical_flow" data-unit="m³/s"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/3/default_val&quot;]">0.000167</span> <span data-source-paths="[&quot;/simulator/section_03_principles/equations/0/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/3/symbols/0/unit&quot;, &quot;/simulator/section_03_principles/equations/4/symbols/1/unit&quot;, &quot;/simulator/section_03_principles/equations/4/symbols/2/unit&quot;, &quot;/simulator/section_06_live_readings/readings/0/unit&quot;, &quot;/simulator/section_06_live_readings/readings/3/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/2/unit&quot;, &quot;/simulator/section_08_playback/observation_columns/5/unit&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi mathvariant="normal">m</mi><mrow><mn>3</mn></mrow></msup><mo>/</mo><mi mathvariant="normal">s</mi></mrow></math></span></span>
+          </li>
+          <li class="readout-item" data-id="cd_value">
+            <span class="readout-heading"><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/4/label&quot;, &quot;/simulator/section_08_playback/observation_columns/6/header&quot;]">Coefficient of Discharge</span> (<span data-source-paths="[&quot;/simulator/section_03_principles/equations/4/symbols/0/symbol&quot;, &quot;/simulator/section_06_live_readings/readings/4/symbol&quot;, &quot;/simulator/section_08_playback/observation_columns/6/symbol&quot;]"><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>C</mi><mrow><mi>d</mi></mrow></msub></mrow></math></span>)</span>
+            <span class="readout-val" id="val_cd_value" data-unit=""><span data-source-paths="[&quot;/simulator/section_06_live_readings/readings/4/default_val&quot;]">0.970</span> </span>
+          </li>
         </ul>
       </section>
 
       <!-- 07 / Validation and limits -->
       <section class="atlas-section" data-section="validation" id="sec-07-validation">
         <h2>07 / Validation and limits</h2>
-        <ul id="validationList">
-          <li><span class="slot-placeholder">[ Modeling assumptions and physical boundary limits will populate here ]</span></li>
+        <ul id="validationList" style="margin:0; padding-left:20px; display:flex; flex-direction:column; gap:6px;">
+<li><strong>Assumption</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/assumptions/0&quot;]">The working fluid (water) is incompressible, homogeneous, and isothermal.</span></li>
+<li><strong>Assumption</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/assumptions/1&quot;]">Flow through the venturimeter is steady, continuous, and one-dimensional along the pipe centerline.</span></li>
+<li><strong>Assumption</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/assumptions/2&quot;]">Frictional shear losses across the converging cone are negligible compared to total pressure drop.</span></li>
+<li><strong>Assumption</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/assumptions/3&quot;]">The venturimeter axis is strictly horizontal, ensuring equal elevation datum head (z1 = z2).</span></li>
+<li><strong>Assumption</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/assumptions/4&quot;]">No pump or hydraulic energy source is situated between the upstream inlet and throat measurement stations.</span></li>
+<li><strong>Boundary Limit</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/limitations/0&quot;]">Applicable for turbulent pipe flow regimes with Reynolds numbers between <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mn>10</mn><mrow><mn>4</mn></mrow></msup></mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mn>10</mn><mrow><mn>6</mn></mrow></msup></mrow></math> where Cd remains constant around 0.96 to 0.98.</span></li>
+<li><strong>Boundary Limit</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/limitations/1&quot;]">The CCl4 manometer operates up to a maximum head deflection of 45 cm; higher flow rates require switching to the Hg manometer.</span></li>
+<li><strong>Boundary Limit</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/limitations/2&quot;]">Cavitation risk occurs if throat static pressure drops below fluid vapor pressure under excessive flow velocities.</span></li>
+<li><strong>Boundary Limit</strong>: <span data-source-paths="[&quot;/simulator/section_07_validation/limitations/3&quot;]">A straight unobstructed upstream pipe length of at least 10 pipe diameters is required to maintain a fully developed velocity profile.</span></li>
         </ul>
       </section>
 
@@ -1012,829 +1097,1083 @@ button.is-clicked::after, button:focus-visible::after {
   <script id="classturnZoomConfig">window.CLASSTURN_ZOOM_CONFIG = {"scale": 1.0, "cx": 400.0, "cy": 250.0, "minLeader": 48, "maxLeader": 80, "minBadgeDist": 40};</script>
   <script src="classturn-lab-kit.js?v=btn8"></script>
   <script id="classturn-stage-script">
-  /* Populated from classturn_simulators.db */
-  </script>
-
-<script id="vault-universal-step-bridge">
-/**
- * CLASSTURN UNIVERSAL STEP-BUTTON [➔], LEGO PORT SNAP & OBSERVATION BRIDGE
- * =========================================================================
- * Enforces the exact Student Experience & Lego Vault Assembly Pipeline:
- * 1. On Initial Load: Renders Full Apparatus Preview (`previewMode = true`) with Style 2 curvy leaders & numbered badges.
- * 2. Procedure Step `[➔]` Buttons (Section 04):
- *    - Injects a glowing `[➔ Step N]` button next to every step in `#procedureList`.
- *    - Clicking Step 1 `[➔]` clears the preview and immediately animates Step 1's element + badge (`0 -> 1`).
- *    - Clicking Step 2 `[➔]`, Step 3 `[➔]`... in strict order reveals & animates each step's brick + badge into its port.
- *    - Clicking out of order displays a prominent centered alert right in the middle of the Canvas overlapping all elements.
- * 3. Numeric Control Boxes Lock/Unlock (Section 05):
- *    - Locked until all `[➔]` steps are completed; unlocks automatically after the final `[➔]` step.
- *    - Every numeric change immediately updates the Canvas & Section 06 Live Readings without ever pausing.
- * 4. Deliberate Observation Recording (`#btnRecord` in Section 08 ONLY):
- *    - Readings are NEVER auto-logged on input change.
- *    - Clicking `Record Observation` (`#btnRecord`) appends the current trial row to `#observationTbody`.
+/* VAULT LEGO PIPELINE MANIFEST (u00282):
+ *   Step 1: Venturimeter -> vault_brick_u00282_step1_venturimeter (drawVenturimeter) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 2: CCl4 Differential Manometer -> vault_brick_u00282_step2_ccl4_differential_manometer (drawCcl4DifferentialManometer) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 3: Hg Differential Manometer -> vault_brick_u00282_step3_hg_differential_manometer (drawHgDifferentialManometer) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 4: Rotameter -> vault_brick_u00282_step4_rotameter (drawRotameter) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 5: Centrifugal Pump -> vault_brick_u00282_step5_centrifugal_pump (drawCentrifugalPump) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 6: Bypass Valve -> vault_brick_u00282_step6_bypass_valve (drawBypassValve) [FOUND_EXACT_SIM_STEP_BRICK]
+ *   Step 7: Main Control Valve -> vault_brick_u00282_step7_main_control_valve (drawMainControlValve) [FOUND_EXACT_SIM_STEP_BRICK]
  */
-(function () {
-  window.ClassTurnUniversalBridge = {
-    previewMode: true,
-    completedStep: 0,
-    totalSteps: 0,
-    animatingStep: 0,
-    animStartTime: 0,
-    animDurationMs: 550,
-    warningBannerText: "",
-    warningTimeout: null,
-    trialCounter: 0,
-    onStepChangeCallback: null,
+window.addEventListener('load', () => {
+    const cvs = document.getElementById('simCanvas') || document.querySelector('canvas');
+    if (!cvs) return;
+    cvs.width = 800;
+    cvs.height = 500;
+    const ctx = cvs.getContext('2d');
 
-    init(config = {}) {
-      this.previewMode = true;
-      this.completedStep = 0;
-      this.animatingStep = 0;
-      this.animStartTime = 0;
-      this.trialCounter = 0;
-      this.onStepChangeCallback = config.onStepChange || null;
+    // Physical dimensions & constants
+    const d1 = 0.025;      // Inlet diameter: 25 mm = 0.025 m
+    const d2 = 0.0125;     // Throat diameter: 12.5 mm = 0.0125 m
+    const a1 = (Math.PI / 4) * d1 * d1; // 4.9087e-4 m²
+    const a2 = (Math.PI / 4) * d2 * d2; // 1.2272e-4 m²
+    const rhoWater = 1000.0;            // Water density: 1000 kg/m³
+    const rhoCCl4 = 1590.0;             // CCl4 density: 1590 kg/m³
+    const rhoHg = 13600.0;              // Hg density: 13600 kg/m³
+    const g = 9.81;
 
-      this.injectStepButtonsStyle();
-      this.bindProcedureStepButtons();
-      this.updateControlsLockState();
-    },
+    // Simulation runtime variables
+    let mainValve = 50.0;     // 0 - 100%
+    let bypassValve = 20.0;   // 0 - 100%
+    let fluidMode = 1;        // 1: CCl4, 2: Hg
 
-    injectStepButtonsStyle() {
-      if (document.querySelector("#classturn-step-bridge-css")) return;
-      const st = document.createElement("style");
-      st.id = "classturn-step-bridge-css";
-      st.textContent = `
-        .ct-step-arrow-btn {
-          display: inline-flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-          min-height: 24px !important;
-          height: 24px !important;
-          padding: 0 9px !important;
-          margin-right: 8px !important;
-          border-radius: 6px !important;
-          font: 700 12px var(--font, sans-serif) !important;
-          background: #edf6f2 !important;
-          color: #10564b !important;
-          border: 1.5px solid #8eaea1 !important;
-          cursor: pointer !important;
-          vertical-align: middle !important;
-          box-shadow: 0 1px 2px rgba(0,0,0,0.08) !important;
-          transition: all 0.18s ease !important;
-        }
-        .ct-step-arrow-btn.ct-next-glow {
-          background: #10564b !important;
-          color: #ffffff !important;
-          border-color: #0d473e !important;
-          box-shadow: 0 0 0 3px rgba(16, 86, 75, 0.25) !important;
-          animation: ctPulseGlow 1.4s infinite ease-in-out !important;
-        }
-        .ct-step-arrow-btn.ct-done {
-          background: #d8ece4 !important;
-          color: #0d473e !important;
-          border-color: #10564b !important;
-        }
-        .ct-controls-locked-banner {
-          padding: 7px 10px;
-          margin-bottom: 8px;
-          border-radius: 7px;
-          background: #fff8e6;
-          border: 1px solid #f59e0b;
-          color: #92400e;
-          font: 600 11.5px var(--font, sans-serif);
-          cursor: pointer;
-        }
-        .ct-center-canvas-alert {
-          position: absolute !important;
-          top: 50% !important;
-          left: 50% !important;
-          transform: translate(-50%, -50%) !important;
-          z-index: 99999 !important;
-          min-width: 340px !important;
-          max-width: 85% !important;
-          padding: 16px 24px !important;
-          border-radius: 12px !important;
-          background: rgba(180, 83, 9, 0.98) !important;
-          border: 2.5px solid #fde68a !important;
-          color: #ffffff !important;
-          font: 700 14.5px 'Segoe UI', system-ui, sans-serif !important;
-          text-align: center !important;
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75) !important;
-          pointer-events: none !important;
-          display: none;
-        }
-        @keyframes ctPulseGlow {
-          0%, 100% { box-shadow: 0 0 0 2px rgba(16, 86, 75, 0.22); }
-          50% { box-shadow: 0 0 0 5px rgba(16, 86, 75, 0.42); }
-        }
-      `;
-      document.head.appendChild(st);
-    },
+    let animTime = 0;
+    let pumpAngle = 0;
 
-    bindProcedureStepButtons() {
-      const procList = document.querySelector("#procedureList");
-      if (!procList) return;
-      const items = Array.from(procList.querySelectorAll("li"));
-      this.totalSteps = items.length;
-
-      items.forEach((li, idx) => {
-        const stepNum = idx + 1;
-        if (li.querySelector(".ct-step-arrow-btn")) return;
-        li.style.cursor = "pointer";
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "ct-step-arrow-btn" + (stepNum === 1 ? " ct-next-glow" : "");
-        btn.dataset.step = String(stepNum);
-        btn.innerHTML = `➔ Step ${stepNum}`;
-        btn.title = `Execute Step ${stepNum} on Canvas`;
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          this.handleStepClick(stepNum);
+    // Circulation particles for 60 FPS flow visualization
+    const particles = [];
+    const numParticles = 38;
+    for (let i = 0; i < numParticles; i++) {
+        particles.push({
+            segment: Math.floor(Math.random() * 6),
+            progress: Math.random(),
+            offsetY: (Math.random() - 0.5) * 8
         });
-        li.addEventListener("click", (e) => {
-          if (e.target === btn || btn.contains(e.target)) return;
-          this.handleStepClick(stepNum);
+    }
+
+    // Helper: update DOM telemetry safely
+    function setVal(id, strVal) {
+        const direct = document.getElementById(id);
+        if (direct) {
+            if (direct.tagName === 'INPUT') direct.value = strVal;
+            else direct.textContent = strVal;
+        }
+        const prefixed = document.getElementById('val_' + id);
+        if (prefixed) {
+            if (prefixed.tagName === 'INPUT') prefixed.value = strVal;
+            else prefixed.textContent = strVal;
+        }
+    }
+
+    // Record observation table hook (realigned to match observation_thead_html exactly)
+    const btnRecord = document.getElementById('btnRecord');
+    if (btnRecord) {
+        btnRecord.addEventListener('click', () => {
+            const tbody = document.getElementById('observationTbody');
+            if (!tbody) return;
+            const xVal = deflectionCm.toFixed(1);
+            const hVal = hDiff.toFixed(3);
+            const cdVal = cd.toFixed(3);
+
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td style="padding: 6px 10px; border-bottom: 1px solid #334155; text-align: center;">${mainValve.toFixed(1)}</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #334155; text-align: center;">${bypassValve.toFixed(1)}</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #334155; text-align: center;">${(qAct).toFixed(6)}</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #334155; text-align: center;">${xVal}</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #334155; text-align: center;">${hVal}</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #334155; text-align: center;">${(qTh).toFixed(6)}</td>
+                <td style="padding: 6px 10px; border-bottom: 1px solid #334155; text-align: center; color: #34d399; font-weight: bold;">${cdVal}</td>
+            `;
+            tbody.appendChild(tr);
         });
-        li.prepend(btn);
-      });
-    },
+    }
 
-    handleStepClick(clickedStep) {
-      const expectedStep = this.completedStep + 1;
-      if (clickedStep > expectedStep) {
-        this.triggerWarning(`Out of sequence! Please click [➔ Step ${expectedStep}] first.`);
-        return;
-      }
-      if (clickedStep <= this.completedStep) {
-        this.animateStepTransition(clickedStep);
-        return;
-      }
-      this.clearWarning();
-      this.previewMode = false;
-      this.completedStep = clickedStep;
-      this.updateStepButtonStyles();
-      this.updateControlsLockState();
-      this.animateStepTransition(clickedStep);
-    },
+    // Wire Action Buttons
+    const btnPurge = document.getElementById('btn_purge_air');
+    if (btnPurge) {
+        btnPurge.addEventListener('click', () => {
+            computePhysics();
+        });
+    }
+    const btnAutoFlow = document.getElementById('btn_auto_flow');
+    if (btnAutoFlow) {
+        btnAutoFlow.addEventListener('click', () => {
+            const inMain = document.getElementById('main_valve');
+            const inBp = document.getElementById('bypass_valve');
+            const inFluid = document.getElementById('fluid_selector');
+            if (inMain) { inMain.value = '50.0'; inMain.dispatchEvent(new Event('input')); }
+            if (inBp) { inBp.value = '20.0'; inBp.dispatchEvent(new Event('input')); }
+            if (inFluid) { inFluid.value = '1.0'; inFluid.dispatchEvent(new Event('input')); }
+            computePhysics();
+        });
+    }
 
-    animateStepTransition(stepNum) {
-      this.animatingStep = stepNum;
-      this.animStartTime = performance.now();
-      if (typeof this.onStepChangeCallback === "function") {
-        this.onStepChangeCallback(this.completedStep, 0.15, this.previewMode);
-      }
-    },
+    // Wire Stepper Buttons (▲ / ▼)
+    document.querySelectorAll('.stepper-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-target');
+            const input = document.getElementById(targetId);
+            if (!input) return;
+            const step = parseFloat(input.step) || 1.0;
+            const min = input.min !== '' ? parseFloat(input.min) : 0;
+            const max = input.max !== '' ? parseFloat(input.max) : 100;
+            let val = parseFloat(input.value) || 0;
+            if (btn.classList.contains('stepper-btn-up')) {
+                val = Math.min(max, val + step);
+            } else if (btn.classList.contains('stepper-btn-down')) {
+                val = Math.max(min, val - step);
+            }
+            input.value = val.toFixed(input.step && input.step.includes('.') ? input.step.split('.')[1].length : 0);
+            input.dispatchEvent(new Event('input'));
+            input.dispatchEvent(new Event('change'));
+            computePhysics();
+        });
+    });
 
-    updateStepButtonStyles() {
-      const procList = document.querySelector("#procedureList");
-      if (!procList) return;
-      const btns = procList.querySelectorAll(".ct-step-arrow-btn");
-      btns.forEach((btn) => {
-        const s = parseInt(btn.dataset.step, 10);
-        btn.classList.remove("ct-next-glow", "ct-done");
-        if (s <= this.completedStep) {
-          btn.classList.add("ct-done");
-          btn.innerHTML = `✓ Step ${s}`;
-        } else if (s === this.completedStep + 1) {
-          btn.classList.add("ct-next-glow");
-          btn.innerHTML = `➔ Step ${s}`;
+    // State calculation variables
+    let qAct = 0.000162;
+    let deflectionCm = 15.0;
+    let hDiff = 0.089;
+    let qTh = 0.000167;
+    let cd = 0.970;
+
+    function computePhysics() {
+        // Read steppers
+        const inMain = document.getElementById('main_valve');
+        const inBp = document.getElementById('bypass_valve');
+        const inFluid = document.getElementById('fluid_selector');
+
+        if (inMain) mainValve = parseFloat(inMain.value) || 0.0;
+        if (inBp) bypassValve = parseFloat(inBp.value) || 0.0;
+        if (inFluid) fluidMode = Math.round(parseFloat(inFluid.value)) || 1;
+
+        // Hydraulic circuit flow delivery
+        const deliveryFactor = (mainValve / 50.0) * ((100.0 - 0.5 * bypassValve) / 90.0);
+        qAct = Math.max(0, 0.000162 * deliveryFactor);
+
+        // Venturi Coefficient of Discharge
+        cd = 0.970;
+
+        // Theoretical flow rate
+        qTh = cd > 0 ? (qAct / cd) : 0.0;
+
+        // Differential head: h = (Q_th / venturi_constant)^2 / (2 * g)
+        // Calibrated exactly to h = 0.0885 m ≈ 0.089 m at default Q_th = 0.000167 m³/s
+        if (qTh > 0) {
+            hDiff = 0.0885 * Math.pow(qTh / 0.000167, 2);
         } else {
-          btn.innerHTML = `➔ Step ${s}`;
+            hDiff = 0.0;
         }
-      });
-    },
 
-    updateControlsLockState() {
-      const secControls = document.querySelector("#sec-05-controls");
-      if (!secControls) return;
-      let banner = document.querySelector("#ctControlsLockBanner");
-      const unlocked = this.totalSteps === 0 || this.completedStep >= this.totalSteps;
+        // Manometer deflection: h = x * 10^-2 * (rho_m / rho - 1)
+        // x = h / ((rho_m / 1000) - 1) * 100 (in cm)
+        const rhoManometer = (fluidMode === 1) ? rhoCCl4 : rhoHg;
+        const relativeDiff = (rhoManometer / rhoWater) - 1.0;
+        deflectionCm = relativeDiff > 0 ? ((hDiff / relativeDiff) * 100.0) : 0.0;
 
-      if (!unlocked) {
-        if (!banner) {
-          banner = document.createElement("div");
-          banner.id = "ctControlsLockBanner";
-          banner.className = "ct-controls-locked-banner";
-          banner.addEventListener("click", () => {
-            this.triggerWarning(`Out of sequence! Click [➔ Step ${this.completedStep + 1}] first.`);
-          });
-          const h2 = secControls.querySelector("h2");
-          if (h2 && h2.nextSibling) {
-            secControls.insertBefore(banner, h2.nextSibling);
-          } else {
-            secControls.prepend(banner);
-          }
-        }
-        banner.textContent = `Click [➔ Step ${this.completedStep + 1}] in 04 / Procedure (${this.completedStep}/${this.totalSteps} completed) to assemble the apparatus and unlock controls.`;
-      } else if (banner) {
-        banner.remove();
-      }
-
-      const inputs = secControls.querySelectorAll("input, button.stepper-btn, .preset-chip");
-      inputs.forEach((el) => {
-        el.disabled = !unlocked;
-        el.style.opacity = unlocked ? "1" : "0.55";
-        el.style.pointerEvents = unlocked ? "auto" : "none";
-      });
-    },
-
-    clearWarning() {
-      this.warningBannerText = "";
-      if (this.warningTimeout) {
-        clearTimeout(this.warningTimeout);
-        this.warningTimeout = null;
-      }
-      const alertEl = document.querySelector("#ctCenterCanvasAlert");
-      if (alertEl) {
-        alertEl.style.display = "none";
-      }
-    },
-
-    triggerWarning(msg) {
-      this.warningBannerText = msg;
-      const wrapper = document.querySelector(".canvas-wrapper") || document.querySelector("#stageContainer");
-      if (wrapper) {
-        let alertEl = document.querySelector("#ctCenterCanvasAlert");
-        if (!alertEl) {
-          alertEl = document.createElement("div");
-          alertEl.id = "ctCenterCanvasAlert";
-          alertEl.className = "ct-center-canvas-alert";
-          wrapper.appendChild(alertEl);
-        }
-        alertEl.textContent = msg;
-        alertEl.style.display = "block";
-      }
-      if (this.warningTimeout) clearTimeout(this.warningTimeout);
-      this.warningTimeout = setTimeout(() => {
-        this.clearWarning();
-      }, 2800);
-    },
-
-    isStepVisible(stepNumber) {
-      if (this.previewMode) return true;
-      return this.completedStep >= stepNumber;
-    },
-
-    getStepProgress(stepNumber) {
-      if (this.previewMode) return 1.0;
-      if (stepNumber > this.completedStep) return 0.0;
-      if (stepNumber === this.animatingStep && this.animStartTime > 0) {
-        const elapsed = Math.max(0, performance.now() - this.animStartTime);
-        const t = Math.min(1.0, elapsed / this.animDurationMs);
-        return 0.15 + 0.85 * (1 - Math.pow(1 - t, 3));
-      }
-      return 1.0;
-    },
-
-    drawCanvasStepHUD(ctx, canvasW = 800, canvasH = 500) {
-      // Handled by #ctCenterCanvasAlert centered inside .canvas-wrapper so canvas zoom/aspect transform is never altered
-    },
-
-    resetSteps() {
-      this.previewMode = true;
-      this.completedStep = 0;
-      this.animatingStep = 0;
-      this.animStartTime = 0;
-      this.clearWarning();
-      this.updateStepButtonStyles();
-      this.updateControlsLockState();
-    }
-  };
-})();
-
-</script>
-<script id="vault-port-snapped-simulator-runtime">
-(function() {
-  const SIM_SPEC = {"filename": "vault_crit_01_venturi_meter.html", "id": "vault_crit_01_venturi_meter", "source_id": "u00282", "subject": "Engineering", "branch": "Fluid Mechanics & Hydraulics", "icon": "🌊", "eyebrow": "Fluid Mechanics & Hydraulics · Bernoulli's Theorem & Flow Measurement (u00282)", "title": "Flow Through Venturi Meter & Differential U-Tube Manometer (Discharge Coefficient C_d)", "aim": "To measure the volume flow rate (Q) and discharge coefficient (C_d) of water flowing through a horizontal converging-diverging Venturi meter by recording the differential mercury manometer head (Δh) across the inlet and throat piezometer ports.", "vault_queries": [["Horizontal Venturi Pipe Section", "05_Mechanical"], ["Piezometer Pressure Taps", "03_Meters"], ["Differential U-Tube Mercury Manometer", "03_Meters"], ["Centrifugal Supply Pump & Valve", "05_Mechanical"], ["Streamline Flow Tracer & Collector", "01_Vessels"]], "apparatus": ["Horizontal Converging-Diverging Acrylic Venturi Tube (Inlet D₁, Throat D₂, Diffuser)", "Inlet & Throat Piezometer Static Pressure Tap Ports (P₁ & P₂)", "Differential Mercury U-Tube Manometer Connected Across Ports P₁ and P₂", "Variable-Head Centrifugal Water Supply Pump & Inlet Regulating Valve", "Laminar Streamline Velocity Tracer & Volumetric Discharge Collector"], "principles_summary": "By Continuity (A₁v₁ = A₂v₂) and Bernoulli's equation along the horizontal centerline, constriction from inlet diameter D₁ to throat diameter D₂ accelerates the fluid (v₂ > v₁) and drops static pressure (P₂ < P₁). The differential mercury U-tube manometer measures Δh, yielding theoretical discharge Q_th and actual discharge Q_act = C_d · Q_th.", "principles_equations": ["<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>A</mi><mn>1</mn></msub><msub><mi>v</mi><mn>1</mn></msub><mo>=</mo><msub><mi>A</mi><mn>2</mn></msub><msub><mi>v</mi><mn>2</mn></msub><mo>=</mo><msub><mi>Q</mi><mtext>act</mtext></msub><mo>,</mo><mspace width='1em'/><msub><mi>h</mi><mi>w</mi></msub><mo>=</mo><mi>&#x0394;</mi><mi>h</mi><mrow><mo>(</mo><mfrac><msub><mi>&#x03C1;</mi><mtext>Hg</mtext></msub><msub><mi>&#x03C1;</mi><mi>w</mi></msub></mfrac><mo>-</mo><mn>1</mn><mo>)</mo></mrow><mo>=</mo><mn>12.6</mn><mspace width='0.2em'/><mi>&#x0394;</mi><mi>h</mi></mrow></math>", "<math xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mi>Q</mi><mtext>th</mtext></msub><mo>=</mo><mfrac><mrow><msub><mi>A</mi><mn>1</mn></msub><msub><mi>A</mi><mn>2</mn></msub><msqrt><mrow><mn>2</mn><mi>g</mi><msub><mi>h</mi><mi>w</mi></msub></mrow></msqrt></mrow><msqrt><mrow><msubsup><mi>A</mi><mn>1</mn><mn>2</mn></msubsup><mo>-</mo><msubsup><mi>A</mi><mn>2</mn><mn>2</mn></msubsup></mrow></msqrt></mfrac><mo>,</mo><mspace width='1em'/><msub><mi>Q</mi><mtext>act</mtext></msub><mo>=</mo><msub><mi>C</mi><mi>d</mi></msub><mo>&#x00B7;</mo><msub><mi>Q</mi><mtext>th</mtext></msub></mrow></math>"], "procedure": ["Mount the Horizontal Converging-Diverging Venturi Tube onto the hydraulic test bench.", "Snap the Upstream Inlet (P₁) and Constricted Throat (P₂) Piezometer Tap Ports onto the Venturi wall.", "Connect the Differential Mercury U-Tube Manometer legs across Piezometer Ports P₁ and P₂.", "Couple the Centrifugal Water Supply Pump and Regulating Valve to the upstream inlet flange.", "Activate the Laminar Streamline Velocity Tracer to unlock Numeric Controls and 'Record Observation'."], "controls": [{"id": "d1", "label": "Inlet Pipe Diameter D₁", "min": 40, "max": 60, "step": 2, "value": 50, "unit": "mm"}, {"id": "d2", "label": "Venturi Throat Diameter D₂", "min": 18, "max": 32, "step": 2, "value": 25, "unit": "mm"}, {"id": "dh", "label": "Manometer Mercury Deflection Δh", "min": 20, "max": 240, "step": 10, "value": 90, "unit": "mm Hg"}, {"id": "cd", "label": "Discharge Coefficient C_d", "min": 0.9, "max": 0.99, "step": 0.01, "value": 0.96, "unit": ""}], "presets": [{"label": "Low Flow (Δh = 40 mm)", "d1": 50, "d2": 25, "dh": 40, "cd": 0.96}, {"label": "Medium Flow (Δh = 110 mm)", "d1": 50, "d2": 25, "dh": 110, "cd": 0.96}, {"label": "High Constriction (D₂ = 20 mm, Δh = 180 mm)", "d1": 50, "d2": 20, "dh": 180, "cd": 0.95}], "validation": ["Mercury specific gravity S_Hg = 13.6; piezometric water head h_w = 12.6 × Δh.", "Throat diameter D₂ is bounded strictly below D₁ (D₂/D₁ ≤ 0.8) to maintain Venturi acceleration.", "Discharge coefficient C_d stays within 0.90–0.99 for smooth machined converging cones (21°)."], "observation_columns": ["Trial #", "D₁ / D₂ (mm)", "Manometer Δh (mm Hg)", "Water Head h_w (m)", "Throat Velocity v₂ (m/s)", "Actual Flow Q_act (L/s)"], "readout_specs": [["rv_hw", "Equivalent Water Head (h_w = 12.6 Δh)"], ["rv_v1", "Inlet Flow Velocity (v₁)"], ["rv_v2", "Throat Flow Velocity (v₂)"], ["rv_qth", "Theoretical Discharge (Q_th)"], ["rv_qact", "Actual Measured Discharge (Q_act)"]]};
-  const VAULT_MATCHES = [{"query": "Horizontal Venturi Pipe Section", "unique_element_id": "vault_06_drawpipesandventuri", "canonical_function_name": "drawPipesAndVenturi", "subfolder": "06_Thermal_And_Fluid_Apparatus", "ports": {"top_suspension_or_inlet": [0.5, 0.06], "center_pivot_or_chamber": [0.5, 0.5], "bottom_load_hook_or_outlet": [0.5, 0.94], "left_flange_port": [0.04, 0.5], "right_flange_port": [0.96, 0.5], "style2_leader_anchor": [0.5, 0.48]}}, {"query": "Piezometer Pressure Taps", "unique_element_id": "vault_03_drawpressuregauge", "canonical_function_name": "drawPressureGauge", "subfolder": "03_Meters_And_Instruments", "ports": {"terminal_pos_red": [0.22, 0.86], "terminal_neg_black": [0.78, 0.86], "bnc_signal_out": [0.85, 0.65], "dial_or_display_center": [0.5, 0.42], "bottom_chassis_feet": [0.5, 0.98], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Differential U-Tube Mercury Manometer", "unique_element_id": "vault_03_drawmanometer", "canonical_function_name": "drawManometer", "subfolder": "03_Meters_And_Instruments", "ports": {"terminal_pos_red": [0.22, 0.86], "terminal_neg_black": [0.78, 0.86], "bnc_signal_out": [0.85, 0.65], "dial_or_display_center": [0.5, 0.42], "bottom_chassis_feet": [0.5, 0.98], "style2_leader_anchor": [0.5, 0.45]}}, {"query": "Centrifugal Supply Pump & Valve", "unique_element_id": "vault_05_drawcentrifugalpump", "canonical_function_name": "drawCentrifugalPump", "subfolder": "05_Mechanical_And_Kinematics", "ports": {"top_suspension_or_inlet": [0.5, 0.06], "center_pivot_or_chamber": [0.5, 0.5], "bottom_load_hook_or_outlet": [0.5, 0.94], "left_flange_port": [0.04, 0.5], "right_flange_port": [0.96, 0.5], "style2_leader_anchor": [0.5, 0.48]}}, {"query": "Streamline Flow Tracer & Collector", "unique_element_id": "vault_09_drawlaminarairflowstreamlines", "canonical_function_name": "drawLaminarAirflowStreamlines", "subfolder": "09_Specialized_Domain_Apparatus", "ports": {"port_in": [0.12, 0.5], "center_anchor": [0.5, 0.5], "port_out": [0.88, 0.5], "bottom_base": [0.5, 0.95], "style2_leader_anchor": [0.5, 0.45]}}];
-
-  document.getElementById("headerEyebrow").textContent = SIM_SPEC.eyebrow;
-  document.getElementById("headerTitle").textContent = SIM_SPEC.title;
-  document.getElementById("reviewBadge").textContent = "Science verified";
-  document.getElementById("aimText").textContent = SIM_SPEC.aim;
-
-  const selBox = document.querySelector(".experiment-selector-box");
-  if (selBox) selBox.style.display = "none";
-
-  const appList = document.getElementById("apparatusList");
-  const banner = document.getElementById("apparatusLegendBanner");
-  appList.innerHTML = "";
-  banner.innerHTML = "";
-  SIM_SPEC.apparatus.forEach((cleanName, idx) => {
-    const li = document.createElement("li");
-    li.textContent = cleanName;
-    appList.appendChild(li);
-
-    const pill = document.createElement("div");
-    pill.className = "legend-pill";
-    pill.innerHTML = `<span class="pill-num">${idx + 1}</span> <span class="pill-name">${cleanName}</span>`;
-    banner.appendChild(pill);
-  });
-
-  document.getElementById("principlesSummary").textContent = SIM_SPEC.principles_summary;
-  const pList = document.getElementById("principlesList");
-  pList.innerHTML = "";
-  SIM_SPEC.principles_equations.forEach((eqHtml) => {
-    const li = document.createElement("li");
-    li.className = "atlas-equation";
-    li.innerHTML = eqHtml;
-    pList.appendChild(li);
-  });
-
-  const procList = document.getElementById("procedureList");
-  procList.innerHTML = "";
-  SIM_SPEC.procedure.forEach((stepTxt) => {
-    const li = document.createElement("li");
-    li.textContent = stepTxt;
-    procList.appendChild(li);
-  });
-
-  const valList = document.getElementById("validationList");
-  valList.innerHTML = "";
-  SIM_SPEC.validation.forEach((vTxt) => {
-    const li = document.createElement("li");
-    li.textContent = vTxt;
-    valList.appendChild(li);
-  });
-
-  const thead = document.getElementById("observationThead");
-  thead.innerHTML = "<tr>" + SIM_SPEC.observation_columns.map(c => `<th>${c}</th>`).join("") + "</tr>";
-  const tbody = document.getElementById("observationTbody");
-  tbody.innerHTML = "";
-
-  const rList = document.getElementById("readoutsList");
-  rList.innerHTML = `
-    <li class="readout-item"><span class="readout-heading">Equivalent Water Head (h_w = 12.6 Δh)</span><span class="readout-val" id="rv_hw">--</span></li>
-    <li class="readout-item"><span class="readout-heading">Inlet Flow Velocity (v₁)</span><span class="readout-val" id="rv_v1">--</span></li>
-    <li class="readout-item"><span class="readout-heading">Throat Flow Velocity (v₂)</span><span class="readout-val" id="rv_v2">--</span></li>
-    <li class="readout-item"><span class="readout-heading">Theoretical Discharge (Q_th)</span><span class="readout-val" id="rv_qth">--</span></li>
-    <li class="readout-item"><span class="readout-heading">Actual Measured Discharge (Q_act)</span><span class="readout-val" id="rv_qact">--</span></li>
-  `;
-  const setR = (id, txt) => {
-    const el = document.querySelector("#" + id);
-    if (el) {
-      el._ctOverrideText = null;
-      el.textContent = txt;
-    }
-  };
-
-  const state = {};
-  SIM_SPEC.controls.forEach(c => { state[c.id] = c.value; });
-
-  const presetContainer = document.getElementById("presetContainer");
-  presetContainer.innerHTML = "";
-  SIM_SPEC.presets.forEach(preset => {
-    const chip = document.createElement("button");
-    chip.type = "button";
-    chip.className = "preset-chip";
-    chip.dataset.ctWired = "1";
-    chip.textContent = preset.label;
-    chip.addEventListener("click", () => {
-      Object.keys(state).forEach(k => {
-        if (preset[k] !== undefined) {
-          state[k] = preset[k];
-          const inp = document.querySelector("#ctrl_" + k);
-          if (inp) inp.value = preset[k];
-        }
-      });
-      updateLiveReadingsOnly();
-    });
-    presetContainer.appendChild(chip);
-  });
-
-  const steppersContainer = document.getElementById("steppersContainer");
-  steppersContainer.innerHTML = "";
-  SIM_SPEC.controls.forEach(c => {
-    const row = document.createElement("div");
-    row.className = "stepper-row";
-    row.innerHTML = `
-      <div class="stepper-header">
-        <label class="control-label" for="ctrl_${c.id}">${c.label}</label>
-        <span class="stepper-range-hint">Range: ${c.min} – ${c.max} ${c.unit}</span>
-      </div>
-      <div class="stepper-box">
-        <input type="number" id="ctrl_${c.id}" class="stepper-input" min="${c.min}" max="${c.max}" step="${c.step}" value="${c.value}">
-        <div class="stepper-arrows">
-          <button type="button" class="stepper-btn" data-dir="1" data-id="${c.id}">▲</button>
-          <button type="button" class="stepper-btn" data-dir="-1" data-id="${c.id}">▼</button>
-        </div>
-        <div class="stepper-unit">${c.unit}</div>
-      </div>
-    `;
-    steppersContainer.appendChild(row);
-
-    const inp = row.querySelector("input");
-    inp.dataset.ctWired = "1";
-    const syncInputVal = (clampToBounds) => {
-      const raw = parseFloat(inp.value);
-      if (isNaN(raw)) return;
-      const v = clampToBounds ? Math.max(c.min, Math.min(c.max, raw)) : raw;
-      if (clampToBounds) inp.value = v;
-      state[c.id] = Math.max(c.min, Math.min(c.max, v));
-      updateLiveReadingsOnly();
-    };
-    inp.addEventListener("input", () => syncInputVal(false));
-    inp.addEventListener("change", () => syncInputVal(true));
-
-    row.querySelectorAll(".stepper-btn").forEach(b => {
-      b.dataset.ctWired = "1";
-      b.addEventListener("click", () => {
-        const dir = parseFloat(b.dataset.dir);
-        const nextV = Math.round((state[c.id] + dir * c.step) * 100) / 100;
-        const clamped = Math.max(c.min, Math.min(c.max, nextV));
-        state[c.id] = clamped;
-        inp.value = clamped;
-        updateLiveReadingsOnly();
-      });
-    });
-  });
-
-  let trialNum = 0;
-
-  // Canonical Style 2 Curvy Leader + Circular Numbered Badge ONLY (Zero extra blue badges or text labels!)
-  function drawCanonicalBadgeOnly(ctx, badgeNum, anchorXY, badgeXY) {
-    ctx.save();
-    const ax = anchorXY.x, ay = anchorXY.y;
-    const bx = badgeXY.x, by = badgeXY.y;
-    const midX = (ax + bx) / 2;
-
-    ctx.beginPath();
-    ctx.moveTo(bx, by);
-    ctx.bezierCurveTo(midX, by, midX, ay, ax, ay);
-    ctx.strokeStyle = "#022c22";
-    ctx.lineWidth = 3.8;
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(bx, by);
-    ctx.bezierCurveTo(midX, by, midX, ay, ax, ay);
-    ctx.strokeStyle = "#34d399";
-    ctx.lineWidth = 2.0;
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.arc(ax, ay, 3.8, 0, Math.PI * 2);
-    ctx.fillStyle = "#34d399";
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.arc(bx, by, 11.0, 0, Math.PI * 2);
-    ctx.fillStyle = "#10564b";
-    ctx.fill();
-    ctx.strokeStyle = "#34d399";
-    ctx.lineWidth = 2.0;
-    ctx.stroke();
-
-    ctx.fillStyle = "#ffffff";
-    ctx.font = "bold 11px system-ui, -apple-system, Segoe UI, sans-serif";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(String(badgeNum), bx, by);
-    ctx.restore();
-  }
-
-
-  function solveSim() {
-    const d1m = state.d1 / 1000.0;
-    const d2m = Math.min(d1m * 0.85, state.d2 / 1000.0);
-    const a1 = Math.PI * d1m * d1m * 0.25;
-    const a2 = Math.PI * d2m * d2m * 0.25;
-    const hw = (state.dh / 1000.0) * (13.6 - 1.0); // meters of water
-    const denom = Math.sqrt(Math.max(1e-12, a1 * a1 - a2 * a2));
-    const qTh = (a1 * a2 * Math.sqrt(2 * 9.81 * hw)) / denom; // m^3/s
-    const qAct = state.cd * qTh;
-    const v1 = qAct / a1;
-    const v2 = qAct / a2;
-    return {
-      hw, v1, v2, qThLps: qTh * 1000.0, qActLps: qAct * 1000.0,
-      d1Ratio: state.d1 / 50.0, d2Ratio: state.d2 / 50.0
-    };
-  }
-
-  function updateLiveReadingsOnly() {
-    const res = solveSim();
-    setR("rv_hw", `${res.hw.toFixed(3)} m H₂O`);
-    setR("rv_v1", `${res.v1.toFixed(2)} m/s`);
-    setR("rv_v2", `${res.v2.toFixed(2)} m/s`);
-    setR("rv_qth", `${res.qThLps.toFixed(2)} L/s`);
-    setR("rv_qact", `${res.qActLps.toFixed(2)} L/s`);
-  }
-
-  function buildObservationRow() {
-    const res = solveSim();
-    return [
-      `#${trialNum}`,
-      `${state.d1.toFixed(0)} / ${state.d2.toFixed(0)}`,
-      `${state.dh.toFixed(0)}`,
-      `${res.hw.toFixed(3)}`,
-      `${res.v2.toFixed(2)}`,
-      `<strong>${res.qActLps.toFixed(2)} L/s</strong>`
-    ];
-  }
-
-  function renderFrameElements(ctx, B, tSec) {
-    const res = solveSim();
-    const cy = 165;
-    const rIn = Math.round(36 * res.d1Ratio);
-    const rTh = Math.round(36 * res.d2Ratio);
-
-    // Ports exposed by Step 1 (Venturi Tube)
-    const venturiPorts = {
-      inletX: 165, throatX: 390, outletX: 640, cy: cy,
-      rIn: rIn, rTh: rTh,
-      tap1X: 235, tap1Y: cy + rIn,
-      tap2X: 390, tap2Y: cy + rTh
-    };
-
-    // STEP 1: Horizontal Converging-Diverging Venturi Pipe Section + Badge 1
-    if (B.isStepVisible(1)) {
-      const p1 = B.getStepProgress(1);
-      ctx.save();
-      ctx.globalAlpha = p1;
-      ctx.translate(0, (1 - p1) * -25);
-
-      ctx.beginPath();
-      ctx.moveTo(165, cy - rIn);
-      ctx.lineTo(295, cy - rIn);
-      ctx.bezierCurveTo(335, cy - rIn, 345, cy - rTh, 370, cy - rTh);
-      ctx.lineTo(410, cy - rTh);
-      ctx.bezierCurveTo(455, cy - rTh, 515, cy - rIn, 575, cy - rIn);
-      ctx.lineTo(640, cy - rIn);
-      ctx.lineTo(640, cy + rIn);
-      ctx.lineTo(575, cy + rIn);
-      ctx.bezierCurveTo(515, cy + rIn, 455, cy + rTh, 410, cy + rTh);
-      ctx.lineTo(370, cy + rTh);
-      ctx.bezierCurveTo(345, cy + rTh, 335, cy + rIn, 295, cy + rIn);
-      ctx.lineTo(165, cy + rIn);
-      ctx.closePath();
-
-      const wGrad = ctx.createLinearGradient(0, cy - rIn, 0, cy + rIn);
-      wGrad.addColorStop(0, "rgba(14, 165, 233, 0.42)");
-      wGrad.addColorStop(0.5, "rgba(56, 189, 248, 0.72)");
-      wGrad.addColorStop(1, "rgba(2, 132, 199, 0.48)");
-      ctx.fillStyle = wGrad;
-      ctx.fill();
-      ctx.strokeStyle = "#cbd5e1";
-      ctx.lineWidth = 2.4;
-      ctx.stroke();
-      ctx.restore();
-
-      drawCanonicalBadgeOnly(ctx, 1, { x: 485, y: cy - rIn + 4 }, { x: 525, y: 85 });
+        // Telemetry DOM updates
+        setVal('rotameter_flow', qAct.toFixed(6));
+        setVal('manometer_deflection', deflectionCm.toFixed(1));
+        setVal('diff_head', hDiff.toFixed(3));
+        setVal('theoretical_flow', qTh.toFixed(6));
+        setVal('cd_value', cd.toFixed(3));
     }
 
-    // STEP 2: Piezometer Static Pressure Tap Ports P1 (Inlet) & P2 (Throat) + Badge 2
-    if (B.isStepVisible(2)) {
-      const p2 = B.getStepProgress(2);
-      ctx.save();
-      ctx.globalAlpha = p2;
-      ctx.fillStyle = "#64748b";
-      ctx.strokeStyle = "#e2e8f0";
-      ctx.lineWidth = 1.6;
-      // Tap 1 at x=235
-      ctx.fillRect(venturiPorts.tap1X - 6, venturiPorts.tap1Y, 12, 34);
-      ctx.strokeRect(venturiPorts.tap1X - 6, venturiPorts.tap1Y, 12, 34);
-      // Tap 2 at x=390 (throat)
-      ctx.fillRect(venturiPorts.tap2X - 6, venturiPorts.tap2Y, 12, 34 + (rIn - rTh));
-      ctx.strokeRect(venturiPorts.tap2X - 6, venturiPorts.tap2Y, 12, 34 + (rIn - rTh));
-      ctx.restore();
-
-      drawCanonicalBadgeOnly(ctx, 2, { x: venturiPorts.tap2X + 6, y: venturiPorts.tap2Y + 18 }, { x: 465, y: 225 });
-    }
-
-    // STEP 3: Differential Mercury U-Tube Manometer Snapped to Tap Ports P1 & P2 + Badge 3
-    if (B.isStepVisible(3)) {
-      const p3 = B.getStepProgress(3);
-      ctx.save();
-      ctx.globalAlpha = p3;
-      ctx.translate(0, (1 - p3) * 28);
-
-      const xL = venturiPorts.tap1X;
-      const xR = venturiPorts.tap2X;
-      const topTubeY = cy + rIn + 34;
-      const bottomBendY = 415;
-      const midU = (xL + xR) / 2;
-      const halfSpan = (xR - xL) / 2;
-
-      // Glass U-Tube Casing
-      ctx.strokeStyle = "rgba(203, 213, 225, 0.85)";
-      ctx.lineWidth = 14;
-      ctx.lineCap = "butt";
-      ctx.beginPath();
-      ctx.moveTo(xL, topTubeY);
-      ctx.lineTo(xL, bottomBendY - 35);
-      ctx.arc(midU, bottomBendY - 35, halfSpan, Math.PI, 0, true);
-      ctx.lineTo(xR, topTubeY);
-      ctx.stroke();
-
-      // Inner Water Fill in U-tube legs
-      ctx.strokeStyle = "rgba(56, 189, 248, 0.45)";
-      ctx.lineWidth = 9;
-      ctx.beginPath();
-      ctx.moveTo(xL, topTubeY);
-      ctx.lineTo(xL, bottomBendY - 35);
-      ctx.arc(midU, bottomBendY - 35, halfSpan, Math.PI, 0, true);
-      ctx.lineTo(xR, topTubeY);
-      ctx.stroke();
-
-      // Differential Mercury Column (Δh pushes Left Leg down, Right Leg up!)
-      const dhPx = Math.min(58, (state.dh / 240.0) * 56);
-      const eqY = 335;
-      const hgLeftY = eqY + dhPx * 0.5;
-      const hgRightY = eqY - dhPx * 0.5;
-
-      ctx.strokeStyle = "#fbbf24"; // High-contrast metallic mercury column
-      ctx.lineWidth = 9;
-      ctx.beginPath();
-      ctx.moveTo(xL, hgLeftY);
-      ctx.lineTo(xL, bottomBendY - 35);
-      ctx.arc(midU, bottomBendY - 35, halfSpan, Math.PI, 0, true);
-      ctx.lineTo(xR, hgRightY);
-      ctx.stroke();
-
-      // Dashed Δh reference lines between left and right mercury menisci
-      ctx.setLineDash([4, 4]);
-      ctx.strokeStyle = "#fde68a";
-      ctx.lineWidth = 1.3;
-      ctx.beginPath();
-      ctx.moveTo(xL + 8, hgLeftY);
-      ctx.lineTo(xR - 8, hgLeftY);
-      ctx.moveTo(xL + 8, hgRightY);
-      ctx.lineTo(xR - 8, hgRightY);
-      ctx.stroke();
-      ctx.setLineDash([]);
-      ctx.restore();
-
-      drawCanonicalBadgeOnly(ctx, 3, { x: xL - 7, y: 345 }, { x: 165, y: 345 });
-    }
-
-    // STEP 4: Centrifugal Supply Pump & Inlet Flange Valve + Badge 4
-    if (B.isStepVisible(4)) {
-      const p4 = B.getStepProgress(4);
-      ctx.save();
-      ctx.globalAlpha = p4;
-      ctx.translate((1 - p4) * -30, 0);
-
-      // Pump Volute Casing connected to x=165
-      ctx.fillStyle = "#334155";
-      ctx.strokeStyle = "#94a3b8";
-      ctx.lineWidth = 2;
-      ctx.fillRect(115, cy - 16, 50, 32);
-      ctx.strokeRect(115, cy - 16, 50, 32);
-
-      ctx.beginPath();
-      ctx.arc(105, cy, 32, 0, Math.PI * 2);
-      ctx.fillStyle = "#1e293b";
-      ctx.fill();
-      ctx.stroke();
-
-      // Rotating Pump Impeller Blades
-      ctx.save();
-      ctx.translate(105, cy);
-      ctx.rotate(tSec * (2.5 + res.v1 * 1.2));
-      ctx.strokeStyle = "#38bdf8";
-      ctx.lineWidth = 2.5;
-      for (let b = 0; b < 4; b++) {
-        ctx.rotate(Math.PI / 2);
+    // Drawing Helpers
+    function drawCurvyBadge(badgeNum, bx, by, tx, ty, c1x, c1y, c2x, c2y) {
+        ctx.save();
+        // Leader Line: Style 2 Curvy Bezier
         ctx.beginPath();
-        ctx.moveTo(0, 0);
-        ctx.lineTo(22, 0);
+        ctx.moveTo(bx, by);
+        ctx.bezierCurveTo(c1x, c1y, c2x, c2y, tx, ty);
+        ctx.strokeStyle = '#34d399';
+        ctx.lineWidth = 2.2;
+        ctx.lineCap = 'round';
         ctx.stroke();
-      }
-      ctx.restore();
-      ctx.restore();
 
-      drawCanonicalBadgeOnly(ctx, 4, { x: 105, y: cy - 32 }, { x: 105, y: 78 });
+        // Anchor Touch Bead
+        ctx.beginPath();
+        ctx.arc(tx, ty, 3.8, 0, Math.PI * 2);
+        ctx.fillStyle = '#34d399';
+        ctx.fill();
+        ctx.strokeStyle = '#090d16';
+        ctx.lineWidth = 1.0;
+        ctx.stroke();
+
+        // Circular Badge
+        ctx.beginPath();
+        ctx.arc(bx, by, 10.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#10564b';
+        ctx.fill();
+        ctx.strokeStyle = '#34d399';
+        ctx.lineWidth = 2.0;
+        ctx.stroke();
+
+        // Badge Number
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(badgeNum.toString(), bx, by);
+        ctx.restore();
     }
 
-    // STEP 5: Laminar Streamline Velocity Particles & Discharge Collector + Badge 5
-    if (B.isStepVisible(5)) {
-      const p5 = B.getStepProgress(5);
-      ctx.save();
-      ctx.globalAlpha = p5;
+    function drawPipeFlange(x, y, h) {
+        ctx.save();
+        const grad = ctx.createLinearGradient(x - 3, 0, x + 3, 0);
+        grad.addColorStop(0, '#64748b');
+        grad.addColorStop(0.5, '#cbd5e1');
+        grad.addColorStop(1, '#334155');
+        ctx.fillStyle = grad;
+        ctx.strokeStyle = '#1e293b';
+        ctx.lineWidth = 1.2;
+        ctx.fillRect(x - 3, y - h / 2 - 3, 6, h + 6);
+        ctx.strokeRect(x - 3, y - h / 2 - 3, 6, h + 6);
 
-      // Animated velocity tracer particles accelerating through the Venturi throat!
-      const speedScale = Math.max(0.4, res.v2 * 0.18);
-      for (let lane = -1; lane <= 1; lane++) {
-        for (let k = 0; k < 6; k++) {
-          const prog = ((tSec * speedScale + k / 6.0 + (lane + 1) * 0.07) % 1.0);
-          const px = 175 + prog * 455;
-          let localR = rIn;
-          if (px > 295 && px < 370) {
-            const f = (px - 295) / 75.0;
-            localR = rIn + (rTh - rIn) * f;
-          } else if (px >= 370 && px <= 410) {
-            localR = rTh;
-          } else if (px > 410 && px < 575) {
-            const f = (px - 410) / 165.0;
-            localR = rTh + (rIn - rTh) * f;
-          }
-          const py = cy + lane * (localR * 0.52);
-          ctx.beginPath();
-          ctx.arc(px, py, 3.2, 0, Math.PI * 2);
-          ctx.fillStyle = (px >= 355 && px <= 425) ? "#fde047" : "#e0f2fe";
-          ctx.fill();
+        // Bolting details
+        ctx.fillStyle = '#f8fafc';
+        ctx.fillRect(x - 2, y - h / 2, 4, 3);
+        ctx.fillRect(x - 2, y + h / 2 - 3, 4, 3);
+        ctx.restore();
+    }
+
+    function drawValve(x, y, orientation, openingPercent, colorHex) {
+        ctx.save();
+        // Valve Body
+        const bodyGrad = ctx.createLinearGradient(x - 14, y - 12, x + 14, y + 12);
+        bodyGrad.addColorStop(0, '#475569');
+        bodyGrad.addColorStop(0.5, '#94a3b8');
+        bodyGrad.addColorStop(1, '#1e293b');
+        ctx.fillStyle = bodyGrad;
+        ctx.strokeStyle = '#64748b';
+        ctx.lineWidth = 1.2;
+
+        if (orientation === 'horizontal') {
+            // Triangular globe chambers
+            ctx.beginPath();
+            ctx.moveTo(x - 14, y - 10);
+            ctx.lineTo(x, y);
+            ctx.lineTo(x - 14, y + 10);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(x + 14, y - 10);
+            ctx.lineTo(x, y);
+            ctx.lineTo(x + 14, y + 10);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            // Central globe bonnet
+            ctx.beginPath();
+            ctx.arc(x, y, 7, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+
+            // Stem
+            const stemLift = (openingPercent / 100.0) * 4;
+            ctx.fillStyle = '#cbd5e1';
+            ctx.fillRect(x - 2, y - 24 - stemLift, 4, 18);
+            ctx.strokeStyle = '#475569';
+            ctx.lineWidth = 1.0;
+            ctx.strokeRect(x - 2, y - 24 - stemLift, 4, 18);
+
+            // Handwheel
+            ctx.beginPath();
+            ctx.ellipse(x, y - 25 - stemLift, 14, 5, 0, 0, Math.PI * 2);
+            ctx.fillStyle = colorHex;
+            ctx.fill();
+            ctx.strokeStyle = '#f8fafc';
+            ctx.lineWidth = 1.4;
+            ctx.stroke();
+
+            // Handwheel center nut
+            ctx.beginPath();
+            ctx.arc(x, y - 25 - stemLift, 2.5, 0, Math.PI * 2);
+            ctx.fillStyle = '#f8fafc';
+            ctx.fill();
+        } else {
+            // Vertical orientation
+            ctx.beginPath();
+            ctx.moveTo(x - 10, y - 14);
+            ctx.lineTo(x, y);
+            ctx.lineTo(x + 10, y - 14);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(x - 10, y + 14);
+            ctx.lineTo(x, y);
+            ctx.lineTo(x + 10, y + 14);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(x, y, 7, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+
+            // Stem extending to right
+            const stemLift = (openingPercent / 100.0) * 4;
+            ctx.fillStyle = '#cbd5e1';
+            ctx.fillRect(x + 6, y - 2, 18 + stemLift, 4);
+            ctx.strokeStyle = '#475569';
+            ctx.lineWidth = 1.0;
+            ctx.strokeRect(x + 6, y - 2, 18 + stemLift, 4);
+
+            // Handwheel
+            ctx.beginPath();
+            ctx.ellipse(x + 25 + stemLift, y, 5, 14, 0, 0, Math.PI * 2);
+            ctx.fillStyle = colorHex;
+            ctx.fill();
+            ctx.strokeStyle = '#f8fafc';
+            ctx.lineWidth = 1.4;
+            ctx.stroke();
         }
-      }
-
-      // Downstream Discharge Collector Tank at x=640..715
-      ctx.fillStyle = "rgba(30, 41, 59, 0.75)";
-      ctx.strokeStyle = "#94a3b8";
-      ctx.lineWidth = 2;
-      ctx.fillRect(640, cy - 28, 68, 120);
-      ctx.strokeRect(640, cy - 28, 68, 120);
-      ctx.fillStyle = "rgba(56, 189, 248, 0.55)";
-      ctx.fillRect(642, cy + 25, 64, 65);
-      ctx.restore();
-
-      drawCanonicalBadgeOnly(ctx, 5, { x: 674, y: cy + 55 }, { x: 674, y: 315 });
+        ctx.restore();
     }
-  }
 
+    // Main 60 FPS Render Routine
+    function render() {
+        computePhysics();
+        animTime += 0.016;
+        if (qAct > 0) pumpAngle += (0.15 + (qAct / 0.0003) * 0.4);
 
-  const btnRecordEl = document.querySelector("#btnRecord");
-  if (btnRecordEl) {
-    btnRecordEl.dataset.ctWired = "1";
-    btnRecordEl.addEventListener("click", () => {
-      if (window.ClassTurnUniversalBridge.completedStep < window.ClassTurnUniversalBridge.totalSteps) {
-        window.ClassTurnUniversalBridge.triggerWarning(`Out of sequence! Please complete [➔ Step ${window.ClassTurnUniversalBridge.completedStep + 1}] first before recording.`);
-        return;
-      }
-      trialNum += 1;
-      const cols = buildObservationRow();
-      const tr = document.createElement("tr");
-      tr.innerHTML = cols.map(c => `<td>${c}</td>`).join("");
-      tbody.appendChild(tr);
-    });
-  }
+        ctx.clearRect(0, 0, 800, 500);
 
-  const btnResetEl = document.querySelector("#btnReset");
-  if (btnResetEl) {
-    btnResetEl.addEventListener("click", () => {
-      SIM_SPEC.controls.forEach(c => {
-        state[c.id] = c.value;
-        const inp = document.querySelector("#ctrl_" + c.id);
-        if (inp) inp.value = c.value;
-      });
-      tbody.innerHTML = "";
-      trialNum = 0;
-      window.ClassTurnUniversalBridge.resetSteps();
-      updateLiveReadingsOnly();
-    });
-  }
+        // -------------------------------------------------------------
+        // LAYER 1: Bench, Structural Frame & Sump Tank
+        // -------------------------------------------------------------
+        // Laboratory Table Surface
+        const tableGrad = ctx.createLinearGradient(0, 440, 0, 475);
+        tableGrad.addColorStop(0, '#334155');
+        tableGrad.addColorStop(0.2, '#1e293b');
+        tableGrad.addColorStop(1, '#0f172a');
+        ctx.fillStyle = tableGrad;
+        ctx.fillRect(30, 440, 740, 30);
+        ctx.strokeStyle = '#64748b';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(30, 440, 740, 30);
 
-  const btnStepEl = document.querySelector("#btnStep");
-  if (btnStepEl) {
-    btnStepEl.addEventListener("click", () => {
-      const nextStep = Math.min(window.ClassTurnUniversalBridge.totalSteps, window.ClassTurnUniversalBridge.completedStep + 1);
-      window.ClassTurnUniversalBridge.handleStepClick(nextStep);
-    });
-  }
+        // Stainless Support Pillars
+        ctx.fillStyle = '#1e293b';
+        ctx.fillRect(70, 140, 12, 300);
+        ctx.fillRect(720, 140, 12, 300);
+        ctx.strokeStyle = '#475569';
+        ctx.lineWidth = 1.2;
+        ctx.strokeRect(70, 140, 12, 300);
+        ctx.strokeRect(720, 140, 12, 300);
 
-  const canvas = document.querySelector("#simCanvas");
-  const ctx = canvas.getContext("2d");
-  let paused = false;
+        // Sump Reservoir Tank (Stainless Steel)
+        const sumpGrad = ctx.createLinearGradient(50, 330, 170, 440);
+        sumpGrad.addColorStop(0, '#475569');
+        sumpGrad.addColorStop(0.4, '#334155');
+        sumpGrad.addColorStop(0.8, '#1e293b');
+        sumpGrad.addColorStop(1, '#0f172a');
+        ctx.fillStyle = sumpGrad;
+        ctx.fillRect(50, 330, 125, 110);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.2;
+        ctx.strokeRect(50, 330, 125, 110);
 
-  const btnToggleEl = document.querySelector("#btnToggle");
-  if (btnToggleEl) {
-    btnToggleEl.addEventListener("click", (e) => {
-      paused = !paused;
-      e.target.textContent = paused ? "Run" : "Pause";
-    });
-  }
+        // Sump Level Sight Glass Window
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(65, 355, 18, 70);
+        ctx.strokeStyle = '#64748b';
+        ctx.lineWidth = 1.0;
+        ctx.strokeRect(65, 355, 18, 70);
 
-  function renderScene(nowMs) {
-    const tSec = (nowMs || 0) / 1000.0;
-    const B = window.ClassTurnUniversalBridge;
+        // Water level inside sight glass
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.85)';
+        ctx.fillRect(67, 375, 14, 48);
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Level ticks
+        ctx.strokeStyle = '#f8fafc';
+        ctx.lineWidth = 0.8;
+        for (let yTick = 360; yTick <= 420; yTick += 12) {
+            ctx.beginPath();
+            ctx.moveTo(65, yTick);
+            ctx.lineTo(70, yTick);
+            ctx.stroke();
+        }
 
-    // Dark radial studio background + bench strip
-    const bg = ctx.createRadialGradient(400, 250, 40, 400, 250, 460);
-    bg.addColorStop(0, "#131c2e");
-    bg.addColorStop(1, "#090d16");
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+        // Sump Inlet Cover Flange
+        ctx.fillStyle = '#64748b';
+        ctx.fillRect(100, 324, 30, 6);
+        ctx.strokeRect(100, 324, 30, 6);
 
-    ctx.fillStyle = "#1e293b";
-    ctx.fillRect(40, 435, 720, 55);
-    ctx.strokeStyle = "#475569";
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(40, 435);
-    ctx.lineTo(760, 435);
-    ctx.stroke();
+        // -------------------------------------------------------------
+        const _ctB = window.ClassTurnUniversalBridge;
+        const _setStepAlpha = (n) => { ctx.globalAlpha = (!_ctB || _ctB.isStepVisible(Math.min(n, _ctB.totalSteps || 7))) ? (_ctB ? _ctB.getStepProgress(Math.min(n, _ctB.totalSteps || 7)) : 1.0) : 0.0; };
+        _setStepAlpha(1);
+        // LAYER 2: Centrifugal Pump (Motor, Impeller Casing & Base)
+        // -------------------------------------------------------------
+        const pumpX = 220;
+        const pumpY = 385;
 
-    renderFrameElements(ctx, B, paused ? 0 : tSec);
+        // Pump Foundation Baseplate
+        ctx.fillStyle = '#1e293b';
+        ctx.fillRect(pumpX - 35, 430, 105, 10);
+        ctx.strokeStyle = '#475569';
+        ctx.lineWidth = 1.2;
+        ctx.strokeRect(pumpX - 35, 430, 105, 10);
 
-    requestAnimationFrame(renderScene);
-  }
+        // 0.5 HP Monobloc Electric Motor (Ribbed Cylinder)
+        const motorGrad = ctx.createLinearGradient(pumpX - 32, pumpY - 26, pumpX + 18, pumpY + 26);
+        motorGrad.addColorStop(0, '#0284c7');
+        motorGrad.addColorStop(0.3, '#0369a1');
+        motorGrad.addColorStop(0.7, '#1e293b');
+        motorGrad.addColorStop(1, '#0f172a');
+        ctx.fillStyle = motorGrad;
+        ctx.fillRect(pumpX - 30, pumpY - 24, 48, 45);
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(pumpX - 30, pumpY - 24, 48, 45);
 
-  window.ClassTurnUniversalBridge.init();
-  updateLiveReadingsOnly();
-  requestAnimationFrame(renderScene);
-})();
-</script>
+        // Cooling Ribs
+        ctx.strokeStyle = '#0284c7';
+        ctx.lineWidth = 1.2;
+        for (let rx = pumpX - 25; rx <= pumpX + 12; rx += 6) {
+            ctx.beginPath();
+            ctx.moveTo(rx, pumpY - 23);
+            ctx.lineTo(rx, pumpY + 20);
+            ctx.stroke();
+        }
 
+        // Terminal Box on Motor
+        ctx.fillStyle = '#0369a1';
+        ctx.fillRect(pumpX - 18, pumpY - 32, 22, 8);
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 1.0;
+        ctx.strokeRect(pumpX - 18, pumpY - 32, 22, 8);
+
+        // Volute Spiral Casing
+        const voluteGrad = ctx.createRadialGradient(pumpX + 34, pumpY + 2, 4, pumpX + 34, pumpY + 2, 28);
+        voluteGrad.addColorStop(0, '#64748b');
+        voluteGrad.addColorStop(0.6, '#334155');
+        voluteGrad.addColorStop(1, '#1e293b');
+        ctx.beginPath();
+        ctx.arc(pumpX + 34, pumpY + 2, 25, 0, Math.PI * 2);
+        ctx.fillStyle = voluteGrad;
+        ctx.fill();
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.2;
+        ctx.stroke();
+
+        // Impeller eye & rotating vanes
+        ctx.save();
+        ctx.translate(pumpX + 34, pumpY + 2);
+        ctx.rotate(pumpAngle);
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 1.8;
+        for (let a = 0; a < 4; a++) {
+            ctx.beginPath();
+            ctx.arc(0, 0, 16, a * Math.PI / 2, a * Math.PI / 2 + 0.6);
+            ctx.stroke();
+        }
+        ctx.beginPath();
+        ctx.arc(0, 0, 5, 0, Math.PI * 2);
+        ctx.fillStyle = '#f8fafc';
+        ctx.fill();
+        ctx.restore();
+
+        // -------------------------------------------------------------
+        // LAYER 3: Pipeline Circuit (Suction, Riser, Bypass, Venturi, Return)
+        // -------------------------------------------------------------
+        const pipeOuterR = 12; // 24px OD
+        const pipeInnerR = 9;  // 18px ID
+
+        // Horizontal Suction Pipe (Sump to Pump Inlet)
+        const sucGrad = ctx.createLinearGradient(0, 396, 0, 420);
+        sucGrad.addColorStop(0, '#64748b');
+        sucGrad.addColorStop(0.3, '#cbd5e1');
+        sucGrad.addColorStop(0.7, '#334155');
+        sucGrad.addColorStop(1, '#1e293b');
+        ctx.fillStyle = sucGrad;
+        ctx.fillRect(175, 398, 55, 20);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(175, 398, 55, 20);
+        drawPipeFlange(175, 408, 26);
+        drawPipeFlange(230, 408, 26);
+
+        // Vertical Pump Discharge Riser (x = 270)
+        const riseGrad = ctx.createLinearGradient(258, 0, 282, 0);
+        riseGrad.addColorStop(0, '#64748b');
+        riseGrad.addColorStop(0.3, '#cbd5e1');
+        riseGrad.addColorStop(0.7, '#334155');
+        riseGrad.addColorStop(1, '#1e293b');
+
+        // Lower Riser Section (Pump outlet to Bypass Tee)
+        ctx.fillStyle = riseGrad;
+        ctx.fillRect(258, 305, 24, 55);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(258, 305, 24, 55);
+        drawPipeFlange(270, 360, 26);
+
+        // Bypass Tee Fitting (x = 270, y = 295)
+        ctx.fillStyle = '#475569';
+        ctx.fillRect(256, 283, 28, 24);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(256, 283, 28, 24);
+
+        // Bypass Line: horizontal pipe from tee to sump return
+        ctx.fillStyle = sucGrad;
+        ctx.fillRect(115, 285, 142, 20);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(115, 285, 142, 20);
+
+        // Bypass Elbow down into sump
+        ctx.fillStyle = riseGrad;
+        ctx.fillRect(105, 285, 20, 45);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(105, 285, 20, 45);
+
+        // Bypass Control Valve (Apparatus 6)
+        drawValve(185, 295, 'horizontal', bypassValve, '#e11d48');
+
+        // Mid Riser Section (Bypass Tee up to Rotameter inlet)
+        ctx.fillStyle = riseGrad;
+        ctx.fillRect(258, 255, 24, 28);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(258, 255, 24, 28);
+        drawPipeFlange(270, 255, 28);
+
+        // -------------------------------------------------------------
+        _setStepAlpha(4); // ROTAMETER (Apparatus 4)
+        // -------------------------------------------------------------
+        const rotaTopY = 185;
+        const rotaBotY = 255;
+        const rotaTopW = 16; // half width at top
+        const rotaBotW = 10; // half width at bottom
+
+        // Rotameter top & bottom metal fitting blocks
+        ctx.fillStyle = '#334155';
+        ctx.fillRect(254, rotaTopY - 10, 32, 10);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(254, rotaTopY - 10, 32, 10);
+
+        ctx.fillStyle = '#334155';
+        ctx.fillRect(254, rotaBotY, 32, 10);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(254, rotaBotY, 32, 10);
+
+        // Glass tube background (dark lab frame)
+        ctx.beginPath();
+        ctx.moveTo(270 - rotaTopW, rotaTopY);
+        ctx.lineTo(270 + rotaTopW, rotaTopY);
+        ctx.lineTo(270 + rotaBotW, rotaBotY);
+        ctx.lineTo(270 - rotaBotW, rotaBotY);
+        ctx.closePath();
+        ctx.fillStyle = '#0f172a';
+        ctx.fill();
+
+        // Water column inside rotameter
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.45)';
+        ctx.fill();
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 2.2;
+        ctx.stroke();
+
+        // Ticks on rotameter glass (0–50 L/min)
+        ctx.strokeStyle = '#f8fafc';
+        ctx.lineWidth = 0.8;
+        for (let step = 0; step <= 5; step++) {
+            const ty = rotaBotY - (step / 5) * (rotaBotY - rotaTopY);
+            const wAtY = rotaBotW + (step / 5) * (rotaTopW - rotaBotW);
+            ctx.beginPath();
+            ctx.moveTo(270 - wAtY, ty);
+            ctx.lineTo(270 - wAtY + 6, ty);
+            ctx.stroke();
+        }
+
+        // Rotameter Plumb-bob Float
+        // Float equilibrium height proportional to qAct (0 to 0.00035 m³/s)
+        const floatRatio = Math.min(1.0, Math.max(0.0, qAct / 0.00035));
+        const floatY = rotaBotY - 8 - floatRatio * (rotaBotY - rotaTopY - 18) + (qAct > 0 ? Math.sin(animTime * 12) * 0.8 : 0);
+
+        // Float body: tapered top flange with cone bottom
+        ctx.save();
+        ctx.fillStyle = '#cbd5e1';
+        ctx.strokeStyle = '#090d16';
+        ctx.lineWidth = 1.0;
+        ctx.beginPath();
+        ctx.moveTo(264, floatY);
+        ctx.lineTo(276, floatY);
+        ctx.lineTo(274, floatY + 3);
+        ctx.lineTo(270, floatY + 10);
+        ctx.lineTo(266, floatY + 3);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Center guide wire
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.moveTo(270, rotaTopY);
+        ctx.lineTo(270, rotaBotY);
+        ctx.stroke();
+        ctx.restore();
+
+        // Specular highlight on glass tube
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.35)';
+        ctx.beginPath();
+        ctx.moveTo(266 - rotaTopW * 0.6, rotaTopY + 2);
+        ctx.lineTo(268 - rotaTopW * 0.6, rotaTopY + 2);
+        ctx.lineTo(268 - rotaBotW * 0.6, rotaBotY - 2);
+        ctx.lineTo(266 - rotaBotW * 0.6, rotaBotY - 2);
+        ctx.closePath();
+        ctx.fill();
+
+        // Upper Riser (Rotameter outlet to 90° elbow)
+        ctx.fillStyle = riseGrad;
+        ctx.fillRect(258, 140, 24, 35);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(258, 140, 24, 35);
+        drawPipeFlange(270, 175, 28);
+
+        // 90° Elbow at (x = 270, y = 140)
+        ctx.fillStyle = '#475569';
+        ctx.fillRect(258, 128, 24, 24);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(258, 128, 24, 24);
+
+        // Horizontal Pipe to Main Valve (x = 282 to 330)
+        const horizGrad = ctx.createLinearGradient(0, 128, 0, 152);
+        horizGrad.addColorStop(0, '#64748b');
+        horizGrad.addColorStop(0.3, '#cbd5e1');
+        horizGrad.addColorStop(0.7, '#334155');
+        horizGrad.addColorStop(1, '#1e293b');
+
+        ctx.fillStyle = horizGrad;
+        ctx.fillRect(282, 128, 48, 24);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(282, 128, 48, 24);
+        drawPipeFlange(330, 140, 30);
+
+        _setStepAlpha(3); // Main Control Valve (Apparatus 7)
+        drawValve(345, 140, 'horizontal', mainValve, '#2563eb');
+        drawPipeFlange(360, 140, 30);
+
+        // Pipe between Main Valve and Venturimeter inlet
+        ctx.fillStyle = horizGrad;
+        ctx.fillRect(360, 128, 45, 24);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(360, 128, 45, 24);
+        drawPipeFlange(405, 140, 32);
+
+        // -------------------------------------------------------------
+        _setStepAlpha(5); // VENTURIMETER (Apparatus 1)
+        // d1 = 25 mm (canvas pipe height = 24px)
+        // d2 = 12.5 mm (canvas throat height = 12px)
+        // Converging angle 21°, Diverging angle 7°
+        // -------------------------------------------------------------
+        const vInletX = 405;
+        const vConvEndX = 465;
+        const vThroatEndX = 490;
+        const vExitX = 585;
+        const vCenterY = 140;
+
+        // Brass/Bronze metallic finish for Venturimeter body
+        const venturiGrad = ctx.createLinearGradient(0, 124, 0, 156);
+        venturiGrad.addColorStop(0, '#b45309');
+        venturiGrad.addColorStop(0.2, '#fde68a');
+        venturiGrad.addColorStop(0.5, '#d97706');
+        venturiGrad.addColorStop(0.85, '#92400e');
+        venturiGrad.addColorStop(1, '#451a03');
+
+        // Draw Solid Venturimeter Body
+        ctx.save();
+        ctx.beginPath();
+        // Top profile
+        ctx.moveTo(vInletX, vCenterY - 12);
+        ctx.lineTo(vConvEndX, vCenterY - 6);   // Converging 21°
+        ctx.lineTo(vThroatEndX, vCenterY - 6); // Cylindrical throat
+        ctx.lineTo(vExitX, vCenterY - 12);     // Diverging 7°
+        // End flange
+        ctx.lineTo(vExitX, vCenterY + 12);
+        // Bottom profile
+        ctx.lineTo(vThroatEndX, vCenterY + 6);
+        ctx.lineTo(vConvEndX, vCenterY + 6);
+        ctx.lineTo(vInletX, vCenterY + 12);
+        ctx.closePath();
+        ctx.fillStyle = venturiGrad;
+        ctx.fill();
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 2.2;
+        ctx.stroke();
+
+        // Internal Water Stream Profile inside Venturi (semi-transparent)
+        ctx.beginPath();
+        ctx.moveTo(vInletX, vCenterY - 9);
+        ctx.lineTo(vConvEndX, vCenterY - 4);
+        ctx.lineTo(vThroatEndX, vCenterY - 4);
+        ctx.lineTo(vExitX, vCenterY - 9);
+        ctx.lineTo(vExitX, vCenterY + 9);
+        ctx.lineTo(vThroatEndX, vCenterY + 4);
+        ctx.lineTo(vConvEndX, vCenterY + 4);
+        ctx.lineTo(vInletX, vCenterY + 9);
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.4)';
+        ctx.fill();
+
+        // Flanges at inlet and exit
+        drawPipeFlange(vInletX, vCenterY, 32);
+        drawPipeFlange(vExitX, vCenterY, 32);
+
+        // Pressure Tap 1 (Inlet Piezometer Ring at x = 425)
+        const tap1X = 425;
+        ctx.fillStyle = '#d97706';
+        ctx.fillRect(tap1X - 3, vCenterY + 12, 6, 12);
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 1.0;
+        ctx.strokeRect(tap1X - 3, vCenterY + 12, 6, 12);
+
+        // Pressure Tap 2 (Throat Piezometer Ring at x = 478)
+        const tap2X = 478;
+        ctx.fillStyle = '#d97706';
+        ctx.fillRect(tap2X - 3, vCenterY + 6, 6, 18);
+        ctx.strokeRect(tap2X - 3, vCenterY + 6, 6, 18);
+        ctx.restore();
+
+        // Downstream Pipe Run & Return line to Sump
+        ctx.fillStyle = horizGrad;
+        ctx.fillRect(vExitX, 128, 85, 24);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(vExitX, 128, 85, 24);
+
+        // Return 90° Elbow (x = 670, y = 140)
+        ctx.fillStyle = '#475569';
+        ctx.fillRect(670, 128, 24, 24);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(670, 128, 24, 24);
+
+        // Downward vertical return leg (x = 670 to 694, y = 152 to 420)
+        ctx.fillStyle = riseGrad;
+        ctx.fillRect(670, 152, 24, 268);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(670, 152, 24, 268);
+
+        // Bottom horizontal return back into sump
+        ctx.fillStyle = horizGrad;
+        ctx.fillRect(175, 410, 500, 18);
+        ctx.strokeStyle = '#94a3b8';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(175, 410, 500, 18);
+
+        // -------------------------------------------------------------
+        // ANIMATED FLOW PARTICLES
+        // -------------------------------------------------------------
+        const flowSpeed = (qAct / 0.000162) * 2.5;
+        if (flowSpeed > 0) {
+            ctx.save();
+            ctx.fillStyle = '#38bdf8';
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                let px = 0, py = 0;
+
+                // Segments: 0=Riser, 1=Top pipe, 2=Venturi, 3=Downstream, 4=Return leg, 5=Bottom
+                if (p.segment === 0) {
+                    // Vertical riser
+                    p.progress += 0.008 * flowSpeed;
+                    if (p.progress > 1.0) { p.segment = 1; p.progress = 0; }
+                    px = 270 + p.offsetY * 0.5;
+                    py = 360 - p.progress * 220;
+                } else if (p.segment === 1) {
+                    // Main top pipe
+                    p.progress += 0.010 * flowSpeed;
+                    if (p.progress > 1.0) { p.segment = 2; p.progress = 0; }
+                    px = 270 + p.progress * 135;
+                    py = 140 + p.offsetY * 0.5;
+                } else if (p.segment === 2) {
+                    // Venturi: velocity increases dramatically in throat!
+                    const speedMultiplier = (p.progress > 0.35 && p.progress < 0.6) ? 3.8 : 1.4;
+                    p.progress += 0.008 * flowSpeed * speedMultiplier;
+                    if (p.progress > 1.0) { p.segment = 3; p.progress = 0; }
+                    px = vInletX + p.progress * (vExitX - vInletX);
+                    // Squeeze particle streamlines in throat
+                    let tFactor = 1.0;
+                    if (p.progress >= 0.35 && p.progress <= 0.6) tFactor = 0.45;
+                    else if (p.progress < 0.35) tFactor = 1.0 - (p.progress / 0.35) * 0.55;
+                    else tFactor = 0.45 + ((p.progress - 0.6) / 0.4) * 0.55;
+                    py = 140 + p.offsetY * 0.5 * tFactor;
+                } else if (p.segment === 3) {
+                    // Post-venturi horizontal
+                    p.progress += 0.010 * flowSpeed;
+                    if (p.progress > 1.0) { p.segment = 4; p.progress = 0; }
+                    px = vExitX + p.progress * (682 - vExitX);
+                    py = 140 + p.offsetY * 0.5;
+                } else if (p.segment === 4) {
+                    // Downward return
+                    p.progress += 0.008 * flowSpeed;
+                    if (p.progress > 1.0) { p.segment = 5; p.progress = 0; }
+                    px = 682 + p.offsetY * 0.5;
+                    py = 152 + p.progress * 260;
+                } else {
+                    // Bottom return
+                    p.progress += 0.008 * flowSpeed;
+                    if (p.progress > 1.0) { p.segment = 0; p.progress = 0; }
+                    px = 670 - p.progress * 495;
+                    py = 419 + p.offsetY * 0.4;
+                }
+
+                ctx.beginPath();
+                ctx.arc(px, py, 1.8, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            ctx.restore();
+        }
+
+        // -------------------------------------------------------------
+        _setStepAlpha(6); // DIFFERENTIAL MANOMETER BOARD (Apparatus 2 & 3)
+        // Dual U-Tube Manifold: Left U-Tube = CCl4, Right U-Tube = Hg
+        // -------------------------------------------------------------
+        const mbX = 420;
+        const mbY = 220;
+        const mbW = 210;
+        const mbH = 195;
+
+        // Solid Anodized Aluminum Board
+        const boardGrad = ctx.createLinearGradient(mbX, mbY, mbX + mbW, mbY + mbH);
+        boardGrad.addColorStop(0, '#1e293b');
+        boardGrad.addColorStop(0.5, '#0f172a');
+        boardGrad.addColorStop(1, '#1e293b');
+        ctx.fillStyle = boardGrad;
+        ctx.fillRect(mbX, mbY, mbW, mbH);
+        ctx.strokeStyle = '#64748b';
+        ctx.lineWidth = 2.0;
+        ctx.strokeRect(mbX, mbY, mbW, mbH);
+
+        // Mounting Hardware in Corners
+        ctx.fillStyle = '#94a3b8';
+        ctx.beginPath();
+        ctx.arc(mbX + 8, mbY + 8, 3, 0, Math.PI * 2);
+        ctx.arc(mbX + mbW - 8, mbY + 8, 3, 0, Math.PI * 2);
+        ctx.arc(mbX + 8, mbY + mbH - 8, 3, 0, Math.PI * 2);
+        ctx.arc(mbX + mbW - 8, mbY + mbH - 8, 3, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Header Manifold & Valve Blocks
+        ctx.fillStyle = '#334155';
+        ctx.fillRect(mbX + 15, mbY + 10, mbW - 30, 14);
+        ctx.strokeStyle = '#64748b';
+        ctx.lineWidth = 1.0;
+        ctx.strokeRect(mbX + 15, mbY + 10, mbW - 30, 14);
+
+        // Impulse Lines connecting taps to manometers
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 1.4;
+        // From tap 1 (Inlet, high pressure P1) down to manifold
+        ctx.beginPath();
+        ctx.moveTo(tap1X, vCenterY + 24);
+        ctx.lineTo(tap1X, mbY + 10);
+        ctx.stroke();
+
+        // From tap 2 (Throat, lower pressure P2) down to manifold
+        ctx.beginPath();
+        ctx.moveTo(tap2X, vCenterY + 24);
+        ctx.lineTo(tap2X, mbY + 10);
+        ctx.stroke();
+
+        // Central Metric Ruler (0 - 50 cm)
+        const rulerX = mbX + 97;
+        const rulerY = mbY + 32;
+        const rulerH = 150;
+        ctx.fillStyle = '#f8fafc';
+        ctx.fillRect(rulerX, rulerY, 16, rulerH);
+        ctx.strokeStyle = '#475569';
+        ctx.lineWidth = 1.0;
+        ctx.strokeRect(rulerX, rulerY, 16, rulerH);
+
+        // Ruler Ticks
+        ctx.strokeStyle = '#0f172a';
+        ctx.fillStyle = '#0f172a';
+        ctx.lineWidth = 0.8;
+        for (let cm = 0; cm <= 50; cm += 5) {
+            const yTick = rulerY + rulerH - (cm / 50.0) * rulerH;
+            ctx.beginPath();
+            ctx.moveTo(rulerX, yTick);
+            ctx.lineTo(rulerX + (cm % 10 === 0 ? 8 : 5), yTick);
+            ctx.stroke();
+        }
+
+        // -------------------------------------------------------------
+        // U-TUBE 1: CCl4 Manometer (Apparatus 2) - Left Station
+        // Density = 1590 kg/m³, Amber/Red Indicating Fluid
+        // -------------------------------------------------------------
+        const u1LeftX = mbX + 50;
+        const u1RightX = mbX + 74;
+        const uBotY = mbY + 180;
+        const restLevelY = rulerY + rulerH - (25 / 50.0) * rulerH; // zero-deflection baseline at 25 cm mark
+
+        // Physical deflection translation: 1 cm deflection = (rulerH / 50) pixels
+        const pxPerCm = rulerH / 50.0;
+        let ccl4DeltaPx = 0;
+        if (fluidMode === 1) {
+            ccl4DeltaPx = (deflectionCm / 2.0) * pxPerCm;
+        }
+
+        // Glass U-tube Outer Walls
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(u1LeftX - 3, rulerY - 2, 6, rulerH + 4);
+        ctx.fillRect(u1RightX - 3, rulerY - 2, 6, rulerH + 4);
+        ctx.beginPath();
+        ctx.arc((u1LeftX + u1RightX) / 2, uBotY - 2, (u1RightX - u1LeftX) / 2 + 3, 0, Math.PI);
+        ctx.fill();
+
+        // Water columns above CCl4 fluid in both limbs
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.5)';
+        ctx.fillRect(u1LeftX - 2, rulerY, 4, (restLevelY + ccl4DeltaPx) - rulerY);
+        ctx.fillRect(u1RightX - 2, rulerY, 4, (restLevelY - ccl4DeltaPx) - rulerY);
+
+        // Dense CCl4 Fluid (Saturated Amber-Red, 85% opacity)
+        const ccl4Color = (fluidMode === 1) ? 'rgba(225, 29, 72, 0.95)' : 'rgba(159, 18, 57, 0.4)';
+        ctx.fillStyle = ccl4Color;
+        // Left limb lower portion
+        ctx.fillRect(u1LeftX - 2, restLevelY + ccl4DeltaPx, 4, uBotY - (restLevelY + ccl4DeltaPx));
+        // Right limb lower portion
+        ctx.fillRect(u1RightX - 2, restLevelY - ccl4DeltaPx, 4, uBotY - (restLevelY - ccl4DeltaPx));
+        // Bottom U-bend connection
+        ctx.beginPath();
+        ctx.arc((u1LeftX + u1RightX) / 2, uBotY - 2, (u1RightX - u1LeftX) / 2, 0, Math.PI);
+        ctx.fill();
+
+        // Glass highlights
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.moveTo(u1LeftX + 1, rulerY);
+        ctx.lineTo(u1LeftX + 1, uBotY);
+        ctx.stroke();
+
+        // Active Mode Indicator LED for CCl4
+        ctx.beginPath();
+        ctx.arc(mbX + 62, mbY + 28, 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = (fluidMode === 1) ? '#22c55e' : '#475569';
+        ctx.fill();
+        ctx.strokeStyle = '#f8fafc';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+
+        // -------------------------------------------------------------
+        // U-TUBE 2: Hg Manometer (Apparatus 3) - Right Station
+        // Density = 13600 kg/m³, Lustrous Metallic Silver Fluid
+        // -------------------------------------------------------------
+        const u2LeftX = mbX + 136;
+        const u2RightX = mbX + 160;
+
+        let hgDeltaPx = 0;
+        if (fluidMode === 2) {
+            hgDeltaPx = (deflectionCm / 2.0) * pxPerCm;
+        }
+
+        // Glass U-tube Outer Walls
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(u2LeftX - 3, rulerY - 2, 6, rulerH + 4);
+        ctx.fillRect(u2RightX - 3, rulerY - 2, 6, rulerH + 4);
+        ctx.beginPath();
+        ctx.arc((u2LeftX + u2RightX) / 2, uBotY - 2, (u2RightX - u2LeftX) / 2 + 3, 0, Math.PI);
+        ctx.fill();
+
+        // Water columns above Mercury fluid
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.5)';
+        ctx.fillRect(u2LeftX - 2, rulerY, 4, (restLevelY + hgDeltaPx) - rulerY);
+        ctx.fillRect(u2RightX - 2, rulerY, 4, (restLevelY - hgDeltaPx) - rulerY);
+
+        // Mercury Fluid (Opaque metallic gradient)
+        const hgColor = (fluidMode === 2) ? '#e2e8f0' : '#64748b';
+        ctx.fillStyle = hgColor;
+        ctx.fillRect(u2LeftX - 2, restLevelY + hgDeltaPx, 4, uBotY - (restLevelY + hgDeltaPx));
+        ctx.fillRect(u2RightX - 2, restLevelY - hgDeltaPx, 4, uBotY - (restLevelY - hgDeltaPx));
+        ctx.beginPath();
+        ctx.arc((u2LeftX + u2RightX) / 2, uBotY - 2, (u2RightX - u2LeftX) / 2, 0, Math.PI);
+        ctx.fill();
+
+        // Active Mode Indicator LED for Hg
+        ctx.beginPath();
+        ctx.arc(mbX + 148, mbY + 28, 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = (fluidMode === 2) ? '#22c55e' : '#475569';
+        ctx.fill();
+        ctx.strokeStyle = '#f8fafc';
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+
+        // Differential level projection lines on active manometer
+        if (fluidMode === 1 && deflectionCm > 0) {
+            ctx.save();
+            ctx.strokeStyle = 'rgba(244, 63, 94, 0.7)';
+            ctx.lineWidth = 1.0;
+            ctx.setLineDash([3, 2]);
+            // Left meniscus projection
+            ctx.beginPath();
+            ctx.moveTo(u1LeftX, restLevelY + ccl4DeltaPx);
+            ctx.lineTo(rulerX, restLevelY + ccl4DeltaPx);
+            ctx.stroke();
+            // Right meniscus projection
+            ctx.beginPath();
+            ctx.moveTo(u1RightX, restLevelY - ccl4DeltaPx);
+            ctx.lineTo(rulerX, restLevelY - ccl4DeltaPx);
+            ctx.stroke();
+            ctx.restore();
+        } else if (fluidMode === 2 && deflectionCm > 0) {
+            ctx.save();
+            ctx.strokeStyle = 'rgba(148, 163, 184, 0.85)';
+            ctx.lineWidth = 1.0;
+            ctx.setLineDash([3, 2]);
+            ctx.beginPath();
+            ctx.moveTo(rulerX + 16, restLevelY + hgDeltaPx);
+            ctx.lineTo(u2LeftX, restLevelY + hgDeltaPx);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(rulerX + 16, restLevelY - hgDeltaPx);
+            ctx.lineTo(u2RightX, restLevelY - hgDeltaPx);
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        // -------------------------------------------------------------
+        ctx.globalAlpha = 1.0;
+        // LAYER 4: STYLE 2 CURVY LEADER LINES & NUMBERED BADGES (1 - 7)
+        // Numbers aligned to match legend_pills_html
+        // -------------------------------------------------------------
+        // Badge 5: Venturimeter (Pill 5)
+        drawCurvyBadge(5, 480, 68, 478, 134, 480, 95, 478, 110);
+
+        // Badge 6: CCl4 Differential Manometer (Pill 6)
+        drawCurvyBadge(6, 385, 260, u1LeftX, restLevelY + ccl4DeltaPx + 5, 400, 290, 420, 310);
+
+        // Badge 7: Hg Differential Manometer (Pill 7)
+        drawCurvyBadge(7, 665, 260, u2RightX, restLevelY - hgDeltaPx + 5, 650, 290, 620, 310);
+
+        // Badge 4: Rotameter (Pill 4)
+        drawCurvyBadge(4, 205, 175, 264, floatY + 4, 210, 210, 240, 210);
+
+        // Badge 1: Centrifugal Pump (Pill 1)
+        drawCurvyBadge(1, 240, 465, pumpX + 34, pumpY + 6, 230, 440, 245, 420);
+
+        // Badge 2: Bypass Valve (Pill 2)
+        drawCurvyBadge(2, 125, 235, 185, 270, 130, 260, 160, 265);
+
+        // Badge 3: Main Control Valve (Pill 3)
+        drawCurvyBadge(3, 345, 68, 345, 112, 345, 85, 345, 95);
+
+        requestAnimationFrame(render);
+    }
+
+    // Launch continuous animation loop
+    requestAnimationFrame(render);
+});
+  </script>
 </body>
 </html>
