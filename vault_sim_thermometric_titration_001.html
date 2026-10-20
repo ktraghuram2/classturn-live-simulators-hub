@@ -1487,11 +1487,13 @@ button.is-clicked::after, button:focus-visible::after {
     setR("rv_tf", `${res.tFinal.toFixed(2)} °C`);
   }
 
-  // 4. Record Observation Button (#btnRecord in Section 08) — ONLY records on click!
+  // 4. Record Observation Button (#btnRecord in Section 08) — ONLY records on click after all steps complete!
   let trialNum = 0;
-  document.getElementById("btnRecord").addEventListener("click", () => {
-    if (!window.ClassTurnUniversalBridge.previewMode && window.ClassTurnUniversalBridge.completedStep < window.ClassTurnUniversalBridge.totalSteps) {
-      window.ClassTurnUniversalBridge.triggerWarning("⚠️ Complete all Procedure [➔] steps before recording an observation!");
+  const btnRecordEl = document.getElementById("btnRecord");
+  btnRecordEl.dataset.ctWired = "1";
+  btnRecordEl.addEventListener("click", () => {
+    if (window.ClassTurnUniversalBridge.completedStep < window.ClassTurnUniversalBridge.totalSteps) {
+      window.ClassTurnUniversalBridge.triggerWarning(`Out of sequence! Please complete [➔ Step ${window.ClassTurnUniversalBridge.completedStep + 1}] first before recording.`);
       return;
     }
     trialNum += 1;
