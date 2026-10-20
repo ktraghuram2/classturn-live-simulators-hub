@@ -92,9 +92,19 @@ def render_simulator_html(row: dict, template_html: str, asset_prefix: str = "")
         flags=re.S,
     )
     if slots.get("procedure_section_html"):
+        proc_html = slots["procedure_section_html"]
+        step_counter = [0]
+        def _inject_step_btn(m_li):
+            step_counter[0] += 1
+            s_num = step_counter[0]
+            glow_cls = " ct-next-glow" if s_num == 1 else ""
+            if "ct-step-arrow-btn" in m_li.group(0):
+                return m_li.group(0)
+            return f'{m_li.group(1)}<button type="button" class="ct-step-arrow-btn{glow_cls}" data-step="{s_num}" title="Execute Step {s_num} on Canvas">➔ Step {s_num}</button>'
+        proc_html = re.sub(r"(<li[^>]*>)", _inject_step_btn, proc_html)
         res = re.sub(
             r'(<section[^>]*id="sec-04-procedure"[^>]*>\s*<h2>04 / Procedure</h2>)([\s\S]*?)(</section>)',
-            lambda m: f"{m.group(1)}\n{slots['procedure_section_html']}\n      {m.group(3)}",
+            lambda m: f"{m.group(1)}\n{proc_html}\n      {m.group(3)}",
             res,
             flags=re.S,
         )

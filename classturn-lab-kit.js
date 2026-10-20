@@ -2052,30 +2052,35 @@
 
         bindProcedureStepButtons: function () {
           var self = this;
-          var procList = document.querySelector("#procedureList");
+          var procList = document.querySelector("#procedureList") || document.querySelector("#sec-04-procedure ol") || document.querySelector("#sec-04-procedure ul");
           if (!procList) return;
           var items = Array.prototype.slice.call(procList.querySelectorAll("li"));
           this.totalSteps = items.length;
           items.forEach(function (li, idx) {
             var stepNum = idx + 1;
-            if (li.querySelector(".ct-step-arrow-btn")) return;
             li.style.cursor = "pointer";
-            var btn = document.createElement("button");
-            btn.type = "button";
-            btn.className = "ct-step-arrow-btn" + (stepNum === 1 ? " ct-next-glow" : "");
-            btn.dataset.step = String(stepNum);
-            btn.innerHTML = "➔ Step " + stepNum;
-            btn.title = "Execute Step " + stepNum + " on Canvas";
-            btn.addEventListener("click", function (e) {
-              e.preventDefault();
-              e.stopPropagation();
-              self.handleStepClick(stepNum);
-            });
-            li.addEventListener("click", function (e) {
-              if (e.target === btn || btn.contains(e.target)) return;
-              self.handleStepClick(stepNum);
-            });
-            li.prepend(btn);
+            var btn = li.querySelector(".ct-step-arrow-btn");
+            if (!btn) {
+              btn = document.createElement("button");
+              btn.type = "button";
+              btn.className = "ct-step-arrow-btn" + (stepNum === 1 ? " ct-next-glow" : "");
+              btn.dataset.step = String(stepNum);
+              btn.innerHTML = "➔ Step " + stepNum;
+              btn.title = "Execute Step " + stepNum + " on Canvas";
+              li.prepend(btn);
+            }
+            if (!btn.dataset.ctStepWired) {
+              btn.dataset.ctStepWired = "1";
+              btn.addEventListener("click", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                self.handleStepClick(stepNum);
+              });
+              li.addEventListener("click", function (e) {
+                if (e.target === btn || btn.contains(e.target)) return;
+                self.handleStepClick(stepNum);
+              });
+            }
           });
         },
 

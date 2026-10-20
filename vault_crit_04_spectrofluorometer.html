@@ -887,14 +887,14 @@ button.is-clicked::after, button:focus-visible::after {
         <h2>04 / Procedure</h2>
 <p style="line-height:1.5; margin-bottom:8px; color:#304e44;"><span data-source-paths="[&quot;/simulator/section_04_procedure/overview&quot;]">The experiment is conducted by initializing the spectrofluorimeter optics, preparing an optically clear solution of fluorescein, and running both excitation and emission spectral sweeps using right-angle detector geometry to map fluorophore photophysical properties.</span></p>
 <ol id="procedureList">
-          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/0&quot;]">Step 1: Power on the spectrofluorimeter and Xenon arc light source, allowing 15 minutes for optical lamp arc stabilization.</span></li>
-          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/1&quot;]">Step 2: Prepare a dilute aqueous fluorescein solution in the volumetric flask and inspect the solution for optical clarity.</span></li>
-          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/2&quot;]">Step 3: Transfer 3.0 mL of the solution into the 4-sided transparent quartz cuvette using the micropipette, wipe the optical faces clean with lint-free lens paper, and seat the cuvette securely in the thermostatted sample chamber.</span></li>
-          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/3&quot;]">Step 4: Close the sample compartment lid tightly to eliminate ambient stray light.</span></li>
-          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/4&quot;]">Step 5: Select Excitation Scan mode, fix the emission monochromator at 515 nm, configure the excitation scan range from 300 nm to 600 nm, and execute the automated spectral sweep.</span></li>
-          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/5&quot;]">Step 6: Identify the excitation wavelength maximum (490 nm) from the acquired excitation spectrum.</span></li>
-          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/6&quot;]">Step 7: Switch to Emission Scan mode, set the excitation monochromator to 425 nm (or 490 nm), set the emission scan range from 435 nm to 700 nm, and execute the emission scan.</span></li>
-          <li><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/7&quot;]">Step 8: Identify the fluorescence emission peak (515 nm) and compute the corresponding Stokes shift.</span></li>
+          <li><button type="button" class="ct-step-arrow-btn ct-next-glow" data-step="1" title="Execute Step 1 on Canvas">➔ Step 1</button><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/0&quot;]">Step 1: Power on the spectrofluorimeter and Xenon arc light source, allowing 15 minutes for optical lamp arc stabilization.</span></li>
+          <li><button type="button" class="ct-step-arrow-btn" data-step="2" title="Execute Step 2 on Canvas">➔ Step 2</button><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/1&quot;]">Step 2: Prepare a dilute aqueous fluorescein solution in the volumetric flask and inspect the solution for optical clarity.</span></li>
+          <li><button type="button" class="ct-step-arrow-btn" data-step="3" title="Execute Step 3 on Canvas">➔ Step 3</button><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/2&quot;]">Step 3: Transfer 3.0 mL of the solution into the 4-sided transparent quartz cuvette using the micropipette, wipe the optical faces clean with lint-free lens paper, and seat the cuvette securely in the thermostatted sample chamber.</span></li>
+          <li><button type="button" class="ct-step-arrow-btn" data-step="4" title="Execute Step 4 on Canvas">➔ Step 4</button><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/3&quot;]">Step 4: Close the sample compartment lid tightly to eliminate ambient stray light.</span></li>
+          <li><button type="button" class="ct-step-arrow-btn" data-step="5" title="Execute Step 5 on Canvas">➔ Step 5</button><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/4&quot;]">Step 5: Select Excitation Scan mode, fix the emission monochromator at 515 nm, configure the excitation scan range from 300 nm to 600 nm, and execute the automated spectral sweep.</span></li>
+          <li><button type="button" class="ct-step-arrow-btn" data-step="6" title="Execute Step 6 on Canvas">➔ Step 6</button><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/5&quot;]">Step 6: Identify the excitation wavelength maximum (490 nm) from the acquired excitation spectrum.</span></li>
+          <li><button type="button" class="ct-step-arrow-btn" data-step="7" title="Execute Step 7 on Canvas">➔ Step 7</button><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/6&quot;]">Step 7: Switch to Emission Scan mode, set the excitation monochromator to 425 nm (or 490 nm), set the emission scan range from 435 nm to 700 nm, and execute the emission scan.</span></li>
+          <li><button type="button" class="ct-step-arrow-btn" data-step="8" title="Execute Step 8 on Canvas">➔ Step 8</button><span data-source-paths="[&quot;/simulator/section_04_procedure/steps/7&quot;]">Step 8: Identify the fluorescence emission peak (515 nm) and compute the corresponding Stokes shift.</span></li>
         </ol>
       </section>
 
@@ -1112,7 +1112,7 @@ button.is-clicked::after, button:focus-visible::after {
 
   </script>
   <script id="classturnZoomConfig">window.CLASSTURN_ZOOM_CONFIG = {"scale": 1.0, "cx": 400.0, "cy": 250.0, "minLeader": 48, "maxLeader": 80, "minBadgeDist": 40};</script>
-  <script src="classturn-lab-kit.js?v=btn8"></script>
+  <script src="classturn-lab-kit.js?v=btn9"></script>
   <script id="classturn-stage-script">
 /* VAULT LEGO PIPELINE MANIFEST (u00783):
  *   Step 1: Spectrofluorimeter -> vault_brick_u00783_step1_spectrofluorimeter (drawSpectrofluorimeter) [FOUND_EXACT_SIM_STEP_BRICK]
@@ -1453,6 +1453,8 @@ window.addEventListener('load', () => {
         // Clear canvas with rich contrast floor
         ctx.fillStyle = '#090d16';
         ctx.fillRect(0, 0, 800, 500);
+    const _ctB = window.ClassTurnUniversalBridge;
+    const _setStepAlpha = (n) => { ctx.globalAlpha = (!_ctB || _ctB.isStepVisible(Math.min(n, _ctB.totalSteps || 5))) ? (_ctB ? _ctB.getStepProgress(Math.min(n, _ctB.totalSteps || 5)) : 1.0) : 0.0; };
 
         // --- LAYER 1: SOLID OPTICAL TABLE & BENCH BASE ---
         // Lab bench vibration-isolation tabletop
@@ -1493,6 +1495,8 @@ window.addEventListener('load', () => {
             ctx.strokeRect(fx - 15, 490, 30, 10);
         });
 
+
+    _setStepAlpha(1);
         const _ctB = window.ClassTurnUniversalBridge;
         const _setStepAlpha = (n) => { ctx.globalAlpha = (!_ctB || _ctB.isStepVisible(Math.min(n, _ctB.totalSteps || 5))) ? (_ctB ? _ctB.getStepProgress(Math.min(n, _ctB.totalSteps || 5)) : 1.0) : 0.0; };
         _setStepAlpha(1); // --- LAYER 2: APPARATUS 1 - SPECTROFLUORIMETER MAIN CHASSIS ---
@@ -1680,6 +1684,8 @@ window.addEventListener('load', () => {
         ctx.font = '8px monospace';
         ctx.fillText('PMT HV', 374, 378);
 
+
+    _setStepAlpha(2);
         _setStepAlpha(2); // --- LAYER 2: APPARATUS 2 - QUARTZ CUVETTE & 90° BEAM PATH ---
         // Cuvette holder block in sample chamber
         const holderGrad = ctx.createLinearGradient(285, 230, 335, 285);
@@ -1733,6 +1739,8 @@ window.addEventListener('load', () => {
         const exColor = wavelengthToColor(activeExWl, 0.85);
         const emColor = wavelengthToColor(activeEmWl2, 0.9);
 
+
+    _setStepAlpha(1);
         // 1. White beam from Xenon lamp to grating
         ctx.strokeStyle = 'rgba(255, 255, 255, 0.75)';
         ctx.lineWidth = 3.0;
@@ -1743,6 +1751,8 @@ window.addEventListener('load', () => {
         ctx.lineTo(198, 220);
         ctx.stroke();
 
+
+    _setStepAlpha(2);
         // 2. Monochromatic Excitation beam from Grating -> Cuvette
         ctx.strokeStyle = exColor;
         ctx.lineWidth = Math.max(1.8, controls.slit_width.val * 0.45);
@@ -1759,6 +1769,8 @@ window.addEventListener('load', () => {
         ctx.arc(198 + pulseOffset * 1.6, 218, 2.2, 0, Math.PI * 2);
         ctx.fill();
 
+
+    _setStepAlpha(3);
         // 3. Fluorescent spot excitation inside cuvette
         const fluorInt = Math.min(1.0, tele.intensity / 100.0);
         const fluorGlow = ctx.createRadialGradient(cuvX + cuvW / 2, 216, 1, cuvX + cuvW / 2, 216, 12);
@@ -1788,6 +1800,8 @@ window.addEventListener('load', () => {
         ctx.arc(cuvX + cuvW / 2, 230 + emPulse * 2.2, 2.2, 0, Math.PI * 2);
         ctx.fill();
 
+
+    _setStepAlpha(3);
         _setStepAlpha(3); // --- LAYER 2: APPARATUS 3 - PRECISION MICROPIPETTE ---
         // Ergonomic pipette positioned on laboratory bench stand (x: 450 to 480, y: 155 to 395)
         const pipX = 465;
@@ -1863,6 +1877,8 @@ window.addEventListener('load', () => {
         ctx.fillStyle = 'rgba(34, 197, 94, 0.85)';
         ctx.fill();
 
+
+    _setStepAlpha(4);
         _setStepAlpha(4); // --- LAYER 2: APPARATUS 4 - VOLUMETRIC FLASK (100 mL CLASS A) ---
         // Located at x: 505 to 570, y: 240 to 415
         const flkX = 538;
@@ -1938,6 +1954,8 @@ window.addEventListener('load', () => {
         ctx.arc(flkX - 18, 385, 12, Math.PI * 0.7, Math.PI * 1.2);
         ctx.stroke();
 
+
+    _setStepAlpha(5);
         _setStepAlpha(5); // --- LAYER 2: APPARATUS 5 - COMPUTER MONITOR & DATA STATION ---
         // Located at x: 590 to 770, y: 155 to 415
         const monX = 590;
@@ -2097,6 +2115,8 @@ window.addEventListener('load', () => {
         ctx.arc(monX + monW - 12, monY + monH - 8, 2.0, 0, Math.PI * 2);
         ctx.fill();
 
+
+    ctx.globalAlpha = 1.0;
         ctx.globalAlpha = 1.0;
         // --- LAYER 3: STYLE 2 CURVY LEADER LINES & NUMBERED BADGES ---
         // 1. Spectrofluorimeter (Dual-monochromator & Xenon source)

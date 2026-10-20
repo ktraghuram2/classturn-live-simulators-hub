@@ -149,6 +149,7 @@ class DatabaseSimulatorHandler(SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    port = 8090
-    print(f"Serving Live Panel & QA Monitor at http://localhost:{port}/live_qa_monitor.html")
+    import sys
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
+    print(f"Serving Live Panel & 2,123 Database Simulators at http://127.0.0.1:{port}/live_panel.html")
     ThreadingHTTPServer(("0.0.0.0", port), DatabaseSimulatorHandler).serve_forever()
