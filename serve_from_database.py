@@ -1,12 +1,13 @@
 """
 Live Database-to-HTML Server + Live Cloud Shell QA Monitor API
   - http://localhost:8090/live_panel.html       -> Live Simulators Hub (2,123 Simulators)
-  - http://localhost:8090/live_qa_monitor.html  -> Live Cloud Shell Gemini Brain QA & DB Updation Monitor
+  - http://localhost:8765/live_panel.html       -> Live Simulators Hub (2,123 Simulators)
 """
 import json
 import re
 import sqlite3
 import subprocess
+import threading
 import time
 import urllib.parse
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
@@ -39,7 +40,6 @@ def get_live_qa_status() -> dict:
         pass
 
     progress_data = {}
-    # 1. Try reading latest gemini_brain_qa_progress.json from origin/main on GitHub
     try:
         r_show = subprocess.run(
             ["git", "show", "origin/main:gemini_brain_qa_progress.json"],
@@ -51,7 +51,6 @@ def get_live_qa_status() -> dict:
     except Exception:
         pass
 
-    # 2. Also check local gemini_brain_qa_progress.json if newer
     local_prog = ROOT / "gemini_brain_qa_progress.json"
     if local_prog.exists():
         try:
@@ -88,8 +87,9 @@ class DatabaseSimulatorHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         parsed = urllib.parse.urlparse(self.path)
         qs = urllib.parse.parse_qs(parsed.query)
+        clean_path = re.sub(r"^/classturn-live-simulators-hub", "", parsed.path) or "/"
 
-        if parsed.path == "/api/qa-status":
+        if clean_path == "/api/qa-status":
             payload = json.dumps(get_live_qa_status(), ensure_ascii=False).encode("utf-8")
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -99,7 +99,7 @@ class DatabaseSimulatorHandler(SimpleHTTPRequestHandler):
             self.wfile.write(payload)
             return
 
-        if parsed.path in ("/", "/index.html", "/live_panel.html") and "id" not in qs:
+        if clean_path in ("/", "/index.html", "/live_panel.html") and "id" not in qs:
             lp = ROOT / "live_panel.html"
             if lp.exists():
                 data = lp.read_bytes()
@@ -110,21 +110,24 @@ class DatabaseSimulatorHandler(SimpleHTTPRequestHandler):
                 self.wfile.write(data)
                 return
 
-        if parsed.path.endswith("/classturn-lab-kit.js"):
+        if clean_path.endswith("/classturn-lab-kit.js"):
             js_data = (ROOT / "classturn-lab-kit.js").read_bytes()
             self.send_response(200)
             self.send_header("Content-Type", "application/javascript; charset=utf-8")
+            self.send_header("Cache-Control", "no-store")
             self.send_header("Content-Length", str(len(js_data)))
             self.end_headers()
             self.wfile.write(js_data)
             return
 
-        m_build = re.match(r"^/builds/([^/]+)/index\.html$", parsed.path)
+        m_build = re.match(r"^/builds/([^/]+)(?:/index\.html|/)?$", clean_path)
         sid = None
         if m_build:
             sid = urllib.parse.unquote(m_build.group(1))
-        elif parsed.path in ("/universal_simulator.html", "/sim", "/") and "id" in qs:
+        elif clean_path in ("/universal_simulator.html", "/sim", "/") and "id" in qs:
             sid = qs["id"][0]
+        elif clean_path == "/universal_simulator.html":
+            sid = "u01427"
 
         if sid:
             builder.ensure_database()
@@ -149,6 +152,16 @@ class DatabaseSimulatorHandler(SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    port = 8090
-    print(f"Serving Live Panel & QA Monitor at http://localhost:{port}/live_qa_monitor.html")
-    ThreadingHTTPServer(("0.0.0.0", port), DatabaseSimulatorHandler).serve_forever()
+    ports = [8090, 8765]
+    servers = []
+    for p in ports:
+        try:
+            srv = ThreadingHTTPServer(("0.0.0.0", p), DatabaseSimulatorHandler)
+            t = threading.Thread(target=srv.serve_forever, daemon=True)
+            t.start()
+            servers.append(srv)
+            print(f"Serving Live Panel & 2,123 Simulators at http://127.0.0.1:{p}/live_panel.html")
+        except Exception as e:
+            print(f"Port {p} bind error: {e}")
+    while True:
+        time.sleep(3600)
