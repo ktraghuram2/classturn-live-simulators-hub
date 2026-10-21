@@ -152,16 +152,6 @@ class DatabaseSimulatorHandler(SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    ports = [8090, 8765]
-    servers = []
-    for p in ports:
-        try:
-            srv = ThreadingHTTPServer(("0.0.0.0", p), DatabaseSimulatorHandler)
-            t = threading.Thread(target=srv.serve_forever, daemon=True)
-            t.start()
-            servers.append(srv)
-            print(f"Serving Live Panel & 2,123 Simulators at http://127.0.0.1:{p}/live_panel.html")
-        except Exception as e:
-            print(f"Port {p} bind error: {e}")
-    while True:
-        time.sleep(3600)
+    port = 8090
+    print(f"Serving Live Simulators Hub at http://localhost:{port}/")
+    ThreadingHTTPServer(("0.0.0.0", port), DatabaseSimulatorHandler).serve_forever()
