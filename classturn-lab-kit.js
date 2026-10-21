@@ -503,31 +503,8 @@
         ctx.scale(1 / st.appliedStretchX, 1);
       }
 
-      var ctBridge = window.ClassTurnUniversalBridge;
-
       for (var ri = 0; ri < items.length; ri++) {
         var ldr = items[ri];
-        if (ctBridge && typeof ctBridge.isStepVisible === "function") {
-          var visStep = ctBridge.totalSteps > 0 ? Math.min(ldr.num, ctBridge.totalSteps) : ldr.num;
-          if (!ctBridge.isStepVisible(visStep)) {
-            continue;
-          }
-        }
-        var stepProg = (ctBridge && typeof ctBridge.getStepProgress === "function")
-          ? ctBridge.getStepProgress(ctBridge.totalSteps > 0 ? Math.min(ldr.num, ctBridge.totalSteps) : ldr.num)
-          : 1.0;
-
-        ctx.save();
-        ctx.globalAlpha = stepProg;
-
-        if (ctBridge && !ctBridge.previewMode && ctBridge.completedStep === (ctBridge.totalSteps > 0 ? Math.min(ldr.num, ctBridge.totalSteps) : ldr.num)) {
-          origBeginPath.call(ctx);
-          origArc.call(ctx, ldr.tx, ldr.ty, 18 + (1 - stepProg) * 28, 0, Math.PI * 2);
-          ctx.strokeStyle = "rgba(52, 211, 153, " + (0.45 * stepProg).toFixed(2) + ")";
-          ctx.lineWidth = 2.2;
-          origStroke.call(ctx);
-        }
-
         var sdx = ldr.tx - ldr.bx;
         var sdy = ldr.ty - ldr.by;
         var c1x, c1y, c2x, c2y;
@@ -580,7 +557,6 @@
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         origFillText.call(ctx, String(ldr.num), ldr.bx, ldr.by);
-        ctx.restore();
       }
 
       ctx.restore();
@@ -1442,7 +1418,12 @@
           sInp._ctTimer = setTimeout(function () {
             if (sInp.value !== userVal) {
               sInp.value = userVal;
-              wakeCanvasFrames(2, 32);
+              var tBtn = document.getElementById("btnToggle") || document.getElementById("btnPause") || document.getElementById("btnPlayPause");
+              if (tBtn && !tBtn._ctAutoPausedForAngle) {
+                tBtn._ctAutoPausedForAngle = true;
+                tBtn.click();
+              }
+              wakeCanvasFrames(1, 16);
             }
             var postSnap = readouts.map(function (r) { return r.textContent; }).join("|");
             if (postSnap === preSnap && readouts.length > 0) {
@@ -1969,14 +1950,7 @@
     var btnRecord = document.getElementById("btnRecord");
     if (btnRecord && !btnRecord.dataset.ctWired) {
       btnRecord.dataset.ctWired = "1";
-      btnRecord.addEventListener("click", function (e) {
-        var ctB = window.ClassTurnUniversalBridge;
-        if (ctB && ctB.totalSteps > 0 && ctB.completedStep < ctB.totalSteps) {
-          e.stopImmediatePropagation();
-          e.preventDefault();
-          ctB.triggerWarning("Out of sequence! Complete all [➔ Step] buttons in 04 / Procedure before recording.");
-          return;
-        }
+      btnRecord.addEventListener("click", function () {
         var tbody = document.getElementById("observationTbody");
         if (!tbody) return;
         var countBefore = tbody.children.length;
@@ -2008,225 +1982,6 @@
         }, 95);
       });
     }
-
-    // 9. INITIALIZE UNIVERSAL STEP-BUTTON [➔] & CENTERED ALERT BRIDGE FOR ALL 2,123 SIMULATORS
-    if (!window.ClassTurnUniversalBridge) {
-      window.ClassTurnUniversalBridge = {
-        previewMode: true,
-        completedStep: 0,
-        totalSteps: 0,
-        animatingStep: 0,
-        animStartTime: 0,
-        animDurationMs: 550,
-        warningBannerText: "",
-        warningTimeout: null,
-        trialCounter: 0,
-        onStepChangeCallback: null,
-
-        init: function (config) {
-          config = config || {};
-          this.previewMode = true;
-          this.completedStep = 0;
-          this.animatingStep = 0;
-          this.animStartTime = 0;
-          this.trialCounter = 0;
-          this.onStepChangeCallback = config.onStepChange || null;
-          this.injectStepButtonsStyle();
-          this.bindProcedureStepButtons();
-          this.updateControlsLockState();
-        },
-
-        injectStepButtonsStyle: function () {
-          if (document.querySelector("#classturn-step-bridge-css")) return;
-          var st = document.createElement("style");
-          st.id = "classturn-step-bridge-css";
-          st.textContent =
-            ".ct-step-arrow-btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:24px!important;height:24px!important;padding:0 9px!important;margin-right:8px!important;border-radius:6px!important;font:700 12px var(--font,sans-serif)!important;background:#edf6f2!important;color:#10564b!important;border:1.5px solid #8eaea1!important;cursor:pointer!important;vertical-align:middle!important;box-shadow:0 1px 2px rgba(0,0,0,0.08)!important;transition:all 0.18s ease!important;}" +
-            ".ct-step-arrow-btn.ct-next-glow{background:#10564b!important;color:#ffffff!important;border-color:#0d473e!important;box-shadow:0 0 0 3px rgba(16,86,75,0.25)!important;animation:ctPulseGlow 1.4s infinite ease-in-out!important;}" +
-            ".ct-step-arrow-btn.ct-done{background:#d8ece4!important;color:#0d473e!important;border-color:#10564b!important;}" +
-            ".ct-controls-locked-banner{padding:7px 10px;margin-bottom:8px;border-radius:7px;background:#fff8e6;border:1px solid #f59e0b;color:#92400e;font:600 11.5px var(--font,sans-serif);cursor:pointer;}" +
-            ".ct-center-canvas-alert{position:absolute!important;top:50%!important;left:50%!important;transform:translate(-50%,-50%)!important;z-index:99999!important;min-width:340px!important;max-width:85%!important;padding:16px 24px!important;border-radius:12px!important;background:rgba(180,83,9,0.98)!important;border:2.5px solid #fde68a!important;color:#ffffff!important;font:700 14.5px 'Segoe UI',system-ui,sans-serif!important;text-align:center!important;box-shadow:0 16px 40px rgba(0,0,0,0.75)!important;pointer-events:none!important;display:none;}" +
-            "@keyframes ctPulseGlow{0%,100%{box-shadow:0 0 0 2px rgba(16,86,75,0.22);}50%{box-shadow:0 0 0 5px rgba(16,86,75,0.42);}}";
-          document.head.appendChild(st);
-        },
-
-        bindProcedureStepButtons: function () {
-          var self = this;
-          var procList = document.querySelector("#procedureList") || document.querySelector("#sec-04-procedure ol") || document.querySelector("#sec-04-procedure ul");
-          if (!procList) return;
-          var items = Array.prototype.slice.call(procList.querySelectorAll("li"));
-          this.totalSteps = items.length;
-          items.forEach(function (li, idx) {
-            var stepNum = idx + 1;
-            li.style.cursor = "pointer";
-            var btn = li.querySelector(".ct-step-arrow-btn");
-            if (!btn) {
-              btn = document.createElement("button");
-              btn.type = "button";
-              btn.className = "ct-step-arrow-btn" + (stepNum === 1 ? " ct-next-glow" : "");
-              btn.dataset.step = String(stepNum);
-              btn.innerHTML = "➔ Step " + stepNum;
-              btn.title = "Execute Step " + stepNum + " on Canvas";
-              li.prepend(btn);
-            }
-            if (!btn.dataset.ctStepWired) {
-              btn.dataset.ctStepWired = "1";
-              btn.addEventListener("click", function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                self.handleStepClick(stepNum);
-              });
-              li.addEventListener("click", function (e) {
-                if (e.target === btn || btn.contains(e.target)) return;
-                self.handleStepClick(stepNum);
-              });
-            }
-          });
-        },
-
-        handleStepClick: function (clickedStep) {
-          var expectedStep = this.completedStep + 1;
-          if (clickedStep > expectedStep) {
-            this.triggerWarning("Out of sequence! Please click [➔ Step " + expectedStep + "] first.");
-            return;
-          }
-          if (clickedStep <= this.completedStep) {
-            this.animateStepTransition(clickedStep);
-            return;
-          }
-          this.clearWarning();
-          this.previewMode = false;
-          this.completedStep = clickedStep;
-          this.updateStepButtonStyles();
-          this.updateControlsLockState();
-          this.animateStepTransition(clickedStep);
-          wakeCanvasFrames(20, 60);
-        },
-
-        animateStepTransition: function (stepNum) {
-          this.animatingStep = stepNum;
-          this.animStartTime = performance.now();
-          if (typeof this.onStepChangeCallback === "function") {
-            this.onStepChangeCallback(this.completedStep, 0.15, this.previewMode);
-          }
-        },
-
-        updateStepButtonStyles: function () {
-          var self = this;
-          var procList = document.querySelector("#procedureList");
-          if (!procList) return;
-          var btns = procList.querySelectorAll(".ct-step-arrow-btn");
-          for (var i = 0; i < btns.length; i++) {
-            var btn = btns[i];
-            var s = parseInt(btn.dataset.step, 10);
-            btn.classList.remove("ct-next-glow", "ct-done");
-            if (s <= self.completedStep) {
-              btn.classList.add("ct-done");
-              btn.innerHTML = "✓ Step " + s;
-            } else if (s === self.completedStep + 1) {
-              btn.classList.add("ct-next-glow");
-              btn.innerHTML = "➔ Step " + s;
-            } else {
-              btn.innerHTML = "➔ Step " + s;
-            }
-          }
-        },
-
-        updateControlsLockState: function () {
-          var self = this;
-          var secControls = document.querySelector("#sec-05-controls");
-          if (!secControls) return;
-          var banner = document.querySelector("#ctControlsLockBanner");
-          var unlocked = this.totalSteps === 0 || this.completedStep >= this.totalSteps;
-          if (!unlocked) {
-            if (!banner) {
-              banner = document.createElement("div");
-              banner.id = "ctControlsLockBanner";
-              banner.className = "ct-controls-locked-banner";
-              banner.addEventListener("click", function () {
-                self.triggerWarning("Out of sequence! Click [➔ Step " + (self.completedStep + 1) + "] first.");
-              });
-              var h2 = secControls.querySelector("h2");
-              if (h2 && h2.nextSibling) {
-                secControls.insertBefore(banner, h2.nextSibling);
-              } else {
-                secControls.prepend(banner);
-              }
-            }
-            banner.textContent =
-              "Click [➔ Step " + (this.completedStep + 1) + "] in 04 / Procedure (" +
-              this.completedStep + "/" + this.totalSteps + " completed) to assemble the apparatus and unlock controls.";
-          } else if (banner) {
-            banner.remove();
-          }
-          var inputs = secControls.querySelectorAll("input, button.stepper-btn, .preset-chip, .atlas-action-btn");
-          for (var i = 0; i < inputs.length; i++) {
-            var el = inputs[i];
-            el.disabled = !unlocked;
-            el.style.opacity = unlocked ? "1" : "0.55";
-            el.style.pointerEvents = unlocked ? "auto" : "none";
-          }
-        },
-
-        clearWarning: function () {
-          this.warningBannerText = "";
-          if (this.warningTimeout) {
-            clearTimeout(this.warningTimeout);
-            this.warningTimeout = null;
-          }
-          var alertEl = document.querySelector("#ctCenterCanvasAlert");
-          if (alertEl) alertEl.style.display = "none";
-        },
-
-        triggerWarning: function (msg) {
-          var self = this;
-          this.warningBannerText = msg;
-          var wrapper = document.querySelector(".canvas-wrapper") || document.querySelector("#stageContainer");
-          if (wrapper) {
-            var alertEl = document.querySelector("#ctCenterCanvasAlert");
-            if (!alertEl) {
-              alertEl = document.createElement("div");
-              alertEl.id = "ctCenterCanvasAlert";
-              alertEl.className = "ct-center-canvas-alert";
-              wrapper.appendChild(alertEl);
-            }
-            alertEl.textContent = msg;
-            alertEl.style.display = "block";
-          }
-          if (this.warningTimeout) clearTimeout(this.warningTimeout);
-          this.warningTimeout = setTimeout(function () {
-            self.clearWarning();
-          }, 2800);
-        },
-
-        isStepVisible: function (stepNumber) {
-          if (this.previewMode) return true;
-          return this.completedStep >= stepNumber;
-        },
-
-        getStepProgress: function (stepNumber) {
-          if (this.previewMode) return 1.0;
-          if (this.completedStep < stepNumber) return 0.0;
-          if (this.animatingStep === stepNumber && this.animStartTime > 0) {
-            var elapsed = Math.max(0, performance.now() - this.animStartTime);
-            var raw = Math.min(1, elapsed / this.animDurationMs);
-            var eased = 1 - Math.pow(1 - raw, 3);
-            if (raw >= 1) this.animatingStep = 0;
-            return Math.max(0.15, eased);
-          }
-          return 1.0;
-        },
-
-        renderCanvasWarningOverlay: function () {}
-      };
-    }
-
-    setTimeout(function () {
-      var ctB = window.ClassTurnUniversalBridge;
-      if (ctB && ctB.totalSteps === 0) {
-        ctB.init();
-      }
-    }, 30);
   }
 
   if (document.readyState === "loading") {
