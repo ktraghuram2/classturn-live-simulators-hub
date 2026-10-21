@@ -1,15 +1,9 @@
 # ClassTurn Virtual Laboratory — 2,123 Live Simulators Hub & Database Package
 
-## 🌐 Live Hosted Website Link
+## 🌐 Live Hosted Website Link (Works 24/7 Without Any Local Server)
 
 - 🚀 **[Open Live Simulators Hub (All 2,123 Simulators)](https://ktraghuram2.github.io/classturn-live-simulators-hub/)**  
   Direct URL: `https://ktraghuram2.github.io/classturn-live-simulators-hub/`
-
----
-
-## 💻 Local Server Link (Single Port `8090`)
-
-- 🖥️ **[http://localhost:8090/](http://localhost:8090/)** (`python serve_from_database.py`)
 
 ---
 
